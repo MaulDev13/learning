@@ -64,7 +64,7 @@ body {
 }
 
 .container {
-	max-width: 62.5rem;
+	max-width: 48rem;
 	margin: 0 auto;
 	padding: var(--space-xl) var(--space-lg);
 	background: transparent;
@@ -259,11 +259,22 @@ p {
    NAV
    ========================================================= */
 .navbar {
-	position: sticky;
-	top: 0;
+	position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+	z-index: 999;
+	
 	padding: var(--space-md);
 	background: rgba(246, 248, 251, .85);
 	backdrop-filter: blur(8px);
+}
+
+.nav-inner {
+    max-width: 48rem; /* sama kayak content-center */
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
 }
 
 .nav-group {

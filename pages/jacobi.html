@@ -1,0 +1,571 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Sistem Persamaan Linear (SPL)</h3>
+
+        <p>
+            Sistem Persamaan Linear (SPL) dengan n persamaan dan n variabel dapat dinyatakan
+            dalam bentuk umum, kemudian direpresentasikan ke dalam bentuk matriks untuk
+            mempermudah analisis dan perhitungan.
+        </p>
+
+        <p>
+            Bentuk umum SPL:
+        </p>
+
+        <p>
+            a₁₁x₁ + a₁₂x₂ + ... + a₁ₙxₙ = b₁<br>
+            a₂₁x₁ + a₂₂x₂ + ... + a₂ₙxₙ = b₂<br>
+            ...<br>
+            aₙ₁x₁ + aₙ₂x₂ + ... + aₙₙxₙ = bₙ
+        </p>
+
+        <p>
+            Dapat ditulis dalam bentuk matriks:
+            <strong>Ax = b</strong>
+        </p>
+
+        <p class="text-meta">
+            Topik: Metode Numerik
+        </p>
+
+        <p class="text-meta">
+            Fokus: Representasi Matriks & Metode Penyelesaian
+        </p>
+
+        <div class="card card--soft">
+
+            <p><strong>Representasi Matriks</strong></p>
+
+            <p>
+                A adalah matriks koefisien berukuran n × n,
+                x adalah vektor variabel,
+                dan b adalah vektor konstanta.
+            </p>
+
+            <p>
+                Bentuk ini memungkinkan penggunaan metode numerik
+                untuk menyelesaikan SPL secara sistematis.
+            </p>
+
+        </div>
+
+        <div class="card card--soft">
+
+            <p><strong>Dekomposisi LU</strong></p>
+
+            <p>
+                Matriks A diuraikan menjadi hasil perkalian dua matriks:
+                <strong>A = LU</strong>
+            </p>
+
+            <p>
+                L adalah matriks segitiga bawah, sedangkan U adalah matriks segitiga atas.
+            </p>
+
+            <p>
+                Penyelesaian dilakukan melalui dua tahap:
+            </p>
+
+            <p>
+                Ld = b → menggunakan substitusi maju<br>
+                Ux = d → menggunakan substitusi mundur
+            </p>
+
+            <p>
+                Terdapat dua pendekatan umum:
+            </p>
+
+            <p>
+                • Crout: diagonal U bernilai 1<br>
+                • Doolittle: diagonal L bernilai 1
+            </p>
+
+        </div>
+
+        <div class="card card--soft">
+
+            <p><strong>Ilustrasi Penyelesaian LU</strong></p>
+
+            <p>
+                Misalkan diberikan sistem:
+            </p>
+
+            <p>
+                3x₁ + 4x₂ + 2x₃ = 16<br>
+                x₁ + 3x₂ + x₃ = 8<br>
+                2x₁ + 5x₂ + x₃ = 12
+            </p>
+
+            <p>
+                Langkah penyelesaian:
+            </p>
+
+            <p>
+                • Bentuk matriks A<br>
+                • Lakukan dekomposisi menjadi L dan U<br>
+                • Selesaikan Ld = b<br>
+                • Selesaikan Ux = d
+            </p>
+
+            <p>
+                Hasil akhir diperoleh:
+            </p>
+
+            <p>
+                x₁ = 2, x₂ = -1, x₃ = 3
+            </p>
+
+        </div>
+
+        <div class="card card--soft">
+
+            <p><strong>Metode Iteratif (Jacobi)</strong></p>
+
+            <p>
+                Metode Jacobi merupakan metode numerik berbasis iterasi,
+                di mana nilai variabel diperbarui secara berulang hingga
+                mencapai konvergensi.
+            </p>
+
+            <p>
+                Bentuk umum iterasi:
+            </p>
+
+            <p>
+                xᵢ(k+1) = (1 / aᵢᵢ) [ bᵢ − Σ aᵢⱼ xⱼ(k) ]
+            </p>
+
+            <p>
+                Proses dimulai dari tebakan awal, kemudian dihitung
+                secara berulang sampai perubahan nilai sangat kecil (error minimum).
+            </p>
+
+        </div>
+
+        <div class="card card--soft">
+
+            <p><strong>Contoh Iterasi Jacobi</strong></p>
+
+            <p>
+                8x₁ + x₂ − x₃ = 8<br>
+                2x₁ + x₂ + 9x₃ = 12<br>
+                x₁ − 7x₂ + 2x₃ = -4
+            </p>
+
+            <p>
+                Dengan tebakan awal:
+                x⁰ = (0, 0, 0)
+            </p>
+
+            <p>
+                Setelah beberapa iterasi, solusi mendekati:
+            </p>
+
+            <p>
+                x₁ = 1, x₂ = 1, x₃ = 1
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- KEMUNGKINAN HASIL -->
+    <div class="card card--soft">
+
+        <h3>Hasil yang Mungkin dari Metode Jacobi</h3>
+
+        <p>
+            Metode Jacobi tidak selalu menghasilkan solusi yang sama dalam semua kasus.
+            Hasil iterasi sangat bergantung pada sifat matriks koefisien dan nilai awal yang digunakan.
+        </p>
+
+        <div class="card card--soft">
+
+            <p><strong>1. Konvergen ke Solusi Unik</strong></p>
+
+            <p>
+                Ini adalah kondisi ideal, di mana iterasi mendekati satu solusi tertentu.
+            </p>
+
+            <p>
+                Ciri:
+            </p>
+
+            <p>
+                • Nilai stabil menuju satu titik<br>
+                • Error semakin kecil<br>
+                • Solusi mendekati nilai eksak
+            </p>
+
+            <p>
+                Contoh sebelumnya menghasilkan:
+                x = (1, 1, 1)
+            </p>
+
+        </div>
+
+        <div class="card card--soft">
+
+            <p><strong>2. Divergen (Tidak Menuju Solusi)</strong></p>
+
+            <p>
+                Iterasi tidak mendekati solusi, bahkan bisa semakin besar atau tidak stabil.
+            </p>
+
+            <p>
+                Ciri:
+            </p>
+
+            <p>
+                • Nilai membesar (tak hingga)<br>
+                • Berosilasi tanpa pola<br>
+                • Tidak stabil
+            </p>
+
+            <p>
+                Biasanya terjadi jika matriks tidak dominan diagonal.
+            </p>
+
+        </div>
+
+        <div class="card card--soft">
+
+            <p><strong>3. Konvergen Lambat</strong></p>
+
+            <p>
+                Metode tetap menuju solusi, tetapi membutuhkan banyak iterasi.
+            </p>
+
+            <p>
+                Ciri:
+            </p>
+
+            <p>
+                • Perubahan sangat kecil setiap iterasi<br>
+                • Membutuhkan banyak langkah<br>
+                • Kurang efisien
+            </p>
+
+        </div>
+
+        <div class="card card--soft">
+
+            <p><strong>4. Sensitif terhadap Nilai Awal</strong></p>
+
+            <p>
+                Nilai awal dapat mempengaruhi kecepatan konvergensi.
+            </p>
+
+            <p>
+                • Tebakan awal dekat solusi → cepat konvergen<br>
+                • Tebakan jauh → bisa lambat atau bahkan gagal
+            </p>
+
+        </div>
+
+        <div class="card card--soft">
+
+            <p><strong>Kesimpulan</strong></p>
+
+            <p>
+                Metode Jacobi dapat menghasilkan:
+            </p>
+
+            <p>
+                • Solusi yang benar (konvergen)<br>
+                • Tidak menghasilkan solusi (divergen)<br>
+                • Solusi dengan proses lambat
+            </p>
+
+            <p>
+                Oleh karena itu, sebelum menggunakan metode ini,
+                perlu diperiksa apakah sistem memenuhi syarat konvergensi.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- PENDALAMAN MATERI -->
+     <div class="card card--soft">
+
+        <h3>Konsep Lanjutan yang Perlu Dipahami</h3>
+
+        <p>
+            Untuk memahami Sistem Persamaan Linear secara lebih mendalam,
+            tidak cukup hanya mengetahui langkah penyelesaian. Diperlukan
+            pemahaman terhadap sifat sistem dan stabilitas metode yang digunakan.
+        </p>
+
+        <div class="card card--soft">
+
+            <p><strong>Kondisi Keunikan Solusi</strong></p>
+
+            <p>
+                SPL memiliki solusi unik jika matriks A bersifat invertible.
+            </p>
+
+            <p>
+                Hal ini terjadi jika:
+            </p>
+
+            <p>
+                • Determinan A ≠ 0<br>
+                • Rank matriks penuh
+            </p>
+
+        </div>
+
+        <div class="card card--soft">
+
+            <p><strong>Kondisi Singular</strong></p>
+
+            <p>
+                Jika determinan A = 0, maka sistem dapat:
+            </p>
+
+            <p>
+                • Tidak memiliki solusi<br>
+                • Memiliki tak hingga solusi
+            </p>
+
+        </div>
+
+        <div class="card card--soft">
+
+            <p><strong>Stabilitas Numerik</strong></p>
+
+            <p>
+                Dalam komputasi, kesalahan pembulatan dapat mempengaruhi hasil.
+            </p>
+
+            <p>
+                Sistem yang buruk dapat menyebabkan error membesar selama perhitungan.
+            </p>
+
+        </div>
+
+        <div class="card card--soft">
+
+            <p><strong>Pivoting (pada LU)</strong></p>
+
+            <p>
+                Pivoting digunakan untuk meningkatkan stabilitas numerik.
+            </p>
+
+            <p>
+                • Partial pivoting: menukar baris<br>
+                • Full pivoting: menukar baris dan kolom
+            </p>
+
+        </div>
+
+        <div class="card card--soft">
+
+            <p><strong>Spectral Radius</strong></p>
+
+            <p>
+                Pada metode iteratif, konvergensi ditentukan oleh spectral radius (ρ).
+            </p>
+
+            <p>
+                Metode konvergen jika:
+            </p>
+
+            <p>
+                ρ < 1
+            </p>
+
+        </div>
+
+        <div class="card card--soft">
+
+            <p><strong>Condition Number</strong></p>
+
+            <p>
+                Mengukur sensitivitas solusi terhadap perubahan kecil pada data.
+            </p>
+
+            <p>
+                • Nilai kecil → stabil<br>
+                • Nilai besar → sensitif (ill-conditioned)
+            </p>
+
+        </div>
+
+        <div class="card card--soft">
+
+            <p><strong>Perbandingan Metode Langsung vs Iteratif</strong></p>
+
+            <p>
+                • Metode langsung (LU): solusi dalam langkah terbatas<br>
+                • Metode iteratif (Jacobi): pendekatan bertahap
+            </p>
+
+            <p>
+                Pemilihan metode bergantung pada ukuran sistem dan kebutuhan komputasi.
+            </p>
+
+        </div>
+
+        <div class="card card--soft">
+
+            <p><strong>Kesimpulan</strong></p>
+
+            <p>
+                Pemahaman lanjutan mencakup:
+            </p>
+
+            <p>
+                • Keberadaan solusi<br>
+                • Stabilitas perhitungan<br>
+                • Perilaku metode iteratif<br>
+                • Sensitivitas terhadap error
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- PENDALAMAN MATERI -->
+    <div class="card card--soft">
+
+        <h3>Pengembangan Materi Sistem Persamaan Linear</h3>
+
+        <p>
+            Selain metode penyelesaian, terdapat beberapa konsep penting yang perlu
+            dipahami agar pemahaman terhadap Sistem Persamaan Linear menjadi lebih lengkap
+            dan tidak hanya bersifat prosedural.
+        </p>
+
+        <div class="card card--soft">
+
+            <p><strong>Syarat Konvergensi Metode Iteratif</strong></p>
+
+            <p>
+                Tidak semua sistem dapat diselesaikan dengan metode Jacobi atau metode iteratif lainnya.
+            </p>
+
+            <p>
+                Salah satu syarat penting adalah <strong>dominasi diagonal</strong>, yaitu:
+            </p>
+
+            <p>
+                |aᵢᵢ| ≥ jumlah |aᵢⱼ| untuk j ≠ i
+            </p>
+
+            <p>
+                Jika syarat ini tidak terpenuhi, metode bisa divergen.
+            </p>
+
+        </div>
+
+        <div class="card card--soft">
+
+            <p><strong>Analisis Error dan Toleransi</strong></p>
+
+            <p>
+                Dalam metode numerik, solusi tidak selalu eksak sehingga diperlukan
+                ukuran kesalahan (error).
+            </p>
+
+            <p>
+                Iterasi dihentikan jika:
+            </p>
+
+            <p>
+                • |xᵏ⁺¹ - xᵏ| kecil (toleransi terpenuhi)<br>
+                • Jumlah iterasi maksimum tercapai
+            </p>
+
+        </div>
+
+        <div class="card card--soft">
+
+            <p><strong>Perbandingan Metode</strong></p>
+
+            <p>
+                Setiap metode memiliki kelebihan dan kekurangan:
+            </p>
+
+            <p>
+                • LU: akurat, cocok untuk solusi langsung<br>
+                • Jacobi: sederhana, tetapi bisa lambat<br>
+                • Gauss-Seidel: lebih cepat dari Jacobi
+            </p>
+
+        </div>
+
+        <div class="card card--soft">
+
+            <p><strong>Gauss-Seidel (Pelengkap Penting)</strong></p>
+
+            <p>
+                Mirip dengan Jacobi, tetapi menggunakan nilai terbaru langsung
+                dalam iterasi.
+            </p>
+
+            <p>
+                Biasanya lebih cepat konvergen dibanding Jacobi.
+            </p>
+
+        </div>
+
+        <div class="card card--soft">
+
+            <p><strong>Interpretasi Geometris</strong></p>
+
+            <p>
+                SPL dapat diinterpretasikan sebagai perpotongan garis (2D)
+                atau bidang (3D).
+            </p>
+
+            <p>
+                • Satu titik → solusi unik<br>
+                • Tidak berpotongan → tidak ada solusi<br>
+                • Berimpit → tak hingga solusi
+            </p>
+
+        </div>
+
+        <div class="card card--soft">
+
+            <p><strong>Implementasi Komputasi</strong></p>
+
+            <p>
+                Metode numerik biasanya digunakan dalam komputasi:
+            </p>
+
+            <p>
+                • Program (Python, MATLAB, dll)<br>
+                • Simulasi teknik<br>
+                • Machine learning dan optimasi
+            </p>
+
+        </div>
+
+        <div class="card card--soft">
+
+            <p><strong>Kesimpulan</strong></p>
+
+            <p>
+                Pemahaman SPL tidak hanya berhenti pada perhitungan,
+                tetapi juga mencakup:
+            </p>
+
+            <p>
+                • Kapan metode bisa digunakan<br>
+                • Seberapa akurat hasilnya<br>
+                • Bagaimana perilaku iterasinya
+            </p>
+
+        </div>
+
+    </div>
+</div>
+
+
+<script src="js/script.js"></script>

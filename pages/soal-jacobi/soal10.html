@@ -1,0 +1,116 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 10 (Metode Jacobi)</h3>
+
+    <p>
+        Sistem persamaan linear ini diselesaikan menggunakan metode Jacobi,
+        yaitu metode iteratif yang digunakan untuk memperoleh solusi pendekatan
+        dari sistem Ax = b dengan cara memperbarui nilai variabel secara berulang.
+    </p>
+
+    <p>
+        Pada setiap iterasi, nilai variabel baru dihitung menggunakan nilai dari iterasi sebelumnya,
+        sehingga proses ini menghasilkan urutan pendekatan menuju solusi yang sebenarnya.
+    </p>
+
+    <p>
+        Pada soal ini akan dianalisis apakah metode Jacobi menghasilkan konvergensi
+        (nilai stabil) atau divergensi (tidak stabil).
+    </p>
+
+    <p class="text-meta">
+        Metode: Iterasi Jacobi
+    </p>
+
+    <p class="text-meta">
+        Tebakan awal: (0, 0, 0)
+    </p>
+
+    <div class="card card--soft">
+
+        <p><strong>Sistem Persamaan</strong></p>
+
+        <p>
+            7x₁ − x₂ + x₃ = 10<br>
+            x₁ + 8x₂ − x₃ = 12<br>
+            2x₁ + x₂ + 9x₃ = 18
+        </p>
+
+        <p>
+            Sistem ini memiliki dominasi diagonal yang cukup baik,
+            sehingga secara teori mendukung konvergensi metode Jacobi.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Bentuk Iterasi Jacobi</strong></p>
+
+        <p>
+            x₁ = (10 + x₂ − x₃) / 7<br>
+            x₂ = (12 − x₁ + x₃) / 8<br>
+            x₃ = (18 − 2x₁ − x₂) / 9
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Proses Iterasi</strong></p>
+
+        <p>
+            Iterasi 0: (0, 0, 0)<br><br>
+
+            Iterasi 1:<br>
+            x₁ = 1.4286<br>
+            x₂ = 1.5000<br>
+            x₃ = 2.0000<br><br>
+
+            Iterasi 2:<br>
+            x₁ = 1.5000<br>
+            x₂ = 1.4643<br>
+            x₃ = 1.9286<br><br>
+
+            Iterasi 3:<br>
+            x₁ = 1.4898<br>
+            x₂ = 1.4755<br>
+            x₃ = 1.9388
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Analisis Konvergensi</strong></p>
+
+        <p>
+            Dari hasil iterasi terlihat bahwa nilai semakin stabil dan perubahan antar iterasi
+            semakin kecil. Nilai mulai mendekati titik tetap.
+        </p>
+
+        <p>
+            Hal ini menunjukkan bahwa metode Jacobi pada sistem ini <strong>konvergen</strong>.
+        </p>
+
+        <p>
+            Konvergensi ini didukung oleh struktur matriks yang memiliki dominasi diagonal,
+            sehingga iterasi berjalan stabil menuju solusi.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Kesimpulan</strong></p>
+
+        <p>
+            • Metode Jacobi konvergen pada sistem ini<br>
+            • Nilai iterasi semakin stabil<br>
+            • Sistem memenuhi syarat dominasi diagonal<br>
+            • Metode ini efektif digunakan untuk penyelesaian SPL
+        </p>
+
+    </div>
+
+</div>

@@ -1,0 +1,124 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 1 (Metode Jacobi)</h3>
+
+    <p>
+        Sistem persamaan linear ini diselesaikan menggunakan metode Jacobi,
+        yaitu metode iteratif dalam numerik yang digunakan untuk mencari solusi
+        pendekatan dari sistem persamaan linear Ax = b.
+    </p>
+
+    <p>
+        Metode ini bekerja dengan cara memperbarui nilai setiap variabel secara bertahap
+        berdasarkan nilai iterasi sebelumnya, bukan langsung menyelesaikan secara eksak.
+    </p>
+
+    <p>
+        Dalam prosesnya, kita akan mengamati apakah nilai hasil iterasi menuju solusi tetap
+        (konvergen) atau justru semakin tidak stabil (divergen).
+    </p>
+
+    <p class="text-meta">
+        Metode: Iterasi Jacobi
+    </p>
+
+    <p class="text-meta">
+        Tebakan awal: (0, 0, 0)
+    </p>
+
+    <div class="card card--soft">
+
+        <p><strong>Sistem Persamaan</strong></p>
+
+        <p>
+            8x₁ + x₂ − x₃ = 8<br>
+            2x₁ + x₂ + 9x₃ = 12<br>
+            x₁ − 7x₂ + 2x₃ = -4
+        </p>
+
+        <p>
+            Sistem ini terdiri dari 3 persamaan dengan 3 variabel,
+            sehingga dapat diselesaikan menggunakan metode iteratif.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Bentuk Iterasi Jacobi</strong></p>
+
+        <p>
+            Untuk menerapkan metode Jacobi, setiap persamaan diubah menjadi bentuk
+            penyelesaian variabel tunggal:
+        </p>
+
+        <p>
+            x₁ = (8 − x₂ + x₃) / 8<br>
+            x₂ = 12 − 2x₁ − 9x₃<br>
+            x₃ = (−4 − x₁ + 7x₂) / 2
+        </p>
+
+        <p>
+            Setiap nilai x pada iterasi baru dihitung menggunakan nilai dari iterasi sebelumnya.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Proses Iterasi</strong></p>
+
+        <p>
+            Iterasi dimulai dari tebakan awal (0, 0, 0) dan dilanjutkan secara bertahap:
+        </p>
+
+        <p>
+            Iterasi 0: (0, 0, 0)<br>
+            Iterasi 1: (1, 12, -2)<br>
+            Iterasi 2: (-0.75, 28, 39.5)<br>
+            Iterasi 3: (2.4375, -340.5, 97.375)
+        </p>
+
+        <p>
+            Setiap iterasi menggunakan hasil sebelumnya tanpa langsung memperbarui nilai dalam satu langkah.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Analisis Konvergensi</strong></p>
+
+        <p>
+            Dari hasil iterasi terlihat bahwa nilai semakin membesar dan tidak mendekati suatu nilai tetap.
+        </p>
+
+        <p>
+            Hal ini menunjukkan bahwa metode Jacobi <strong>tidak konvergen</strong> untuk sistem ini.
+        </p>
+
+        <p>
+            Penyebab utama adalah matriks koefisien tidak memenuhi syarat dominasi diagonal,
+            yaitu kondisi di mana elemen diagonal harus lebih besar atau sama dengan jumlah elemen lainnya dalam baris tersebut.
+        </p>
+
+        <p>
+            Ketika syarat ini tidak terpenuhi, iterasi menjadi tidak stabil dan hasil tidak dapat dipercaya.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Kesimpulan</strong></p>
+
+        <p>
+            • Metode Jacobi tidak menghasilkan konvergensi pada soal ini<br>
+            • Nilai iterasi menjadi semakin tidak stabil<br>
+            • Sistem tidak memenuhi syarat dominasi diagonal<br>
+            • Metode ini tidak cocok digunakan untuk sistem tersebut
+        </p>
+
+    </div>
+
+</div>

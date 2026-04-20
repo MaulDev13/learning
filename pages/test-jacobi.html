@@ -1,0 +1,75 @@
+<!-- JACOBI TEST -->
+    <div class="card">
+
+        <h1 class="text-2xl font-bold mb-2">Jacobi Function</h1>
+
+        <p class="text-meta mb-4">
+            Masukkan koefisien SPL: <strong>ax + by + cz = d</strong> (boleh negatif)
+        </p>
+
+        <div class="mb-4 grid grid-cols-2 gap-3">
+
+            <div>
+                <p class="text-meta mb-1">Max Iteration</p>
+                <input id="maxIter" type="number" step="1" class="input" value="10">
+            </div>
+
+            <div>
+                <p class="text-meta mb-1">Tolerance</p>
+                <input id="tolerance" type="number" step="any" class="input" value="0.001">
+            </div>
+
+        </div>
+
+        <div class="card card--flat mb-4">
+
+            <!-- Persamaan 1 -->
+            <div class="flex gap-2 mb-2">
+                <input id="a1" type="number" step="any" class="input w-16" placeholder="a1"> x
+                <input id="b1" type="number" step="any" class="input w-16" placeholder="b1"> y
+                <input id="c1" type="number" step="any" class="input w-16" placeholder="c1"> z =
+                <input id="d1" type="number" step="any" class="input w-16" placeholder="d1">
+            </div>
+
+            <!-- Persamaan 2 -->
+            <div class="flex gap-2 mb-2">
+                <input id="a2" type="number" step="any" class="input w-16" placeholder="a2"> x
+                <input id="b2" type="number" step="any" class="input w-16" placeholder="b2"> y
+                <input id="c2" type="number" step="any" class="input w-16" placeholder="c2"> z =
+                <input id="d2" type="number" step="any" class="input w-16" placeholder="d2">
+            </div>
+
+            <!-- Persamaan 3 -->
+            <div class="flex gap-2">
+                <input id="a3" type="number" step="any" class="input w-16" placeholder="a3"> x
+                <input id="b3" type="number" step="any" class="input w-16" placeholder="b3"> y
+                <input id="c3" type="number" step="any" class="input w-16" placeholder="c3"> z =
+                <input id="d3" type="number" step="any" class="input w-16" placeholder="d3">
+            </div>
+
+        </div>
+
+        <!-- INITIAL GUESS -->
+        <div class="mb-4">
+            <p class="text-meta mb-2">Initial Guess (optional):</p>
+
+            <div class="grid grid-cols-3 gap-3">
+                <input id="x0" type="number" step="any" class="input" placeholder="x₀">
+                <input id="y0" type="number" step="any" class="input" placeholder="y₀">
+                <input id="z0" type="number" step="any" class="input" placeholder="z₀">
+            </div>
+        </div>
+
+        <button class="btn btn-primary mb-4" onclick="runJacobiDynamic()">
+            Run Iteration
+        </button>
+
+        <button class="btn mb-4" onclick="generateRandomSystem()">
+            Generate Random
+        </button>
+
+        <div class="card card--flat">
+            <pre id="jacobi-output" class="text-meta"></pre>
+        </div>
+
+    </div>
