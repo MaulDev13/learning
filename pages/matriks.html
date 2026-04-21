@@ -1,0 +1,141 @@
+<div class="card">
+
+    <h1>Operasi Matriks & Operasi Baris Elementer</h1>
+
+    <h5>Dasar penting untuk Eliminasi Gauss & LU Decomposition</h5>
+
+    <p>
+        Operasi matriks adalah aturan dasar untuk mengolah matriks menggunakan
+        penjumlahan, pengurangan, dan perkalian skalar. Sedangkan operasi baris
+        elementer digunakan untuk mengubah bentuk matriks dalam menyelesaikan
+        sistem persamaan linear.
+    </p>
+
+    <hr>
+
+    <h3>1. Penjumlahan & Pengurangan Matriks</h3>
+
+    <p>
+        Dua matriks hanya bisa dijumlahkan atau dikurangkan jika ukurannya sama.
+        Operasi dilakukan elemen yang seposisi.
+    </p>
+
+    <pre>
+A + B =
+[ a11 a12 ] + [ b11 b12 ] = [ a11+b11  a12+b12 ]
+[ a21 a22 ]   [ b21 b22 ]   [ a21+b21  a22+b22 ]
+    </pre>
+
+    <p>
+        Contoh:
+        <br>
+        [1 2] + [3 4] = [4 6]
+    </p>
+
+    <p>
+        ✔ Pengurangan juga dilakukan dengan cara yang sama:
+        <br>
+        [1 2] - [3 4] = [-2 -2]
+    </p>
+
+    <hr>
+
+    <h3>2. Perkalian Skalar</h3>
+
+    <p>
+        Setiap elemen matriks dikalikan dengan sebuah angka.
+    </p>
+
+    <pre>
+k · A =
+k [ a b ] = [ ka kb ]
+  [ c d ]   [ kc kd ]
+    </pre>
+
+    <p>
+        Contoh:
+        <br>
+        2 × [1 2] = [2 4]
+    </p>
+
+    <hr>
+
+    <h3>3. Perkalian Matriks</h3>
+
+    <p>
+        Perkalian matriks dilakukan dengan aturan baris × kolom.
+    </p>
+
+    <pre>
+A × B =
+[ a b ]   [ e f ]   [ a·e + b·g   a·f + b·h ]
+[ c d ] × [ g h ] = [ c·e + d·g   c·f + d·h ]
+    </pre>
+
+    <hr>
+
+    <h3>4. Operasi Baris Elementer</h3>
+
+    <p>
+        Digunakan dalam Eliminasi Gauss dan LU Decomposition untuk mengubah matriks
+        menjadi bentuk segitiga atas.
+    </p>
+
+    <p>
+        Tiga operasi dasar:
+    </p>
+
+    <ul>
+        <li>1. Menukar baris → Ri ↔ Rj</li>
+        <li>2. Mengalikan baris → Ri = k × Ri</li>
+        <li>3. Mengurangi baris → Ri = Ri − kRj</li>
+    </ul>
+
+    <hr>
+
+    <h3>5. Penting: Peran Pembagian dalam Eliminasi</h3>
+
+    <p>
+        Dalam eliminasi Gauss, pembagian <b>bukan operasi baris langsung</b>.
+        Pembagian hanya digunakan untuk mencari faktor pengali (m).
+    </p>
+
+    <p>
+        Rumus:
+        <br>
+        <b>m = elemen bawah ÷ pivot</b>
+    </p>
+
+    <p>
+        Setelah itu digunakan operasi utama:
+        <br>
+        <b>Baris baru = Baris lama − m × Baris pivot</b>
+    </p>
+
+    <p>
+        ✔ Jadi:
+        <br>
+        • Pembagian → hanya untuk mencari m  
+        <br>
+        • Perkalian → membuat kelipatan baris  
+        <br>
+        • Pengurangan → menghilangkan elemen  
+    </p>
+
+    <hr>
+
+    <h3>6. Hubungan dengan LU Decomposition</h3>
+
+    <p>
+        - Hasil eliminasi Gauss → matriks U  
+        <br>
+        - Nilai m (hasil pembagian) → disimpan di matriks L  
+    </p>
+
+    <p>
+        Sehingga:
+        <br>
+        <b>A = L × U</b>
+    </p>
+
+</div>

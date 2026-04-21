@@ -1,0 +1,22 @@
+<div class="card">
+
+    <h1 class="text-2xl font-bold mb-2">PDP Orde 2 (Laplace)</h1>
+
+    <p class="text-meta mb-4">
+        Fungsi: <strong>u(x,y) = x² + y²</strong>
+    </p>
+
+    <div class="grid grid-cols-2 gap-3 mb-4">
+        <input id="px" type="number" class="input" placeholder="x">
+        <input id="py" type="number" class="input" placeholder="y">
+    </div>
+
+    <button class="btn btn-primary mb-4" onclick="runPDE()">
+        Hitung PDP
+    </button>
+
+    <div class="card card--flat">
+        <pre id="pde-output" class="text-meta"></pre>
+    </div>
+
+</div>
