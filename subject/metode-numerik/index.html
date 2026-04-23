@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Metode Numerik</title>
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+</head>
+
+<body>
+
+    <div class="container content-center page-stack">
+
+        <!-- NAVBAR -->
+        <nav
+            hx-get="../../components/navbar.html"
+            hx-trigger="load"
+            hx-swap="innerHTML">
+        </nav>
+
+        <main class="page-stack">
+
+            <h1>Metode Numerik</h1>
+
+            <!-- SUB NAV -->
+            <div class="nav-group">
+                <button class="nav-btn"
+                    hx-get="matriks.html"
+                    hx-target="#content">
+                    Matriks
+                </button>
+
+                <button class="nav-btn"
+                    hx-get="lu.html"
+                    hx-target="#content">
+                    LU
+                </button>
+
+                <button class="nav-btn"
+                    hx-get="jacobi.html"
+                    hx-target="#content">
+                    Jacobi
+                </button>
+            </div>
+
+            <!-- CONTENT -->
+            <section id="content">
+                <p>Pilih materi Metode Numerik.</p>
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+</html>

@@ -3,8 +3,7 @@
     <h3>Dekomposisi LU (LU Decomposition)</h3>
 
     <p>
-        Dekomposisi LU adalah metode dalam Sistem Persamaan Linear yang digunakan
-        untuk memecah sebuah matriks koefisien A menjadi hasil perkalian dua matriks,
+        Dekomposisi LU adalah metode untuk memecah matriks koefisien A menjadi dua matriks,
         yaitu matriks segitiga bawah (L) dan matriks segitiga atas (U).
     </p>
 
@@ -14,155 +13,182 @@
     </p>
 
     <p>
-        Metode ini digunakan untuk menyelesaikan sistem persamaan:
+        Metode ini digunakan untuk menyelesaikan sistem persamaan linear:
         <strong>Ax = b</strong> dengan cara yang lebih efisien.
     </p>
 
-    <div class="card card--soft">
+</div>
 
-        <p><strong>Bentuk Matriks</strong></p>
+<div class="card card--soft">
 
-        <p>
-            L = matriks segitiga bawah (lower triangular)<br>
-            U = matriks segitiga atas (upper triangular)
-        </p>
+    <h4>Bentuk Matriks</h4>
 
-        <p>
-            Sehingga:
-        </p>
+    <p>
+        L = matriks segitiga bawah<br>
+        U = matriks segitiga atas
+    </p>
 
-        <p>
-            A = LU
-        </p>
+    <p>
+        Sehingga:
+        <strong>A = LU</strong>
+    </p>
 
-    </div>
+</div>
 
-    <div class="card card--soft">
+<div class="card card--soft">
 
-        <p><strong>Langkah Penyelesaian LU</strong></p>
+    <h4>Contoh Soal</h4>
 
-        <p>
-            1. Faktorisasi A menjadi L dan U<br>
-            2. Selesaikan Ly = b (substitusi maju)<br>
-            3. Selesaikan Ux = y (substitusi mundur)
-        </p>
+    <p>
+        3x₁ + 4x₂ + 2x₃ = 16<br>
+        x₁ + 3x₂ + x₃ = 8<br>
+        2x₁ + 5x₂ + x₃ = 12
+    </p>
 
-    </div>
+</div>
 
-    <div class="card card--soft">
+<div class="card card--soft">
 
-        <p><strong>Contoh Soal</strong></p>
+    <h4>Langkah 1: Matriks A dan b</h4>
 
-        <p>
-            Diberikan sistem persamaan:
-        </p>
+    <p>A:</p>
 
-        <p>
-            3x₁ + 4x₂ + 2x₃ = 16<br>
-            x₁ + 3x₂ + x₃ = 8<br>
-            2x₁ + 5x₂ + x₃ = 12
-        </p>
+    <pre>
+[ 3  4  2 ]
+[ 1  3  1 ]
+[ 2  5  1 ]
+    </pre>
 
-    </div>
+    <p>b:</p>
 
-    <div class="card card--soft">
+    <pre>
+[ 16 ]
+[ 8  ]
+[ 12 ]
+    </pre>
 
-        <p><strong>Langkah 1: Bentuk Matriks A</strong></p>
+</div>
 
-        <p>
-            A =
-        </p>
+<div class="card card--soft">
 
-        <p>
-            [ 3  4  2 ]<br>
-            [ 1  3  1 ]<br>
-            [ 2  5  1 ]
-        </p>
+    <h4>Langkah 2: Eliminasi (Membentuk U)</h4>
 
-        <p>
-            b =
-        </p>
+    <p>
+        Kita lakukan eliminasi Gauss untuk mengubah A menjadi bentuk segitiga atas (U).
+    </p>
 
-        <p>
-            [ 16 ]<br>
-            [ 8 ]<br>
-            [ 12 ]
-        </p>
+    <p><strong>Eliminasi kolom pertama</strong></p>
 
-    </div>
+    <p>
+        Faktor eliminasi:
+        l21 = 1/3 = 0.33<br>
+        l31 = 2/3 = 0.67
+    </p>
 
-    <div class="card card--soft">
+    <p>
+        Operasi:
+        R2 = R2 - 0.33R1<br>
+        R3 = R3 - 0.67R1
+    </p>
 
-        <p><strong>Langkah 2: Dekomposisi A = LU</strong></p>
+    <pre>
+[ 3   4     2 ]
+[ 0   1.67  0.33 ]
+[ 0   2.33 -0.33 ]
+    </pre>
 
-        <p>
-            L =
-        </p>
+</div>
 
-        <p>
-            [ 1   0   0 ]<br>
-            [ 0.33 1   0 ]<br>
-            [ 0.67 1.5 1 ]
-        </p>
+<div class="card card--soft">
 
-        <p>
-            U =
-        </p>
+    <h4>Langkah 2 (lanjutan): Eliminasi kolom kedua</h4>
 
-        <p>
-            [ 3  4    2 ]<br>
-            [ 0  1.67 0.33 ]<br>
-            [ 0  0    -1 ]
-        </p>
+    <p>
+        Faktor:
+        l32 = 2.33 / 1.67 ≈ 1.5
+    </p>
 
-    </div>
+    <p>
+        Operasi:
+        R3 = R3 - 1.5R2
+    </p>
 
-    <div class="card card--soft">
+    <pre>
+[ 3  4     2 ]
+[ 0  1.67  0.33 ]
+[ 0  0    -1 ]
+    </pre>
 
-        <p><strong>Langkah 3: Selesaikan Ly = b</strong></p>
+    <p>
+        Ini adalah matriks U.
+    </p>
 
-        <p>
-            y₁ = 16<br>
-            0.33y₁ + y₂ = 8 → y₂ = 2.72<br>
-            0.67y₁ + 1.5y₂ + y₃ = 12 → y₃ = -3
-        </p>
+</div>
 
-    </div>
+<div class="card card--soft">
 
-    <div class="card card--soft">
+    <h4>Langkah 3: Matriks L</h4>
 
-        <p><strong>Langkah 4: Selesaikan Ux = y</strong></p>
+    <p>
+        L berisi semua faktor eliminasi yang digunakan:
+    </p>
 
-        <p>
-            -1x₃ = -3 → x₃ = 3<br>
-            1.67x₂ + 0.33x₃ = 2.72 → x₂ = -1<br>
-            3x₁ + 4x₂ + 2x₃ = 16 → x₁ = 2
-        </p>
+    <pre>
+[ 1   0   0 ]
+[ 0.33 1   0 ]
+[ 0.67 1.5 1 ]
+    </pre>
 
-    </div>
+</div>
 
-    <div class="card card--soft">
+<div class="card card--soft">
 
-        <p><strong>Hasil Akhir</strong></p>
+    <h4>Langkah 4: Selesaikan Ly = b</h4>
 
-        <p>
-            x₁ = 2<br>
-            x₂ = -1<br>
-            x₃ = 3
-        </p>
+    <p>
+        Kita mulai dari atas:
+    </p>
 
-    </div>
+    <p>
+        y₁ = 16<br>
+        0.33y₁ + y₂ = 8 → y₂ = 2.72<br>
+        0.67y₁ + 1.5y₂ + y₃ = 12 → y₃ = -3
+    </p>
 
-    <div class="card card--soft">
+</div>
 
-        <p><strong>Kesimpulan</strong></p>
+<div class="card card--soft">
 
-        <p>
-            Dekomposisi LU mempermudah penyelesaian SPL dengan memecah matriks
-            menjadi dua bagian yang lebih sederhana. Metode ini sangat efisien
-            untuk sistem besar atau perhitungan berulang.
-        </p>
+    <h4>Langkah 5: Selesaikan Ux = y</h4>
 
-    </div>
+    <p>
+        -1x₃ = -3 → x₃ = 3<br>
+        1.67x₂ + 0.33x₃ = 2.72 → x₂ = -1<br>
+        3x₁ + 4x₂ + 2x₃ = 16 → x₁ = 2
+    </p>
+
+</div>
+
+<div class="card card--soft">
+
+    <h4>Hasil Akhir</h4>
+
+    <p>
+        x₁ = 2<br>
+        x₂ = -1<br>
+        x₃ = 3
+    </p>
+
+</div>
+
+<div class="card card--soft">
+
+    <h4>Kesimpulan</h4>
+
+    <p>
+        LU decomposition menyederhanakan sistem persamaan linear dengan memecah
+        matriks A menjadi L dan U. Dengan cara ini, kita tidak perlu melakukan
+        eliminasi berulang kali dan perhitungan menjadi lebih efisien.
+    </p>
 
 </div>

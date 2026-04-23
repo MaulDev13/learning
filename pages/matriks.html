@@ -1,141 +1,286 @@
-<div class="card">
+<div class="card-group">
 
-    <h1>Operasi Matriks & Operasi Baris Elementer</h1>
+    <!-- CARD UTAMA -->
+    <div class="card card--soft">
 
-    <h5>Dasar penting untuk Eliminasi Gauss & LU Decomposition</h5>
+        <h1>Operasi Matriks & Operasi Baris Elementer</h1>
 
-    <p>
-        Operasi matriks adalah aturan dasar untuk mengolah matriks menggunakan
-        penjumlahan, pengurangan, dan perkalian skalar. Sedangkan operasi baris
-        elementer digunakan untuk mengubah bentuk matriks dalam menyelesaikan
-        sistem persamaan linear.
-    </p>
+        <p>
+            Operasi matriks adalah aturan dasar untuk mengolah matriks menggunakan
+            penjumlahan, pengurangan, dan perkalian skalar. Sedangkan operasi baris
+            elementer digunakan untuk mengubah bentuk matriks dalam menyelesaikan
+            sistem persamaan linear.
+        </p>
 
-    <hr>
+        <!-- SUB CARD GROUP -->
+        <div class="card-group">
 
-    <h3>1. Penjumlahan & Pengurangan Matriks</h3>
+            <!-- 1 -->
+            <div class="card card--soft">
 
-    <p>
-        Dua matriks hanya bisa dijumlahkan atau dikurangkan jika ukurannya sama.
-        Operasi dilakukan elemen yang seposisi.
-    </p>
+                <h3>1. Penjumlahan & Pengurangan Matriks</h3>
 
-    <pre>
+                <p>
+                    Dua matriks hanya bisa dijumlahkan atau dikurangkan jika ukurannya sama.
+                    Operasi dilakukan elemen yang seposisi.
+                </p>
+
+                <pre>
 A + B =
 [ a11 a12 ] + [ b11 b12 ] = [ a11+b11  a12+b12 ]
 [ a21 a22 ]   [ b21 b22 ]   [ a21+b21  a22+b22 ]
-    </pre>
+                </pre>
 
-    <p>
-        Contoh:
-        <br>
-        [1 2] + [3 4] = [4 6]
-    </p>
+                <p>
+                    Contoh:
+                    <br>
+                    [1 2] + [3 4] = [4 6]
+                </p>
 
-    <p>
-        ✔ Pengurangan juga dilakukan dengan cara yang sama:
-        <br>
-        [1 2] - [3 4] = [-2 -2]
-    </p>
+                <p>
+                    ✔ Pengurangan juga dilakukan dengan cara yang sama:
+                    <br>
+                    [1 2] - [3 4] = [-2 -2]
+                </p>
 
-    <hr>
+            </div>
 
-    <h3>2. Perkalian Skalar</h3>
+            <!-- 2 -->
+            <div class="card card--soft">
 
-    <p>
-        Setiap elemen matriks dikalikan dengan sebuah angka.
-    </p>
+                <h3>2. Perkalian Skalar</h3>
 
-    <pre>
+                <p>
+                    Setiap elemen matriks dikalikan dengan sebuah angka.
+                </p>
+
+                <pre>
 k · A =
 k [ a b ] = [ ka kb ]
   [ c d ]   [ kc kd ]
-    </pre>
+                </pre>
 
-    <p>
-        Contoh:
-        <br>
-        2 × [1 2] = [2 4]
-    </p>
+                <p>
+                    Contoh:
+                    <br>
+                    2 × [1 2] = [2 4]
+                </p>
 
-    <hr>
+            </div>
 
-    <h3>3. Perkalian Matriks</h3>
+            <!-- 3 -->
+            <div class="card card--soft">
 
-    <p>
-        Perkalian matriks dilakukan dengan aturan baris × kolom.
-    </p>
+                <h3>3. Perkalian Matriks</h3>
 
-    <pre>
+                <p>
+                    Perkalian matriks dilakukan dengan aturan baris × kolom.
+                </p>
+
+                <pre>
 A × B =
 [ a b ]   [ e f ]   [ a·e + b·g   a·f + b·h ]
 [ c d ] × [ g h ] = [ c·e + d·g   c·f + d·h ]
-    </pre>
+                </pre>
 
-    <hr>
+                <h4>Contoh Matriks 3×3</h4>
 
-    <h3>4. Operasi Baris Elementer</h3>
+                <pre>
+A × B =
+[ a b c ]   [ j k l ]
+[ d e f ] × [ m n o ]
+[ g h i ]   [ p q r ]
 
-    <p>
-        Digunakan dalam Eliminasi Gauss dan LU Decomposition untuk mengubah matriks
-        menjadi bentuk segitiga atas.
-    </p>
+=
+[ a·j + b·m + c·p   a·k + b·n + c·q   a·l + b·o + c·r ]
+[ d·j + e·m + f·p   d·k + e·n + f·q   d·l + e·o + f·r ]
+[ g·j + h·m + i·p   g·k + h·n + i·q   g·l + h·o + i·r ]
+                </pre>
 
-    <p>
-        Tiga operasi dasar:
-    </p>
+                <p>
+                    ✔ Pola tetap sama:
+                    <br>
+                    <b>baris × kolom</b>
+                </p>
 
-    <ul>
-        <li>1. Menukar baris → Ri ↔ Rj</li>
-        <li>2. Mengalikan baris → Ri = k × Ri</li>
-        <li>3. Mengurangi baris → Ri = Ri − kRj</li>
-    </ul>
+            </div>
 
-    <hr>
+        </div>
 
-    <h3>5. Penting: Peran Pembagian dalam Eliminasi</h3>
+        <!-- OPERASI BARIS ELEMENTER (KONSEP) -->
+        <div class="card-group">
 
-    <p>
-        Dalam eliminasi Gauss, pembagian <b>bukan operasi baris langsung</b>.
-        Pembagian hanya digunakan untuk mencari faktor pengali (m).
-    </p>
+            <div class="card card--soft">
 
-    <p>
-        Rumus:
-        <br>
-        <b>m = elemen bawah ÷ pivot</b>
-    </p>
+                <h3>4. Operasi Baris Elementer</h3>
 
-    <p>
-        Setelah itu digunakan operasi utama:
-        <br>
-        <b>Baris baru = Baris lama − m × Baris pivot</b>
-    </p>
+                <p>
+                    Operasi baris elementer adalah cara untuk mengubah bentuk matriks
+                    tanpa mengubah solusi dari sistem persamaan yang diwakilinya.
+                </p>
 
-    <p>
-        ✔ Jadi:
-        <br>
-        • Pembagian → hanya untuk mencari m  
-        <br>
-        • Perkalian → membuat kelipatan baris  
-        <br>
-        • Pengurangan → menghilangkan elemen  
-    </p>
+                <p>
+                    Intinya: walaupun angka di dalam matriks berubah, hasil akhirnya
+                    (solusi sistem) tetap sama.
+                </p>
 
-    <hr>
+                <div class="card card--soft">
 
-    <h3>6. Hubungan dengan LU Decomposition</h3>
+                    <p><strong>🔄 Apa itu Row Equivalence?</strong></p>
 
-    <p>
-        - Hasil eliminasi Gauss → matriks U  
-        <br>
-        - Nilai m (hasil pembagian) → disimpan di matriks L  
-    </p>
+                    <p>
+                        Dua matriks disebut <b>row equivalent</b> jika satu bisa diubah menjadi yang lain
+                        menggunakan operasi baris elementer.
+                    </p>
 
-    <p>
-        Sehingga:
-        <br>
-        <b>A = L × U</b>
-    </p>
+                    <ul>
+                        <li>Menukar baris ✔</li>
+                        <li>Mengalikan baris ✔</li>
+                        <li>Menjumlahkan / mengurangkan baris ✔</li>
+                    </ul>
+
+                    <p>
+                        ✔ Solusi tetap sama
+                    </p>
+
+                </div>
+
+                <div class="card card--soft">
+
+                    <p><strong>🧠 Kenapa solusi tidak berubah?</strong></p>
+
+                    <pre>
+x + y = 5
+2x + 3y = 8
+                    </pre>
+
+                    <p>R2 = R2 - 2R1</p>
+
+                    <pre>
+(2x + 3y) - 2(x + y)
+= y
+                    </pre>
+
+                    <pre>
+x + y = 5
+y = 3
+                    </pre>
+
+                </div>
+
+                <div class="card card--soft">
+
+                    <p><strong>💡 Intuisi</strong></p>
+
+                    <ul>
+                        <li>Kalimat dipersingkat</li>
+                        <li>Isi tetap sama</li>
+                        <li>Bentuk berubah</li>
+                    </ul>
+
+                </div>
+
+                <div class="card card--soft">
+
+                    <p><strong>⚖️ Balancer</strong></p>
+
+                    <p><b>row equivalence</b></p>
+
+                </div>
+
+                <div class="card card--soft">
+
+                    <p><strong>🔥 Kesimpulan</strong></p>
+
+                    <ul>
+                        <li>Matriks boleh berubah ✔</li>
+                        <li>Angka boleh berubah ✔</li>
+                        <li>Solusi tetap ✔</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- OPERASI BARIS ELEMENTER (DETAIL) -->
+        <div class="card-group">
+
+            <div class="card card--soft">
+
+                <h3>4. Operasi Baris Elementer (Detail)</h3>
+
+                <p>
+                    Operasi ini mengubah baris dengan aturan tertentu.
+                </p>
+
+                <div class="card card--soft">
+
+                    <p><strong>1. Menukar Baris</strong></p>
+
+                    <pre>
+[1 2]
+[3 4]
+
+→ tukar
+
+[3 4]
+[1 2]
+                    </pre>
+
+                </div>
+
+                <div class="card card--soft">
+
+                    <p><strong>2. Mengalikan Baris</strong></p>
+
+                    <pre>
+[1 2] → [2 4]
+                    </pre>
+
+                </div>
+
+                <div class="card card--soft">
+
+                    <p><strong>3. Mengurangi Baris</strong></p>
+
+                    <pre>
+k = 3
+
+R2 = R2 − 3R1
+= (0 -2)
+                    </pre>
+
+                </div>
+
+                <div class="card card--soft">
+
+                    <p><strong>💡 Intuisi</strong></p>
+
+                    <ul>
+                        <li>Target: nolkan angka</li>
+                        <li>k = bawah ÷ atas</li>
+                        <li>Ri = Ri − kRj</li>
+                    </ul>
+
+                </div>
+
+                <div class="card card--soft">
+
+                    <p><strong>🔥 Ringkasan</strong></p>
+
+                    <pre>
+k = bawah ÷ atas
+Ri = Ri − kRj
+                    </pre>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
