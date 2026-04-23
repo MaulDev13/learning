@@ -56,67 +56,137 @@
     <script src="js/script.js"></script>
 
     <script>
-        const API_BASE = document
-            .querySelector('meta[name="api-base"]')
-            .getAttribute("content");
+    /* =========================================================
+    CONFIG
+    ========================================================= */
+    const API_BASE = document
+        .querySelector('meta[name="api-base"]')
+        .getAttribute("content");
 
-        const BASE_PATH = (
-            location.hostname === "localhost" ||
-            location.hostname === "127.0.0.1"
-        ) ? "" : "/learning/";
+    const BASE_PATH = (
+        location.hostname === "localhost" ||
+        location.hostname === "127.0.0.1"
+    ) ? "" : "/learning/";
 
-        /* =========================================================
-           HTMX ROUTING
-           ========================================================= */
-        document.body.addEventListener("htmx:configRequest", function (event) {
-            let path = event.detail.path;
+    /* =========================================================
+    HTMX ROUTING
+    ========================================================= */
+    document.body.addEventListener("htmx:configRequest", function (event) {
+        let path = event.detail.path;
 
-            if (!path) return;
+        if (!path) return;
 
-            // API routing
-            if (path.startsWith("/api")) {
-                event.detail.path = API_BASE + path;
-                return;
-            }
-
-            // static routing
-            if (!path.startsWith("http")) {
-                event.detail.path = BASE_PATH + path;
-            }
-        });
-
-        /* =========================================================
-           NAV ACTIVE STATE (DESIGN SYSTEM FRIENDLY)
-           ========================================================= */
-        function setActive(button) {
-            document.querySelectorAll(".nav-btn")
-                .forEach(btn => btn.classList.remove("is-active"));
-
-            button.classList.add("is-active");
+        // API routing
+        if (path.startsWith("/api")) {
+            event.detail.path = API_BASE + path;
+            return;
         }
 
-        document.body.addEventListener("click", function (e) {
-            const btn = e.target.closest(".nav-btn");
-            if (btn) setActive(btn);
-        });
+        // static routing
+        if (!path.startsWith("http")) {
+            event.detail.path = BASE_PATH + path;
+        }
+    });
 
-        /* =========================================================
-           LOADING STATE (HTMX HOOKED)
-           ========================================================= */
-        const loadingEl = document.getElementById("loading");
+    /* =========================================================
+    NAV ACTIVE STATE
+    ========================================================= */
+    function setActive(button) {
+        document.querySelectorAll(".nav-btn")
+            .forEach(btn => btn.classList.remove("is-active"));
 
-        document.body.addEventListener("htmx:beforeRequest", () => {
-            loadingEl?.classList.remove("hidden");
-        });
+        button.classList.add("is-active");
+    }
 
-        document.body.addEventListener("htmx:afterRequest", () => {
-            loadingEl?.classList.add("hidden");
-        });
+    document.body.addEventListener("click", function (e) {
+        const btn = e.target.closest(".nav-btn");
+        if (btn) setActive(btn);
+    });
 
-        document.body.addEventListener("htmx:responseError", () => {
-            loadingEl?.classList.add("hidden");
+    /* =========================================================
+    DROPDOWN SYSTEM (STABLE + HTMX SAFE)
+    ========================================================= */
+    function initDropdown() {
+        const dropdowns = document.querySelectorAll('.nav-dropdown');
+
+        dropdowns.forEach(dropdown => {
+            const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+
+            if (!toggle) return;
+
+            // prevent double binding
+            if (toggle.dataset.bound === "true") return;
+            toggle.dataset.bound = "true";
+
+            toggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+
+                const isOpen = dropdown.classList.contains('open');
+
+                // close all
+                document.querySelectorAll('.nav-dropdown')
+                    .forEach(d => d.classList.remove('open'));
+
+                // toggle current
+                if (!isOpen) {
+                    dropdown.classList.add('open');
+                }
+            });
         });
-    </script>
+    }
+
+    /* =========================================================
+    CLOSE DROPDOWN ON OUTSIDE CLICK (ONLY ONCE)
+    ========================================================= */
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.nav-dropdown')
+            .forEach(d => d.classList.remove('open'));
+    });
+
+    /* =========================================================
+    CLOSE ON ESC KEY (UX IMPROVEMENT)
+    ========================================================= */
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape") {
+            document.querySelectorAll('.nav-dropdown')
+                .forEach(d => d.classList.remove('open'));
+        }
+    });
+
+    /* =========================================================
+    LOADING STATE (HTMX)
+    ========================================================= */
+    const loadingEl = document.getElementById("loading");
+
+    document.body.addEventListener("htmx:beforeRequest", () => {
+        loadingEl?.classList.remove("hidden");
+    });
+
+    document.body.addEventListener("htmx:afterRequest", () => {
+        loadingEl?.classList.add("hidden");
+    });
+
+    document.body.addEventListener("htmx:responseError", () => {
+        loadingEl?.classList.add("hidden");
+    });
+
+    /* =========================================================
+    INIT SYSTEM (SAFE FOR HTMX RELOAD)
+    ========================================================= */
+    function initApp() {
+        initDropdown();
+    }
+
+    /* first load */
+    document.addEventListener("DOMContentLoaded", initApp);
+
+    /* re-init after HTMX swap (navbar reload safety) */
+    document.body.addEventListener("htmx:afterSwap", (e) => {
+        if (e.target.closest('nav')) {
+            initDropdown();
+        }
+    });
+</script>
 
 </body>
 </html>

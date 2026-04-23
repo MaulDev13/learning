@@ -1,0 +1,98 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 3 (Metode LU)</h3>
+
+    <p>
+        Sistem ini diselesaikan menggunakan metode dekomposisi LU,
+        yaitu memfaktorkan matriks A menjadi matriks L dan U.
+    </p>
+
+    <p class="text-meta">
+        Metode: Dekomposisi LU
+    </p>
+
+    <div class="card card--soft">
+
+        <p><strong>Sistem Persamaan</strong></p>
+
+        <p>
+            4x₁ + x₂ + x₃ = 7<br>
+            x₁ + 5x₂ + x₃ = 8<br>
+            x₁ + x₂ + 6x₃ = 9
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Matriks A</strong></p>
+
+        <p>
+            [ 4  1  1 ]<br>
+            [ 1  5  1 ]<br>
+            [ 1  1  6 ]
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Dekomposisi LU</strong></p>
+
+        <p>
+            L =
+            [ 1    0    0 ]<br>
+            [ 0.25 1    0 ]<br>
+            [ 0.25 0.158 1 ]
+        </p>
+
+        <p>
+            U =
+            [ 4    1    1 ]<br>
+            [ 0   4.75 0.75 ]<br>
+            [ 0    0   5.632 ]
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Penyelesaian Ly = b</strong></p>
+
+        <p>
+            y₁ = 7<br>
+            y₂ = 8 - 0.25(7) = 6.25<br>
+            y₃ = 9 - 0.25(7) - 0.158(6.25) ≈ 6.2625
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Penyelesaian Ux = y</strong></p>
+
+        <p>
+            5.632x₃ = 6.2625 → x₃ ≈ 1.111<br>
+            4.75x₂ + 0.75x₃ = 6.25 → x₂ ≈ 1.143<br>
+            4x₁ + x₂ + x₃ = 7 → x₁ ≈ 1.186
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Hasil Akhir</strong></p>
+
+        <p>
+            x₁ ≈ 1.186<br>
+            x₂ ≈ 1.143<br>
+            x₃ ≈ 1.111
+        </p>
+
+        <p>
+            Metode LU memberikan solusi stabil dan akurat.
+        </p>
+
+    </div>
+
+</div>

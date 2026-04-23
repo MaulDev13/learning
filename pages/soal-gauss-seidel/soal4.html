@@ -1,0 +1,100 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 4 (Metode Gauss-Seidel)</h3>
+
+    <p>
+        Metode Gauss-Seidel menggunakan nilai terbaru pada setiap langkah iterasi,
+        sehingga biasanya lebih cepat konvergen dibanding Jacobi.
+    </p>
+
+    <p class="text-meta">
+        Metode: Iterasi Gauss-Seidel
+    </p>
+
+    <p class="text-meta">
+        Tebakan awal: (0, 0, 0)
+    </p>
+
+    <div class="card card--soft">
+
+        <p><strong>Bentuk Iterasi</strong></p>
+
+        <p>
+            x₁ = (5 + x₂ − x₃) / 12<br>
+            x₂ = (10 + x₁ + x₃) / 9<br>
+            x₃ = (7 − x₁ + x₂) / 8
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Proses Iterasi</strong></p>
+
+        <p>
+            Iterasi 0: (0, 0, 0)
+        </p>
+
+        <p>
+            Iterasi 1:<br>
+            x₁ ≈ 0.417<br>
+            x₂ ≈ 1.157<br>
+            x₃ ≈ 0.967<br>
+            → (0.417, 1.157, 0.967)
+        </p>
+
+        <p>
+            Iterasi 2:<br>
+            x₁ ≈ 0.432<br>
+            x₂ ≈ 1.267<br>
+            x₃ ≈ 0.980
+        </p>
+
+        <p>
+            Iterasi 3:<br>
+            x₁ ≈ 0.440<br>
+            x₂ ≈ 1.269<br>
+            x₃ ≈ 0.978
+        </p>
+
+        <p>
+            Iterasi 4:<br>
+            x₁ ≈ 0.441<br>
+            x₂ ≈ 1.270<br>
+            x₃ ≈ 0.978
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Analisis Konvergensi</strong></p>
+
+        <p>
+            Nilai iterasi cepat menuju nilai tetap.
+        </p>
+
+        <p>
+            Sistem memenuhi dominasi diagonal sehingga metode
+            <strong>konvergen</strong>.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Hasil Akhir</strong></p>
+
+        <p>
+            x₁ ≈ 0.441<br>
+            x₂ ≈ 1.270<br>
+            x₃ ≈ 0.978
+        </p>
+
+        <p>
+            Hasil sesuai dengan metode LU.
+        </p>
+
+    </div>
+
+</div>

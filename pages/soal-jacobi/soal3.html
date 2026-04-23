@@ -1,0 +1,92 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 3 (Metode Jacobi)</h3>
+
+    <p>
+        Sistem persamaan linear ini diselesaikan menggunakan metode Jacobi,
+        yaitu metode iteratif untuk mencari solusi pendekatan dari SPL.
+    </p>
+
+    <p class="text-meta">
+        Metode: Iterasi Jacobi
+    </p>
+
+    <p class="text-meta">
+        Tebakan awal: (0, 0, 0)
+    </p>
+
+    <div class="card card--soft">
+
+        <p><strong>Sistem Persamaan</strong></p>
+
+        <p>
+            4x₁ + x₂ + x₃ = 7<br>
+            x₁ + 5x₂ + x₃ = 8<br>
+            x₁ + x₂ + 6x₃ = 9
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Bentuk Iterasi Jacobi</strong></p>
+
+        <p>
+            x₁ = (7 − x₂ − x₃) / 4<br>
+            x₂ = (8 − x₁ − x₃) / 5<br>
+            x₃ = (9 − x₁ − x₂) / 6
+        </p>
+
+        <p>
+            Setiap nilai x dihitung menggunakan nilai dari iterasi sebelumnya (tidak langsung diperbarui dalam iterasi yang sama).
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Proses Iterasi</strong></p>
+
+        <p>
+            Iterasi 0: (0, 0, 0)<br>
+            Iterasi 1: (1.750, 1.600, 1.500)<br>
+            Iterasi 2: (1.475, 1.350, 1.458)<br>
+            Iterasi 3: (1.548, 1.400, 1.411)<br>
+            Iterasi 4: (1.547, 1.401, 1.408)<br>
+            Iterasi 5: (1.547, 1.401, 1.408)
+        </p>
+
+        <p>
+            Nilai mulai stabil setelah beberapa iterasi.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Analisis Konvergensi</strong></p>
+
+        <p>
+            Nilai iterasi semakin mendekati nilai tetap dan tidak divergen.
+        </p>
+
+        <p>
+            Hal ini menunjukkan bahwa metode Jacobi <strong>konvergen</strong>
+            untuk sistem ini karena matriks memenuhi dominasi diagonal.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Hasil Akhir (Pendekatan)</strong></p>
+
+        <p>
+            x₁ ≈ 1.547<br>
+            x₂ ≈ 1.401<br>
+            x₃ ≈ 1.408
+        </p>
+
+    </div>
+
+</div>

@@ -1,0 +1,100 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 7 (Metode Gauss-Seidel)</h3>
+
+    <p>
+        Metode Gauss-Seidel menggunakan nilai terbaru dalam setiap iterasi,
+        dan konvergen dengan cepat pada sistem ini.
+    </p>
+
+    <p class="text-meta">
+        Metode: Iterasi Gauss-Seidel
+    </p>
+
+    <p class="text-meta">
+        Tebakan awal: (0, 0, 0)
+    </p>
+
+    <div class="card card--soft">
+
+        <p><strong>Bentuk Iterasi</strong></p>
+
+        <p>
+            x₁ = (20 − x₂ − x₃) / 9<br>
+            x₂ = (18 − x₁ + x₃) / 8<br>
+            x₃ = (16 − 2x₁ + x₂) / 7
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Proses Iterasi</strong></p>
+
+        <p>
+            Iterasi 0: (0, 0, 0)
+        </p>
+
+        <p>
+            Iterasi 1:<br>
+            x₁ ≈ 2.222<br>
+            x₂ ≈ 1.972<br>
+            x₃ ≈ 1.932<br>
+            → (2.222, 1.972, 1.932)
+        </p>
+
+        <p>
+            Iterasi 2:<br>
+            x₁ ≈ 1.788<br>
+            x₂ ≈ 2.268<br>
+            x₃ ≈ 2.099
+        </p>
+
+        <p>
+            Iterasi 3:<br>
+            x₁ ≈ 1.737<br>
+            x₂ ≈ 2.277<br>
+            x₃ ≈ 2.100
+        </p>
+
+        <p>
+            Iterasi 4:<br>
+            x₁ ≈ 1.736<br>
+            x₂ ≈ 2.277<br>
+            x₃ ≈ 2.099
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Analisis Konvergensi</strong></p>
+
+        <p>
+            Nilai iterasi cepat menuju nilai tetap.
+        </p>
+
+        <p>
+            Sistem memenuhi dominasi diagonal sehingga
+            <strong>konvergen</strong>.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Hasil Akhir</strong></p>
+
+        <p>
+            x₁ ≈ 1.736<br>
+            x₂ ≈ 2.277<br>
+            x₃ ≈ 2.099
+        </p>
+
+        <p>
+            Hasil sesuai dengan metode LU.
+        </p>
+
+    </div>
+
+</div>

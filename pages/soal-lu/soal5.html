@@ -1,0 +1,98 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 5 (Metode LU)</h3>
+
+    <p>
+        Sistem ini diselesaikan menggunakan metode dekomposisi LU,
+        dengan memfaktorkan matriks A menjadi matriks L dan U.
+    </p>
+
+    <p class="text-meta">
+        Metode: Dekomposisi LU
+    </p>
+
+    <div class="card card--soft">
+
+        <p><strong>Sistem Persamaan</strong></p>
+
+        <p>
+            5x₁ + 2x₂ + x₃ = 12<br>
+            2x₁ + 6x₂ + x₃ = 15<br>
+            x₁ + x₂ + 7x₃ = 20
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Matriks A</strong></p>
+
+        <p>
+            [ 5  2  1 ]<br>
+            [ 2  6  1 ]<br>
+            [ 1  1  7 ]
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Dekomposisi LU</strong></p>
+
+        <p>
+            L =
+            [ 1    0    0 ]<br>
+            [ 0.4  1    0 ]<br>
+            [ 0.2  0.077 1 ]
+        </p>
+
+        <p>
+            U =
+            [ 5    2     1 ]<br>
+            [ 0   5.2   0.6 ]<br>
+            [ 0    0    6.754 ]
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Penyelesaian Ly = b</strong></p>
+
+        <p>
+            y₁ = 12<br>
+            y₂ = 15 - 0.4(12) = 10.2<br>
+            y₃ = 20 - 0.2(12) - 0.077(10.2) ≈ 16.81
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Penyelesaian Ux = y</strong></p>
+
+        <p>
+            6.754x₃ = 16.81 → x₃ ≈ 2.489<br>
+            5.2x₂ + 0.6x₃ = 10.2 → x₂ ≈ 1.677<br>
+            5x₁ + 2x₂ + x₃ = 12 → x₁ ≈ 1.231
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Hasil Akhir</strong></p>
+
+        <p>
+            x₁ ≈ 1.231<br>
+            x₂ ≈ 1.677<br>
+            x₃ ≈ 2.489
+        </p>
+
+        <p>
+            Metode LU memberikan solusi stabil dan akurat.
+        </p>
+
+    </div>
+
+</div>

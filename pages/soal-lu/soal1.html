@@ -1,0 +1,103 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 1 (Metode LU)</h3>
+
+    <p>
+        Sistem persamaan linear ini diselesaikan menggunakan dekomposisi LU,
+        yaitu metode langsung dengan memfaktorkan matriks A menjadi L (lower)
+        dan U (upper).
+    </p>
+
+    <p class="text-meta">
+        Metode: Dekomposisi LU
+    </p>
+
+    <div class="card card--soft">
+
+        <p><strong>Sistem Persamaan</strong></p>
+
+        <p>
+            8x₁ + x₂ − x₃ = 8<br>
+            2x₁ + x₂ + 9x₃ = 12<br>
+            x₁ − 7x₂ + 2x₃ = -4
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Matriks A</strong></p>
+
+        <p>
+            [ 8   1  -1 ]<br>
+            [ 2   1   9 ]<br>
+            [ 1  -7   2 ]
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Dekomposisi LU</strong></p>
+
+        <p>
+            A = L · U
+        </p>
+
+        <p>
+            L =
+            [ 1   0   0 ]<br>
+            [ 0.25 1   0 ]<br>
+            [ 0.125 -6  1 ]
+        </p>
+
+        <p>
+            U =
+            [ 8   1   -1 ]<br>
+            [ 0   0.75 9.25 ]<br>
+            [ 0   0   57.5 ]
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Penyelesaian Ly = b</strong></p>
+
+        <p>
+            y₁ = 8<br>
+            y₂ = 12 - 0.25(8) = 10<br>
+            y₃ = -4 - 0.125(8) + 6(10) = 55
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Penyelesaian Ux = y</strong></p>
+
+        <p>
+            57.5x₃ = 55 → x₃ ≈ 0.957<br>
+            0.75x₂ + 9.25x₃ = 10 → x₂ ≈ 1.523<br>
+            8x₁ + x₂ - x₃ = 8 → x₁ ≈ 0.929
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Hasil Akhir</strong></p>
+
+        <p>
+            x₁ ≈ 0.929<br>
+            x₂ ≈ 1.523<br>
+            x₃ ≈ 0.957
+        </p>
+
+        <p>
+            Metode LU memberikan solusi eksak (hingga pembulatan).
+        </p>
+
+    </div>
+
+</div>

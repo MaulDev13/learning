@@ -1,0 +1,93 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 2 (Metode Gauss-Seidel)</h3>
+
+    <p>
+        Metode Gauss-Seidel menggunakan nilai terbaru dalam setiap iterasi,
+        sehingga biasanya lebih cepat konvergen dibanding Jacobi.
+    </p>
+
+    <p class="text-meta">
+        Metode: Iterasi Gauss-Seidel
+    </p>
+
+    <p class="text-meta">
+        Tebakan awal: (0, 0, 0)
+    </p>
+
+    <div class="card card--soft">
+
+        <p><strong>Bentuk Iterasi</strong></p>
+
+        <p>
+            x₁ = (6 + x₂ − 2x₃) / 10<br>
+            x₂ = (25 + x₁ + x₃) / 11<br>
+            x₃ = (-11 − 2x₁ + x₂) / 10
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Proses Iterasi</strong></p>
+
+        <p>
+            Iterasi 0: (0, 0, 0)
+        </p>
+
+        <p>
+            Iterasi 1:<br>
+            x₁ = 0.6<br>
+            x₂ ≈ 2.327<br>
+            x₃ ≈ -0.987<br>
+            → (0.6, 2.327, -0.987)
+        </p>
+
+        <p>
+            Iterasi 2:<br>
+            x₁ ≈ 1.030<br>
+            x₂ ≈ 2.276<br>
+            x₃ ≈ -1.078
+        </p>
+
+        <p>
+            Iterasi 3:<br>
+            x₁ ≈ 1.043<br>
+            x₂ ≈ 2.281<br>
+            x₃ ≈ -1.060
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Analisis Konvergensi</strong></p>
+
+        <p>
+            Nilai iterasi cepat mendekati nilai tetap.
+        </p>
+
+        <p>
+            Sistem memenuhi dominasi diagonal sehingga metode
+            <strong>konvergen</strong>.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Hasil Akhir</strong></p>
+
+        <p>
+            x₁ ≈ 1.043<br>
+            x₂ ≈ 2.281<br>
+            x₃ ≈ -1.060
+        </p>
+
+        <p>
+            Hasil konsisten dengan metode LU.
+        </p>
+
+    </div>
+
+</div>

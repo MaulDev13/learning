@@ -1,0 +1,92 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 1 (Metode Gauss-Seidel)</h3>
+
+    <p>
+        Metode Gauss-Seidel adalah metode iteratif yang mirip dengan Jacobi,
+        tetapi menggunakan nilai terbaru yang sudah dihitung dalam iterasi yang sama.
+    </p>
+
+    <p class="text-meta">
+        Metode: Iterasi Gauss-Seidel
+    </p>
+
+    <p class="text-meta">
+        Tebakan awal: (0, 0, 0)
+    </p>
+
+    <div class="card card--soft">
+
+        <p><strong>Bentuk Iterasi</strong></p>
+
+        <p>
+            x₁ = (8 − x₂ + x₃) / 8<br>
+            x₂ = 12 − 2x₁ − 9x₃<br>
+            x₃ = (−4 − x₁ + 7x₂) / 2
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Proses Iterasi</strong></p>
+
+        <p>
+            Iterasi 0: (0, 0, 0)
+        </p>
+
+        <p>
+            Iterasi 1:<br>
+            x₁ = 1<br>
+            x₂ = 10<br>
+            x₃ = 32.5<br>
+            → (1, 10, 32.5)
+        </p>
+
+        <p>
+            Iterasi 2:<br>
+            x₁ ≈ 3.0625<br>
+            x₂ ≈ -280.625<br>
+            x₃ ≈ -998.72
+        </p>
+
+        <p>
+            Iterasi 3:<br>
+            Nilai semakin membesar (tidak stabil)
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Analisis Konvergensi</strong></p>
+
+        <p>
+            Nilai iterasi semakin besar dan tidak mendekati nilai tetap.
+        </p>
+
+        <p>
+            Hal ini menunjukkan metode Gauss-Seidel juga <strong>tidak konvergen</strong>.
+        </p>
+
+        <p>
+            Penyebabnya sama seperti metode Jacobi,
+            yaitu tidak terpenuhinya syarat dominasi diagonal.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Kesimpulan</strong></p>
+
+        <p>
+            • Metode Gauss-Seidel tidak konvergen<br>
+            • Iterasi tidak stabil<br>
+            • Sistem tidak memenuhi dominasi diagonal<br>
+            • Metode iteratif tidak cocok untuk sistem ini
+        </p>
+
+    </div>
+
+</div>

@@ -1,0 +1,100 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 8 (Metode Gauss-Seidel)</h3>
+
+    <p>
+        Metode Gauss-Seidel tetap konvergen pada sistem ini,
+        meskipun kecepatannya sedikit lebih lambat dibanding soal sebelumnya.
+    </p>
+
+    <p class="text-meta">
+        Metode: Iterasi Gauss-Seidel
+    </p>
+
+    <p class="text-meta">
+        Tebakan awal: (0, 0, 0)
+    </p>
+
+    <div class="card card--soft">
+
+        <p><strong>Bentuk Iterasi</strong></p>
+
+        <p>
+            x₁ = (10 − x₂ + x₃) / 6<br>
+            x₂ = (14 − x₁ − x₃) / 7<br>
+            x₃ = (12 − x₁ + x₂) / 6
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Proses Iterasi</strong></p>
+
+        <p>
+            Iterasi 0: (0, 0, 0)
+        </p>
+
+        <p>
+            Iterasi 1:<br>
+            x₁ ≈ 1.667<br>
+            x₂ ≈ 1.619<br>
+            x₃ ≈ 1.992<br>
+            → (1.667, 1.619, 1.992)
+        </p>
+
+        <p>
+            Iterasi 2:<br>
+            x₁ ≈ 1.729<br>
+            x₂ ≈ 1.468<br>
+            x₃ ≈ 2.040
+        </p>
+
+        <p>
+            Iterasi 3:<br>
+            x₁ ≈ 1.762<br>
+            x₂ ≈ 1.457<br>
+            x₃ ≈ 2.049
+        </p>
+
+        <p>
+            Iterasi 4:<br>
+            x₁ ≈ 1.765<br>
+            x₂ ≈ 1.467<br>
+            x₃ ≈ 2.055
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Analisis Konvergensi</strong></p>
+
+        <p>
+            Nilai iterasi menuju solusi tetap secara bertahap.
+        </p>
+
+        <p>
+            Sistem memenuhi dominasi diagonal sehingga
+            <strong>konvergen</strong>.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Hasil Akhir</strong></p>
+
+        <p>
+            x₁ ≈ 1.765<br>
+            x₂ ≈ 1.467<br>
+            x₃ ≈ 2.055
+        </p>
+
+        <p>
+            Hasil sesuai dengan metode LU.
+        </p>
+
+    </div>
+
+</div>

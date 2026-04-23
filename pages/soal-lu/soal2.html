@@ -1,0 +1,98 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 2 (Metode LU)</h3>
+
+    <p>
+        Sistem ini diselesaikan menggunakan metode dekomposisi LU,
+        yaitu memfaktorkan matriks A menjadi matriks L dan U.
+    </p>
+
+    <p class="text-meta">
+        Metode: Dekomposisi LU
+    </p>
+
+    <div class="card card--soft">
+
+        <p><strong>Sistem Persamaan</strong></p>
+
+        <p>
+            10x₁ − x₂ + 2x₃ = 6<br>
+            −x₁ + 11x₂ − x₃ = 25<br>
+            2x₁ − x₂ + 10x₃ = -11
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Matriks A</strong></p>
+
+        <p>
+            [ 10  -1   2 ]<br>
+            [ -1  11  -1 ]<br>
+            [ 2   -1  10 ]
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Dekomposisi LU</strong></p>
+
+        <p>
+            L =
+            [ 1     0      0 ]<br>
+            [ -0.1  1      0 ]<br>
+            [ 0.2  -0.073  1 ]
+        </p>
+
+        <p>
+            U =
+            [ 10  -1    2 ]<br>
+            [ 0  10.9  -0.8 ]<br>
+            [ 0   0    9.742 ]
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Penyelesaian Ly = b</strong></p>
+
+        <p>
+            y₁ = 6<br>
+            y₂ = 25 + 0.1(6) = 25.6<br>
+            y₃ = -11 - 0.2(6) + 0.073(25.6) ≈ -10.33
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Penyelesaian Ux = y</strong></p>
+
+        <p>
+            9.742x₃ = -10.33 → x₃ ≈ -1.060<br>
+            10.9x₂ − 0.8x₃ = 25.6 → x₂ ≈ 2.281<br>
+            10x₁ − x₂ + 2x₃ = 6 → x₁ ≈ 1.043
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Hasil Akhir</strong></p>
+
+        <p>
+            x₁ ≈ 1.043<br>
+            x₂ ≈ 2.281<br>
+            x₃ ≈ -1.060
+        </p>
+
+        <p>
+            Metode LU memberikan solusi yang stabil dan akurat.
+        </p>
+
+    </div>
+
+</div>

@@ -301,6 +301,72 @@ p {
 }
 
 /* =========================================================
+   DROPDOWN NAV
+   ========================================================= */
+
+.nav-dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+/* default hidden */
+.nav-dropdown-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+
+	min-width: 180px;
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-md);
+	box-shadow: var(--shadow-md);
+
+	padding: var(--space-sm);
+
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xs);
+
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(8px);
+
+	transition: .2s ease;
+
+	pointer-events: none; /* IMPORTANT */
+	z-index: 1000;
+}
+
+/* ACTIVE STATE (CLICK ONLY) */
+.nav-dropdown.open .nav-dropdown-menu {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+	pointer-events: auto; /* IMPORTANT */
+}
+
+/* dropdown item */
+.nav-dropdown-item {
+	background: none;
+	border: none;
+	text-align: left;
+
+	padding: var(--space-sm);
+	font-size: var(--text-sm);
+	color: var(--text-meta);
+
+	cursor: pointer;
+	border-radius: var(--radius-sm);
+
+	width: 100%;
+}
+
+.nav-dropdown-item:hover {
+	background: var(--primary-soft);
+	color: var(--text-title);
+}
+
+/* =========================================================
    TAGS
    ========================================================= */
 .tag-group {

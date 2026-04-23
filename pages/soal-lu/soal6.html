@@ -1,0 +1,98 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 6 (Metode LU)</h3>
+
+    <p>
+        Sistem ini diselesaikan menggunakan metode dekomposisi LU,
+        dengan memfaktorkan matriks A menjadi matriks L dan U.
+    </p>
+
+    <p class="text-meta">
+        Metode: Dekomposisi LU
+    </p>
+
+    <div class="card card--soft">
+
+        <p><strong>Sistem Persamaan</strong></p>
+
+        <p>
+            3x₁ − x₂ + x₃ = 4<br>
+            x₁ + 4x₂ − x₃ = 5<br>
+            x₁ − x₂ + 5x₃ = 6
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Matriks A</strong></p>
+
+        <p>
+            [ 3  -1   1 ]<br>
+            [ 1   4  -1 ]<br>
+            [ 1  -1   5 ]
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Dekomposisi LU</strong></p>
+
+        <p>
+            L =
+            [ 1     0     0 ]<br>
+            [ 0.333 1     0 ]<br>
+            [ 0.333 -0.091 1 ]
+        </p>
+
+        <p>
+            U =
+            [ 3   -1    1 ]<br>
+            [ 0   4.333 -1.333 ]<br>
+            [ 0    0    4.545 ]
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Penyelesaian Ly = b</strong></p>
+
+        <p>
+            y₁ = 4<br>
+            y₂ = 5 - 0.333(4) ≈ 3.667<br>
+            y₃ = 6 - 0.333(4) + 0.091(3.667) ≈ 5.00
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Penyelesaian Ux = y</strong></p>
+
+        <p>
+            4.545x₃ = 5 → x₃ ≈ 1.100<br>
+            4.333x₂ − 1.333x₃ = 3.667 → x₂ ≈ 1.200<br>
+            3x₁ − x₂ + x₃ = 4 → x₁ ≈ 1.367
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Hasil Akhir</strong></p>
+
+        <p>
+            x₁ ≈ 1.367<br>
+            x₂ ≈ 1.200<br>
+            x₃ ≈ 1.100
+        </p>
+
+        <p>
+            Metode LU memberikan solusi stabil.
+        </p>
+
+    </div>
+
+</div>
