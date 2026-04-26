@@ -1,75 +1,42 @@
 <nav class="navbar">
     <div class="nav-inner">
-        <div class="nav-group">
 
-            <button class="nav-btn is-active"
-                hx-get="/pages/home.html"
-                hx-target="#content"
-                hx-swap="innerHTML"
-                hx-indicator="#loading">
-                Home
-            </button>
-
-            <button class="nav-btn"
-                hx-get="/pages/matriks.html"
-                hx-target="#content"
-                hx-swap="innerHTML"
-                hx-indicator="#loading">
-                Matriks
-            </button>
-
-            <button class="nav-btn"
-                hx-get="/pages/lu.html"
-                hx-target="#content"
-                hx-swap="innerHTML"
-                hx-indicator="#loading">
-                LU
-            </button>
-
-            <!-- DROPDOWN -->
-            <div class="nav-dropdown">
-
-                <button class="nav-btn nav-dropdown-toggle" type="button">
-                    Metode Iteratif ▾
-                </button>
-
-                <div class="nav-dropdown-menu">
-
-                    <button class="nav-dropdown-item nav-btn"
-                        hx-get="/pages/jacobi.html"
-                        hx-target="#content"
-                        hx-swap="innerHTML"
-                        hx-indicator="#loading">
-                        Jacobi
-                    </button>
-
-                    <button class="nav-dropdown-item nav-btn"
-                        hx-get="/pages/gauss-seidel.html"
-                        hx-target="#content"
-                        hx-swap="innerHTML"
-                        hx-indicator="#loading">
-                        Gauss Seidel
-                    </button>
-
-                </div>
-            </div>
-
-            <button class="nav-btn"
-                hx-get="/pages/quest-jacobi.html"
-                hx-target="#content"
-                hx-swap="innerHTML"
-                hx-indicator="#loading">
-                Soal
-            </button>
-
-            <button class="nav-btn"
-                hx-get="/pages/test-jacobi.html"
-                hx-target="#content"
-                hx-swap="innerHTML"
-                hx-indicator="#loading">
-                Implementasi
-            </button>
-
+        <!-- LEFT -->
+        <div class="nav-group nav-left">
+            <a class="nav-btn" href="../../">Maul Dev</a>
         </div>
+
+        <!-- CENTER -->
+        <div class="nav-group nav-center">
+            <a class="nav-btn"
+                hx-get="../../pages/home.html"
+                hx-target="#content"
+                hx-swap="innerHTML">
+                Home
+            </a>
+            <a class="nav-btn"
+                hx-get="../../subject/metode-numerik.html"
+                hx-target="#content"
+                hx-swap="innerHTML">
+                Metode Numerik
+            </a>
+            <a class="nav-btn"
+                hx-get="../../subject/komputasi-dasar.html"
+                hx-target="#content"
+                hx-swap="innerHTML">
+                Komputasi Dasar
+            </a>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="nav-group">
+            <div 
+                id="nav-subject"
+                hx-get="components/nav-subject.html"
+                hx-trigger="load"
+                hx-swap="innerHTML">
+            </div>
+        </div>
+
     </div>
 </nav>

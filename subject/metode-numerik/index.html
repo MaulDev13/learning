@@ -2,56 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Metode Numerik</title>
+    <title>Maul Dev</title>
 
+    <base href="/learning/subject/metode-numerik/">
+
+    <!-- relative to THIS file -->
+    <link rel="icon" href="../../assets/favicon.ico">
     <link rel="stylesheet" href="../../css/style.css">
+
+    <meta name="api-base" content="https://simple-go-production.up.railway.app">
+
     <script src="https://unpkg.com/htmx.org@1.9.12"></script>
 </head>
 
 <body>
-
     <div class="container content-center page-stack">
 
-        <!-- NAVBAR -->
         <nav
-            hx-get="../../components/navbar.html"
+            hx-get="components/navbar.html"
             hx-trigger="load"
             hx-swap="innerHTML">
         </nav>
 
         <main class="page-stack">
 
-            <h1>Metode Numerik</h1>
-
-            <!-- SUB NAV -->
-            <div class="nav-group">
-                <button class="nav-btn"
-                    hx-get="matriks.html"
-                    hx-target="#content">
-                    Matriks
-                </button>
-
-                <button class="nav-btn"
-                    hx-get="lu.html"
-                    hx-target="#content">
-                    LU
-                </button>
-
-                <button class="nav-btn"
-                    hx-get="jacobi.html"
-                    hx-target="#content">
-                    Jacobi
-                </button>
+            <div id="loading" class="hidden">
+                <p class="text-meta">Loading...</p>
             </div>
 
-            <!-- CONTENT -->
-            <section id="content">
-                <p>Pilih materi Metode Numerik.</p>
+            <section id="content"
+                hx-get="pages/home.html"
+                hx-trigger="load"
+                hx-swap="innerHTML">
             </section>
 
         </main>
 
+        <footer style="text-align:center;">
+            <p class="text-meta">
+                Architecture: HTMX + Vanilla JS<br>
+            </p>
+        </footer>
+
     </div>
 
+    <script type="module" src="../../js/app.js"></script>
 </body>
 </html>
