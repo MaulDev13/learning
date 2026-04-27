@@ -1,0 +1,225 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Implementasi PDB di Python</h3>
+
+        <p>
+            Persamaan Diferensial Biasa (PDB) dapat diselesaikan secara numerik
+            menggunakan metode iteratif dalam Python.
+        </p>
+
+        <p>
+            Tujuannya adalah menghitung pendekatan nilai fungsi y(x)
+            pada titik-titik tertentu ketika solusi eksak sulit diperoleh.
+        </p>
+
+    </div>
+
+    <!-- KONSEP UMUM -->
+    <div class="card card--soft">
+
+        <h3>Konsep Implementasi</h3>
+
+        <p>
+            Semua metode PDB numerik memiliki pola umum:
+        </p>
+
+        <p>
+            • Diketahui: dy/dx = f(x, y)<br>
+            • Diketahui kondisi awal y(x₀) = y₀<br>
+            • Gunakan step size h<br>
+            • Lakukan iterasi untuk mencari nilai berikutnya
+        </p>
+
+    </div>
+
+    <!-- EULER -->
+    <div class="card card--soft">
+
+        <h3>Metode Euler</h3>
+
+        <p>
+            Rumus:
+            yₙ₊₁ = yₙ + h f(xₙ, yₙ)
+        </p>
+
+        <p>
+            Implementasi Python:
+        </p>
+
+        <p>
+            <pre>
+def f(x, y):
+    return x + y
+
+x = 0
+y = 1
+h = 0.1
+
+for i in range(10):
+    y = y + h * f(x, y)
+    x = x + h
+    print(x, y)
+            </pre>
+        </p>
+
+    </div>
+
+    <!-- HEUN -->
+    <div class="card card--soft">
+
+        <h3>Metode Heun (Improved Euler)</h3>
+
+        <p>
+            Menggunakan rata-rata slope awal dan prediksi.
+        </p>
+
+        <p>
+            Implementasi Python:
+        </p>
+
+        <p>
+            <pre>
+def f(x, y):
+    return x + y
+
+x = 0
+y = 1
+h = 0.1
+
+for i in range(10):
+    k1 = f(x, y)
+    y_predict = y + h * k1
+    k2 = f(x + h, y_predict)
+
+    y = y + (h/2) * (k1 + k2)
+    x = x + h
+
+    print(x, y)
+            </pre>
+        </p>
+
+    </div>
+
+    <!-- RK2 -->
+    <div class="card card--soft">
+
+        <h3>Metode Runge-Kutta Orde 2 (RK2)</h3>
+
+        <p>
+            Menggunakan dua evaluasi slope untuk meningkatkan akurasi.
+        </p>
+
+        <p>
+            Implementasi Python:
+        </p>
+
+        <p>
+            <pre>
+def f(x, y):
+    return x + y
+
+x = 0
+y = 1
+h = 0.1
+
+for i in range(10):
+    k1 = f(x, y)
+    k2 = f(x + h, y + h * k1)
+
+    y = y + h * k2
+    x = x + h
+
+    print(x, y)
+            </pre>
+        </p>
+
+    </div>
+
+    <!-- RK4 -->
+    <div class="card card--soft">
+
+        <h3>Metode Runge-Kutta Orde 4 (RK4)</h3>
+
+        <p>
+            Metode paling umum karena akurasi tinggi.
+        </p>
+
+        <p>
+            Implementasi Python:
+        </p>
+
+        <p>
+            <pre>
+def f(x, y):
+    return x + y
+
+x = 0
+y = 1
+h = 0.1
+
+for i in range(10):
+    k1 = f(x, y)
+    k2 = f(x + h/2, y + h*k1/2)
+    k3 = f(x + h/2, y + h*k2/2)
+    k4 = f(x + h, y + h*k3)
+
+    y = y + (h/6)*(k1 + 2*k2 + 2*k3 + k4)
+    x = x + h
+
+    print(x, y)
+            </pre>
+        </p>
+
+    </div>
+
+    <!-- INTERPRETASI -->
+    <div class="card card--soft">
+
+        <h3>Interpretasi Numerik</h3>
+
+        <p>
+            Semua metode PDB numerik bekerja dengan cara:
+        </p>
+
+        <p>
+            • Menggunakan slope (turunan) untuk prediksi<br>
+            • Melakukan iterasi langkah demi langkah<br>
+            • Mendekati kurva solusi sebenarnya
+        </p>
+
+    </div>
+
+    <!-- PERBANDINGAN -->
+    <div class="card card--soft">
+
+        <h3>Perbandingan Metode</h3>
+
+        <p>
+            • Euler → sederhana tapi kurang akurat<br>
+            • Heun → lebih baik dari Euler<br>
+            • RK2 → cukup akurat dan stabil<br>
+            • RK4 → paling akurat dan umum digunakan
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Implementasi PDB di Python dilakukan dengan metode iteratif
+            yang menggunakan nilai turunan untuk memperkirakan solusi fungsi.
+        </p>
+
+        <p>
+            Semakin tinggi orde metode (misalnya RK4), semakin akurat hasil yang diperoleh.
+        </p>
+
+    </div>
+
+</div>

@@ -1,0 +1,187 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Implementasi Interpolasi Numerik di Python</h3>
+
+        <p>
+            Interpolasi numerik adalah metode untuk memperkirakan nilai fungsi
+            di antara titik-titik data yang sudah diketahui.
+        </p>
+
+        <p>
+            Dalam Python, interpolasi dapat diimplementasikan menggunakan perhitungan manual
+            atau library seperti NumPy dan SciPy.
+        </p>
+
+        <p>
+            Di sini kita fokus pada implementasi dasar secara manual.
+        </p>
+
+    </div>
+
+    <!-- INTERPOLASI LINIER -->
+    <div class="card card--soft">
+
+        <h3>Interpolasi Linier</h3>
+
+        <p>
+            Rumus:
+            y = y₀ + (x - x₀)(y₁ - y₀) / (x₁ - x₀)
+        </p>
+
+        <p>
+            Implementasi Python:
+        </p>
+
+        <p>
+            <pre>
+x0, y0 = 1, 2
+x1, y1 = 3, 6
+
+x = 2
+
+y = y0 + (x - x0) * (y1 - y0) / (x1 - x0)
+
+print(y)
+            </pre>
+        </p>
+
+    </div>
+
+    <!-- INTERPOLASI LAGRANGE -->
+    <div class="card card--soft">
+
+        <h3>Interpolasi Lagrange</h3>
+
+        <p>
+            Rumus umum:
+            P(x) = Σ yi * Li(x)
+        </p>
+
+        <p>
+            Implementasi Python:
+        </p>
+
+        <p>
+            <pre>
+def lagrange(x, x_points, y_points):
+    n = len(x_points)
+    result = 0
+
+    for i in range(n):
+        term = y_points[i]
+        for j in range(n):
+            if i != j:
+                term *= (x - x_points[j]) / (x_points[i] - x_points[j])
+        result += term
+
+    return result
+
+x_points = [1, 2, 3]
+y_points = [2, 4, 6]
+
+x = 2.5
+
+print(lagrange(x, x_points, y_points))
+            </pre>
+        </p>
+
+    </div>
+
+    <!-- INTERPOLASI NEWTON -->
+    <div class="card card--soft">
+
+        <h3>Interpolasi Newton (Divided Difference)</h3>
+
+        <p>
+            Metode Newton menggunakan tabel beda terbagi.
+        </p>
+
+        <p>
+            Implementasi Python sederhana:
+        </p>
+
+        <p>
+            <pre>
+def newton_interpolation(x, x_points, y_points):
+    n = len(x_points)
+    coef = y_points.copy()
+
+    for j in range(1, n):
+        for i in range(n-1, j-1, -1):
+            coef[i] = (coef[i] - coef[i-1]) / (x_points[i] - x_points[i-j])
+
+    result = coef[0]
+    product = 1
+
+    for i in range(1, n):
+        product *= (x - x_points[i-1])
+        result += coef[i] * product
+
+    return result
+
+x_points = [1, 2, 3]
+y_points = [2, 4, 6]
+
+x = 2.5
+
+print(newton_interpolation(x, x_points, y_points))
+            </pre>
+        </p>
+
+    </div>
+
+    <!-- PENJELASAN -->
+    <div class="card card--soft">
+
+        <h3>Konsep Implementasi</h3>
+
+        <p>
+            Semua metode interpolasi pada dasarnya melakukan:
+        </p>
+
+        <p>
+            • Menggunakan data titik yang diketahui<br>
+            • Membentuk fungsi pendekatan<br>
+            • Menghitung nilai di titik yang belum diketahui
+        </p>
+
+        <p>
+            Python memudahkan proses ini dengan loop dan fungsi matematis.
+        </p>
+
+    </div>
+
+    <!-- PERBANDINGAN -->
+    <div class="card card--soft">
+
+        <h3>Perbandingan Metode</h3>
+
+        <p>
+            • Linier → paling sederhana, cepat, kurang akurat<br>
+            • Lagrange → fleksibel, cocok untuk semua titik<br>
+            • Newton → efisien untuk penambahan data baru
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Implementasi interpolasi di Python memungkinkan kita
+            untuk memperkirakan nilai fungsi dengan berbagai metode numerik.
+        </p>
+
+        <p>
+            Setiap metode memiliki kelebihan masing-masing tergantung
+            jumlah data dan kebutuhan akurasi.
+        </p>
+
+    </div>
+
+</div>

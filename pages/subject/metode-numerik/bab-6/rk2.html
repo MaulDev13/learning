@@ -1,0 +1,210 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Metode Runge-Kutta Orde 2 (RK2)</h3>
+
+        <p>
+            Metode Runge-Kutta orde 2 (RK2) adalah metode numerik
+            untuk menyelesaikan Persamaan Diferensial Biasa (PDB)
+            dengan tingkat akurasi lebih baik dibanding metode Euler.
+        </p>
+
+        <p>
+            RK2 memperbaiki hasil Euler dengan menggunakan rata-rata
+            kemiringan (slope) pada satu langkah.
+        </p>
+
+    </div>
+
+    <!-- IDE DASAR -->
+    <div class="card card--soft">
+
+        <h3>Ide Dasar Metode</h3>
+
+        <p>
+            Metode RK2 tidak hanya menggunakan slope di titik awal,
+            tetapi juga memperkirakan slope di titik tengah atau titik prediksi.
+        </p>
+
+        <p>
+            Dengan cara ini, hasil pendekatan menjadi lebih stabil dan akurat.
+        </p>
+
+        <p>
+            RK2 adalah metode dengan pendekatan “dua kali evaluasi slope”.
+        </p>
+
+    </div>
+
+    <!-- RUMUS UMUM -->
+    <div class="card card--soft">
+
+        <h3>Rumus Umum RK2</h3>
+
+        <p>
+            Diketahui:
+        </p>
+
+        <p>
+            dy/dx = f(x, y)
+        </p>
+
+        <p>
+            Rumus RK2:
+        </p>
+
+        <p>
+            yₙ₊₁ = yₙ + h · k₂
+        </p>
+
+        <p>
+            dengan:
+        </p>
+
+        <p>
+            k₁ = f(xₙ, yₙ)<br>
+            k₂ = f(xₙ + h, yₙ + h·k₁)
+        </p>
+
+    </div>
+
+    <!-- VARIASI RK2 -->
+    <div class="card card--soft">
+
+        <h3>Variasi RK2 (Bentuk Lain)</h3>
+
+        <p>
+            Terdapat beberapa bentuk RK2, salah satunya:
+        </p>
+
+        <p>
+            k₁ = f(xₙ, yₙ)<br>
+            k₂ = f(xₙ + h/2, yₙ + (h/2)·k₁)
+        </p>
+
+        <p>
+            yₙ₊₁ = yₙ + h · k₂
+        </p>
+
+        <p>
+            Variasi ini disebut metode titik tengah (midpoint method).
+        </p>
+
+    </div>
+
+    <!-- LANGKAH -->
+    <div class="card card--soft">
+
+        <h3>Langkah-langkah</h3>
+
+        <p>
+            1. Tentukan PDB dan kondisi awal<br>
+            2. Tentukan step size h<br>
+            3. Hitung k₁ dari titik awal<br>
+            4. Hitung k₂ dari titik prediksi<br>
+            5. Hitung nilai y berikutnya<br>
+            6. Ulangi sampai titik akhir
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Sederhana</h3>
+
+        <p>
+            Diketahui:
+        </p>
+
+        <p>
+            dy/dx = x + y, y(0) = 1, h = 0.1
+        </p>
+
+    </div>
+
+    <!-- PERHITUNGAN -->
+    <div class="card card--soft">
+
+        <h3>Perhitungan</h3>
+
+        <p>
+            k₁ = f(0, 1) = 1
+        </p>
+
+        <p>
+            k₂ = f(0.1, 1 + 0.1·1) = f(0.1, 1.1) = 1.2
+        </p>
+
+        <p>
+            y₁ = 1 + 0.1 × 1.2
+        </p>
+
+        <p>
+            y₁ = 1.12
+        </p>
+
+    </div>
+
+    <!-- INTERPRETASI -->
+    <div class="card card--soft">
+
+        <h3>Interpretasi Geometris</h3>
+
+        <p>
+            RK2 memperkirakan solusi dengan menghitung kemiringan awal
+            dan kemiringan di titik perkiraan.
+        </p>
+
+        <p>
+            Hasil akhirnya adalah rata-rata dari informasi tersebut,
+            sehingga lebih akurat dibanding Euler.
+        </p>
+
+    </div>
+
+    <!-- KELEBIHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelebihan</h3>
+
+        <p>
+            • Lebih akurat dari Euler<br>
+            • Error lebih kecil (orde 2)<br>
+            • Masih relatif sederhana
+        </p>
+
+    </div>
+
+    <!-- KEKURANGAN -->
+    <div class="card card--soft">
+
+        <h3>Kekurangan</h3>
+
+        <p>
+            • Lebih banyak perhitungan dibanding Euler<br>
+            • Tidak seakurat RK4<br>
+            • Membutuhkan dua evaluasi fungsi tiap langkah
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Metode Runge-Kutta orde 2 adalah peningkatan dari metode Euler
+            yang menggunakan dua kali evaluasi slope untuk meningkatkan akurasi.
+        </p>
+
+        <p>
+            Metode ini menjadi dasar penting sebelum mempelajari RK orde lebih tinggi.
+        </p>
+
+    </div>
+
+</div>

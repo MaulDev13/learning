@@ -1,0 +1,233 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Implementasi SPL di Python</h3>
+
+        <p>
+            Sistem Persamaan Linear (SPL) adalah kumpulan persamaan linear
+            yang memiliki beberapa variabel.
+        </p>
+
+        <p>
+            Dalam metode numerik, SPL diselesaikan menggunakan pendekatan algoritma
+            seperti eliminasi Gauss, Gauss-Jordan, dan metode matriks.
+        </p>
+
+    </div>
+
+    <!-- KONSEP UMUM -->
+    <div class="card card--soft">
+
+        <h3>Konsep Dasar SPL</h3>
+
+        <p>
+            Bentuk umum SPL:
+        </p>
+
+        <p>
+            Ax = b
+        </p>
+
+        <p>
+            Dengan:
+            A = matriks koefisien<br>
+            x = vektor variabel<br>
+            b = vektor hasil
+        </p>
+
+    </div>
+
+    <!-- ELIMINASI GAUSS -->
+    <div class="card card--soft">
+
+        <h3>Metode Eliminasi Gauss</h3>
+
+        <p>
+            Metode ini mengubah matriks menjadi bentuk segitiga atas
+            untuk mempermudah penyelesaian.
+        </p>
+
+        <p>
+            Implementasi Python:
+        </p>
+
+        <p>
+            <pre>
+import numpy as np
+
+A = np.array([
+    [2, 1, -1],
+    [-3, -1, 2],
+    [-2, 1, 2]
+], dtype=float)
+
+b = np.array([8, -11, -3], dtype=float)
+
+n = len(b)
+
+# Eliminasi maju
+for i in range(n):
+    for j in range(i+1, n):
+        ratio = A[j][i] / A[i][i]
+        A[j] = A[j] - ratio * A[i]
+        b[j] = b[j] - ratio * b[i]
+
+# Substitusi balik
+x = np.zeros(n)
+
+for i in range(n-1, -1, -1):
+    x[i] = (b[i] - np.dot(A[i][i+1:], x[i+1:])) / A[i][i]
+
+print(x)
+            </pre>
+        </p>
+
+    </div>
+
+    <!-- GAUSS JORDAN -->
+    <div class="card card--soft">
+
+        <h3>Metode Gauss-Jordan</h3>
+
+        <p>
+            Metode ini mengubah matriks menjadi bentuk identitas.
+        </p>
+
+        <p>
+            Implementasi Python:
+        </p>
+
+        <p>
+            <pre>
+import numpy as np
+
+A = np.array([
+    [2, 1, -1],
+    [-3, -1, 2],
+    [-2, 1, 2]
+], dtype=float)
+
+b = np.array([8, -11, -3], dtype=float)
+
+n = len(b)
+
+# Eliminasi
+for i in range(n):
+    A[i] = A[i] / A[i][i]
+    b[i] = b[i] / A[i][i]
+
+    for j in range(n):
+        if i != j:
+            ratio = A[j][i]
+            A[j] = A[j] - ratio * A[i]
+            b[j] = b[j] - ratio * b[i]
+
+print(b)
+            </pre>
+        </p>
+
+    </div>
+
+    <!-- METODE INVERS -->
+    <div class="card card--soft">
+
+        <h3>Metode Invers Matriks</h3>
+
+        <p>
+            Penyelesaian SPL dengan invers:
+        </p>
+
+        <p>
+            x = A⁻¹ b
+        </p>
+
+        <p>
+            Implementasi Python:
+        </p>
+
+        <p>
+            <pre>
+import numpy as np
+
+A = np.array([
+    [2, 1, -1],
+    [-3, -1, 2],
+    [-2, 1, 2]
+], dtype=float)
+
+b = np.array([8, -11, -3], dtype=float)
+
+x = np.linalg.inv(A).dot(b)
+
+print(x)
+            </pre>
+        </p>
+
+    </div>
+
+    <!-- METODE NUMPY SOLVE -->
+    <div class="card card--soft">
+
+        <h3>Metode Langsung (NumPy Solve)</h3>
+
+        <p>
+            Cara paling efisien di Python menggunakan library NumPy.
+        </p>
+
+        <p>
+            Implementasi:
+        </p>
+
+        <p>
+            <pre>
+import numpy as np
+
+A = np.array([
+    [2, 1, -1],
+    [-3, -1, 2],
+    [-2, 1, 2]
+], dtype=float)
+
+b = np.array([8, -11, -3], dtype=float)
+
+x = np.linalg.solve(A, b)
+
+print(x)
+            </pre>
+        </p>
+
+    </div>
+
+    <!-- PERBANDINGAN -->
+    <div class="card card--soft">
+
+        <h3>Perbandingan Metode</h3>
+
+        <p>
+            • Gauss → manual, dasar konsep<br>
+            • Gauss-Jordan → hasil langsung<br>
+            • Invers → konsep matematis<br>
+            • NumPy Solve → paling cepat dan praktis
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Implementasi SPL di Python dapat dilakukan dengan berbagai metode,
+            mulai dari algoritma manual hingga fungsi bawaan NumPy.
+        </p>
+
+        <p>
+            Pemilihan metode tergantung pada kebutuhan: pemahaman konsep atau efisiensi komputasi.
+        </p>
+
+    </div>
+
+</div>

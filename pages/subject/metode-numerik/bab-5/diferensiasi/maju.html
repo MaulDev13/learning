@@ -1,0 +1,181 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Diferensiasi Maju (Forward Difference)</h3>
+
+        <p>
+            Diferensiasi maju adalah metode numerik untuk memperkirakan turunan
+            suatu fungsi menggunakan dua titik berurutan.
+        </p>
+
+        <p>
+            Metode ini termasuk pendekatan paling sederhana dalam diferensiasi numerik.
+        </p>
+
+        <p>
+            Cocok digunakan ketika data tersedia dari titik awal ke arah kanan.
+        </p>
+
+    </div>
+
+    <!-- IDE DASAR -->
+    <div class="card card--soft">
+
+        <h3>Ide Dasar Metode</h3>
+
+        <p>
+            Turunan suatu fungsi didekati menggunakan perubahan nilai fungsi
+            pada selang kecil h ke depan.
+        </p>
+
+        <p>
+            Semakin kecil nilai h, semakin akurat hasil pendekatan turunan.
+        </p>
+
+        <p>
+            Metode ini mengasumsikan perubahan fungsi bersifat linear pada interval kecil.
+        </p>
+
+    </div>
+
+    <!-- RUMUS DASAR -->
+    <div class="card card--soft">
+
+        <h3>Rumus Diferensiasi Maju</h3>
+
+        <p>
+            Turunan pertama:
+        </p>
+
+        <p>
+            f'(x) ≈ ( f(x + h) - f(x) ) / h
+        </p>
+
+        <p>
+            Dimana:
+        </p>
+
+        <p>
+            • h = jarak antar titik (step size)<br>
+            • x + h = titik berikutnya
+        </p>
+
+    </div>
+
+    <!-- PENJELASAN -->
+    <div class="card card--soft">
+
+        <h3>Makna Geometris</h3>
+
+        <p>
+            Secara geometris, diferensiasi maju menghitung kemiringan garis
+            yang menghubungkan titik x dengan titik di depannya (x + h).
+        </p>
+
+        <p>
+            Garis ini disebut garis sekant.
+        </p>
+
+    </div>
+
+    <!-- LANGKAH -->
+    <div class="card card--soft">
+
+        <h3>Langkah-langkah</h3>
+
+        <p>
+            1. Tentukan fungsi f(x)<br>
+            2. Pilih titik x yang ingin dicari turunannya<br>
+            3. Tentukan nilai h kecil<br>
+            4. Hitung f(x + h) dan f(x)<br>
+            5. Substitusikan ke rumus
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Sederhana</h3>
+
+        <p>
+            Diketahui:
+        </p>
+
+        <p>
+            f(x) = x², x = 2, h = 0.1
+        </p>
+
+        <p>
+            Maka:
+            f(2) dan f(2.1)
+        </p>
+
+    </div>
+
+    <!-- PERHITUNGAN -->
+    <div class="card card--soft">
+
+        <h3>Perhitungan</h3>
+
+        <p>
+            f(2) = 4<br>
+            f(2.1) = 4.41
+        </p>
+
+        <p>
+            f'(2) ≈ (4.41 - 4) / 0.1
+        </p>
+
+        <p>
+            f'(2) ≈ 0.41 / 0.1 = 4.1
+        </p>
+
+    </div>
+
+    <!-- KELEBIHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelebihan</h3>
+
+        <p>
+            • Rumus sederhana<br>
+            • Mudah diimplementasikan<br>
+            • Cocok untuk data berurutan
+        </p>
+
+    </div>
+
+    <!-- KEKURANGAN -->
+    <div class="card card--soft">
+
+        <h3>Kekurangan</h3>
+
+        <p>
+            • Kurang akurat untuk h besar<br>
+            • Error truncation relatif tinggi<br>
+            • Tidak cocok untuk data noise
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Diferensiasi maju adalah metode sederhana untuk memperkirakan turunan
+            dengan menggunakan nilai fungsi di titik saat ini dan titik berikutnya.
+        </p>
+
+        <p>
+            Metode ini efektif untuk pendekatan cepat, namun akurasinya bergantung
+            pada ukuran langkah h.
+        </p>
+
+    </div>
+
+</div>

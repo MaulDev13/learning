@@ -1,0 +1,188 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Metode Euler</h3>
+
+        <p>
+            Metode Euler adalah metode numerik paling sederhana
+            untuk menyelesaikan Persamaan Diferensial Biasa (PDB).
+        </p>
+
+        <p>
+            Metode ini digunakan untuk memperkirakan nilai fungsi
+            berdasarkan turunan pada titik awal.
+        </p>
+
+        <p>
+            Pendekatannya dilakukan secara bertahap (iteratif).
+        </p>
+
+    </div>
+
+    <!-- IDE DASAR -->
+    <div class="card card--soft">
+
+        <h3>Ide Dasar Metode</h3>
+
+        <p>
+            Metode Euler menggunakan konsep bahwa nilai berikutnya
+            dapat diperkirakan dari kemiringan (turunan) di titik saat ini.
+        </p>
+
+        <p>
+            Dengan langkah kecil h, kurva solusi didekati
+            sebagai garis lurus pada setiap interval.
+        </p>
+
+        <p>
+            Semakin kecil h, semakin akurat hasilnya.
+        </p>
+
+    </div>
+
+    <!-- RUMUS -->
+    <div class="card card--soft">
+
+        <h3>Rumus Metode Euler</h3>
+
+        <p>
+            Diberikan:
+        </p>
+
+        <p>
+            dy/dx = f(x, y), dengan y(x₀) = y₀
+        </p>
+
+        <p>
+            Rumus iterasi:
+        </p>
+
+        <p>
+            yₙ₊₁ = yₙ + h · f(xₙ, yₙ)
+        </p>
+
+        <p>
+            xₙ₊₁ = xₙ + h
+        </p>
+
+    </div>
+
+    <!-- LANGKAH -->
+    <div class="card card--soft">
+
+        <h3>Langkah-langkah</h3>
+
+        <p>
+            1. Tentukan PDB dan kondisi awal<br>
+            2. Pilih step size h<br>
+            3. Hitung f(xₙ, yₙ)<br>
+            4. Gunakan rumus Euler<br>
+            5. Ulangi hingga titik yang diinginkan
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Sederhana</h3>
+
+        <p>
+            Diketahui:
+        </p>
+
+        <p>
+            dy/dx = x + y, y(0) = 1, h = 0.1
+        </p>
+
+        <p>
+            Hitung nilai y₁.
+        </p>
+
+    </div>
+
+    <!-- PERHITUNGAN -->
+    <div class="card card--soft">
+
+        <h3>Perhitungan</h3>
+
+        <p>
+            x₀ = 0, y₀ = 1
+        </p>
+
+        <p>
+            f(x₀, y₀) = 0 + 1 = 1
+        </p>
+
+        <p>
+            y₁ = 1 + 0.1 × 1
+        </p>
+
+        <p>
+            y₁ = 1.1
+        </p>
+
+    </div>
+
+    <!-- INTERPRETASI -->
+    <div class="card card--soft">
+
+        <h3>Interpretasi Geometris</h3>
+
+        <p>
+            Metode Euler mendekati kurva solusi dengan garis lurus
+            pada setiap langkah kecil.
+        </p>
+
+        <p>
+            Setiap langkah mengikuti arah kemiringan kurva saat itu.
+        </p>
+
+    </div>
+
+    <!-- KELEBIHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelebihan</h3>
+
+        <p>
+            • Sangat sederhana<br>
+            • Mudah diimplementasikan<br>
+            • Cocok untuk pemahaman dasar PDB numerik
+        </p>
+
+    </div>
+
+    <!-- KEKURANGAN -->
+    <div class="card card--soft">
+
+        <h3>Kekurangan</h3>
+
+        <p>
+            • Kurang akurat untuk step besar<br>
+            • Error cukup tinggi (orde 1)<br>
+            • Tidak stabil untuk beberapa kasus
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Metode Euler adalah metode dasar dalam penyelesaian PDB numerik
+            yang menggunakan pendekatan garis lurus secara bertahap.
+        </p>
+
+        <p>
+            Meskipun sederhana, metode ini menjadi dasar penting
+            untuk memahami metode yang lebih kompleks seperti Runge-Kutta.
+        </p>
+
+    </div>
+
+</div>

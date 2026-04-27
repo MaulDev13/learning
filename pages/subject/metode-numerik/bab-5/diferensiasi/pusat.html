@@ -1,0 +1,186 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Diferensiasi Pusat (Central Difference)</h3>
+
+        <p>
+            Diferensiasi pusat adalah metode numerik untuk memperkirakan turunan
+            suatu fungsi menggunakan titik di depan dan di belakang secara bersamaan.
+        </p>
+
+        <p>
+            Metode ini memberikan pendekatan yang lebih akurat dibanding
+            diferensiasi maju dan mundur.
+        </p>
+
+        <p>
+            Karena menggunakan dua arah, error biasanya lebih kecil.
+        </p>
+
+    </div>
+
+    <!-- IDE DASAR -->
+    <div class="card card--soft">
+
+        <h3>Ide Dasar Metode</h3>
+
+        <p>
+            Turunan dihitung berdasarkan perubahan nilai fungsi
+            di sekitar titik x, yaitu pada x + h dan x - h.
+        </p>
+
+        <p>
+            Dengan mengambil rata-rata perubahan dari dua arah,
+            hasil pendekatan menjadi lebih stabil.
+        </p>
+
+        <p>
+            Metode ini mengasumsikan fungsi halus di sekitar titik tersebut.
+        </p>
+
+    </div>
+
+    <!-- RUMUS DASAR -->
+    <div class="card card--soft">
+
+        <h3>Rumus Diferensiasi Pusat</h3>
+
+        <p>
+            Turunan pertama:
+        </p>
+
+        <p>
+            f'(x) ≈ ( f(x + h) - f(x - h) ) / (2h)
+        </p>
+
+        <p>
+            Dimana:
+        </p>
+
+        <p>
+            • h = jarak antar titik (step size)<br>
+            • x + h = titik depan<br>
+            • x - h = titik belakang
+        </p>
+
+    </div>
+
+    <!-- PENJELASAN -->
+    <div class="card card--soft">
+
+        <h3>Makna Geometris</h3>
+
+        <p>
+            Secara geometris, diferensiasi pusat menghitung kemiringan garis sekant
+            yang melewati dua titik di sekitar x.
+        </p>
+
+        <p>
+            Karena simetris, hasilnya lebih mendekati turunan sebenarnya
+            dibanding metode maju atau mundur.
+        </p>
+
+    </div>
+
+    <!-- LANGKAH -->
+    <div class="card card--soft">
+
+        <h3>Langkah-langkah</h3>
+
+        <p>
+            1. Tentukan fungsi f(x)<br>
+            2. Pilih titik x yang ingin dicari turunannya<br>
+            3. Tentukan nilai h kecil<br>
+            4. Hitung f(x + h) dan f(x - h)<br>
+            5. Substitusikan ke rumus
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Sederhana</h3>
+
+        <p>
+            Diketahui:
+        </p>
+
+        <p>
+            f(x) = x², x = 2, h = 0.1
+        </p>
+
+        <p>
+            Maka:
+            f(2.1) dan f(1.9)
+        </p>
+
+    </div>
+
+    <!-- PERHITUNGAN -->
+    <div class="card card--soft">
+
+        <h3>Perhitungan</h3>
+
+        <p>
+            f(2.1) = 4.41<br>
+            f(1.9) = 3.61
+        </p>
+
+        <p>
+            f'(2) ≈ (4.41 - 3.61) / (2 × 0.1)
+        </p>
+
+        <p>
+            f'(2) ≈ 0.8 / 0.2 = 4
+        </p>
+
+    </div>
+
+    <!-- KELEBIHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelebihan</h3>
+
+        <p>
+            • Lebih akurat dibanding maju dan mundur<br>
+            • Error lebih kecil (orde kedua)<br>
+            • Simetris dan stabil
+        </p>
+
+    </div>
+
+    <!-- KEKURANGAN -->
+    <div class="card card--soft">
+
+        <h3>Kekurangan</h3>
+
+        <p>
+            • Membutuhkan dua titik data sekaligus<br>
+            • Tidak cocok di ujung data (boundary)<br>
+            • Tetap memiliki error jika h besar
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Diferensiasi pusat adalah metode numerik yang lebih akurat
+            untuk menghitung turunan karena menggunakan pendekatan simetris
+            dari dua sisi titik.
+        </p>
+
+        <p>
+            Metode ini sering menjadi pilihan utama dalam diferensiasi numerik
+            karena keseimbangan antara akurasi dan kesederhanaan.
+        </p>
+
+    </div>
+
+</div>

@@ -1,0 +1,198 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Metode Runge-Kutta Orde 4 (RK4)</h3>
+
+        <p>
+            Metode Runge-Kutta orde 4 (RK4) adalah salah satu metode numerik
+            paling populer untuk menyelesaikan Persamaan Diferensial Biasa (PDB).
+        </p>
+
+        <p>
+            Metode ini memiliki akurasi tinggi karena menggunakan empat kali evaluasi slope
+            pada setiap langkah iterasi.
+        </p>
+
+        <p>
+            RK4 sering digunakan sebagai standar dalam perhitungan numerik PDB.
+        </p>
+
+    </div>
+
+    <!-- IDE DASAR -->
+    <div class="card card--soft">
+
+        <h3>Ide Dasar Metode</h3>
+
+        <p>
+            RK4 memperkirakan solusi dengan mengambil rata-rata tertimbang
+            dari empat kemiringan (slope) di sepanjang satu langkah.
+        </p>
+
+        <p>
+            Slope dihitung pada awal, dua titik tengah, dan titik akhir interval.
+        </p>
+
+        <p>
+            Dengan cara ini, hasil pendekatan menjadi sangat akurat.
+        </p>
+
+    </div>
+
+    <!-- RUMUS -->
+    <div class="card card--soft">
+
+        <h3>Rumus RK4</h3>
+
+        <p>
+            Diketahui:
+        </p>
+
+        <p>
+            dy/dx = f(x, y)
+        </p>
+
+        <p>
+            Rumus iterasi:
+        </p>
+
+        <p>
+            yₙ₊₁ = yₙ + (h/6)(k₁ + 2k₂ + 2k₃ + k₄)
+        </p>
+
+        <p>
+            dengan:
+        </p>
+
+        <p>
+            k₁ = f(xₙ, yₙ)<br>
+            k₂ = f(xₙ + h/2, yₙ + (h/2)k₁)<br>
+            k₃ = f(xₙ + h/2, yₙ + (h/2)k₂)<br>
+            k₄ = f(xₙ + h, yₙ + h·k₃)
+        </p>
+
+    </div>
+
+    <!-- LANGKAH -->
+    <div class="card card--soft">
+
+        <h3>Langkah-langkah</h3>
+
+        <p>
+            1. Tentukan PDB dan kondisi awal<br>
+            2. Pilih step size h<br>
+            3. Hitung k₁, k₂, k₃, dan k₄<br>
+            4. Substitusi ke rumus utama<br>
+            5. Dapatkan y berikutnya<br>
+            6. Ulangi hingga titik akhir
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Sederhana</h3>
+
+        <p>
+            Diketahui:
+        </p>
+
+        <p>
+            dy/dx = x + y, y(0) = 1, h = 0.1
+        </p>
+
+    </div>
+
+    <!-- PERHITUNGAN -->
+    <div class="card card--soft">
+
+        <h3>Perhitungan</h3>
+
+        <p>
+            k₁ = f(0, 1) = 1
+        </p>
+
+        <p>
+            k₂ = f(0.05, 1 + 0.05·1) = f(0.05, 1.05) = 1.1
+        </p>
+
+        <p>
+            k₃ = f(0.05, 1 + 0.05·1.1) = f(0.05, 1.055) = 1.105
+        </p>
+
+        <p>
+            k₄ = f(0.1, 1 + 0.1·1.105) = f(0.1, 1.1105) = 1.2105
+        </p>
+
+        <p>
+            y₁ = 1 + (0.1/6)(1 + 2(1.1) + 2(1.105) + 1.2105)
+        </p>
+
+        <p>
+            y₁ ≈ 1.1103
+        </p>
+
+    </div>
+
+    <!-- INTERPRETASI -->
+    <div class="card card--soft">
+
+        <h3>Interpretasi Geometris</h3>
+
+        <p>
+            RK4 menggunakan empat titik kemiringan untuk membentuk
+            pendekatan kurva yang sangat halus.
+        </p>
+
+        <p>
+            Rata-rata berbobot ini membuat hasil lebih dekat ke solusi sebenarnya.
+        </p>
+
+    </div>
+
+    <!-- KELEBIHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelebihan</h3>
+
+        <p>
+            • Sangat akurat (orde 4)<br>
+            • Stabil untuk banyak kasus<br>
+            • Paling umum digunakan dalam praktik
+        </p>
+
+    </div>
+
+    <!-- KEKURANGAN -->
+    <div class="card card--soft">
+
+        <h3>Kekurangan</h3>
+
+        <p>
+            • Perhitungan lebih banyak dibanding metode lain<br>
+            • Membutuhkan 4 evaluasi fungsi per langkah<br>
+            • Lebih kompleks dari Euler dan RK2
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Metode Runge-Kutta orde 4 adalah metode numerik yang sangat akurat
+            untuk menyelesaikan PDB dengan pendekatan empat evaluasi slope.
+        </p>
+
+        <p>
+            RK4 menjadi metode standar karena keseimbangan antara akurasi dan stabilitas.
+        </p>
+
+    </div>
+
+</div>

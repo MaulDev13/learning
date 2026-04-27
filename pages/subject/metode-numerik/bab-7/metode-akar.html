@@ -1,0 +1,220 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Implementasi Metode Akar di Python</h3>
+
+        <p>
+            Metode akar (root finding) adalah metode numerik untuk mencari solusi dari persamaan
+            non-linear berbentuk f(x) = 0.
+        </p>
+
+        <p>
+            Dalam Python, metode ini diimplementasikan menggunakan iterasi hingga nilai akar mendekati nol
+            dalam batas toleransi tertentu.
+        </p>
+
+    </div>
+
+    <!-- BISECTION -->
+    <div class="card card--soft">
+
+        <h3>Metode Bisection</h3>
+
+        <p>
+            Metode ini membagi interval menjadi dua bagian dan memilih sub-interval
+            yang mengandung akar.
+        </p>
+
+        <p>
+            Syarat: f(a) dan f(b) harus berbeda tanda.
+        </p>
+
+        <p>
+            Implementasi Python:
+        </p>
+
+        <p>
+            <pre>
+def f(x):
+    return x**2 - 4
+
+a = 0
+b = 3
+tol = 1e-6
+
+while (b - a) / 2 > tol:
+    c = (a + b) / 2
+
+    if f(c) == 0:
+        break
+    elif f(a) * f(c) < 0:
+        b = c
+    else:
+        a = c
+
+print((a + b) / 2)
+            </pre>
+        </p>
+
+    </div>
+
+    <!-- NEWTON RAPHSON -->
+    <div class="card card--soft">
+
+        <h3>Metode Newton-Raphson</h3>
+
+        <p>
+            Metode ini menggunakan turunan untuk mempercepat pencarian akar.
+        </p>
+
+        <p>
+            Rumus:
+            xₙ₊₁ = xₙ - f(x) / f'(x)
+        </p>
+
+        <p>
+            Implementasi Python:
+        </p>
+
+        <p>
+            <pre>
+def f(x):
+    return x**2 - 4
+
+def df(x):
+    return 2*x
+
+x = 3
+tol = 1e-6
+
+while abs(f(x)) > tol:
+    x = x - f(x) / df(x)
+
+print(x)
+            </pre>
+        </p>
+
+    </div>
+
+    <!-- SECANT -->
+    <div class="card card--soft">
+
+        <h3>Metode Secant</h3>
+
+        <p>
+            Metode secant adalah pengembangan Newton-Raphson tanpa turunan eksplisit.
+        </p>
+
+        <p>
+            Rumus:
+            xₙ₊₁ = xₙ - f(xₙ)(xₙ - xₙ₋₁) / (f(xₙ) - f(xₙ₋₁))
+        </p>
+
+        <p>
+            Implementasi Python:
+        </p>
+
+        <p>
+            <pre>
+def f(x):
+    return x**2 - 4
+
+x0 = 1
+x1 = 3
+tol = 1e-6
+
+while abs(x1 - x0) > tol:
+    x2 = x1 - f(x1) * (x1 - x0) / (f(x1) - f(x0))
+    x0 = x1
+    x1 = x2
+
+print(x1)
+            </pre>
+        </p>
+
+    </div>
+
+    <!-- FIXED POINT -->
+    <div class="card card--soft">
+
+        <h3>Metode Fixed Point Iteration</h3>
+
+        <p>
+            Mengubah f(x)=0 menjadi bentuk x = g(x).
+        </p>
+
+        <p>
+            Implementasi Python:
+        </p>
+
+        <p>
+            <pre>
+def g(x):
+    return (x + 4/x) / 2
+
+x = 3
+tol = 1e-6
+
+for i in range(100):
+    x_new = g(x)
+    if abs(x_new - x) < tol:
+        break
+    x = x_new
+
+print(x)
+            </pre>
+        </p>
+
+    </div>
+
+    <!-- KONSEP UMUM -->
+    <div class="card card--soft">
+
+        <h3>Konsep Umum Implementasi</h3>
+
+        <p>
+            Semua metode akar di Python memiliki pola yang sama:
+        </p>
+
+        <p>
+            • Tentukan fungsi f(x)<br>
+            • Tentukan tebakan awal atau interval<br>
+            • Lakukan iterasi<br>
+            • Hentikan jika error < toleransi
+        </p>
+
+    </div>
+
+    <!-- PERBANDINGAN -->
+    <div class="card card--soft">
+
+        <h3>Perbandingan Metode</h3>
+
+        <p>
+            • Bisection → paling stabil, tapi lambat<br>
+            • Newton-Raphson → cepat, butuh turunan<br>
+            • Secant → tanpa turunan, cukup cepat<br>
+            • Fixed Point → sederhana, tergantung konvergensi
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Implementasi metode akar di Python menggunakan pendekatan iteratif
+            untuk menemukan solusi f(x)=0 secara numerik.
+        </p>
+
+        <p>
+            Pemilihan metode tergantung pada kebutuhan stabilitas, kecepatan, dan ketersediaan turunan.
+        </p>
+
+    </div>
+
+</div>

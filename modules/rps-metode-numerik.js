@@ -184,7 +184,7 @@ const NAV_TREE = [
             content: "/pages/subject/metode-numerik/advanced/spnl/fixed-point.html"
           }
         ]
-      }
+      },
 
       // =========================
       // BAB 4

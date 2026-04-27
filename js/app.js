@@ -7,6 +7,10 @@ import {
     initSidebar
 } from "./ui.js";
 
+import {
+    initErrorHandler
+} from "./error-handler.js";
+
 /* =========================================================
    HTMX ROUTING
    ========================================================= */
@@ -42,6 +46,8 @@ function initApp() {
     initSidebar();
     initNavActive();
     initLoading();
+
+    initErrorHandler();
 }
 
 /* =========================================================

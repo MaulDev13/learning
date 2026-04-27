@@ -1,0 +1,207 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Metode Integrasi Simpson 1/3</h3>
+
+        <p>
+            Metode Simpson 1/3 adalah metode integrasi numerik
+            yang digunakan untuk menghitung pendekatan luas di bawah kurva.
+        </p>
+
+        <p>
+            Metode ini menggunakan pendekatan parabola (polinomial derajat 2)
+            untuk menggantikan kurva pada setiap dua interval.
+        </p>
+
+        <p>
+            Hasilnya biasanya lebih akurat dibanding metode trapesium.
+        </p>
+
+    </div>
+
+    <!-- IDE DASAR -->
+    <div class="card card--soft">
+
+        <h3>Ide Dasar Metode</h3>
+
+        <p>
+            Simpson 1/3 mengaproksimasi kurva menggunakan parabola
+            yang melewati tiga titik data.
+        </p>
+
+        <p>
+            Dengan pendekatan ini, bentuk kurva lebih realistis
+            dibanding garis lurus pada metode trapesium.
+        </p>
+
+        <p>
+            Metode ini membutuhkan jumlah interval yang genap.
+        </p>
+
+    </div>
+
+    <!-- SYARAT -->
+    <div class="card card--soft">
+
+        <h3>Syarat Penggunaan</h3>
+
+        <p>
+            Metode Simpson 1/3 memiliki syarat penting:
+        </p>
+
+        <p>
+            • Jumlah interval (n) harus genap<br>
+            • Jarak antar titik harus sama (uniform spacing)
+        </p>
+
+    </div>
+
+    <!-- RUMUS DASAR -->
+    <div class="card card--soft">
+
+        <h3>Rumus Simpson 1/3</h3>
+
+        <p>
+            Untuk interval [a, b] dengan n genap:
+        </p>
+
+        <p>
+            h = (b - a) / n
+        </p>
+
+        <p>
+            ∫ f(x) dx ≈ h/3 [ f(x₀) + f(xₙ)
+            + 4Σ f(x ganjil)
+            + 2Σ f(x genap) ]
+        </p>
+
+        <p>
+            (tanpa menghitung titik awal dan akhir di penjumlahan)
+        </p>
+
+    </div>
+
+    <!-- POLA KOEFISIEN -->
+    <div class="card card--soft">
+
+        <h3>Pola Koefisien</h3>
+
+        <p>
+            Dalam Simpson 1/3, koefisien memiliki pola:
+        </p>
+
+        <p>
+            1, 4, 2, 4, 2, ..., 4, 1
+        </p>
+
+        <p>
+            Titik awal dan akhir bernilai 1,
+            sedangkan titik di tengah bergantian 4 dan 2.
+        </p>
+
+    </div>
+
+    <!-- LANGKAH -->
+    <div class="card card--soft">
+
+        <h3>Langkah-langkah</h3>
+
+        <p>
+            1. Tentukan interval [a, b]<br>
+            2. Pilih jumlah interval n (harus genap)<br>
+            3. Hitung jarak h<br>
+            4. Hitung nilai f(x) pada setiap titik<br>
+            5. Terapkan rumus Simpson 1/3
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Sederhana</h3>
+
+        <p>
+            Diketahui:
+        </p>
+
+        <p>
+            f(x) = x², interval [0, 2], n = 2
+        </p>
+
+        <p>
+            Titik: x₀ = 0, x₁ = 1, x₂ = 2
+        </p>
+
+    </div>
+
+    <!-- PERHITUNGAN -->
+    <div class="card card--soft">
+
+        <h3>Perhitungan</h3>
+
+        <p>
+            h = (2 - 0) / 2 = 1
+        </p>
+
+        <p>
+            f(0) = 0, f(1) = 1, f(2) = 4
+        </p>
+
+        <p>
+            ∫ f(x) dx ≈ 1/3 [ 0 + 4(1) + 4 ]
+        </p>
+
+        <p>
+            = 1/3 (8) = 2.666...
+        </p>
+
+    </div>
+
+    <!-- KELEBIHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelebihan</h3>
+
+        <p>
+            • Lebih akurat dari metode trapesium<br>
+            • Menggunakan pendekatan parabola<br>
+            • Efisien untuk fungsi halus
+        </p>
+
+    </div>
+
+    <!-- KEKURANGAN -->
+    <div class="card card--soft">
+
+        <h3>Kekurangan</h3>
+
+        <p>
+            • Harus menggunakan jumlah interval genap<br>
+            • Kurang fleksibel untuk data tidak beraturan<br>
+            • Lebih kompleks dari trapesium
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Metode Simpson 1/3 adalah metode integrasi numerik
+            yang lebih akurat dibanding trapesium karena menggunakan
+            pendekatan parabola.
+        </p>
+
+        <p>
+            Metode ini sangat efektif untuk fungsi yang halus
+            dengan interval yang seragam.
+        </p>
+
+    </div>
+
+</div>
