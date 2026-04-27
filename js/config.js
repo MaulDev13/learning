@@ -10,7 +10,3 @@ export const BASE_PATH =
         location.hostname === "127.0.0.1")
         ? ""
         : "/learning/";
-
-// export const BASE_PATH = document
-//     .querySelector("base")
-//     ?.getAttribute("href") || "/";
