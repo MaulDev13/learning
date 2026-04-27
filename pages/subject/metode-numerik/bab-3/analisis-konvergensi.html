@@ -1,0 +1,232 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Analisis Konvergensi pada SPL</h3>
+
+        <p>
+            Dalam penyelesaian Sistem Persamaan Linear
+            menggunakan metode iteratif,
+            penting untuk mengetahui apakah metode
+            akan konvergen atau tidak.
+        </p>
+
+        <p>
+            Analisis konvergensi membantu menentukan
+            apakah iterasi akan mendekati solusi sebenarnya.
+        </p>
+
+    </div>
+
+    <!-- KONSEP -->
+    <div class="card card--soft">
+
+        <h3>Konsep Konvergensi</h3>
+
+        <p>
+            Metode iteratif menghasilkan
+            urutan pendekatan solusi:
+        </p>
+
+        <p>
+            x⁰, x¹, x², ..., xᵏ
+        </p>
+
+        <p>
+            Jika nilai tersebut semakin mendekati solusi,
+            maka metode dikatakan konvergen.
+        </p>
+
+    </div>
+
+    <!-- BENTUK ITERASI -->
+    <div class="card card--soft">
+
+        <h3>Bentuk Umum Iterasi</h3>
+
+        <p>
+            Metode iteratif SPL dapat ditulis sebagai:
+        </p>
+
+        <p>
+            x^(k+1) = Bx^(k) + c
+        </p>
+
+        <p>
+            dimana B adalah matriks iterasi.
+        </p>
+
+    </div>
+
+    <!-- SYARAT UTAMA -->
+    <div class="card card--soft">
+
+        <h3>Syarat Konvergensi</h3>
+
+        <p>
+            Metode iteratif akan konvergen jika:
+        </p>
+
+        <p>
+            ρ(B) < 1
+        </p>
+
+        <p>
+            dimana ρ(B) adalah spektral radius
+            (nilai eigen terbesar dari matriks B).
+        </p>
+
+    </div>
+
+    <!-- PENDEKATAN PRAKTIS -->
+    <div class="card card--soft">
+
+        <h3>Pendekatan Praktis</h3>
+
+        <p>
+            Karena menghitung nilai eigen tidak selalu mudah,
+            digunakan pendekatan sederhana:
+        </p>
+
+        <p>
+            Matriks harus memiliki dominasi diagonal.
+        </p>
+
+        <p>
+            |aᵢᵢ| > Σ |aᵢⱼ|
+        </p>
+
+    </div>
+
+    <!-- DOMINASI DIAGONAL -->
+    <div class="card card--soft">
+
+        <h3>Dominasi Diagonal</h3>
+
+        <p>
+            Suatu matriks dikatakan dominan diagonal jika
+            setiap elemen diagonal lebih besar
+            dari jumlah elemen lain dalam baris tersebut.
+        </p>
+
+        <p>
+            Kondisi ini menjamin konvergensi
+            untuk Jacobi dan Gauss-Seidel.
+        </p>
+
+    </div>
+
+    <!-- PERBANDINGAN -->
+    <div class="card card--soft">
+
+        <h3>Konvergensi Jacobi vs Gauss-Seidel</h3>
+
+        <p>
+            • Jacobi → lebih lambat konvergen<br>
+            • Gauss-Seidel → lebih cepat konvergen
+        </p>
+
+        <p>
+            Gauss-Seidel biasanya membutuhkan
+            iterasi lebih sedikit.
+        </p>
+
+    </div>
+
+    <!-- FAKTOR -->
+    <div class="card card--soft">
+
+        <h3>Faktor yang Mempengaruhi</h3>
+
+        <p>
+            • Bentuk matriks<br>
+            • Tebakan awal<br>
+            • Urutan variabel<br>
+            • Kondisi numerik sistem
+        </p>
+
+    </div>
+
+    <!-- DIVERGENSI -->
+    <div class="card card--soft">
+
+        <h3>Divergensi</h3>
+
+        <p>
+            Metode dapat gagal (divergen) jika:
+        </p>
+
+        <p>
+            • Matriks tidak dominan diagonal<br>
+            • Nilai iterasi semakin besar<br>
+            • Terjadi osilasi tanpa stabil
+        </p>
+
+    </div>
+
+    <!-- STRATEGI -->
+    <div class="card card--soft">
+
+        <h3>Strategi Mengatasi Divergensi</h3>
+
+        <p>
+            • Mengubah urutan persamaan<br>
+            • Melakukan scaling<br>
+            • Memilih metode lain
+        </p>
+
+    </div>
+
+    <!-- INTERPRETASI -->
+    <div class="card card--soft">
+
+        <h3>Interpretasi</h3>
+
+        <p>
+            Konvergensi menunjukkan apakah
+            metode iteratif dapat dipercaya.
+        </p>
+
+        <p>
+            Tanpa konvergensi,
+            hasil iterasi tidak memiliki makna.
+        </p>
+
+    </div>
+
+    <!-- INTUISI -->
+    <div class="card card--soft">
+
+        <h3>Intuisi</h3>
+
+        <p>
+            Konvergensi seperti “jalan menuju solusi”.
+        </p>
+
+        <p>
+            Jika arah benar, kita mendekat.
+            Jika salah, kita tersesat.
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Analisis konvergensi sangat penting
+            dalam metode iteratif SPL.
+        </p>
+
+        <p>
+            Dengan memahami syarat konvergensi,
+            kita dapat memilih metode yang tepat
+            dan menghindari kesalahan.
+        </p>
+
+    </div>
+
+</div>

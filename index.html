@@ -16,27 +16,39 @@
 </head>
 
 <body>
-    <div class="container content-center page-stack">
+    <div class="app">
 
         <!-- NAVBAR -->
-        <nav
+        <!-- <nav
             hx-get="/components/navbar.html"
             hx-trigger="load"
             hx-swap="innerHTML">
-        </nav>
+        </nav> -->
 
-        <!-- CONTENT -->
-        <main class="page-stack">
+        <main class="layout">
 
-            <div id="loading" class="hidden">
-                <p class="text-meta">Loading...</p>
-            </div>
-
-            <section id="content"
-                hx-get="/pages/home.html"
+            <!-- SIDEBAR -->
+            <aside
+                class="sidebar"
+                hx-get="/components/side-navbar.html"
                 hx-trigger="load"
                 hx-swap="innerHTML">
-            </section>
+            </aside>
+
+            <!-- CONTENT AREA -->
+            <div class="page-stack" style="flex: 1;">
+
+                <div id="loading" class="hidden">
+                    <p class="text-meta">Loading...</p>
+                </div>
+
+                <section id="content"
+                    hx-get="/pages/home.html"
+                    hx-trigger="load"
+                    hx-swap="innerHTML">
+                </section>
+
+            </div>
 
         </main>
 
@@ -49,7 +61,7 @@
 
     </div>
 
-    <base href="/learning/">
+    <!-- <base href="/learning/"> -->
     <!-- ONLY ENTRY POINT -->
     <script type="module" src="js/app.js"></script>
 </body>

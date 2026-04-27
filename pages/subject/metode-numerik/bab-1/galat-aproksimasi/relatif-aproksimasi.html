@@ -1,0 +1,220 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Galat Relatif Aproksimasi</h3>
+
+        <p>
+            Galat relatif aproksimasi digunakan ketika
+            nilai eksak tidak diketahui.
+        </p>
+
+        <p>
+            Galat ini membandingkan hasil iterasi saat ini
+            dengan hasil iterasi sebelumnya.
+        </p>
+
+        <p>
+            Digunakan sebagai indikator konvergensi
+            dalam metode numerik.
+        </p>
+
+    </div>
+
+    <!-- KONSEP DASAR -->
+    <div class="card card--soft">
+
+        <h3>Konsep Dasar</h3>
+
+        <p>
+            Dalam banyak metode numerik,
+            nilai eksak tidak tersedia.
+        </p>
+
+        <p>
+            Oleh karena itu, kita tidak bisa
+            menghitung galat terhadap nilai sebenarnya.
+        </p>
+
+        <p>
+            Solusinya adalah membandingkan
+            dua hasil iterasi berturut-turut.
+        </p>
+
+    </div>
+
+    <!-- RUMUS -->
+    <div class="card card--soft">
+
+        <h3>Rumus Galat Relatif Aproksimasi</h3>
+
+        <p>
+            ε<sub>a</sub> = |x<sup>i</sup> − x<sup>i−1</sup>| / |x<sup>i</sup>|
+        </p>
+
+        <p>
+            Dalam bentuk persen:
+        </p>
+
+        <p>
+            ε<sub>a</sub> = ( |x<sup>i</sup> − x<sup>i−1</sup>| / |x<sup>i</sup>| ) × 100%
+        </p>
+
+    </div>
+
+    <!-- PENJELASAN VARIABEL -->
+    <div class="card card--soft">
+
+        <h3>Keterangan</h3>
+
+        <p>
+            x<sup>i</sup> → nilai iterasi saat ini<br>
+            x<sup>i−1</sup> → nilai iterasi sebelumnya
+        </p>
+
+        <p>
+            Nilai mutlak digunakan agar galat selalu positif.
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Perhitungan</h3>
+
+        <p>
+            Iterasi ke-1: x¹ = 2.5<br>
+            Iterasi ke-2: x² = 2.8
+        </p>
+
+        <p>
+            ε<sub>a</sub> = |2.8 − 2.5| / 2.8
+        </p>
+
+        <p>
+            ε<sub>a</sub> ≈ 0.107 = 10.7%
+        </p>
+
+        <p>
+            Artinya, perubahan antar iterasi masih cukup besar.
+        </p>
+
+    </div>
+
+    <!-- INTERPRETASI -->
+    <div class="card card--soft">
+
+        <h3>Interpretasi</h3>
+
+        <p>
+            Galat aproksimasi menunjukkan
+            seberapa besar perubahan antar iterasi.
+        </p>
+
+        <p>
+            • Besar → solusi belum stabil<br>
+            • Kecil → solusi mulai konvergen
+        </p>
+
+    </div>
+
+    <!-- KRITERIA BERHENTI -->
+    <div class="card card--soft">
+
+        <h3>Kriteria Berhenti</h3>
+
+        <p>
+            Iterasi dihentikan jika:
+        </p>
+
+        <p>
+            ε<sub>a</sub> < ε<sub>s</sub>
+        </p>
+
+        <p>
+            dimana ε<sub>s</sub> adalah toleransi
+            yang ditentukan sebelumnya.
+        </p>
+
+        <p>
+            Biasanya dinyatakan dalam persen.
+        </p>
+
+    </div>
+
+    <!-- HUBUNGAN DENGAN KONVERGENSI -->
+    <div class="card card--soft">
+
+        <h3>Hubungan dengan Konvergensi</h3>
+
+        <p>
+            Jika galat aproksimasi terus mengecil,
+            maka metode dikatakan konvergen.
+        </p>
+
+        <p>
+            Jika tidak stabil atau membesar,
+            maka metode bisa divergen.
+        </p>
+
+    </div>
+
+    <!-- PERAN DALAM METODE NUMERIK -->
+    <div class="card card--soft">
+
+        <h3>Peran dalam Metode Numerik</h3>
+
+        <p>
+            Galat ini adalah dasar utama
+            untuk menghentikan iterasi.
+        </p>
+
+        <p>
+            Digunakan pada metode seperti:
+            Jacobi, Gauss-Seidel, Newton-Raphson, dan lainnya.
+        </p>
+
+    </div>
+
+    <!-- INTUISI -->
+    <div class="card card--soft">
+
+        <h3>Intuisi</h3>
+
+        <p>
+            Galat relatif aproksimasi menjawab:
+            “Apakah hasil kita sudah cukup stabil?”
+        </p>
+
+        <p>
+            Jika perubahan antar iterasi sangat kecil,
+            maka kita sudah mendekati solusi.
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Galat relatif aproksimasi digunakan ketika
+            nilai eksak tidak tersedia.
+        </p>
+
+        <p>
+            Dengan membandingkan hasil iterasi,
+            kita dapat menentukan kapan proses dihentikan.
+        </p>
+
+        <p>
+            Ini adalah komponen kunci
+            dalam hampir semua metode numerik iteratif.
+        </p>
+
+    </div>
+
+</div>

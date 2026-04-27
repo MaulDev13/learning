@@ -1,0 +1,255 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Metode Newton-Raphson</h3>
+
+        <p>
+            Metode Newton-Raphson adalah metode numerik
+            untuk mencari akar persamaan non-linear
+            dengan menggunakan pendekatan turunan (gradien).
+        </p>
+
+        <p>
+            Metode ini termasuk metode terbuka
+            dan dikenal memiliki konvergensi yang sangat cepat.
+        </p>
+
+    </div>
+
+    <!-- KONSEP DASAR -->
+    <div class="card card--soft">
+
+        <h3>Konsep Dasar</h3>
+
+        <p>
+            Metode ini menggunakan garis singgung
+            (tangent line) pada suatu titik
+            untuk mendekati akar persamaan.
+        </p>
+
+        <p>
+            Dari tebakan awal,
+            dibuat garis singgung terhadap kurva f(x),
+            lalu dicari titik potongnya dengan sumbu x.
+        </p>
+
+    </div>
+
+    <!-- IDE UTAMA -->
+    <div class="card card--soft">
+
+        <h3>Ide Utama</h3>
+
+        <p>
+            Dimulai dari nilai awal x⁰,
+            kemudian diperbaiki secara iteratif
+            menggunakan informasi turunan.
+        </p>
+
+        <p>
+            Setiap iterasi menghasilkan nilai
+            yang lebih dekat ke akar.
+        </p>
+
+    </div>
+
+    <!-- RUMUS -->
+    <div class="card card--soft">
+
+        <h3>Rumus Newton-Raphson</h3>
+
+        <p>
+            x<sup>i+1</sup> = x<sup>i</sup> − f(x<sup>i</sup>) / f'(x<sup>i</sup>)
+        </p>
+
+        <p>
+            dimana:
+        </p>
+
+        <p>
+            f'(x) adalah turunan dari fungsi f(x)
+        </p>
+
+    </div>
+
+    <!-- PENJELASAN -->
+    <div class="card card--soft">
+
+        <h3>Makna Rumus</h3>
+
+        <p>
+            Nilai baru diperoleh dengan
+            mengoreksi nilai sebelumnya
+            menggunakan kemiringan (gradien).
+        </p>
+
+        <p>
+            Jika gradien besar → langkah kecil<br>
+            Jika gradien kecil → langkah besar
+        </p>
+
+    </div>
+
+    <!-- LANGKAH -->
+    <div class="card card--soft">
+
+        <h3>Langkah-langkah Metode</h3>
+
+        <p>
+            1. Tentukan tebakan awal x⁰<br>
+            2. Hitung f(x⁰) dan f'(x⁰)<br>
+            3. Hitung x¹ menggunakan rumus<br>
+            4. Ulangi proses hingga konvergen
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Kasus</h3>
+
+        <p>
+            f(x) = x² − 4
+        </p>
+
+        <p>
+            Turunan:
+            f'(x) = 2x
+        </p>
+
+        <p>
+            Tebakan awal:
+            x⁰ = 3
+        </p>
+
+    </div>
+
+    <!-- ITERASI 1 -->
+    <div class="card card--soft">
+
+        <h3>Iterasi 1</h3>
+
+        <p>
+            x¹ = 3 − (3² − 4) / (2 × 3)
+        </p>
+
+        <p>
+            x¹ = 3 − (9 − 4) / 6 = 3 − 5/6 = 2.1667
+        </p>
+
+    </div>
+
+    <!-- ITERASI 2 -->
+    <div class="card card--soft">
+
+        <h3>Iterasi 2</h3>
+
+        <p>
+            x² = 2.1667 − (2.1667² − 4) / (2 × 2.1667)
+        </p>
+
+        <p>
+            x² ≈ 2.0064
+        </p>
+
+        <p>
+            Sudah sangat dekat dengan akar sebenarnya (2).
+        </p>
+
+    </div>
+
+    <!-- KONVERGENSI -->
+    <div class="card card--soft">
+
+        <h3>Konvergensi</h3>
+
+        <p>
+            Metode ini memiliki konvergensi kuadratik,
+            artinya kesalahan berkurang sangat cepat.
+        </p>
+
+        <p>
+            Dalam beberapa iterasi saja,
+            hasil sudah sangat akurat.
+        </p>
+
+    </div>
+
+    <!-- KELEBIHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelebihan</h3>
+
+        <p>
+            • Konvergensi sangat cepat<br>
+            • Efisien untuk presisi tinggi<br>
+            • Banyak digunakan dalam praktik
+        </p>
+
+    </div>
+
+    <!-- KELEMAHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelemahan</h3>
+
+        <p>
+            • Memerlukan turunan fungsi<br>
+            • Sensitif terhadap tebakan awal<br>
+            • Bisa divergen jika kondisi tidak baik
+        </p>
+
+    </div>
+
+    <!-- MASALAH UMUM -->
+    <div class="card card--soft">
+
+        <h3>Masalah yang Sering Terjadi</h3>
+
+        <p>
+            • f'(x) = 0 → tidak bisa dihitung<br>
+            • Tebakan awal terlalu jauh → divergen<br>
+            • Fungsi tidak halus → hasil tidak stabil
+        </p>
+
+    </div>
+
+    <!-- INTUISI -->
+    <div class="card card--soft">
+
+        <h3>Intuisi</h3>
+
+        <p>
+            Metode ini seperti “menjatuhkan garis singgung”
+            ke sumbu x untuk menebak posisi akar.
+        </p>
+
+        <p>
+            Setiap langkah membuat tebakan
+            semakin tepat secara cepat.
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Metode Newton-Raphson adalah metode
+            yang sangat cepat dan efisien
+            untuk mencari akar persamaan.
+        </p>
+
+        <p>
+            Namun, keberhasilannya bergantung
+            pada pemilihan titik awal dan sifat fungsi.
+        </p>
+
+    </div>
+
+</div>

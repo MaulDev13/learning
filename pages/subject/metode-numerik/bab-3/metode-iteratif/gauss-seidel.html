@@ -1,0 +1,231 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Metode Gauss-Seidel</h3>
+
+        <p>
+            Metode Gauss-Seidel adalah metode iteratif
+            untuk menyelesaikan Sistem Persamaan Linear
+            dengan memperbarui nilai variabel secara langsung.
+        </p>
+
+        <p>
+            Metode ini merupakan pengembangan dari metode Jacobi
+            dengan konvergensi yang lebih cepat.
+        </p>
+
+    </div>
+
+    <!-- KONSEP -->
+    <div class="card card--soft">
+
+        <h3>Konsep Dasar</h3>
+
+        <p>
+            Berbeda dengan Jacobi,
+            setiap nilai yang baru dihitung
+            langsung digunakan dalam perhitungan berikutnya.
+        </p>
+
+        <p>
+            Artinya, iterasi dilakukan secara berurutan,
+            bukan serentak.
+        </p>
+
+    </div>
+
+    <!-- PERBEDAAN -->
+    <div class="card card--soft">
+
+        <h3>Perbedaan dengan Jacobi</h3>
+
+        <p>
+            • Jacobi → semua nilai pakai iterasi lama<br>
+            • Gauss-Seidel → langsung pakai nilai terbaru
+        </p>
+
+        <p>
+            Hal ini membuat Gauss-Seidel
+            lebih cepat konvergen.
+        </p>
+
+    </div>
+
+    <!-- RUMUS -->
+    <div class="card card--soft">
+
+        <h3>Rumus Iterasi</h3>
+
+        <p>
+            xᵢ^(k+1) = (1 / aᵢᵢ)
+            [ bᵢ − Σ (aᵢⱼ xⱼ) ]
+        </p>
+
+        <p>
+            Gunakan nilai terbaru jika sudah tersedia,
+            dan nilai lama jika belum.
+        </p>
+
+    </div>
+
+    <!-- LANGKAH -->
+    <div class="card card--soft">
+
+        <h3>Langkah-langkah Metode</h3>
+
+        <p>
+            1. Tentukan tebakan awal<br>
+            2. Hitung variabel satu per satu<br>
+            3. Gunakan nilai terbaru saat tersedia<br>
+            4. Ulangi hingga konvergen
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Sistem</h3>
+
+        <p>
+            8x₁ + x₂ − x₃ = 8<br>
+            2x₁ + x₂ + 9x₃ = 12<br>
+            x₁ − 7x₂ + 2x₃ = -4
+        </p>
+
+        <p>
+            Tebakan awal:
+            x₁⁰ = 0, x₂⁰ = 0, x₃⁰ = 0
+        </p>
+
+    </div>
+
+    <!-- ITERASI 1 -->
+    <div class="card card--soft">
+
+        <h3>Iterasi 1</h3>
+
+        <p>
+            x₁¹ = (8 − x₂⁰ + x₃⁰) / 8 = 1<br>
+        </p>
+
+        <p>
+            x₂¹ = (12 − 2x₁¹ − 9x₃⁰) / 1 = 10<br>
+        </p>
+
+        <p>
+            x₃¹ = (-4 − x₁¹ + 7x₂¹) / 2 = 32.5
+        </p>
+
+        <p>
+            Perhatikan: x₁¹ langsung digunakan untuk menghitung x₂¹.
+        </p>
+
+    </div>
+
+    <!-- ITERASI LANJUT -->
+    <div class="card card--soft">
+
+        <h3>Iterasi Selanjutnya</h3>
+
+        <p>
+            Nilai terus diperbarui secara berurutan
+            hingga mencapai kestabilan.
+        </p>
+
+        <p>
+            Biasanya membutuhkan iterasi lebih sedikit
+            dibanding Jacobi.
+        </p>
+
+    </div>
+
+    <!-- KONVERGENSI -->
+    <div class="card card--soft">
+
+        <h3>Syarat Konvergensi</h3>
+
+        <p>
+            Sama seperti Jacobi,
+            konvergensi dipengaruhi oleh dominasi diagonal.
+        </p>
+
+        <p>
+            |aᵢᵢ| > Σ |aᵢⱼ|
+        </p>
+
+    </div>
+
+    <!-- KELEBIHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelebihan</h3>
+
+        <p>
+            • Konvergensi lebih cepat dari Jacobi<br>
+            • Lebih efisien<br>
+            • Cocok untuk sistem besar
+        </p>
+
+    </div>
+
+    <!-- KELEMAHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelemahan</h3>
+
+        <p>
+            • Bergantung urutan variabel<br>
+            • Tidak selalu konvergen<br>
+            • Lebih sulit diparalelkan dibanding Jacobi
+        </p>
+
+    </div>
+
+    <!-- PERBANDINGAN -->
+    <div class="card card--soft">
+
+        <h3>Perbandingan</h3>
+
+        <p>
+            • Jacobi → sederhana, lambat<br>
+            • Gauss-Seidel → lebih cepat, sedikit kompleks
+        </p>
+
+    </div>
+
+    <!-- INTUISI -->
+    <div class="card card--soft">
+
+        <h3>Intuisi</h3>
+
+        <p>
+            Gauss-Seidel seperti “update langsung saat tahu jawabannya”.
+        </p>
+
+        <p>
+            Jadi, setiap langkah langsung memperbaiki arah solusi.
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Metode Gauss-Seidel adalah metode iteratif
+            yang lebih cepat dari Jacobi.
+        </p>
+
+        <p>
+            Metode ini banyak digunakan dalam praktik
+            karena efisiensinya.
+        </p>
+
+    </div>
+
+</div>

@@ -1,0 +1,231 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Metode Newton Multivariable</h3>
+
+        <p>
+            Metode Newton Multivariable adalah pengembangan dari metode Newton-Raphson
+            untuk menyelesaikan sistem persamaan non linear dengan lebih dari satu variabel.
+        </p>
+
+        <p>
+            Metode ini menggunakan pendekatan turunan (Jacobian) untuk
+            memperbaiki solusi secara iteratif hingga mendekati nilai sebenarnya.
+        </p>
+
+        <p>
+            Cocok digunakan untuk SPNL dengan dua atau lebih variabel.
+        </p>
+
+    </div>
+
+    <!-- IDE DASAR -->
+    <div class="card card--soft">
+
+        <h3>Ide Dasar Metode</h3>
+
+        <p>
+            Ide utama metode ini adalah melakukan pendekatan linear
+            terhadap fungsi non linear di sekitar titik tebakan awal.
+        </p>
+
+        <p>
+            Kemudian, solusi diperbaiki secara bertahap menggunakan
+            informasi turunan parsial dari fungsi tersebut.
+        </p>
+
+        <p>
+            Setiap iterasi akan menghasilkan pendekatan yang lebih baik.
+        </p>
+
+    </div>
+
+    <!-- BENTUK UMUM -->
+    <div class="card card--soft">
+
+        <h3>Bentuk Umum Sistem</h3>
+
+        <p>
+            Sistem persamaan non linear ditulis sebagai:
+        </p>
+
+        <p>
+            f₁(x, y, ...) = 0<br>
+            f₂(x, y, ...) = 0<br>
+            ...
+        </p>
+
+        <p>
+            Dalam bentuk vektor:
+            <strong>F(x) = 0</strong>
+        </p>
+
+    </div>
+
+    <!-- JACOBIAN -->
+    <div class="card card--soft">
+
+        <h3>Matriks Jacobian</h3>
+
+        <p>
+            Jacobian adalah matriks yang berisi turunan parsial
+            dari setiap fungsi terhadap setiap variabel.
+        </p>
+
+        <p>
+            Bentuk umum:
+        </p>
+
+        <p>
+            J(x) =
+            [ ∂f₁/∂x   ∂f₁/∂y ]<br>
+            [ ∂f₂/∂x   ∂f₂/∂y ]
+        </p>
+
+        <p>
+            Jacobian digunakan untuk menentukan arah perbaikan solusi.
+        </p>
+
+    </div>
+
+    <!-- RUMUS ITERASI -->
+    <div class="card card--soft">
+
+        <h3>Rumus Iterasi Newton</h3>
+
+        <p>
+            Rumus utama metode Newton multivariable:
+        </p>
+
+        <p>
+            x^(k+1) = x^(k) - J⁻¹(x^(k)) · F(x^(k))
+        </p>
+
+        <p>
+            Artinya:
+            solusi baru diperoleh dari solusi lama
+            yang dikoreksi menggunakan Jacobian.
+        </p>
+
+    </div>
+
+    <!-- LANGKAH -->
+    <div class="card card--soft">
+
+        <h3>Langkah-langkah</h3>
+
+        <p>
+            1. Tentukan tebakan awal (initial guess)<br>
+            2. Hitung nilai fungsi F(x)<br>
+            3. Hitung matriks Jacobian J(x)<br>
+            4. Selesaikan sistem linear<br>
+            5. Perbarui nilai variabel<br>
+            6. Ulangi sampai konvergen
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Sistem</h3>
+
+        <p>
+            f₁(x, y) = x² + y² - 4<br>
+            f₂(x, y) = x - y
+        </p>
+
+        <p>
+            Tebakan awal:
+            x⁰ = 1, y⁰ = 1
+        </p>
+
+    </div>
+
+    <!-- ILUSTRASI ITERASI -->
+    <div class="card card--soft">
+
+        <h3>Ilustrasi Iterasi</h3>
+
+        <p>
+            Hitung Jacobian:
+        </p>
+
+        <p>
+            J(x,y) =
+            [ 2x   2y ]<br>
+            [ 1   -1 ]
+        </p>
+
+        <p>
+            Nilai fungsi dan Jacobian digunakan
+            untuk mendapatkan koreksi nilai x dan y.
+        </p>
+
+    </div>
+
+    <!-- KELEBIHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelebihan Metode</h3>
+
+        <p>
+            • Konvergensi cepat (jika mendekati solusi)<br>
+            • Akurat untuk banyak kasus<br>
+            • Efisien untuk sistem kecil hingga menengah
+        </p>
+
+    </div>
+
+    <!-- KEKURANGAN -->
+    <div class="card card--soft">
+
+        <h3>Kekurangan Metode</h3>
+
+        <p>
+            • Perlu menghitung turunan parsial<br>
+            • Membutuhkan invers matriks Jacobian<br>
+            • Sensitif terhadap tebakan awal<br>
+            • Bisa tidak konvergen
+        </p>
+
+    </div>
+
+    <!-- KONVERGENSI -->
+    <div class="card card--soft">
+
+        <h3>Konvergensi</h3>
+
+        <p>
+            Metode Newton akan konvergen jika:
+        </p>
+
+        <p>
+            • Tebakan awal cukup dekat dengan solusi<br>
+            • Fungsi bersifat kontinu dan halus<br>
+            • Jacobian tidak singular
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Metode Newton Multivariable adalah metode yang kuat
+            untuk menyelesaikan SPNL dengan pendekatan iteratif.
+        </p>
+
+        <p>
+            Dengan bantuan Jacobian, metode ini mampu memberikan
+            solusi yang cepat dan akurat, namun memerlukan perhitungan
+            yang lebih kompleks.
+        </p>
+
+    </div>
+
+</div>

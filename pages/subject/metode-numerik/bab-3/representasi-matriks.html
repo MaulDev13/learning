@@ -1,0 +1,270 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Representasi Matriks dan Operasinya</h3>
+
+        <p>
+            Sistem Persamaan Linear (SPL) dapat ditulis
+            dalam bentuk matriks untuk mempermudah manipulasi.
+        </p>
+
+        <p>
+            Bentuk umum:
+            Ax = b
+        </p>
+
+        <p>
+            Dengan bentuk ini, kita dapat menggunakan
+            berbagai operasi matriks untuk menyelesaikan sistem.
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Representasi</h3>
+
+        <p>
+            2x₁ + x₂ = 5<br>
+            x₁ − x₂ = 1
+        </p>
+
+        <p>
+            Matriks:
+        </p>
+
+        <p>
+            [ 2  1 ] [ x₁ ] = [ 5 ]<br>
+            [ 1 -1 ] [ x₂ ]   [ 1 ]
+        </p>
+
+    </div>
+
+    <!-- AUGMENTED -->
+    <div class="card card--soft">
+
+        <h3>Matriks Augmented</h3>
+
+        <p>
+            Untuk mempermudah eliminasi,
+            digunakan matriks gabungan:
+        </p>
+
+        <p>
+            [ 2  1 | 5 ]<br>
+            [ 1 -1 | 1 ]
+        </p>
+
+    </div>
+
+    <!-- PENJUMLAHAN -->
+    <div class="card card--soft">
+
+        <h3>Penjumlahan Matriks</h3>
+
+        <p>
+            Dua matriks dapat dijumlahkan
+            jika memiliki ukuran yang sama.
+        </p>
+
+        <p>
+            Operasi dilakukan elemen per elemen:
+        </p>
+
+        <p>
+            [ a  b ] + [ e  f ] = [ a+e  b+f ]<br>
+            [ c  d ]   [ g  h ]   [ c+g  d+h ]
+        </p>
+
+    </div>
+
+    <!-- PERKALIAN SKALAR -->
+    <div class="card card--soft">
+
+        <h3>Perkalian dengan Skalar</h3>
+
+        <p>
+            Matriks dapat dikalikan dengan konstanta (skalar).
+        </p>
+
+        <p>
+            Contoh:
+        </p>
+
+        <p>
+            k [ a  b ] = [ ka  kb ]<br>
+              [ c  d ]   [ kc  kd ]
+        </p>
+
+    </div>
+
+    <!-- PERKALIAN MATRIKS -->
+    <div class="card card--soft">
+
+        <h3>Perkalian Matriks</h3>
+
+        <p>
+            Matriks A dapat dikalikan dengan B
+            jika jumlah kolom A = jumlah baris B.
+        </p>
+
+        <p>
+            Elemen hasil diperoleh dari
+            perkalian baris dan kolom.
+        </p>
+
+        <p>
+            (AB)<sub>ij</sub> = Σ a<sub>ik</sub>b<sub>kj</sub>
+        </p>
+
+    </div>
+
+    <!-- OPERASI BARIS -->
+    <div class="card card--soft">
+
+        <h3>Operasi Baris Elementer (OBE)</h3>
+
+        <p>
+            Operasi baris digunakan untuk
+            mengubah matriks menjadi bentuk yang lebih sederhana.
+        </p>
+
+        <p>
+            Terdapat tiga operasi dasar:
+        </p>
+
+        <p>
+            1. Tukar baris: Rᵢ ↔ Rⱼ<br>
+            2. Kali baris: Rᵢ = kRᵢ<br>
+            3. Kombinasi baris: Rᵢ = Rᵢ + kRⱼ
+        </p>
+
+    </div>
+
+    <!-- OPERASI PENTING -->
+    <div class="card card--soft">
+
+        <h3>Operasi Eliminasi</h3>
+
+        <p>
+            Operasi yang paling sering digunakan
+            dalam metode Gauss adalah:
+        </p>
+
+        <p>
+            Rᵢ = Rᵢ − kRⱼ
+        </p>
+
+        <p>
+            Tujuannya adalah membuat elemen tertentu menjadi nol.
+        </p>
+
+    </div>
+
+    <!-- CONTOH OBE -->
+    <div class="card card--soft">
+
+        <h3>Contoh Operasi Baris</h3>
+
+        <p>
+            [ 2  1 | 5 ]<br>
+            [ 1 -1 | 1 ]
+        </p>
+
+        <p>
+            Eliminasi x₁ pada baris kedua:
+        </p>
+
+        <p>
+            R₂ = R₂ − (1/2)R₁
+        </p>
+
+        <p>
+            Hasil:
+        </p>
+
+        <p>
+            [ 2  1   | 5 ]<br>
+            [ 0 -1.5 | -1.5 ]
+        </p>
+
+    </div>
+
+    <!-- TUJUAN -->
+    <div class="card card--soft">
+
+        <h3>Tujuan Operasi Matriks</h3>
+
+        <p>
+            Operasi ini digunakan untuk:
+        </p>
+
+        <p>
+            • Menyederhanakan sistem<br>
+            • Mengubah ke bentuk segitiga<br>
+            • Mempermudah pencarian solusi
+        </p>
+
+    </div>
+
+    <!-- HUBUNGAN -->
+    <div class="card card--soft">
+
+        <h3>Hubungan dengan Metode Gauss</h3>
+
+        <p>
+            Semua langkah dalam eliminasi Gauss
+            berasal dari operasi baris elementer.
+        </p>
+
+        <p>
+            Tanpa memahami OBE,
+            metode Gauss hanya akan terlihat
+            sebagai langkah mekanis.
+        </p>
+
+    </div>
+
+    <!-- INTUISI -->
+    <div class="card card--soft">
+
+        <h3>Intuisi</h3>
+
+        <p>
+            Operasi baris seperti “mengatur ulang”
+            persamaan tanpa mengubah solusi.
+        </p>
+
+        <p>
+            Tujuannya adalah membuat sistem
+            menjadi lebih mudah diselesaikan.
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Representasi matriks memungkinkan SPL
+            diolah secara sistematis.
+        </p>
+
+        <p>
+            Operasi matriks, terutama operasi baris,
+            adalah kunci dalam metode eliminasi.
+        </p>
+
+        <p>
+            Pemahaman ini menjadi dasar
+            untuk metode Gauss dan metode lanjutan lainnya.
+        </p>
+
+    </div>
+
+</div>

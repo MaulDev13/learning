@@ -1,0 +1,185 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Interpolasi Polinomial Lagrange</h3>
+
+        <p>
+            Interpolasi Lagrange adalah metode untuk membentuk polinomial
+            yang melalui seluruh titik data yang diberikan.
+        </p>
+
+        <p>
+            Metode ini tidak memerlukan penyelesaian sistem persamaan,
+            melainkan menggunakan rumus langsung.
+        </p>
+
+        <p>
+            Cocok digunakan untuk jumlah data yang tidak terlalu banyak.
+        </p>
+
+    </div>
+
+    <!-- IDE DASAR -->
+    <div class="card card--soft">
+
+        <h3>Ide Dasar</h3>
+
+        <p>
+            Diberikan titik data:
+            (x₀, y₀), (x₁, y₁), ..., (xₙ, yₙ)
+        </p>
+
+        <p>
+            Kita membentuk polinomial P(x)
+            yang melewati semua titik tersebut.
+        </p>
+
+        <p>
+            Setiap titik memiliki fungsi basis tersendiri.
+        </p>
+
+    </div>
+
+    <!-- RUMUS -->
+    <div class="card card--soft">
+
+        <h3>Rumus Lagrange</h3>
+
+        <p>
+            Bentuk umum:
+        </p>
+
+        <p>
+            P(x) = Σ (yᵢ · Lᵢ(x))
+        </p>
+
+        <p>
+            Dengan:
+        </p>
+
+        <p>
+            Lᵢ(x) = Π ( (x - xⱼ) / (xᵢ - xⱼ) ), j ≠ i
+        </p>
+
+        <p>
+            Lᵢ(x) disebut sebagai polinomial basis Lagrange.
+        </p>
+
+    </div>
+
+    <!-- PENJELASAN -->
+    <div class="card card--soft">
+
+        <h3>Penjelasan Konsep</h3>
+
+        <p>
+            Setiap Lᵢ(x) bernilai 1 pada x = xᵢ
+            dan 0 pada titik lainnya.
+        </p>
+
+        <p>
+            Hal ini memastikan bahwa polinomial
+            melewati semua titik data.
+        </p>
+
+    </div>
+
+    <!-- LANGKAH -->
+    <div class="card card--soft">
+
+        <h3>Langkah-langkah</h3>
+
+        <p>
+            1. Tentukan titik data<br>
+            2. Bentuk fungsi basis Lᵢ(x)<br>
+            3. Kalikan dengan nilai yᵢ<br>
+            4. Jumlahkan semua hasil<br>
+            5. Sederhanakan polinomial
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Perhitungan</h3>
+
+        <p>
+            Diketahui titik:
+        </p>
+
+        <p>
+            (1, 1), (2, 4), (3, 9)
+        </p>
+
+        <p>
+            Akan dibentuk polinomial interpolasi.
+        </p>
+
+    </div>
+
+    <!-- ILUSTRASI -->
+    <div class="card card--soft">
+
+        <h3>Ilustrasi Hasil</h3>
+
+        <p>
+            Dari titik tersebut diperoleh:
+        </p>
+
+        <p>
+            P(x) = x²
+        </p>
+
+        <p>
+            Polinomial ini melalui semua titik yang diberikan.
+        </p>
+
+    </div>
+
+    <!-- KELEBIHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelebihan</h3>
+
+        <p>
+            • Tidak perlu menyelesaikan sistem persamaan<br>
+            • Bentuk rumus langsung<br>
+            • Mudah dipahami secara konsep
+        </p>
+
+    </div>
+
+    <!-- KEKURANGAN -->
+    <div class="card card--soft">
+
+        <h3>Kekurangan</h3>
+
+        <p>
+            • Perhitungan bisa panjang untuk banyak titik<br>
+            • Tidak efisien jika data sering berubah<br>
+            • Rentan terhadap error untuk derajat tinggi
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Interpolasi Lagrange adalah metode efektif
+            untuk membentuk polinomial dari data yang diketahui.
+        </p>
+
+        <p>
+            Metode ini sederhana, namun kurang efisien
+            untuk jumlah data yang besar.
+        </p>
+
+    </div>
+
+</div>

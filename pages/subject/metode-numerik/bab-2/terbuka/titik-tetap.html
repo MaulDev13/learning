@@ -1,0 +1,240 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Metode Titik Tetap (Fixed Point Iteration)</h3>
+
+        <p>
+            Metode titik tetap adalah metode numerik
+            untuk mencari akar persamaan dengan
+            mengubah bentuk persamaan menjadi iterasi.
+        </p>
+
+        <p>
+            Metode ini termasuk metode terbuka
+            karena tidak memerlukan interval awal.
+        </p>
+
+    </div>
+
+    <!-- KONSEP DASAR -->
+    <div class="card card--soft">
+
+        <h3>Konsep Dasar</h3>
+
+        <p>
+            Persamaan f(x) = 0 diubah menjadi bentuk:
+        </p>
+
+        <p>
+            x = g(x)
+        </p>
+
+        <p>
+            Nilai x dicari sebagai titik tetap,
+            yaitu nilai yang tidak berubah saat dimasukkan kembali.
+        </p>
+
+    </div>
+
+    <!-- DEFINISI TITIK TETAP -->
+    <div class="card card--soft">
+
+        <h3>Definisi Titik Tetap</h3>
+
+        <p>
+            Jika suatu nilai r memenuhi:
+        </p>
+
+        <p>
+            r = g(r)
+        </p>
+
+        <p>
+            maka r disebut titik tetap dari fungsi g(x),
+            dan merupakan solusi dari persamaan awal.
+        </p>
+
+    </div>
+
+    <!-- IDE UTAMA -->
+    <div class="card card--soft">
+
+        <h3>Ide Utama</h3>
+
+        <p>
+            Dimulai dari tebakan awal x⁰,
+            kemudian dihitung secara berulang:
+        </p>
+
+        <p>
+            x<sup>i+1</sup> = g(x<sup>i</sup>)
+        </p>
+
+        <p>
+            Proses diulang sampai nilai konvergen.
+        </p>
+
+    </div>
+
+    <!-- LANGKAH -->
+    <div class="card card--soft">
+
+        <h3>Langkah-langkah Metode</h3>
+
+        <p>
+            1. Ubah f(x) = 0 menjadi x = g(x)<br>
+            2. Tentukan tebakan awal x⁰<br>
+            3. Hitung x¹ = g(x⁰)<br>
+            4. Hitung x² = g(x¹)<br>
+            5. Ulangi hingga memenuhi toleransi
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Kasus</h3>
+
+        <p>
+            f(x) = x² − 4 = 0
+        </p>
+
+        <p>
+            Salah satu bentuk:
+        </p>
+
+        <p>
+            x = √4 = 2
+        </p>
+
+        <p>
+            Atau bisa ditulis:
+        </p>
+
+        <p>
+            x = √(4)
+        </p>
+
+        <p>
+            (Contoh ini sederhana, tetapi pada kasus nyata
+            bentuk g(x) lebih kompleks)
+        </p>
+
+    </div>
+
+    <!-- ITERASI -->
+    <div class="card card--soft">
+
+        <h3>Proses Iterasi</h3>
+
+        <p>
+            Misalkan:
+            x⁰ = 1
+        </p>
+
+        <p>
+            x¹ = g(1)<br>
+            x² = g(x¹)<br>
+            x³ = g(x²)
+        </p>
+
+        <p>
+            Nilai akan mendekati titik tetap
+            jika metode konvergen.
+        </p>
+
+    </div>
+
+    <!-- KONVERGENSI -->
+    <div class="card card--soft">
+
+        <h3>Syarat Konvergensi</h3>
+
+        <p>
+            Metode akan konvergen jika:
+        </p>
+
+        <p>
+            |g'(x)| < 1
+        </p>
+
+        <p>
+            di sekitar akar.
+        </p>
+
+        <p>
+            Jika tidak terpenuhi,
+            iterasi bisa divergen.
+        </p>
+
+    </div>
+
+    <!-- KELEBIHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelebihan</h3>
+
+        <p>
+            • Sederhana dalam konsep<br>
+            • Tidak memerlukan interval<br>
+            • Mudah diimplementasikan
+        </p>
+
+    </div>
+
+    <!-- KELEMAHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelemahan</h3>
+
+        <p>
+            • Sangat bergantung pada bentuk g(x)<br>
+            • Bisa divergen jika salah transformasi<br>
+            • Konvergensi tidak selalu cepat
+        </p>
+
+    </div>
+
+    <!-- INTUISI -->
+    <div class="card card--soft">
+
+        <h3>Intuisi</h3>
+
+        <p>
+            Metode ini seperti “memasukkan hasil ke dalam fungsi
+            secara berulang sampai tidak berubah lagi”.
+        </p>
+
+        <p>
+            Titik di mana nilai tidak berubah
+            adalah solusi yang dicari.
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Metode titik tetap mencari solusi
+            melalui proses iterasi sederhana.
+        </p>
+
+        <p>
+            Keberhasilan metode sangat bergantung
+            pada bentuk fungsi yang digunakan.
+        </p>
+
+        <p>
+            Metode ini menjadi dasar untuk memahami
+            metode terbuka lainnya seperti Newton-Raphson.
+        </p>
+
+    </div>
+
+</div>

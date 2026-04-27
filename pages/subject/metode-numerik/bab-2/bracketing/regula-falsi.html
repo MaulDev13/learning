@@ -1,0 +1,248 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Metode Regula Falsi</h3>
+
+        <p>
+            Metode Regula Falsi adalah metode numerik
+            untuk mencari akar persamaan non-linear
+            dengan menggunakan pendekatan garis lurus.
+        </p>
+
+        <p>
+            Metode ini termasuk metode tertutup
+            karena menggunakan interval [a, b]
+            yang mengandung akar.
+        </p>
+
+    </div>
+
+    <!-- KONSEP DASAR -->
+    <div class="card card--soft">
+
+        <h3>Konsep Dasar</h3>
+
+        <p>
+            Sama seperti metode biseksi,
+            Regula Falsi membutuhkan:
+        </p>
+
+        <p>
+            f(a) × f(b) < 0
+        </p>
+
+        <p>
+            yang menunjukkan adanya akar
+            di antara a dan b.
+        </p>
+
+    </div>
+
+    <!-- IDE UTAMA -->
+    <div class="card card--soft">
+
+        <h3>Ide Utama</h3>
+
+        <p>
+            Berbeda dengan biseksi,
+            titik tengah tidak dihitung sebagai rata-rata.
+        </p>
+
+        <p>
+            Metode ini menggunakan garis lurus
+            yang menghubungkan titik (a, f(a)) dan (b, f(b)).
+        </p>
+
+        <p>
+            Titik potong garis tersebut dengan sumbu x
+            digunakan sebagai pendekatan akar.
+        </p>
+
+    </div>
+
+    <!-- RUMUS -->
+    <div class="card card--soft">
+
+        <h3>Rumus Regula Falsi</h3>
+
+        <p>
+            c = b − [ f(b)(b − a) / (f(b) − f(a)) ]
+        </p>
+
+        <p>
+            Titik c adalah pendekatan akar
+            hasil interpolasi linear.
+        </p>
+
+    </div>
+
+    <!-- LANGKAH -->
+    <div class="card card--soft">
+
+        <h3>Langkah-langkah Metode</h3>
+
+        <p>
+            1. Tentukan interval awal [a, b]<br>
+            2. Pastikan f(a) × f(b) < 0<br>
+            3. Hitung titik c menggunakan rumus<br>
+            4. Evaluasi f(c)<br>
+            5. Tentukan interval baru:<br>
+            &nbsp;&nbsp;&nbsp;• Jika f(a) × f(c) < 0 → b = c<br>
+            &nbsp;&nbsp;&nbsp;• Jika f(c) × f(b) < 0 → a = c<br>
+            6. Ulangi hingga memenuhi toleransi
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Kasus</h3>
+
+        <p>
+            f(x) = x² − 4
+        </p>
+
+        <p>
+            Interval awal:
+            [1, 3]
+        </p>
+
+        <p>
+            f(1) = -3<br>
+            f(3) = 5
+        </p>
+
+        <p>
+            Karena terdapat perubahan tanda,
+            metode dapat digunakan.
+        </p>
+
+    </div>
+
+    <!-- ITERASI 1 -->
+    <div class="card card--soft">
+
+        <h3>Iterasi 1</h3>
+
+        <p>
+            c = 3 − [5(3 − 1) / (5 − (-3))]
+        </p>
+
+        <p>
+            c = 3 − (10 / 8) = 1.75
+        </p>
+
+        <p>
+            f(1.75) = -0.9375
+        </p>
+
+        <p>
+            Akar berada di antara 1.75 dan 3.
+        </p>
+
+    </div>
+
+    <!-- ITERASI LANJUT -->
+    <div class="card card--soft">
+
+        <h3>Iterasi Selanjutnya</h3>
+
+        <p>
+            Proses diulang dengan interval baru
+            hingga nilai mendekati akar sebenarnya.
+        </p>
+
+        <p>
+            Setiap iterasi menggunakan pendekatan garis,
+            sehingga lebih cepat dibanding biseksi.
+        </p>
+
+    </div>
+
+    <!-- PERBANDINGAN -->
+    <div class="card card--soft">
+
+        <h3>Perbandingan dengan Biseksi</h3>
+
+        <p>
+            • Biseksi → membagi dua interval<br>
+            • Regula Falsi → menggunakan interpolasi linear
+        </p>
+
+        <p>
+            Regula Falsi biasanya lebih cepat
+            karena mempertimbangkan bentuk fungsi.
+        </p>
+
+    </div>
+
+    <!-- KELEBIHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelebihan</h3>
+
+        <p>
+            • Lebih cepat dari biseksi<br>
+            • Tetap stabil (menggunakan interval)<br>
+            • Mudah dipahami
+        </p>
+
+    </div>
+
+    <!-- KELEMAHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelemahan</h3>
+
+        <p>
+            • Bisa konvergen lambat pada kasus tertentu<br>
+            • Salah satu batas interval bisa tetap<br>
+            • Tidak selalu lebih efisien dari metode lain
+        </p>
+
+    </div>
+
+    <!-- INTUISI -->
+    <div class="card card--soft">
+
+        <h3>Intuisi</h3>
+
+        <p>
+            Jika biseksi “membelah dua”,
+            maka Regula Falsi “menarik garis”
+            untuk memperkirakan posisi akar.
+        </p>
+
+        <p>
+            Pendekatan ini membuat pencarian
+            lebih cerdas dibanding sekadar membagi interval.
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Metode Regula Falsi adalah pengembangan
+            dari metode biseksi dengan pendekatan linear.
+        </p>
+
+        <p>
+            Metode ini lebih cepat dalam banyak kasus,
+            namun tetap mempertahankan stabilitas.
+        </p>
+
+        <p>
+            Cocok sebagai jembatan menuju metode
+            yang lebih kompleks seperti Newton-Raphson.
+        </p>
+
+    </div>
+
+</div>

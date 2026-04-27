@@ -64,7 +64,7 @@ body {
 }
 
 .container {
-	max-width: 48rem;
+	max-width: 100%;
 	margin: 0 auto;
 	padding: var(--space-xl) var(--space-lg);
 	background: transparent;
@@ -393,6 +393,70 @@ p {
 	padding: .25rem .5rem;
 	border-radius: var(--radius-sm);
 	font-size: var(--text-sm);
+}
+
+/* ====================================== */
+/* SIDE NAVBAR */
+/* ====================================== */
+.layout {
+    display: flex;
+    gap: var(--space-lg);
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 240px;
+    height: 100vh;
+
+    position: sticky;
+    top: 0;
+
+    overflow-y: auto; /* THIS is your scroll */
+    
+    padding: var(--space-md);
+    border-right: 1px solid var(--border);
+
+	flex-shrink: 0;
+}
+
+/* SECTION */
+.sidebar-title {
+    font-size: var(--text-sm);
+    color: var(--text-meta);
+    margin-bottom: var(--space-sm);
+}
+
+/* ITEMS */
+.sidebar-item {
+    padding: var(--space-sm);
+    font-size: var(--text-sm);
+    color: var(--text-meta);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+}
+
+.sidebar-item:hover {
+    background: var(--primary-soft);
+    color: var(--text-title);
+}
+
+/* GROUP */
+.sidebar-group-title {
+    padding: var(--space-sm);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* SUB LEVEL */
+.sidebar-sub {
+    margin-left: var(--space-md);
+    display: none;
+}
+
+/* OPEN STATE */
+.sidebar-group.open > .sidebar-sub {
+    display: block;
 }
 
 /* =========================================================

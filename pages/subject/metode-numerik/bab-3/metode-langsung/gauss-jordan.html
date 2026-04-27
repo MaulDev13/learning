@@ -1,0 +1,302 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Metode Gauss-Jordan</h3>
+
+        <p>
+            Metode Gauss-Jordan adalah pengembangan
+            dari metode Eliminasi Gauss
+            untuk menyelesaikan Sistem Persamaan Linear.
+        </p>
+
+        <p>
+            Metode ini mengubah matriks menjadi
+            bentuk eselon baris tereduksi (Reduced Row Echelon Form).
+        </p>
+
+    </div>
+
+    <!-- KONSEP DASAR -->
+    <div class="card card--soft">
+
+        <h3>Konsep Dasar</h3>
+
+        <p>
+            Berbeda dengan Gauss,
+            metode ini tidak hanya membuat nol di bawah pivot,
+            tetapi juga di atas pivot.
+        </p>
+
+        <p>
+            Hasil akhirnya adalah matriks identitas.
+        </p>
+
+    </div>
+
+    <!-- BENTUK AKHIR -->
+    <div class="card card--soft">
+
+        <h3>Bentuk Akhir</h3>
+
+        <p>
+            Matriks akan menjadi:
+        </p>
+
+        <p>
+            [ 1  0  0 | x ]<br>
+            [ 0  1  0 | y ]<br>
+            [ 0  0  1 | z ]
+        </p>
+
+        <p>
+            Solusi dapat langsung dibaca.
+        </p>
+
+    </div>
+
+    <!-- LANGKAH -->
+    <div class="card card--soft">
+
+        <h3>Langkah-langkah Metode</h3>
+
+        <p>
+            1. Bentuk matriks augmented<br>
+            2. Lakukan eliminasi seperti Gauss<br>
+            3. Buat pivot menjadi 1<br>
+            4. Hilangkan elemen di atas dan bawah pivot<br>
+            5. Ulangi hingga menjadi matriks identitas
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Kasus</h3>
+
+        <p>
+            2x + y − z = 8<br>
+            -3x − y + 2z = -11<br>
+            -2x + y + 2z = -3
+        </p>
+
+        <p>
+            Matriks augmented:
+        </p>
+
+        <p>
+            [  2   1  -1 |  8 ]<br>
+            [ -3  -1   2 | -11 ]<br>
+            [ -2   1   2 | -3 ]
+        </p>
+
+    </div>
+
+    <!-- STEP 1 -->
+    <div class="card card--soft">
+
+        <h3>Langkah 1: Eliminasi ke Segitiga Atas</h3>
+
+        <p>
+            Gunakan langkah seperti Gauss:
+        </p>
+
+        <p>
+            [ 2  1  -1 | 8 ]<br>
+            [ 0 0.5 0.5 | 1 ]<br>
+            [ 0  0  -1 | 1 ]
+        </p>
+
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="card card--soft">
+
+        <h3>Langkah 2: Normalisasi Pivot</h3>
+
+        <p>
+            Ubah pivot menjadi 1:
+        </p>
+
+        <p>
+            R₃ = -1 × R₃
+        </p>
+
+        <p>
+            [ 2  1  -1 | 8 ]<br>
+            [ 0 0.5 0.5 | 1 ]<br>
+            [ 0  0   1 | -1 ]
+        </p>
+
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="card card--soft">
+
+        <h3>Langkah 3: Eliminasi ke Atas</h3>
+
+        <p>
+            Hilangkan elemen di atas pivot:
+        </p>
+
+        <p>
+            R₂ = R₂ − 0.5R₃<br>
+            R₁ = R₁ + R₃
+        </p>
+
+        <p>
+            Hasil:
+        </p>
+
+        <p>
+            [ 2  1   0 | 7 ]<br>
+            [ 0 0.5  0 | 1.5 ]<br>
+            [ 0  0   1 | -1 ]
+        </p>
+
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="card card--soft">
+
+        <h3>Langkah 4: Normalisasi Baris Kedua</h3>
+
+        <p>
+            R₂ = 2R₂
+        </p>
+
+        <p>
+            [ 2  1  0 | 7 ]<br>
+            [ 0  1  0 | 3 ]<br>
+            [ 0  0  1 | -1 ]
+        </p>
+
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="card card--soft">
+
+        <h3>Langkah 5: Eliminasi ke Atas Lagi</h3>
+
+        <p>
+            R₁ = R₁ − R₂
+        </p>
+
+        <p>
+            [ 2  0  0 | 4 ]<br>
+            [ 0  1  0 | 3 ]<br>
+            [ 0  0  1 | -1 ]
+        </p>
+
+    </div>
+
+    <!-- STEP 6 -->
+    <div class="card card--soft">
+
+        <h3>Langkah 6: Normalisasi Akhir</h3>
+
+        <p>
+            R₁ = (1/2)R₁
+        </p>
+
+        <p>
+            [ 1  0  0 | 2 ]<br>
+            [ 0  1  0 | 3 ]<br>
+            [ 0  0  1 | -1 ]
+        </p>
+
+    </div>
+
+    <!-- HASIL -->
+    <div class="card card--soft">
+
+        <h3>Hasil Akhir</h3>
+
+        <p>
+            x = 2<br>
+            y = 3<br>
+            z = -1
+        </p>
+
+    </div>
+
+    <!-- PERBANDINGAN -->
+    <div class="card card--soft">
+
+        <h3>Perbandingan dengan Gauss</h3>
+
+        <p>
+            • Gauss → butuh substitusi balik<br>
+            • Gauss-Jordan → langsung dapat solusi
+        </p>
+
+        <p>
+            Gauss-Jordan lebih lengkap,
+            tetapi membutuhkan lebih banyak operasi.
+        </p>
+
+    </div>
+
+    <!-- KELEBIHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelebihan</h3>
+
+        <p>
+            • Solusi langsung terlihat<br>
+            • Sistematis<br>
+            • Cocok untuk komputer
+        </p>
+
+    </div>
+
+    <!-- KELEMAHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelemahan</h3>
+
+        <p>
+            • Lebih banyak operasi<br>
+            • Kurang efisien untuk sistem besar<br>
+            • Lebih rentan terhadap error pembulatan
+        </p>
+
+    </div>
+
+    <!-- INTUISI -->
+    <div class="card card--soft">
+
+        <h3>Intuisi</h3>
+
+        <p>
+            Jika Gauss adalah “setengah bersih”,
+            maka Gauss-Jordan adalah “bersih total”.
+        </p>
+
+        <p>
+            Semua variabel dipisahkan secara langsung
+            dalam bentuk matriks identitas.
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Metode Gauss-Jordan menyelesaikan SPL
+            dengan mengubah matriks menjadi identitas.
+        </p>
+
+        <p>
+            Metode ini memberikan solusi secara langsung,
+            namun dengan biaya komputasi lebih besar.
+        </p>
+
+    </div>
+
+</div>

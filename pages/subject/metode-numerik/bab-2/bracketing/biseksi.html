@@ -1,0 +1,231 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Metode Biseksi</h3>
+
+        <p>
+            Metode biseksi adalah metode numerik
+            untuk mencari akar persamaan
+            dengan membagi interval menjadi dua bagian.
+        </p>
+
+        <p>
+            Metode ini termasuk metode tertutup
+            karena menggunakan batas interval yang jelas.
+        </p>
+
+    </div>
+
+    <!-- KONSEP DASAR -->
+    <div class="card card--soft">
+
+        <h3>Konsep Dasar</h3>
+
+        <p>
+            Metode biseksi bekerja berdasarkan
+            perubahan tanda fungsi.
+        </p>
+
+        <p>
+            Jika:
+        </p>
+
+        <p>
+            f(a) × f(b) < 0
+        </p>
+
+        <p>
+            maka terdapat akar di antara a dan b.
+        </p>
+
+    </div>
+
+    <!-- IDE UTAMA -->
+    <div class="card card--soft">
+
+        <h3>Ide Utama</h3>
+
+        <p>
+            Interval [a, b] dibagi menjadi dua bagian.
+        </p>
+
+        <p>
+            Titik tengah dihitung:
+        </p>
+
+        <p>
+            c = (a + b) / 2
+        </p>
+
+        <p>
+            Kemudian dipilih sub-interval
+            yang masih mengandung akar.
+        </p>
+
+    </div>
+
+    <!-- LANGKAH -->
+    <div class="card card--soft">
+
+        <h3>Langkah-langkah Metode Biseksi</h3>
+
+        <p>
+            1. Tentukan interval awal [a, b]<br>
+            2. Pastikan f(a) × f(b) < 0<br>
+            3. Hitung titik tengah c<br>
+            4. Evaluasi f(c)<br>
+            5. Tentukan interval baru:<br>
+            &nbsp;&nbsp;&nbsp;• Jika f(a) × f(c) < 0 → b = c<br>
+            &nbsp;&nbsp;&nbsp;• Jika f(c) × f(b) < 0 → a = c<br>
+            6. Ulangi sampai memenuhi toleransi
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Kasus</h3>
+
+        <p>
+            f(x) = x² − 4
+        </p>
+
+        <p>
+            Interval awal:
+            [a, b] = [1, 3]
+        </p>
+
+        <p>
+            f(1) = -3<br>
+            f(3) = 5
+        </p>
+
+        <p>
+            Karena f(1) × f(3) < 0,
+            maka terdapat akar di antara 1 dan 3.
+        </p>
+
+    </div>
+
+    <!-- ITERASI 1 -->
+    <div class="card card--soft">
+
+        <h3>Iterasi 1</h3>
+
+        <p>
+            c = (1 + 3) / 2 = 2
+        </p>
+
+        <p>
+            f(2) = 0
+        </p>
+
+        <p>
+            Akar ditemukan secara langsung.
+        </p>
+
+    </div>
+
+    <!-- ITERASI UMUM -->
+    <div class="card card--soft">
+
+        <h3>Proses Iterasi</h3>
+
+        <p>
+            Jika f(c) ≠ 0,
+            maka interval akan terus dipersempit.
+        </p>
+
+        <p>
+            Setiap iterasi mengurangi
+            panjang interval menjadi setengah.
+        </p>
+
+    </div>
+
+    <!-- KRITERIA BERHENTI -->
+    <div class="card card--soft">
+
+        <h3>Kriteria Berhenti</h3>
+
+        <p>
+            Iterasi dihentikan jika:
+        </p>
+
+        <p>
+            • |f(c)| mendekati 0<br>
+            • Interval sangat kecil<br>
+            • Galat aproksimasi < toleransi
+        </p>
+
+    </div>
+
+    <!-- KELEBIHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelebihan Metode Biseksi</h3>
+
+        <p>
+            • Sederhana dan mudah dipahami<br>
+            • Selalu konvergen jika syarat terpenuhi<br>
+            • Stabil untuk berbagai fungsi
+        </p>
+
+    </div>
+
+    <!-- KELEMAHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelemahan Metode Biseksi</h3>
+
+        <p>
+            • Konvergensi lambat<br>
+            • Membutuhkan interval awal<br>
+            • Tidak efisien untuk presisi tinggi
+        </p>
+
+    </div>
+
+    <!-- INTUISI -->
+    <div class="card card--soft">
+
+        <h3>Intuisi</h3>
+
+        <p>
+            Metode biseksi seperti
+            “mencari sesuatu dengan membelah dua terus-menerus”.
+        </p>
+
+        <p>
+            Setiap langkah mempersempit
+            lokasi akar hingga ditemukan.
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Metode biseksi adalah metode pencarian akar
+            yang sederhana dan stabil.
+        </p>
+
+        <p>
+            Dengan membagi interval secara berulang,
+            akar dapat ditemukan secara bertahap.
+        </p>
+
+        <p>
+            Meskipun lambat, metode ini sangat andal
+            sebagai dasar metode numerik lainnya.
+        </p>
+
+    </div>
+
+</div>

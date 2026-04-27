@@ -1,0 +1,224 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Toleransi Error</h3>
+
+        <p>
+            Toleransi error adalah batas maksimum kesalahan
+            yang masih dapat diterima dalam suatu perhitungan numerik.
+        </p>
+
+        <p>
+            Nilai ini digunakan untuk menentukan
+            kapan proses iterasi harus dihentikan.
+        </p>
+
+    </div>
+
+    <!-- KONSEP DASAR -->
+    <div class="card card--soft">
+
+        <h3>Konsep Dasar</h3>
+
+        <p>
+            Dalam metode numerik, hasil yang diperoleh
+            tidak harus benar secara sempurna.
+        </p>
+
+        <p>
+            Yang penting adalah hasil cukup dekat
+            dengan nilai sebenarnya.
+        </p>
+
+        <p>
+            Toleransi error menentukan
+            seberapa dekat itu dianggap “cukup”.
+        </p>
+
+    </div>
+
+    <!-- HUBUNGAN DENGAN GALAT -->
+    <div class="card card--soft">
+
+        <h3>Hubungan dengan Galat Aproksimasi</h3>
+
+        <p>
+            Toleransi error dibandingkan dengan
+            galat relatif aproksimasi.
+        </p>
+
+        <p>
+            Iterasi dihentikan jika:
+        </p>
+
+        <p>
+            ε<sub>a</sub> < ε<sub>s</sub>
+        </p>
+
+        <p>
+            dimana ε<sub>a</sub> adalah galat aproksimasi
+            dan ε<sub>s</sub> adalah toleransi.
+        </p>
+
+    </div>
+
+    <!-- PENENTUAN NILAI -->
+    <div class="card card--soft">
+
+        <h3>Penentuan Toleransi</h3>
+
+        <p>
+            Nilai toleransi biasanya ditentukan
+            berdasarkan tingkat ketelitian yang diinginkan.
+        </p>
+
+        <p>
+            Contoh:
+            0.01% → sangat teliti<br>
+            0.1% → cukup teliti<br>
+            1% → toleransi longgar
+        </p>
+
+    </div>
+
+    <!-- HUBUNGAN DENGAN ANGKA PENTING -->
+    <div class="card card--soft">
+
+        <h3>Hubungan dengan Angka Penting</h3>
+
+        <p>
+            Toleransi error dapat ditentukan
+            dari jumlah angka penting.
+        </p>
+
+        <p>
+            Rumus pendekatan:
+        </p>
+
+        <p>
+            ε<sub>s</sub> = 0.5 × 10<sup>(2−n)</sup> %
+        </p>
+
+        <p>
+            dimana n adalah jumlah angka penting.
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Penentuan Toleransi</h3>
+
+        <p>
+            Jika diinginkan 3 angka penting:
+        </p>
+
+        <p>
+            ε<sub>s</sub> = 0.5 × 10<sup>(2−3)</sup> = 0.05%
+        </p>
+
+        <p>
+            Artinya, iterasi dihentikan
+            jika galat lebih kecil dari 0.05%.
+        </p>
+
+    </div>
+
+    <!-- INTERPRETASI -->
+    <div class="card card--soft">
+
+        <h3>Interpretasi</h3>
+
+        <p>
+            Toleransi kecil → hasil lebih akurat,
+            tetapi butuh lebih banyak iterasi.
+        </p>
+
+        <p>
+            Toleransi besar → iterasi lebih cepat,
+            tetapi hasil kurang akurat.
+        </p>
+
+    </div>
+
+    <!-- TRADE OFF -->
+    <div class="card card--soft">
+
+        <h3>Trade-Off</h3>
+
+        <p>
+            Ada keseimbangan antara akurasi dan efisiensi.
+        </p>
+
+        <p>
+            Terlalu kecil → komputasi lama<br>
+            Terlalu besar → hasil tidak akurat
+        </p>
+
+        <p>
+            Pemilihan toleransi harus disesuaikan
+            dengan kebutuhan masalah.
+        </p>
+
+    </div>
+
+    <!-- PERAN DALAM METODE NUMERIK -->
+    <div class="card card--soft">
+
+        <h3>Peran dalam Metode Numerik</h3>
+
+        <p>
+            Toleransi error adalah dasar
+            dari kriteria berhenti (stopping criterion).
+        </p>
+
+        <p>
+            Hampir semua metode iteratif
+            menggunakan konsep ini.
+        </p>
+
+    </div>
+
+    <!-- INTUISI -->
+    <div class="card card--soft">
+
+        <h3>Intuisi</h3>
+
+        <p>
+            Toleransi error menjawab:
+            “Kapan kita berhenti menghitung?”
+        </p>
+
+        <p>
+            Kita tidak menunggu hasil sempurna,
+            tetapi hasil yang cukup baik.
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Toleransi error adalah batas kesalahan
+            yang digunakan untuk menghentikan iterasi.
+        </p>
+
+        <p>
+            Nilai ini menentukan keseimbangan
+            antara akurasi dan efisiensi.
+        </p>
+
+        <p>
+            Pemahaman toleransi sangat penting
+            dalam penerapan metode numerik.
+        </p>
+
+    </div>
+
+</div>

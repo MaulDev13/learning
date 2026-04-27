@@ -1,0 +1,264 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Metode Dekomposisi LU</h3>
+
+        <p>
+            Dekomposisi LU adalah metode untuk
+            menyelesaikan Sistem Persamaan Linear
+            dengan memfaktorkan matriks menjadi dua bagian.
+        </p>
+
+        <p>
+            Matriks A diuraikan menjadi:
+        </p>
+
+        <p>
+            A = L U
+        </p>
+
+    </div>
+
+    <!-- KONSEP -->
+    <div class="card card--soft">
+
+        <h3>Konsep Dasar</h3>
+
+        <p>
+            Matriks koefisien dipecah menjadi:
+        </p>
+
+        <p>
+            L → matriks segitiga bawah<br>
+            U → matriks segitiga atas
+        </p>
+
+        <p>
+            Dengan cara ini, penyelesaian SPL
+            menjadi lebih terstruktur.
+        </p>
+
+    </div>
+
+    <!-- BENTUK -->
+    <div class="card card--soft">
+
+        <h3>Bentuk Matriks L dan U</h3>
+
+        <p>
+            L (Lower Triangular):
+        </p>
+
+        <p>
+            [ 1   0   0 ]<br>
+            [ l₂₁ 1   0 ]<br>
+            [ l₃₁ l₃₂ 1 ]
+        </p>
+
+        <p>
+            U (Upper Triangular):
+        </p>
+
+        <p>
+            [ u₁₁ u₁₂ u₁₃ ]<br>
+            [  0  u₂₂ u₂₃ ]<br>
+            [  0   0  u₃₃ ]
+        </p>
+
+    </div>
+
+    <!-- IDE -->
+    <div class="card card--soft">
+
+        <h3>Ide Utama</h3>
+
+        <p>
+            Daripada langsung menyelesaikan Ax = b,
+            kita ubah menjadi:
+        </p>
+
+        <p>
+            LUx = b
+        </p>
+
+        <p>
+            Kemudian:
+        </p>
+
+        <p>
+            Ly = b → (forward substitution)<br>
+            Ux = y → (back substitution)
+        </p>
+
+    </div>
+
+    <!-- LANGKAH -->
+    <div class="card card--soft">
+
+        <h3>Langkah-langkah Metode</h3>
+
+        <p>
+            1. Faktorkan A menjadi L dan U<br>
+            2. Selesaikan Ly = b<br>
+            3. Selesaikan Ux = y<br>
+            4. Dapatkan solusi x
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Matriks</h3>
+
+        <p>
+            A =
+        </p>
+
+        <p>
+            [ 2  3 ]<br>
+            [ 4  7 ]
+        </p>
+
+    </div>
+
+    <!-- DEKOMPOSISI -->
+    <div class="card card--soft">
+
+        <h3>Dekomposisi</h3>
+
+        <p>
+            Misalkan:
+        </p>
+
+        <p>
+            L =
+            [ 1   0 ]<br>
+            [ 2   1 ]
+        </p>
+
+        <p>
+            U =
+            [ 2  3 ]<br>
+            [ 0  1 ]
+        </p>
+
+        <p>
+            Sehingga:
+            A = LU
+        </p>
+
+    </div>
+
+    <!-- FORWARD -->
+    <div class="card card--soft">
+
+        <h3>Forward Substitution</h3>
+
+        <p>
+            Ly = b
+        </p>
+
+        <p>
+            Digunakan untuk mencari vektor y
+            dari matriks L.
+        </p>
+
+    </div>
+
+    <!-- BACKWARD -->
+    <div class="card card--soft">
+
+        <h3>Backward Substitution</h3>
+
+        <p>
+            Ux = y
+        </p>
+
+        <p>
+            Digunakan untuk mencari solusi akhir x.
+        </p>
+
+    </div>
+
+    <!-- KELEBIHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelebihan</h3>
+
+        <p>
+            • Efisien untuk banyak sistem dengan A yang sama<br>
+            • Mengurangi perhitungan berulang<br>
+            • Dasar metode komputasi modern
+        </p>
+
+    </div>
+
+    <!-- KELEMAHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelemahan</h3>
+
+        <p>
+            • Tidak semua matriks bisa langsung difaktorkan<br>
+            • Memerlukan pivoting jika elemen nol muncul<br>
+            • Lebih kompleks dari Gauss
+        </p>
+
+    </div>
+
+    <!-- HUBUNGAN -->
+    <div class="card card--soft">
+
+        <h3>Hubungan dengan Eliminasi Gauss</h3>
+
+        <p>
+            Dekomposisi LU sebenarnya berasal dari
+            proses eliminasi Gauss.
+        </p>
+
+        <p>
+            Nilai pada matriks L berasal dari
+            faktor eliminasi,
+            sedangkan U adalah hasil akhirnya.
+        </p>
+
+    </div>
+
+    <!-- INTUISI -->
+    <div class="card card--soft">
+
+        <h3>Intuisi</h3>
+
+        <p>
+            LU adalah cara “menyimpan langkah eliminasi”
+            dalam bentuk matriks.
+        </p>
+
+        <p>
+            Jadi, kita tidak perlu mengulang proses
+            setiap kali menyelesaikan sistem baru.
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Dekomposisi LU memecah masalah besar
+            menjadi dua langkah sederhana.
+        </p>
+
+        <p>
+            Metode ini sangat efisien
+            terutama untuk sistem yang berulang.
+        </p>
+
+    </div>
+
+</div>

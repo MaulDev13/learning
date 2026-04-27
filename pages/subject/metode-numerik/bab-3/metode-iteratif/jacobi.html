@@ -1,0 +1,235 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Metode Iteratif Jacobi</h3>
+
+        <p>
+            Metode Jacobi adalah metode iteratif
+            untuk menyelesaikan Sistem Persamaan Linear
+            dengan pendekatan berulang.
+        </p>
+
+        <p>
+            Berbeda dengan metode langsung,
+            Jacobi tidak mencari solusi dalam satu proses,
+            tetapi melalui iterasi bertahap.
+        </p>
+
+    </div>
+
+    <!-- KONSEP -->
+    <div class="card card--soft">
+
+        <h3>Konsep Dasar</h3>
+
+        <p>
+            Setiap variabel dihitung ulang
+            menggunakan nilai dari iterasi sebelumnya.
+        </p>
+
+        <p>
+            Semua nilai baru dihitung secara terpisah
+            (tidak langsung diperbarui).
+        </p>
+
+    </div>
+
+    <!-- BENTUK -->
+    <div class="card card--soft">
+
+        <h3>Bentuk Sistem</h3>
+
+        <p>
+            Diberikan SPL:
+        </p>
+
+        <p>
+            a₁₁x₁ + a₁₂x₂ + ... = b₁<br>
+            a₂₁x₁ + a₂₂x₂ + ... = b₂
+        </p>
+
+        <p>
+            Setiap persamaan diubah
+            untuk mengekspresikan satu variabel.
+        </p>
+
+    </div>
+
+    <!-- RUMUS -->
+    <div class="card card--soft">
+
+        <h3>Rumus Iterasi Jacobi</h3>
+
+        <p>
+            xᵢ^(k+1) = (1 / aᵢᵢ)
+            [ bᵢ − Σ (aᵢⱼ xⱼ^(k)) ]
+        </p>
+
+        <p>
+            Nilai baru dihitung dari
+            nilai lama (iterasi sebelumnya).
+        </p>
+
+    </div>
+
+    <!-- LANGKAH -->
+    <div class="card card--soft">
+
+        <h3>Langkah-langkah Metode</h3>
+
+        <p>
+            1. Tentukan tebakan awal x⁰<br>
+            2. Hitung semua variabel baru<br>
+            3. Gunakan nilai lama dalam perhitungan<br>
+            4. Ulangi hingga konvergen
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Sistem</h3>
+
+        <p>
+            8x₁ + x₂ − x₃ = 8<br>
+            2x₁ + x₂ + 9x₃ = 12<br>
+            x₁ − 7x₂ + 2x₃ = -4
+        </p>
+
+        <p>
+            Tebakan awal:
+            x₁⁰ = 0, x₂⁰ = 0, x₃⁰ = 0
+        </p>
+
+    </div>
+
+    <!-- ITERASI 1 -->
+    <div class="card card--soft">
+
+        <h3>Iterasi 1</h3>
+
+        <p>
+            x₁¹ = (8 − x₂⁰ + x₃⁰) / 8 = 1<br>
+            x₂¹ = (12 − 2x₁⁰ − 9x₃⁰) / 1 = 12<br>
+            x₃¹ = (-4 − x₁⁰ + 7x₂⁰) / 2 = -2
+        </p>
+
+    </div>
+
+    <!-- ITERASI LANJUT -->
+    <div class="card card--soft">
+
+        <h3>Iterasi Selanjutnya</h3>
+
+        <p>
+            Nilai iterasi sebelumnya digunakan kembali
+            untuk menghitung nilai baru.
+        </p>
+
+        <p>
+            Proses diulang hingga nilai stabil.
+        </p>
+
+    </div>
+
+    <!-- KONVERGENSI -->
+    <div class="card card--soft">
+
+        <h3>Syarat Konvergensi</h3>
+
+        <p>
+            Metode Jacobi akan konvergen jika
+            matriks memiliki dominasi diagonal.
+        </p>
+
+        <p>
+            |aᵢᵢ| > Σ |aᵢⱼ|
+        </p>
+
+        <p>
+            untuk setiap baris.
+        </p>
+
+    </div>
+
+    <!-- KELEBIHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelebihan</h3>
+
+        <p>
+            • Mudah dipahami<br>
+            • Mudah diimplementasikan<br>
+            • Cocok untuk sistem besar
+        </p>
+
+    </div>
+
+    <!-- KELEMAHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelemahan</h3>
+
+        <p>
+            • Konvergensi lambat<br>
+            • Tidak selalu konvergen<br>
+            • Sensitif terhadap bentuk matriks
+        </p>
+
+    </div>
+
+    <!-- PERBANDINGAN -->
+    <div class="card card--soft">
+
+        <h3>Perbandingan dengan Metode Langsung</h3>
+
+        <p>
+            • Metode langsung → solusi sekali hitung<br>
+            • Jacobi → solusi bertahap (iteratif)
+        </p>
+
+        <p>
+            Jacobi lebih fleksibel untuk sistem besar,
+            tetapi membutuhkan iterasi.
+        </p>
+
+    </div>
+
+    <!-- INTUISI -->
+    <div class="card card--soft">
+
+        <h3>Intuisi</h3>
+
+        <p>
+            Jacobi seperti “menebak lalu memperbaiki”
+            semua variabel secara bersamaan.
+        </p>
+
+        <p>
+            Setiap iterasi mendekatkan hasil
+            ke solusi sebenarnya.
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Metode Jacobi adalah metode iteratif sederhana
+            untuk menyelesaikan SPL.
+        </p>
+
+        <p>
+            Keberhasilannya bergantung pada
+            struktur matriks dan kondisi konvergensi.
+        </p>
+
+    </div>
+
+</div>

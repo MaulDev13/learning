@@ -1,0 +1,262 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Metode Secant</h3>
+
+        <p>
+            Metode Secant adalah metode numerik
+            untuk mencari akar persamaan non-linear
+            tanpa menggunakan turunan fungsi.
+        </p>
+
+        <p>
+            Metode ini termasuk metode terbuka
+            dan merupakan pengembangan dari Newton-Raphson.
+        </p>
+
+    </div>
+
+    <!-- KONSEP DASAR -->
+    <div class="card card--soft">
+
+        <h3>Konsep Dasar</h3>
+
+        <p>
+            Metode Secant menggunakan dua titik awal
+            untuk membentuk garis lurus (secant line).
+        </p>
+
+        <p>
+            Titik potong garis tersebut dengan sumbu x
+            digunakan sebagai pendekatan akar.
+        </p>
+
+    </div>
+
+    <!-- IDE UTAMA -->
+    <div class="card card--soft">
+
+        <h3>Ide Utama</h3>
+
+        <p>
+            Jika Newton menggunakan turunan,
+            Secant menggantinya dengan
+            pendekatan selisih (finite difference).
+        </p>
+
+        <p>
+            Dengan kata lain,
+            kemiringan dihitung dari dua titik sebelumnya.
+        </p>
+
+    </div>
+
+    <!-- RUMUS -->
+    <div class="card card--soft">
+
+        <h3>Rumus Metode Secant</h3>
+
+        <p>
+            x<sup>i+1</sup> = x<sup>i</sup> − 
+            f(x<sup>i</sup>) (x<sup>i</sup> − x<sup>i−1</sup>) /
+            (f(x<sup>i</sup>) − f(x<sup>i−1</sup>))
+        </p>
+
+        <p>
+            Rumus ini merupakan pendekatan
+            dari metode Newton-Raphson.
+        </p>
+
+    </div>
+
+    <!-- LANGKAH -->
+    <div class="card card--soft">
+
+        <h3>Langkah-langkah Metode</h3>
+
+        <p>
+            1. Tentukan dua tebakan awal x⁰ dan x¹<br>
+            2. Hitung nilai x² menggunakan rumus<br>
+            3. Gunakan x¹ dan x² untuk iterasi berikutnya<br>
+            4. Ulangi hingga konvergen
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Kasus</h3>
+
+        <p>
+            f(x) = x² − 4
+        </p>
+
+        <p>
+            Tebakan awal:
+            x⁰ = 1, x¹ = 3
+        </p>
+
+        <p>
+            f(1) = -3<br>
+            f(3) = 5
+        </p>
+
+    </div>
+
+    <!-- ITERASI 1 -->
+    <div class="card card--soft">
+
+        <h3>Iterasi 1</h3>
+
+        <p>
+            x² = 3 − [5(3 − 1) / (5 − (-3))]
+        </p>
+
+        <p>
+            x² = 3 − (10 / 8) = 1.75
+        </p>
+
+        <p>
+            Sama seperti Regula Falsi pada langkah awal.
+        </p>
+
+    </div>
+
+    <!-- ITERASI LANJUT -->
+    <div class="card card--soft">
+
+        <h3>Iterasi Selanjutnya</h3>
+
+        <p>
+            Gunakan pasangan titik terbaru:
+        </p>
+
+        <p>
+            x¹ = 3, x² = 1.75 → cari x³<br>
+            x² = 1.75, x³ → cari x⁴
+        </p>
+
+        <p>
+            Iterasi terus bergerak menuju akar.
+        </p>
+
+    </div>
+
+    <!-- KONVERGENSI -->
+    <div class="card card--soft">
+
+        <h3>Konvergensi</h3>
+
+        <p>
+            Metode Secant memiliki konvergensi
+            lebih cepat dari Regula Falsi,
+            tetapi lebih lambat dari Newton-Raphson.
+        </p>
+
+        <p>
+            Tidak selalu stabil,
+            tergantung pada tebakan awal.
+        </p>
+
+    </div>
+
+    <!-- PERBANDINGAN -->
+    <div class="card card--soft">
+
+        <h3>Perbandingan dengan Metode Lain</h3>
+
+        <p>
+            • Newton-Raphson → butuh turunan<br>
+            • Secant → tidak butuh turunan<br>
+            • Regula Falsi → pakai interval tetap
+        </p>
+
+        <p>
+            Secant adalah kompromi antara kecepatan
+            dan kemudahan implementasi.
+        </p>
+
+    </div>
+
+    <!-- KELEBIHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelebihan</h3>
+
+        <p>
+            • Tidak memerlukan turunan<br>
+            • Lebih cepat dari metode tertutup<br>
+            • Implementasi relatif sederhana
+        </p>
+
+    </div>
+
+    <!-- KELEMAHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelemahan</h3>
+
+        <p>
+            • Tidak selalu konvergen<br>
+            • Sensitif terhadap tebakan awal<br>
+            • Bisa menghasilkan pembagian nol
+        </p>
+
+    </div>
+
+    <!-- MASALAH UMUM -->
+    <div class="card card--soft">
+
+        <h3>Masalah yang Sering Terjadi</h3>
+
+        <p>
+            • f(x<sup>i</sup>) − f(x<sup>i−1</sup>) = 0<br>
+            • Iterasi meloncat jauh<br>
+            • Tidak mendekati akar
+        </p>
+
+    </div>
+
+    <!-- INTUISI -->
+    <div class="card card--soft">
+
+        <h3>Intuisi</h3>
+
+        <p>
+            Metode Secant seperti
+            “menggambar garis dari dua titik”
+            lalu melihat di mana garis itu memotong sumbu x.
+        </p>
+
+        <p>
+            Setiap iterasi memperbaiki arah
+            menuju akar sebenarnya.
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Metode Secant adalah metode terbuka
+            yang efisien tanpa memerlukan turunan.
+        </p>
+
+        <p>
+            Metode ini menjadi alternatif praktis
+            antara Regula Falsi dan Newton-Raphson.
+        </p>
+
+        <p>
+            Cocok digunakan ketika turunan sulit dihitung.
+        </p>
+
+    </div>
+
+</div>

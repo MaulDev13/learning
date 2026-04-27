@@ -1,0 +1,253 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Metode Eliminasi Gauss</h3>
+
+        <p>
+            Metode Eliminasi Gauss adalah metode langsung
+            untuk menyelesaikan Sistem Persamaan Linear
+            dengan mengubah matriks menjadi bentuk segitiga atas.
+        </p>
+
+        <p>
+            Metode ini menggunakan operasi baris elementer
+            untuk menyederhanakan sistem.
+        </p>
+
+    </div>
+
+    <!-- KONSEP DASAR -->
+    <div class="card card--soft">
+
+        <h3>Konsep Dasar</h3>
+
+        <p>
+            Tujuan utama adalah mengubah matriks menjadi
+            bentuk segitiga atas (upper triangular).
+        </p>
+
+        <p>
+            Setelah itu, solusi diperoleh dengan
+            substitusi balik (back substitution).
+        </p>
+
+    </div>
+
+    <!-- BENTUK -->
+    <div class="card card--soft">
+
+        <h3>Bentuk Segitiga Atas</h3>
+
+        <p>
+            Matriks diubah menjadi:
+        </p>
+
+        <p>
+            [ a₁₁ a₁₂ a₁₃ | b₁ ]<br>
+            [  0  a₂₂ a₂₃ | b₂ ]<br>
+            [  0   0  a₃₃ | b₃ ]
+        </p>
+
+        <p>
+            Semua elemen di bawah diagonal utama
+            dibuat menjadi nol.
+        </p>
+
+    </div>
+
+    <!-- LANGKAH -->
+    <div class="card card--soft">
+
+        <h3>Langkah-langkah Metode</h3>
+
+        <p>
+            1. Bentuk matriks augmented<br>
+            2. Gunakan operasi baris untuk membuat nol di bawah pivot<br>
+            3. Ulangi hingga terbentuk segitiga atas<br>
+            4. Lakukan substitusi balik
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Kasus</h3>
+
+        <p>
+            2x + y − z = 8<br>
+            -3x − y + 2z = -11<br>
+            -2x + y + 2z = -3
+        </p>
+
+        <p>
+            Matriks augmented:
+        </p>
+
+        <p>
+            [  2   1  -1 |  8 ]<br>
+            [ -3  -1   2 | -11 ]<br>
+            [ -2   1   2 | -3 ]
+        </p>
+
+    </div>
+
+    <!-- ELIMINASI 1 -->
+    <div class="card card--soft">
+
+        <h3>Eliminasi Langkah 1</h3>
+
+        <p>
+            Hilangkan elemen di bawah pivot pertama (a₁₁ = 2)
+        </p>
+
+        <p>
+            R₂ = R₂ + (3/2)R₁<br>
+            R₃ = R₃ + R₁
+        </p>
+
+        <p>
+            Hasil:
+        </p>
+
+        <p>
+            [ 2  1  -1 |  8 ]<br>
+            [ 0  0.5 0.5 | 1 ]<br>
+            [ 0  2   1 | 5 ]
+        </p>
+
+    </div>
+
+    <!-- ELIMINASI 2 -->
+    <div class="card card--soft">
+
+        <h3>Eliminasi Langkah 2</h3>
+
+        <p>
+            Hilangkan elemen di bawah pivot kedua
+        </p>
+
+        <p>
+            R₃ = R₃ − 4R₂
+        </p>
+
+        <p>
+            Hasil:
+        </p>
+
+        <p>
+            [ 2  1  -1 | 8 ]<br>
+            [ 0 0.5 0.5 | 1 ]<br>
+            [ 0  0  -1 | 1 ]
+        </p>
+
+    </div>
+
+    <!-- SUBSTITUSI -->
+    <div class="card card--soft">
+
+        <h3>Substitusi Balik</h3>
+
+        <p>
+            Dari baris terakhir:
+        </p>
+
+        <p>
+            -z = 1 → z = -1
+        </p>
+
+        <p>
+            Baris kedua:
+        </p>
+
+        <p>
+            0.5y + 0.5z = 1 → y = 3
+        </p>
+
+        <p>
+            Baris pertama:
+        </p>
+
+        <p>
+            2x + y − z = 8 → x = 2
+        </p>
+
+    </div>
+
+    <!-- HASIL -->
+    <div class="card card--soft">
+
+        <h3>Hasil Akhir</h3>
+
+        <p>
+            x = 2<br>
+            y = 3<br>
+            z = -1
+        </p>
+
+    </div>
+
+    <!-- KELEBIHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelebihan</h3>
+
+        <p>
+            • Sistematis dan pasti selesai<br>
+            • Cocok untuk berbagai ukuran sistem<br>
+            • Dasar metode lain (LU, Gauss-Jordan)
+        </p>
+
+    </div>
+
+    <!-- KELEMAHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelemahan</h3>
+
+        <p>
+            • Bisa terjadi pembulatan error<br>
+            • Perlu banyak operasi untuk sistem besar<br>
+            • Sensitif jika pivot kecil (perlu pivoting)
+        </p>
+
+    </div>
+
+    <!-- INTUISI -->
+    <div class="card card--soft">
+
+        <h3>Intuisi</h3>
+
+        <p>
+            Metode Gauss adalah proses
+            “menghilangkan variabel satu per satu”.
+        </p>
+
+        <p>
+            Sampai tersisa satu variabel,
+            lalu diselesaikan kembali ke atas.
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Metode Eliminasi Gauss adalah metode dasar
+            untuk menyelesaikan SPL secara langsung.
+        </p>
+
+        <p>
+            Dengan operasi baris,
+            sistem dapat disederhanakan
+            hingga mudah diselesaikan.
+        </p>
+
+    </div>
+
+</div>

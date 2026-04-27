@@ -12,6 +12,33 @@ export function initNavActive() {
     });
 }
 
+export function initSidebar() {
+    document.querySelectorAll('.sidebar-group-title').forEach(title => {
+
+        if (title.dataset.bound === "true") return;
+        title.dataset.bound = "true";
+
+        title.addEventListener('click', () => {
+            const group = title.parentElement;
+            const isOpen = group.classList.contains('open');
+
+            // close ONLY siblings (not everything)
+            const siblings = group.parentElement.querySelectorAll(':scope > .sidebar-group');
+
+            siblings.forEach(g => {
+                if (g !== group) g.classList.remove('open');
+            });
+
+            // toggle current
+            if (!isOpen) {
+                group.classList.add('open');
+            } else {
+                group.classList.remove('open');
+            }
+        });
+    });
+}
+
 export function initDropdown() {
     const dropdowns = document.querySelectorAll('.nav-dropdown');
 

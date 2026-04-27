@@ -3,7 +3,8 @@ import {
     initDropdown,
     initDropdownGlobal,
     initNavActive,
-    initLoading
+    initLoading,
+    initSidebar
 } from "./ui.js";
 
 /* =========================================================
@@ -13,32 +14,56 @@ document.body.addEventListener("htmx:configRequest", (event) => {
     let path = event.detail.path;
     if (!path) return;
 
+    // API routing
     if (path.startsWith("/api")) {
         event.detail.path = API_BASE + path;
         return;
     }
 
+    // static routing
     if (!path.startsWith("http")) {
         event.detail.path = BASE_PATH + path;
     }
 });
 
 /* =========================================================
-   INIT SYSTEM
+   DEBUGGING
+   ========================================================= */
+document.body.addEventListener("htmx:responseError", (e) => {
+    console.error("HTMX ERROR:", e.detail.path);
+});
+
+/* =========================================================
+   INIT SYSTEM (SINGLE ENTRY POINT)
    ========================================================= */
 function initApp() {
     initDropdown();
     initDropdownGlobal();
+    initSidebar();
     initNavActive();
     initLoading();
 }
 
-/* first load */
-document.addEventListener("DOMContentLoaded", initApp);
+/* =========================================================
+   FIRST LOAD
+   ========================================================= */
+document.addEventListener("DOMContentLoaded", () => {
+    initApp();
+});
 
-/* re-init after HTMX swap */
+/* =========================================================
+   AFTER HTMX SWAP
+   ========================================================= */
 document.body.addEventListener("htmx:afterSwap", (e) => {
-    if (e.target.closest('nav')) {
-        initDropdown();
-    }
+
+    // 🔥 IMPORTANT: hanya re-init yang perlu
+    initDropdown();
+    initSidebar();
+
+    // kalau kamu punya active nav logic
+    initNavActive();
+
+    // optional loading rebind
+    initLoading();
+
 });

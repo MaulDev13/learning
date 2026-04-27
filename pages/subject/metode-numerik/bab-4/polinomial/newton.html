@@ -1,0 +1,202 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Interpolasi Polinomial Newton</h3>
+
+        <p>
+            Interpolasi Newton adalah metode untuk membentuk polinomial
+            interpolasi menggunakan konsep selisih terbagi (divided differences).
+        </p>
+
+        <p>
+            Metode ini lebih efisien dibanding Lagrange,
+            terutama jika ada penambahan titik data baru.
+        </p>
+
+        <p>
+            Polinomial dibangun secara bertahap (incremental).
+        </p>
+
+    </div>
+
+    <!-- IDE DASAR -->
+    <div class="card card--soft">
+
+        <h3>Ide Dasar</h3>
+
+        <p>
+            Diberikan titik data:
+            (x₀, y₀), (x₁, y₁), ..., (xₙ, yₙ)
+        </p>
+
+        <p>
+            Polinomial dibentuk dalam bentuk bertingkat
+            menggunakan selisih terbagi.
+        </p>
+
+        <p>
+            Setiap penambahan titik akan menambah suku baru pada polinomial.
+        </p>
+
+    </div>
+
+    <!-- RUMUS -->
+    <div class="card card--soft">
+
+        <h3>Bentuk Polinomial Newton</h3>
+
+        <p>
+            Bentuk umum:
+        </p>
+
+        <p>
+            P(x) = a₀ 
+                 + a₁(x - x₀) 
+                 + a₂(x - x₀)(x - x₁) 
+                 + ... 
+                 + aₙ(x - x₀)...(x - xₙ₋₁)
+        </p>
+
+        <p>
+            Koefisien a diperoleh dari selisih terbagi.
+        </p>
+
+    </div>
+
+    <!-- SELISIH TERBAGI -->
+    <div class="card card--soft">
+
+        <h3>Selisih Terbagi</h3>
+
+        <p>
+            Selisih terbagi dihitung sebagai:
+        </p>
+
+        <p>
+            f[xᵢ, xⱼ] = (f(xⱼ) - f(xᵢ)) / (xⱼ - xᵢ)
+        </p>
+
+        <p>
+            Untuk orde lebih tinggi, digunakan rekursi
+            dari hasil sebelumnya.
+        </p>
+
+    </div>
+
+    <!-- TABEL -->
+    <div class="card card--soft">
+
+        <h3>Tabel Selisih Terbagi</h3>
+
+        <p>
+            Biasanya perhitungan dilakukan menggunakan tabel
+            untuk mempermudah proses.
+        </p>
+
+        <p>
+            Setiap kolom menunjukkan selisih terbagi
+            dengan orde yang berbeda.
+        </p>
+
+    </div>
+
+    <!-- LANGKAH -->
+    <div class="card card--soft">
+
+        <h3>Langkah-langkah</h3>
+
+        <p>
+            1. Susun titik data dalam tabel<br>
+            2. Hitung selisih terbagi<br>
+            3. Ambil koefisien dari tabel<br>
+            4. Bentuk polinomial Newton<br>
+            5. Gunakan untuk interpolasi
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Sederhana</h3>
+
+        <p>
+            Diketahui:
+        </p>
+
+        <p>
+            (1, 1), (2, 4), (3, 9)
+        </p>
+
+        <p>
+            Akan dibentuk polinomial interpolasi.
+        </p>
+
+    </div>
+
+    <!-- HASIL -->
+    <div class="card card--soft">
+
+        <h3>Hasil Polinomial</h3>
+
+        <p>
+            Dari perhitungan diperoleh:
+        </p>
+
+        <p>
+            P(x) = x²
+        </p>
+
+        <p>
+            Hasil ini sama dengan metode Lagrange,
+            tetapi diperoleh dengan cara berbeda.
+        </p>
+
+    </div>
+
+    <!-- KELEBIHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelebihan</h3>
+
+        <p>
+            • Lebih efisien untuk data bertambah<br>
+            • Perhitungan dapat digunakan ulang<br>
+            • Struktur bertahap (incremental)
+        </p>
+
+    </div>
+
+    <!-- KEKURANGAN -->
+    <div class="card card--soft">
+
+        <h3>Kekurangan</h3>
+
+        <p>
+            • Perlu tabel perhitungan<br>
+            • Lebih kompleks dibanding linear<br>
+            • Rentan error untuk derajat tinggi
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Interpolasi Newton adalah metode yang efisien
+            untuk membentuk polinomial interpolasi.
+        </p>
+
+        <p>
+            Metode ini sangat berguna jika data sering diperbarui
+            karena tidak perlu menghitung ulang seluruh polinomial.
+        </p>
+
+    </div>
+
+</div>

@@ -1,0 +1,215 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Metode Fixed Point (Titik Tetap)</h3>
+
+        <p>
+            Metode Fixed Point adalah metode iteratif untuk menyelesaikan
+            sistem persamaan non linear dengan mengubah persamaan ke bentuk tertentu.
+        </p>
+
+        <p>
+            Ide utamanya adalah mencari nilai yang tidak berubah
+            ketika dimasukkan kembali ke dalam fungsi.
+        </p>
+
+        <p>
+            Nilai tersebut disebut sebagai titik tetap (fixed point).
+        </p>
+
+    </div>
+
+    <!-- IDE DASAR -->
+    <div class="card card--soft">
+
+        <h3>Ide Dasar Metode</h3>
+
+        <p>
+            Persamaan non linear diubah ke bentuk:
+            <strong>x = g(x)</strong>
+        </p>
+
+        <p>
+            Kemudian dilakukan iterasi:
+        </p>
+
+        <p>
+            x^(k+1) = g(x^(k))
+        </p>
+
+        <p>
+            Proses ini diulang sampai nilai x tidak banyak berubah.
+        </p>
+
+    </div>
+
+    <!-- SPNL -->
+    <div class="card card--soft">
+
+        <h3>Fixed Point untuk SPNL</h3>
+
+        <p>
+            Untuk sistem dengan banyak variabel, bentuknya menjadi:
+        </p>
+
+        <p>
+            x₁ = g₁(x₁, x₂, ...)<br>
+            x₂ = g₂(x₁, x₂, ...)<br>
+            ...
+        </p>
+
+        <p>
+            Setiap variabel dihitung ulang berdasarkan fungsi masing-masing.
+        </p>
+
+    </div>
+
+    <!-- BENTUK UMUM -->
+    <div class="card card--soft">
+
+        <h3>Bentuk Iterasi</h3>
+
+        <p>
+            Dalam bentuk vektor:
+            <strong>X^(k+1) = G(X^(k))</strong>
+        </p>
+
+        <p>
+            Dimana:
+        </p>
+
+        <p>
+            • X adalah vektor variabel<br>
+            • G adalah fungsi transformasi
+        </p>
+
+    </div>
+
+    <!-- LANGKAH -->
+    <div class="card card--soft">
+
+        <h3>Langkah-langkah</h3>
+
+        <p>
+            1. Ubah persamaan ke bentuk x = g(x)<br>
+            2. Tentukan tebakan awal<br>
+            3. Hitung nilai baru menggunakan fungsi g<br>
+            4. Ulangi iterasi<br>
+            5. Berhenti jika konvergen
+        </p>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh Sederhana</h3>
+
+        <p>
+            Misalkan:
+        </p>
+
+        <p>
+            x = (y + 3) / 4<br>
+            y = (x + 5) / 3
+        </p>
+
+        <p>
+            Tebakan awal:
+            x⁰ = 0, y⁰ = 0
+        </p>
+
+    </div>
+
+    <!-- ITERASI -->
+    <div class="card card--soft">
+
+        <h3>Proses Iterasi</h3>
+
+        <p>
+            Iterasi dilakukan dengan memasukkan nilai lama
+            ke dalam fungsi:
+        </p>
+
+        <p>
+            x¹ = (y⁰ + 3) / 4<br>
+            y¹ = (x⁰ + 5) / 3
+        </p>
+
+        <p>
+            Nilai ini terus diperbarui hingga stabil.
+        </p>
+
+    </div>
+
+    <!-- KONVERGENSI -->
+    <div class="card card--soft">
+
+        <h3>Syarat Konvergensi</h3>
+
+        <p>
+            Metode Fixed Point akan konvergen jika fungsi g memenuhi syarat tertentu.
+        </p>
+
+        <p>
+            Salah satu syarat penting:
+        </p>
+
+        <p>
+            |g'(x)| < 1
+        </p>
+
+        <p>
+            Untuk multivariable, nilai turunan (Jacobian)
+            harus cukup kecil agar iterasi stabil.
+        </p>
+
+    </div>
+
+    <!-- KELEBIHAN -->
+    <div class="card card--soft">
+
+        <h3>Kelebihan Metode</h3>
+
+        <p>
+            • Konsep sederhana<br>
+            • Mudah diimplementasikan<br>
+            • Tidak memerlukan turunan eksplisit (bisa disesuaikan)
+        </p>
+
+    </div>
+
+    <!-- KEKURANGAN -->
+    <div class="card card--soft">
+
+        <h3>Kekurangan Metode</h3>
+
+        <p>
+            • Konvergensi tidak selalu terjamin<br>
+            • Sensitif terhadap bentuk fungsi g(x)<br>
+            • Bisa lambat dibanding metode lain<br>
+            • Pemilihan bentuk transformasi sangat penting
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Metode Fixed Point adalah metode iteratif yang sederhana
+            untuk menyelesaikan SPNL dengan pendekatan titik tetap.
+        </p>
+
+        <p>
+            Keberhasilan metode ini sangat bergantung pada bentuk fungsi
+            dan pemilihan tebakan awal yang tepat.
+        </p>
+
+    </div>
+
+</div>
