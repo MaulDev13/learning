@@ -1,0 +1,124 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 6 (Metode LU Decomposition)</h3>
+
+    <p>
+        Sistem persamaan linear diselesaikan menggunakan metode LU Decomposition,
+        yaitu pemfaktoran matriks A menjadi matriks segitiga bawah (L) dan segitiga atas (U).
+        Metode ini termasuk metode langsung (direct method) dalam komputasi numerik.
+    </p>
+
+    <p class="text-meta">
+        Metode: LU Decomposition (NumPy / SciPy)
+    </p>
+
+    <!-- SISTEM PERSAMAAN -->
+    <div class="card card--soft">
+
+        <p><strong>Sistem Persamaan Linear</strong></p>
+
+        <div class="math-system">
+3x + 2y - z = 7
+2x - 2y + 4z = 10
+-x + 0.5y - z = -2
+        </div>
+
+    </div>
+
+    <!-- MATRIKS -->
+    <div class="card card--soft">
+
+        <p><strong>Bentuk Matriks A dan b</strong></p>
+
+        <div class="text-code">
+A =
+[[ 3   2  -1 ],
+ [ 2  -2   4 ],
+ [-1  0.5 -1 ]]
+
+b =
+[7, 10, -2]
+        </div>
+
+    </div>
+
+    <!-- IMPLEMENTASI PYTHON -->
+    <div class="card card--soft">
+
+        <p><strong>Implementasi Python (LU Decomposition)</strong></p>
+
+        <div class="text-code">
+import numpy as np
+from scipy.linalg import lu
+
+A = np.array([
+    [3, 2, -1],
+    [2, -2, 4],
+    [-1, 0.5, -1]
+])
+
+b = np.array([7, 10, -2])
+
+# LU decomposition
+P, L, U = lu(A)
+
+# forward substitution (Ly = Pb)
+Pb = np.dot(P, b)
+
+y = np.linalg.solve(L, Pb)
+
+# backward substitution (Ux = y)
+x = np.linalg.solve(U, y)
+
+print("Solusi x:", x)
+        </div>
+
+    </div>
+
+    <!-- PENJELASAN FLOW -->
+    <div class="card card--soft">
+
+        <p><strong>Penjelasan Alur Komputasi</strong></p>
+
+        <p>
+            1. Matriks A didekomposisi menjadi P, L, dan U menggunakan fungsi <span class="text-code-inline">lu()</span>.
+        </p>
+
+        <p>
+            2. Matriks permutasi P digunakan untuk mengatur ulang sistem agar stabil secara numerik.
+        </p>
+
+        <p>
+            3. Sistem pertama diselesaikan:
+            <span class="text-code-inline">Ly = Pb</span> menggunakan forward substitution.
+        </p>
+
+        <p>
+            4. Sistem kedua diselesaikan:
+            <span class="text-code-inline">Ux = y</span> menggunakan backward substitution.
+        </p>
+
+        <p>
+            Proses ini menggantikan eliminasi Gauss dengan struktur matriks yang lebih stabil untuk komputasi numerik.
+        </p>
+
+    </div>
+
+    <!-- INTERPRETASI -->
+    <div class="card card--soft">
+
+        <p><strong>Interpretasi Hasil</strong></p>
+
+        <p>
+            Solusi akhir diperoleh dari vektor x yang merepresentasikan nilai variabel (x, y, z)
+            yang memenuhi seluruh sistem persamaan secara simultan.
+        </p>
+
+        <p>
+            Metode LU sangat efisien untuk sistem linear berukuran besar karena faktorisasi
+            hanya dilakukan sekali, kemudian digunakan ulang untuk berbagai vektor b.
+        </p>
+
+    </div>
+
+</div>

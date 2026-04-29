@@ -1,0 +1,104 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 10 (Fungsi Piecewise)</h3>
+
+    <p>
+        Fungsi piecewise merupakan fungsi yang memiliki definisi berbeda pada interval domain yang berbeda.
+        Dalam komputasi matematika, fungsi ini penting untuk memodelkan sistem yang memiliki perilaku berbeda
+        berdasarkan kondisi tertentu.
+    </p>
+
+    <p>
+        Pada kasus ini, fungsi memiliki dua bentuk: kuadrat untuk x < 0 dan linier untuk x ≥ 0.
+        Hal ini membutuhkan pendekatan logika kondisional dalam implementasi numerik.
+    </p>
+
+    <p class="text-meta">
+        Library: numpy, matplotlib
+    </p>
+
+    <!-- IMPLEMENTASI -->
+    <div class="card card--soft">
+        <p><strong>1. Implementasi Lengkap Python</strong></p>
+
+        <div class="text-code">
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Domain numerik
+x = np.linspace(-5, 5, 200)
+
+# Definisi fungsi piecewise
+def f(x):
+    return np.where(x < 0, x**2, x)
+
+# Evaluasi fungsi
+y = f(x)
+
+# Titik referensi
+x_ref = 2
+y_ref = f(x_ref)
+
+print("Nilai referensi:")
+print("x =", x_ref)
+print("y =", y_ref)
+
+# Visualisasi
+plt.figure(figsize=(8, 5))
+
+plt.plot(x, y, label="Piecewise Function")
+plt.scatter(x_ref, y_ref, color="red", label="Titik Referensi")
+
+plt.title("Grafik Fungsi Piecewise")
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.grid(True)
+plt.legend()
+
+plt.show()
+        </div>
+    </div>
+
+    <!-- PENJELASAN -->
+    <div class="card card--soft">
+        <p><strong>2. Alur Komputasi</strong></p>
+
+        <p>
+            Fungsi <span class="text-code-inline">np.where</span> digunakan untuk menerapkan logika percabangan
+            pada seluruh elemen array secara vectorized.
+        </p>
+
+        <p>
+            Jika nilai <span class="text-code-inline">x < 0</span>, maka fungsi akan menghitung
+            <span class="text-code-inline">x²</span>, sedangkan untuk <span class="text-code-inline">x ≥ 0</span>
+            digunakan fungsi linear <span class="text-code-inline">x</span>.
+        </p>
+
+        <p>
+            Pendekatan ini menggantikan struktur <span class="text-code-inline">if-else</span> tradisional
+            dengan operasi berbasis array yang lebih efisien.
+        </p>
+
+        <p>
+            Evaluasi dilakukan tanpa loop eksplisit sehingga lebih optimal untuk komputasi numerik.
+        </p>
+    </div>
+
+    <!-- VISUALISASI -->
+    <div class="card card--soft">
+        <p><strong>3. Interpretasi Visual</strong></p>
+
+        <p>
+            Grafik menunjukkan dua karakteristik fungsi yang berbeda pada dua region domain.
+        </p>
+
+        <p>
+            Pada x < 0, grafik berbentuk parabola, sedangkan pada x ≥ 0 grafik berbentuk garis lurus.
+        </p>
+
+        <p>
+            Perubahan bentuk ini menunjukkan pentingnya logika kondisional dalam pemodelan sistem komputasi matematika.
+        </p>
+    </div>
+
+</div>

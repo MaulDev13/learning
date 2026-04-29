@@ -1,0 +1,103 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 5 (Fungsi Trigonometri: Cosinus)</h3>
+
+    <p>
+        Fungsi cosinus merupakan fungsi trigonometri periodik yang sering digunakan dalam pemodelan fenomena osilasi,
+        rotasi, dan sinyal periodik. Fungsi ini memiliki kemiripan struktur dengan sinus, namun berbeda fase awal.
+    </p>
+
+    <p>
+        Dalam komputasi matematika, fungsi cosinus dievaluasi secara numerik pada domain diskrit untuk membentuk
+        representasi grafik yang dapat dianalisis secara visual.
+    </p>
+
+    <p class="text-meta">
+        Library: numpy, matplotlib
+    </p>
+
+    <!-- IMPLEMENTASI -->
+    <div class="card card--soft">
+        <p><strong>1. Implementasi Lengkap Python</strong></p>
+
+        <div class="text-code">
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Definisi fungsi cosinus
+def f(x):
+    return np.cos(x)
+
+# Domain numerik
+x = np.linspace(-2*np.pi, 2*np.pi, 200)
+
+# Evaluasi fungsi
+y = f(x)
+
+# Titik referensi (x = 0)
+x_ref = 0
+y_ref = f(x_ref)
+
+print("Nilai referensi:")
+print("x =", x_ref)
+print("y =", y_ref)
+
+# Visualisasi
+plt.figure(figsize=(8, 5))
+
+plt.plot(x, y, label="f(x) = cos(x)")
+plt.scatter(x_ref, y_ref, color="red", label="Titik Referensi")
+
+plt.title("Grafik Fungsi Cosinus")
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.grid(True)
+plt.legend()
+
+plt.show()
+        </div>
+    </div>
+
+    <!-- PENJELASAN -->
+    <div class="card card--soft">
+        <p><strong>2. Alur Komputasi</strong></p>
+
+        <p>
+            Fungsi <span class="text-code-inline">np.cos(x)</span> digunakan untuk menghitung nilai cosinus
+            secara vektorisasi pada seluruh elemen array NumPy.
+        </p>
+
+        <p>
+            Domain ditentukan pada interval <span class="text-code-inline">-2π</span> hingga
+            <span class="text-code-inline">2π</span> agar beberapa siklus periodik fungsi dapat diamati dengan jelas.
+        </p>
+
+        <p>
+            Titik referensi <span class="text-code-inline">x = 0</span> dipilih karena
+            <span class="text-code-inline">cos(0) = 1</span>, yang merupakan nilai maksimum awal fungsi cosinus.
+        </p>
+
+        <p>
+            Seluruh proses evaluasi dilakukan menggunakan pendekatan vectorized computation untuk efisiensi komputasi.
+        </p>
+    </div>
+
+    <!-- VISUALISASI -->
+    <div class="card card--soft">
+        <p><strong>3. Interpretasi Visual</strong></p>
+
+        <p>
+            Grafik cosinus menunjukkan pola osilasi periodik dengan amplitudo tetap antara -1 dan 1,
+            serupa dengan fungsi sinus tetapi bergeser fase.
+        </p>
+
+        <p>
+            Perbedaan utama terlihat pada titik awal, di mana cosinus dimulai dari nilai maksimum.
+        </p>
+
+        <p>
+            Representasi ini penting dalam analisis sinyal dan sistem dinamis berbasis gelombang.
+        </p>
+    </div>
+
+</div>

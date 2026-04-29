@@ -1,0 +1,102 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 8 (Model Pertumbuhan Eksponensial)</h3>
+
+    <p>
+        Model pertumbuhan eksponensial digunakan untuk merepresentasikan fenomena perubahan yang meningkat secara
+        proporsional terhadap nilai saat ini, seperti pertumbuhan populasi, penyebaran data, atau proses akumulasi.
+    </p>
+
+    <p>
+        Dalam komputasi matematika, model ini dihitung secara numerik pada domain waktu diskrit dan kemudian
+        divisualisasikan untuk memahami laju pertumbuhannya.
+    </p>
+
+    <p class="text-meta">
+        Library: numpy, matplotlib
+    </p>
+
+    <!-- IMPLEMENTASI -->
+    <div class="card card--soft">
+        <p><strong>1. Implementasi Lengkap Python</strong></p>
+
+        <div class="text-code">
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Definisi model pertumbuhan eksponensial
+def f(t):
+    return 100 * np.exp(0.3 * t)
+
+# Domain waktu
+t = np.linspace(0, 10, 100)
+
+# Evaluasi fungsi
+y = f(t)
+
+# Titik referensi
+t_ref = 5
+y_ref = f(t_ref)
+
+print("Nilai referensi:")
+print("t =", t_ref)
+print("y =", y_ref)
+
+# Visualisasi
+plt.figure(figsize=(8, 5))
+
+plt.plot(t, y, label="f(t) = 100 · e^(0.3t)")
+plt.scatter(t_ref, y_ref, color="red", label="Titik Referensi")
+
+plt.title("Model Pertumbuhan Eksponensial")
+plt.xlabel("t")
+plt.ylabel("f(t)")
+plt.grid(True)
+plt.legend()
+
+plt.show()
+        </div>
+    </div>
+
+    <!-- PENJELASAN -->
+    <div class="card card--soft">
+        <p><strong>2. Alur Komputasi</strong></p>
+
+        <p>
+            Fungsi <span class="text-code-inline">np.exp</span> digunakan untuk menghitung nilai eksponensial
+            secara vektorisasi pada seluruh elemen array.
+        </p>
+
+        <p>
+            Variabel <span class="text-code-inline">t</span> merepresentasikan domain waktu diskrit yang digunakan
+            untuk mendekati proses kontinu.
+        </p>
+
+        <p>
+            Koefisien 100 menunjukkan nilai awal (initial value), sedangkan 0.3 adalah laju pertumbuhan.
+        </p>
+
+        <p>
+            Evaluasi dilakukan tanpa loop eksplisit sehingga lebih efisien dalam komputasi numerik.
+        </p>
+    </div>
+
+    <!-- VISUALISASI -->
+    <div class="card card--soft">
+        <p><strong>3. Interpretasi Visual</strong></p>
+
+        <p>
+            Grafik menunjukkan pertumbuhan yang semakin cepat seiring bertambahnya waktu.
+        </p>
+
+        <p>
+            Kurva eksponensial memiliki karakteristik meningkat tajam pada nilai t yang lebih besar,
+            menunjukkan sifat non-linear yang kuat.
+        </p>
+
+        <p>
+            Model ini sering digunakan dalam simulasi sistem dinamis dan analisis pertumbuhan dalam komputasi matematika.
+        </p>
+    </div>
+
+</div>

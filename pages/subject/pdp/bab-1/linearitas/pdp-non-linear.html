@@ -1,0 +1,439 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>PDP Tak Linear</h3>
+
+        <p>
+            Dalam Persamaan Diferensial Parsial (PDP),
+            tidak semua persamaan bersifat linear.
+            Sebagian besar fenomena alam yang kompleks
+            justru dimodelkan oleh PDP yang tak linear.
+        </p>
+
+        <p>
+            PDP tak linear memiliki struktur
+            yang lebih rumit dibandingkan PDP linear,
+            sehingga metode penyelesaiannya
+            juga lebih kompleks.
+        </p>
+
+    </div>
+
+    <!-- DEFINISI -->
+    <div class="card card--soft">
+
+        <h3>Definisi PDP Tak Linear</h3>
+
+        <p>
+            Suatu PDP dikatakan tak linear apabila
+            fungsi u atau turunan parsialnya
+            muncul dalam persamaan secara tidak linear.
+        </p>
+
+        <p>
+            Ketidaklinearan dapat terjadi apabila
+            salah satu dari kondisi berikut terpenuhi.
+        </p>
+
+        <p>
+            Pertama, u atau turunannya
+            berpangkat lebih dari satu.
+        </p>
+
+        <p>
+            Kedua, terdapat perkalian antara u
+            dengan turunannya, atau antara
+            sesama turunan parsial.
+        </p>
+
+        <p>
+            Ketiga, u atau turunannya muncul
+            di dalam fungsi transenden seperti
+            sinus, eksponen, atau logaritma.
+        </p>
+
+    </div>
+
+    <!-- PENYEBAB KETAKLINEARAN -->
+    <div class="card card--soft">
+
+        <h3>Sumber Ketaklinearan</h3>
+
+        <p>
+            Pangkat lebih dari satu:
+        </p>
+
+        <p>
+            (∂u/∂x)² atau u³
+        </p>
+
+        <p>
+            Perkalian antar suku yang memuat u:
+        </p>
+
+        <p>
+            u · ∂u/∂x atau ∂u/∂x · ∂u/∂y
+        </p>
+
+        <p>
+            Fungsi transenden terhadap u
+            atau turunannya:
+        </p>
+
+        <p>
+            sin(u) atau e^(∂u/∂x)
+        </p>
+
+    </div>
+
+    <!-- CONTOH TAK LINEAR -->
+    <div class="card card--soft">
+
+        <h3>Contoh PDP Tak Linear</h3>
+
+        <p>
+            u ∂u/∂x + ∂u/∂y = 0
+        </p>
+
+        <p>
+            Tak linear karena u dikalikan
+            dengan turunannya ∂u/∂x.
+        </p>
+
+        <p>
+            (∂u/∂x)² + (∂u/∂y)² = 1
+        </p>
+
+        <p>
+            Tak linear karena turunan parsial
+            berpangkat dua.
+        </p>
+
+        <p>
+            ∂u/∂t + u ∂u/∂x = 0
+        </p>
+
+        <p>
+            Tak linear karena u dikalikan
+            dengan turunannya ∂u/∂x.
+            Persamaan ini dikenal sebagai
+            persamaan Burgers tanpa viskositas.
+        </p>
+
+    </div>
+
+    <!-- CONTOH LANJUTAN -->
+    <div class="card card--soft">
+
+        <h3>Contoh PDP Tak Linear Lanjutan</h3>
+
+        <p>
+            ∂²u/∂t² = c² (∂u/∂x)³
+        </p>
+
+        <p>
+            Tak linear karena turunan ∂u/∂x
+            berpangkat tiga.
+        </p>
+
+        <p>
+            ∂u/∂t = ∂²u/∂x² + u²
+        </p>
+
+        <p>
+            Tak linear karena terdapat suku u²
+            yang berpangkat dua.
+            Persamaan ini tergolong semi-linear
+            karena turunan orde tertinggi
+            masih bersifat linear.
+        </p>
+
+        <p>
+            sin(∂u/∂x) + ∂u/∂y = 0
+        </p>
+
+        <p>
+            Tak linear karena turunan ∂u/∂x
+            berada di dalam fungsi sinus.
+        </p>
+
+    </div>
+
+    <!-- PERBEDAAN DENGAN LINEAR -->
+    <div class="card card--soft">
+
+        <h3>Perbedaan dengan PDP Linear</h3>
+
+        <p>
+            Pada PDP linear, prinsip superposisi berlaku,
+            yaitu kombinasi linear dari solusi-solusi
+            juga merupakan solusi.
+        </p>
+
+        <p>
+            Pada PDP tak linear, prinsip superposisi
+            tidak berlaku secara umum.
+            Hal ini membuat analisis solusi
+            menjadi jauh lebih sulit.
+        </p>
+
+        <p>
+            Selain itu, PDP tak linear dapat memiliki
+            perilaku yang sangat berbeda
+            bergantung pada kondisi awal
+            atau kondisi batas yang diberikan.
+        </p>
+
+    </div>
+
+    <!-- CARA MENENTUKAN -->
+    <div class="card card--soft">
+
+        <h3>Cara Menentukan Ketaklinearan</h3>
+
+        <p>
+            Langkah pertama, identifikasi semua suku
+            yang memuat u dan turunan parsialnya.
+        </p>
+
+        <p>
+            Langkah kedua, periksa apakah terdapat
+            suku dengan u atau turunannya
+            berpangkat lebih dari satu.
+            Jika ya, maka PDP tak linear.
+        </p>
+
+        <p>
+            Langkah ketiga, periksa apakah terdapat
+            perkalian antara u dengan turunannya,
+            atau antara sesama turunan.
+            Jika ya, maka PDP tak linear.
+        </p>
+
+        <p>
+            Langkah keempat, periksa apakah u
+            atau turunannya muncul di dalam
+            fungsi transenden.
+            Jika ya, maka PDP tak linear.
+        </p>
+
+    </div>
+
+    <!-- PENYELESAIAN CONTOH 1 -->
+    <div class="card card--soft">
+
+        <h3>Penyelesaian — Contoh 1</h3>
+
+        <p>
+            Tentukan apakah persamaan berikut
+            linear atau tak linear.
+            Jika tak linear, sebutkan sumber
+            ketaklinearannya.
+        </p>
+
+        <p>
+            (∂u/∂x)² + ∂²u/∂y² = 0
+        </p>
+
+        <p>
+            Langkah 1: Identifikasi semua suku
+            yang memuat u dan turunannya.
+        </p>
+
+        <p>
+            Suku-suku tersebut adalah
+            (∂u/∂x)² dan ∂²u/∂y².
+        </p>
+
+        <p>
+            Langkah 2: Periksa pangkat
+            masing-masing suku.
+        </p>
+
+        <p>
+            Suku (∂u/∂x)² memiliki turunan ∂u/∂x
+            yang berpangkat dua.
+            Ini melanggar syarat linearitas.
+        </p>
+
+        <p>
+            Langkah 3: Tentukan sumber
+            ketaklinearan.
+        </p>
+
+        <p>
+            Sumber ketaklinearan adalah
+            turunan ∂u/∂x yang berpangkat dua.
+        </p>
+
+        <p>
+            Kesimpulan: Persamaan ini adalah
+            PDP tak linear.
+        </p>
+
+    </div>
+
+    <!-- PENYELESAIAN CONTOH 2 -->
+    <div class="card card--soft">
+
+        <h3>Penyelesaian — Contoh 2</h3>
+
+        <p>
+            Tentukan apakah persamaan berikut
+            linear atau tak linear.
+            Jika tak linear, sebutkan sumber
+            ketaklinearannya.
+        </p>
+
+        <p>
+            ∂u/∂t + u ∂u/∂x = ν ∂²u/∂x²
+        </p>
+
+        <p>
+            Langkah 1: Identifikasi semua suku
+            yang memuat u dan turunannya.
+        </p>
+
+        <p>
+            Suku-suku tersebut adalah
+            ∂u/∂t, u ∂u/∂x, dan ∂²u/∂x².
+        </p>
+
+        <p>
+            Langkah 2: Periksa pangkat
+            masing-masing suku.
+        </p>
+
+        <p>
+            Suku ∂u/∂t berpangkat satu.
+            Suku ∂²u/∂x² berpangkat satu.
+        </p>
+
+        <p>
+            Langkah 3: Periksa perkalian
+            antar suku yang memuat u.
+        </p>
+
+        <p>
+            Suku u ∂u/∂x merupakan perkalian
+            antara u dengan turunannya ∂u/∂x.
+            Ini melanggar syarat linearitas.
+        </p>
+
+        <p>
+            Langkah 4: Tentukan sumber
+            ketaklinearan.
+        </p>
+
+        <p>
+            Sumber ketaklinearan adalah
+            suku u ∂u/∂x yang merupakan perkalian
+            antara u dan turunannya.
+        </p>
+
+        <p>
+            Kesimpulan: Persamaan ini adalah
+            PDP tak linear.
+            Persamaan ini dikenal sebagai
+            persamaan Burgers.
+        </p>
+
+    </div>
+
+    <!-- PENYELESAIAN CONTOH 3 -->
+    <div class="card card--soft">
+
+        <h3>Penyelesaian — Contoh 3</h3>
+
+        <p>
+            Tentukan apakah persamaan berikut
+            linear atau tak linear.
+            Jika tak linear, sebutkan sumber
+            ketaklinearannya.
+        </p>
+
+        <p>
+            ∂²u/∂x² + ∂²u/∂y² + sin(u) = 0
+        </p>
+
+        <p>
+            Langkah 1: Identifikasi semua suku
+            yang memuat u dan turunannya.
+        </p>
+
+        <p>
+            Suku-suku tersebut adalah
+            ∂²u/∂x², ∂²u/∂y², dan sin(u).
+        </p>
+
+        <p>
+            Langkah 2: Periksa pangkat
+            turunan-turunan yang muncul.
+        </p>
+
+        <p>
+            Suku ∂²u/∂x² dan ∂²u/∂y²
+            masing-masing berpangkat satu.
+        </p>
+
+        <p>
+            Langkah 3: Periksa bentuk
+            suku yang memuat u.
+        </p>
+
+        <p>
+            Suku sin(u) memuat u di dalam
+            fungsi transenden sinus.
+            Ini melanggar syarat linearitas.
+        </p>
+
+        <p>
+            Langkah 4: Tentukan sumber
+            ketaklinearan.
+        </p>
+
+        <p>
+            Sumber ketaklinearan adalah
+            suku sin(u) yang memuat u
+            di dalam fungsi transenden.
+        </p>
+
+        <p>
+            Kesimpulan: Persamaan ini adalah
+            PDP tak linear semi-linear,
+            karena turunan orde tertinggi
+            masih bersifat linear namun
+            terdapat suku tak linear pada u.
+            Persamaan ini dikenal sebagai
+            persamaan sine-Gordon.
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            PDP tak linear adalah PDP di mana
+            fungsi u atau turunan parsialnya
+            muncul secara tidak linear,
+            baik karena berpangkat lebih dari satu,
+            saling dikalikan, maupun berada
+            di dalam fungsi transenden.
+        </p>
+
+        <p>
+            Ketaklinearan membuat analisis dan
+            penyelesaian PDP menjadi jauh lebih kompleks,
+            karena prinsip superposisi tidak berlaku
+            dan perilaku solusinya dapat
+            sangat bervariasi.
+        </p>
+
+    </div>
+
+</div>

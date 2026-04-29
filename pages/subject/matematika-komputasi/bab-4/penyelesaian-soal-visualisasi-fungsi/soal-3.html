@@ -1,0 +1,102 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 3 (Fungsi Logaritma)</h3>
+
+    <p>
+        Fungsi logaritma merupakan invers dari fungsi eksponensial dan banyak digunakan dalam komputasi matematika
+        untuk memodelkan skala non-linear, termasuk pertumbuhan tereduksi dan transformasi data.
+    </p>
+
+    <p>
+        Dalam implementasi numerik, fungsi ini hanya terdefinisi untuk nilai input positif, sehingga domain harus
+        dibatasi secara hati-hati untuk menghindari error komputasi.
+    </p>
+
+    <p class="text-meta">
+        Library: numpy, matplotlib
+    </p>
+
+    <!-- IMPLEMENTASI -->
+    <div class="card card--soft">
+        <p><strong>1. Implementasi Lengkap Python</strong></p>
+
+        <div class="text-code">
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Definisi fungsi logaritma natural
+def f(x):
+    return np.log(x)
+
+# Domain harus positif (x > 0)
+x = np.linspace(0.1, 5, 100)
+
+# Evaluasi fungsi
+y = f(x)
+
+# Titik referensi
+x_ref = 1
+y_ref = f(x_ref)
+
+print("Nilai referensi:")
+print("x =", x_ref)
+print("y =", y_ref)
+
+# Visualisasi
+plt.figure(figsize=(8, 5))
+
+plt.plot(x, y, label="f(x) = ln(x)")
+plt.scatter(x_ref, y_ref, color="red", label="Titik Referensi")
+
+plt.title("Grafik Fungsi Logaritma Natural")
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.grid(True)
+plt.legend()
+
+plt.show()
+        </div>
+    </div>
+
+    <!-- PENJELASAN -->
+    <div class="card card--soft">
+        <p><strong>2. Alur Komputasi</strong></p>
+
+        <p>
+            Fungsi <span class="text-code-inline">np.log(x)</span> digunakan untuk menghitung logaritma natural
+            secara elemen-per-elemen pada array NumPy.
+        </p>
+
+        <p>
+            Domain dimulai dari 0.1 karena nilai logaritma tidak terdefinisi untuk x ≤ 0 dalam bilangan real.
+        </p>
+
+        <p>
+            Titik referensi <span class="text-code-inline">x = 1</span> dipilih karena
+            <span class="text-code-inline">ln(1) = 0</span>, yang menjadi titik penting dalam analisis fungsi logaritma.
+        </p>
+
+        <p>
+            Evaluasi dilakukan secara vectorized sehingga seluruh nilai dihitung tanpa perulangan eksplisit.
+        </p>
+    </div>
+
+    <!-- VISUALISASI -->
+    <div class="card card--soft">
+        <p><strong>3. Interpretasi Visual</strong></p>
+
+        <p>
+            Grafik menunjukkan bahwa fungsi logaritma meningkat secara perlahan seiring bertambahnya nilai x.
+        </p>
+
+        <p>
+            Pada nilai x mendekati nol dari sisi positif, grafik turun tajam menuju negatif tak hingga,
+            yang menunjukkan adanya asimtot vertikal.
+        </p>
+
+        <p>
+            Titik (1, 0) menjadi referensi utama dalam memahami posisi grafik terhadap sumbu-x.
+        </p>
+    </div>
+
+</div>

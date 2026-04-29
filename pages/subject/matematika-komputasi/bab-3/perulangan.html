@@ -1,0 +1,178 @@
+<div class="card-group">
+
+    <!-- CARD 1 -->
+    <div class="card card--soft">
+        <h2>Perulangan dalam Python</h2>
+
+        <h3>Definisi Konsep</h3>
+        <p>
+            Perulangan dalam pemrograman merupakan struktur kontrol yang memungkinkan eksekusi suatu blok kode secara berulang selama kondisi tertentu terpenuhi. Dalam bahasa <span class="text-code-inline">Python</span>, perulangan digunakan untuk mengotomatisasi proses iteratif yang sering muncul dalam komputasi matematika.
+        </p>
+
+        <p>
+            Konsep perulangan sangat penting dalam implementasi algoritma numerik, terutama pada proses yang membutuhkan iterasi berulang hingga mencapai kondisi tertentu, seperti konvergensi atau batas iterasi.
+        </p>
+
+        <h3>Jenis Perulangan</h3>
+        <p>
+            Python menyediakan dua jenis utama struktur perulangan, yaitu <span class="text-code-inline">for</span> dan <span class="text-code-inline">while</span>. Selain itu, terdapat kontrol tambahan seperti <span class="text-code-inline">break</span>, <span class="text-code-inline">continue</span>, dan <span class="text-code-inline">else</span> yang dapat digunakan untuk mengatur alur perulangan.
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Struktur</th>
+                <th>Fungsi</th>
+            </tr>
+            <tr>
+                <td>for</td>
+                <td>Melakukan iterasi berdasarkan urutan (sequence)</td>
+            </tr>
+            <tr>
+                <td>while</td>
+                <td>Melakukan iterasi selama kondisi bernilai benar</td>
+            </tr>
+            <tr>
+                <td>break</td>
+                <td>Menghentikan perulangan secara langsung</td>
+            </tr>
+            <tr>
+                <td>continue</td>
+                <td>Melewati iterasi saat ini dan melanjutkan ke iterasi berikutnya</td>
+            </tr>
+            <tr>
+                <td>else</td>
+                <td>Dijalankan setelah perulangan selesai tanpa interupsi</td>
+            </tr>
+        </table>
+
+        <h3>Kesimpulan</h3>
+        <p>
+            Perulangan merupakan komponen fundamental dalam pemrograman karena memungkinkan efisiensi dalam pengolahan data dan implementasi algoritma berulang. Pemahaman terhadap berbagai jenis perulangan akan mempermudah penyelesaian permasalahan komputasi matematika.
+        </p>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card card--soft">
+        <h3>Perulangan <span class="text-code-inline">for</span></h3>
+
+        <h4>Definisi</h4>
+        <p>
+            Struktur <span class="text-code-inline">for</span> digunakan untuk melakukan iterasi terhadap elemen dalam suatu urutan, seperti list, tuple, atau hasil dari fungsi <span class="text-code-inline">range()</span>.
+        </p>
+
+        <h4>Penjelasan</h4>
+        <p>
+            Perulangan <span class="text-code-inline">for</span> akan mengambil setiap elemen dari urutan secara berurutan, kemudian mengeksekusi blok kode untuk setiap elemen tersebut.
+        </p>
+
+        <h4>Contoh Kode</h4>
+        <div class="text-code">
+for i in range(1, 6):
+    print(i)
+        </div>
+
+        <h4>Penjelasan Contoh</h4>
+        <p>
+            Fungsi <span class="text-code-inline">range(1, 6)</span> menghasilkan bilangan dari 1 hingga 5. Setiap nilai akan dicetak secara berurutan melalui perulangan.
+        </p>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card card--soft">
+        <h3>Perulangan <span class="text-code-inline">while</span></h3>
+
+        <h4>Definisi</h4>
+        <p>
+            Struktur <span class="text-code-inline">while</span> digunakan untuk menjalankan blok kode selama suatu kondisi bernilai <span class="text-code-inline">True</span>.
+        </p>
+
+        <h4>Penjelasan</h4>
+        <p>
+            Perulangan ini akan terus berjalan selama kondisi terpenuhi. Oleh karena itu, perlu diperhatikan agar kondisi berhenti didefinisikan dengan benar untuk menghindari <span class="text-code-inline">infinite loop</span>.
+        </p>
+
+        <h4>Contoh Kode</h4>
+        <div class="text-code">
+i = 1
+
+while i <= 5:
+    print(i)
+    i += 1
+        </div>
+
+        <h4>Penjelasan Contoh</h4>
+        <p>
+            Variabel <span class="text-code-inline">i</span> bertambah setiap iterasi. Ketika nilai melebihi 5, kondisi menjadi salah dan perulangan berhenti.
+        </p>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="card card--soft">
+        <h3>Kontrol <span class="text-code-inline">break</span></h3>
+
+        <h4>Definisi</h4>
+        <p>
+            Pernyataan <span class="text-code-inline">break</span> digunakan untuk menghentikan perulangan sebelum kondisi normal terpenuhi.
+        </p>
+
+        <h4>Contoh Kode</h4>
+        <div class="text-code">
+for i in range(1, 10):
+    if i == 5:
+        break
+    print(i)
+        </div>
+
+        <h4>Penjelasan</h4>
+        <p>
+            Ketika nilai <span class="text-code-inline">i</span> mencapai 5, perulangan dihentikan secara langsung.
+        </p>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="card card--soft">
+        <h3>Kontrol <span class="text-code-inline">continue</span></h3>
+
+        <h4>Definisi</h4>
+        <p>
+            Pernyataan <span class="text-code-inline">continue</span> digunakan untuk melewati iterasi tertentu dan melanjutkan ke iterasi berikutnya.
+        </p>
+
+        <h4>Contoh Kode</h4>
+        <div class="text-code">
+for i in range(1, 6):
+    if i == 3:
+        continue
+    print(i)
+        </div>
+
+        <h4>Penjelasan</h4>
+        <p>
+            Ketika <span class="text-code-inline">i</span> bernilai 3, perintah <span class="text-code-inline">print</span> dilewati dan program melanjutkan ke iterasi berikutnya.
+        </p>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="card card--soft">
+        <h3>Perulangan dengan <span class="text-code-inline">else</span></h3>
+
+        <h4>Definisi</h4>
+        <p>
+            Pada Python, perulangan dapat memiliki blok <span class="text-code-inline">else</span> yang akan dijalankan jika perulangan selesai tanpa interupsi dari <span class="text-code-inline">break</span>.
+        </p>
+
+        <h4>Contoh Kode</h4>
+        <div class="text-code">
+for i in range(1, 4):
+    print(i)
+else:
+    print("Perulangan selesai")
+        </div>
+
+        <h4>Penjelasan</h4>
+        <p>
+            Setelah semua iterasi selesai secara normal, blok <span class="text-code-inline">else</span> dijalankan.
+        </p>
+    </div>
+
+</div>

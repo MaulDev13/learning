@@ -1,0 +1,594 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Kurva Karakteristik PDP Orde Satu</h3>
+
+        <p>
+            Dalam penyelesaian Persamaan Diferensial Parsial
+            orde satu, terdapat konsep penting yang disebut
+            kurva karakteristik.
+        </p>
+
+        <p>
+            Kurva karakteristik adalah kurva-kurva tertentu
+            di dalam domain persamaan yang memiliki sifat
+            khusus berkaitan dengan perilaku solusi PDP.
+        </p>
+
+    </div>
+
+    <!-- IDE DASAR -->
+    <div class="card card--soft">
+
+        <h3>Ide Dasar</h3>
+
+        <p>
+            Ide dasar dari metode karakteristik adalah
+            bahwa sepanjang kurva karakteristik,
+            suatu PDP orde satu dapat direduksi menjadi
+            persamaan diferensial biasa.
+        </p>
+
+        <p>
+            Dengan kata lain, masalah mencari solusi
+            suatu PDP dalam domain dua dimensi
+            disederhanakan menjadi masalah
+            menyelesaikan persamaan diferensial biasa
+            sepanjang kurva-kurva tertentu.
+        </p>
+
+    </div>
+
+    <!-- PENURUNAN -->
+    <div class="card card--soft">
+
+        <h3>Penurunan Persamaan Karakteristik</h3>
+
+        <p>
+            Perhatikan PDP kuasi-linear orde satu:
+        </p>
+
+        <p>
+            a(x, y, u) ∂u/∂x + b(x, y, u) ∂u/∂y = c(x, y, u)
+        </p>
+
+        <p>
+            Misalkan u = u(x, y) adalah solusi PDP tersebut,
+            dan terdapat kurva parametrik di bidang xy
+            yang dinyatakan sebagai:
+        </p>
+
+        <p>
+            x = x(t), y = y(t)
+        </p>
+
+        <p>
+            Nilai u sepanjang kurva tersebut adalah:
+        </p>
+
+        <p>
+            u(t) = u(x(t), y(t))
+        </p>
+
+        <p>
+            Turunan u terhadap t sepanjang kurva adalah:
+        </p>
+
+        <p>
+            du/dt = ∂u/∂x · dx/dt + ∂u/∂y · dy/dt
+        </p>
+
+        <p>
+            Apabila dipilih dx/dt = a dan dy/dt = b,
+            maka persamaan di atas menjadi:
+        </p>
+
+        <p>
+            du/dt = a · ∂u/∂x + b · ∂u/∂y = c
+        </p>
+
+        <p>
+            sehingga PDP tereduksi menjadi
+            persamaan diferensial biasa du/dt = c.
+        </p>
+
+    </div>
+
+    <!-- PERSAMAAN KARAKTERISTIK -->
+    <div class="card card--soft">
+
+        <h3>Persamaan Karakteristik</h3>
+
+        <p>
+            Berdasarkan penurunan di atas,
+            persamaan karakteristik dari PDP:
+        </p>
+
+        <p>
+            a(x, y, u) ∂u/∂x + b(x, y, u) ∂u/∂y = c(x, y, u)
+        </p>
+
+        <p>
+            adalah sistem persamaan diferensial biasa:
+        </p>
+
+        <p>
+            dx/dt = a(x, y, u)<br>
+            dy/dt = b(x, y, u)<br>
+            du/dt = c(x, y, u)
+        </p>
+
+        <p>
+            atau dalam bentuk simetris:
+        </p>
+
+        <p>
+            dx/a = dy/b = du/c
+        </p>
+
+        <p>
+            Kurva yang memenuhi sistem ini disebut
+            kurva karakteristik dari PDP tersebut.
+        </p>
+
+    </div>
+
+    <!-- SIFAT KURVA KARAKTERISTIK -->
+    <div class="card card--soft">
+
+        <h3>Sifat Kurva Karakteristik</h3>
+
+        <p>
+            Pertama, sepanjang kurva karakteristik,
+            nilai u berubah mengikuti persamaan
+            diferensial biasa du/dt = c,
+            bukan lagi persamaan parsial.
+        </p>
+
+        <p>
+            Kedua, informasi atau kondisi awal
+            merambat sepanjang kurva karakteristik.
+            Nilai u di suatu titik ditentukan oleh
+            nilai u di titik awal
+            pada kurva karakteristik yang melewatinya.
+        </p>
+
+        <p>
+            Ketiga, apabila dua kurva karakteristik
+            tidak berpotongan, maka solusi PDP
+            umumnya terdefinisi dengan baik.
+        </p>
+
+    </div>
+
+    <!-- PROYEKSI KARAKTERISTIK -->
+    <div class="card card--soft">
+
+        <h3>Proyeksi Karakteristik</h3>
+
+        <p>
+            Kurva karakteristik sejatinya adalah kurva
+            dalam ruang tiga dimensi (x, y, u).
+        </p>
+
+        <p>
+            Proyeksi kurva karakteristik ke bidang xy
+            disebut karakteristik dasar atau
+            kurva basis karakteristik.
+        </p>
+
+        <p>
+            Proyeksi ini diperoleh dari dua persamaan
+            pertama dalam sistem karakteristik:
+        </p>
+
+        <p>
+            dx/dt = a(x, y, u)<br>
+            dy/dt = b(x, y, u)
+        </p>
+
+        <p>
+            atau ekuivalen:
+        </p>
+
+        <p>
+            dy/dx = b(x, y, u) / a(x, y, u)
+        </p>
+
+    </div>
+
+    <!-- INTEGRAL PERTAMA -->
+    <div class="card card--soft">
+
+        <h3>Integral Pertama</h3>
+
+        <p>
+            Penyelesaian sistem persamaan karakteristik
+            menghasilkan dua integral pertama,
+            yaitu fungsi φ₁ dan φ₂ yang bernilai
+            konstan sepanjang setiap kurva karakteristik.
+        </p>
+
+        <p>
+            φ₁(x, y, u) = C₁<br>
+            φ₂(x, y, u) = C₂
+        </p>
+
+        <p>
+            Solusi umum PDP kemudian dinyatakan
+            sebagai hubungan antara kedua
+            integral pertama tersebut:
+        </p>
+
+        <p>
+            F(φ₁, φ₂) = 0
+        </p>
+
+        <p>
+            atau ekuivalen:
+        </p>
+
+        <p>
+            φ₁ = G(φ₂)
+        </p>
+
+        <p>
+            dengan F dan G adalah fungsi sembarang.
+        </p>
+
+    </div>
+
+    <!-- KONDISI AWAL -->
+    <div class="card card--soft">
+
+        <h3>Kondisi Awal dan Kurva Karakteristik</h3>
+
+        <p>
+            Apabila diberikan kondisi awal
+            sepanjang suatu kurva Γ di bidang xy,
+            maka nilai u pada titik sembarang
+            diperoleh dengan menelusuri kurva
+            karakteristik yang berawal dari Γ
+            hingga mencapai titik tersebut.
+        </p>
+
+        <p>
+            Syarat agar masalah nilai awal
+            terdefinisi dengan baik adalah
+            kurva Γ tidak boleh bersinggungan
+            dengan kurva karakteristik.
+        </p>
+
+        <p>
+            Apabila Γ bersinggungan dengan
+            kurva karakteristik, maka masalah
+            mungkin tidak memiliki solusi unik
+            atau tidak memiliki solusi sama sekali.
+        </p>
+
+    </div>
+
+    <!-- PENYELESAIAN CONTOH 1 -->
+    <div class="card card--soft">
+
+        <h3>Penyelesaian — Contoh 1</h3>
+
+        <p>
+            Tentukan kurva karakteristik dan
+            solusi umum dari persamaan berikut.
+        </p>
+
+        <p>
+            2 ∂u/∂x + 3 ∂u/∂y = 0
+        </p>
+
+        <p>
+            Langkah 1: Identifikasi koefisien.
+        </p>
+
+        <p>
+            a = 2, b = 3, c = 0.
+        </p>
+
+        <p>
+            Langkah 2: Tulis persamaan karakteristik.
+        </p>
+
+        <p>
+            dx/2 = dy/3 = du/0
+        </p>
+
+        <p>
+            Langkah 3: Selesaikan persamaan karakteristik.
+        </p>
+
+        <p>
+            Dari du/0, diperoleh du = 0,
+            sehingga u = C₁.
+        </p>
+
+        <p>
+            Dari dx/2 = dy/3, diperoleh:
+        </p>
+
+        <p>
+            3 dx = 2 dy<br>
+            3x − 2y = C₂
+        </p>
+
+        <p>
+            Langkah 4: Tentukan kurva karakteristik.
+        </p>
+
+        <p>
+            Kurva karakteristik di bidang xy
+            adalah garis-garis lurus:
+        </p>
+
+        <p>
+            3x − 2y = C
+        </p>
+
+        <p>
+            Langkah 5: Tulis solusi umum.
+        </p>
+
+        <p>
+            Integral pertama yang diperoleh
+            adalah u = C₁ dan 3x − 2y = C₂.
+        </p>
+
+        <p>
+            Kesimpulan: Solusi umum persamaan ini adalah:
+        </p>
+
+        <p>
+            u = f(3x − 2y)
+        </p>
+
+        <p>
+            dengan f adalah fungsi sembarang.
+            Nilai u konstan sepanjang setiap garis
+            3x − 2y = C.
+        </p>
+
+    </div>
+
+    <!-- PENYELESAIAN CONTOH 2 -->
+    <div class="card card--soft">
+
+        <h3>Penyelesaian — Contoh 2</h3>
+
+        <p>
+            Tentukan kurva karakteristik dan
+            solusi umum dari persamaan berikut.
+        </p>
+
+        <p>
+            y ∂u/∂x − x ∂u/∂y = 0
+        </p>
+
+        <p>
+            Langkah 1: Identifikasi koefisien.
+        </p>
+
+        <p>
+            a = y, b = −x, c = 0.
+        </p>
+
+        <p>
+            Langkah 2: Tulis persamaan karakteristik.
+        </p>
+
+        <p>
+            dx/y = dy/(−x) = du/0
+        </p>
+
+        <p>
+            Langkah 3: Selesaikan persamaan karakteristik.
+        </p>
+
+        <p>
+            Dari du/0, diperoleh du = 0,
+            sehingga u = C₁.
+        </p>
+
+        <p>
+            Dari dx/y = dy/(−x), diperoleh:
+        </p>
+
+        <p>
+            −x dx = y dy<br>
+            −x²/2 = y²/2 + konstanta<br>
+            x² + y² = C₂
+        </p>
+
+        <p>
+            Langkah 4: Tentukan kurva karakteristik.
+        </p>
+
+        <p>
+            Kurva karakteristik di bidang xy
+            adalah lingkaran-lingkaran berpusat di origin:
+        </p>
+
+        <p>
+            x² + y² = C
+        </p>
+
+        <p>
+            Langkah 5: Tulis solusi umum.
+        </p>
+
+        <p>
+            Integral pertama yang diperoleh
+            adalah u = C₁ dan x² + y² = C₂.
+        </p>
+
+        <p>
+            Kesimpulan: Solusi umum persamaan ini adalah:
+        </p>
+
+        <p>
+            u = f(x² + y²)
+        </p>
+
+        <p>
+            dengan f adalah fungsi sembarang.
+            Nilai u konstan sepanjang setiap lingkaran
+            x² + y² = C.
+        </p>
+
+    </div>
+
+    <!-- PENYELESAIAN CONTOH 3 -->
+    <div class="card card--soft">
+
+        <h3>Penyelesaian — Contoh 3</h3>
+
+        <p>
+            Tentukan kurva karakteristik dan
+            solusi dari masalah nilai awal berikut.
+        </p>
+
+        <p>
+            ∂u/∂x + 2 ∂u/∂y = 0<br>
+            u(x, 0) = sin(x)
+        </p>
+
+        <p>
+            Langkah 1: Identifikasi koefisien.
+        </p>
+
+        <p>
+            a = 1, b = 2, c = 0.
+        </p>
+
+        <p>
+            Langkah 2: Tulis persamaan karakteristik.
+        </p>
+
+        <p>
+            dx/1 = dy/2 = du/0
+        </p>
+
+        <p>
+            Langkah 3: Selesaikan persamaan karakteristik.
+        </p>
+
+        <p>
+            Dari du/0, diperoleh u = C₁.
+        </p>
+
+        <p>
+            Dari dx/1 = dy/2, diperoleh:
+        </p>
+
+        <p>
+            2 dx = dy<br>
+            y − 2x = C₂
+        </p>
+
+        <p>
+            Langkah 4: Tentukan kurva karakteristik.
+        </p>
+
+        <p>
+            Kurva karakteristik di bidang xy
+            adalah garis-garis lurus:
+        </p>
+
+        <p>
+            y − 2x = C
+        </p>
+
+        <p>
+            Langkah 5: Tulis solusi umum.
+        </p>
+
+        <p>
+            u = f(y − 2x)
+        </p>
+
+        <p>
+            Langkah 6: Terapkan kondisi awal
+            u(x, 0) = sin(x).
+        </p>
+
+        <p>
+            Substitusi y = 0 ke solusi umum:
+        </p>
+
+        <p>
+            u(x, 0) = f(0 − 2x) = f(−2x) = sin(x)
+        </p>
+
+        <p>
+            Misalkan s = −2x, maka x = −s/2,
+            sehingga:
+        </p>
+
+        <p>
+            f(s) = sin(−s/2) = −sin(s/2)
+        </p>
+
+        <p>
+            Langkah 7: Substitusi kembali
+            ke solusi umum.
+        </p>
+
+        <p>
+            Kesimpulan: Solusi khusus persamaan ini adalah:
+        </p>
+
+        <p>
+            u(x, y) = −sin((y − 2x)/2)
+        </p>
+
+        <p>
+            Nilai u merambat konstan sepanjang
+            setiap garis y − 2x = C,
+            dengan nilai awal diberikan
+            pada sumbu y = 0.
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Kurva karakteristik adalah kurva-kurva
+            di dalam domain PDP orde satu
+            yang mereduksi PDP menjadi persamaan
+            diferensial biasa.
+        </p>
+
+        <p>
+            Persamaan karakteristik diperoleh dari:
+        </p>
+
+        <p>
+            dx/a = dy/b = du/c
+        </p>
+
+        <p>
+            Penyelesaian sistem ini menghasilkan
+            dua integral pertama yang menentukan
+            solusi umum PDP.
+        </p>
+
+        <p>
+            Apabila kondisi awal diberikan,
+            fungsi sembarang dalam solusi umum
+            dapat ditentukan secara khusus
+            sehingga diperoleh solusi tunggal.
+        </p>
+
+    </div>
+
+</div>

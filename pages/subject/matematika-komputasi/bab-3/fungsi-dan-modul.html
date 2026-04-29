@@ -1,0 +1,146 @@
+<div class="card-group">
+
+    <!-- CARD 1 -->
+    <div class="card card--soft">
+        <h2>Fungsi dalam Python</h2>
+
+        <h3>Definisi Konsep</h3>
+        <p>
+            Fungsi dalam pemrograman merupakan blok kode yang dirancang untuk menjalankan tugas tertentu dan dapat digunakan kembali. Dalam <span class="text-code-inline">Python</span>, fungsi didefinisikan menggunakan kata kunci <span class="text-code-inline">def</span> dan dapat menerima input berupa parameter serta menghasilkan output berupa nilai kembali.
+        </p>
+
+        <p>
+            Penggunaan fungsi memungkinkan program disusun secara modular, sehingga meningkatkan keterbacaan, efisiensi, dan kemudahan pemeliharaan kode.
+        </p>
+
+        <h3>Struktur Dasar Fungsi</h3>
+        <p>
+            Secara umum, fungsi terdiri dari nama fungsi, parameter (opsional), dan isi fungsi berupa serangkaian instruksi yang dijalankan saat fungsi dipanggil.
+        </p>
+
+        <div class="text-code">
+def nama_fungsi(parameter):
+    hasil = parameter * 2
+    return hasil
+        </div>
+
+        <h3>Penjelasan</h3>
+        <p>
+            Kata kunci <span class="text-code-inline">def</span> digunakan untuk mendefinisikan fungsi. Parameter merupakan nilai input yang diproses dalam fungsi. Pernyataan <span class="text-code-inline">return</span> digunakan untuk mengembalikan hasil eksekusi fungsi.
+        </p>
+
+        <h3>Contoh Implementasi</h3>
+        <div class="text-code">
+def kuadrat(x):
+    return x ** 2
+
+print(kuadrat(5))
+        </div>
+
+        <p>
+            Fungsi <span class="text-code-inline">kuadrat</span> menerima satu parameter dan mengembalikan nilai kuadratnya. Ketika dipanggil dengan nilai 5, hasil yang diperoleh adalah 25.
+        </p>
+
+        <h3>Tabel Ringkasan Fungsi</h3>
+        <table class="table">
+            <tr>
+                <th>Komponen</th>
+                <th>Deskripsi</th>
+            </tr>
+            <tr>
+                <td>def</td>
+                <td>Kata kunci untuk mendefinisikan fungsi</td>
+            </tr>
+            <tr>
+                <td>Parameter</td>
+                <td>Input yang diterima fungsi</td>
+            </tr>
+            <tr>
+                <td>return</td>
+                <td>Mengembalikan nilai hasil fungsi</td>
+            </tr>
+        </table>
+
+        <h3>Peran dalam Komputasi Matematika</h3>
+        <p>
+            Dalam komputasi matematika, fungsi digunakan untuk merepresentasikan model matematis, seperti fungsi polinomial, fungsi trigonometri, atau fungsi numerik lainnya. Hal ini memungkinkan pemanggilan ulang algoritma tanpa perlu menuliskan ulang kode.
+        </p>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card card--soft">
+        <h2>Modul dalam Python</h2>
+
+        <h3>Definisi Konsep</h3>
+        <p>
+            Modul merupakan berkas Python yang berisi kumpulan fungsi, variabel, dan definisi lain yang dapat digunakan kembali dalam program lain. Modul memungkinkan pengorganisasian kode secara terstruktur dan mendukung pengembangan perangkat lunak berskala besar.
+        </p>
+
+        <h3>Penjelasan</h3>
+        <p>
+            Dengan menggunakan modul, program dapat memisahkan fungsi-fungsi ke dalam file yang berbeda. Untuk menggunakan modul, Python menyediakan perintah <span class="text-code-inline">import</span>.
+        </p>
+
+        <h3>Contoh Penggunaan Modul</h3>
+        <div class="text-code">
+import math
+
+print(math.sqrt(16))
+        </div>
+
+        <p>
+            Modul <span class="text-code-inline">math</span> menyediakan berbagai fungsi matematika. Fungsi <span class="text-code-inline">sqrt()</span> digunakan untuk menghitung akar kuadrat.
+        </p>
+
+        <h3>Membuat Modul Sederhana</h3>
+        <p>
+            Modul juga dapat dibuat secara mandiri dengan menyimpan fungsi dalam sebuah file Python.
+        </p>
+
+        <div class="text-code">
+def tambah(a, b):
+    return a + b
+        </div>
+
+        <p>
+            File tersebut dapat disimpan dengan nama tertentu, kemudian digunakan dalam program lain.
+        </p>
+
+        <div class="text-code">
+import modul_saya
+
+print(modul_saya.tambah(2, 3))
+        </div>
+
+        <h3>Tabel Ringkasan Modul</h3>
+        <table class="table">
+            <tr>
+                <th>Konsep</th>
+                <th>Fungsi</th>
+            </tr>
+            <tr>
+                <td>import</td>
+                <td>Memanggil modul ke dalam program</td>
+            </tr>
+            <tr>
+                <td>library</td>
+                <td>Kumpulan modul yang tersedia</td>
+            </tr>
+            <tr>
+                <td>custom module</td>
+                <td>Modul yang dibuat oleh pengguna</td>
+            </tr>
+        </table>
+
+        <h3>Peran dalam Komputasi Matematika</h3>
+        <p>
+            Modul memungkinkan penggunaan pustaka matematika yang kompleks, seperti <span class="text-code-inline">math</span> atau <span class="text-code-inline">numpy</span>, sehingga mempercepat proses komputasi dan meningkatkan akurasi perhitungan.
+        </p>
+
+        <h3>Kesimpulan</h3>
+        <p>
+            Fungsi dan modul merupakan dua konsep penting dalam pengorganisasian program. Fungsi digunakan untuk membangun unit logika yang reusable, sedangkan modul digunakan untuk mengelola kumpulan fungsi dalam skala yang lebih besar. Keduanya sangat berperan dalam pengembangan komputasi matematika yang efisien dan terstruktur.
+        </p>
+    </div>
+
+</div>

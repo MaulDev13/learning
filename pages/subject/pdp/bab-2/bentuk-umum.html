@@ -1,0 +1,531 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Persamaan Diferensial Parsial Orde Satu</h3>
+
+        <p>
+            Persamaan Diferensial Parsial (PDP) orde satu
+            adalah PDP yang turunan parsial tertingginya
+            berorde satu.
+        </p>
+
+        <p>
+            PDP orde satu merupakan bentuk PDP
+            yang paling sederhana dan menjadi dasar
+            dalam memahami PDP orde yang lebih tinggi.
+        </p>
+
+    </div>
+
+    <!-- BENTUK UMUM -->
+    <div class="card card--soft">
+
+        <h3>Bentuk Umum</h3>
+
+        <p>
+            PDP orde satu dengan dua variabel bebas
+            x dan y dapat ditulis dalam bentuk umum:
+        </p>
+
+        <p>
+            F(x, y, u, ∂u/∂x, ∂u/∂y) = 0
+        </p>
+
+        <p>
+            dengan u = u(x, y) adalah fungsi
+            yang akan ditentukan,
+            dan F adalah fungsi yang diketahui.
+        </p>
+
+    </div>
+
+    <!-- BENTUK LINEAR -->
+    <div class="card card--soft">
+
+        <h3>Bentuk Linear PDP Orde Satu</h3>
+
+        <p>
+            PDP orde satu dikatakan linear
+            apabila u dan turunan parsialnya
+            muncul secara linear dalam persamaan.
+        </p>
+
+        <p>
+            Bentuk umum PDP linear orde satu
+            dengan dua variabel bebas adalah:
+        </p>
+
+        <p>
+            a(x, y) ∂u/∂x + b(x, y) ∂u/∂y = c(x, y) u + d(x, y)
+        </p>
+
+        <p>
+            dengan a, b, c, dan d adalah fungsi
+            yang hanya bergantung pada x dan y.
+        </p>
+
+    </div>
+
+    <!-- BENTUK KUASI LINEAR -->
+    <div class="card card--soft">
+
+        <h3>Bentuk Kuasi-Linear PDP Orde Satu</h3>
+
+        <p>
+            PDP orde satu dikatakan kuasi-linear
+            apabila linear terhadap turunan parsialnya,
+            namun koefisiennya boleh bergantung
+            pada u.
+        </p>
+
+        <p>
+            Bentuk umum PDP kuasi-linear orde satu
+            adalah:
+        </p>
+
+        <p>
+            a(x, y, u) ∂u/∂x + b(x, y, u) ∂u/∂y = c(x, y, u)
+        </p>
+
+        <p>
+            dengan a, b, dan c adalah fungsi
+            yang dapat bergantung pada x, y, dan u.
+        </p>
+
+    </div>
+
+    <!-- CONTOH LINEAR -->
+    <div class="card card--soft">
+
+        <h3>Contoh PDP Linear Orde Satu</h3>
+
+        <p>
+            ∂u/∂x + ∂u/∂y = 0
+        </p>
+
+        <p>
+            Koefisien turunan parsial bernilai satu
+            dan tidak bergantung pada u.
+            Persamaan ini linear homogen.
+        </p>
+
+        <p>
+            2 ∂u/∂x − 3 ∂u/∂y = u
+        </p>
+
+        <p>
+            Koefisien turunan parsial adalah konstanta
+            dan tidak bergantung pada u.
+            Persamaan ini linear homogen.
+        </p>
+
+        <p>
+            x ∂u/∂x + y ∂u/∂y = x + y
+        </p>
+
+        <p>
+            Koefisien turunan parsial bergantung
+            pada variabel bebas x dan y saja.
+            Persamaan ini linear tak homogen.
+        </p>
+
+    </div>
+
+    <!-- CONTOH KUASI LINEAR -->
+    <div class="card card--soft">
+
+        <h3>Contoh PDP Kuasi-Linear Orde Satu</h3>
+
+        <p>
+            u ∂u/∂x + ∂u/∂y = 0
+        </p>
+
+        <p>
+            Koefisien ∂u/∂x bergantung pada u.
+            Turunan parsial muncul secara linear,
+            sehingga persamaan ini kuasi-linear.
+        </p>
+
+        <p>
+            (u + x) ∂u/∂x + y ∂u/∂y = u²
+        </p>
+
+        <p>
+            Koefisien ∂u/∂x bergantung pada u dan x.
+            Persamaan ini kuasi-linear.
+        </p>
+
+    </div>
+
+    <!-- CONTOH TAK LINEAR -->
+    <div class="card card--soft">
+
+        <h3>Contoh PDP Tak Linear Orde Satu</h3>
+
+        <p>
+            (∂u/∂x)² + (∂u/∂y)² = 1
+        </p>
+
+        <p>
+            Turunan parsial berpangkat dua.
+            Persamaan ini tak linear.
+            Persamaan ini dikenal sebagai
+            persamaan Eikonal.
+        </p>
+
+        <p>
+            ∂u/∂x · ∂u/∂y = u
+        </p>
+
+        <p>
+            Terdapat perkalian antara sesama
+            turunan parsial.
+            Persamaan ini tak linear.
+        </p>
+
+    </div>
+
+    <!-- METODE KARAKTERISTIK -->
+    <div class="card card--soft">
+
+        <h3>Metode Karakteristik</h3>
+
+        <p>
+            Salah satu metode utama dalam menyelesaikan
+            PDP orde satu adalah metode karakteristik.
+        </p>
+
+        <p>
+            Ide dasar metode ini adalah mengubah PDP
+            menjadi sistem persamaan diferensial biasa
+            sepanjang kurva-kurva tertentu
+            yang disebut kurva karakteristik.
+        </p>
+
+        <p>
+            Untuk PDP kuasi-linear orde satu:
+        </p>
+
+        <p>
+            a(x, y, u) ∂u/∂x + b(x, y, u) ∂u/∂y = c(x, y, u)
+        </p>
+
+        <p>
+            Persamaan karakteristiknya adalah:
+        </p>
+
+        <p>
+            dx/a = dy/b = du/c
+        </p>
+
+    </div>
+
+    <!-- CARA MENYELESAIKAN -->
+    <div class="card card--soft">
+
+        <h3>Langkah Penyelesaian Metode Karakteristik</h3>
+
+        <p>
+            Langkah pertama, tuliskan persamaan
+            dalam bentuk kuasi-linear:
+        </p>
+
+        <p>
+            a ∂u/∂x + b ∂u/∂y = c
+        </p>
+
+        <p>
+            Langkah kedua, bentuk persamaan karakteristik:
+        </p>
+
+        <p>
+            dx/a = dy/b = du/c
+        </p>
+
+        <p>
+            Langkah ketiga, selesaikan sistem
+            persamaan diferensial biasa tersebut
+            untuk mendapatkan dua integral pertama,
+            yaitu φ₁(x, y, u) = C₁ dan φ₂(x, y, u) = C₂.
+        </p>
+
+        <p>
+            Langkah keempat, solusi umum PDP
+            dinyatakan sebagai:
+        </p>
+
+        <p>
+            F(φ₁, φ₂) = 0
+        </p>
+
+        <p>
+            atau ekuivalen:
+        </p>
+
+        <p>
+            φ₁ = G(φ₂)
+        </p>
+
+        <p>
+            dengan F dan G adalah fungsi sembarang.
+        </p>
+
+    </div>
+
+    <!-- PENYELESAIAN CONTOH 1 -->
+    <div class="card card--soft">
+
+        <h3>Penyelesaian — Contoh 1</h3>
+
+        <p>
+            Tentukan solusi umum dari persamaan berikut.
+        </p>
+
+        <p>
+            ∂u/∂x + ∂u/∂y = 0
+        </p>
+
+        <p>
+            Langkah 1: Identifikasi koefisien
+            persamaan.
+        </p>
+
+        <p>
+            a = 1, b = 1, c = 0.
+        </p>
+
+        <p>
+            Langkah 2: Bentuk persamaan karakteristik.
+        </p>
+
+        <p>
+            dx/1 = dy/1 = du/0
+        </p>
+
+        <p>
+            Langkah 3: Selesaikan persamaan karakteristik.
+        </p>
+
+        <p>
+            Dari du/0, diperoleh du = 0,
+            sehingga u = C₁.
+        </p>
+
+        <p>
+            Dari dx/1 = dy/1, diperoleh dy = dx,
+            sehingga y − x = C₂.
+        </p>
+
+        <p>
+            Langkah 4: Tulis solusi umum.
+        </p>
+
+        <p>
+            Dua integral pertama yang diperoleh
+            adalah u = C₁ dan y − x = C₂.
+        </p>
+
+        <p>
+            Kesimpulan: Solusi umum persamaan ini adalah:
+        </p>
+
+        <p>
+            u = f(y − x)
+        </p>
+
+        <p>
+            dengan f adalah fungsi sembarang.
+        </p>
+
+    </div>
+
+    <!-- PENYELESAIAN CONTOH 2 -->
+    <div class="card card--soft">
+
+        <h3>Penyelesaian — Contoh 2</h3>
+
+        <p>
+            Tentukan solusi umum dari persamaan berikut.
+        </p>
+
+        <p>
+            x ∂u/∂x + y ∂u/∂y = u
+        </p>
+
+        <p>
+            Langkah 1: Identifikasi koefisien
+            persamaan.
+        </p>
+
+        <p>
+            a = x, b = y, c = u.
+        </p>
+
+        <p>
+            Langkah 2: Bentuk persamaan karakteristik.
+        </p>
+
+        <p>
+            dx/x = dy/y = du/u
+        </p>
+
+        <p>
+            Langkah 3: Selesaikan persamaan karakteristik.
+        </p>
+
+        <p>
+            Dari dx/x = dy/y, diperoleh:
+        </p>
+
+        <p>
+            ln|x| = ln|y| + konstanta,
+            sehingga y/x = C₁.
+        </p>
+
+        <p>
+            Dari dx/x = du/u, diperoleh:
+        </p>
+
+        <p>
+            ln|x| = ln|u| + konstanta,
+            sehingga u/x = C₂.
+        </p>
+
+        <p>
+            Langkah 4: Tulis solusi umum.
+        </p>
+
+        <p>
+            Dua integral pertama yang diperoleh
+            adalah y/x = C₁ dan u/x = C₂.
+        </p>
+
+        <p>
+            Kesimpulan: Solusi umum persamaan ini adalah:
+        </p>
+
+        <p>
+            u/x = f(y/x)
+        </p>
+
+        <p>
+            atau ekuivalen:
+        </p>
+
+        <p>
+            u = x f(y/x)
+        </p>
+
+        <p>
+            dengan f adalah fungsi sembarang.
+        </p>
+
+    </div>
+
+    <!-- PENYELESAIAN CONTOH 3 -->
+    <div class="card card--soft">
+
+        <h3>Penyelesaian — Contoh 3</h3>
+
+        <p>
+            Tentukan solusi umum dari persamaan berikut.
+        </p>
+
+        <p>
+            u ∂u/∂x + ∂u/∂y = 0
+        </p>
+
+        <p>
+            Langkah 1: Identifikasi koefisien
+            persamaan.
+        </p>
+
+        <p>
+            a = u, b = 1, c = 0.
+        </p>
+
+        <p>
+            Langkah 2: Bentuk persamaan karakteristik.
+        </p>
+
+        <p>
+            dx/u = dy/1 = du/0
+        </p>
+
+        <p>
+            Langkah 3: Selesaikan persamaan karakteristik.
+        </p>
+
+        <p>
+            Dari du/0, diperoleh du = 0,
+            sehingga u = C₁.
+        </p>
+
+        <p>
+            Dari dx/u = dy/1 dan u = C₁, diperoleh:
+        </p>
+
+        <p>
+            dx = u dy = C₁ dy,
+            sehingga x − u y = C₂,
+            atau x − C₁ y = C₂.
+        </p>
+
+        <p>
+            Langkah 4: Tulis solusi umum.
+        </p>
+
+        <p>
+            Dua integral pertama yang diperoleh
+            adalah u = C₁ dan x − u y = C₂.
+        </p>
+
+        <p>
+            Kesimpulan: Solusi umum persamaan ini adalah:
+        </p>
+
+        <p>
+            u = f(x − u y)
+        </p>
+
+        <p>
+            dengan f adalah fungsi sembarang.
+            Persamaan ini merupakan persamaan
+            implisit terhadap u.
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            PDP orde satu adalah PDP yang turunan
+            parsial tertingginya berorde satu,
+            dan dapat diklasifikasikan menjadi
+            linear, kuasi-linear, dan tak linear.
+        </p>
+
+        <p>
+            Metode karakteristik merupakan metode
+            utama dalam menyelesaikan PDP orde satu,
+            dengan cara mengubah PDP menjadi sistem
+            persamaan diferensial biasa
+            sepanjang kurva karakteristik.
+        </p>
+
+        <p>
+            Solusi umum PDP orde satu memuat
+            fungsi sembarang sebagai gantinya
+            konstanta sembarang pada PDB,
+            sehingga keluarga solusinya
+            jauh lebih luas.
+        </p>
+
+    </div>
+
+</div>

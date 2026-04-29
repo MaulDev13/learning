@@ -1,0 +1,100 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 9 (Fungsi Osilasi: Sinus + Cosinus)</h3>
+
+    <p>
+        Fungsi osilasi merupakan kombinasi dari beberapa fungsi trigonometri yang menghasilkan pola gelombang kompleks.
+        Dalam komputasi matematika, fungsi seperti ini digunakan untuk memodelkan sinyal, getaran, dan fenomena periodik gabungan.
+    </p>
+
+    <p>
+        Pada kasus ini, fungsi merupakan superposisi dari sinus dan cosinus yang menghasilkan pola interferensi sederhana.
+    </p>
+
+    <p class="text-meta">
+        Library: numpy, matplotlib
+    </p>
+
+    <!-- IMPLEMENTASI -->
+    <div class="card card--soft">
+        <p><strong>1. Implementasi Lengkap Python</strong></p>
+
+        <div class="text-code">
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Definisi fungsi osilasi
+def f(x):
+    return np.sin(x) + np.cos(x)
+
+# Domain numerik
+x = np.linspace(-2*np.pi, 2*np.pi, 200)
+
+# Evaluasi fungsi
+y = f(x)
+
+# Titik referensi
+x_ref = 0
+y_ref = f(x_ref)
+
+print("Nilai referensi:")
+print("x =", x_ref)
+print("y =", y_ref)
+
+# Visualisasi
+plt.figure(figsize=(8, 5))
+
+plt.plot(x, y, label="f(x) = sin(x) + cos(x)")
+plt.scatter(x_ref, y_ref, color="red", label="Titik Referensi")
+
+plt.title("Grafik Fungsi Osilasi")
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.grid(True)
+plt.legend()
+
+plt.show()
+        </div>
+    </div>
+
+    <!-- PENJELASAN -->
+    <div class="card card--soft">
+        <p><strong>2. Alur Komputasi</strong></p>
+
+        <p>
+            Fungsi <span class="text-code-inline">np.sin</span> dan <span class="text-code-inline">np.cos</span>
+            digunakan secara bersamaan untuk menghasilkan superposisi dua gelombang.
+        </p>
+
+        <p>
+            Domain dipilih pada interval <span class="text-code-inline">-2π</span> hingga <span class="text-code-inline">2π</span>
+            agar pola periodik dapat diamati secara lengkap.
+        </p>
+
+        <p>
+            Evaluasi dilakukan secara vectorized sehingga kedua fungsi dihitung secara paralel pada seluruh elemen array.
+        </p>
+
+        <p>
+            Titik referensi <span class="text-code-inline">x = 0</span> digunakan untuk menunjukkan nilai awal superposisi fungsi.
+        </p>
+    </div>
+
+    <!-- VISUALISASI -->
+    <div class="card card--soft">
+        <p><strong>3. Interpretasi Visual</strong></p>
+
+        <p>
+            Grafik menunjukkan pola osilasi yang tidak simetris sempurna akibat penjumlahan dua fungsi trigonometri.
+        </p>
+
+        <p>
+            Terjadi perubahan amplitudo lokal akibat interferensi antara sinus dan cosinus.
+        </p>
+
+        <p>
+            Representasi ini sering digunakan dalam analisis sinyal dan sistem gelombang dalam komputasi numerik.
+        </p>
+    </div>
+
+</div>

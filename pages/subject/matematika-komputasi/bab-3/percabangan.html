@@ -1,0 +1,185 @@
+<div class="card-group">
+
+    <!-- CARD 1 -->
+    <div class="card card--soft">
+        <h2>Percabangan dalam Python</h2>
+
+        <h3>Definisi Konsep</h3>
+        <p>
+            Percabangan dalam pemrograman merupakan struktur kontrol yang memungkinkan program mengambil keputusan berdasarkan kondisi tertentu. Dalam bahasa <span class="text-code-inline">Python</span>, percabangan digunakan untuk menentukan alur eksekusi program sehingga dapat menyesuaikan dengan nilai atau kondisi yang diberikan.
+        </p>
+
+        <p>
+            Struktur percabangan termasuk dalam konsep <span class="text-code-inline">control flow</span>, yang mengatur urutan eksekusi instruksi dalam suatu program. Dengan percabangan, program tidak selalu berjalan secara linear, tetapi dapat memilih jalur yang berbeda.
+        </p>
+
+        <h3>Penjelasan</h3>
+        <p>
+            Percabangan bekerja dengan mengevaluasi suatu kondisi logika yang menghasilkan nilai <span class="text-code-inline">True</span> atau <span class="text-code-inline">False</span>. Jika kondisi bernilai benar, maka blok kode tertentu akan dijalankan. Sebaliknya, jika kondisi bernilai salah, program dapat menjalankan blok alternatif atau melewati instruksi tersebut.
+        </p>
+
+        <p>
+            Python menyediakan beberapa bentuk percabangan, yaitu <span class="text-code-inline">if</span>, <span class="text-code-inline">if-else</span>, <span class="text-code-inline">if-elif-else</span>, dan <span class="text-code-inline">match-case</span>.
+        </p>
+
+        <h3>Tabel Klasifikasi Percabangan</h3>
+        <table class="table">
+            <tr>
+                <th>Struktur</th>
+                <th>Fungsi</th>
+            </tr>
+            <tr>
+                <td>if</td>
+                <td>Menjalankan blok kode jika kondisi benar</td>
+            </tr>
+            <tr>
+                <td>if-else</td>
+                <td>Menentukan dua kemungkinan aksi</td>
+            </tr>
+            <tr>
+                <td>if-elif-else</td>
+                <td>Menangani lebih dari dua kondisi</td>
+            </tr>
+            <tr>
+                <td>match-case</td>
+                <td>Memilih aksi berdasarkan pola atau nilai tertentu</td>
+            </tr>
+        </table>
+
+        <h3>Kesimpulan</h3>
+        <p>
+            Percabangan merupakan komponen penting dalam pemrograman karena memungkinkan program bersifat dinamis dan adaptif terhadap berbagai kondisi. Pemahaman terhadap berbagai bentuk percabangan akan sangat membantu dalam implementasi algoritma komputasi matematika.
+        </p>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card card--soft">
+        <h3>Percabangan <span class="text-code-inline">if</span></h3>
+
+        <h4>Definisi</h4>
+        <p>
+            Struktur <span class="text-code-inline">if</span> digunakan untuk menjalankan suatu blok kode hanya jika kondisi tertentu bernilai benar.
+        </p>
+
+        <h4>Penjelasan</h4>
+        <p>
+            Jika kondisi pada <span class="text-code-inline">if</span> bernilai <span class="text-code-inline">True</span>, maka blok kode di dalamnya akan dieksekusi. Jika tidak, program akan melanjutkan ke baris berikutnya tanpa menjalankan blok tersebut.
+        </p>
+
+        <h4>Contoh Kode</h4>
+        <div class="text-code">
+nilai = 80
+
+if nilai >= 75:
+    print("Lulus")
+        </div>
+
+        <h4>Penjelasan Contoh</h4>
+        <p>
+            Pada contoh tersebut, kondisi <span class="text-code-inline">nilai >= 75</span> dievaluasi. Karena bernilai benar, maka perintah <span class="text-code-inline">print</span> dijalankan.
+        </p>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card card--soft">
+        <h3>Percabangan <span class="text-code-inline">if-else</span></h3>
+
+        <h4>Definisi</h4>
+        <p>
+            Struktur <span class="text-code-inline">if-else</span> digunakan untuk menyediakan dua jalur eksekusi berdasarkan kondisi.
+        </p>
+
+        <h4>Penjelasan</h4>
+        <p>
+            Jika kondisi pada <span class="text-code-inline">if</span> bernilai benar, maka blok pertama dijalankan. Jika salah, maka blok <span class="text-code-inline">else</span> akan dijalankan.
+        </p>
+
+        <h4>Contoh Kode</h4>
+        <div class="text-code">
+nilai = 60
+
+if nilai >= 75:
+    print("Lulus")
+else:
+    print("Tidak Lulus")
+        </div>
+
+        <h4>Penjelasan Contoh</h4>
+        <p>
+            Karena kondisi bernilai salah, maka program menjalankan blok <span class="text-code-inline">else</span> dan menampilkan "Tidak Lulus".
+        </p>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="card card--soft">
+        <h3>Percabangan <span class="text-code-inline">if-elif-else</span></h3>
+
+        <h4>Definisi</h4>
+        <p>
+            Struktur <span class="text-code-inline">if-elif-else</span> digunakan untuk mengevaluasi beberapa kondisi secara berurutan.
+        </p>
+
+        <h4>Penjelasan</h4>
+        <p>
+            Program akan memeriksa kondisi satu per satu. Jika suatu kondisi bernilai benar, maka blok tersebut dijalankan dan pemeriksaan berhenti.
+        </p>
+
+        <h4>Contoh Kode</h4>
+        <div class="text-code">
+nilai = 85
+
+if nilai >= 90:
+    print("A")
+elif nilai >= 75:
+    print("B")
+else:
+    print("C")
+        </div>
+
+        <h4>Penjelasan Contoh</h4>
+        <p>
+            Nilai 85 memenuhi kondisi kedua, sehingga program mencetak "B" dan tidak memeriksa kondisi berikutnya.
+        </p>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="card card--soft">
+        <h3>Percabangan <span class="text-code-inline">match-case</span></h3>
+
+        <h4>Definisi</h4>
+        <p>
+            Struktur <span class="text-code-inline">match-case</span> digunakan untuk mencocokkan nilai dengan beberapa pola yang telah ditentukan.
+        </p>
+
+        <h4>Penjelasan</h4>
+        <p>
+            Struktur ini mirip dengan <span class="text-code-inline">switch-case</span> pada bahasa lain. Program akan memilih blok <span class="text-code-inline">case</span> yang sesuai dengan nilai yang diuji.
+        </p>
+
+        <h4>Contoh Kode</h4>
+        <div class="text-code">
+hari = 3
+
+match hari:
+    case 1:
+        print("Senin")
+    case 2:
+        print("Selasa")
+    case 3:
+        print("Rabu")
+    case _:
+        print("Tidak diketahui")
+        </div>
+
+        <h4>Penjelasan Contoh</h4>
+        <p>
+            Nilai 3 cocok dengan <span class="text-code-inline">case 3</span>, sehingga program menampilkan "Rabu".
+        </p>
+
+        <h4>Catatan</h4>
+        <p>
+            Penggunaan <span class="text-code-inline">match-case</span> tersedia mulai Python versi 3.10 dan digunakan untuk meningkatkan keterbacaan dalam percabangan kompleks.
+        </p>
+    </div>
+
+</div>

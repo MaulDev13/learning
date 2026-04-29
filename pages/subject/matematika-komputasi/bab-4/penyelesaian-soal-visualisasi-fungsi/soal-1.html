@@ -1,0 +1,100 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 1 (Fungsi Kuadrat)</h3>
+
+    <p>
+        Penyelesaian fungsi kuadrat dalam komputasi matematika dilakukan dengan pendekatan evaluasi numerik
+        menggunakan array, kemudian hasilnya divisualisasikan untuk memahami bentuk grafik secara geometris.
+    </p>
+
+    <p>
+        Pada kasus ini, fungsi tidak hanya dihitung secara aljabar, tetapi juga dievaluasi pada banyak titik
+        untuk membentuk representasi grafik yang kontinu secara numerik.
+    </p>
+
+    <p class="text-meta">
+        Library: numpy, matplotlib
+    </p>
+
+    <!-- IMPLEMENTASI -->
+    <div class="card card--soft">
+        <p><strong>1. Implementasi Lengkap Python</strong></p>
+
+        <div class="text-code">
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Definisi fungsi matematika
+def f(x):
+    return x**2 - 4*x + 3
+
+# Domain diskrit (sampling numerik)
+x = np.linspace(-2, 6, 100)
+
+# Evaluasi fungsi secara vectorized
+y = f(x)
+
+# Titik minimum (analitik sederhana)
+x_min = 2
+y_min = f(x_min)
+
+print("Titik minimum:")
+print("x =", x_min)
+print("y =", y_min)
+
+# Visualisasi grafik
+plt.figure(figsize=(8, 5))
+
+plt.plot(x, y, label="f(x) = x² - 4x + 3")
+plt.scatter(x_min, y_min, color="red", label="Titik Minimum")
+
+plt.title("Grafik Fungsi Kuadrat")
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.grid(True)
+plt.legend()
+
+plt.show()
+        </div>
+    </div>
+
+    <!-- PENJELASAN -->
+    <div class="card card--soft">
+        <p><strong>2. Alur Komputasi</strong></p>
+
+        <p>
+            Pertama, fungsi didefinisikan menggunakan <span class="text-code-inline">def</span> agar dapat menerima
+            input berupa array NumPy.
+        </p>
+
+        <p>
+            Selanjutnya, <span class="text-code-inline">np.linspace</span> digunakan untuk membentuk domain diskrit
+            sebanyak 100 titik sebagai pendekatan dari domain kontinu.
+        </p>
+
+        <p>
+            Proses <span class="text-code-inline">y = f(x)</span> merupakan bentuk vectorized computation, yaitu
+            operasi dilakukan langsung pada seluruh elemen array tanpa perulangan eksplisit.
+        </p>
+
+        <p>
+            Titik minimum ditentukan secara analitik untuk memberikan referensi validasi terhadap hasil grafik.
+        </p>
+    </div>
+
+    <!-- VISUALISASI -->
+    <div class="card card--soft">
+        <p><strong>3. Interpretasi Visual</strong></p>
+
+        <p>
+            Grafik yang dihasilkan menunjukkan bentuk parabola terbuka ke atas.
+            Titik merah pada grafik merepresentasikan titik minimum fungsi.
+        </p>
+
+        <p>
+            Visualisasi ini membantu menghubungkan representasi aljabar dengan interpretasi geometris,
+            yang merupakan inti dari komputasi matematika.
+        </p>
+    </div>
+
+</div>

@@ -1,0 +1,127 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 7 (Metode Jacobi)</h3>
+
+    <p>
+        Metode Jacobi adalah metode iteratif untuk menyelesaikan Sistem Persamaan Linear (SPL).
+        Setiap variabel diperbarui berdasarkan nilai iterasi sebelumnya hingga sistem mencapai konvergensi.
+    </p>
+
+    <p class="text-meta">
+        Metode: Jacobi Iteration (NumPy)
+    </p>
+
+    <!-- SISTEM PERSAMAAN -->
+    <div class="card card--soft">
+
+        <p><strong>Sistem Persamaan Linear</strong></p>
+
+        <div class="math-system">
+4x + y + z = 7
+x + 5y + z = -8
+2x + y + 6z = 6
+        </div>
+
+    </div>
+
+    <!-- IMPLEMENTASI PYTHON -->
+    <div class="card card--soft">
+
+        <p><strong>Implementasi Python (Siap Run di VS Code)</strong></p>
+
+        <div class="text-code">
+import numpy as np
+
+# Matriks koefisien A
+A = np.array([
+    [4, 1, 1],
+    [1, 5, 1],
+    [2, 1, 6]
+], dtype=float)
+
+# Vektor hasil b
+b = np.array([7, -8, 6], dtype=float)
+
+# Tebakan awal
+x = np.zeros(len(b))
+
+# Parameter iterasi
+max_iter = 30
+tolerance = 1e-6
+
+print("Iterasi Jacobi:")
+
+for k in range(max_iter):
+
+    x_new = np.zeros_like(x)
+
+    # Update setiap variabel
+    for i in range(len(A)):
+        sigma = 0
+        for j in range(len(A)):
+            if i != j:
+                sigma += A[i][j] * x[j]
+
+        x_new[i] = (b[i] - sigma) / A[i][i]
+
+    # Tampilkan iterasi
+    print(f"Iterasi {k+1}: {x_new}")
+
+    # Cek konvergensi
+    if np.linalg.norm(x_new - x, ord=np.inf) < tolerance:
+        print("\nKonvergen!")
+        break
+
+    x = x_new
+
+print("\nSolusi akhir:", x)
+        </div>
+
+    </div>
+
+    <!-- PENJELASAN -->
+    <div class="card card--soft">
+
+        <p><strong>Penjelasan Komputasi</strong></p>
+
+        <p>
+            1. Matriks A dan vektor b merepresentasikan sistem persamaan linear.
+        </p>
+
+        <p>
+            2. Solusi awal diinisialisasi dengan nol:
+            <span class="text-code-inline">x = [0, 0, 0]</span>.
+        </p>
+
+        <p>
+            3. Setiap iterasi menghitung nilai baru menggunakan:
+        </p>
+
+        <div class="text-code">
+x_i^(k+1) = (b_i - Σ a_ij x_j^(k)) / a_ii
+        </div>
+
+        <p>
+            4. Proses berhenti ketika perubahan antar iterasi sudah sangat kecil
+            (norm error &lt; tolerance).
+        </p>
+
+    </div>
+
+    <!-- INTERPRETASI -->
+    <div class="card card--soft">
+
+        <p><strong>Interpretasi Hasil</strong></p>
+
+        <p>
+            Metode Jacobi memberikan solusi pendekatan yang semakin akurat setiap iterasi.
+            Hasil akhir mendekati solusi SPL sebenarnya setelah konvergensi tercapai.
+        </p>
+
+        <p>
+            Metode ini cocok untuk sistem yang besar karena setiap variabel dapat dihitung secara independen.
+        </p>
+
+    </div>
+
+</div>

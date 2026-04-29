@@ -1,0 +1,109 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 6 (Fungsi Rasional)</h3>
+
+    <p>
+        Fungsi rasional merupakan fungsi yang berbentuk perbandingan dua polinomial.
+        Dalam komputasi matematika, fungsi ini penting untuk menganalisis perilaku asimtotik,
+        diskontinuitas, dan singularitas pada domain tertentu.
+    </p>
+
+    <p>
+        Pada kasus ini, fungsi memiliki titik tidak terdefinisi pada x = 2, sehingga domain harus
+        dibatasi untuk menghindari pembagian dengan nol.
+    </p>
+
+    <p class="text-meta">
+        Library: numpy, matplotlib
+    </p>
+
+    <!-- IMPLEMENTASI -->
+    <div class="card card--soft">
+        <p><strong>1. Implementasi Lengkap Python</strong></p>
+
+        <div class="text-code">
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Definisi fungsi rasional
+def f(x):
+    return 1 / (x - 2)
+
+# Domain numerik (menghindari x = 2)
+x = np.linspace(-2, 6, 400)
+
+# Menghindari singularitas
+x = x[x != 2]
+
+# Evaluasi fungsi
+y = f(x)
+
+# Titik referensi
+x_ref = 1
+y_ref = f(x_ref)
+
+print("Nilai referensi:")
+print("x =", x_ref)
+print("y =", y_ref)
+
+# Visualisasi
+plt.figure(figsize=(8, 5))
+
+plt.plot(x, y, label="f(x) = 1 / (x - 2)")
+plt.scatter(x_ref, y_ref, color="red", label="Titik Referensi")
+
+plt.title("Grafik Fungsi Rasional")
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.grid(True)
+plt.legend()
+
+plt.ylim(-10, 10)
+
+plt.show()
+        </div>
+    </div>
+
+    <!-- PENJELASAN -->
+    <div class="card card--soft">
+        <p><strong>2. Alur Komputasi</strong></p>
+
+        <p>
+            Fungsi <span class="text-code-inline">f(x) = 1 / (x - 2)</span> memiliki titik singularitas
+            pada <span class="text-code-inline">x = 2</span> karena menyebabkan pembagian dengan nol.
+        </p>
+
+        <p>
+            Oleh karena itu, domain dibentuk menggunakan <span class="text-code-inline">np.linspace</span>
+            kemudian nilai <span class="text-code-inline">x = 2</span> dihapus untuk menghindari error komputasi.
+        </p>
+
+        <p>
+            Evaluasi fungsi dilakukan secara vectorized, tetapi tetap mempertimbangkan batas domain agar tidak terjadi
+            nilai tak hingga eksplisit dalam array.
+        </p>
+
+        <p>
+            Titik referensi dipilih pada <span class="text-code-inline">x = 1</span> sebagai titik aman dalam domain.
+        </p>
+    </div>
+
+    <!-- VISUALISASI -->
+    <div class="card card--soft">
+        <p><strong>3. Interpretasi Visual</strong></p>
+
+        <p>
+            Grafik menunjukkan dua cabang fungsi yang terpisah oleh asimtot vertikal pada x = 2.
+        </p>
+
+        <p>
+            Nilai fungsi meningkat secara tak terbatas ketika mendekati x = 2 dari kiri maupun kanan,
+            menunjukkan perilaku singularitas.
+        </p>
+
+        <p>
+            Visualisasi ini penting dalam analisis kestabilan fungsi rasional dalam komputasi numerik.
+        </p>
+    </div>
+
+</div>

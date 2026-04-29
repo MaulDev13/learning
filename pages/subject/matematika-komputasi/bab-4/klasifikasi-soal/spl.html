@@ -1,0 +1,365 @@
+<div class="card-group">
+
+    <!-- HEADER -->
+    <div class="card card--soft">
+        <h2>Sistem Persamaan Linear (SPL) dalam Komputasi Matematika</h2>
+
+        <h3>Pengantar</h3>
+        <p>
+            Sistem Persamaan Linear (SPL) merupakan salah satu model utama dalam komputasi matematika
+            yang digunakan untuk merepresentasikan hubungan linear antar variabel.
+        </p>
+
+        <p>
+            Dalam implementasi Python, SPL dapat diselesaikan menggunakan metode numerik seperti
+            eliminasi Gauss, dekomposisi LU, serta metode iteratif seperti Jacobi dan Gauss-Seidel
+            menggunakan <span class="text-code-inline">NumPy</span>.
+        </p>
+    </div>
+
+    <!-- KONSEP -->
+    <div class="card card--soft">
+        <h3>Bentuk Umum SPL</h3>
+
+        <div class="text-code">
+a11x1 + a12x2 + ... + a1nxn = b1
+a21x1 + a22x2 + ... + a2nxn = b2
+...
+an1x1 + an2x2 + ... + annxn = bn
+        </div>
+
+        <p>
+            Dalam bentuk matriks:
+        </p>
+
+        <div class="text-code">
+A x = b
+        </div>
+    </div>
+
+    <!-- METODE -->
+    <div class="card card--soft">
+        <h3>Metode Penyelesaian</h3>
+
+        <table class="table">
+            <tr>
+                <th>Metode</th>
+                <th>Jenis</th>
+            </tr>
+            <tr>
+                <td>Eliminasi Gauss</td>
+                <td>Metode langsung</td>
+            </tr>
+            <tr>
+                <td>Dekomposisi LU</td>
+                <td>Metode langsung</td>
+            </tr>
+            <tr>
+                <td>Jacobi</td>
+                <td>Metode iteratif</td>
+            </tr>
+            <tr>
+                <td>Gauss-Seidel</td>
+                <td>Metode iteratif</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- IMPLEMENTASI DASAR -->
+    <div class="card card--soft">
+        <h3>Implementasi Dasar Python</h3>
+
+        <div class="text-code">
+import numpy as np
+
+A = np.array([
+    [3, 1, 1],
+    [1, 4, -2],
+    [2, -1, 3]
+])
+
+b = np.array([9, 2, 7])
+
+x = np.linalg.solve(A, b)
+
+print(x)
+        </div>
+
+        <p>
+            Fungsi <span class="text-code-inline">np.linalg.solve</span> digunakan untuk menyelesaikan SPL
+            secara langsung dengan metode dekomposisi internal NumPy.
+        </p>
+    </div>
+
+    <!-- LATIHAN -->
+    <div class="card card--soft">
+        <h3>Latihan Soal SPL (10 Soal)</h3>
+
+        <p>
+            Berikut adalah kumpulan soal SPL untuk dianalisis menggunakan metode numerik dalam Python.
+        </p>
+    </div>
+
+    <!-- SOAL 1 -->
+    <div class="card card--soft">
+        <h3>Soal 1</h3>
+
+        <div class="question">
+            <div class="math-system">
+3x + y + z = 9
+x + 4y - 2z = 2
+2x - y + 3z = 7
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="/pages/subject/matematika-komputasi/bab-4/penyelesaian-soal/spl/soal-1.html"
+                hx-target="#spl1"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'spl1')">
+                🔍 Solusi SPL 1
+            </button>
+        </div>
+
+        <div id="spl1" class="project-content hidden"></div>
+    </div>
+
+    <!-- SOAL 2 -->
+    <div class="card card--soft">
+        <h3>Soal 2</h3>
+
+        <div class="question">
+            <div class="math-system">
+2x - y + 3z = 5
+x + 2y + z = 6
+3x - 2y + 4z = 10
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="/pages/subject/matematika-komputasi/bab-4/penyelesaian-soal/spl/soal-2.html"
+                hx-target="#spl2"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'spl2')">
+                🔍 Solusi SPL 2
+            </button>
+        </div>
+
+        <div id="spl2" class="project-content hidden"></div>
+    </div>
+
+    <!-- SOAL 3 -->
+    <div class="card card--soft">
+        <h3>Soal 3</h3>
+
+        <div class="question">
+            <div class="math-system">
+4x + y - z = 8
+x - 3y + 2z = -3
+2x + 2y + z = 7
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="/pages/subject/matematika-komputasi/bab-4/penyelesaian-soal/spl/soal-3.html"
+                hx-target="#spl3"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'spl3')">
+                🔍 Solusi SPL 3
+            </button>
+        </div>
+
+        <div id="spl3" class="project-content hidden"></div>
+    </div>
+
+    <!-- SOAL 4 -->
+    <div class="card card--soft">
+        <h3>Soal 4</h3>
+
+        <div class="question">
+            <div class="math-system">
+x + y + z = 6
+2x - y + z = 3
+x + 2y - z = 3
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="/pages/subject/matematika-komputasi/bab-4/penyelesaian-soal/spl/soal-4.html"
+                hx-target="#spl4"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'spl4')">
+                🔍 Solusi SPL 4
+            </button>
+        </div>
+
+        <div id="spl4" class="project-content hidden"></div>
+    </div>
+
+    <!-- SOAL 5 -->
+    <div class="card card--soft">
+        <h3>Soal 5</h3>
+
+        <div class="question">
+            <div class="math-system">
+3x - y + 2z = 7
+x + y + z = 6
+2x + 3y - z = 4
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="/pages/subject/matematika-komputasi/bab-4/penyelesaian-soal/spl/soal-5.html"
+                hx-target="#spl5"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'spl5')">
+                🔍 Solusi SPL 5
+            </button>
+        </div>
+
+        <div id="spl5" class="project-content hidden"></div>
+    </div>
+
+    <!-- SOAL 6 -->
+    <div class="card card--soft">
+        <h3>Soal 6</h3>
+
+        <div class="question">
+            <div class="math-system">
+x + 2y + 3z = 14
+2x - y + z = 8
+3x + y - 2z = 10
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="/pages/subject/matematika-komputasi/bab-4/penyelesaian-soal/spl/soal-6.html"
+                hx-target="#spl6"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'spl6')">
+                🔍 Solusi SPL 6
+            </button>
+        </div>
+
+        <div id="spl6" class="project-content hidden"></div>
+    </div>
+
+    <!-- SOAL 7 -->
+    <div class="card card--soft">
+        <h3>Soal 7</h3>
+
+        <div class="question">
+            <div class="math-system">
+2x + y + z = 5
+x - y + 2z = 6
+3x + 2y - z = 4
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="/pages/subject/matematika-komputasi/bab-4/penyelesaian-soal/spl/soal-7.html"
+                hx-target="#spl7"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'spl7')">
+                🔍 Solusi SPL 7
+            </button>
+        </div>
+
+        <div id="spl7" class="project-content hidden"></div>
+    </div>
+
+    <!-- SOAL 8 -->
+    <div class="card card--soft">
+        <h3>Soal 8</h3>
+
+        <div class="question">
+            <div class="math-system">
+x + y - z = 2
+2x - y + z = 3
+3x + y + z = 7
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="/pages/subject/matematika-komputasi/bab-4/penyelesaian-soal/spl/soal-8.html"
+                hx-target="#spl8"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'spl8')">
+                🔍 Solusi SPL 8
+            </button>
+        </div>
+
+        <div id="spl8" class="project-content hidden"></div>
+    </div>
+
+    <!-- SOAL 9 -->
+    <div class="card card--soft">
+        <h3>Soal 9</h3>
+
+        <div class="question">
+            <div class="math-system">
+2x + 3y + z = 9
+x + y + 2z = 6
+3x - y + z = 8
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="/pages/subject/matematika-komputasi/bab-4/penyelesaian-soal/spl/soal-9.html"
+                hx-target="#spl9"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'spl9')">
+                🔍 Solusi SPL 9
+            </button>
+        </div>
+
+        <div id="spl9" class="project-content hidden"></div>
+    </div>
+
+    <!-- SOAL 10 -->
+    <div class="card card--soft">
+        <h3>Soal 10</h3>
+
+        <div class="question">
+            <div class="math-system">
+x + y + z = 3
+2x + 2y + 3z = 8
+3x + y + 2z = 7
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="/pages/subject/matematika-komputasi/bab-4/penyelesaian-soal/spl/soal-10.html"
+                hx-target="#spl10"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'spl10')">
+                🔍 Solusi SPL 10
+            </button>
+        </div>
+
+        <div id="spl10" class="project-content hidden"></div>
+    </div>
+
+</div>
+
+<script src="js/ui-toggle.js"></script>

@@ -1,0 +1,121 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 1 (Metode Bisection)</h3>
+
+    <p>
+        Metode Bisection digunakan untuk mencari akar persamaan dengan cara membagi interval
+        menjadi dua bagian dan memilih sub-interval yang mengandung perubahan tanda.
+        Metode ini dijamin konvergen jika fungsi kontinu dan interval awal tepat.
+    </p>
+
+    <p class="text-meta">
+        Metode: Bisection Method (Root Finding)
+    </p>
+
+    <!-- SOAL -->
+    <div class="card card--soft">
+
+        <p><strong>Persamaan</strong></p>
+
+        <div class="math-system">
+f(x) = x² - 4x - 5 = 0
+        </div>
+
+        <p>
+            Interval awal dipilih: <span class="text-code-inline">[a, b] = [0, 6]</span>
+        </p>
+
+    </div>
+
+    <!-- IMPLEMENTASI PYTHON -->
+    <div class="card card--soft">
+
+        <p><strong>Implementasi Python (Siap Run di VS Code)</strong></p>
+
+        <div class="text-code">
+import numpy as np
+
+# Definisi fungsi
+def f(x):
+    return x**2 - 4*x - 5
+
+# Interval awal
+a = 0
+b = 6
+
+# Parameter iterasi
+max_iter = 30
+tolerance = 1e-6
+
+print("Iterasi Metode Bisection:")
+
+for i in range(max_iter):
+
+    c = (a + b) / 2  # titik tengah
+
+    print(f"Iterasi {i+1}: a={a}, b={b}, c={c}, f(c)={f(c)}")
+
+    # Cek akar ditemukan
+    if abs(f(c)) < tolerance:
+        print("\nAkar ditemukan!")
+        break
+
+    # Menentukan interval baru
+    if f(a) * f(c) < 0:
+        b = c
+    else:
+        a = c
+
+print("\nAkar pendekatan:", c)
+        </div>
+
+    </div>
+
+    <!-- PENJELASAN -->
+    <div class="card card--soft">
+
+        <p><strong>Penjelasan Komputasi</strong></p>
+
+        <p>
+            1. Fungsi didefinisikan sebagai:
+            <span class="text-code-inline">f(x) = x² - 4x - 5</span>
+        </p>
+
+        <p>
+            2. Interval awal dipilih [0, 6] karena f(0) dan f(6) memiliki tanda berbeda.
+        </p>
+
+        <p>
+            3. Titik tengah dihitung dengan:
+        </p>
+
+        <div class="text-code">
+c = (a + b) / 2
+        </div>
+
+        <p>
+            4. Interval diperbarui berdasarkan tanda:
+            jika f(a)·f(c) < 0 → akar di kiri,
+            jika tidak → di kanan.
+        </p>
+
+    </div>
+
+    <!-- INTERPRETASI -->
+    <div class="card card--soft">
+
+        <p><strong>Interpretasi Hasil</strong></p>
+
+        <p>
+            Metode Bisection secara bertahap memperkecil interval hingga mendekati akar.
+            Untuk fungsi ini, akar yang ditemukan mendekati nilai eksak:
+            <span class="text-code-inline">x = -1</span> dan <span class="text-code-inline">x = 5</span>.
+        </p>
+
+        <p>
+            Metode ini stabil, tetapi relatif lambat dibanding Newton-Raphson.
+        </p>
+
+    </div>
+
+</div>

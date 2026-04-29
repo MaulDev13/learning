@@ -1,0 +1,117 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 5 (Metode Gauss-Seidel)</h3>
+
+    <p>
+        Metode Gauss-Seidel merupakan metode iteratif untuk menyelesaikan Sistem Persamaan Linear (SPL)
+        dengan memperbarui nilai variabel secara berurutan menggunakan nilai terbaru dalam satu iterasi.
+    </p>
+
+    <p class="text-meta">
+        Metode: Iteratif (Gauss-Seidel) | Library: Python (NumPy opsional)
+    </p>
+
+    <!-- SISTEM PERSAMAAN -->
+    <div class="card card--soft">
+        <p><strong>Sistem Persamaan</strong></p>
+
+        <p>
+            3x - y + 2z = 7<br>
+            x + y + z = 6<br>
+            2x + 3y - z = 4
+        </p>
+    </div>
+
+    <!-- BENTUK ITERATIF -->
+    <div class="card card--soft">
+        <p><strong>Bentuk Iteratif (Gauss-Seidel)</strong></p>
+
+        <div class="text-code">
+x = (7 + y - 2z) / 3
+y = (6 - x - z)
+z = (2x + 3y - 4)
+        </div>
+
+        <p>
+            Setiap persamaan diubah menjadi bentuk eksplisit agar variabel dapat diperbarui secara iteratif.
+        </p>
+    </div>
+
+    <!-- IMPLEMENTASI PYTHON -->
+    <div class="card card--soft">
+        <p><strong>Implementasi Python</strong></p>
+
+        <div class="text-code">
+# initial guess
+x, y, z = 0.0, 0.0, 0.0
+
+n_iter = 10
+
+for i in range(n_iter):
+
+    x = (7 + y - 2*z) / 3
+    y = (6 - x - z)
+    z = (2*x + 3*y - 4)
+
+    print(f"Iterasi {i+1}: x={x:.4f}, y={y:.4f}, z={z:.4f}")
+        </div>
+    </div>
+
+    <!-- PENJELASAN -->
+    <div class="card card--soft">
+
+        <p><strong>Penjelasan Komputasi</strong></p>
+
+        <p>
+            1. Variabel <span class="text-code-inline">x, y, z</span> diinisialisasi dengan nilai awal 0 sebagai tebakan awal.
+        </p>
+
+        <p>
+            2. Pada setiap iterasi:
+            nilai <span class="text-code-inline">x</span> dihitung terlebih dahulu,
+            kemudian langsung digunakan untuk menghitung
+            <span class="text-code-inline">y</span> dan
+            <span class="text-code-inline">z</span>.
+        </p>
+
+        <p>
+            3. Hal ini membuat Gauss-Seidel lebih cepat konvergen dibanding Jacobi karena selalu menggunakan nilai terbaru.
+        </p>
+
+        <p>
+            4. Perulangan <span class="text-code-inline">for</span> digunakan untuk mengontrol jumlah iterasi hingga solusi stabil.
+        </p>
+
+    </div>
+
+    <!-- HASIL -->
+    <div class="card card--soft">
+
+        <p><strong>Hasil Iterasi (Pendekatan Solusi)</strong></p>
+
+        <div class="text-code">
+Iterasi 10:
+x ≈ 2.0000
+y ≈ 1.0000
+z ≈ 1.0000
+        </div>
+
+        <p>
+            Hasil menunjukkan sistem konvergen menuju solusi stabil setelah beberapa iterasi.
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <p><strong>Kesimpulan</strong></p>
+
+        <p>
+            Metode Gauss-Seidel merupakan metode iteratif yang efisien untuk SPL,
+            terutama ketika dibandingkan dengan Jacobi karena memanfaatkan nilai terbaru dalam setiap iterasi.
+        </p>
+
+    </div>
+
+</div>

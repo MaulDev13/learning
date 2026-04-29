@@ -1,0 +1,157 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 4 (Metode Bisection)</h3>
+
+    <p>
+        Soal ini mencari akar dari fungsi non-linear:
+    </p>
+
+    <div class="text-code">
+f(x) = cos(x) - x
+    </div>
+
+    <p>
+        Karena tidak dapat diselesaikan secara aljabar, digunakan metode numerik
+        <strong>Bisection (Metode Bagi Dua)</strong>.
+    </p>
+
+    <p class="text-meta">
+        Metode: Bisection Method (Iteratif Interval)
+    </p>
+
+    <!-- MODEL MATEMATIKA -->
+    <div class="card card--soft">
+
+        <p><strong>Prinsip Dasar</strong></p>
+
+        <p>
+            Metode ini mencari akar dengan cara mempersempit interval [a, b]
+            yang memiliki tanda fungsi berbeda:
+        </p>
+
+        <div class="text-code">
+f(a) * f(b) < 0
+        </div>
+
+        <p>
+            Titik tengah dihitung dengan:
+        </p>
+
+        <div class="text-code">
+c = (a + b) / 2
+        </div>
+
+    </div>
+
+    <!-- IMPLEMENTASI PYTHON -->
+    <div class="card card--soft">
+
+        <p><strong>Implementasi Python (Siap Pakai)</strong></p>
+
+        <div class="text-code">
+import numpy as np
+
+def f(x):
+    return np.cos(x) - x
+
+# interval awal
+a = 0
+b = 1
+
+# toleransi error
+tol = 1e-6
+
+max_iter = 20
+
+if f(a) * f(b) >= 0:
+    print("Interval tidak valid")
+else:
+    for i in range(max_iter):
+
+        c = (a + b) / 2
+
+        print(f"Iterasi {i+1}: c = {c}, f(c) = {f(c)}")
+
+        if abs(f(c)) < tol:
+            break
+
+        if f(a) * f(c) < 0:
+            b = c
+        else:
+            a = c
+
+    print("\nAkar pendekatan:", c)
+        </div>
+
+    </div>
+
+    <!-- PENJELASAN FLOW -->
+    <div class="card card--soft">
+
+        <p><strong>Penjelasan Komputasi</strong></p>
+
+        <p>
+            1. Fungsi <span class="text-code-inline">np.cos(x)</span> menghitung nilai cos(x) secara numerik.
+        </p>
+
+        <p>
+            2. Interval awal dipilih:
+        </p>
+
+        <div class="text-code">
+a = 0, b = 1
+        </div>
+
+        <p>
+            karena f(0) dan f(1) memiliki tanda berbeda (syarat Bisection terpenuhi).
+        </p>
+
+        <p>
+            3. Setiap iterasi menghitung titik tengah:
+        </p>
+
+        <div class="text-code">
+c = (a + b) / 2
+        </div>
+
+        <p>
+            4. Sistem mengecek:
+        </p>
+
+        <div class="text-code">
+if f(a) * f(c) < 0:
+    b = c
+else:
+    a = c
+        </div>
+
+        <p>
+            untuk mempersempit interval yang mengandung akar.
+        </p>
+
+        <p>
+            5. Proses berhenti ketika nilai mendekati nol (konvergen).
+        </p>
+
+    </div>
+
+    <!-- HASIL -->
+    <div class="card card--soft">
+
+        <p><strong>Hasil Numerik</strong></p>
+
+        <p>
+            Akar persamaan berada di sekitar:
+        </p>
+
+        <div class="text-code">
+x ≈ 0.739
+        </div>
+
+        <p>
+            Ini adalah titik potong antara grafik cos(x) dan garis y = x.
+        </p>
+
+    </div>
+
+</div>

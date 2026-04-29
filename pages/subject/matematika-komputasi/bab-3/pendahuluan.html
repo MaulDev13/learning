@@ -1,0 +1,133 @@
+<div class="card-group">
+
+    <!-- CARD 1 -->
+    <div class="card card--soft">
+        <h2>Pendahuluan: Struktur Dasar Pemrograman dalam Komputasi Matematika</h2>
+
+        <h3>Pengantar</h3>
+        <p>
+            Komputasi matematika merupakan cabang ilmu yang mengintegrasikan konsep-konsep matematika dengan teknik komputasi untuk menyelesaikan permasalahan secara numerik, simbolik, maupun algoritmik. Dalam praktiknya, pendekatan ini sangat bergantung pada kemampuan pemrograman untuk mengimplementasikan model matematis ke dalam bentuk yang dapat dieksekusi oleh komputer.
+        </p>
+
+        <p>
+            Bahasa pemrograman <span class="text-code-inline">Python</span> menjadi salah satu pilihan utama dalam komputasi matematika karena sintaksnya yang sederhana, keterbacaan yang tinggi, serta dukungan pustaka numerik yang luas. Namun, sebelum memanfaatkan pustaka lanjutan, pemahaman terhadap struktur dasar pemrograman menjadi prasyarat yang sangat penting.
+        </p>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card card--soft">
+        <h3>Ruang Lingkup Bab</h3>
+        <p>
+            Bab ini membahas empat konsep fundamental dalam pemrograman yang berperan penting dalam pengembangan algoritma komputasi matematika, yaitu <span class="text-code-inline">percabangan</span>, <span class="text-code-inline">perulangan</span>, <span class="text-code-inline">fungsi</span>, dan <span class="text-code-inline">modul</span>.
+        </p>
+
+        <p>
+            Keempat konsep tersebut merupakan bagian dari mekanisme pengendalian alur program (<span class="text-code-inline">control flow</span>) serta pengorganisasian kode (<span class="text-code-inline">code organization</span>) yang memungkinkan solusi matematis disusun secara sistematis, efisien, dan dapat digunakan kembali.
+        </p>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card card--soft">
+        <h3>Definisi Inti</h3>
+        <p>
+            Untuk memahami peran masing-masing konsep, berikut disajikan definisi ringkas yang menjadi dasar pembahasan dalam bab ini.
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Konsep</th>
+                <th>Definisi Akademik</th>
+                <th>Peran dalam Komputasi</th>
+            </tr>
+            <tr>
+                <td>Percabangan</td>
+                <td>Struktur kontrol yang memungkinkan program memilih satu jalur eksekusi berdasarkan kondisi logika</td>
+                <td>Menentukan metode atau langkah perhitungan berdasarkan nilai input</td>
+            </tr>
+            <tr>
+                <td>Perulangan</td>
+                <td>Struktur kontrol yang memungkinkan eksekusi berulang suatu blok instruksi selama kondisi terpenuhi</td>
+                <td>Digunakan dalam iterasi numerik seperti deret, aproksimasi, dan simulasi</td>
+            </tr>
+            <tr>
+                <td>Fungsi</td>
+                <td>Unit program yang terenkapsulasi untuk menjalankan tugas spesifik dan dapat dipanggil kembali</td>
+                <td>Menyusun algoritma menjadi bagian modular yang mudah diuji dan digunakan ulang</td>
+            </tr>
+            <tr>
+                <td>Modul</td>
+                <td>Kumpulan fungsi dan definisi yang disimpan dalam berkas terpisah untuk keperluan reuse</td>
+                <td>Mengelola kompleksitas program dan mendukung pengembangan skala besar</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="card card--soft">
+        <h3>Signifikansi dalam Komputasi Matematika</h3>
+        <p>
+            Dalam implementasi algoritma matematika, percabangan digunakan untuk menangani kondisi khusus, seperti pengecekan validitas input atau pemilihan metode berdasarkan kriteria tertentu. Sebagai contoh, pemilihan metode penyelesaian persamaan dapat bergantung pada sifat fungsi yang dianalisis.
+        </p>
+
+        <p>
+            Perulangan memiliki peran yang sangat penting dalam metode numerik. Banyak algoritma matematika, seperti metode iteratif untuk mencari akar persamaan atau menghitung limit, membutuhkan pengulangan hingga kondisi konvergensi terpenuhi.
+        </p>
+
+        <p>
+            Fungsi memungkinkan pemisahan logika algoritma ke dalam unit-unit kecil yang terstruktur. Hal ini tidak hanya meningkatkan keterbacaan kode, tetapi juga mempermudah pengujian dan validasi setiap bagian dari proses komputasi.
+        </p>
+
+        <p>
+            Modul menyediakan mekanisme untuk mengorganisasi berbagai fungsi ke dalam satu kesatuan yang kohesif. Dalam konteks komputasi matematika, modul sering digunakan untuk mengelompokkan fungsi-fungsi yang berkaitan dengan topik tertentu, seperti aljabar linear atau analisis numerik.
+        </p>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="card card--soft">
+        <h3>Ilustrasi Konseptual</h3>
+        <p>
+            Berikut disajikan contoh sederhana yang mengintegrasikan konsep percabangan dan perulangan dalam Python untuk mengklasifikasikan bilangan dalam suatu rentang tertentu.
+        </p>
+
+        <div class="text-code">
+for i in range(1, 11):
+    if i % 2 == 0:
+        print("Bilangan genap:", i)
+    else:
+        print("Bilangan ganjil:", i)
+        </div>
+
+        <p>
+            Pada contoh tersebut, struktur <span class="text-code-inline">for</span> digunakan untuk melakukan iterasi, sedangkan struktur <span class="text-code-inline">if</span> dan <span class="text-code-inline">else</span> digunakan untuk menentukan klasifikasi bilangan berdasarkan kondisi tertentu.
+        </p>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="card card--soft">
+        <h3>Keterkaitan dengan Algoritma Matematika</h3>
+        <p>
+            Keempat konsep yang dibahas dalam bab ini merupakan fondasi dalam penyusunan algoritma matematika berbasis komputer. Sebagian besar metode komputasi, seperti metode Newton-Raphson, metode biseksi, dan integrasi numerik, mengandalkan kombinasi antara percabangan dan perulangan.
+        </p>
+
+        <p>
+            Selain itu, penggunaan fungsi dan modul memungkinkan algoritma tersebut dikembangkan secara bertahap dan terstruktur, sehingga dapat digunakan kembali dalam berbagai konteks permasalahan yang berbeda.
+        </p>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="card card--soft">
+        <h3>Tujuan Pembelajaran</h3>
+        <p>
+            Setelah mempelajari bab ini, diharapkan pembaca mampu memahami dan mengimplementasikan struktur percabangan, perulangan, fungsi, dan modul dalam Python untuk menyelesaikan permasalahan komputasi matematika secara sistematis dan efisien.
+        </p>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="card card--soft">
+        <h3>Kesimpulan</h3>
+        <p>
+            Pemahaman terhadap struktur dasar pemrograman merupakan langkah fundamental dalam menguasai komputasi matematika. Dengan menguasai percabangan, perulangan, fungsi, dan modul, pengguna dapat mengembangkan solusi yang tidak hanya benar secara matematis, tetapi juga efisien, terstruktur, dan mudah dikembangkan lebih lanjut.
+        </p>
+    </div>
+
+</div>

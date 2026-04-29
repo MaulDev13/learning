@@ -1,0 +1,126 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 9 (Metode Gauss-Seidel)</h3>
+
+    <p>
+        Metode Gauss-Seidel adalah metode iteratif untuk menyelesaikan Sistem Persamaan Linear (SPL).
+        Berbeda dengan Jacobi, metode ini langsung menggunakan nilai terbaru pada setiap iterasi,
+        sehingga biasanya lebih cepat konvergen.
+    </p>
+
+    <p class="text-meta">
+        Metode: Gauss-Seidel Iteration (NumPy)
+    </p>
+
+    <!-- SISTEM PERSAMAAN -->
+    <div class="card card--soft">
+
+        <p><strong>Sistem Persamaan Linear</strong></p>
+
+        <div class="math-system">
+5x + y + z = 10
+x + 4y + z = 12
+2x + y + 6z = 20
+        </div>
+
+    </div>
+
+    <!-- IMPLEMENTASI PYTHON -->
+    <div class="card card--soft">
+
+        <p><strong>Implementasi Python (Siap Run di VS Code)</strong></p>
+
+        <div class="text-code">
+import numpy as np
+
+# Matriks A
+A = np.array([
+    [5, 1, 1],
+    [1, 4, 1],
+    [2, 1, 6]
+], dtype=float)
+
+# Vektor b
+b = np.array([10, 12, 20], dtype=float)
+
+# Tebakan awal
+x = np.zeros(len(b))
+
+# Parameter iterasi
+max_iter = 30
+tolerance = 1e-6
+
+print("Iterasi Gauss-Seidel:")
+
+for k in range(max_iter):
+
+    x_old = x.copy()
+
+    # Update langsung (in-place update)
+    for i in range(len(A)):
+        sigma = 0
+
+        for j in range(len(A)):
+            if j != i:
+                sigma += A[i][j] * x[j]  # menggunakan nilai terbaru
+
+        x[i] = (b[i] - sigma) / A[i][i]
+
+    print(f"Iterasi {k+1}: {x}")
+
+    # Cek konvergensi
+    if np.linalg.norm(x - x_old, ord=np.inf) < tolerance:
+        print("\nKonvergen!")
+        break
+
+print("\nSolusi akhir:", x)
+        </div>
+
+    </div>
+
+    <!-- PENJELASAN -->
+    <div class="card card--soft">
+
+        <p><strong>Penjelasan Komputasi</strong></p>
+
+        <p>
+            1. Sistem SPL direpresentasikan dalam bentuk matriks A dan vektor b.
+        </p>
+
+        <p>
+            2. Solusi awal diinisialisasi dengan nol:
+            <span class="text-code-inline">x = [0, 0, 0]</span>.
+        </p>
+
+        <p>
+            3. Perbedaan utama dengan Jacobi adalah penggunaan nilai terbaru langsung:
+        </p>
+
+        <div class="text-code">
+x_i^(k+1) = (b_i - Σ a_ij x_j^(baru)) / a_ii
+        </div>
+
+        <p>
+            4. Setiap iterasi langsung memperbarui nilai x, sehingga mempercepat konvergensi.
+        </p>
+
+    </div>
+
+    <!-- INTERPRETASI -->
+    <div class="card card--soft">
+
+        <p><strong>Interpretasi Hasil</strong></p>
+
+        <p>
+            Metode Gauss-Seidel lebih efisien dibanding Jacobi karena menggunakan
+            nilai terbaru pada setiap langkah iterasi.
+        </p>
+
+        <p>
+            Metode ini sangat cocok untuk sistem linear yang besar dan sparsely populated,
+            terutama dalam aplikasi teknik dan simulasi numerik.
+        </p>
+
+    </div>
+
+</div>

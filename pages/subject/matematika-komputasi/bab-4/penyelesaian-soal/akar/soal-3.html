@@ -1,0 +1,140 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 3 (Metode Newton-Raphson)</h3>
+
+    <p>
+        Soal ini mencari akar dari fungsi non-linear:
+    </p>
+
+    <div class="text-code">
+f(x) = e^x - 3x
+    </div>
+
+    <p>
+        Karena fungsi ini tidak memiliki solusi analitik sederhana,
+        maka digunakan metode numerik Newton-Raphson.
+    </p>
+
+    <p class="text-meta">
+        Metode: Newton-Raphson Iteratif
+    </p>
+
+    <!-- MODEL MATEMATIKA -->
+    <div class="card card--soft">
+
+        <p><strong>Turunan Fungsi</strong></p>
+
+        <div class="text-code">
+f(x) = e^x - 3x
+f'(x) = e^x - 3
+        </div>
+
+        <p>
+            Newton-Raphson menggunakan rumus iterasi:
+        </p>
+
+        <div class="text-code">
+x_{n+1} = x_n - f(x_n) / f'(x_n)
+        </div>
+
+    </div>
+
+    <!-- IMPLEMENTASI PYTHON -->
+    <div class="card card--soft">
+
+        <p><strong>Implementasi Python (Siap Pakai)</strong></p>
+
+        <div class="text-code">
+import numpy as np
+
+# fungsi utama
+def f(x):
+    return np.exp(x) - 3*x
+
+# turunan fungsi
+def df(x):
+    return np.exp(x) - 3
+
+# tebakan awal
+x = 1.0
+
+# toleransi error
+tol = 1e-6
+
+# maksimal iterasi
+max_iter = 20
+
+for i in range(max_iter):
+    x_new = x - f(x) / df(x)
+
+    print(f"Iterasi {i+1}: x = {x_new}")
+
+    if abs(x_new - x) < tol:
+        break
+
+    x = x_new
+
+print("\nAkar pendekatan:", x)
+        </div>
+
+    </div>
+
+    <!-- PENJELASAN FLOW -->
+    <div class="card card--soft">
+
+        <p><strong>Penjelasan Komputasi</strong></p>
+
+        <p>
+            1. <span class="text-code-inline">np.exp(x)</span> digunakan untuk menghitung fungsi eksponensial e^x secara vektorisasi.
+        </p>
+
+        <p>
+            2. Fungsi <span class="text-code-inline">f(x)</span> adalah fungsi utama yang ingin dicari akarnya (f(x)=0).
+        </p>
+
+        <p>
+            3. Fungsi <span class="text-code-inline">df(x)</span> adalah turunan yang dibutuhkan untuk metode Newton-Raphson.
+        </p>
+
+        <p>
+            4. Rumus iterasi:
+        </p>
+
+        <div class="text-code">
+x_{n+1} = x_n - f(x_n)/f'(x_n)
+        </div>
+
+        <p>
+            digunakan untuk memperbaiki nilai x secara bertahap sampai konvergen.
+        </p>
+
+        <p>
+            5. Loop <span class="text-code-inline">for</span> menjalankan iterasi hingga:
+            <br>
+            - mencapai toleransi error
+            - atau mencapai maksimum iterasi
+        </p>
+
+    </div>
+
+    <!-- HASIL -->
+    <div class="card card--soft">
+
+        <p><strong>Interpretasi Hasil</strong></p>
+
+        <p>
+            Iterasi akan menghasilkan nilai x yang mendekati akar fungsi.
+            Secara numerik, akar berada di sekitar:
+        </p>
+
+        <div class="text-code">
+x ≈ 0.619
+        </div>
+
+        <p>
+            Ini adalah titik di mana grafik f(x) memotong sumbu x.
+        </p>
+
+    </div>
+
+</div>

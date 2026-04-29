@@ -1,0 +1,221 @@
+<div class="card-group">
+
+    <!-- CARD 1 -->
+    <div class="card card--soft">
+        <h2>Fungsi Matematika dan Library Python dalam Komputasi Matematika</h2>
+
+        <h3>Pengantar</h3>
+        <p>
+            Dalam komputasi matematika, fungsi matematika dan library Python berperan sebagai alat utama untuk melakukan perhitungan numerik secara efisien dan akurat. Alih-alih menuliskan algoritma dari awal, Python menyediakan pustaka siap pakai yang telah dioptimalkan untuk berbagai operasi matematis.
+        </p>
+
+        <p>
+            Penggunaan library memungkinkan implementasi konsep matematika yang kompleks menjadi lebih sederhana, terstruktur, dan mudah digunakan dalam berbagai jenis permasalahan komputasi.
+        </p>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card card--soft">
+        <h3>Konsep Fungsi Matematika dalam Python</h3>
+
+        <p>
+            Fungsi matematika adalah fungsi yang digunakan untuk melakukan operasi numerik tertentu seperti akar, logaritma, eksponensial, trigonometri, dan pembulatan. Dalam Python, fungsi-fungsi ini tersedia melalui modul standar maupun library eksternal.
+        </p>
+
+        <p>
+            Fungsi ini sangat penting dalam pemodelan matematis karena banyak persamaan dalam sains dan teknik tidak dapat diselesaikan secara manual dengan efisien.
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Jenis Fungsi</th>
+                <th>Contoh Operasi</th>
+            </tr>
+            <tr>
+                <td>Aritmatika</td>
+                <td>Penjumlahan, pengurangan, perkalian, pembagian</td>
+            </tr>
+            <tr>
+                <td>Akar dan Pangkat</td>
+                <td>sqrt, pow</td>
+            </tr>
+            <tr>
+                <td>Logaritma</td>
+                <td>log, log10</td>
+            </tr>
+            <tr>
+                <td>Trigonometri</td>
+                <td>sin, cos, tan</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card card--soft">
+        <h3>Library <span class="text-code-inline">math</span></h3>
+
+        <h4>Definisi</h4>
+        <p>
+            Library <span class="text-code-inline">math</span> adalah modul bawaan Python yang menyediakan fungsi-fungsi matematika dasar untuk komputasi numerik.
+        </p>
+
+        <h4>Contoh Penggunaan</h4>
+        <div class="text-code">
+import math
+
+x = 16
+hasil = math.sqrt(x)
+
+print(hasil)
+        </div>
+
+        <h4>Penjelasan</h4>
+        <p>
+            Fungsi <span class="text-code-inline">math.sqrt()</span> digunakan untuk menghitung akar kuadrat dari suatu bilangan. Dalam contoh di atas, hasil dari akar 16 adalah 4.
+        </p>
+
+        <h4>Fungsi Penting dalam <span class="text-code-inline">math</span></h4>
+
+        <table class="table">
+            <tr>
+                <th>Fungsi</th>
+                <th>Kegunaan</th>
+            </tr>
+            <tr>
+                <td>sqrt(x)</td>
+                <td>Akar kuadrat</td>
+            </tr>
+            <tr>
+                <td>pow(x, y)</td>
+                <td>Pangkat</td>
+            </tr>
+            <tr>
+                <td>log(x)</td>
+                <td>Logaritma natural</td>
+            </tr>
+            <tr>
+                <td>sin(x)</td>
+                <td>Sinus</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="card card--soft">
+        <h3>Library <span class="text-code-inline">numpy</span></h3>
+
+        <h4>Definisi</h4>
+        <p>
+            <span class="text-code-inline">numpy</span> adalah library Python yang digunakan untuk komputasi numerik tingkat lanjut, terutama yang berkaitan dengan vektor, matriks, dan operasi aljabar linear.
+        </p>
+
+        <h4>Contoh Penggunaan</h4>
+        <div class="text-code">
+import numpy as np
+
+arr = np.array([1, 2, 3, 4])
+print(arr * 2)
+        </div>
+
+        <h4>Penjelasan</h4>
+        <p>
+            Array pada <span class="text-code-inline">numpy</span> memungkinkan operasi matematis dilakukan secara langsung pada seluruh elemen tanpa menggunakan perulangan eksplisit.
+        </p>
+
+        <h4>Keunggulan <span class="text-code-inline">numpy</span></h4>
+
+        <table class="table">
+            <tr>
+                <th>Fitur</th>
+                <th>Penjelasan</th>
+            </tr>
+            <tr>
+                <td>Efisiensi</td>
+                <td>Lebih cepat dibanding list Python biasa</td>
+            </tr>
+            <tr>
+                <td>Vektorisasi</td>
+                <td>Operasi langsung pada array</td>
+            </tr>
+            <tr>
+                <td>Aljabar Linear</td>
+                <td>Dukungan matriks dan operasi kompleks</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="card card--soft">
+        <h3>Library <span class="text-code-inline">scipy</span></h3>
+
+        <h4>Definisi</h4>
+        <p>
+            <span class="text-code-inline">scipy</span> adalah library yang dibangun di atas <span class="text-code-inline">numpy</span> dan digunakan untuk komputasi ilmiah lanjutan, termasuk integrasi numerik, optimasi, dan pemecahan persamaan diferensial.
+        </p>
+
+        <h4>Contoh Penggunaan</h4>
+        <div class="text-code">
+from scipy import integrate
+
+def f(x):
+    return x**2
+
+hasil, error = integrate.quad(f, 0, 1)
+
+print(hasil)
+        </div>
+
+        <h4>Penjelasan</h4>
+        <p>
+            Fungsi <span class="text-code-inline">quad()</span> digunakan untuk menghitung integral numerik dari fungsi tertentu pada interval yang ditentukan.
+        </p>
+
+        <h4>Area Penggunaan</h4>
+
+        <table class="table">
+            <tr>
+                <th>Bidang</th>
+                <th>Fungsi</th>
+            </tr>
+            <tr>
+                <td>Integrasi Numerik</td>
+                <td>Perhitungan integral</td>
+            </tr>
+            <tr>
+                <td>Optimasi</td>
+                <td>Pencarian nilai optimal</td>
+            </tr>
+            <tr>
+                <td>Aljabar Linear</td>
+                <td>Pemecahan sistem persamaan</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="card card--soft">
+        <h3>Peran Library dalam Komputasi Matematika</h3>
+
+        <p>
+            Library Python mempercepat proses pengembangan algoritma matematika dengan menyediakan fungsi yang telah diuji dan dioptimalkan. Hal ini memungkinkan fokus utama diarahkan pada pemodelan masalah, bukan pada implementasi perhitungan dasar.
+        </p>
+
+        <p>
+            Dalam komputasi matematika modern, penggunaan library seperti <span class="text-code-inline">math</span>, <span class="text-code-inline">numpy</span>, dan <span class="text-code-inline">scipy</span> merupakan standar utama dalam penelitian dan aplikasi industri.
+        </p>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="card card--soft">
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Fungsi matematika dan library Python merupakan komponen fundamental dalam komputasi matematika. Dengan memanfaatkan library yang tersedia, proses perhitungan menjadi lebih efisien, akurat, dan mudah dikembangkan.
+        </p>
+
+        <p>
+            Pemahaman terhadap <span class="text-code-inline">math</span>, <span class="text-code-inline">numpy</span>, dan <span class="text-code-inline">scipy</span> menjadi dasar penting sebelum mempelajari metode numerik dan pemodelan matematika yang lebih kompleks.
+        </p>
+    </div>
+
+</div>

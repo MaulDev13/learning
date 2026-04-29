@@ -1,0 +1,134 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 5 (Metode Secant)</h3>
+
+    <p>
+        Soal ini mencari akar dari fungsi non-linear:
+    </p>
+
+    <div class="text-code">
+f(x) = ln(x) + x - 2
+    </div>
+
+    <p>
+        Karena tidak mudah diselesaikan secara analitik, digunakan metode numerik
+        <strong>Secant Method</strong> yang tidak memerlukan turunan.
+    </p>
+
+    <p class="text-meta">
+        Metode: Secant (Iterasi Dua Titik)
+    </p>
+
+    <!-- MODEL MATEMATIKA -->
+    <div class="card card--soft">
+
+        <p><strong>Rumus Secant Method</strong></p>
+
+        <div class="text-code">
+x_{n+1} = x_n - f(x_n) (x_n - x_{n-1}) / (f(x_n) - f(x_{n-1}))
+        </div>
+
+        <p>
+            Metode ini menggunakan dua titik awal untuk mendekati akar tanpa turunan.
+        </p>
+
+    </div>
+
+    <!-- IMPLEMENTASI PYTHON -->
+    <div class="card card--soft">
+
+        <p><strong>Implementasi Python (Siap Pakai)</strong></p>
+
+        <div class="text-code">
+import numpy as np
+
+def f(x):
+    return np.log(x) + x - 2
+
+# dua tebakan awal
+x0 = 1.0
+x1 = 2.0
+
+tol = 1e-6
+max_iter = 20
+
+for i in range(max_iter):
+
+    if f(x1) - f(x0) == 0:
+        print("Pembagian nol terjadi")
+        break
+
+    x2 = x1 - f(x1) * (x1 - x0) / (f(x1) - f(x0))
+
+    print(f"Iterasi {i+1}: x = {x2}")
+
+    if abs(x2 - x1) < tol:
+        break
+
+    x0 = x1
+    x1 = x2
+
+print("\nAkar pendekatan:", x2)
+        </div>
+
+    </div>
+
+    <!-- PENJELASAN FLOW -->
+    <div class="card card--soft">
+
+        <p><strong>Penjelasan Komputasi</strong></p>
+
+        <p>
+            1. Fungsi <span class="text-code-inline">np.log(x)</span> digunakan untuk logaritma natural ln(x).
+        </p>
+
+        <p>
+            2. Dua titik awal dipilih:
+        </p>
+
+        <div class="text-code">
+x0 = 1.0, x1 = 2.0
+        </div>
+
+        <p>
+            karena fungsi memiliki perubahan nilai yang baik di interval tersebut.
+        </p>
+
+        <p>
+            3. Rumus Secant menggunakan pendekatan garis lurus antara dua titik:
+        </p>
+
+        <div class="text-code">
+garis sekant → estimasi akar baru
+        </div>
+
+        <p>
+            4. Iterasi dilakukan sampai selisih antar nilai cukup kecil (konvergen).
+        </p>
+
+        <p>
+            5. Tidak memerlukan turunan → lebih fleksibel dibanding Newton-Raphson.
+        </p>
+
+    </div>
+
+    <!-- HASIL -->
+    <div class="card card--soft">
+
+        <p><strong>Hasil Numerik</strong></p>
+
+        <p>
+            Akar persamaan berada di sekitar:
+        </p>
+
+        <div class="text-code">
+x ≈ 1.557
+        </div>
+
+        <p>
+            Ini adalah titik di mana fungsi ln(x) + x - 2 memotong sumbu-x.
+        </p>
+
+    </div>
+
+</div>

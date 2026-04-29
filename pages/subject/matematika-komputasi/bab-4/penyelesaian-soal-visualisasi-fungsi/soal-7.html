@@ -1,0 +1,102 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 7 (Fungsi Akar)</h3>
+
+    <p>
+        Fungsi akar merupakan fungsi non-linear yang hanya terdefinisi untuk domain tertentu pada bilangan real.
+        Dalam komputasi matematika, fungsi ini sering digunakan untuk memodelkan hubungan pertumbuhan sublinear
+        dan transformasi skala.
+    </p>
+
+    <p>
+        Pada kasus ini, fungsi hanya terdefinisi untuk x ≥ 0 sehingga domain harus dibatasi untuk menghindari nilai kompleks.
+    </p>
+
+    <p class="text-meta">
+        Library: numpy, matplotlib
+    </p>
+
+    <!-- IMPLEMENTASI -->
+    <div class="card card--soft">
+        <p><strong>1. Implementasi Lengkap Python</strong></p>
+
+        <div class="text-code">
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Definisi fungsi akar
+def f(x):
+    return np.sqrt(x)
+
+# Domain numerik (hanya nilai non-negatif)
+x = np.linspace(0, 10, 100)
+
+# Evaluasi fungsi
+y = f(x)
+
+# Titik referensi
+x_ref = 4
+y_ref = f(x_ref)
+
+print("Nilai referensi:")
+print("x =", x_ref)
+print("y =", y_ref)
+
+# Visualisasi
+plt.figure(figsize=(8, 5))
+
+plt.plot(x, y, label="f(x) = √x")
+plt.scatter(x_ref, y_ref, color="red", label="Titik Referensi")
+
+plt.title("Grafik Fungsi Akar")
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.grid(True)
+plt.legend()
+
+plt.show()
+        </div>
+    </div>
+
+    <!-- PENJELASAN -->
+    <div class="card card--soft">
+        <p><strong>2. Alur Komputasi</strong></p>
+
+        <p>
+            Fungsi <span class="text-code-inline">np.sqrt(x)</span> digunakan untuk menghitung akar kuadrat
+            secara vektorisasi pada seluruh elemen array NumPy.
+        </p>
+
+        <p>
+            Domain dibatasi dari 0 hingga 10 karena fungsi akar tidak terdefinisi untuk nilai negatif
+            dalam bilangan real.
+        </p>
+
+        <p>
+            Evaluasi dilakukan secara vectorized computation sehingga tidak diperlukan iterasi manual.
+        </p>
+
+        <p>
+            Titik referensi dipilih pada <span class="text-code-inline">x = 4</span> untuk menunjukkan hubungan
+            dasar bahwa √4 = 2.
+        </p>
+    </div>
+
+    <!-- VISUALISASI -->
+    <div class="card card--soft">
+        <p><strong>3. Interpretasi Visual</strong></p>
+
+        <p>
+            Grafik menunjukkan pertumbuhan fungsi yang semakin lambat seiring meningkatnya nilai x.
+        </p>
+
+        <p>
+            Kurva berbentuk cekung ke bawah, menunjukkan sifat sublinear dari fungsi akar.
+        </p>
+
+        <p>
+            Visualisasi ini sering digunakan dalam analisis skala dan transformasi data dalam komputasi numerik.
+        </p>
+    </div>
+
+</div>

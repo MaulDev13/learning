@@ -1,0 +1,168 @@
+<div class="card-group">
+
+    <!-- CARD 1 -->
+    <div class="card card--soft">
+        <h2>Struktur Data dalam Python</h2>
+
+        <h3>Pengantar</h3>
+        <p>
+            Struktur data merupakan cara untuk menyimpan, mengorganisasi, dan mengelola data sehingga dapat digunakan secara efisien dalam suatu program. Dalam konteks komputasi matematika, struktur data berperan penting dalam merepresentasikan himpunan nilai, vektor, matriks, maupun data numerik lainnya.
+        </p>
+
+        <p>
+            Bahasa pemrograman <span class="text-code-inline">Python</span> menyediakan berbagai struktur data bawaan yang fleksibel dan mudah digunakan. Pemahaman terhadap struktur data ini sangat penting untuk mendukung implementasi algoritma matematika secara efektif.
+        </p>
+
+        <h3>Definisi Inti</h3>
+        <p>
+            Struktur data dalam Python mencakup beberapa tipe utama seperti <span class="text-code-inline">list</span>, <span class="text-code-inline">tuple</span>, <span class="text-code-inline">set</span>, dan <span class="text-code-inline">dictionary</span>. Masing-masing memiliki karakteristik dan kegunaan yang berbeda.
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Struktur Data</th>
+                <th>Karakteristik</th>
+            </tr>
+            <tr>
+                <td>list</td>
+                <td>Dapat diubah (mutable), berurutan, dan dapat menyimpan berbagai tipe data</td>
+            </tr>
+            <tr>
+                <td>tuple</td>
+                <td>Tidak dapat diubah (immutable), berurutan</td>
+            </tr>
+            <tr>
+                <td>set</td>
+                <td>Tidak berurutan, tidak memiliki duplikasi elemen</td>
+            </tr>
+            <tr>
+                <td>dictionary</td>
+                <td>Menyimpan data dalam pasangan kunci dan nilai (key-value)</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card card--soft">
+        <h3>Struktur Data <span class="text-code-inline">list</span></h3>
+
+        <h4>Definisi</h4>
+        <p>
+            <span class="text-code-inline">list</span> adalah struktur data yang digunakan untuk menyimpan kumpulan elemen dalam urutan tertentu dan dapat diubah setelah dibuat.
+        </p>
+
+        <h4>Contoh Kode</h4>
+        <div class="text-code">
+data = [1, 2, 3, 4, 5]
+data.append(6)
+print(data)
+        </div>
+
+        <h4>Penjelasan</h4>
+        <p>
+            Metode <span class="text-code-inline">append()</span> digunakan untuk menambahkan elemen ke dalam list. Struktur ini sangat berguna untuk menyimpan deret bilangan atau hasil iterasi.
+        </p>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card card--soft">
+        <h3>Struktur Data <span class="text-code-inline">tuple</span></h3>
+
+        <h4>Definisi</h4>
+        <p>
+            <span class="text-code-inline">tuple</span> merupakan struktur data yang mirip dengan list, tetapi bersifat tidak dapat diubah setelah dibuat.
+        </p>
+
+        <h4>Contoh Kode</h4>
+        <div class="text-code">
+data = (1, 2, 3)
+print(data[0])
+        </div>
+
+        <h4>Penjelasan</h4>
+        <p>
+            Elemen dalam tuple dapat diakses menggunakan indeks, tetapi tidak dapat ditambahkan atau dihapus. Hal ini menjadikannya lebih aman untuk data yang tidak boleh berubah.
+        </p>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="card card--soft">
+        <h3>Struktur Data <span class="text-code-inline">set</span></h3>
+
+        <h4>Definisi</h4>
+        <p>
+            <span class="text-code-inline">set</span> adalah struktur data yang digunakan untuk menyimpan kumpulan elemen unik tanpa urutan tertentu.
+        </p>
+
+        <h4>Contoh Kode</h4>
+        <div class="text-code">
+data = {1, 2, 2, 3}
+print(data)
+        </div>
+
+        <h4>Penjelasan</h4>
+        <p>
+            Nilai duplikat akan dihapus secara otomatis. Struktur ini sering digunakan dalam operasi himpunan seperti union dan intersection.
+        </p>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="card card--soft">
+        <h3>Struktur Data <span class="text-code-inline">dictionary</span></h3>
+
+        <h4>Definisi</h4>
+        <p>
+            <span class="text-code-inline">dictionary</span> adalah struktur data yang menyimpan pasangan kunci (<span class="text-code-inline">key</span>) dan nilai (<span class="text-code-inline">value</span>).
+        </p>
+
+        <h4>Contoh Kode</h4>
+        <div class="text-code">
+data = {"a": 1, "b": 2}
+print(data["a"])
+        </div>
+
+        <h4>Penjelasan</h4>
+        <p>
+            Data diakses menggunakan kunci. Struktur ini sangat berguna untuk merepresentasikan data yang memiliki relasi, seperti parameter dan nilai dalam perhitungan matematika.
+        </p>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="card card--soft">
+        <h3>Contoh Implementasi dalam Komputasi Matematika</h3>
+        <p>
+            Struktur data digunakan untuk menyimpan dan memproses data numerik dalam berbagai bentuk. Berikut contoh penggunaan <span class="text-code-inline">list</span> untuk menghitung rata-rata.
+        </p>
+
+        <div class="text-code">
+data = [10, 20, 30, 40]
+rata = sum(data) / len(data)
+print(rata)
+        </div>
+
+        <p>
+            Fungsi <span class="text-code-inline">sum()</span> digunakan untuk menjumlahkan seluruh elemen, sedangkan <span class="text-code-inline">len()</span> digunakan untuk menghitung jumlah elemen.
+        </p>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="card card--soft">
+        <h3>Hubungan dengan Komputasi Matematika</h3>
+        <p>
+            Struktur data memungkinkan representasi berbagai objek matematika, seperti vektor (menggunakan list), himpunan (menggunakan set), dan pasangan nilai (menggunakan dictionary). Hal ini mempermudah implementasi algoritma matematis dalam bentuk program.
+        </p>
+
+        <p>
+            Pemilihan struktur data yang tepat akan mempengaruhi efisiensi dan kecepatan komputasi, terutama dalam pengolahan data berukuran besar.
+        </p>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="card card--soft">
+        <h3>Kesimpulan</h3>
+        <p>
+            Struktur data merupakan komponen fundamental dalam pemrograman Python. Dengan memahami karakteristik setiap struktur data, pengguna dapat memilih metode penyimpanan yang paling sesuai untuk menyelesaikan permasalahan komputasi matematika secara efisien.
+        </p>
+    </div>
+
+</div>

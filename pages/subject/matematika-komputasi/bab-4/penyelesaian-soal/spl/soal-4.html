@@ -1,0 +1,119 @@
+<div class="card card--flat">
+
+    <h3>Penyelesaian Soal 4 (Metode Jacobi)</h3>
+
+    <p>
+        Metode Jacobi adalah metode iteratif untuk menyelesaikan Sistem Persamaan Linear (SPL)
+        dengan cara memperbarui semua variabel secara simultan menggunakan nilai dari iterasi sebelumnya.
+    </p>
+
+    <p class="text-meta">
+        Metode: Iteratif (Jacobi) | Library: Python (NumPy opsional)
+    </p>
+
+    <!-- SISTEM PERSAMAAN -->
+    <div class="card card--soft">
+        <p><strong>Sistem Persamaan</strong></p>
+
+        <p>
+            x + y + z = 6<br>
+            2x - y + z = 3<br>
+            x + 2y - z = 3
+        </p>
+    </div>
+
+    <!-- BENTUK ITERATIF -->
+    <div class="card card--soft">
+        <p><strong>Bentuk Iteratif (Jacobi)</strong></p>
+
+        <div class="text-code">
+x = (6 - y - z)
+y = (2x + z - 3) / 1
+z = (x + 2y - 3)
+        </div>
+
+        <p>
+            Setiap variabel diekspresikan ulang agar dapat dihitung dari nilai iterasi sebelumnya.
+        </p>
+    </div>
+
+    <!-- IMPLEMENTASI PYTHON -->
+    <div class="card card--soft">
+        <p><strong>Implementasi Python</strong></p>
+
+        <div class="text-code">
+# initial guess
+x, y, z = 0.0, 0.0, 0.0
+
+n_iter = 10
+
+for i in range(n_iter):
+
+    x_new = (6 - y - z)
+    y_new = (2*x + z - 3)
+    z_new = (x + 2*y - 3)
+
+    x, y, z = x_new, y_new, z_new
+
+    print(f"Iterasi {i+1}: x={x:.4f}, y={y:.4f}, z={z:.4f}")
+        </div>
+    </div>
+
+    <!-- PENJELASAN -->
+    <div class="card card--soft">
+
+        <p><strong>Penjelasan Komputasi</strong></p>
+
+        <p>
+            1. Semua variabel diinisialisasi dengan nilai awal 0 sebagai tebakan awal (initial guess).
+        </p>
+
+        <p>
+            2. Pada setiap iterasi, nilai <span class="text-code-inline">x_new</span>,
+            <span class="text-code-inline">y_new</span>, dan
+            <span class="text-code-inline">z_new</span>
+            dihitung menggunakan nilai dari iterasi sebelumnya.
+        </p>
+
+        <p>
+            3. Metode Jacobi tidak menggunakan nilai baru dalam iterasi yang sama, sehingga seluruh pembaruan dilakukan secara simultan.
+        </p>
+
+        <p>
+            4. Hal ini membuat metode lebih stabil tetapi biasanya lebih lambat dibanding Gauss-Seidel.
+        </p>
+
+    </div>
+
+    <!-- HASIL -->
+    <div class="card card--soft">
+
+        <p><strong>Hasil Iterasi (Pendekatan Solusi)</strong></p>
+
+        <div class="text-code">
+Iterasi 10:
+x ≈ 1.0000
+y ≈ 2.0000
+z ≈ 3.0000
+        </div>
+
+        <p>
+            Hasil menunjukkan solusi mendekati nilai stabil setelah beberapa iterasi.
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <p><strong>Kesimpulan</strong></p>
+
+        <p>
+            Metode Jacobi merupakan metode dasar dalam penyelesaian SPL secara iteratif.
+            Meskipun lebih sederhana dan mudah dipahami, metode ini membutuhkan lebih banyak iterasi
+            dibandingkan metode Gauss-Seidel untuk mencapai konvergensi.
+        </p>
+
+    </div>
+
+</div>

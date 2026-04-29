@@ -1,0 +1,188 @@
+<div class="card-group">
+
+    <!-- HEADER -->
+    <div class="card card--soft">
+        <h2>Akar Persamaan dalam Komputasi Matematika</h2>
+
+        <h3>Pengantar</h3>
+        <p>
+            Akar persamaan adalah nilai x yang membuat fungsi f(x) = 0.
+            Dalam banyak kasus matematika terapan, akar tidak dapat dihitung secara analitik,
+            sehingga diperlukan metode numerik.
+        </p>
+
+        <p>
+            Python digunakan untuk menyelesaikan akar persamaan menggunakan pendekatan numerik
+            seperti <span class="text-code-inline">Bisection</span>,
+            <span class="text-code-inline">Newton-Raphson</span>, dan
+            <span class="text-code-inline">Secant Method</span>.
+        </p>
+    </div>
+
+    <!-- KONSEP -->
+    <div class="card card--soft">
+        <h3>Konsep Dasar</h3>
+
+        <p>
+            Kita mencari nilai x yang memenuhi:
+        </p>
+
+        <div class="text-code">
+f(x) = 0
+        </div>
+
+        <p>
+            Jika tidak bisa diselesaikan secara aljabar, maka digunakan metode iteratif.
+        </p>
+    </div>
+
+    <!-- METODE -->
+    <div class="card card--soft">
+        <h3>Metode Numerik yang Digunakan</h3>
+
+        <table class="table">
+            <tr>
+                <th>Metode</th>
+                <th>Karakteristik</th>
+            </tr>
+            <tr>
+                <td>Bisection</td>
+                <td>Memotong interval secara bertahap</td>
+            </tr>
+            <tr>
+                <td>Newton-Raphson</td>
+                <td>Menggunakan turunan fungsi</td>
+            </tr>
+            <tr>
+                <td>Secant</td>
+                <td>Tanpa turunan, menggunakan dua titik</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- SOAL -->
+    <div class="card card--soft">
+        <h3>Latihan Soal Akar Persamaan</h3>
+    </div>
+
+    <!-- SOAL 1 -->
+    <div class="card card--soft">
+        <h3>Soal 1</h3>
+
+        <div class="question">
+            <div class="math-system">
+f(x) = x² - 4x + 3 = 0
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="/pages/subject/matematika-komputasi/bab-4/penyelesaian-soal/akar/soal-1.html"
+                hx-target="#akar1"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'akar1')">
+                🔍 Solusi Soal 1
+            </button>
+        </div>
+
+        <div id="akar1" class="project-content hidden"></div>
+    </div>
+
+    <!-- SOAL 2 -->
+    <div class="card card--soft">
+        <h3>Soal 2</h3>
+
+        <div class="question">
+            <div class="math-system">
+f(x) = x³ - x - 2 = 0
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="/pages/subject/matematika-komputasi/bab-4/penyelesaian-soal/akar/soal-2.html"
+                hx-target="#akar2"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'akar2')">
+                🔍 Solusi Soal 2
+            </button>
+        </div>
+
+        <div id="akar2" class="project-content hidden"></div>
+    </div>
+
+    <!-- SOAL 3 -->
+    <div class="card card--soft">
+        <h3>Soal 3</h3>
+
+        <div class="question">
+            <div class="math-system">
+f(x) = e^x - 3x = 0
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="/pages/subject/matematika-komputasi/bab-4/penyelesaian-soal/akar/soal-3.html"
+                hx-target="#akar3"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'akar3')">
+                🔍 Solusi Soal 3
+            </button>
+        </div>
+
+        <div id="akar3" class="project-content hidden"></div>
+    </div>
+
+    <!-- SOAL 4 -->
+    <div class="card card--soft">
+        <h3>Soal 4</h3>
+
+        <div class="question">
+            <div class="math-system">
+f(x) = cos(x) - x = 0
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="/pages/subject/matematika-komputasi/bab-4/penyelesaian-soal/akar/soal-4.html"
+                hx-target="#akar4"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'akar4')">
+                🔍 Solusi Soal 4
+            </button>
+        </div>
+
+        <div id="akar4" class="project-content hidden"></div>
+    </div>
+
+    <!-- SOAL 5 -->
+    <div class="card card--soft">
+        <h3>Soal 5</h3>
+
+        <div class="question">
+            <div class="math-system">
+f(x) = ln(x) + x - 2 = 0
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="/pages/subject/matematika-komputasi/bab-4/penyelesaian-soal/akar/soal-5.html"
+                hx-target="#akar5"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'akar5')">
+                🔍 Solusi Soal 5
+            </button>
+        </div>
+
+        <div id="akar5" class="project-content hidden"></div>
+    </div>
+
+</div>
