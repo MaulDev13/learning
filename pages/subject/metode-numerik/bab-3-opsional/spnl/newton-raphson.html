@@ -1,0 +1,368 @@
+<div class="card-group">
+
+    <!-- ============================================ -->
+    <!-- CARD 1: PENGANTAR & DEFINISI -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h2>Metode Newton-Raphson</h2>
+        <p>
+            <span class="text-code-inline">Metode Newton-Raphson</span> adalah metode numerik yang paling populer 
+            untuk menyelesaikan sistem persamaan non linear. Metode ini menggunakan pendekatan 
+            <span class="text-code-inline">deret Taylor</span> untuk melakukan linearisasi di sekitar tebakan awal, 
+            kemudian menyelesaikan sistem linear yang dihasilkan.
+        </p>
+        <p>
+            Dibandingkan dengan metode Fixed Point, Newton-Raphson memiliki <span class="text-code-inline">konvergensi kuadratik</span> 
+            — artinya jumlah digit akurat kira-kira berlipat ganda setiap iterasi. Inilah mengapa 
+            metode ini menjadi andalan dalam komputasi ilmiah.
+        </p>
+        <div class="text-math">
+            Ide utama: Linearisasi fungsi non linear di sekitar titik tebakan<br>
+            f(x) ≈ f(x₀) + f'(x₀)(x - x₀)
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 2: TURUNAN RUMUS (SATU VARIABEL) -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Penurunan Rumus (Kasus Satu Variabel)</h3>
+        <p>
+            Misalkan kita ingin menyelesaikan persamaan <span class="text-code-inline">f(x) = 0</span>. 
+            Ekspansi deret Taylor di sekitar <span class="text-code-inline">xₖ</span>:
+        </p>
+        <div class="text-math">
+            f(x) = f(xₖ) + f'(xₖ)(x - xₖ) + \frac{f''(ξ)}{2!}(x - xₖ)² + ...
+        </div>
+        <p>
+            Dengan mengabaikan suku order tinggi (linearisasi), kita peroleh:
+        </p>
+        <div class="text-math">
+            0 ≈ f(xₖ) + f'(xₖ)(x - xₖ)
+        </div>
+        <p>
+            Selesaikan untuk <span class="text-code-inline">x = x_{k+1}</span>:
+        </p>
+        <div class="text-math">
+            x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)}
+        </div>
+        <p>
+            Inilah <span class="text-code-inline">rumus iterasi Newton-Raphson</span> untuk satu variabel.
+        </p>
+        <div class="text-code">
+# Rumus Newton-Raphson (1 variabel)
+x_{k+1} = x_k - f(x_k) / f'(x_k)
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 3: NEWTON-RAPHSON UNTUK SPNL (MULTIVARIABEL) -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Newton-Raphson untuk SPNL (Multivariabel)</h3>
+        <p>
+            Untuk sistem dengan <span class="text-code-inline">n</span> variabel dan 
+            <span class="text-code-inline">n</span> persamaan:
+        </p>
+        <div class="text-math">
+            f₁(x₁, x₂, ..., xₙ) = 0<br>
+            f₂(x₁, x₂, ..., xₙ) = 0<br>
+            ⋮<br>
+            fₙ(x₁, x₂, ..., xₙ) = 0
+        </div>
+        <p>
+            Bentuk vektornya: <span class="text-code-inline">F(X) = 0</span>, dengan 
+            <span class="text-code-inline">X = [x₁, x₂, ..., xₙ]ᵀ</span>.
+        </p>
+        <p>
+            Linearisasi dengan deret Taylor multivariabel menghasilkan:
+        </p>
+        <div class="text-math">
+            X_{k+1} = X_k - J(X_k)^{-1} · F(X_k)
+        </div>
+        <p>
+            di mana <span class="text-code-inline">J(X)</span> adalah <span class="text-code-inline">Matriks Jacobian</span> 
+            yang berisi semua turunan parsial:
+        </p>
+        <div class="text-math">
+            J(X) = \begin{bmatrix}
+            \frac{∂f₁}{∂x₁} & \frac{∂f₁}{∂x₂} & \cdots & \frac{∂f₁}{∂xₙ} \\
+            \frac{∂f₂}{∂x₁} & \frac{∂f₂}{∂x₂} & \cdots & \frac{∂f₂}{∂xₙ} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            \frac{∂fₙ}{∂x₁} & \frac{∂fₙ}{∂x₂} & \cdots & \frac{∂fₙ}{∂xₙ}
+            \end{bmatrix}
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 4: LANGKAH-LANGKAH ALGORITMA -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Langkah-langkah Metode Newton-Raphson</h3>
+        <p>
+            Berikut prosedur sistematis untuk menerapkan Newton-Raphson pada SPNL:
+        </p>
+        <p>
+            <span class="text-code-inline">Langkah 1: Tentukan Tebakan Awal</span><br>
+            Pilih <span class="text-code-inline">X₀</span> yang sedekat mungkin dengan solusi yang diharapkan.
+        </p>
+        <p>
+            <span class="text-code-inline">Langkah 2: Hitung F(Xₖ)</span><br>
+            Evaluasi semua fungsi pada titik <span class="text-code-inline">Xₖ</span>.
+        </p>
+        <p>
+            <span class="text-code-inline">Langkah 3: Hitung Matriks Jacobian J(Xₖ)</span><br>
+            Hitung semua turunan parsial pada titik <span class="text-code-inline">Xₖ</span>.
+        </p>
+        <p>
+            <span class="text-code-inline">Langkah 4: Selesaikan Sistem Linear</span><br>
+            Cari <span class="text-code-inline">ΔX</span> yang memenuhi <span class="text-code-inline">J·ΔX = -F</span>.
+        </p>
+        <p>
+            <span class="text-code-inline">Langkah 5: Update Solusi</span><br>
+            <span class="text-code-inline">X_{k+1} = X_k + ΔX</span>
+        </p>
+        <p>
+            <span class="text-code-inline">Langkah 6: Cek Konvergensi</span><br>
+            Jika <span class="text-code-inline">||ΔX|| < ε</span> atau <span class="text-code-inline">||F(X_{k+1})|| < ε</span>, 
+            maka berhenti. Jika tidak, ulangi dari langkah 2.
+        </p>
+        <div class="text-code">
+# Algoritma Newton-Raphson (konsep sederhana)
+X = X₀
+for k = 1 to max_iter:
+    F = hitung_fungsi(X)
+    J = hitung_jacobian(X)
+    selesaikan J * ΔX = -F
+    X = X + ΔX
+    if norm(ΔX) < toleransi: stop
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 5: PSEUDOCODE LENGKAP -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Pseudocode Metode Newton-Raphson untuk SPNL</h3>
+        <div class="text-code">
+PROCEDURE NewtonRaphson(F, J, X0, tol, max_iter)
+    INPUT:
+        F       : fungsi sistem F(X)
+        J       : fungsi Jacobian J(X)
+        X0      : vektor tebakan awal
+        tol     : toleransi error
+        max_iter: iterasi maksimum
+    
+    OUTPUT: X (solusi pendekatan)
+    
+    X ← X0
+    
+    FOR k = 1 TO max_iter DO
+        Fx ← F(X)          {hitung nilai fungsi}
+        Jx ← J(X)          {hitung matriks Jacobian}
+        
+        {Selesaikan sistem linear Jx · ΔX = -Fx}
+        ΔX ← SOLVE(Jx, -Fx)
+        
+        X ← X + ΔX         {update solusi}
+        
+        error ← max(|ΔX|)  {atau max(|Fx|)}
+        
+        IF error < tol THEN
+            RETURN X
+        END IF
+    END FOR
+    
+    RETURN X   {tidak konvergen dalam max_iter}
+END PROCEDURE
+        </div>
+        <p>
+            Fungsi <span class="text-code-inline">SOLVE(J, b)</span> dapat menggunakan eliminasi Gauss 
+            atau dekomposisi LU untuk menyelesaikan sistem linear.
+        </p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 6: SYARAT KONVERGENSI -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Syarat Konvergensi Newton-Raphson</h3>
+        <p>
+            Newton-Raphson memiliki konvergensi yang sangat cepat jika syarat berikut terpenuhi:
+        </p>
+        <table class="table">
+            <thead>
+                <tr><th>Syarat</th><th>Penjelasan</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tebakan awal cukup dekat</td>
+                    <td>Semakin dekat tebakan ke solusi, semakin terjamin konvergensi</td>
+                </tr>
+                <tr>
+                    <td><span class="text-math-inline">J(X*)</span> tidak singular</td>
+                    <td>Matriks Jacobian pada solusi harus memiliki invers</td>
+                </tr>
+                <tr>
+                    <td><span class="text-math-inline">f''(x)</span> kontinu</td>
+                    <td>Fungsi harus cukup halus (dapat diturunkan dua kali)</td>
+                </tr>
+                <tr>
+                    <td><span class="text-math-inline">f'(x*) ≠ 0</span></td>
+                    <td>Akar tidak boleh merupakan akar ganda</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-math">
+            Laju konvergensi Newton-Raphson (kuadratik):<br>
+            |e_{k+1}| ≈ C · |e_k|²<br>
+            di mana e_k = x_k - x* (error pada iterasi ke-k)
+        </div>
+        <p>
+            Artinya, jika error saat ini sekitar <span class="text-code-inline">10⁻²</span>, 
+            error berikutnya sekitar <span class="text-code-inline">10⁻⁴</span>, kemudian 
+            <span class="text-code-inline">10⁻⁸</span>, dan seterusnya.
+        </p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 7: CONTOH KASUS SEDERHANA (2 VARIABEL) -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Contoh: Sistem 2 Variabel</h3>
+        <p>
+            Diberikan sistem persamaan non linear:
+        </p>
+        <div class="math-system">
+            f₁(x,y) = x² + y² - 25 = 0<br>
+            f₂(x,y) = x·y - 12 = 0
+        </div>
+        <p>
+            Matriks Jacobian:
+        </p>
+        <div class="text-math">
+            J(x,y) = \begin{bmatrix}
+            2x & 2y \\
+            y & x
+            \end{bmatrix}
+        </div>
+        <p>
+            Tebakan awal: <span class="text-code-inline">(x₀, y₀) = (5, 2)</span>
+        </p>
+        <table class="table">
+            <thead>
+                <tr><th>Iterasi (k)</th><th>x</th><th>y</th><th>f₁</th><th>f₂</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>5.0000</td>
+                    <td>2.0000</td>
+                    <td>4.0000</td>
+                    <td>-2.0000</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>3.4615</td>
+                    <td>3.5385</td>
+                    <td>-0.0118</td>
+                    <td>0.2500</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>3.0005</td>
+                    <td>3.9995</td>
+                    <td>0.0000</td>
+                    <td>0.0005</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>3.0000</td>
+                    <td>4.0000</td>
+                    <td>0.0000</td>
+                    <td>0.0000</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            Solusi konvergen ke <span class="text-code-inline">(x, y) = (3, 4)</span> hanya dalam 3 iterasi 
+            (konvergensi kuadratik terbukti).
+        </p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 8: KELEBIHAN DAN KEKURANGAN -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Perbandingan: Newton-Raphson vs Fixed Point</h3>
+        <table class="table">
+            <thead>
+                <tr><th>Aspek</th><th>Newton-Raphson</th><th>Fixed Point</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Laju konvergensi</td>
+                    <td>Kuadratik (sangat cepat)</td>
+                    <td>Linear (lambat)</td>
+                </tr>
+                <tr>
+                    <td>Perlu turunan</td>
+                    <td>Ya (Jacobian)</td>
+                    <td>Tidak perlu</td>
+                </tr>
+                <tr>
+                    <td>Kompleksitas per iterasi</td>
+                    <td>Tinggi (solusi sistem linear)</td>
+                    <td>Rendah (evaluasi fungsi)</td>
+                </tr>
+                <tr>
+                    <td>Kepekaan tebakan awal</td>
+                    <td>Cukup sensitif</td>
+                    <td>Sangat sensitif</td>
+                </tr>
+                <tr>
+                    <td>Jaminan konvergensi</td>
+                    <td>Lokal (jika tebakan dekat)</td>
+                    十六章Butuh syarat |g'(x)| < 1</td>
+                </tr>
+                <tr>
+                    <td>Kegagalan umum</td>
+                    <td>Jacobian singular</td>
+                    <td>Pemilihan G(x) tidak tepat</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-math">
+            "Newton-Raphson: cepat tapi mahal. Fixed Point: murah tapi lambat.<br>
+            Pilihan metode tergantung pada kebutuhan akurasi dan biaya komputasi."
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 9: KESIMPULAN -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Poin Penting Metode Newton-Raphson</h3>
+        <p>
+            Metode Newton-Raphson adalah metode numerik paling populer untuk SPNL karena 
+            konvergensi kuadratiknya yang sangat cepat.
+        </p>
+        <p>
+            <strong>Ringkasan konsep kunci:</strong>
+        </p>
+        <p>
+            1. Rumus iterasi: <span class="text-code-inline">X_{k+1} = X_k - J(X_k)^{-1}·F(X_k)</span><br>
+            2. Konvergensi kuadratik: <span class="text-code-inline">|e_{k+1}| ≈ C·|e_k|²</span><br>
+            3. Kelebihan: konvergensi sangat cepat (jika konvergen)<br>
+            4. Kekurangan: perlu Jacobian, mahal per iterasi, bisa gagal jika Jacobian singular<br>
+            5. Syarat konvergensi: tebakan awal cukup dekat, Jacobian non singular
+        </p>
+        <p>
+            Pada praktiknya, Newton-Raphson menjadi pilihan utama untuk sistem dengan ukuran moderat 
+            dan fungsi yang dapat diturunkan dengan mudah. Untuk sistem yang sangat besar atau 
+            Jacobian sulit dihitung, digunakan variasi seperti <span class="text-code-inline">Quasi-Newton (Broyden)</span> 
+            yang akan dipelajari kemudian.
+        </p>
+    </div>
+
+</div>

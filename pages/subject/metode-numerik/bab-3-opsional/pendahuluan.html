@@ -1,0 +1,213 @@
+<div class="card-group">
+
+    <!-- ============================================ -->
+    <!-- CARD 1: DEFINISI DAN BENTUK UMUM -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h2>Sistem Persamaan Non Linear (SPNL)</h2>
+        <p>
+            <span class="text-code-inline">Sistem Persamaan Non Linear (SPNL)</span> adalah kumpulan dua atau lebih 
+            persamaan yang mengandung variabel dengan bentuk tidak linear. Suatu persamaan disebut 
+            non linear jika variabelnya:
+        </p>
+        <p>
+            • Berpangkat selain satu (<span class="text-code-inline">x², x³, √x</span>)<br>
+            • Dikalikan dengan variabel lain (<span class="text-code-inline">x·y, xy</span>)<br>
+            • Berada dalam fungsi transendental (<span class="text-code-inline">sin x, eˣ, ln x</span>)
+        </p>
+        <div class="text-math">
+            f₁(x₁, x₂, ..., xₙ) = 0<br>
+            f₂(x₁, x₂, ..., xₙ) = 0<br>
+            ⋮<br>
+            fₙ(x₁, x₂, ..., xₙ) = 0
+        </div>
+        <p>
+            Setiap fungsi <span class="text-code-inline">f</span> dapat berbentuk linear maupun non linear. 
+            Jika semua fungsi linear → SPL. Jika minimal satu fungsi non linear → SPNL.
+        </p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 2: PERBANDINGAN SPL vs SPNL (TABEL) -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Perbandingan SPL dan SPNL</h3>
+        <p>
+            Tabel berikut merangkum perbedaan mendasar antara Sistem Persamaan Linear (SPL) 
+            dan Sistem Persamaan Non Linear (SPNL):
+        </p>
+        <table class="table">
+            <thead>
+                <tr><th>Aspek</th><th>SPL</th><th>SPNL</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Bentuk umum</td><td>Ax = b</td><td>F(x) = 0, F non linear</td></tr>
+                <tr><td>Bentuk variabel</td><td>Pangkat satu</td><td>Pangkat ≠ 1, perkalian, atau fungsi transendental</td></tr>
+                <tr><td>Prinsip superposisi</td><td>Berlaku</td><td>Tidak berlaku</td></tr>
+                <tr><td>Jumlah solusi</td><td>0, 1, atau tak hingga</td><td>Bisa banyak (0, 1, 2, ..., tak hingga)</td></tr>
+                <tr><td>Sensitivitas tebakan awal</td><td>Tidak ada</td><td>Sangat tinggi</td></tr>
+                <tr><td>Metode penyelesaian</td><td>Eliminasi Gauss, Dekomposisi LU</td><td>Iterasi Newton, Fixed Point, Secant, Broyden</td></tr>
+                <tr><td>Jaminan konvergensi</td><td>Terjamin (jika solusi ada)</td><td>Tidak terjamin</td></tr>
+            </tbody>
+        </table>
+        <div class="text-code">
+# Contoh SPL (linear)
+2x + 3y = 8
+4x - y = 2
+
+# Contoh SPNL (non linear)
+x² + y² = 25
+x·y = 12
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 3: KARAKTERISTIK SPNL -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Karakteristik SPNL</h3>
+        <p>
+            Dari perbandingan di atas, SPNL memiliki karakteristik khas yang membedakannya dari SPL:
+        </p>
+        <p>
+            <span class="text-code-inline">1. Sensitivitas terhadap tebakan awal</span><br>
+            Solusi yang ditemukan sangat bergantung pada nilai awal yang dipilih. 
+            Tebakan berbeda bisa menghasilkan solusi berbeda.
+        </p>
+        <p>
+            <span class="text-code-inline">2. Kemungkinan solusi ganda</span><br>
+            SPNL dapat memiliki banyak solusi dalam domain yang sama. 
+            Sebaliknya, SPL maksimal hanya memiliki satu solusi (jika determinan ≠ 0).
+        </p>
+        <p>
+            <span class="text-code-inline">3. Konvergensi tidak terjamin</span><br>
+            Metode numerik untuk SPNL bisa gagal konvergen (divergen, berosilasi, 
+            atau stuck) jika tebakan awal buruk atau fungsi memiliki perilaku kompleks.
+        </p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 4: CONTOH KASUS DUNIA NYATA -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Contoh SPNL dalam Sains dan Rekayasa</h3>
+        <p>
+            SPNL muncul secara alami dalam berbagai disiplin ilmu. Berikut beberapa contoh klasik:
+        </p>
+        <table class="table">
+            <thead>
+                <tr><th>Bidang</th><th>Fenomena</th><th>Bentuk SPNL</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Fisika</td><td>Gerak pendulum dengan simpangan besar</td><td>θ'' + (g/L) sin θ = 0</td></tr>
+                <tr><td>Biologi</td><td>Model pertumbuhan logistik (Verhulst)</td><td>dN/dt = rN(1 - N/K)</td></tr>
+                <tr><td>Kimia</td><td>Kesetimbangan reaksi kimia</td><td>K = [C]ᶜ / ([A]ᵃ[B]ᵇ)</td></tr>
+                <tr><td>Ekonomi</td><td>Keseimbangan pasar non linear</td><td>Supply(P) = Demand(P)</td></tr>
+                <tr><td>Robotika</td><td>Inverse kinematics lengan robot</td><td>Posisi = fungsi(θ₁, θ₂, ...)</td></tr>
+                <tr><td>Astronomi</td><td>Pergerakan benda langit (3-body problem)</td><td>Hukum gravitasi Newton (dengan r²)</td></tr>
+            </tbody>
+        </table>
+        <p>
+            Pada semua contoh di atas, tidak ada solusi eksak yang sederhana. 
+            Di sinilah metode numerik berperan penting.
+        </p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 5: METODE NUMERIK UNTUK SPNL (PREVIEW) -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Metode Numerik untuk SPNL</h3>
+        <p>
+            Karena SPNL jarang memiliki solusi analitik (rumus eksak), 
+            kita memerlukan <span class="text-code-inline">metode numerik</span> untuk mencari solusi pendekatan. 
+            Berikut adalah metode-metode utama yang akan dipelajari:
+        </p>
+        <table class="table">
+            <thead>
+                <tr><th>Metode</th><th>Konsep Dasar</th><th>Kelebihan</th><th>Kekurangan</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Iterasi Fixed Point</td><td>Mengubah F(x)=0 menjadi x = G(x)</td><td>Sederhana, mudah dipahami</td><td>Konvergensi lambat, perlu kontraksi</td></tr>
+                <tr><td>Newton-Raphson</td><td>Ekspansi deret Taylor + turunan</td><td>Konvergensi cepat (kuadratik)</td><td>Perlu turunan (Jacobian), mahal</td></tr>
+                <tr><td>Metode Secant</td><td>Approksimasi turunan dengan beda hingga</td><td>Tanpa turunan analitik</td><td>Konvergensi lebih lambat dari Newton</td></tr>
+                <tr><td>Broyden</td><td>Quasi-Newton, update Jacobian secara iteratif</td><td>Efisien untuk sistem besar</td><td>Implementasi lebih kompleks</td></tr>
+            </tbody>
+        </table>
+        <div class="text-code">
+# Pseudo-code Newton-Raphson (untuk 2 variabel)
+
+Tebakan awal: x₀, y₀
+Ulangi untuk k = 0, 1, 2, ... :
+    Hitung f₁(x_k, y_k), f₂(x_k, y_k)
+    Hitung matriks Jacobian J
+    Selesaikan sistem linear J · Δ = -F
+    x_{k+1} = x_k + Δx
+    y_{k+1} = y_k + Δy
+    error = max(|Δx|, |Δy|)
+    jika error < toleransi → stop
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 6: TANTANGAN DALAM PENYELESAIAN SPNL -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Tantangan dalam Implementasi Numerik SPNL</h3>
+        <p>
+            Meskipun metode numerik tersedia, implementasinya tidak selalu berjalan mulus. 
+            Berikut tantangan umum yang sering dihadapi:
+        </p>
+        <p>
+            <span class="text-code-inline">• Pemilihan tebakan awal</span><br>
+            Tebakan awal yang buruk dapat menyebabkan divergensi atau konvergensi ke solusi 
+            yang tidak diinginkan (misalnya solusi negatif ketika solusi positif diharapkan).
+        </p>
+        <p>
+            <span class="text-code-inline">• Perhitungan Jacobian</span><br>
+            Turunan parsial bisa rumit untuk fungsi yang kompleks, terutama jika 
+            melibatkan fungsi transendental atau sistem berskala besar.
+        </p>
+        <p>
+            <span class="text-code-inline">• Singularitas Jacobian</span><br>
+            Jika matriks Jacobian singular (determinan = 0) di suatu titik, 
+            metode Newton-Raphson akan gagal karena tidak dapat menghitung Δ.
+        </p>
+        <p>
+            <span class="text-code-inline">• Kriteria penghentian</span><br>
+            Pemilihan toleransi yang terlalu ketat menyebabkan iterasi terlalu lama; 
+            terlalu longgar menghasilkan solusi yang tidak akurat.
+        </p>
+        <div class="text-math">
+            "Dalam SPNL, tidak ada jaminan bahwa metode numerik akan selalu berhasil.<br>
+            Keberhasilan bergantung pada tebakan awal, sifat fungsi, dan parameter metode."
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 7: KESIMPULAN DAN TRANSISI -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Kesimpulan</h3>
+        <p>
+            Sistem Persamaan Non Linear (SPNL) adalah perluasan dari sistem linear 
+            yang mampu memodelkan fenomena dunia nyata dengan lebih akurat.
+        </p>
+        <p>
+            <strong>Poin-poin penting dari pendahuluan ini:</strong>
+        </p>
+        <p>
+            1. SPNL berbeda fundamental dari SPL: tidak ada superposisi, solusi bisa banyak, sensitif terhadap tebakan awal.<br>
+            2. SPNL muncul di berbagai bidang: fisika, biologi, ekonomi, robotika, astronomi.<br>
+            3. Karena jarang memiliki solusi eksak, SPNL diselesaikan dengan metode numerik.<br>
+            4. Metode utama: Iterasi Fixed Point, Newton-Raphson, Secant, Broyden.<br>
+            5. Tantangan utama: tebakan awal, Jacobian, singularitas, kriteria berhenti.
+        </p>
+        <p>
+            Pada subbab berikutnya, kita akan mempelajari setiap metode numerik 
+            secara mendalam, lengkap dengan algoritma, contoh perhitungan manual, 
+            dan implementasinya.
+        </p>
+    </div>
+
+</div>

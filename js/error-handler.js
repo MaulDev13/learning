@@ -23,9 +23,9 @@ function showErrorPage(url) {
     isErrorPage = true;
 
     // ⚠️ penting: jangan double BASE_PATH kalau URL sudah absolute internal
-    const finalUrl = url.startsWith("/")
-        ? BASE_PATH + url
-        : url;
+    const finalUrl = url.startsWith(BASE_PATH)
+    ? url
+    : BASE_PATH + url;
 
     htmx.ajax("GET", finalUrl, "#content");
 

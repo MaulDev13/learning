@@ -1,0 +1,349 @@
+<div class="card-group">
+
+    <!-- ============================================ -->
+    <!-- CARD 1: PENGANTAR & DEFINISI -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h2>Metode Secant</h2>
+        <p>
+            <span class="text-code-inline">Metode Secant</span> adalah metode numerik untuk menyelesaikan 
+            sistem persamaan non linear yang merupakan <span class="text-code-inline">alternatif dari Newton-Raphson</span> 
+            tanpa memerlukan perhitungan turunan (derivatif).
+        </p>
+        <p>
+            Ide utamanya adalah mengganti turunan <span class="text-code-inline">f'(x)</span> pada metode Newton 
+            dengan <span class="text-code-inline">pendekatan beda hingga (finite difference)</span> 
+            menggunakan dua iterasi sebelumnya. Dengan cara ini, metode Secant tetap memiliki 
+            konvergensi yang cepat meskipun tidak secepat Newton-Raphson.
+        </p>
+        <div class="text-math">
+            Newton-Raphson: x_{k+1} = x_k - f(x_k) / f'(x_k)<br>
+            Secant: x_{k+1} = x_k - f(x_k) · (x_k - x_{k-1}) / (f(x_k) - f(x_{k-1}))
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 2: TURUNAN RUMUS (SATU VARIABEL) -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Penurunan Rumus (Kasus Satu Variabel)</h3>
+        <p>
+            Metode Newton-Raphson memerlukan turunan <span class="text-code-inline">f'(x)</span>:
+        </p>
+        <div class="text-math">
+            x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)}
+        </div>
+        <p>
+            Jika turunan tidak tersedia atau sulit dihitung, kita dapat <span class="text-code-inline">mengaproksimasi</span> 
+            turunan dengan beda hingga mundur:
+        </p>
+        <div class="text-math">
+            f'(x_k) \approx \frac{f(x_k) - f(x_{k-1})}{x_k - x_{k-1}}
+        </div>
+        <p>
+            Substitusi aproksimasi ini ke rumus Newton:
+        </p>
+        <div class="text-math">
+            x_{k+1} = x_k - f(x_k) \cdot \frac{x_k - x_{k-1}}{f(x_k) - f(x_{k-1})}
+        </div>
+        <p>
+            Inilah <span class="text-code-inline">rumus iterasi Secant</span> untuk satu variabel. 
+            Perhatikan bahwa metode ini memerlukan <span class="text-code-inline">dua tebakan awal</span> 
+            <span class="text-code-inline">x₀</span> dan <span class="text-code-inline">x₁</span>.
+        </p>
+        <div class="text-code">
+# Rumus Secant (1 variabel)
+x_{k+1} = x_k - f(x_k) * (x_k - x_{k-1}) / (f(x_k) - f(x_{k-1}))
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 3: INTERPRETASI GEOMETRIS -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Interpretasi Geometris</h3>
+        <p>
+            Secara geometris, metode Secant menggantikan garis singgung (turunan) pada Newton-Raphson 
+            dengan <span class="text-code-inline">garis secant</span> yang melalui dua titik terakhir 
+            <span class="text-code-inline">(x_{k-1}, f(x_{k-1}))</span> dan <span class="text-code-inline">(x_k, f(x_k))</span>.
+        </p>
+        <div class="text-math">
+            Garis secant: y - f(x_k) = \frac{f(x_k) - f(x_{k-1})}{x_k - x_{k-1}} (x - x_k)
+        </div>
+        <p>
+            Akar persamaan <span class="text-code-inline">f(x) = 0</span> adalah perpotongan garis secant 
+            dengan sumbu x <span class="text-code-inline">(y = 0)</span>:
+        </p>
+        <div class="text-math">
+            0 - f(x_k) = \frac{f(x_k) - f(x_{k-1})}{x_k - x_{k-1}} (x_{k+1} - x_k)
+        </div>
+        <p>
+            Menyelesaikan untuk <span class="text-code-inline">x_{k+1}</span> menghasilkan rumus Secant yang sama.
+        </p>
+        <div class="text-math">
+            "Secant = Newton tanpa turunan, menggunakan dua titik terakhir<br>
+            untuk mengaproksimasi kemiringan kurva."
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 4: METODE SECANT UNTUK SPNL (MULTIVARIABEL) -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Secant untuk SPNL: Metode Broyden</h3>
+        <p>
+            Untuk sistem dengan banyak variabel, ekstensi dari metode Secant disebut 
+            <span class="text-code-inline">Metode Broyden</span> atau <span class="text-code-inline">Quasi-Newton</span>.
+            Ide utamanya adalah mengaproksimasi matriks Jacobian <span class="text-code-inline">J</span> 
+            secara iteratif tanpa menghitung turunan parsial.
+        </p>
+        <div class="text-math">
+            Newton: X_{k+1} = X_k - J_k^{-1} · F(X_k)<br>
+            Broyden: X_{k+1} = X_k - B_k^{-1} · F(X_k)
+        </div>
+        <p>
+            Matriks <span class="text-code-inline">B_k</span> adalah aproksimasi Jacobian yang diperbarui 
+            menggunakan <span class="text-code-inline">secant update formula</span>:
+        </p>
+        <div class="text-math">
+            B_{k+1} = B_k + \frac{(ΔF_k - B_k ΔX_k) ΔX_k^T}{ΔX_k^T ΔX_k}
+        </div>
+        <p>
+            di mana <span class="text-code-inline">ΔX_k = X_{k+1} - X_k</span> dan 
+            <span class="text-code-inline">ΔF_k = F(X_{k+1}) - F(X_k)</span>.
+        </p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 5: LANGKAH-LANGKAH ALGORITMA -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Langkah-langkah Metode Secant (Satu Variabel)</h3>
+        <p>
+            Berikut prosedur sistematis untuk menerapkan metode Secant:
+        </p>
+        <p>
+            <span class="text-code-inline">Langkah 1: Tentukan Dua Tebakan Awal</span><br>
+            Pilih <span class="text-code-inline">x₀</span> dan <span class="text-code-inline">x₁</span> 
+            yang mendekati solusi yang diharapkan.
+        </p>
+        <p>
+            <span class="text-code-inline">Langkah 2: Hitung f(x₀) dan f(x₁)</span><br>
+            Evaluasi fungsi pada kedua tebakan awal.
+        </p>
+        <p>
+            <span class="text-code-inline">Langkah 3: Iterasi dengan Rumus Secant</span><br>
+            Hitung <span class="text-code-inline">x_{k+1}</span> menggunakan rumus Secant.
+        </p>
+        <p>
+            <span class="text-code-inline">Langkah 4: Update Nilai</span><br>
+            Geser: <span class="text-code-inline">x_{k-1} ← x_k</span>, <span class="text-code-inline">x_k ← x_{k+1}</span>.
+        </p>
+        <p>
+            <span class="text-code-inline">Langkah 5: Cek Konvergensi</span><br>
+            Jika <span class="text-code-inline">|x_{k+1} - x_k| < ε</span> atau <span class="text-code-inline">|f(x_{k+1})| < ε</span>, 
+            maka berhenti.
+        </p>
+        <div class="text-code">
+# Algoritma Secant (konsep sederhana)
+x_prev = x₀
+x_curr = x₁
+f_prev = f(x₀)
+f_curr = f(x₁)
+
+for k = 1 to max_iter:
+    x_next = x_curr - f_curr * (x_curr - x_prev) / (f_curr - f_prev)
+    if |x_next - x_curr| < toleransi: stop
+    
+    x_prev = x_curr
+    f_prev = f_curr
+    x_curr = x_next
+    f_curr = f(x_next)
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 6: PSEUDOCODE LENGKAP -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Pseudocode Metode Secant untuk Satu Variabel</h3>
+        <div class="text-code">
+PROCEDURE Secant(f, x0, x1, tol, max_iter)
+    INPUT:
+        f       : fungsi f(x)
+        x0, x1  : dua tebakan awal
+        tol     : toleransi error
+        max_iter: iterasi maksimum
+    
+    OUTPUT: x (solusi pendekatan)
+    
+    x_prev ← x0
+    x_curr ← x1
+    f_prev ← f(x_prev)
+    f_curr ← f(x_curr)
+    
+    FOR k = 1 TO max_iter DO
+        {Hindari pembagian dengan nol}
+        IF |f_curr - f_prev| < eps THEN
+            RETURN "Pembagi mendekati nol"
+        END IF
+        
+        x_next ← x_curr - f_curr * (x_curr - x_prev) / (f_curr - f_prev)
+        
+        IF |x_next - x_curr| < tol THEN
+            RETURN x_next
+        END IF
+        
+        x_prev ← x_curr
+        f_prev ← f_curr
+        x_curr ← x_next
+        f_curr ← f(x_curr)
+    END FOR
+    
+    RETURN x_curr   {tidak konvergen dalam max_iter}
+END PROCEDURE
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 7: CONTOH KASUS SEDERHANA -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Contoh: Mencari Akar Persamaan</h3>
+        <p>
+            Diberikan persamaan non linear:
+        </p>
+        <div class="math-system">
+            f(x) = x² - 4 = 0
+        </div>
+        <p>
+            Persamaan ini memiliki akar di <span class="text-code-inline">x = 2</span> dan <span class="text-code-inline">x = -2</span>.
+            Tebakan awal: <span class="text-code-inline">x₀ = 1</span> dan <span class="text-code-inline">x₁ = 3</span>.
+        </p>
+        <table class="table">
+            <thead>
+                <tr><th>Iterasi (k)</th><th>x_{k-1}</th><th>x_k</th><th>x_{k+1}</th><th>f(x_{k+1})</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0 → 1</td>
+                    <td>1.0000</td>
+                    <td>3.0000</td>
+                    <td>2.0000</td>
+                    <td>0.0000</td>
+                </tr>
+                <tr>
+                    <td>1 → 2</td>
+                    <td>3.0000</td>
+                    <td>2.0000</td>
+                    <td>2.0000</td>
+                    <td>0.0000</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            Menakjubkan! Hanya dalam <span class="text-code-inline">satu iterasi</span>, metode Secant 
+            langsung menemukan solusi eksak <span class="text-code-inline">x = 2</span> karena fungsi 
+            yang dicari adalah kuadrat (kasus khusus).
+        </p>
+        <p>
+            Untuk fungsi non linear yang lebih kompleks, biasanya dibutuhkan lebih banyak iterasi.
+        </p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 8: KONVERGENSI & PERBANDINGAN METODE -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Laju Konvergensi</h3>
+        <p>
+            Metode Secant memiliki <span class="text-code-inline">laju konvergensi superlinear</span> 
+            dengan orde sekitar <span class="text-code-inline">φ ≈ 1.618</span> (rasio emas).
+        </p>
+        <div class="text-math">
+            |e_{k+1}| ≈ C · |e_k|^φ, \quad \text{dimana } φ = \frac{1+\sqrt{5}}{2} \approx 1.618
+        </div>
+        <p>
+            Artinya, metode Secant lebih cepat dari Fixed Point (linear) tetapi tidak secepat 
+            Newton-Raphson (kuadratik).
+        </p>
+
+        <h4>Perbandingan Tiga Metode</h4>
+        <table class="table">
+            <thead>
+                <tr><th>Aspek</th><th>Fixed Point</th><th>Secant</th><th>Newton-Raphson</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Laju konvergensi</td>
+                    <td>Linear (orde 1)</td>
+                    <td>Superlinear (orde ≈1.618)</td>
+                    <td>Kuadratik (orde 2)</td>
+                </tr>
+                <tr>
+                    <td>Perlu turunan</td>
+                    <td>Tidak</td>
+                    <td>Tidak</td>
+                    <td>Ya</td>
+                </tr>
+                <tr>
+                    <td>Jumlah tebakan awal</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Biaya per iterasi</td>
+                    <td>Rendah</td>
+                    <td>Rendah</td>
+                    <td>Tinggi (solusi sistem linear)</td>
+                </tr>
+                <tr>
+                    <td>Kecepatan konvergensi</td>
+                    <td>Lambat</td>
+                    <td>Sedang</td>
+                    <td>Sangat cepat</td>
+                </tr>
+                <tr>
+                    <td>Resiko divergensi</td>
+                    <td>Tinggi</td>
+                    <td>Sedang</td>
+                    <td>Rendah (jika tebakan dekat)</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-math">
+            "Secant adalah kompromi terbaik antara kecepatan Newton<br>
+            dan kesederhanaan Fixed Point — tanpa perlu turunan."
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 9: KESIMPULAN -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Poin Penting Metode Secant</h3>
+        <p>
+            Metode Secant adalah pilihan cerdas ketika turunan sulit atau mahal dihitung, 
+            tetapi kita tetap menginginkan konvergensi yang lebih cepat dari Fixed Point.
+        </p>
+        <p>
+            <strong>Ringkasan konsep kunci:</strong>
+        </p>
+        <p>
+            1. Rumus iterasi: <span class="text-code-inline">x_{k+1} = x_k - f(x_k)·(x_k - x_{k-1}) / (f(x_k) - f(x_{k-1}))</span><br>
+            2. Memerlukan <span class="text-code-inline">dua tebakan awal</span><br>
+            3. Laju konvergensi: <span class="text-code-inline">superlinear (orde ≈1.618)</span><br>
+            4. Kelebihan: <span class="text-code-inline">tanpa turunan, lebih cepat dari Fixed Point</span><br>
+            5. Kekurangan: <span class="text-code-inline">lebih lambat dari Newton-Raphson, butuh dua tebakan</span><br>
+            6. Ekstensi untuk SPNL: <span class="text-code-inline">Metode Broyden (Quasi-Newton)</span>
+        </p>
+        <p>
+            Metode Secant sering menjadi pilihan praktis dalam aplikasi rekayasa di mana 
+            turunan analitik tidak tersedia atau terlalu kompleks untuk dihitung. 
+            Untuk sistem dengan banyak variabel, metode Broyden (yang merupakan generalisasi Secant) 
+            menjadi alternatif populer selain Newton-Raphson.
+        </p>
+    </div>
+
+</div>

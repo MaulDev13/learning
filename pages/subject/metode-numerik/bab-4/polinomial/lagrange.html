@@ -1,185 +1,434 @@
 <div class="card-group">
 
-    <!-- PENGANTAR -->
+    <!-- ============================================ -->
+    <!-- CARD 1: PENGANTAR BENTUK LAGRANGE -->
+    <!-- ============================================ -->
     <div class="card card--soft">
-
-        <h3>Interpolasi Polinomial Lagrange</h3>
-
+        <h2>Interpolasi Polinomial - Bentuk Lagrange</h2>
         <p>
-            Interpolasi Lagrange adalah metode untuk membentuk polinomial
-            yang melalui seluruh titik data yang diberikan.
+            <span class="text-code-inline">Bentuk Lagrange</span> (Lagrange Interpolation) adalah metode 
+            untuk membangun polinomial interpolasi yang <span class="text-code-inline">mengekspresikan solusi 
+            secara langsung</span> sebagai kombinasi linear dari nilai fungsi pada titik-titik data.
         </p>
-
         <p>
-            Metode ini tidak memerlukan penyelesaian sistem persamaan,
-            melainkan menggunakan rumus langsung.
+            Ide utamanya adalah: daripada mencari koefisien polinomial, kita membangun 
+            <span class="text-code-inline">polinomial basis</span> yang bernilai 1 pada satu titik data 
+            dan 0 pada titik data lainnya.
         </p>
-
+        <div class="text-math">
+            P_n(x) = \sum_{i=0}^{n} y_i \cdot L_i(x)
+        </div>
         <p>
-            Cocok digunakan untuk jumlah data yang tidak terlalu banyak.
+            dengan <span class="text-code-inline">L_i(x)</span> adalah polinomial Lagrange basis 
+            yang memenuhi <span class="text-code-inline">L_i(x_j) = 1</span> jika <span class="text-code-inline">i = j</span> 
+            dan <span class="text-code-inline">0</span> jika <span class="text-code-inline">i \neq j</span>.
         </p>
-
     </div>
 
-    <!-- IDE DASAR -->
+    <!-- ============================================ -->
+    <!-- CARD 2: MENGAPA BENTUK LAGRANGE? -->
+    <!-- ============================================ -->
     <div class="card card--soft">
-
-        <h3>Ide Dasar</h3>
-
+        <h3>Mengapa Perlu Bentuk Lagrange?</h3>
         <p>
-            Diberikan titik data:
-            (x₀, y₀), (x₁, y₁), ..., (xₙ, yₙ)
+            Setiap bentuk interpolasi memiliki kelebihan masing-masing. Berikut perbandingan 
+            antara bentuk Lagrange, Newton, dan Standar:
         </p>
-
-        <p>
-            Kita membentuk polinomial P(x)
-            yang melewati semua titik tersebut.
-        </p>
-
-        <p>
-            Setiap titik memiliki fungsi basis tersendiri.
-        </p>
-
+        <table class="table">
+            <thead>
+                <tr><th>Aspek</th><th>Bentuk Standar</th><th>Bentuk Newton</th><th>Bentuk Lagrange</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Menambah titik data</span></td>
+                    <td>Perlu hitung ulang semua</span></td>
+                    <td>Tambah satu suku (O(n²))</span></td>
+                    <td>Perlu hitung ulang semua basis</span></td>
+                </tr>
+                <tr>
+                    <td>Evaluasi tunggal</span></td>
+                    <td>O(n) dengan Horner</span></td>
+                    <td>O(n) dengan nested</span></td>
+                    <td>O(n²) untuk hitung basis</span></td>
+                </tr>
+                <tr>
+                    <td>Eksplisit formula</span></td>
+                    <td>Ya, dalam koefisien</span></td>
+                    <td>Ya, dalam beda terbagi</span></td>
+                    <td>Ya, langsung dalam y_i</span></td>
+                </tr>
+                <tr>
+                    <td>Pembacaan hasil</span></td>
+                    <td>Perlu hitung koefisien</span></td>
+                    <td>Perlu hitung koefisien</span></td>
+                    <td>Langsung terlihat kontribusi tiap titik</span></td>
+                </tr>
+                <tr>
+                    <td>Komputasi ulang basis</span></td>
+                    <td>Tidak ada basis</span></td>
+                    <td>Tidak ada basis</span></td>
+                    <td>Setiap x baru perlu hitung ulang L_i(x)</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-math">
+            "Lagrange: Paling eksplisit secara matematis, tetapi paling mahal untuk evaluasi berulang."
+        </div>
     </div>
 
-    <!-- RUMUS -->
+    <!-- ============================================ -->
+    <!-- CARD 3: POLINOMIAL BASIS LAGRANGE -->
+    <!-- ============================================ -->
     <div class="card card--soft">
-
-        <h3>Rumus Lagrange</h3>
-
+        <h3>Polinomial Basis Lagrange</h3>
         <p>
-            Bentuk umum:
+            Polinomial basis Lagrange <span class="text-code-inline">L_i(x)</span> untuk titik 
+            <span class="text-code-inline">x_i</span> didefinisikan sebagai:
         </p>
-
+        <div class="text-math">
+            L_i(x) = \prod_{\substack{j=0 \\ j \neq i}}^{n} \frac{x - x_j}{x_i - x_j}
+        </div>
         <p>
-            P(x) = Σ (yᵢ · Lᵢ(x))
+            Dengan kata lain:
         </p>
-
+        <div class="text-math">
+            L_i(x) = \frac{(x - x_0)(x - x_1)...(x - x_{i-1})(x - x_{i+1})...(x - x_n)}{(x_i - x_0)(x_i - x_1)...(x_i - x_{i-1})(x_i - x_{i+1})...(x_i - x_n)}
+        </div>
         <p>
-            Dengan:
+            <span class="text-code-inline">Sifat-sifat L_i(x):</span>
         </p>
-
         <p>
-            Lᵢ(x) = Π ( (x - xⱼ) / (xᵢ - xⱼ) ), j ≠ i
+            • <span class="text-code-inline">L_i(x_i) = 1</span> (pembilang = penyebut)<br>
+            • <span class="text-code-inline">L_i(x_j) = 0</span> untuk <span class="text-code-inline">i \neq j</span> (pembilang memiliki faktor (x_j - x_j) = 0)<br>
+            • Derajat <span class="text-code-inline">L_i(x)</span> adalah <span class="text-code-inline">n</span>
         </p>
-
-        <p>
-            Lᵢ(x) disebut sebagai polinomial basis Lagrange.
-        </p>
-
     </div>
 
-    <!-- PENJELASAN -->
+    <!-- ============================================ -->
+    <!-- CARD 4: BENTUK UMUM INTERPOLASI LAGRANGE -->
+    <!-- ============================================ -->
     <div class="card card--soft">
-
-        <h3>Penjelasan Konsep</h3>
-
+        <h3>Bentuk Umum Interpolasi Lagrange</h3>
         <p>
-            Setiap Lᵢ(x) bernilai 1 pada x = xᵢ
-            dan 0 pada titik lainnya.
+            Untuk <span class="text-code-inline">n+1</span> titik data <span class="text-code-inline">(x₀, y₀), (x₁, y₁), ..., (xₙ, yₙ)</span>, 
+            polinomial interpolasi Lagrange derajat <span class="text-code-inline">n</span> adalah:
         </p>
-
+        <div class="text-math">
+            P_n(x) = \sum_{i=0}^{n} y_i \cdot L_i(x) = y_0 L_0(x) + y_1 L_1(x) + ... + y_n L_n(x)
+        </div>
         <p>
-            Hal ini memastikan bahwa polinomial
-            melewati semua titik data.
+            <span class="text-code-inline">Untuk n = 1 (linear):</span>
         </p>
-
+        <div class="text-math">
+            P_1(x) = y_0 \frac{x - x_1}{x_0 - x_1} + y_1 \frac{x - x_0}{x_1 - x_0}
+        </div>
+        <p>
+            <span class="text-code-inline">Untuk n = 2 (kuadrat):</span>
+        </p>
+        <div class="text-math">
+            P_2(x) = y_0 \frac{(x - x_1)(x - x_2)}{(x_0 - x_1)(x_0 - x_2)} + y_1 \frac{(x - x_0)(x - x_2)}{(x_1 - x_0)(x_1 - x_2)} + y_2 \frac{(x - x_0)(x - x_1)}{(x_2 - x_0)(x_2 - x_1)}
+        </div>
     </div>
 
-    <!-- LANGKAH -->
+    <!-- ============================================ -->
+    <!-- CARD 5: CONTOH LAGRANGE LINEAR -->
+    <!-- ============================================ -->
     <div class="card card--soft">
-
-        <h3>Langkah-langkah</h3>
-
+        <h3>Contoh: Interpolasi Lagrange Linear (n=1)</h3>
         <p>
-            1. Tentukan titik data<br>
-            2. Bentuk fungsi basis Lᵢ(x)<br>
-            3. Kalikan dengan nilai yᵢ<br>
-            4. Jumlahkan semua hasil<br>
-            5. Sederhanakan polinomial
+            Diberikan dua titik data: <span class="text-code-inline">(2, 5)</span> dan <span class="text-code-inline">(4, 9)</span>.
+            Hitung nilai pada <span class="text-code-inline">x = 3</span> dengan Lagrange.
         </p>
-
+        <p>
+            <strong>Langkah 1: Tentukan polinomial basis</strong>
+        </p>
+        <div class="text-math">
+            L_0(x) = \frac{x - x_1}{x_0 - x_1} = \frac{x - 4}{2 - 4} = \frac{x - 4}{-2} = -\frac{1}{2}(x - 4)
+        </div>
+        <div class="text-math">
+            L_1(x) = \frac{x - x_0}{x_1 - x_0} = \frac{x - 2}{4 - 2} = \frac{x - 2}{2}
+        </div>
+        <p>
+            <strong>Langkah 2: Bentuk polinomial interpolasi</strong>
+        </p>
+        <div class="text-math">
+            P_1(x) = y_0 L_0(x) + y_1 L_1(x) = 5 \cdot \left(-\frac{1}{2}(x - 4)\right) + 9 \cdot \left(\frac{x - 2}{2}\right)
+        </div>
+        <p>
+            <strong>Langkah 3: Evaluasi di x = 3</strong>
+        </p>
+        <div class="text-math">
+            P_1(3) = 5 \cdot \left(-\frac{1}{2}(-1)\right) + 9 \cdot \left(\frac{1}{2}\right) = 5 \cdot \left(\frac{1}{2}\right) + 9 \cdot \left(\frac{1}{2}\right) = \frac{5}{2} + \frac{9}{2} = \frac{14}{2} = 7
+        </div>
+        <p>
+            Hasil: <span class="text-code-inline">P(3) = 7</span> (sama dengan interpolasi linear biasa)
+        </p>
     </div>
 
-    <!-- CONTOH -->
+    <!-- ============================================ -->
+    <!-- CARD 6: CONTOH LAGRANGE KUADRAT -->
+    <!-- ============================================ -->
     <div class="card card--soft">
-
-        <h3>Contoh Perhitungan</h3>
-
+        <h3>Contoh: Interpolasi Lagrange Kuadrat (n=2)</h3>
         <p>
-            Diketahui titik:
+            Diberikan tiga titik data: <span class="text-code-inline">(1, 2), (2, 3), (4, 5)</span>.
+            Hitung nilai pada <span class="text-code-inline">x = 3</span>.
         </p>
-
         <p>
-            (1, 1), (2, 4), (3, 9)
+            <strong>Langkah 1: Hitung polinomial basis</strong>
         </p>
-
+        <div class="text-math">
+            L_0(x) = \frac{(x - x_1)(x - x_2)}{(x_0 - x_1)(x_0 - x_2)} = \frac{(x - 2)(x - 4)}{(1 - 2)(1 - 4)} = \frac{(x - 2)(x - 4)}{(-1)(-3)} = \frac{(x - 2)(x - 4)}{3}
+        </div>
+        <div class="text-math">
+            L_1(x) = \frac{(x - x_0)(x - x_2)}{(x_1 - x_0)(x_1 - x_2)} = \frac{(x - 1)(x - 4)}{(2 - 1)(2 - 4)} = \frac{(x - 1)(x - 4)}{(1)(-2)} = -\frac{(x - 1)(x - 4)}{2}
+        </div>
+        <div class="text-math">
+            L_2(x) = \frac{(x - x_0)(x - x_1)}{(x_2 - x_0)(x_2 - x_1)} = \frac{(x - 1)(x - 2)}{(4 - 1)(4 - 2)} = \frac{(x - 1)(x - 2)}{(3)(2)} = \frac{(x - 1)(x - 2)}{6}
+        </div>
         <p>
-            Akan dibentuk polinomial interpolasi.
+            <strong>Langkah 2: Evaluasi di x = 3</strong>
         </p>
-
+        <div class="text-math">
+            L_0(3) = \frac{(1)(-1)}{3} = -\frac{1}{3}
+        </div>
+        <div class="text-math">
+            L_1(3) = -\frac{(2)(-1)}{2} = -\frac{-2}{2} = 1
+        </div>
+        <div class="text-math">
+            L_2(3) = \frac{(2)(1)}{6} = \frac{2}{6} = \frac{1}{3}
+        </div>
+        <p>
+            <strong>Langkah 3: Hitung P(3)</strong>
+        </p>
+        <div class="text-math">
+            P(3) = y_0 L_0(3) + y_1 L_1(3) + y_2 L_2(3) = 2 \cdot \left(-\frac{1}{3}\right) + 3 \cdot 1 + 5 \cdot \frac{1}{3} = -\frac{2}{3} + 3 + \frac{5}{3} = 3 + \frac{3}{3} = 4
+        </div>
+        <p>
+            Hasil: <span class="text-code-inline">P(3) = 4</span>
+        </p>
     </div>
 
-    <!-- ILUSTRASI -->
+    <!-- ============================================ -->
+    <!-- CARD 7: APLIKASI DATA POPULASI -->
+    <!-- ============================================ -->
     <div class="card card--soft">
-
-        <h3>Ilustrasi Hasil</h3>
-
+        <h3>Contoh Aplikasi: Interpolasi Populasi</h3>
         <p>
-            Dari titik tersebut diperoleh:
+            Data populasi suatu kota pada tahun tertentu:
         </p>
-
+        <table class="table">
+            <thead>
+                <tr><th>Tahun (x)</th><th>Populasi (y) dalam ribu</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2000</span></td>
+                    <td>100</span></td>
+                </tr>
+                <tr>
+                    <td>2005</span></td>
+                    <td>120</span></td>
+                </tr>
+                <tr>
+                    <td>2010</span></td>
+                    <td>150</span></td>
+                </tr>
+            </tbody>
+        </table>
         <p>
-            P(x) = x²
+            Hitung perkiraan populasi tahun 2008 menggunakan interpolasi Lagrange.
         </p>
-
         <p>
-            Polinomial ini melalui semua titik yang diberikan.
+            <span class="text-code-inline">x₀=2000, y₀=100; x₁=2005, y₁=120; x₂=2010, y₂=150; x=2008</span>
         </p>
+        <div class="text-math">
+            L_0(2008) = \frac{(2008-2005)(2008-2010)}{(2000-2005)(2000-2010)} = \frac{(3)(-2)}{(-5)(-10)} = \frac{-6}{50} = -0.12
+        </div>
+        <div class="text-math">
+            L_1(2008) = \frac{(2008-2000)(2008-2010)}{(2005-2000)(2005-2010)} = \frac{(8)(-2)}{(5)(-5)} = \frac{-16}{-25} = 0.64
+        </div>
+        <div class="text-math">
+            L_2(2008) = \frac{(2008-2000)(2008-2005)}{(2010-2000)(2010-2005)} = \frac{(8)(3)}{(10)(5)} = \frac{24}{50} = 0.48
+        </div>
+        <div class="text-math">
+            P(2008) = 100(-0.12) + 120(0.64) + 150(0.48) = -12 + 76.8 + 72 = 136.8
+        </div>
+        <p>
+            Perkiraan populasi tahun 2008 adalah <span class="text-code-inline">136.800 jiwa</span> 
+            (sama dengan hasil metode Newton).
+        </p>
+        <div class="text-code">
+# Kode Python untuk verifikasi
+def lagrange_basis(x_data, i, x):
+    result = 1.0
+    for j in range(len(x_data)):
+        if j != i:
+            result *= (x - x_data[j]) / (x_data[i] - x_data[j])
+    return result
 
+def lagrange_interpolation(x_data, y_data, x):
+    total = 0.0
+    for i in range(len(x_data)):
+        total += y_data[i] * lagrange_basis(x_data, i, x)
+    return total
+
+x_data = [2000, 2005, 2010]
+y_data = [100, 120, 150]
+x = 2008
+print(lagrange_interpolation(x_data, y_data, x))  # Output: 136.8
+        </div>
     </div>
 
-    <!-- KELEBIHAN -->
+    <!-- ============================================ -->
+    <!-- CARD 8: ALGORITMA DAN PSEUDOCODE -->
+    <!-- ============================================ -->
     <div class="card card--soft">
-
-        <h3>Kelebihan</h3>
-
+        <h3>Algoritma Interpolasi Lagrange</h3>
         <p>
-            • Tidak perlu menyelesaikan sistem persamaan<br>
-            • Bentuk rumus langsung<br>
-            • Mudah dipahami secara konsep
+            Berikut prosedur sistematis untuk interpolasi Lagrange:
         </p>
-
+        <p>
+            <span class="text-code-inline">Langkah 1:</span> Tentukan titik-titik data <span class="text-code-inline">(x_i, y_i)</span> 
+            untuk <span class="text-code-inline">i = 0, 1, ..., n</span>
+        </p>
+        <p>
+            <span class="text-code-inline">Langkah 2:</span> Untuk setiap <span class="text-code-inline">i</span>, 
+            hitung polinomial basis <span class="text-code-inline">L_i(x)</span>
+        </p>
+        <p>
+            <span class="text-code-inline">Langkah 3:</span> Hitung <span class="text-code-inline">P(x) = Σ y_i · L_i(x)</span>
+        </p>
+        <div class="text-code">
+PROCEDURE LagrangeInterpolation(x_data, y_data, x)
+    INPUT:
+        x_data : array of x_i (i = 0..n)
+        y_data : array of y_i (i = 0..n)
+        x      : nilai yang akan diinterpolasi
+    OUTPUT:
+        y      : nilai interpolasi
+    
+    n ← length(x_data) - 1
+    total ← 0.0
+    
+    FOR i = 0 TO n DO
+        {Hitung L_i(x)}
+        Li ← 1.0
+        FOR j = 0 TO n DO
+            IF j ≠ i THEN
+                Li ← Li * (x - x_data[j]) / (x_data[i] - x_data[j])
+            END IF
+        END FOR
+        total ← total + y_data[i] * Li
+    END FOR
+    
+    RETURN total
+END PROCEDURE
+        </div>
+        <p>
+            <span class="text-code-inline">Kompleksitas waktu:</span> O(n²) untuk setiap evaluasi 
+            karena loop bersarang.
+        </p>
     </div>
 
-    <!-- KEKURANGAN -->
+    <!-- ============================================ -->
+    <!-- CARD 9: KELEBIHAN DAN KEKURANGAN -->
+    <!-- ============================================ -->
     <div class="card card--soft">
-
-        <h3>Kekurangan</h3>
-
-        <p>
-            • Perhitungan bisa panjang untuk banyak titik<br>
-            • Tidak efisien jika data sering berubah<br>
-            • Rentan terhadap error untuk derajat tinggi
-        </p>
-
+        <h3>Kelebihan dan Kekurangan Bentuk Lagrange</h3>
+        <table class="table">
+            <thead>
+                <tr><th>Aspek</th><th>Kelebihan</th><th>Kekurangan</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Kejelasan formula</span></td>
+                    <td>Rumus sangat eksplisit dan simetris</span></td>
+                    <td>Tidak efisien untuk n besar</span></td>
+                </tr>
+                <tr>
+                    <td>Penambahan titik</span></td>
+                    <td>Tidak perlu hitung ulang koefisien</span></td>
+                    <td>Perlu hitung ulang semua basis dari nol</span></td>
+                </tr>
+                <tr>
+                    <td>Evaluasi banyak x</span></td>
+                    <td>-</span></td>
+                    <td>Setiap x baru perlu O(n²) operasi</span></td>
+                </tr>
+                <tr>
+                    <td>Stabilitas numerik</span></td>
+                    <td>Cukup stabil untuk n moderat</span></td>
+                    <td>Untuk n besar, rawan error pembulatan</span></td>
+                </tr>
+                <tr>
+                    <td>Pemahaman konsep</span></td>
+                    <td>Sangat baik untuk demonstrasi konsep</span></td>
+                    <td>Kurang praktis untuk implementasi riil</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-math">
+            "Lagrange: Hebat untuk dipelajari, tetapi Newton lebih praktis untuk implementasi."
+        </div>
     </div>
 
-    <!-- KESIMPULAN -->
+    <!-- ============================================ -->
+    <!-- CARD 10: KESIMPULAN DAN PERBANDINGAN -->
+    <!-- ============================================ -->
     <div class="card card--soft">
-
-        <h3>Kesimpulan</h3>
-
+        <h3>Kesimpulan: Perbandingan Lagrange dengan Newton</h3>
         <p>
-            Interpolasi Lagrange adalah metode efektif
-            untuk membentuk polinomial dari data yang diketahui.
+            Baik bentuk Lagrange maupun Newton menghasilkan polinomial interpolasi yang <span class="text-code-inline">sama persis</span> 
+            untuk himpunan titik data yang diberikan. Perbedaannya terletak pada representasi dan efisiensi komputasi.
         </p>
-
+        <table class="table">
+            <thead>
+                <tr><th>Aspek</th><th>Lagrange</th><th>Newton</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bentuk polinomial</span></td>
+                    <td>Kombinasi linear y_i · L_i(x)</span></td>
+                    <td>Kombinasi linear beda terbagi · basis Newton</span></td>
+                </tr>
+                <tr>
+                    <td>Menambah titik data</span></td>
+                    <td>Perlu hitung ulang semua basis</span></td>
+                    <td>Tambah satu suku (lebih efisien)</span></td>
+                </tr>
+                <tr>
+                    <td>Evaluasi satu x</span></td>
+                    <td>O(n²)</span></td>
+                    <td>O(n) setelah koefisien diperoleh</span></td>
+                </tr>
+                <tr>
+                    <td>Evaluasi banyak x</span></td>
+                    <td>O(m·n²) untuk m titik</span></td>
+                    <td>O(n² + m·n) lebih efisien</span></td>
+                </tr>
+                <tr>
+                    <td>Pembacaan hasil</span></td>
+                    <td>Setiap y_i berkontribusi langsung</span></td>
+                    <td>Perlu interpretasi beda terbagi</span></td>
+                </tr>
+            </tbody>
+        </table>
         <p>
-            Metode ini sederhana, namun kurang efisien
-            untuk jumlah data yang besar.
+            <strong>Ringkasan poin penting:</strong>
         </p>
-
+        <p>
+            1. Polinomial Lagrange: <span class="text-code-inline">P_n(x) = \sum y_i · L_i(x)</span><br>
+            2. Basis Lagrange: <span class="text-code-inline">L_i(x) = \prod (x - x_j)/(x_i - x_j)</span> untuk j \neq i<br>
+            3. Sifat: <span class="text-code-inline">L_i(x_i) = 1</span> dan <span class="text-code-inline">L_i(x_j) = 0</span> untuk i \neq j<br>
+            4. Kelebihan: <span class="text-code-inline">simetris, eksplisit, mudah dipahami konsepnya</span><br>
+            5. Kekurangan: <span class="text-code-inline">kompleksitas O(n²) per evaluasi, tidak efisien untuk n besar</span><br>
+            6. Rekomendasi: <span class="text-code-inline">gunakan Newton untuk implementasi, Lagrange untuk pembelajaran</span>
+        </p>
+        <div class="text-math">
+            "Lagrange: Elegansi matematika. Newton: Efisiensi komputasi.<br>
+            Hasilnya sama, pilih sesuai kebutuhan."
+        </div>
     </div>
 
 </div>

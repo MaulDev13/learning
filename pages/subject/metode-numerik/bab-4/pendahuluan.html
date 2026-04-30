@@ -1,0 +1,320 @@
+<div class="card-group">
+
+    <!-- ============================================ -->
+    <!-- CARD 1: PENGANTAR & DEFINISI -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h2>Polinomial dalam Metode Numerik</h2>
+        <p>
+            <span class="text-code-inline">Polinomial</span> adalah bentuk fungsi matematika yang paling 
+            sederhana namun sangat powerful. Dalam metode numerik, polinomial memegang peranan sentral 
+            karena kemampuannya untuk mengaproksimasi fungsi kompleks, menginterpolasi data, 
+            dan menjadi dasar dari banyak algoritma numerik.
+        </p>
+        <p>
+            Secara formal, polinomial derajat <span class="text-code-inline">n</span> dalam variabel 
+            <span class="text-code-inline">x</span> didefinisikan sebagai:
+        </p>
+        <div class="text-math">
+            P_n(x) = a_n x^n + a_{n-1} x^{n-1} + ... + a_1 x + a_0
+        </div>
+        <p>
+            dengan <span class="text-code-inline">a_n ≠ 0</span> dan <span class="text-code-inline">a_i</span> 
+            adalah koefisien (bisa bilangan real atau kompleks).
+        </p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 2: MENGAPA POLINOMIAL PENTING? -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Mengapa Polinomial Penting dalam Metode Numerik?</h3>
+        <p>
+            Polinomial memiliki sifat-sifat istimewa yang membuatnya sangat berguna dalam komputasi numerik:
+        </p>
+        <p>
+            <span class="text-code-inline">1. Mudah dievaluasi</span><br>
+            Evaluasi polinomial cukup dengan operasi perkalian dan penjumlahan — sangat efisien di komputer.
+        </p>
+        <p>
+            <span class="text-code-inline">2. Mudah diturunkan dan diintegralkan</span><br>
+            Turunan dan integral polinomial juga berbentuk polinomial dengan derajat yang berkurang atau bertambah.
+        </p>
+        <p>
+            <span class="text-code-inline">3. Teorema Aproksimasi Weierstrass</span><br>
+            Setiap fungsi kontinu pada interval tertutup dapat didekati oleh polinomial dengan tingkat akurasi sebarang.
+        </p>
+        <p>
+            <span class="text-code-inline">4. Mudah dicari akarnya</span><br>
+            Meskipun tidak selalu trivial, polinomial memiliki algoritma numerik yang matang untuk pencarian akar.
+        </p>
+        <div class="text-math">
+            "Polinomial adalah 'bahasa universal' dalam komputasi numerik<br>
+            karena kesederhanaan dan fleksibilitasnya."
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 3: BENTUK-BENTUK POLINOMIAL -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Bentuk Representasi Polinomial</h3>
+        <p>
+            Dalam praktik numerik, polinomial dapat direpresentasikan dalam beberapa bentuk, 
+            masing-masing dengan kelebihan dan kekurangan:
+        </p>
+        <table class="table">
+            <thead>
+                <tr><th>Bentuk</th><th>Rumus</th><th>Kelebihan</th><th>Kekurangan</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bentuk Standar</td>
+                    <td>a_n x^n + ... + a₀</td>
+                    <td>Sederhana, mudah dipahami</td>
+                    <td>Sensitif terhadap perubahan koefisien</td>
+                </tr>
+                <tr>
+                    <td>Bentuk Newton (Beda Terbagi)</td>
+                    <td>a₀ + a₁(x-x₀) + a₂(x-x₀)(x-x₁) + ...</td>
+                    <td>Mudah menambah titik data</td>
+                    <td>Kurang intuitif</td>
+                </tr>
+                <tr>
+                    <td>Bentuk Lagrange</td>
+                    <td>Σ y_i · L_i(x)</td>
+                    <td>Eksplisit, cocok untuk interpolasi</td>
+                    <td>Mahal untuk evaluasi (O(n²))</td>
+                </tr>
+                <tr>
+                    <td>Bentuk Horner</td>
+                    <td>a₀ + x(a₁ + x(a₂ + ...))</td>
+                    <td>Efisien (O(n)), stabil</td>
+                    <td>Representasi tersembunyi</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-code">
+# Evaluasi polinomial bentuk Horner (paling efisien)
+# P(x) = a₀ + a₁·x + a₂·x² + ... + aₙ·xⁿ
+
+function horner(a, x):
+    result = a[n]
+    for i = n-1 down to 0:
+        result = result * x + a[i]
+    return result
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 4: DERAJAT DAN KOEFISIEN -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Derajat dan Koefisien Polinomial</h3>
+        <p>
+            <span class="text-code-inline">Derajat polinomial</span> adalah pangkat tertinggi dari variabel 
+            dengan koefisien tidak nol. Beberapa istilah penting:
+        </p>
+        <p>
+            <span class="text-code-inline">• Koefisien utama (leading coefficient)</span> — koefisien dari suku berpangkat tertinggi<br>
+            <span class="text-code-inline">• Suku konstan (constant term)</span> — koefisien dari x⁰ = a₀<br>
+            <span class="text-code-inline">• Polinomial monik (monic polynomial)</span> — koefisien utama = 1
+        </p>
+        <table class="table">
+            <thead>
+                <tr><th>Derajat</th><th>Nama</th><th>Contoh</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>0</td><td>Konstan</td><td>f(x) = 5</td></tr>
+                <tr><td>1</td><td>Linear</td><td>f(x) = 2x + 3</td></tr>
+                <tr><td>2</td><td>Kuadrat</td><td>f(x) = x² - 4x + 4</td></tr>
+                <tr><td>3</td><td>Kubik</td><td>f(x) = x³ - 6x² + 11x - 6</td></tr>
+                <tr><td>4</td><td>Kuartik</td><td>f(x) = x⁴ - 5x² + 4</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 5: AKAR-AKAR POLINOMIAL -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Akar-akar Polinomial</h3>
+        <p>
+            <span class="text-code-inline">Akar</span> atau <span class="text-code-inline">solusi</span> dari polinomial 
+            adalah nilai <span class="text-code-inline">x</span> yang memenuhi <span class="text-code-inline">P(x) = 0</span>. 
+            Teorema Dasar Aljabar menyatakan:
+        </p>
+        <div class="text-math">
+            "Setiap polinomial derajat n (dengan koefisien kompleks)<br>
+            memiliki tepat n akar (termasuk akar kompleks dan akar berulang)."
+        </div>
+        <p>
+            Beberapa fakta penting tentang akar polinomial:
+        </p>
+        <p>
+            <span class="text-code-inline">• Akar real vs kompleks</span> — polinomial dengan koefisien real memiliki akar kompleks yang berpasangan (konjugat).<br>
+            <span class="text-code-inline">• Akar berulang (multiple roots)</span> — terjadi ketika polinomial dan turunannya memiliki akar yang sama.<br>
+            <span class="text-code-inline">• Akar rasional</span> — jika koefisien bulat, akar rasional harus berbentuk p/q dengan p pembagi a₀ dan q pembagi aₙ.
+        </p>
+        <div class="text-math">
+            Contoh: x² + 1 = 0 → akar: x = i dan x = -i (kompleks)<br>
+            Contoh: (x-2)² = 0 → akar: x = 2 (akar ganda)
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 6: OPERASI DASAR POLINOMIAL -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Operasi Dasar Polinomial</h3>
+        <p>
+            Dalam implementasi numerik, operasi polinomial yang sering dilakukan meliputi:
+        </p>
+        <p>
+            <span class="text-code-inline">1. Penjumlahan dan Pengurangan</span><br>
+            Menjumlahkan koefisien dengan derajat yang sama. Kompleksitas O(n).
+        </p>
+        <p>
+            <span class="text-code-inline">2. Perkalian (Konvolusi)</span><br>
+            Hasil kali polinomial derajat m dan n menghasilkan polinomial derajat m+n. 
+            Kompleksitas O(mn) secara naif, atau O(n log n) dengan FFT.
+        </p>
+        <p>
+            <span class="text-code-inline">3. Pembagian</span><br>
+            Polinomial dapat dibagi menggunakan algoritma pembagian panjang atau sintetik.
+        </p>
+        <p>
+            <span class="text-code-inline">4. Turunan dan Integral</span><br>
+            Turunan: <span class="text-math-inline">P'(x) = Σ k·a_k·x^{k-1}</span><br>
+            Integral: <span class="text-math-inline">∫P(x) dx = Σ a_k·x^{k+1}/(k+1) + C</span>
+        </p>
+        <div class="text-code">
+# Pembagian polinomial (sintetik)
+# Membagi P(x) dengan (x - c)
+
+function synthetic_division(a, c):
+    n = length(a) - 1
+    b = array of size n
+    b[n-1] = a[n]
+    for i = n-1 down to 1:
+        b[i-1] = a[i] + c * b[i]
+    remainder = a[0] + c * b[0]
+    return b, remainder
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 7: MASALAH NUMERIK PADA POLINOMIAL -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Tantangan Numerik pada Polinomial</h3>
+        <p>
+            Meskipun polinomial sederhana secara matematis, komputasi numeriknya memiliki tantangan tersendiri:
+        </p>
+        <table class="table">
+            <thead>
+                <tr><th>Masalah</th><th>Penyebab</th><th>Solusi</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ketidakstabilan evaluasi</td>
+                    <td>Pembulatan pada polinomial derajat tinggi</td>
+                    <td>Gunakan bentuk Horner</td>
+                </tr>
+                <tr>
+                    <td>Kondisi buruk (ill-conditioned)</td>
+                    <td>Koefisien sangat kecil/besar</td>
+                    <td>Skalakan polinomial (normalisasi)</td>
+                </tr>
+                <tr>
+                    <td>Kehilangan akar presisi</td>
+                    <td>Akar sangat berdekatan</td>
+                    <td>Gunakan metode Bairstow atau Jenkins-Traub</td>
+                </tr>
+                <tr>
+                    <td>Akar kompleks</td>
+                    <td>Polinomial real dengan akar kompleks</td>
+                    <td>Gunakan metode Bairstow atau QR</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-math">
+            "Polinomial derajat tinggi sangat sensitif terhadap perubahan kecil pada koefisien.<br>
+            Ini dikenal sebagai fenomena 'Runge' atau 'ill-conditioning'."
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 8: APLIKASI POLINOMIAL DALAM METODE NUMERIK -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Aplikasi Polinomial dalam Metode Numerik</h3>
+        <p>
+            Polinomial digunakan secara luas dalam berbagai sub-bidang metode numerik:
+        </p>
+        <table class="table">
+            <thead>
+                <tr><th>Bidang</th><th>Aplikasi</th><th>Contoh Polinomial</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Interpolasi</td>
+                    <td>Mencari fungsi yang melewati titik data</td>
+                    <td>Polinomial Lagrange, Newton</td>
+                </tr>
+                <tr>
+                    <td>Aproksimasi fungsi</td>
+                    <td>Deret Taylor, Chebyshev, Legendre</td>
+                    <td>P(x) ≈ f(x)</td>
+                </tr>
+                <tr>
+                    <td>Integrasi numerik</td>
+                    <td>Aturan Simpson, Newton-Cotes</td>
+                    <td>Mengintegralkan polinomial interpolasi</td>
+                </tr>
+                <tr>
+                    <td>Diferensiasi numerik</td>
+                    <td>Turunan dari polinomial interpolasi</td>
+                    <td>P'(x) ≈ f'(x)</td>
+                </tr>
+                <tr>
+                    <td>Penyelesaian ODE</td>
+                    <td>Metode Adams-Bashforth, Runge-Kutta</td>
+                    <td>Polinomial prediksi/koreksi</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 9: KESIMPULAN -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Poin Penting Pendahuluan Polinomial</h3>
+        <p>
+            Polinomial adalah fondasi dari banyak algoritma dalam metode numerik karena 
+            kesederhanaan, fleksibilitas, dan sifat matematisnya yang baik.
+        </p>
+        <p>
+            <strong>Ringkasan konsep kunci:</strong>
+        </p>
+        <p>
+            1. Polinomial derajat n: <span class="text-code-inline">P_n(x) = a_n x^n + ... + a₀</span><br>
+            2. Kelebihan: <span class="text-code-inline">mudah dievaluasi, diturunkan, diintegralkan, dan diaproksimasi</span><br>
+            3. Representasi: standar, Newton, Lagrange, Horner (paling efisien)<br>
+            4. Teorema Dasar Aljabar: polinomial derajat n memiliki n akar<br>
+            5. Tantangan numerik: <span class="text-code-inline">ill-conditioning, kehilangan presisi, akar kompleks</span><br>
+            6. Aplikasi: <span class="text-code-inline">interpolasi, aproksimasi, integrasi, diferensiasi, ODE</span>
+        </p>
+        <p>
+            Pada subbab berikutnya, kita akan mempelajari secara mendalam tentang:
+        </p>
+        <p>
+            • <span class="text-code-inline">Interpolasi Polinomial</span> — Lagrange, Newton, dan spline<br>
+            • <span class="text-code-inline">Mencari Akar Polinomial</span> — metode Bairstow, Jenkins-Traub<br>
+            • <span class="text-code-inline">Aproksimasi dengan Polinomial</span> — least squares, Chebyshev<br>
+            • <span class="text-code-inline">Integrasi Numerik</span> — Newton-Cotes, Gauss quadrature
+        </p>
+    </div>
+
+</div>

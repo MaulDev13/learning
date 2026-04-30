@@ -3,9 +3,9 @@ import { BASE_PATH } from "./config.js";
 export function resolvePath(path) {
     if (!path) return "";
 
-    // kalau sudah absolute external
     if (path.startsWith("http")) return path;
 
-    // pastikan selalu pakai BASE_PATH
+    if (path.startsWith(BASE_PATH)) return path;
+
     return BASE_PATH + path;
 }

@@ -1,0 +1,403 @@
+<div class="card-group">
+
+    <!-- ============================================ -->
+    <!-- CARD 1: PENGANTAR & DEFINISI -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h2>Metode Broyden (Quasi-Newton)</h2>
+        <p>
+            <span class="text-code-inline">Metode Broyden</span> adalah generalisasi dari metode Secant 
+            untuk sistem persamaan non linear dengan banyak variabel. Metode ini termasuk dalam 
+            keluarga <span class="text-code-inline">Quasi-Newton</span> karena mengaproksimasi 
+            matriks Jacobian tanpa menghitung turunan parsial secara eksplisit.
+        </p>
+        <p>
+            Ide utamanya adalah membangun dan memperbarui aproksimasi Jacobian secara iteratif 
+            menggunakan informasi dari iterasi sebelumnya. Dengan cara ini, Broyden mempertahankan 
+            konvergensi superlinear seperti Secant, tetapi dapat diterapkan pada sistem multivariabel.
+        </p>
+        <div class="text-math">
+            Newton: X_{k+1} = X_k - J_k^{-1} · F(X_k)<br>
+            Broyden: X_{k+1} = X_k - B_k^{-1} · F(X_k)
+        </div>
+        <p>
+            di mana <span class="text-code-inline">B_k</span> adalah aproksimasi dari matriks Jacobian 
+            pada iterasi ke-<span class="text-code-inline">k</span>.
+        </p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 2: MOTIVASI DAN LATAR BELAKANG -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Mengapa Perlu Metode Broyden?</h3>
+        <p>
+            Metode Newton-Raphson untuk SPNL memang sangat cepat (konvergensi kuadratik), 
+            tetapi memiliki kelemahan signifikan:
+        </p>
+        <p>
+            <span class="text-code-inline">1. Perhitungan Jacobian mahal</span><br>
+            Untuk sistem dengan <span class="text-code-inline">n</span> variabel, matriks Jacobian berukuran 
+            <span class="text-code-inline">n × n</span> dan memerlukan <span class="text-code-inline">n²</span> 
+            turunan parsial. Setiap turunan bisa rumit jika fungsi kompleks.
+        </p>
+        <p>
+            <span class="text-code-inline">2. Solusi sistem linear mahal</span><br>
+            Setiap iterasi Newton memerlukan solusi sistem linear <span class="text-code-inline">J·ΔX = -F</span> 
+            dengan kompleksitas <span class="text-code-inline">O(n³)</span>.
+        </p>
+        <p>
+            <span class="text-code-inline">3. Turunan tidak selalu tersedia</span><br>
+            Dalam banyak aplikasi praktis, fungsi hanya diketahui sebagai "black box" 
+            tanpa rumus analitik untuk turunannya.
+        </p>
+        <p>
+            <span class="text-code-inline">Metode Broyden hadir sebagai solusi</span> — mempertahankan 
+            kecepatan Newton tanpa perlu menghitung Jacobian secara eksplisit.
+        </p>
+        <div class="text-math">
+            "Broyden: Newton tanpa turunan, Secant untuk sistem besar."
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 3: KONSEP DASAR QUASI-NEWTON -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Konsep Dasar Quasi-Newton</h3>
+        <p>
+            Ide fundamental Quasi-Newton adalah mempertahankan <span class="text-code-inline">secant condition</span> 
+            yang menghubungkan perubahan variabel dan perubahan fungsi:
+        </p>
+        <div class="text-math">
+            B_{k+1} · ΔX_k = ΔF_k
+        </div>
+        <p>
+            di mana:
+        </p>
+        <div class="text-math">
+            ΔX_k = X_{k+1} - X_k<br>
+            ΔF_k = F(X_{k+1}) - F(X_k)
+        </div>
+        <p>
+            Kondisi ini analog dengan rumus Secant untuk satu variabel:
+        </p>
+        <div class="text-math">
+            (f(x_{k+1}) - f(x_k)) ≈ f'(x_k) · (x_{k+1} - x_k)
+        </div>
+        <p>
+            Pada metode Broyden, kita memulai dengan tebakan awal matriks Jacobian 
+            (biasanya <span class="text-code-inline">B₀ = I</span> atau matriks identitas), 
+            kemudian memperbaruinya setiap iterasi agar memenuhi secant condition.
+        </p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 4: RUMUS UPDATE BROYDEN -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Rumus Update Broyden (Rank-1 Update)</h3>
+        <p>
+            Broyden mengusulkan <span class="text-code-inline">rank-1 update</span> untuk memperbarui 
+            aproksimasi Jacobian:
+        </p>
+        <div class="text-math">
+            B_{k+1} = B_k + \frac{(ΔF_k - B_k ΔX_k) ΔX_k^T}{ΔX_k^T ΔX_k}
+        </div>
+        <p>
+            Rumus ini memastikan bahwa <span class="text-code-inline">B_{k+1}</span> memenuhi secant condition 
+            dan merupakan modifikasi minimal dari <span class="text-code-inline">B_k</span>.
+        </p>
+        <p>
+            Untuk menghindari inversi matriks pada setiap iterasi, kita dapat memperbarui invers 
+            Jacobian secara langsung menggunakan <span class="text-code-inline">Sherman-Morrison formula</span>:
+        </p>
+        <div class="text-math">
+            B_{k+1}^{-1} = B_k^{-1} + \frac{(ΔX_k - B_k^{-1} ΔF_k) ΔX_k^T B_k^{-1}}{ΔX_k^T B_k^{-1} ΔF_k}
+        </div>
+        <p>
+            Dengan rumus ini, setiap iterasi hanya memerlukan operasi <span class="text-code-inline">O(n²)</span> 
+            dibandingkan <span class="text-code-inline">O(n³)</span> pada Newton-Raphson.
+        </p>
+        <div class="text-code">
+# Rank-1 update untuk aproksimasi Jacobian
+ΔX = X_new - X_old
+ΔF = F(X_new) - F(X_old)
+
+# Update B (aproksimasi Jacobian)
+B = B + (ΔF - B·ΔX) · ΔXᵀ / (ΔXᵀ·ΔX)
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 5: LANGKAH-LANGKAH ALGORITMA -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Langkah-langkah Metode Broyden</h3>
+        <p>
+            Berikut prosedur sistematis untuk menerapkan metode Broyden:
+        </p>
+        <p>
+            <span class="text-code-inline">Langkah 1: Tentukan Tebakan Awal</span><br>
+            Pilih <span class="text-code-inline">X₀</span> dan aproksimasi Jacobian awal 
+            <span class="text-code-inline">B₀</span> (biasanya matriks identitas).
+        </p>
+        <p>
+            <span class="text-code-inline">Langkah 2: Hitung F(Xₖ)</span><br>
+            Evaluasi fungsi pada titik <span class="text-code-inline">Xₖ</span>.
+        </p>
+        <p>
+            <span class="text-code-inline">Langkah 3: Selesaikan Sistem Linear</span><br>
+            Cari <span class="text-code-inline">ΔX</span> yang memenuhi <span class="text-code-inline">Bₖ·ΔX = -F(Xₖ)</span>.
+        </p>
+        <p>
+            <span class="text-code-inline">Langkah 4: Update Solusi</span><br>
+            <span class="text-code-inline">X_{k+1} = X_k + ΔX</span>
+        </p>
+        <p>
+            <span class="text-code-inline">Langkah 5: Update Aproksimasi Jacobian</span><br>
+            Hitung <span class="text-code-inline">ΔF = F(X_{k+1}) - F(X_k)</span> dan update <span class="text-code-inline">B</span> 
+            menggunakan rumus rank-1.
+        </p>
+        <p>
+            <span class="text-code-inline">Langkah 6: Cek Konvergensi</span><br>
+            Jika <span class="text-code-inline">||ΔX|| < ε</span> atau <span class="text-code-inline">||F(X_{k+1})|| < ε</span>, 
+            maka berhenti. Jika tidak, ulangi dari langkah 2.
+        </p>
+        <div class="text-code">
+# Algoritma Broyden (konsep sederhana)
+X = X₀
+B = I   (matriks identitas)
+
+for k = 1 to max_iter:
+    Fx = F(X)
+    selesaikan B · ΔX = -Fx
+    X_new = X + ΔX
+    
+    if |ΔX| < toleransi: stop
+    
+    ΔF = F(X_new) - Fx
+    B = B + (ΔF - B·ΔX) · ΔXᵀ / (ΔXᵀ·ΔX)
+    
+    X = X_new
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 6: PSEUDOCODE LENGKAP -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Pseudocode Metode Broyden</h3>
+        <div class="text-code">
+PROCEDURE Broyden(F, X0, tol, max_iter)
+    INPUT:
+        F       : fungsi sistem F(X)
+        X0      : vektor tebakan awal
+        tol     : toleransi error
+        max_iter: iterasi maksimum
+    
+    OUTPUT: X (solusi pendekatan)
+    
+    n ← length(X0)
+    X ← X0
+    B ← identity_matrix(n)     {aproksimasi Jacobian awal}
+    
+    FOR k = 1 TO max_iter DO
+        Fx ← F(X)
+        
+        {Selesaikan B·ΔX = -Fx}
+        ΔX ← SOLVE(B, -Fx)
+        
+        X_new ← X + ΔX
+        
+        error ← max(|ΔX|)
+        IF error < tol THEN
+            RETURN X_new
+        END IF
+        
+        {Update aproksimasi Jacobian}
+        ΔF ← F(X_new) - Fx
+        numerator ← (ΔF - B·ΔX) · (ΔXᵀ)
+        denominator ← ΔXᵀ · ΔX
+        
+        IF |denominator| > eps THEN
+            B ← B + numerator / denominator
+        END IF
+        
+        X ← X_new
+    END FOR
+    
+    RETURN X   {tidak konvergen dalam max_iter}
+END PROCEDURE
+        </div>
+        <p>
+            Perhatikan bahwa fungsi <span class="text-code-inline">SOLVE(B, -Fx)</span> menyelesaikan 
+            sistem linear. Kita dapat menggunakan eliminasi Gauss atau dekomposisi LU.
+        </p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 7: CONTOH KASUS SEDERHANA -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Contoh: Sistem 2 Variabel</h3>
+        <p>
+            Diberikan sistem persamaan non linear yang sama seperti pada contoh Newton:
+        </p>
+        <div class="math-system">
+            f₁(x,y) = x² + y² - 25 = 0<br>
+            f₂(x,y) = x·y - 12 = 0
+        </div>
+        <p>
+            Tebakan awal: <span class="text-code-inline">(x₀, y₀) = (5, 2)</span><br>
+            Aproksimasi Jacobian awal: <span class="text-code-inline">B₀ = I</span> (matriks identitas)
+        </p>
+        <table class="table">
+            <thead>
+                <tr><th>Iterasi (k)</th><th>x</th><th>y</th><th>f₁</th><th>f₂</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>5.0000</td>
+                    <td>2.0000</td>
+                    <td>4.0000</td>
+                    <td>-2.0000</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>3.5000</td>
+                    <td>3.5000</td>
+                    <td>-0.5000</td>
+                    <td>0.2500</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>3.0571</td>
+                    <td>3.9286</td>
+                    <td>-0.0694</td>
+                    <td>0.0110</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>2.9992</td>
+                    <td>3.9998</td>
+                    <td>-0.0003</td>
+                    <td>-0.0001</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>3.0000</td>
+                    <td>4.0000</td>
+                    <td>0.0000</td>
+                    <td>0.0000</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            Metode Broyden konvergen ke <span class="text-code-inline">(x, y) = (3, 4)</span> dalam 4 iterasi. 
+            Newton-Raphson memerlukan 3 iterasi — Broyden sedikit lebih lambat tetapi 
+            tidak memerlukan perhitungan Jacobian analitik.
+        </p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 8: KONVERGENSI & PERBANDINGAN METODE -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Laju Konvergensi Broyden</h3>
+        <p>
+            Metode Broyden memiliki <span class="text-code-inline">laju konvergensi superlinear</span>, 
+            mirip dengan metode Secant (orde ≈1.618). Meskipun tidak secepat Newton (kuadratik), 
+            Broyden jauh lebih efisien secara komputasi untuk sistem besar.
+        </p>
+
+        <h4>Perbandingan Empat Metode</h4>
+        <table class="table">
+            <thead>
+                <tr><th>Aspek</th><th>Fixed Point</th><th>Secant</th><th>Broyden</th><th>Newton</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Laju konvergensi</td>
+                    <td>Linear</td>
+                    <td>Superlinear</td>
+                    <td>Superlinear</td>
+                    <td>Kuadratik</td>
+                </tr>
+                <tr>
+                    <td>Perlu turunan</td>
+                    <td>Tidak</td>
+                    <td>Tidak</td>
+                    <td>Tidak</td>
+                    <td>Ya</td>
+                </tr>
+                <tr>
+                    <td>Untuk SPNL</td>
+                    <td>Ya</td>
+                    <td>Tidak langsung</td>
+                    <td>Ya</td>
+                    <td>Ya</td>
+                </tr>
+                <tr>
+                    <td>Kompleksitas per iterasi</td>
+                    <td>O(n)</td>
+                    <td>O(n)</td>
+                    <td>O(n²)</td>
+                    <td>O(n³)</td>
+                </tr>
+                <tr>
+                    <td>Kebutuhan memori</td>
+                    <td>Rendah</td>
+                    <td>Rendah</td>
+                    <td>Tinggi (n×n)</td>
+                    <td>Tinggi (n×n)</td>
+                </tr>
+                <tr>
+                    <td>Konvergensi untuk sistem besar</td>
+                    <td>Lambat</td>
+                    <td>Tidak applicable</td>
+                    <td>Cukup cepat</td>
+                    <td>Mahal</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-math">
+            "Broyden menawarkan keseimbangan optimal antara kecepatan dan biaya komputasi:<br>
+            hampir secepat Newton, tanpa perlu Jacobian analitik."
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 9: KESIMPULAN -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Poin Penting Metode Broyden</h3>
+        <p>
+            Metode Broyden adalah pilihan utama untuk menyelesaikan SPNL berukuran besar 
+            ketika turunan Jacobian tidak tersedia atau terlalu mahal untuk dihitung.
+        </p>
+        <p>
+            <strong>Ringkasan konsep kunci:</strong>
+        </p>
+        <p>
+            1. Broyden adalah <span class="text-code-inline">generalisasi Secant untuk sistem multivariabel</span><br>
+            2. Mengaproksimasi Jacobian dengan <span class="text-code-inline">rank-1 update</span> tanpa turunan<br>
+            3. Rumus update: <span class="text-code-inline">B_{k+1} = B_k + (ΔF - B_k ΔX) ΔXᵀ / (ΔXᵀ ΔX)</span><br>
+            4. Laju konvergensi: <span class="text-code-inline">superlinear (orde ≈1.618)</span><br>
+            5. Kelebihan: <span class="text-code-inline">lebih cepat dari Fixed Point, tanpa turunan, O(n²) per iterasi</span><br>
+            6. Kekurangan: <span class="text-code-inline">membutuhkan memori O(n²), konvergensi tidak secepat Newton</span><br>
+            7. Variasi lain: <span class="text-code-inline">Broyden's good method, Broyden's bad method, BFGS</span>
+        </p>
+        <div class="text-math">
+            "Untuk sistem dengan n besar dan Jacobian sulit dihitung,<br>
+            Broyden adalah pilihan paling praktis."
+        </div>
+        <p>
+            Metode Broyden telah menjadi standar dalam banyak library komputasi ilmiah 
+            (seperti SciPy's <span class="text-code-inline">scipy.optimize.root</span> dengan method='broyden1') 
+            karena keseimbangan antara kecepatan, efisiensi, dan kemudahan implementasi.
+        </p>
+    </div>
+
+</div>

@@ -1,202 +1,414 @@
 <div class="card-group">
 
-    <!-- PENGANTAR -->
+    <!-- ============================================ -->
+    <!-- CARD 1: PENGANTAR BENTUK NEWTON -->
+    <!-- ============================================ -->
     <div class="card card--soft">
-
-        <h3>Interpolasi Polinomial Newton</h3>
-
+        <h2>Interpolasi Polinomial - Bentuk Newton</h2>
         <p>
-            Interpolasi Newton adalah metode untuk membentuk polinomial
-            interpolasi menggunakan konsep selisih terbagi (divided differences).
+            <span class="text-code-inline">Bentuk Newton</span> (Newton's Divided Difference Interpolation) 
+            adalah metode untuk membangun polinomial interpolasi yang efisien ketika 
+            <span class="text-code-inline">menambah titik data baru</span>. Berbeda dengan bentuk standar 
+            yang harus menghitung ulang semua koefisien dari awal, bentuk Newton memungkinkan 
+            kita menambahkan titik baru tanpa mengganggu perhitungan sebelumnya.
         </p>
-
         <p>
-            Metode ini lebih efisien dibanding Lagrange,
-            terutama jika ada penambahan titik data baru.
+            Ide utamanya adalah merepresentasikan polinomial interpolasi dalam bentuk:
         </p>
-
+        <div class="text-math">
+            P_n(x) = a₀ + a₁(x - x₀) + a₂(x - x₀)(x - x₁) + ... + a_n(x - x₀)(x - x₁)...(x - x_{n-1})
+        </div>
         <p>
-            Polinomial dibangun secara bertahap (incremental).
+            Koefisien <span class="text-code-inline">aₖ</span> dihitung menggunakan <span class="text-code-inline">beda terbagi (divided difference)</span> 
+            dari titik-titik data yang diketahui.
         </p>
-
     </div>
 
-    <!-- IDE DASAR -->
+    <!-- ============================================ -->
+    <!-- CARD 2: MENGAPA BENTUK NEWTON? -->
+    <!-- ============================================ -->
     <div class="card card--soft">
-
-        <h3>Ide Dasar</h3>
-
+        <h3>Mengapa Perlu Bentuk Newton?</h3>
         <p>
-            Diberikan titik data:
-            (x₀, y₀), (x₁, y₁), ..., (xₙ, yₙ)
+            Dalam praktik interpolasi, kita sering tidak tahu berapa banyak titik data yang akan digunakan.
+            Bisa jadi kita memulai dengan 3 titik, kemudian mendapatkan data ke-4, ke-5, dan seterusnya.
         </p>
-
-        <p>
-            Polinomial dibentuk dalam bentuk bertingkat
-            menggunakan selisih terbagi.
-        </p>
-
-        <p>
-            Setiap penambahan titik akan menambah suku baru pada polinomial.
-        </p>
-
+        <table class="table">
+            <thead>
+                <tr><th>Aspek</th><th>Bentuk Standar</th><th>Bentuk Newton</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Menambah titik data</span></td>
+                    <td>Menghitung ulang semua koefisien (O(n³))</span></td>
+                    <td>Hanya tambah satu suku (O(n²))</span></td>
+                </tr>
+                <tr>
+                    <td>Evaluasi polinomial</span></td>
+                    <td>Metode Horner (O(n))</span></td>
+                    <td>Metode nested (O(n))</span></td>
+                </tr>
+                <tr>
+                    <td>Stabilitas numerik</span></td>
+                    <td>Kurang stabil untuk derajat tinggi</span></td>
+                    <td>Lebih stabil</span></td>
+                </tr>
+                <tr>
+                    Penentuan koefisien</span></td>
+                    <td>Selesaikan sistem linear</span></td>
+                    <td>Beda terbagi (rekursif)</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-math">
+            "Newton: Tambah titik baru, tambah suku baru. Tidak perlu hitung ulang dari nol."
+        </div>
     </div>
 
-    <!-- RUMUS -->
+    <!-- ============================================ -->
+    <!-- CARD 3: BENTUK UMUM POLINOMIAL NEWTON -->
+    <!-- ============================================ -->
     <div class="card card--soft">
-
-        <h3>Bentuk Polinomial Newton</h3>
-
+        <h3>Bentuk Umum Polinomial Newton</h3>
         <p>
-            Bentuk umum:
+            Polinomial interpolasi Newton derajat <span class="text-code-inline">n</span> ditulis sebagai:
         </p>
-
+        <div class="text-math">
+            P_n(x) = f[x₀] + f[x₀,x₁](x - x₀) + f[x₀,x₁,x₂](x - x₀)(x - x₁) + ... 
+            </div>
+            <div class="text-math">
+            ... + f[x₀,x₁,...,x_n](x - x₀)(x - x₁)...(x - x_{n-1})
+        </div>
         <p>
-            P(x) = a₀ 
-                 + a₁(x - x₀) 
-                 + a₂(x - x₀)(x - x₁) 
-                 + ... 
-                 + aₙ(x - x₀)...(x - xₙ₋₁)
+            dengan notasi <span class="text-code-inline">f[x₀, x₁, ..., x_k]</span> adalah 
+            <span class="text-code-inline">beda terbagi (divided difference)</span> ke-<span class="text-code-inline">k</span>.
         </p>
-
         <p>
-            Koefisien a diperoleh dari selisih terbagi.
+            Untuk kasus 3 titik data <span class="text-code-inline">(x₀, y₀), (x₁, y₁), (x₂, y₂)</span>:
         </p>
-
+        <div class="text-math">
+            P₂(x) = f[x₀] + f[x₀,x₁](x - x₀) + f[x₀,x₁,x₂](x - x₀)(x - x₁)
+        </div>
+        <p>
+            Jika ditambah titik ke-4 <span class="text-code-inline">(x₃, y₃)</span>, cukup tambah satu suku baru:
+        </p>
+        <div class="text-math">
+            P₃(x) = P₂(x) + f[x₀,x₁,x₂,x₃](x - x₀)(x - x₁)(x - x₂)
+        </div>
     </div>
 
-    <!-- SELISIH TERBAGI -->
+    <!-- ============================================ -->
+    <!-- CARD 4: BEDA TERBAGI (DIVIDED DIFFERENCE) -->
+    <!-- ============================================ -->
     <div class="card card--soft">
-
-        <h3>Selisih Terbagi</h3>
-
+        <h3>Beda Terbagi (Divided Difference)</h3>
         <p>
-            Selisih terbagi dihitung sebagai:
+            <span class="text-code-inline">Beda terbagi</span> adalah alat untuk menghitung koefisien 
+            polinomial Newton secara rekursif.
         </p>
-
         <p>
-            f[xᵢ, xⱼ] = (f(xⱼ) - f(xᵢ)) / (xⱼ - xᵢ)
+            <span class="text-code-inline">Definisi rekursif:</span>
         </p>
-
+        <div class="text-math">
+            f[x_i] = y_i \quad \text{(beda terbagi orde 0)}
+        </div>
+        <div class="text-math">
+            f[x_i, x_{i+1}] = \frac{f[x_{i+1}] - f[x_i]}{x_{i+1} - x_i} \quad \text{(orde 1)}
+        </div>
+        <div class="text-math">
+            f[x_i, x_{i+1}, x_{i+2}] = \frac{f[x_{i+1}, x_{i+2}] - f[x_i, x_{i+1}]}{x_{i+2} - x_i} \quad \text{(orde 2)}
+        </div>
         <p>
-            Untuk orde lebih tinggi, digunakan rekursi
-            dari hasil sebelumnya.
+            Secara umum, beda terbagi orde <span class="text-code-inline">k</span>:
         </p>
-
+        <div class="text-math">
+            f[x_i, x_{i+1}, ..., x_{i+k}] = \frac{f[x_{i+1}, ..., x_{i+k}] - f[x_i, ..., x_{i+k-1}]}{x_{i+k} - x_i}
+        </div>
     </div>
 
-    <!-- TABEL -->
+    <!-- ============================================ -->
+    <!-- CARD 5: TABEL BEDA TERBAGI -->
+    <!-- ============================================ -->
     <div class="card card--soft">
-
-        <h3>Tabel Selisih Terbagi</h3>
-
+        <h3>Tabel Beda Terbagi</h3>
         <p>
-            Biasanya perhitungan dilakukan menggunakan tabel
-            untuk mempermudah proses.
+            Perhitungan beda terbagi disusun dalam bentuk tabel untuk memudahkan:
         </p>
-
+        <table class="table">
+            <thead>
+                <tr><th>x</th><th>f[x] (orde 0)</th><th>f[ , ] (orde 1)</th><th>f[ , , ] (orde 2)</th><th>f[ , , , ] (orde 3)</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>x₀</span></td>
+                    <td>f[x₀] = y₀</span></td>
+                    <td>f[x₀,x₁] = (y₁ - y₀)/(x₁ - x₀)</span></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>x₁</span></td>
+                    <td>f[x₁] = y₁</span></td>
+                    <td>f[x₁,x₂] = (y₂ - y₁)/(x₂ - x₁)</span></td>
+                    <td>f[x₀,x₁,x₂] = (f[x₁,x₂] - f[x₀,x₁])/(x₂ - x₀)</span></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>x₂</span></td>
+                    <td>f[x₂] = y₂</span></td>
+                    <td>f[x₂,x₃] = (y₃ - y₂)/(x₃ - x₂)</span></td>
+                    <td>f[x₁,x₂,x₃] = (f[x₂,x₃] - f[x₁,x₂])/(x₃ - x₁)</span></td>
+                    <td>f[x₀,x₁,x₂,x₃] = (f[x₁,x₂,x₃] - f[x₀,x₁,x₂])/(x₃ - x₀)</span></td>
+                </tr>
+                <tr>
+                    <td>x₃</span></td>
+                    <td>f[x₃] = y₃</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
         <p>
-            Setiap kolom menunjukkan selisih terbagi
-            dengan orde yang berbeda.
+            Koefisien polinomial Newton adalah entri pada <span class="text-code-inline">baris pertama setiap kolom</span>:
+            <span class="text-code-inline">f[x₀], f[x₀,x₁], f[x₀,x₁,x₂], ...</span>
         </p>
-
     </div>
 
-    <!-- LANGKAH -->
+    <!-- ============================================ -->
+    <!-- CARD 6: CONTOH PERHITUNGAN BEDA TERBAGI -->
+    <!-- ============================================ -->
     <div class="card card--soft">
-
-        <h3>Langkah-langkah</h3>
-
+        <h3>Contoh: Perhitungan Beda Terbagi</h3>
         <p>
-            1. Susun titik data dalam tabel<br>
-            2. Hitung selisih terbagi<br>
-            3. Ambil koefisien dari tabel<br>
-            4. Bentuk polinomial Newton<br>
-            5. Gunakan untuk interpolasi
+            Diberikan titik data: <span class="text-code-inline">(1, 2), (2, 3), (4, 5), (5, 6)</span>
         </p>
+        <p>
+            <strong>Buat tabel beda terbagi:</strong>
+        </p>
+        <div class="text-code">
+x₀=1, y₀=2
+x₁=2, y₁=3
+x₂=4, y₂=5
+x₃=5, y₃=6
 
+Orde 0: f[x₀]=2, f[x₁]=3, f[x₂]=5, f[x₃]=6
+
+Orde 1:
+f[x₀,x₁] = (3-2)/(2-1) = 1/1 = 1
+f[x₁,x₂] = (5-3)/(4-2) = 2/2 = 1
+f[x₂,x₃] = (6-5)/(5-4) = 1/1 = 1
+
+Orde 2:
+f[x₀,x₁,x₂] = (1 - 1)/(4-1) = 0/3 = 0
+f[x₁,x₂,x₃] = (1 - 1)/(5-2) = 0/3 = 0
+
+Orde 3:
+f[x₀,x₁,x₂,x₃] = (0 - 0)/(5-1) = 0/4 = 0
+        </div>
+        <p>
+            <strong>Koefisien Newton:</strong> a₀ = 2, a₁ = 1, a₂ = 0, a₃ = 0
+        </p>
+        <p>
+            <strong>Polinomial Newton:</strong>
+        </p>
+        <div class="text-math">
+            P₃(x) = 2 + 1·(x-1) + 0·(x-1)(x-2) + 0·(x-1)(x-2)(x-4) = x + 1
+        </div>
+        <p>
+            Ternyata polinomialnya adalah garis lurus <span class="text-code-inline">y = x + 1</span> 
+            karena titik-titik data memang terletak pada garis tersebut.
+        </p>
     </div>
 
-    <!-- CONTOH -->
+    <!-- ============================================ -->
+    <!-- CARD 7: CONTOH INTERPOLASI NEWTON -->
+    <!-- ============================================ -->
     <div class="card card--soft">
-
-        <h3>Contoh Sederhana</h3>
-
+        <h3>Contoh Aplikasi Interpolasi Newton</h3>
         <p>
-            Diketahui:
+            Diketahui data populasi suatu kota:
         </p>
-
+        <table class="table">
+            <thead>
+                <tr><th>Tahun (x)</th><th>Populasi (y) dalam ribu</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>2000</span></td>
+                    <td>100</span></td>
+                </tr>
+                <tr>
+                    <td>2005</span></td>
+                    <td>120</span></td>
+                </tr>
+                <tr>
+                    <td>2010</span></td>
+                    <td>150</span></td>
+                </tr>
+            </tbody>
+        </table>
         <p>
-            (1, 1), (2, 4), (3, 9)
+            Hitung polinomial interpolasi Newton dan perkirakan populasi tahun 2008.
         </p>
-
         <p>
-            Akan dibentuk polinomial interpolasi.
+            <strong>Langkah 1: Hitung beda terbagi</strong>
         </p>
+        <div class="text-code">
+x₀=2000, y₀=100
+x₁=2005, y₁=120
+x₂=2010, y₂=150
 
+Orde 1:
+f[x₀,x₁] = (120-100)/(2005-2000) = 20/5 = 4
+f[x₁,x₂] = (150-120)/(2010-2005) = 30/5 = 6
+
+Orde 2:
+f[x₀,x₁,x₂] = (6 - 4)/(2010-2000) = 2/10 = 0.2
+        </div>
+        <p>
+            <strong>Langkah 2: Polinomial Newton</strong>
+        </p>
+        <div class="text-math">
+            P₂(x) = 100 + 4·(x - 2000) + 0.2·(x - 2000)(x - 2005)
+        </div>
+        <p>
+            <strong>Langkah 3: Evaluasi untuk x = 2008</strong>
+        </p>
+        <div class="text-math">
+            P₂(2008) = 100 + 4·(8) + 0.2·(8)(3)<br>
+            = 100 + 32 + 0.2·24<br>
+            = 100 + 32 + 4.8 = 136.8
+        </div>
+        <p>
+            Perkiraan populasi tahun 2008 adalah <span class="text-code-inline">136.800 jiwa</span>.
+        </p>
     </div>
 
-    <!-- HASIL -->
+    <!-- ============================================ -->
+    <!-- CARD 8: ALGORITMA DAN PSEUDOCODE -->
+    <!-- ============================================ -->
     <div class="card card--soft">
-
-        <h3>Hasil Polinomial</h3>
-
+        <h3>Algoritma Interpolasi Newton</h3>
         <p>
-            Dari perhitungan diperoleh:
+            Berikut prosedur sistematis untuk interpolasi Newton:
         </p>
-
         <p>
-            P(x) = x²
+            <span class="text-code-inline">Langkah 1: Hitung tabel beda terbagi</span><br>
+            Buat matriks beda terbagi berukuran n×n.
         </p>
-
         <p>
-            Hasil ini sama dengan metode Lagrange,
-            tetapi diperoleh dengan cara berbeda.
+            <span class="text-code-inline">Langkah 2: Ambil koefisien</span><br>
+            Koefisien Newton adalah entri diagonal atas (baris pertama setiap kolom).
         </p>
-
+        <p>
+            <span class="text-code-inline">Langkah 3: Evaluasi polinomial</span><br>
+            Gunakan metode nested (Horner) untuk mengevaluasi.
+        </p>
+        <div class="text-code">
+PROCEDURE NewtonInterpolation(x_data, y_data, x)
+    INPUT:
+        x_data : array of x_i (i = 0..n)
+        y_data : array of y_i (i = 0..n)
+        x      : nilai yang akan diinterpolasi
+    OUTPUT:
+        y      : nilai interpolasi
+    
+    n ← length(x_data) - 1
+    {Tabel beda terbagi}
+    f ← matrix(n+1, n+1)
+    
+    FOR i = 0 TO n DO
+        f[i][0] ← y_data[i]
+    END FOR
+    
+    FOR j = 1 TO n DO
+        FOR i = 0 TO n - j DO
+            f[i][j] ← (f[i+1][j-1] - f[i][j-1]) / (x_data[i+j] - x_data[i])
+        END FOR
+    END FOR
+    
+    {Evaluasi polinomial Newton (metode nested)}
+    y ← f[0][n]
+    FOR i = n-1 DOWN TO 0 DO
+        y ← f[0][i] + (x - x_data[i]) * y
+    END FOR
+    
+    RETURN y
+END PROCEDURE
+        </div>
     </div>
 
-    <!-- KELEBIHAN -->
+    <!-- ============================================ -->
+    <!-- CARD 9: KELEBIHAN DAN KEKURANGAN -->
+    <!-- ============================================ -->
     <div class="card card--soft">
-
-        <h3>Kelebihan</h3>
-
-        <p>
-            • Lebih efisien untuk data bertambah<br>
-            • Perhitungan dapat digunakan ulang<br>
-            • Struktur bertahap (incremental)
-        </p>
-
+        <h3>Kelebihan dan Kekurangan Bentuk Newton</h3>
+        <table class="table">
+            <thead>
+                <tr><th>Aspek</th><th>Kelebihan</th><th>Kekurangan</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Penambahan titik data</span></td>
+                    <td>Tidak perlu menghitung ulang koefisien lama</span></td>
+                    <td>Perlu menghitung beda terbagi untuk titik baru</span></td>
+                </tr>
+                <tr>
+                    <td>Efisiensi komputasi</span></td>
+                    <td>O(n²) untuk koefisien, O(n) untuk evaluasi</span></td>
+                    <td>Lebih lambat dari bentuk Lagrange untuk evaluasi tunggal</span></td>
+                </tr>
+                <tr>
+                    <td>Stabilitas numerik</span></td>
+                    <td>Lebih stabil dari bentuk standar</span></td>
+                    <td>Masih bisa bermasalah untuk derajat sangat tinggi</span></td>
+                </tr>
+                <tr>
+                    <td>Fleksibilitas</span></td>
+                    <td>Titik data tidak perlu berjarak sama</span></td>
+                    <td>Perhitungan beda terbagi rawan error pembulatan</span></td>
+                </tr>
+                <tr>
+                    <td>Edukasi</span></td>
+                    <td>Membantu memahami konsep interpolasi secara rekursif</span></td>
+                    <td>Konsep beda terbagi memerlukan pemahaman ekstra</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-math">
+            "Newton: Investasi awal (tabel beda terbagi) untuk efisiensi jangka panjang<br>
+            saat menambah titik data baru."
+        </div>
     </div>
 
-    <!-- KEKURANGAN -->
+    <!-- ============================================ -->
+    <!-- CARD 10: KESIMPULAN -->
+    <!-- ============================================ -->
     <div class="card card--soft">
-
-        <h3>Kekurangan</h3>
-
+        <h3>Kesimpulan Interpolasi Bentuk Newton</h3>
         <p>
-            • Perlu tabel perhitungan<br>
-            • Lebih kompleks dibanding linear<br>
-            • Rentan error untuk derajat tinggi
+            Bentuk Newton adalah representasi polinomial interpolasi yang sangat berguna ketika 
+            kita perlu menambah titik data secara bertahap.
         </p>
-
-    </div>
-
-    <!-- KESIMPULAN -->
-    <div class="card card--soft">
-
-        <h3>Kesimpulan</h3>
-
         <p>
-            Interpolasi Newton adalah metode yang efisien
-            untuk membentuk polinomial interpolasi.
+            <strong>Ringkasan poin penting:</strong>
         </p>
-
         <p>
-            Metode ini sangat berguna jika data sering diperbarui
-            karena tidak perlu menghitung ulang seluruh polinomial.
+            1. Polinomial Newton: <span class="text-code-inline">P_n(x) = a₀ + a₁(x-x₀) + a₂(x-x₀)(x-x₁) + ...</span><br>
+            2. Koefisien <span class="text-code-inline">aₖ = f[x₀, x₁, ..., x_k]</span> (beda terbagi orde k)<br>
+            3. Beda terbagi dihitung rekursif: <span class="text-code-inline">f[x_i,...,x_{i+k}] = (f[x_{i+1},...,x_{i+k}] - f[x_i,...,x_{i+k-1}])/(x_{i+k} - x_i)</span><br>
+            4. Kelebihan: <span class="text-code-inline">menambah titik data tanpa hitung ulang, efisien</span><br>
+            5. Kekurangan: <span class="text-code-inline">perlu tabel beda terbagi, rawan error pembulatan</span><br>
+            6. Aplikasi: <span class="text-code-inline">interpolasi data bertahap, basis untuk metode numerik lain</span>
         </p>
-
+        <p>
+            Bentuk Newton menjadi fondasi penting sebelum mempelajari:
+        </p>
+        <p>
+            • <span class="text-code-inline">Interpolasi Lagrange</span> (bentuk eksplisit untuk evaluasi tunggal)<br>
+            • <span class="text-code-inline">Interpolasi Hermite</span> (memasukkan turunan)<br>
+            • <span class="text-code-inline">Spline</span> (intervolasian mulus untuk banyak titik)
+        </p>
     </div>
 
 </div>

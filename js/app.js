@@ -24,8 +24,8 @@ document.body.addEventListener("htmx:configRequest", (event) => {
         return;
     }
 
-    // static routing
-    if (!path.startsWith("http")) {
+    // static routing (aman dari double prefix)
+    if (!path.startsWith("http") && !path.startsWith(BASE_PATH)) {
         event.detail.path = BASE_PATH + path;
     }
 });
