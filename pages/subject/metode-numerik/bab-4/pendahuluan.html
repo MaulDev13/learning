@@ -1,320 +1,346 @@
 <div class="card-group">
 
     <!-- ============================================ -->
-    <!-- CARD 1: PENGANTAR & DEFINISI -->
+    <!-- CARD 1: APA ITU INTERPOLASI? (PENJELASAN SEDERHANA) -->
     <!-- ============================================ -->
     <div class="card card--soft">
-        <h2>Polinomial dalam Metode Numerik</h2>
+        <h2>Apa Itu Interpolasi?</h2>
         <p>
-            <span class="text-code-inline">Polinomial</span> adalah bentuk fungsi matematika yang paling 
-            sederhana namun sangat powerful. Dalam metode numerik, polinomial memegang peranan sentral 
-            karena kemampuannya untuk mengaproksimasi fungsi kompleks, menginterpolasi data, 
-            dan menjadi dasar dari banyak algoritma numerik.
+            <span class="text-code-inline">Interpolasi</span> adalah teknik untuk <strong>menebak nilai di antara titik-titik data yang sudah diketahui</strong>.
         </p>
         <p>
-            Secara formal, polinomial derajat <span class="text-code-inline">n</span> dalam variabel 
-            <span class="text-code-inline">x</span> didefinisikan sebagai:
-        </p>
-        <div class="text-math">
-            P_n(x) = a_n x^n + a_{n-1} x^{n-1} + ... + a_1 x + a_0
-        </div>
-        <p>
-            dengan <span class="text-code-inline">a_n ≠ 0</span> dan <span class="text-code-inline">a_i</span> 
-            adalah koefisien (bisa bilangan real atau kompleks).
-        </p>
-    </div>
-
-    <!-- ============================================ -->
-    <!-- CARD 2: MENGAPA POLINOMIAL PENTING? -->
-    <!-- ============================================ -->
-    <div class="card card--soft">
-        <h3>Mengapa Polinomial Penting dalam Metode Numerik?</h3>
-        <p>
-            Polinomial memiliki sifat-sifat istimewa yang membuatnya sangat berguna dalam komputasi numerik:
-        </p>
-        <p>
-            <span class="text-code-inline">1. Mudah dievaluasi</span><br>
-            Evaluasi polinomial cukup dengan operasi perkalian dan penjumlahan — sangat efisien di komputer.
-        </p>
-        <p>
-            <span class="text-code-inline">2. Mudah diturunkan dan diintegralkan</span><br>
-            Turunan dan integral polinomial juga berbentuk polinomial dengan derajat yang berkurang atau bertambah.
-        </p>
-        <p>
-            <span class="text-code-inline">3. Teorema Aproksimasi Weierstrass</span><br>
-            Setiap fungsi kontinu pada interval tertutup dapat didekati oleh polinomial dengan tingkat akurasi sebarang.
-        </p>
-        <p>
-            <span class="text-code-inline">4. Mudah dicari akarnya</span><br>
-            Meskipun tidak selalu trivial, polinomial memiliki algoritma numerik yang matang untuk pencarian akar.
-        </p>
-        <div class="text-math">
-            "Polinomial adalah 'bahasa universal' dalam komputasi numerik<br>
-            karena kesederhanaan dan fleksibilitasnya."
-        </div>
-    </div>
-
-    <!-- ============================================ -->
-    <!-- CARD 3: BENTUK-BENTUK POLINOMIAL -->
-    <!-- ============================================ -->
-    <div class="card card--soft">
-        <h3>Bentuk Representasi Polinomial</h3>
-        <p>
-            Dalam praktik numerik, polinomial dapat direpresentasikan dalam beberapa bentuk, 
-            masing-masing dengan kelebihan dan kekurangan:
+            Bayangkan kamu punya data seperti ini:
         </p>
         <table class="table">
             <thead>
-                <tr><th>Bentuk</th><th>Rumus</th><th>Kelebihan</th><th>Kekurangan</th></tr>
+                <tr><th>x</th><th>f(x)</th></tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Bentuk Standar</td>
-                    <td>a_n x^n + ... + a₀</td>
-                    <td>Sederhana, mudah dipahami</td>
-                    <td>Sensitif terhadap perubahan koefisien</td>
-                </tr>
-                <tr>
-                    <td>Bentuk Newton (Beda Terbagi)</td>
-                    <td>a₀ + a₁(x-x₀) + a₂(x-x₀)(x-x₁) + ...</td>
-                    <td>Mudah menambah titik data</td>
-                    <td>Kurang intuitif</td>
-                </tr>
-                <tr>
-                    <td>Bentuk Lagrange</td>
-                    <td>Σ y_i · L_i(x)</td>
-                    <td>Eksplisit, cocok untuk interpolasi</td>
-                    <td>Mahal untuk evaluasi (O(n²))</td>
-                </tr>
-                <tr>
-                    <td>Bentuk Horner</td>
-                    <td>a₀ + x(a₁ + x(a₂ + ...))</td>
-                    <td>Efisien (O(n)), stabil</td>
-                    <td>Representasi tersembunyi</td>
-                </tr>
+                <tr><td>1</span></td><td>2</span></td><tr>
+                <tr><td>2</span></td><td>4</span></td></tr>
+                <tr><td>3</span></td><td>6</span></td></tr>
             </tbody>
         </table>
-        <div class="text-code">
-# Evaluasi polinomial bentuk Horner (paling efisien)
-# P(x) = a₀ + a₁·x + a₂·x² + ... + aₙ·xⁿ
-
-function horner(a, x):
-    result = a[n]
-    for i = n-1 down to 0:
-        result = result * x + a[i]
-    return result
-        </div>
-    </div>
-
-    <!-- ============================================ -->
-    <!-- CARD 4: DERAJAT DAN KOEFISIEN -->
-    <!-- ============================================ -->
-    <div class="card card--soft">
-        <h3>Derajat dan Koefisien Polinomial</h3>
         <p>
-            <span class="text-code-inline">Derajat polinomial</span> adalah pangkat tertinggi dari variabel 
-            dengan koefisien tidak nol. Beberapa istilah penting:
+            Lalu seseorang bertanya: <strong>"Berapa nilai f(2.5)?"</strong>
         </p>
         <p>
-            <span class="text-code-inline">• Koefisien utama (leading coefficient)</span> — koefisien dari suku berpangkat tertinggi<br>
-            <span class="text-code-inline">• Suku konstan (constant term)</span> — koefisien dari x⁰ = a₀<br>
-            <span class="text-code-inline">• Polinomial monik (monic polynomial)</span> — koefisien utama = 1
-        </p>
-        <table class="table">
-            <thead>
-                <tr><th>Derajat</th><th>Nama</th><th>Contoh</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>0</td><td>Konstan</td><td>f(x) = 5</td></tr>
-                <tr><td>1</td><td>Linear</td><td>f(x) = 2x + 3</td></tr>
-                <tr><td>2</td><td>Kuadrat</td><td>f(x) = x² - 4x + 4</td></tr>
-                <tr><td>3</td><td>Kubik</td><td>f(x) = x³ - 6x² + 11x - 6</td></tr>
-                <tr><td>4</td><td>Kuartik</td><td>f(x) = x⁴ - 5x² + 4</td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- ============================================ -->
-    <!-- CARD 5: AKAR-AKAR POLINOMIAL -->
-    <!-- ============================================ -->
-    <div class="card card--soft">
-        <h3>Akar-akar Polinomial</h3>
-        <p>
-            <span class="text-code-inline">Akar</span> atau <span class="text-code-inline">solusi</span> dari polinomial 
-            adalah nilai <span class="text-code-inline">x</span> yang memenuhi <span class="text-code-inline">P(x) = 0</span>. 
-            Teorema Dasar Aljabar menyatakan:
+            Karena 2.5 tidak ada di tabel, kamu tidak bisa membaca langsung. Di sinilah <span class="text-code-inline">interpolasi</span> bekerja — 
+            membantu kita <strong>memperkirakan nilai di antara data yang tersedia</strong>.
         </p>
         <div class="text-math">
-            "Setiap polinomial derajat n (dengan koefisien kompleks)<br>
-            memiliki tepat n akar (termasuk akar kompleks dan akar berulang)."
-        </div>
-        <p>
-            Beberapa fakta penting tentang akar polinomial:
-        </p>
-        <p>
-            <span class="text-code-inline">• Akar real vs kompleks</span> — polinomial dengan koefisien real memiliki akar kompleks yang berpasangan (konjugat).<br>
-            <span class="text-code-inline">• Akar berulang (multiple roots)</span> — terjadi ketika polinomial dan turunannya memiliki akar yang sama.<br>
-            <span class="text-code-inline">• Akar rasional</span> — jika koefisien bulat, akar rasional harus berbentuk p/q dengan p pembagi a₀ dan q pembagi aₙ.
-        </p>
-        <div class="text-math">
-            Contoh: x² + 1 = 0 → akar: x = i dan x = -i (kompleks)<br>
-            Contoh: (x-2)² = 0 → akar: x = 2 (akar ganda)
+            "Interpolasi = Menebak nilai di sela-sela data yang sudah diketahui"
         </div>
     </div>
 
     <!-- ============================================ -->
-    <!-- CARD 6: OPERASI DASAR POLINOMIAL -->
+    <!-- CARD 2: INTUISI SEDERHANA (DENGAN GAMBAR KONSEPTUAL) -->
     <!-- ============================================ -->
     <div class="card card--soft">
-        <h3>Operasi Dasar Polinomial</h3>
+        <h3>Intuisi Sederhana</h3>
         <p>
-            Dalam implementasi numerik, operasi polinomial yang sering dilakukan meliputi:
+            Coba bayangkan kamu memiliki beberapa titik di kertas gambar:
         </p>
         <p>
-            <span class="text-code-inline">1. Penjumlahan dan Pengurangan</span><br>
-            Menjumlahkan koefisien dengan derajat yang sama. Kompleksitas O(n).
+            • Titik A di (1,2)<br>
+            • Titik B di (2,4)<br>
+            • Titik C di (3,6)
         </p>
         <p>
-            <span class="text-code-inline">2. Perkalian (Konvolusi)</span><br>
-            Hasil kali polinomial derajat m dan n menghasilkan polinomial derajat m+n. 
-            Kompleksitas O(mn) secara naif, atau O(n log n) dengan FFT.
-        </p>
-        <p>
-            <span class="text-code-inline">3. Pembagian</span><br>
-            Polinomial dapat dibagi menggunakan algoritma pembagian panjang atau sintetik.
-        </p>
-        <p>
-            <span class="text-code-inline">4. Turunan dan Integral</span><br>
-            Turunan: <span class="text-math-inline">P'(x) = Σ k·a_k·x^{k-1}</span><br>
-            Integral: <span class="text-math-inline">∫P(x) dx = Σ a_k·x^{k+1}/(k+1) + C</span>
+            Jika kamu menghubungkan titik-titik itu dengan <strong>garis atau kurva</strong>, 
+            maka kamu bisa melihat kira-kira di mana letak titik untuk x = 2.5.
         </p>
         <div class="text-code">
-# Pembagian polinomial (sintetik)
-# Membagi P(x) dengan (x - c)
+Ilustrasi konsep:
 
-function synthetic_division(a, c):
-    n = length(a) - 1
-    b = array of size n
-    b[n-1] = a[n]
-    for i = n-1 down to 1:
-        b[i-1] = a[i] + c * b[i]
-    remainder = a[0] + c * b[0]
-    return b, remainder
+    ↑
+   6 |         ● (3,6)
+   5 |        /
+   4 |   ● (2,4)
+   3 |  /
+   2 | ● (1,2)
+   1 |
+   0 +---+---+---+---→
+     1   2   3   4
+
+Titik (2.5, ?) berada di antara titik (2,4) dan (3,6)
+        </div>
+        <p>
+            <span class="text-code-inline">Intuisi interpolasi:</span> 
+            "Menggambar garis/kurva yang melewati titik-titik data, lalu membaca nilai di antaranya."
+        </p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 3: CONTOH KEHIDUPAN SEHARI-HARI -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Contoh dalam Kehidupan Sehari-hari</h3>
+        <p>
+            Sebenarnya, tanpa sadar kita sering melakukan interpolasi!
+        </p>
+        <p>
+            <span class="text-code-inline">Contoh 1: Suhu Tubuh</span><br>
+            Jam 08.00 suhu 36.5°C, jam 12.00 suhu 37.5°C. 
+            Kira-kira jam 10.00 suhu berapa? <strong>37.0°C</strong> (tebakan tengah-tengah).
+            Ini adalah <strong>interpolasi linear</strong>.
+        </p>
+        <p>
+            <span class="text-code-inline">Contoh 2: Ramalan Populasi</span><br>
+            Tahun 2000 populasi 100 juta, tahun 2010 populasi 120 juta.
+            Perkiraan populasi tahun 2005? Tentu sekitar <strong>110 juta</strong>.
+        </p>
+        <p>
+            <span class="text-code-inline">Contoh 3: Mengisi Warna di Gambar</span><br>
+            Photoshop atau aplikasi edit foto menggunakan interpolasi saat kamu memperbesar gambar.
+            Program menebak warna pixel baru berdasarkan pixel di sekitarnya.
+        </p>
+        <div class="text-math">
+            "Interpolasi ada di mana-mana: suhu, populasi, warna gambar, dan masih banyak lagi."
         </div>
     </div>
 
     <!-- ============================================ -->
-    <!-- CARD 7: MASALAH NUMERIK PADA POLINOMIAL -->
+    <!-- CARD 4: DEFINISI FORMAL (TETAP AKADEMIS) -->
     <!-- ============================================ -->
     <div class="card card--soft">
-        <h3>Tantangan Numerik pada Polinomial</h3>
+        <h3>Definisi Formal Interpolasi</h3>
         <p>
-            Meskipun polinomial sederhana secara matematis, komputasi numeriknya memiliki tantangan tersendiri:
+            Secara matematis, <span class="text-code-inline">interpolasi</span> adalah proses menemukan 
+            fungsi <span class="text-code-inline">P(x)</span> yang melewati semua titik data 
+            <span class="text-code-inline">(x₀, y₀), (x₁, y₁), ..., (xₙ, yₙ)</span>, 
+            kemudian menggunakan fungsi tersebut untuk menghitung nilai pada 
+            <span class="text-code-inline">x</span> yang tidak diketahui.
+        </p>
+        <div class="text-math">
+            Diketahui: (x₀, y₀), (x₁, y₁), ..., (xₙ, yₙ)<br>
+            Dicari: P(x) sehingga P(xᵢ) = yᵢ untuk semua i
+        </div>
+        <p>
+            Jika <span class="text-code-inline">x</span> berada di dalam rentang data 
+            <span class="text-code-inline">[x₀, xₙ]</span>, ini disebut <span class="text-code-inline">interpolasi</span>. 
+            Jika di luar rentang, disebut <span class="text-code-inline">ekstrapolasi</span> (lebih berisiko, hasilnya bisa meleset jauh).
+        </p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 5: JENIS-JENIS INTERPOLASI -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Jenis-Jenis Interpolasi</h3>
+        <p>
+            Berikut adalah metode interpolasi yang paling umum digunakan:
         </p>
         <table class="table">
             <thead>
-                <tr><th>Masalah</th><th>Penyebab</th><th>Solusi</th></tr>
+                <tr><th>Metode</th><th>Penjelasan Sederhana</th><th>Kapan Dipakai?</th></tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Ketidakstabilan evaluasi</td>
-                    <td>Pembulatan pada polinomial derajat tinggi</td>
-                    <td>Gunakan bentuk Horner</td>
+                    <td>Interpolasi Linear</span></td>
+                    <td>Menghubungkan dua titik dengan <strong>garis lurus</strong></span></td>
+                    <td>Data hampir membentuk garis, butuh cepat</span></td>
                 </tr>
                 <tr>
-                    <td>Kondisi buruk (ill-conditioned)</td>
-                    <td>Koefisien sangat kecil/besar</td>
-                    <td>Skalakan polinomial (normalisasi)</td>
+                    <td>Interpolasi Polinomial</span></td>
+                    <td>Menggunakan <strong>kurva lengkung</strong> yang melewati semua titik</span></td>
+                    <td>Data agak melengkung, butuh presisi lebih</span></td>
                 </tr>
                 <tr>
-                    <td>Kehilangan akar presisi</td>
-                    <td>Akar sangat berdekatan</td>
-                    <td>Gunakan metode Bairstow atau Jenkins-Traub</td>
+                    <td>Spline Interpolation</span></td>
+                    <td>Kurva <strong>halus</strong> yang terdiri dari potongan-potongan</span></td>
+                    <td>Banyak titik data, butuh hasil yang sangat mulus</span></td>
                 </tr>
                 <tr>
-                    <td>Akar kompleks</td>
-                    <td>Polinomial real dengan akar kompleks</td>
-                    <td>Gunakan metode Bairstow atau QR</td>
+                    <td>Interpolasi Lagrange</span></td>
+                    <td>Bentuk khusus interpolasi polinomial dengan rumus eksplisit</span></td>
+                    <table>Untuk pembelajaran, atau titik data sedikit</span></td>
+                </tr>
+                <tr>
+                    <td>Interpolasi Newton</span></td>
+                    <td>Bentuk interpolasi polinomial yang mudah ditambah titik baru</span></td>
+                    <td>Data ditambahkan secara bertahap</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 6: CONTOH INTERPOLASI LINEAR (LENGKAP) -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Contoh Interpolasi Linear (Paling Sederhana)</h3>
+        <p>
+            Misalkan kita punya data:
+        </p>
+        <table class="table">
+            <thead>
+                <tr><th>x</th><th>f(x)</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>2</span></td><td>4</span></td></tr>
+                <tr><td>3</span></td><td>6</span></td></tr>
+            </tbody>
+        </table>
+        <p>
+            Ditanya: <span class="text-code-inline">f(2.5) = ?</span>
+        </p>
+        <p>
+            <strong>Penyelesaian dengan interpolasi linear:</strong>
+        </p>
+        <div class="text-math">
+            \text{Rumus: } f(x) = f(x₀) + \frac{f(x₁) - f(x₀)}{x₁ - x₀} (x - x₀)
+        </div>
+        <div class="text-math">
+            f(2.5) = 4 + \frac{6 - 4}{3 - 2} (2.5 - 2) = 4 + \frac{2}{1} \times 0.5 = 4 + 1 = 5
+        </div>
+        <p>
+            <strong>Hasil:</strong> <span class="text-code-inline">f(2.5) = 5</span>
+        </p>
+        <div class="text-code">
+# Kode Python sederhana
+def interpolasi_linear(x0, y0, x1, y1, x):
+    return y0 + (y1 - y0) * (x - x0) / (x1 - x0)
+
+print(interpolasi_linear(2, 4, 3, 6, 2.5))  # Output: 5.0
+        </div>
+        <p>
+            <strong>Logikanya:</strong> Karena 2.5 tepat di tengah antara 2 dan 3, 
+            maka nilainya juga di tengah antara 4 dan 6, yaitu 5.
+        </p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 7: INTERPOLASI vs EKSTRAPOLASI -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Perbedaan Interpolasi dan Ekstrapolasi</h3>
+        <p>
+            Ini adalah konsep penting yang sering membingungkan:
+        </p>
+        <table class="table">
+            <thead>
+                <tr><th></th><th>Interpolasi</th><th>Ekstrapolasi</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Artinya</span></td>
+                    <td>Menebak nilai <strong>di dalam</strong> rentang data</span></td>
+                    <td>Menebak nilai <strong>di luar</strong> rentang data</span></td>
+                </tr>
+                <tr>
+                    <td>Contoh</span></td>
+                    <td>Data 2000-2010 → tebak 2005</span></td>
+                    <td>Data 2000-2010 → tebak 2020</span></td>
+                </tr>
+                <tr>
+                    <td>Tingkat kepercayaan</span></td>
+                    <td><strong>Cukup akurat</strong> (masih dalam jangkauan)</span></td>
+                    <td><strong>Berisiko tinggi</strong> (bisa meleset jauh)</span></td>
+                </tr>
+                <tr>
+                    <td>Analogi</span></td>
+                    <td>Tebak posisi di antara dua kota yang diketahui</span></td>
+                    <td>Tebak posisi di luar peta yang tidak diketahui</span></td>
                 </tr>
             </tbody>
         </table>
         <div class="text-math">
-            "Polinomial derajat tinggi sangat sensitif terhadap perubahan kecil pada koefisien.<br>
-            Ini dikenal sebagai fenomena 'Runge' atau 'ill-conditioning'."
+            "Interpolasi di dalam zona nyaman, ekstrapolasi di luar kemampuan prediksi."
         </div>
     </div>
 
     <!-- ============================================ -->
-    <!-- CARD 8: APLIKASI POLINOMIAL DALAM METODE NUMERIK -->
+    <!-- CARD 8: KAPAN INTERPOLASI DIGUNAKAN? -->
     <!-- ============================================ -->
     <div class="card card--soft">
-        <h3>Aplikasi Polinomial dalam Metode Numerik</h3>
+        <h3>Kapan Kita Memakai Interpolasi?</h3>
         <p>
-            Polinomial digunakan secara luas dalam berbagai sub-bidang metode numerik:
+            Dalam dunia nyata, interpolasi digunakan saat:
+        </p>
+        <p>
+            <span class="text-code-inline">✓ Data tidak lengkap</span><br>
+            Misalnya sensor hanya merekam setiap 10 menit, tapi kita butuh data tiap 1 menit.
+        </p>
+        <p>
+            <span class="text-code-inline">✓ Ingin menghaluskan grafik</span><br>
+            Data hanya berupa titik-titik, interpolasi membantu menggambar kurva yang mulus.
+        </p>
+        <p>
+            <span class="text-code-inline">✓ Butuh nilai di posisi tertentu</span><br>
+            Tabel trigonometri (sin, cos, tan) panjang disimpan, interpolasi digunakan untuk nilai di antaranya.
+        </p>
+        <p>
+            <span class="text-code-inline">✓ Machine Learning dan Visi Komputer</span><br>
+            Memperbesar gambar (resampling) menggunakan interpolasi warna.
+        </p>
+        <p>
+            <span class="text-code-inline">✓ Simulasi dan Grafika Komputer</span><br>
+            Membuat gerakan halus antar frame (keyframe interpolation).
+        </p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CARD 9: APLIKASI INTERPOLASI DI BERBAGAI BIDANG -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Aplikasi Interpolasi</h3>
+        <p>
+            Interpolasi digunakan di berbagai bidang, antara lain:
         </p>
         <table class="table">
             <thead>
-                <tr><th>Bidang</th><th>Aplikasi</th><th>Contoh Polinomial</th></tr>
+                <tr><th>Bidang</th><th>Aplikasi</th></tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Interpolasi</td>
-                    <td>Mencari fungsi yang melewati titik data</td>
-                    <td>Polinomial Lagrange, Newton</td>
+                    <td>Teknik Sipil</span></td>
+                    <td>Memperkirakan bentuk permukaan tanah dari titik-titik survei</span></td>
                 </tr>
                 <tr>
-                    <td>Aproksimasi fungsi</td>
-                    <td>Deret Taylor, Chebyshev, Legendre</td>
-                    <td>P(x) ≈ f(x)</td>
+                    <td>Kedokteran</span></td>
+                    <td>Rekonstruksi gambar CT Scan atau MRI dari irisan tipis</span></td>
                 </tr>
                 <tr>
-                    <td>Integrasi numerik</td>
-                    <td>Aturan Simpson, Newton-Cotes</td>
-                    <td>Mengintegralkan polinomial interpolasi</td>
+                    <td>Meteorologi</span></td>
+                    <td>Memperkirakan suhu di suatu daerah dari stasiun cuaca terdekat</span></td>
                 </tr>
                 <tr>
-                    <td>Diferensiasi numerik</td>
-                    <td>Turunan dari polinomial interpolasi</td>
-                    <td>P'(x) ≈ f'(x)</td>
+                    <td>Geofisika</span></td>
+                    <td>Memetakan struktur bawah tanah dari data seismik</span></td>
                 </tr>
                 <tr>
-                    <td>Penyelesaian ODE</td>
-                    <td>Metode Adams-Bashforth, Runge-Kutta</td>
-                    <td>Polinomial prediksi/koreksi</td>
+                    <td>Animasi</span></td>
+                    <td>Membuat gerakan halus antar pose karakter (keyframe interpolation)</span></td>
                 </tr>
             </tbody>
         </table>
     </div>
 
     <!-- ============================================ -->
-    <!-- CARD 9: KESIMPULAN -->
+    <!-- CARD 10: KESIMPULAN -->
     <!-- ============================================ -->
     <div class="card card--soft">
-        <h3>Poin Penting Pendahuluan Polinomial</h3>
+        <h3>Kesimpulan (Ringkasan untuk Pemula)</h3>
         <p>
-            Polinomial adalah fondasi dari banyak algoritma dalam metode numerik karena 
-            kesederhanaan, fleksibilitas, dan sifat matematisnya yang baik.
+            <strong>Interpolasi itu sederhana:</strong>
         </p>
         <p>
-            <strong>Ringkasan konsep kunci:</strong>
+            📌 <strong>Definisi:</strong> Teknik menebak nilai di antara titik-titik data yang diketahui.<br>
+            📌 <strong>Basis data:</strong> Kita tahu titik A dan B, kita ingin tahu titik di antaranya.<br>
+            📌 <strong>Interpolasi Linear:</strong> Cara paling sederhana — hubungkan dengan garis lurus.<br>
+            📌 <strong>Interpolasi vs Ekstrapolasi:</strong> Interpolasi = di dalam data (aman), ekstrapolasi = di luar data (berisiko).<br>
+            📌 <strong>Penggunaan sehari-hari:</strong> Memperkirakan suhu, populasi, warna gambar, gerakan animasi.<br>
+            📌 <strong>Metode yang akan dipelajari:</strong> Linear, Polinomial (Lagrange, Newton), Spline.
         </p>
         <p>
-            1. Polinomial derajat n: <span class="text-code-inline">P_n(x) = a_n x^n + ... + a₀</span><br>
-            2. Kelebihan: <span class="text-code-inline">mudah dievaluasi, diturunkan, diintegralkan, dan diaproksimasi</span><br>
-            3. Representasi: standar, Newton, Lagrange, Horner (paling efisien)<br>
-            4. Teorema Dasar Aljabar: polinomial derajat n memiliki n akar<br>
-            5. Tantangan numerik: <span class="text-code-inline">ill-conditioning, kehilangan presisi, akar kompleks</span><br>
-            6. Aplikasi: <span class="text-code-inline">interpolasi, aproksimasi, integrasi, diferensiasi, ODE</span>
+            <strong>Intinya:</strong> Interpolasi adalah <span class="text-code-inline">"seni menebak secara matematis"</span> 
+            yang sangat berguna dalam sains, teknik, dan kehidupan sehari-hari.
         </p>
-        <p>
-            Pada subbab berikutnya, kita akan mempelajari secara mendalam tentang:
-        </p>
-        <p>
-            • <span class="text-code-inline">Interpolasi Polinomial</span> — Lagrange, Newton, dan spline<br>
-            • <span class="text-code-inline">Mencari Akar Polinomial</span> — metode Bairstow, Jenkins-Traub<br>
-            • <span class="text-code-inline">Aproksimasi dengan Polinomial</span> — least squares, Chebyshev<br>
-            • <span class="text-code-inline">Integrasi Numerik</span> — Newton-Cotes, Gauss quadrature
-        </p>
+        <div class="text-math">
+            "Selanjutnya, kita akan mempelajari metode-metode interpolasi secara lebih mendalam:<br>
+            Linear → Lagrange → Newton → Spline. Semakin canggih, semakin akurat!"
+        </div>
     </div>
 
 </div>
