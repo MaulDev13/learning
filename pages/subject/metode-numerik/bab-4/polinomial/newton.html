@@ -40,7 +40,7 @@
             <tbody>
                 <tr>
                     <td>Menambah titik data</span></td>
-                    <td>Menghitung ulang semua koefisien (O(n³))</span></td>
+                    <td>Perlu hitung ulang semua koefisien (O(n³))</span></td>
                     <td>Hanya tambah satu suku (O(n²))</span></td>
                 </tr>
                 <tr>
@@ -50,11 +50,11 @@
                 </tr>
                 <tr>
                     <td>Stabilitas numerik</span></td>
-                    <td>Kurang stabil untuk derajat tinggi</span></td>
+                    <td>Kurang stabil</span></td>
                     <td>Lebih stabil</span></td>
                 </tr>
                 <tr>
-                    Penentuan koefisien</span></td>
+                    <td>Determinasi koefisien</span></td>
                     <td>Selesaikan sistem linear</span></td>
                     <td>Beda terbagi (rekursif)</span></td>
                 </tr>
@@ -75,9 +75,7 @@
         </p>
         <div class="text-math">
             P_n(x) = f[x₀] + f[x₀,x₁](x - x₀) + f[x₀,x₁,x₂](x - x₀)(x - x₁) + ... 
-            </div>
-            <div class="text-math">
-            ... + f[x₀,x₁,...,x_n](x - x₀)(x - x₁)...(x - x_{n-1})
+            + f[x₀,x₁,...,x_n](x - x₀)(x - x₁)...(x - x_{n-1})
         </div>
         <p>
             dengan notasi <span class="text-code-inline">f[x₀, x₁, ..., x_k]</span> adalah 
@@ -110,19 +108,19 @@
             <span class="text-code-inline">Definisi rekursif:</span>
         </p>
         <div class="text-math">
-            f[x_i] = y_i \quad \text{(beda terbagi orde 0)}
+            f[x_i] = y_i     (beda terbagi orde 0)
         </div>
         <div class="text-math">
-            f[x_i, x_{i+1}] = \frac{f[x_{i+1}] - f[x_i]}{x_{i+1} - x_i} \quad \text{(orde 1)}
+            f[x_i, x_{i+1}] = ( f[x_{i+1}] - f[x_i] ) / ( x_{i+1} - x_i )     [orde 1]
         </div>
         <div class="text-math">
-            f[x_i, x_{i+1}, x_{i+2}] = \frac{f[x_{i+1}, x_{i+2}] - f[x_i, x_{i+1}]}{x_{i+2} - x_i} \quad \text{(orde 2)}
+            f[x_i, x_{i+1}, x_{i+2}] = ( f[x_{i+1}, x_{i+2}] - f[x_i, x_{i+1}] ) / ( x_{i+2} - x_i )     [orde 2]
         </div>
         <p>
             Secara umum, beda terbagi orde <span class="text-code-inline">k</span>:
         </p>
         <div class="text-math">
-            f[x_i, x_{i+1}, ..., x_{i+k}] = \frac{f[x_{i+1}, ..., x_{i+k}] - f[x_i, ..., x_{i+k-1}]}{x_{i+k} - x_i}
+            f[x_i, ..., x_{i+k}] = ( f[x_{i+1}, ..., x_{i+k}] - f[x_i, ..., x_{i+k-1}] ) / ( x_{i+k} - x_i )
         </div>
     </div>
 
@@ -134,44 +132,32 @@
         <p>
             Perhitungan beda terbagi disusun dalam bentuk tabel untuk memudahkan:
         </p>
-        <table class="table">
-            <thead>
-                <tr><th>x</th><th>f[x] (orde 0)</th><th>f[ , ] (orde 1)</th><th>f[ , , ] (orde 2)</th><th>f[ , , , ] (orde 3)</th></tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>x₀</span></td>
-                    <td>f[x₀] = y₀</span></td>
-                    <td>f[x₀,x₁] = (y₁ - y₀)/(x₁ - x₀)</span></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>x₁</span></td>
-                    <td>f[x₁] = y₁</span></td>
-                    <td>f[x₁,x₂] = (y₂ - y₁)/(x₂ - x₁)</span></td>
-                    <td>f[x₀,x₁,x₂] = (f[x₁,x₂] - f[x₀,x₁])/(x₂ - x₀)</span></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>x₂</span></td>
-                    <td>f[x₂] = y₂</span></td>
-                    <td>f[x₂,x₃] = (y₃ - y₂)/(x₃ - x₂)</span></td>
-                    <td>f[x₁,x₂,x₃] = (f[x₂,x₃] - f[x₁,x₂])/(x₃ - x₁)</span></td>
-                    <td>f[x₀,x₁,x₂,x₃] = (f[x₁,x₂,x₃] - f[x₀,x₁,x₂])/(x₃ - x₀)</span></td>
-                </tr>
-                <tr>
-                    <td>x₃</span></td>
-                    <td>f[x₃] = y₃</span></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="text-code">
+x₀ = 1, y₀ = 2
+x₁ = 2, y₁ = 3
+x₂ = 4, y₂ = 5
+x₃ = 5, y₃ = 6
+
+TABEL BEDA TERBAGI:
+
+x    | f[x] (orde 0) | f[ , ] (orde 1) | f[ , , ] (orde 2) | f[ , , , ] (orde 3)
+-----|---------------|-----------------|-------------------|--------------------
+1    | 2             |                 |                   |
+     |               | (3-2)/(2-1)=1   |                   |
+2    | 3             |                 | (1-1)/(4-1)=0     |
+     |               | (5-3)/(4-2)=1   |                   | (0-0)/(5-1)=0
+4    | 5             |                 | (1-1)/(5-2)=0     |
+     |               | (6-5)/(5-4)=1   |                   |
+5    | 6             |                 |                   |
+
+Koefisien Newton (ambil baris pertama setiap kolom):
+a₀ = f[x₀] = 2
+a₁ = f[x₀,x₁] = 1
+a₂ = f[x₀,x₁,x₂] = 0
+a₃ = f[x₀,x₁,x₂,x₃] = 0
+        </div>
         <p>
-            Koefisien polinomial Newton adalah entri pada <span class="text-code-inline">baris pertama setiap kolom</span>:
-            <span class="text-code-inline">f[x₀], f[x₀,x₁], f[x₀,x₁,x₂], ...</span>
+            Koefisien polinomial Newton adalah entri pada <span class="text-code-inline">baris pertama setiap kolom</span>.
         </p>
     </div>
 
@@ -234,7 +220,8 @@ f[x₀,x₁,x₂,x₃] = (0 - 0)/(5-1) = 0/4 = 0
                 <tr><th>Tahun (x)</th><th>Populasi (y) dalam ribu</th></tr>
             </thead>
             <tbody>
-                <tr><td>2000</span></td>
+                <tr>
+                    <td>2000</span></td>
                     <td>100</span></td>
                 </tr>
                 <tr>
@@ -275,8 +262,8 @@ f[x₀,x₁,x₂] = (6 - 4)/(2010-2000) = 2/10 = 0.2
             <strong>Langkah 3: Evaluasi untuk x = 2008</strong>
         </p>
         <div class="text-math">
-            P₂(2008) = 100 + 4·(8) + 0.2·(8)(3)<br>
-            = 100 + 32 + 0.2·24<br>
+            P₂(2008) = 100 + 4·(8) + 0.2·(8)(3)
+            = 100 + 32 + 0.2·24
             = 100 + 32 + 4.8 = 136.8
         </div>
         <p>
@@ -314,6 +301,7 @@ PROCEDURE NewtonInterpolation(x_data, y_data, x)
         y      : nilai interpolasi
     
     n ← length(x_data) - 1
+    
     {Tabel beda terbagi}
     f ← matrix(n+1, n+1)
     
@@ -363,7 +351,7 @@ END PROCEDURE
                     <td>Lebih stabil dari bentuk standar</span></td>
                     <td>Masih bisa bermasalah untuk derajat sangat tinggi</span></td>
                 </tr>
-                <tr>
+                <td>
                     <td>Fleksibilitas</span></td>
                     <td>Titik data tidak perlu berjarak sama</span></td>
                     <td>Perhitungan beda terbagi rawan error pembulatan</span></td>
@@ -396,7 +384,7 @@ END PROCEDURE
         <p>
             1. Polinomial Newton: <span class="text-code-inline">P_n(x) = a₀ + a₁(x-x₀) + a₂(x-x₀)(x-x₁) + ...</span><br>
             2. Koefisien <span class="text-code-inline">aₖ = f[x₀, x₁, ..., x_k]</span> (beda terbagi orde k)<br>
-            3. Beda terbagi dihitung rekursif: <span class="text-code-inline">f[x_i,...,x_{i+k}] = (f[x_{i+1},...,x_{i+k}] - f[x_i,...,x_{i+k-1}])/(x_{i+k} - x_i)</span><br>
+            3. Beda terbagi dihitung rekursif: <span class="text-code-inline">f[x_i,...,x_{i+k}] = (f[x_{i+1},...,x_{i+k}] - f[x_i,...,x_{i+k-1}]) / (x_{i+k} - x_i)</span><br>
             4. Kelebihan: <span class="text-code-inline">menambah titik data tanpa hitung ulang, efisien</span><br>
             5. Kekurangan: <span class="text-code-inline">perlu tabel beda terbagi, rawan error pembulatan</span><br>
             6. Aplikasi: <span class="text-code-inline">interpolasi data bertahap, basis untuk metode numerik lain</span>
@@ -407,7 +395,7 @@ END PROCEDURE
         <p>
             • <span class="text-code-inline">Interpolasi Lagrange</span> (bentuk eksplisit untuk evaluasi tunggal)<br>
             • <span class="text-code-inline">Interpolasi Hermite</span> (memasukkan turunan)<br>
-            • <span class="text-code-inline">Spline</span> (intervolasian mulus untuk banyak titik)
+            • <span class="text-code-inline">Spline</span> (interpolasi mulus untuk banyak titik)
         </p>
     </div>
 
