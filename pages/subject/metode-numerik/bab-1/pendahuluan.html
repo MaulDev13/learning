@@ -1,0 +1,154 @@
+<div class="card-group">
+
+    <!-- ============================================ -->
+    <!-- PENDAHULUAN GALAT -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h2>Pendahuluan: Galat dalam Metode Numerik</h2>
+        <p>
+            Dalam metode numerik, kita hampir tidak pernah mendapatkan jawaban yang <strong>sempurna persis</strong>.
+            Selalu ada selisih antara nilai <strong>sebenarnya (eksak)</strong> dan nilai <strong>hampiran (numerik)</strong> yang kita peroleh.
+            Selisih inilah yang disebut <span class="text-code-inline">galat (error)</span>.
+        </p>
+        <div class="text-math">
+            Galat = Nilai sebenarnya − Nilai hampiran
+        </div>
+        <p>
+            Tujuan utama metode numerik <strong>bukan menghilangkan galat</strong> (karena tidak mungkin), 
+            melainkan <strong>mengendalikan galat</strong> agar sekecil mungkin dan masih dapat diterima untuk keperluan praktis.
+        </p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- MENGAPA GALAT TERJADI? -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Mengapa Galat Bisa Terjadi?</h3>
+        <p>
+            Ada dua sumber utama galat dalam komputasi numerik:
+        </p>
+        <ul style="margin-left: var(--space-lg); margin-bottom: var(--space-md);">
+            <li><strong>✂️ Galat pemotongan (truncation error)</strong> – karena kita menghentikan proses tak hingga (misalnya deret atau iterasi) pada langkah tertentu.</li>
+            <li><strong>💻 Galat pembulatan (rounding error)</strong> – karena komputer hanya mampu menyimpan bilangan dengan jumlah digit terbatas.</li>
+        </ul>
+        <p>
+            Kedua sumber galat ini akan kita bahas lebih mendalam di sub-bab terpisah.
+            Untuk saat ini, pahami bahwa <strong>galat adalah keniscayaan</strong> dalam komputasi numerik.
+        </p>
+        <div class="text-math">
+            "Metode numerik yang baik bukan yang tanpa galat, tapi yang galatnya terkendali."
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- KONSEP AKURASI DAN PRESISI -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Akurasi dan Presisi</h3>
+        <p>
+            Dalam membahas galat, kita sering mendengar dua istilah penting:
+        </p>
+        <table class="table">
+            <thead>
+                <tr><th>Istilah</th><th>Makna</th><th>Analog</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Akurasi</strong></span></td>
+                    <td>Seberapa dekat hasil hampiran dengan nilai sebenarnya</span></td>
+                    <td>Memanah tepat sasaran</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Presisi</strong></span></td>
+                    <td>Seberapa konsisten hasil hampiran jika diulang-ulang</span></td>
+                    <td>Memanah selalu di titik yang sama (boleh meleset asal konsisten)</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <strong>Contoh sederhana:</strong> Nilai sebenarnya π = 3.14159265...
+        </p>
+        <ul style="margin-left: var(--space-lg);">
+            <li>Hampiran A: 3.14 → akurat? lumayan. presisi? tergantung pengulangan.</li>
+            <li>Hampiran B: 3.142 → lebih akurat dari A.</li>
+        </ul>
+        <p>
+            Idealnya kita menginginkan hasil yang <strong>akurat sekaligus presisi</strong>.
+            Namun dalam praktik, sering ada <strong>trade-off</strong> antara mengurangi galat pemotongan dan galat pembulatan.
+        </p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- GALAT RELATIF vs GALAT MUTLAK (pengantar ringan) -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Galat Mutlak vs Galat Relatif</h3>
+        <p>
+            Ada dua cara umum menyatakan besarnya galat:
+        </p>
+        <p>
+            <span class="text-code-inline">Galat mutlak</span> = |nilai sebenarnya − nilai hampiran|<br>
+            Memberi tahu <strong>seberapa besar</strong> selisihnya dalam satuan yang sama.
+        </p>
+        <p>
+            <span class="text-code-inline">Galat relatif</span> = galat mutlak / |nilai sebenarnya|<br>
+            Memberi tahu <strong>persentase kesalahan</strong> relatif terhadap besaran nilai.
+        </p>
+        <p>
+            Galat relatif lebih bermakna ketika membandingkan galat pada besaran yang sangat berbeda skala.
+            Misalnya, selisih 1 cm pada panjang 100 km berbeda maknanya dengan selisih 1 cm pada panjang 1 meter.
+        </p>
+        <div class="text-math">
+            Contoh: nilai sebenarnya 100, hampiran 99 → galat mutlak = 1, galat relatif = 1%.
+        </div>
+        <p>
+            Topik ini akan dibahas lebih detail di sub-bab <strong>Jenis-Jenis Galat</strong>.
+        </p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- TOLERANSI GALAT -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Toleransi Galat: Kapan Kita Berhenti?</h3>
+        <p>
+            Dalam proses iteratif (misalnya mencari akar persamaan), kita perlu menentukan <strong>kapan proses dihentikan</strong>.
+            Tidak mungkin iterasi diteruskan sampai tak hingga.
+        </p>
+        <p>
+            <strong>Toleransi galat</strong> adalah batas maksimal galat yang masih kita terima.
+            Jika galat sudah di bawah toleransi, iterasi dihentikan dan hasil dianggap cukup akurat.
+        </p>
+        <p>
+            Toleransi biasanya diberikan dalam bentuk <span class="text-code-inline">ε</span> (epsilon), misalnya <span class="text-code-inline">10⁻⁶</span> (satu per satu juta).
+        </p>
+        <div class="text-code">
+while galat > toleransi:
+    perbaiki hampiran
+        </div>
+        <p>
+            Pemilihan toleransi bergantung pada kebutuhan masalah. Perhitungan biasa cukup dengan <span class="text-code-inline">10⁻⁶</span> hingga <span class="text-code-inline">10⁻¹²</span>.
+        </p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- RINGKASAN PENDAHULUAN -->
+    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Intisari: Galat dalam Satu Paragraf</h3>
+        <p>
+            Metode numerik selalu menghasilkan jawaban yang mengandung galat. 
+            Galat berasal dari pemotongan proses tak hingga dan pembatasan digit di komputer.
+            Kita perlu memahami cara mengukur galat (mutlak dan relatif), menentukan toleransi, 
+            serta menyeimbangkan akurasi dan presisi.
+            Di bab ini, kita akan mempelajari berbagai jenis galat dan bagaimana mengendalikannya.
+        </p>
+        <div class="text-math">
+            "Yang terpenting: galat bukan kegagalan, melainkan bagian yang harus dikelola."
+        </div>
+        <p style="margin-top: var(--space-md);">
+            ➡️ Lanjutkan ke sub-bab <strong>Jenis-Jenis Galat</strong> untuk pembahasan lebih rinci.
+        </p>
+    </div>
+
+</div>
