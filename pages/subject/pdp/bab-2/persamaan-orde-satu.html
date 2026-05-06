@@ -1,0 +1,229 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+
+        <h2>Bab 2: Persamaan Diferensial Parsial Linier Orde Satu</h2>
+
+        <p>
+            Persamaan Diferensial Parsial (PDP) linier orde satu merupakan salah satu bentuk paling dasar dalam teori PDP yang memiliki banyak aplikasi dalam fisika, ekonomi, dan teknik.
+        </p>
+
+        <p>
+            Pada bab ini dibahas bentuk umum, konsep dasar, serta metode penyelesaian utama yaitu metode karakteristik.
+        </p>
+
+        <h3>Definisi Inti</h3>
+
+        <p>
+            Persamaan diferensial parsial orde satu adalah persamaan yang melibatkan turunan parsial pertama dari suatu fungsi terhadap satu atau lebih variabel bebas.
+        </p>
+
+        <p>
+            Bentuk umum PDP linier orde satu dapat dituliskan sebagai:
+        </p>
+
+        <div class="text-code">
+a(x,y)u_x + b(x,y)u_y = c(x,y)
+        </div>
+
+        <p>
+            Di mana <span class="text-code-inline">u_x</span> dan <span class="text-code-inline">u_y</span> adalah turunan parsial pertama terhadap variabel <span class="text-code-inline">x</span> dan <span class="text-code-inline">y</span>.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Bentuk Umum dan Interpretasi</h3>
+
+        <p>
+            PDP linier orde satu menggambarkan hubungan perubahan suatu fungsi terhadap dua variabel bebas.
+        </p>
+
+        <p>
+            Koefisien <span class="text-code-inline">a(x,y)</span> dan <span class="text-code-inline">b(x,y)</span> menentukan arah perubahan solusi dalam bidang dua dimensi.
+        </p>
+
+        <h4>Interpretasi Geometris</h4>
+
+        <p>
+            Persamaan ini dapat dipandang sebagai medan arah yang menentukan kurva karakteristik, yaitu lintasan di mana solusi tetap konstan atau memiliki bentuk sederhana.
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Komponen</th>
+                <th>Makna</th>
+            </tr>
+            <tr>
+                <td><span class="text-code-inline">a(x,y)</span></td>
+                <td>Arah perubahan pada sumbu x</td>
+            </tr>
+            <tr>
+                <td><span class="text-code-inline">b(x,y)</span></td>
+                <td>Arah perubahan pada sumbu y</td>
+            </tr>
+            <tr>
+                <td><span class="text-code-inline">c(x,y)</span></td>
+                <td>Sumber atau perubahan nilai fungsi</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Metode Karakteristik</h3>
+
+        <p>
+            Metode karakteristik merupakan teknik utama untuk menyelesaikan PDP linier orde satu dengan mengubahnya menjadi sistem persamaan diferensial biasa.
+        </p>
+
+        <p>
+            Ide utama metode ini adalah mencari kurva di mana PDP berubah menjadi ODE.
+        </p>
+
+        <h4>Sistem Karakteristik</h4>
+
+        <div class="text-code">
+dx/ds = a(x,y)
+dy/ds = b(x,y)
+du/ds = c(x,y)
+        </div>
+
+        <p>
+            Dengan menyelesaikan sistem ini, diperoleh solusi umum dari PDP.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Contoh Penyelesaian</h3>
+
+        <p>
+            Pertimbangkan persamaan:
+        </p>
+
+        <div class="question">
+
+            <div class="math-system">
+x u_x + y u_y = 0
+            </div>
+
+        </div>
+
+        <p>
+            Persamaan ini menunjukkan bahwa perubahan fungsi bergantung pada posisi dalam bidang.
+        </p>
+
+        <div class="button-group">
+
+            <button class="button button--primary"
+                hx-get="solusi-bab2-1.html"
+                hx-target="#solusi1"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'solusi1')">
+
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+
+            </button>
+
+        </div>
+
+        <div id="solusi1" class="project-content hidden"></div>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Contoh Implementasi Komputasi</h3>
+
+        <p>
+            Metode karakteristik dapat diimplementasikan secara numerik menggunakan pendekatan berbasis iterasi.
+        </p>
+
+        <p>
+            Berikut contoh sederhana menggunakan struktur algoritmik Python.
+        </p>
+
+        <div class="text-code">
+def karakteristik(x0, y0, step, n):
+    x = x0
+    y = y0
+    for i in range(n):
+        x = x + step * x
+        y = y + step * y
+    return x, y
+        </div>
+
+        <p>
+            Fungsi tersebut menggambarkan evolusi titik sepanjang kurva karakteristik.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Tabel Ringkasan</h3>
+
+        <table class="table">
+            <tr>
+                <th>Konsep</th>
+                <th>Deskripsi</th>
+            </tr>
+            <tr>
+                <td>PDP Orde Satu</td>
+                <td>Melibatkan turunan parsial pertama</td>
+            </tr>
+            <tr>
+                <td>Linieritas</td>
+                <td>Fungsi tidak dipangkatkan atau dikalikan sesamanya</td>
+            </tr>
+            <tr>
+                <td>Metode Karakteristik</td>
+                <td>Mengubah PDP menjadi ODE</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Hubungan dengan Komputasi dan Matematika</h3>
+
+        <p>
+            PDP linier orde satu memiliki hubungan erat dengan metode numerik dan komputasi ilmiah.
+        </p>
+
+        <p>
+            Dalam praktiknya, solusi sering dihitung menggunakan pendekatan numerik seperti metode Euler yang diimplementasikan dengan struktur <span class="text-code-inline">for</span>.
+        </p>
+
+        <p>
+            Selain itu, konsep ini menjadi dasar bagi simulasi dinamika fluida, propagasi gelombang, dan optimasi sistem.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Persamaan diferensial parsial linier orde satu merupakan fondasi penting dalam teori PDP.
+        </p>
+
+        <p>
+            Metode karakteristik menyediakan pendekatan sistematis untuk memperoleh solusi dengan menghubungkan PDP ke sistem ODE.
+        </p>
+
+        <p>
+            Pemahaman konsep ini menjadi dasar untuk mempelajari metode yang lebih kompleks pada bab berikutnya.
+        </p>
+
+    </div>
+
+</div>

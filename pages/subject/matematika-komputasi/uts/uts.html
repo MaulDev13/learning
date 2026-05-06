@@ -1,0 +1,648 @@
+<div class="card-group">
+
+    <!-- HEADER -->
+    <div class="card card--soft">
+        <h2>Soal UTS — Dasar Pemrograman Python</h2>
+        <p>
+            Kumpulan soal ujian tengah semester yang mencakup
+            <span class="text-code-inline">CPL-1</span> dan
+            <span class="text-code-inline">CPL-2</span>, meliputi
+            <span class="text-code-inline">CPMK1</span>,
+            <span class="text-code-inline">CPMK2</span>, dan
+            <span class="text-code-inline">CPMK4</span>.
+            Prioritas materi: tipe data &amp; operator → struktur kontrol &amp; fungsi → algoritma &amp; flowchart → komputasi matematika dasar.
+        </p>
+        <div class="tag-row">
+            <span class="tag">Sub-CPMK2 · 8 Soal</span>
+            <span class="tag">Sub-CPMK3 · 6 Soal</span>
+            <span class="tag">Sub-CPMK1 · 3 Soal</span>
+            <span class="tag">Sub-CPMK4 · 3 Soal</span>
+            <span class="tag">Total · 20 Soal</span>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         BAGIAN A — SUB-CPMK2: TIPE DATA, VARIABEL, OPERATOR
+    ═══════════════════════════════════════ -->
+
+    <div class="card card--soft">
+        <h3>Bagian A — Tipe Data, Variabel, Operator &amp; Ekspresi</h3>
+        <p class="text-meta">Sub-CPMK2 · CPL-1, CPL-2 · Level C3 · 8 Soal</p>
+    </div>
+
+    <!-- SOAL 1 -->
+    <div class="card card--soft">
+        <h3>Soal 1</h3>
+        <div class="question">
+            <p>Manakah pernyataan Python yang benar untuk mendeklarasikan variabel bertipe <strong>string</strong>?</p>
+            <div class="tag-row">
+                <span class="tag">A.&nbsp; <code>nama = 123</code></span>
+                <span class="tag">B.&nbsp; <code>nama = "Budi"</code></span>
+                <span class="tag">C.&nbsp; <code>nama = True</code></span>
+                <span class="tag">D.&nbsp; <code>nama = [1, 2, 3]</code></span>
+            </div>
+        </div>
+        <!-- <div class="button-group">
+            <button class="button button--primary"
+                hx-get="penyelesaian/uts/soal-01.html"
+                hx-target="#uts1"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'uts1')">
+                <span>🔍 Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="uts1" class="project-content hidden"></div> -->
+    </div>
+
+    <!-- SOAL 2 -->
+    <div class="card card--soft">
+        <h3>Soal 2</h3>
+        <div class="question">
+            <p>Apa output dari kode Python berikut ini?</p>
+            <div class="text-code">print(type(3.14))</div>
+            <div class="tag-row" style="margin-top: 0.75rem;">
+                <span class="tag">A.&nbsp; <code>&lt;class 'int'&gt;</code></span>
+                <span class="tag">B.&nbsp; <code>&lt;class 'str'&gt;</code></span>
+                <span class="tag">C.&nbsp; <code>&lt;class 'float'&gt;</code></span>
+                <span class="tag">D.&nbsp; <code>&lt;class 'bool'&gt;</code></span>
+            </div>
+        </div>
+        <!-- <div class="button-group">
+            <button class="button button--primary"
+                hx-get="penyelesaian/uts/soal-02.html"
+                hx-target="#uts2"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'uts2')">
+                <span>🔍 Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="uts2" class="project-content hidden"></div> -->
+    </div>
+
+    <!-- SOAL 3 -->
+    <div class="card card--soft">
+        <h3>Soal 3</h3>
+        <div class="question">
+            <p>Apa output dari kode berikut?</p>
+            <div class="text-code">x = 10
+y = 3
+print(x % y)</div>
+            <div class="tag-row" style="margin-top: 0.75rem;">
+                <span class="tag">A.&nbsp; <code>3</code></span>
+                <span class="tag">B.&nbsp; <code>3.33</code></span>
+                <span class="tag">C.&nbsp; <code>1</code></span>
+                <span class="tag">D.&nbsp; <code>0</code></span>
+            </div>
+        </div>
+        <!-- <div class="button-group">
+            <button class="button button--primary"
+                hx-get="penyelesaian/uts/soal-03.html"
+                hx-target="#uts3"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'uts3')">
+                <span>🔍 Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="uts3" class="project-content hidden"></div> -->
+    </div>
+
+    <!-- SOAL 4 -->
+    <div class="card card--soft">
+        <h3>Soal 4</h3>
+        <div class="question">
+            <p>Apa output dari kode berikut?</p>
+            <div class="text-code">a = "Hello"
+b = "World"
+print(a + " " + b)</div>
+            <div class="tag-row" style="margin-top: 0.75rem;">
+                <span class="tag">A.&nbsp; <code>HelloWorld</code></span>
+                <span class="tag">B.&nbsp; <code>Hello World</code></span>
+                <span class="tag">C.&nbsp; <code>Error</code></span>
+                <span class="tag">D.&nbsp; <code>"Hello" "World"</code></span>
+            </div>
+        </div>
+        <!-- <div class="button-group">
+            <button class="button button--primary"
+                hx-get="penyelesaian/uts/soal-04.html"
+                hx-target="#uts4"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'uts4')">
+                <span>🔍 Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="uts4" class="project-content hidden"></div> -->
+    </div>
+
+    <!-- SOAL 5 -->
+    <div class="card card--soft">
+        <h3>Soal 5</h3>
+        <div class="question">
+            <p>Manakah operator yang digunakan di Python untuk mengecek apakah dua nilai <strong>tidak sama</strong>?</p>
+            <div class="tag-row">
+                <span class="tag">A.&nbsp; <code>=</code></span>
+                <span class="tag">B.&nbsp; <code>==</code></span>
+                <span class="tag">C.&nbsp; <code>!=</code></span>
+                <span class="tag">D.&nbsp; <code>&lt;&gt;</code></span>
+            </div>
+        </div>
+        <!-- <div class="button-group">
+            <button class="button button--primary"
+                hx-get="penyelesaian/uts/soal-05.html"
+                hx-target="#uts5"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'uts5')">
+                <span>🔍 Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="uts5" class="project-content hidden"></div> -->
+    </div>
+
+    <!-- SOAL 6 -->
+    <div class="card card--soft">
+        <h3>Soal 6</h3>
+        <div class="question">
+            <p>Apa hasil dari ekspresi berikut?</p>
+            <div class="text-code">print(2 ** 4)</div>
+            <div class="tag-row" style="margin-top: 0.75rem;">
+                <span class="tag">A.&nbsp; <code>8</code></span>
+                <span class="tag">B.&nbsp; <code>16</code></span>
+                <span class="tag">C.&nbsp; <code>6</code></span>
+                <span class="tag">D.&nbsp; <code>24</code></span>
+            </div>
+        </div>
+        <!-- <div class="button-group">
+            <button class="button button--primary"
+                hx-get="penyelesaian/uts/soal-06.html"
+                hx-target="#uts6"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'uts6')">
+                <span>🔍 Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="uts6" class="project-content hidden"></div> -->
+    </div>
+
+    <!-- SOAL 7 -->
+    <div class="card card--soft">
+        <h3>Soal 7</h3>
+        <div class="question">
+            <p>Manakah dari berikut ini yang merupakan nilai <strong>boolean</strong> yang valid di Python?</p>
+            <div class="tag-row">
+                <span class="tag">A.&nbsp; <code>true</code></span>
+                <span class="tag">B.&nbsp; <code>TRUE</code></span>
+                <span class="tag">C.&nbsp; <code>True</code></span>
+                <span class="tag">D.&nbsp; <code>"True"</code></span>
+            </div>
+        </div>
+        <!-- <div class="button-group">
+            <button class="button button--primary"
+                hx-get="penyelesaian/uts/soal-07.html"
+                hx-target="#uts7"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'uts7')">
+                <span>🔍 Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="uts7" class="project-content hidden"></div> -->
+    </div>
+
+    <!-- SOAL 8 -->
+    <div class="card card--soft">
+        <h3>Soal 8</h3>
+        <div class="question">
+            <p>Apa output dari kode berikut?</p>
+            <div class="text-code">x = 5
+y = 2
+print(x // y)</div>
+            <div class="tag-row" style="margin-top: 0.75rem;">
+                <span class="tag">A.&nbsp; <code>2.5</code></span>
+                <span class="tag">B.&nbsp; <code>2</code></span>
+                <span class="tag">C.&nbsp; <code>3</code></span>
+                <span class="tag">D.&nbsp; <code>0</code></span>
+            </div>
+        </div>
+        <!-- <div class="button-group">
+            <button class="button button--primary"
+                hx-get="penyelesaian/uts/soal-08.html"
+                hx-target="#uts8"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'uts8')">
+                <span>🔍 Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="uts8" class="project-content hidden"></div> -->
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         BAGIAN B — SUB-CPMK3: STRUKTUR KONTROL & FUNGSI
+    ═══════════════════════════════════════ -->
+
+    <div class="card card--soft">
+        <h3>Bagian B — Struktur Kontrol &amp; Fungsi</h3>
+        <p class="text-meta">Sub-CPMK3 · CPL-1, CPL-2 · Level C3 · 6 Soal</p>
+    </div>
+
+    <!-- SOAL 9 -->
+    <div class="card card--soft">
+        <h3>Soal 9</h3>
+        <div class="question">
+            <p>Apa output dari kode berikut?</p>
+            <div class="text-code">nilai = 75
+if nilai >= 80:
+    print("A")
+elif nilai >= 70:
+    print("B")
+else:
+    print("C")</div>
+            <div class="tag-row" style="margin-top: 0.75rem;">
+                <span class="tag">A.&nbsp; <code>A</code></span>
+                <span class="tag">B.&nbsp; <code>B</code></span>
+                <span class="tag">C.&nbsp; <code>C</code></span>
+                <span class="tag">D.&nbsp; <code>Error</code></span>
+            </div>
+        </div>
+        <!-- <div class="button-group">
+            <button class="button button--primary"
+                hx-get="penyelesaian/uts/soal-09.html"
+                hx-target="#uts9"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'uts9')">
+                <span>🔍 Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="uts9" class="project-content hidden"></div> -->
+    </div>
+
+    <!-- SOAL 10 -->
+    <div class="card card--soft">
+        <h3>Soal 10</h3>
+        <div class="question">
+            <p>Apa output dari kode berikut?</p>
+            <div class="text-code">total = 0
+for i in range(1, 5):
+    total += i
+print(total)</div>
+            <div class="tag-row" style="margin-top: 0.75rem;">
+                <span class="tag">A.&nbsp; <code>10</code></span>
+                <span class="tag">B.&nbsp; <code>15</code></span>
+                <span class="tag">C.&nbsp; <code>4</code></span>
+                <span class="tag">D.&nbsp; <code>5</code></span>
+            </div>
+        </div>
+        <!-- <div class="button-group">
+            <button class="button button--primary"
+                hx-get="penyelesaian/uts/soal-10.html"
+                hx-target="#uts10"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'uts10')">
+                <span>🔍 Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="uts10" class="project-content hidden"></div> -->
+    </div>
+
+    <!-- SOAL 11 -->
+    <div class="card card--soft">
+        <h3>Soal 11</h3>
+        <div class="question">
+            <p>Berapa kali kata <code>"Python"</code> akan dicetak oleh kode berikut?</p>
+            <div class="text-code">i = 0
+while i < 3:
+    print("Python")
+    i += 1</div>
+            <div class="tag-row" style="margin-top: 0.75rem;">
+                <span class="tag">A.&nbsp; 1 kali</span>
+                <span class="tag">B.&nbsp; 2 kali</span>
+                <span class="tag">C.&nbsp; 3 kali</span>
+                <span class="tag">D.&nbsp; Infinite loop</span>
+            </div>
+        </div>
+        <!-- <div class="button-group">
+            <button class="button button--primary"
+                hx-get="penyelesaian/uts/soal-11.html"
+                hx-target="#uts11"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'uts11')">
+                <span>🔍 Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="uts11" class="project-content hidden"></div> -->
+    </div>
+
+    <!-- SOAL 12 -->
+    <div class="card card--soft">
+        <h3>Soal 12</h3>
+        <div class="question">
+            <p>Apa output dari pemanggilan fungsi berikut?</p>
+            <div class="text-code">def sapa(nama):
+    return "Halo, " + nama + "!"
+
+print(sapa("Andi"))</div>
+            <div class="tag-row" style="margin-top: 0.75rem;">
+                <span class="tag">A.&nbsp; <code>sapa("Andi")</code></span>
+                <span class="tag">B.&nbsp; <code>Halo, Andi!</code></span>
+                <span class="tag">C.&nbsp; <code>Halo, nama!</code></span>
+                <span class="tag">D.&nbsp; <code>Error</code></span>
+            </div>
+        </div>
+        <!-- <div class="button-group">
+            <button class="button button--primary"
+                hx-get="penyelesaian/uts/soal-12.html"
+                hx-target="#uts12"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'uts12')">
+                <span>🔍 Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="uts12" class="project-content hidden"></div> -->
+    </div>
+
+    <!-- SOAL 13 -->
+    <div class="card card--soft">
+        <h3>Soal 13</h3>
+        <div class="question">
+            <p>Apa output dari kode berikut?</p>
+            <div class="text-code">for i in range(0, 10, 3):
+    print(i)</div>
+            <div class="tag-row" style="margin-top: 0.75rem;">
+                <span class="tag">A.&nbsp; <code>0 3 6 9</code></span>
+                <span class="tag">B.&nbsp; <code>0 3 6</code></span>
+                <span class="tag">C.&nbsp; <code>1 4 7</code></span>
+                <span class="tag">D.&nbsp; <code>0 2 4 6 8</code></span>
+            </div>
+        </div>
+        <!-- <div class="button-group">
+            <button class="button button--primary"
+                hx-get="penyelesaian/uts/soal-13.html"
+                hx-target="#uts13"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'uts13')">
+                <span>🔍 Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="uts13" class="project-content hidden"></div> -->
+    </div>
+
+    <!-- SOAL 14 -->
+    <div class="card card--soft">
+        <h3>Soal 14</h3>
+        <div class="question">
+            <p>Manakah definisi fungsi Python yang <strong>benar</strong>?</p>
+            <div class="tag-row">
+                <span class="tag">A.&nbsp; <code>function hitung(x): return x*2</code></span>
+                <span class="tag">B.&nbsp; <code>def hitung(x): return x*2</code></span>
+                <span class="tag">C.&nbsp; <code>hitung(x) = x*2</code></span>
+                <span class="tag">D.&nbsp; <code>define hitung(x): return x*2</code></span>
+            </div>
+        </div>
+        <!-- <div class="button-group">
+            <button class="button button--primary"
+                hx-get="penyelesaian/uts/soal-14.html"
+                hx-target="#uts14"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'uts14')">
+                <span>🔍 Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="uts14" class="project-content hidden"></div> -->
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         BAGIAN C — SUB-CPMK1: ALGORITMA & FLOWCHART
+    ═══════════════════════════════════════ -->
+
+    <div class="card card--soft">
+        <h3>Bagian C — Konsep Algoritma, Flowchart &amp; Pseudocode</h3>
+        <p class="text-meta">Sub-CPMK1 · CPL-1 · Level C2 · 3 Soal</p>
+    </div>
+
+    <!-- SOAL 15 -->
+    <div class="card card--soft">
+        <h3>Soal 15</h3>
+        <div class="question">
+            <p>Dalam pengembangan program, manakah urutan langkah yang paling tepat?</p>
+            <div class="tag-row">
+                <span class="tag">A.&nbsp; Kode → Analisis → Output</span>
+                <span class="tag">B.&nbsp; Analisis masalah → Rancang algoritma → Implementasi → Uji</span>
+                <span class="tag">C.&nbsp; Implementasi → Rancang algoritma → Analisis</span>
+                <span class="tag">D.&nbsp; Uji → Implementasi → Rancang</span>
+            </div>
+        </div>
+        <!-- <div class="button-group">
+            <button class="button button--primary"
+                hx-get="penyelesaian/uts/soal-15.html"
+                hx-target="#uts15"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'uts15')">
+                <span>🔍 Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="uts15" class="project-content hidden"></div> -->
+    </div>
+
+    <!-- SOAL 16 -->
+    <div class="card card--soft">
+        <h3>Soal 16</h3>
+        <div class="question">
+            <p>Simbol apa yang digunakan dalam flowchart untuk merepresentasikan <strong>pengambilan keputusan</strong> (decision)?</p>
+            <div class="tag-row">
+                <span class="tag">A.&nbsp; Persegi panjang</span>
+                <span class="tag">B.&nbsp; Oval</span>
+                <span class="tag">C.&nbsp; Belah ketupat (diamond)</span>
+                <span class="tag">D.&nbsp; Jajar genjang</span>
+            </div>
+        </div>
+        <!-- <div class="button-group">
+            <button class="button button--primary"
+                hx-get="penyelesaian/uts/soal-16.html"
+                hx-target="#uts16"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'uts16')">
+                <span>🔍 Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="uts16" class="project-content hidden"></div> -->
+    </div>
+
+    <!-- SOAL 17 -->
+    <div class="card card--soft">
+        <h3>Soal 17</h3>
+        <div class="question">
+            <p>Perhatikan pseudocode berikut. Apa yang dilakukan algoritma ini?</p>
+            <div class="math-system">MULAI
+  masukan N
+  jika N mod 2 == 0 maka
+    cetak "Genap"
+  sebaliknya
+    cetak "Ganjil"
+SELESAI</div>
+            <div class="tag-row" style="margin-top: 0.75rem;">
+                <span class="tag">A.&nbsp; Menghitung nilai N</span>
+                <span class="tag">B.&nbsp; Menentukan apakah N bilangan genap atau ganjil</span>
+                <span class="tag">C.&nbsp; Menampilkan semua bilangan genap hingga N</span>
+                <span class="tag">D.&nbsp; Mencari nilai rata-rata</span>
+            </div>
+        </div>
+        <!-- <div class="button-group">
+            <button class="button button--primary"
+                hx-get="penyelesaian/uts/soal-17.html"
+                hx-target="#uts17"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'uts17')">
+                <span>🔍 Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="uts17" class="project-content hidden"></div> -->
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         BAGIAN D — SUB-CPMK4: KOMPUTASI MATEMATIKA DASAR
+    ═══════════════════════════════════════ -->
+
+    <div class="card card--soft">
+        <h3>Bagian D — Program Matematika Dasar</h3>
+        <p class="text-meta">Sub-CPMK4 · CPL-2 · Level C4 · 3 Soal</p>
+    </div>
+
+    <!-- SOAL 18 -->
+    <div class="card card--soft">
+        <h3>Soal 18</h3>
+        <div class="question">
+            <p>
+                Sebuah program menghitung luas lingkaran dengan jari-jari <span class="text-code-inline">r</span>.
+                Diberikan kode awal berikut:
+            </p>
+            <div class="text-code">import math
+r = float(input("Masukkan jari-jari: "))</div>
+            <p style="margin-top: 0.75rem;">Manakah baris kode yang <strong>benar</strong> untuk menghitung luas lingkaran?</p>
+            <div class="math-system" style="margin-bottom: 0.75rem;">
+Luas = π × r²
+            </div>
+            <div class="tag-row">
+                <span class="tag">A.&nbsp; <code>luas = 2 * math.pi * r</code></span>
+                <span class="tag">B.&nbsp; <code>luas = math.pi * r ** 2</code></span>
+                <span class="tag">C.&nbsp; <code>luas = math.pi * r * 2</code></span>
+                <span class="tag">D.&nbsp; <code>luas = math.pi + r ** 2</code></span>
+            </div>
+        </div>
+        <!-- <div class="button-group">
+            <button class="button button--primary"
+                hx-get="penyelesaian/uts/soal-18.html"
+                hx-target="#uts18"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'uts18')">
+                <span>🔍 Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="uts18" class="project-content hidden"></div> -->
+    </div>
+
+    <!-- SOAL 19 -->
+    <div class="card card--soft">
+        <h3>Soal 19</h3>
+        <div class="question">
+            <p>Perhatikan kode berikut untuk mencari nilai <strong>terbesar</strong> dari tiga angka. Apa outputnya?</p>
+            <div class="text-code">a, b, c = 4, 9, 6
+if a > b and a > c:
+    print(a)
+elif b > c:
+    print(b)
+else:
+    print(c)</div>
+            <div class="tag-row" style="margin-top: 0.75rem;">
+                <span class="tag">A.&nbsp; <code>4</code></span>
+                <span class="tag">B.&nbsp; <code>6</code></span>
+                <span class="tag">C.&nbsp; <code>9</code></span>
+                <span class="tag">D.&nbsp; <code>Error</code></span>
+            </div>
+        </div>
+        <!-- <div class="button-group">
+            <button class="button button--primary"
+                hx-get="penyelesaian/uts/soal-19.html"
+                hx-target="#uts19"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'uts19')">
+                <span>🔍 Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="uts19" class="project-content hidden"></div> -->
+    </div>
+
+    <!-- SOAL 20 -->
+    <div class="card card--soft">
+        <h3>Soal 20</h3>
+        <div class="question">
+            <p>
+                Kode berikut menghitung <strong>faktorial</strong> menggunakan loop.
+                Apa output yang dihasilkan untuk <span class="text-code-inline">n = 4</span>?
+            </p>
+            <div class="math-system" style="margin-bottom: 0.75rem;">
+n! = 1 × 2 × 3 × ... × n
+            </div>
+            <div class="text-code">n = 4
+hasil = 1
+for i in range(1, n + 1):
+    hasil *= i
+print(hasil)</div>
+            <div class="tag-row" style="margin-top: 0.75rem;">
+                <span class="tag">A.&nbsp; <code>8</code></span>
+                <span class="tag">B.&nbsp; <code>10</code></span>
+                <span class="tag">C.&nbsp; <code>24</code></span>
+                <span class="tag">D.&nbsp; <code>16</code></span>
+            </div>
+        </div>
+        <!-- <div class="button-group">
+            <button class="button button--primary"
+                hx-get="penyelesaian/uts/soal-20.html"
+                hx-target="#uts20"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'uts20')">
+                <span>🔍 Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="uts20" class="project-content hidden"></div> -->
+    </div>
+
+</div>
+
+<script src="js/ui-toggle.js"></script>

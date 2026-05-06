@@ -1,0 +1,146 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+
+        <h2>Bab 1: Definisi dan Orde Persamaan Diferensial Parsial</h2>
+
+        <p>
+            Bab ini membahas konsep dasar Persamaan Diferensial Parsial (PDP), khususnya definisi dan orde. Pemahaman terhadap konsep ini menjadi landasan utama dalam menganalisis dan menyelesaikan berbagai jenis PDP.
+        </p>
+
+        <p>
+            Materi ini mendukung pencapaian <span class="text-code-inline">CPMK-1</span> dan <span class="text-code-inline">Sub-CPMK 1</span>, yaitu kemampuan memahami definisi, orde, dan struktur dasar PDP.
+        </p>
+
+        <h3>Definisi Persamaan Diferensial Parsial</h3>
+
+        <h4>Konsep Dasar</h4>
+        <p>
+            Persamaan Diferensial Parsial adalah persamaan yang melibatkan turunan parsial dari suatu fungsi terhadap lebih dari satu variabel bebas.
+        </p>
+
+        <p>
+            Jika suatu fungsi dinyatakan sebagai <span class="text-code-inline">u(x, y)</span>, maka turunan parsialnya dapat berupa <span class="text-code-inline">∂u/∂x</span>, <span class="text-code-inline">∂u/∂y</span>, atau turunan orde lebih tinggi seperti <span class="text-code-inline">∂²u/∂x²</span>.
+        </p>
+
+        <h4>Bentuk Umum PDP</h4>
+        <p>
+            Secara umum, PDP dapat dituliskan sebagai hubungan antara variabel bebas, fungsi tak diketahui, dan turunan parsialnya.
+        </p>
+
+        <div class="text-code">
+F(x, y, u, ∂u/∂x, ∂u/∂y, ∂²u/∂x², ...) = 0
+        </div>
+
+        <p>
+            Bentuk ini menunjukkan bahwa PDP dapat melibatkan berbagai kombinasi turunan parsial hingga orde tertentu.
+        </p>
+
+        <h4>Contoh PDP</h4>
+
+        <div class="text-code">
+∂u/∂x + ∂u/∂y = 0
+        </div>
+
+        <p>
+            Persamaan tersebut merupakan contoh sederhana PDP yang melibatkan dua variabel bebas, yaitu <span class="text-code-inline">x</span> dan <span class="text-code-inline">y</span>.
+        </p>
+
+        <h3>Orde Persamaan Diferensial Parsial</h3>
+
+        <h4>Definisi Orde</h4>
+        <p>
+            Orde dari suatu PDP ditentukan oleh turunan parsial tertinggi yang muncul dalam persamaan tersebut.
+        </p>
+
+        <p>
+            Penentuan orde sangat penting karena metode penyelesaian PDP sangat bergantung pada orde persamaan.
+        </p>
+
+        <h4>Contoh Penentuan Orde</h4>
+
+        <div class="text-code">
+∂u/∂x + ∂u/∂y = 0
+        </div>
+
+        <p>
+            Persamaan di atas merupakan PDP orde satu karena turunan tertinggi adalah turunan pertama.
+        </p>
+
+        <div class="text-code">
+∂²u/∂x² + ∂²u/∂y² = 0
+        </div>
+
+        <p>
+            Persamaan tersebut merupakan PDP orde dua karena melibatkan turunan parsial orde dua.
+        </p>
+
+        <h3>Tabel Klasifikasi Orde</h3>
+
+        <table class="table">
+            <tr>
+                <th>Persamaan</th>
+                <th>Turunan Tertinggi</th>
+                <th>Orde</th>
+            </tr>
+            <tr>
+                <td>∂u/∂x + ∂u/∂y = 0</td>
+                <td>Turunan pertama</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>∂²u/∂x² + ∂²u/∂y² = 0</td>
+                <td>Turunan kedua</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>∂³u/∂x³ + u = 0</td>
+                <td>Turunan ketiga</td>
+                <td>3</td>
+            </tr>
+        </table>
+
+        <h3>Contoh Soal</h3>
+
+        <div class="question">
+            <div class="math-system">
+                Tentukan orde dari persamaan:
+                ∂²u/∂x² + ∂u/∂y + u = 0
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="pdp01-solusi.html"
+                hx-target="#solusi-pdp01"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'solusi-pdp01')">
+
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+
+            </button>
+        </div>
+
+        <div id="solusi-pdp01" class="project-content hidden"></div>
+
+        <h3>Hubungan dengan Komputasi dan Matematika</h3>
+
+        <p>
+            Dalam komputasi numerik, orde PDP menentukan kompleksitas algoritma yang digunakan, seperti metode beda hingga atau metode elemen hingga.
+        </p>
+
+        <p>
+            Selain itu, dalam pemrograman menggunakan <span class="text-code-inline">Python</span>, orde PDP mempengaruhi struktur diskretisasi dan implementasi algoritma numerik.
+        </p>
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Definisi dan orde merupakan konsep fundamental dalam PDP. Definisi menjelaskan struktur umum persamaan, sedangkan orde menentukan tingkat kompleksitas dan metode penyelesaian yang sesuai.
+        </p>
+
+    </div>
+
+</div>

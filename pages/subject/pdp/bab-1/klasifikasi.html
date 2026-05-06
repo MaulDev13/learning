@@ -1,0 +1,170 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+
+        <h2>Bab 1: Klasifikasi Persamaan Diferensial Parsial</h2>
+
+        <p>
+            Klasifikasi Persamaan Diferensial Parsial (PDP) merupakan langkah penting dalam menentukan sifat solusi serta metode penyelesaian yang sesuai. Pada PDP orde dua, klasifikasi dilakukan berdasarkan koefisien turunan parsial orde dua.
+        </p>
+
+        <p>
+            Materi ini mendukung <span class="text-code-inline">CPMK-1</span> dan <span class="text-code-inline">Sub-CPMK 6</span>, yaitu kemampuan mengidentifikasi jenis PDP dan memahami karakteristiknya.
+        </p>
+
+        <h3>Bentuk Umum PDP Orde Dua</h3>
+
+        <p>
+            PDP orde dua dengan dua variabel bebas umumnya dituliskan sebagai:
+        </p>
+
+        <div class="text-code">
+A ∂²u/∂x² + B ∂²u/∂x∂y + C ∂²u/∂y² + ... = 0
+        </div>
+
+        <p>
+            Koefisien <span class="text-code-inline">A</span>, <span class="text-code-inline">B</span>, dan <span class="text-code-inline">C</span> dapat berupa konstanta atau fungsi dari variabel bebas.
+        </p>
+
+        <h3>Diskriminan Klasifikasi</h3>
+
+        <p>
+            Klasifikasi dilakukan menggunakan diskriminan berikut:
+        </p>
+
+        <div class="text-code">
+D = B² - 4AC
+        </div>
+
+        <p>
+            Nilai diskriminan menentukan jenis PDP yang dihadapi.
+        </p>
+
+        <h3>Jenis-Jenis PDP</h3>
+
+        <h4>PDP Elliptik</h4>
+        <p>
+            PDP disebut elliptik jika nilai diskriminan memenuhi:
+        </p>
+
+        <div class="text-code">
+B² - 4AC < 0
+        </div>
+
+        <p>
+            PDP elliptik umumnya muncul pada masalah keadaan tunak, seperti distribusi suhu pada kondisi stabil.
+        </p>
+
+        <div class="text-code">
+∂²u/∂x² + ∂²u/∂y² = 0
+        </div>
+
+        <h4>PDP Parabolik</h4>
+        <p>
+            PDP disebut parabolik jika:
+        </p>
+
+        <div class="text-code">
+B² - 4AC = 0
+        </div>
+
+        <p>
+            PDP jenis ini sering digunakan dalam model difusi atau perpindahan panas.
+        </p>
+
+        <div class="text-code">
+∂u/∂t = ∂²u/∂x²
+        </div>
+
+        <h4>PDP Hiperbolik</h4>
+        <p>
+            PDP disebut hiperbolik jika:
+        </p>
+
+        <div class="text-code">
+B² - 4AC > 0
+        </div>
+
+        <p>
+            PDP hiperbolik biasanya digunakan untuk memodelkan fenomena gelombang.
+        </p>
+
+        <div class="text-code">
+∂²u/∂t² = c² ∂²u/∂x²
+        </div>
+
+        <h3>Tabel Klasifikasi</h3>
+
+        <table class="table">
+            <tr>
+                <th>Jenis</th>
+                <th>Kondisi Diskriminan</th>
+                <th>Contoh</th>
+                <th>Fenomena</th>
+            </tr>
+            <tr>
+                <td>Elliptik</td>
+                <td><span class="text-code-inline">B² - 4AC &lt; 0</span></td>
+                <td>Laplace</td>
+                <td>Keadaan tunak</td>
+            </tr>
+            <tr>
+                <td>Parabolik</td>
+                <td><span class="text-code-inline">B² - 4AC = 0</span></td>
+                <td>Panas</td>
+                <td>Difusi</td>
+            </tr>
+            <tr>
+                <td>Hiperbolik</td>
+                <td><span class="text-code-inline">B² - 4AC &gt; 0</span></td>
+                <td>Gelombang</td>
+                <td>Propagasi</td>
+            </tr>
+        </table>
+
+        <h3>Contoh Soal</h3>
+
+        <div class="question">
+            <div class="math-system">
+                Tentukan klasifikasi dari persamaan:
+                2 ∂²u/∂x² + 4 ∂²u/∂x∂y + 3 ∂²u/∂y² = 0
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="/pages/subject/pdp/bab-1/soal-klasifikasi.html"
+                hx-target="#solusi-klasifikasi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'solusi-klasifikasi')">
+
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+
+            </button>
+        </div>
+
+        <div id="solusi-klasifikasi" class="project-content hidden"></div>
+
+        <h3>Hubungan dengan Matematika dan Komputasi</h3>
+
+        <p>
+            Klasifikasi PDP menentukan jenis metode analitik yang dapat digunakan, seperti pemisahan variabel atau transformasi integral.
+        </p>
+
+        <p>
+            Dalam komputasi, klasifikasi mempengaruhi stabilitas dan pemilihan skema numerik, seperti metode beda hingga eksplisit atau implisit dalam <span class="text-code-inline">Python</span>.
+        </p>
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Klasifikasi PDP menjadi dasar dalam memahami perilaku solusi. Dengan menggunakan diskriminan <span class="text-code-inline">B² - 4AC</span>, PDP dapat dibedakan menjadi elliptik, parabolik, dan hiperbolik, yang masing-masing memiliki karakteristik dan aplikasi berbeda.
+        </p>
+
+    </div>
+
+</div>
+
+<script src="js/ui-toggle.js"></script>

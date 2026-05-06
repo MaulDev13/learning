@@ -1,0 +1,149 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+
+        <h2>Bab 1: Linearitas Persamaan Diferensial Parsial</h2>
+
+        <p>
+            Linearitas merupakan salah satu sifat fundamental dalam Persamaan Diferensial Parsial (PDP) yang menentukan bentuk dan metode penyelesaian yang dapat digunakan. Pemahaman terhadap linearitas memungkinkan mahasiswa membedakan antara PDP linier dan non-linier.
+        </p>
+
+        <p>
+            Materi ini mendukung <span class="text-code-inline">CPMK-1</span> dan <span class="text-code-inline">Sub-CPMK 1</span>, yaitu kemampuan memahami struktur dan karakteristik dasar PDP.
+        </p>
+
+        <h3>Definisi Linearitas</h3>
+
+        <h4>Konsep Dasar</h4>
+        <p>
+            Suatu PDP dikatakan linier jika fungsi tak diketahui dan semua turunannya muncul secara linier, yaitu tidak saling dikalikan dan tidak berada dalam fungsi non-linier seperti eksponensial atau trigonometri terhadap fungsi tersebut.
+        </p>
+
+        <p>
+            Secara umum, bentuk PDP linier dapat dituliskan sebagai:
+        </p>
+
+        <div class="text-code">
+a(x, y) ∂u/∂x + b(x, y) ∂u/∂y + c(x, y) u = f(x, y)
+        </div>
+
+        <p>
+            Koefisien <span class="text-code-inline">a(x, y)</span>, <span class="text-code-inline">b(x, y)</span>, dan <span class="text-code-inline">c(x, y)</span> hanya bergantung pada variabel bebas.
+        </p>
+
+        <h4>Ciri-Ciri PDP Linier</h4>
+        <p>
+            PDP linier memiliki karakteristik khusus yang membedakannya dari PDP non-linier.
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Kriteria</th>
+                <th>Penjelasan</th>
+            </tr>
+            <tr>
+                <td>Linear terhadap <span class="text-code-inline">u</span></td>
+                <td>Tidak ada pangkat selain satu</td>
+            </tr>
+            <tr>
+                <td>Tidak ada perkalian antar turunan</td>
+                <td>Misalnya <span class="text-code-inline">(∂u/∂x)(∂u/∂y)</span> tidak diperbolehkan</td>
+            </tr>
+            <tr>
+                <td>Tidak dalam fungsi non-linier</td>
+                <td>Seperti <span class="text-code-inline">sin(u)</span> atau <span class="text-code-inline">e^u</span></td>
+            </tr>
+        </table>
+
+        <h3>PDP Non-Linier</h3>
+
+        <h4>Definisi</h4>
+        <p>
+            PDP non-linier adalah persamaan yang melibatkan fungsi tak diketahui atau turunannya dalam bentuk non-linier, seperti pangkat lebih dari satu atau fungsi non-linier lainnya.
+        </p>
+
+        <h4>Contoh PDP Non-Linier</h4>
+
+        <div class="text-code">
+∂u/∂x + (∂u/∂y)^2 = 0
+        </div>
+
+        <div class="text-code">
+∂u/∂x + sin(u) = 0
+        </div>
+
+        <p>
+            Kedua contoh tersebut tidak linier karena melibatkan operasi non-linier terhadap <span class="text-code-inline">u</span> atau turunannya.
+        </p>
+
+        <h3>Perbandingan Linier dan Non-Linier</h3>
+
+        <table class="table">
+            <tr>
+                <th>Aspek</th>
+                <th>Linier</th>
+                <th>Non-Linier</th>
+            </tr>
+            <tr>
+                <td>Bentuk</td>
+                <td>Linear terhadap <span class="text-code-inline">u</span></td>
+                <td>Tidak linear</td>
+            </tr>
+            <tr>
+                <td>Metode solusi</td>
+                <td>Lebih sistematis</td>
+                <td>Lebih kompleks</td>
+            </tr>
+            <tr>
+                <td>Superposisi</td>
+                <td>Berlaku</td>
+                <td>Tidak berlaku</td>
+            </tr>
+        </table>
+
+        <h3>Contoh Soal</h3>
+
+        <div class="question">
+            <div class="math-system">
+                Tentukan apakah persamaan berikut linier atau non-linier:
+                ∂u/∂x + u ∂u/∂y = 0
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="/pages/subject/pdp/bab-1/soal-linearitas.html"
+                hx-target="#solusi-linearitas"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'solusi-linearitas')">
+
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+
+            </button>
+        </div>
+
+        <div id="solusi-linearitas" class="project-content hidden"></div>
+
+        <h3>Hubungan dengan Komputasi</h3>
+
+        <p>
+            Dalam implementasi numerik menggunakan <span class="text-code-inline">Python</span>, PDP linier lebih mudah diselesaikan karena dapat direpresentasikan dalam bentuk sistem linier.
+        </p>
+
+        <p>
+            Sebaliknya, PDP non-linier sering membutuhkan metode iteratif seperti <span class="text-code-inline">Newton-Raphson</span> atau pendekatan numerik lainnya.
+        </p>
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Linearitas merupakan sifat penting dalam PDP yang mempengaruhi metode penyelesaian. PDP linier memiliki struktur yang lebih sederhana dan dapat diselesaikan dengan metode sistematis, sedangkan PDP non-linier memerlukan pendekatan yang lebih kompleks.
+        </p>
+
+    </div>
+
+</div>
+
+<script src="js/ui-toggle.js"></script>
