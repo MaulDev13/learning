@@ -6,13 +6,11 @@
         <h3>Toleransi Error</h3>
 
         <p>
-            Toleransi error adalah batas maksimum kesalahan
-            yang masih dapat diterima dalam suatu perhitungan numerik.
+            Toleransi error adalah batas maksimum kesalahan yang masih dapat diterima dalam suatu perhitungan numerik.
         </p>
 
         <p>
-            Nilai ini digunakan untuk menentukan
-            kapan proses iterasi harus dihentikan.
+            Nilai ini digunakan untuk menentukan kapan proses iterasi harus dihentikan.
         </p>
 
     </div>
@@ -23,18 +21,15 @@
         <h3>Konsep Dasar</h3>
 
         <p>
-            Dalam metode numerik, hasil yang diperoleh
-            tidak harus benar secara sempurna.
+            Dalam metode numerik, hasil yang diperoleh tidak harus benar secara sempurna.
         </p>
 
         <p>
-            Yang penting adalah hasil cukup dekat
-            dengan nilai sebenarnya.
+            Yang penting adalah hasil cukup dekat dengan nilai sebenarnya.
         </p>
 
         <p>
-            Toleransi error menentukan
-            seberapa dekat itu dianggap “cukup”.
+            Toleransi error menentukan seberapa dekat itu dianggap “cukup”.
         </p>
 
     </div>
@@ -45,21 +40,21 @@
         <h3>Hubungan dengan Galat Aproksimasi</h3>
 
         <p>
-            Toleransi error dibandingkan dengan
-            galat relatif aproksimasi.
+            Toleransi error dibandingkan dengan galat relatif aproksimasi.
         </p>
 
         <p>
             Iterasi dihentikan jika:
         </p>
 
-        <p>
-            ε<sub>a</sub> < ε<sub>s</sub>
-        </p>
+        <div class="katex">
+            $$
+            \varepsilon_a < \varepsilon_s
+            $$
+        </div>
 
         <p>
-            dimana ε<sub>a</sub> adalah galat aproksimasi
-            dan ε<sub>s</sub> adalah toleransi.
+            di mana \( \varepsilon_a \) adalah galat aproksimasi dan \( \varepsilon_s \) adalah toleransi.
         </p>
 
     </div>
@@ -70,12 +65,14 @@
         <h3>Penentuan Toleransi</h3>
 
         <p>
-            Nilai toleransi biasanya ditentukan
-            berdasarkan tingkat ketelitian yang diinginkan.
+            Nilai toleransi biasanya ditentukan berdasarkan tingkat ketelitian yang diinginkan.
         </p>
 
         <p>
             Contoh:
+        </p>
+
+        <p>
             0.01% → sangat teliti<br>
             0.1% → cukup teliti<br>
             1% → toleransi longgar
@@ -89,20 +86,21 @@
         <h3>Hubungan dengan Angka Penting</h3>
 
         <p>
-            Toleransi error dapat ditentukan
-            dari jumlah angka penting.
+            Toleransi error dapat ditentukan dari jumlah angka penting.
         </p>
 
         <p>
             Rumus pendekatan:
         </p>
 
-        <p>
-            ε<sub>s</sub> = 0.5 × 10<sup>(2−n)</sup> %
-        </p>
+        <div class="katex">
+            $$
+            \varepsilon_s = 0.5 \times 10^{(2-n)} \%
+            $$
+        </div>
 
         <p>
-            dimana n adalah jumlah angka penting.
+            di mana \( n \) adalah jumlah angka penting.
         </p>
 
     </div>
@@ -116,13 +114,14 @@
             Jika diinginkan 3 angka penting:
         </p>
 
-        <p>
-            ε<sub>s</sub> = 0.5 × 10<sup>(2−3)</sup> = 0.05%
-        </p>
+        <div class="katex">
+            $$
+            \varepsilon_s = 0.5 \times 10^{(2-3)} = 0.05\%
+            $$
+        </div>
 
         <p>
-            Artinya, iterasi dihentikan
-            jika galat lebih kecil dari 0.05%.
+            Artinya, iterasi dihentikan jika galat lebih kecil dari 0.05%.
         </p>
 
     </div>
@@ -133,13 +132,11 @@
         <h3>Interpretasi</h3>
 
         <p>
-            Toleransi kecil → hasil lebih akurat,
-            tetapi butuh lebih banyak iterasi.
+            Toleransi kecil → hasil lebih akurat, tetapi butuh lebih banyak iterasi.
         </p>
 
         <p>
-            Toleransi besar → iterasi lebih cepat,
-            tetapi hasil kurang akurat.
+            Toleransi besar → iterasi lebih cepat, tetapi hasil kurang akurat.
         </p>
 
     </div>
@@ -159,8 +156,7 @@
         </p>
 
         <p>
-            Pemilihan toleransi harus disesuaikan
-            dengan kebutuhan masalah.
+            Pemilihan toleransi harus disesuaikan dengan kebutuhan masalah.
         </p>
 
     </div>
@@ -171,13 +167,11 @@
         <h3>Peran dalam Metode Numerik</h3>
 
         <p>
-            Toleransi error adalah dasar
-            dari kriteria berhenti (stopping criterion).
+            Toleransi error adalah dasar dari kriteria berhenti (stopping criterion).
         </p>
 
         <p>
-            Hampir semua metode iteratif
-            menggunakan konsep ini.
+            Hampir semua metode iteratif menggunakan konsep ini.
         </p>
 
     </div>
@@ -188,13 +182,11 @@
         <h3>Intuisi</h3>
 
         <p>
-            Toleransi error menjawab:
-            “Kapan kita berhenti menghitung?”
+            Toleransi error menjawab: “Kapan kita berhenti menghitung?”
         </p>
 
         <p>
-            Kita tidak menunggu hasil sempurna,
-            tetapi hasil yang cukup baik.
+            Kita tidak menunggu hasil sempurna, tetapi hasil yang cukup baik.
         </p>
 
     </div>
@@ -205,18 +197,15 @@
         <h3>Kesimpulan</h3>
 
         <p>
-            Toleransi error adalah batas kesalahan
-            yang digunakan untuk menghentikan iterasi.
+            Toleransi error adalah batas kesalahan yang digunakan untuk menghentikan iterasi.
         </p>
 
         <p>
-            Nilai ini menentukan keseimbangan
-            antara akurasi dan efisiensi.
+            Nilai ini menentukan keseimbangan antara akurasi dan efisiensi.
         </p>
 
         <p>
-            Pemahaman toleransi sangat penting
-            dalam penerapan metode numerik.
+            Pemahaman toleransi sangat penting dalam penerapan metode numerik.
         </p>
 
     </div>

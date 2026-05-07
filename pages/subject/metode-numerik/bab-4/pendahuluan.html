@@ -1,7 +1,7 @@
 <div class="card-group">
 
     <!-- ============================================ -->
-    <!-- CARD 1: APA ITU INTERPOLASI? (PENJELASAN SEDERHANA) -->
+    <!-- CARD 1: APA ITU INTERPOLASI? -->
     <!-- ============================================ -->
     <div class="card card--soft">
         <h2>Apa Itu Interpolasi?</h2>
@@ -16,9 +16,9 @@
                 <tr><th>x</th><th>f(x)</th></tr>
             </thead>
             <tbody>
-                <tr><td>1</span></td><td>2</span></td><tr>
-                <tr><td>2</span></td><td>4</span></td></tr>
-                <tr><td>3</span></td><td>6</span></td></tr>
+                <tr><td>1</td><td>2</td></tr>
+                <tr><td>2</td><td>4</td></tr>
+                <tr><td>3</td><td>6</td></tr>
             </tbody>
         </table>
         <p>
@@ -34,12 +34,12 @@
     </div>
 
     <!-- ============================================ -->
-    <!-- CARD 2: INTUISI SEDERHANA (DENGAN GAMBAR KONSEPTUAL) -->
+    <!-- CARD 2: INTUISI SEDERHANA -->
     <!-- ============================================ -->
     <div class="card card--soft">
         <h3>Intuisi Sederhana</h3>
         <p>
-            Coba bayangkan kamu memiliki beberapa titik di kertas gambar:
+            Bayangkan beberapa titik di kertas:
         </p>
         <p>
             • Titik A di (1,2)<br>
@@ -47,8 +47,7 @@
             • Titik C di (3,6)
         </p>
         <p>
-            Jika kamu menghubungkan titik-titik itu dengan <strong>garis atau kurva</strong>, 
-            maka kamu bisa melihat kira-kira di mana letak titik untuk x = 2.5.
+            Menghubungkan titik-titik itu dengan <strong>garis atau kurva</strong> memberi kita gambaran kira-kira di mana titik untuk x = 2.5.
         </p>
         <div class="text-code">
 Ilustrasi konsep:
@@ -66,8 +65,7 @@ Ilustrasi konsep:
 Titik (2.5, ?) berada di antara titik (2,4) dan (3,6)
         </div>
         <p>
-            <span class="text-code-inline">Intuisi interpolasi:</span> 
-            "Menggambar garis/kurva yang melewati titik-titik data, lalu membaca nilai di antaranya."
+            <span class="text-code-inline">Intuisi interpolasi:</span> Menggambar garis/kurva melalui titik data, lalu membaca nilai di antaranya.
         </p>
     </div>
 
@@ -75,25 +73,18 @@ Titik (2.5, ?) berada di antara titik (2,4) dan (3,6)
     <!-- CARD 3: CONTOH KEHIDUPAN SEHARI-HARI -->
     <!-- ============================================ -->
     <div class="card card--soft">
-        <h3>Contoh dalam Kehidupan Sehari-hari</h3>
+        <h3>Contoh Kehidupan Sehari-hari</h3>
         <p>
-            Sebenarnya, tanpa sadar kita sering melakukan interpolasi!
+            Interpolasi sering kita lakukan tanpa sadar:
         </p>
         <p>
-            <span class="text-code-inline">Contoh 1: Suhu Tubuh</span><br>
-            Jam 08.00 suhu 36.5°C, jam 12.00 suhu 37.5°C. 
-            Kira-kira jam 10.00 suhu berapa? <strong>37.0°C</strong> (tebakan tengah-tengah).
-            Ini adalah <strong>interpolasi linear</strong>.
+            <span class="text-code-inline">Suhu Tubuh:</span> Jam 08.00 suhu 36.5°C, jam 12.00 suhu 37.5°C. Jam 10.00 kira-kira 37.0°C — interpolasi linear.
         </p>
         <p>
-            <span class="text-code-inline">Contoh 2: Ramalan Populasi</span><br>
-            Tahun 2000 populasi 100 juta, tahun 2010 populasi 120 juta.
-            Perkiraan populasi tahun 2005? Tentu sekitar <strong>110 juta</strong>.
+            <span class="text-code-inline">Ramalan Populasi:</span> Tahun 2000 populasi 100 juta, 2010 populasi 120 juta. Tahun 2005 kira-kira 110 juta.
         </p>
         <p>
-            <span class="text-code-inline">Contoh 3: Mengisi Warna di Gambar</span><br>
-            Photoshop atau aplikasi edit foto menggunakan interpolasi saat kamu memperbesar gambar.
-            Program menebak warna pixel baru berdasarkan pixel di sekitarnya.
+            <span class="text-code-inline">Mengisi Warna di Gambar:</span> Saat memperbesar gambar, software menebak warna pixel baru dari pixel sekitarnya.
         </p>
         <div class="text-math">
             "Interpolasi ada di mana-mana: suhu, populasi, warna gambar, dan masih banyak lagi."
@@ -101,218 +92,161 @@ Titik (2.5, ?) berada di antara titik (2,4) dan (3,6)
     </div>
 
     <!-- ============================================ -->
-    <!-- CARD 4: DEFINISI FORMAL (TETAP AKADEMIS) -->
+    <!-- CARD 4: DEFINISI FORMAL -->
     <!-- ============================================ -->
     <div class="card card--soft">
         <h3>Definisi Formal Interpolasi</h3>
         <p>
-            Secara matematis, <span class="text-code-inline">interpolasi</span> adalah proses menemukan 
-            fungsi <span class="text-code-inline">P(x)</span> yang melewati semua titik data 
-            <span class="text-code-inline">(x₀, y₀), (x₁, y₁), ..., (xₙ, yₙ)</span>, 
-            kemudian menggunakan fungsi tersebut untuk menghitung nilai pada 
-            <span class="text-code-inline">x</span> yang tidak diketahui.
+            Secara matematis, <span class="text-code-inline">interpolasi</span> adalah proses menemukan fungsi <span class="text-code-inline">P(x)</span> yang melewati semua titik data 
+            <span class="text-code-inline">(x₀, y₀), (x₁, y₁), ..., (xₙ, yₙ)</span>, lalu digunakan untuk menghitung nilai pada <span class="text-code-inline">x</span> yang tidak diketahui.
         </p>
         <div class="text-math">
-            Diketahui: (x₀, y₀), (x₁, y₁), ..., (xₙ, yₙ)<br>
+            Diketahui: (x₀, y₀), (x₁, y₁), ..., (xₙ, yₙ)\\
             Dicari: P(x) sehingga P(xᵢ) = yᵢ untuk semua i
         </div>
         <p>
-            Jika <span class="text-code-inline">x</span> berada di dalam rentang data 
-            <span class="text-code-inline">[x₀, xₙ]</span>, ini disebut <span class="text-code-inline">interpolasi</span>. 
-            Jika di luar rentang, disebut <span class="text-code-inline">ekstrapolasi</span> (lebih berisiko, hasilnya bisa meleset jauh).
+            Jika x berada di rentang data <span class="text-code-inline">[x₀, xₙ]</span>, disebut <span class="text-code-inline">interpolasi</span>. Di luar rentang disebut <span class="text-code-inline">ekstrapolasi</span>.
         </p>
     </div>
 
     <!-- ============================================ -->
-    <!-- CARD 5: JENIS-JENIS INTERPOLASI -->
+    <!-- CARD 5: JENIS INTERPOLASI -->
     <!-- ============================================ -->
     <div class="card card--soft">
         <h3>Jenis-Jenis Interpolasi</h3>
-        <p>
-            Berikut adalah metode interpolasi yang paling umum digunakan:
-        </p>
+        <p>Metode interpolasi yang umum digunakan:</p>
         <table class="table">
             <thead>
                 <tr><th>Metode</th><th>Penjelasan Sederhana</th><th>Kapan Dipakai?</th></tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Interpolasi Linear</span></td>
-                    <td>Menghubungkan dua titik dengan <strong>garis lurus</strong></span></td>
-                    <td>Data hampir membentuk garis, butuh cepat</span></td>
+                    <td>Linear</td>
+                    <td>Hubungkan dua titik dengan garis lurus</td>
+                    <td>Data hampir linier, butuh cepat</td>
                 </tr>
                 <tr>
-                    <td>Interpolasi Polinomial</span></td>
-                    <td>Menggunakan <strong>kurva lengkung</strong> yang melewati semua titik</span></td>
-                    <td>Data agak melengkung, butuh presisi lebih</span></td>
+                    <td>Polinomial</td>
+                    <td>Gunakan kurva yang melewati semua titik</td>
+                    <td>Data melengkung, butuh presisi</td>
                 </tr>
                 <tr>
-                    <td>Spline Interpolation</span></td>
-                    <td>Kurva <strong>halus</strong> yang terdiri dari potongan-potongan</span></td>
-                    <td>Banyak titik data, butuh hasil yang sangat mulus</span></td>
+                    <td>Spline</td>
+                    <td>Kurva halus dari potongan-potongan</td>
+                    <td>Banyak titik, hasil mulus</td>
                 </tr>
                 <tr>
-                    <td>Interpolasi Lagrange</span></td>
-                    <td>Bentuk khusus interpolasi polinomial dengan rumus eksplisit</span></td>
-                    <table>Untuk pembelajaran, atau titik data sedikit</span></td>
+                    <td>Lagrange</td>
+                    <td>Polinomial dengan rumus eksplisit</td>
+                    <td>Belajar, titik data sedikit</td>
                 </tr>
                 <tr>
-                    <td>Interpolasi Newton</span></td>
-                    <td>Bentuk interpolasi polinomial yang mudah ditambah titik baru</span></td>
-                    <td>Data ditambahkan secara bertahap</span></td>
+                    <td>Newton</td>
+                    <td>Polinomial yang mudah ditambah titik baru</td>
+                    <td>Data bertambah bertahap</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
     <!-- ============================================ -->
-    <!-- CARD 6: CONTOH INTERPOLASI LINEAR (LENGKAP) -->
+    <!-- CARD 6: CONTOH INTERPOLASI LINEAR -->
     <!-- ============================================ -->
     <div class="card card--soft">
-        <h3>Contoh Interpolasi Linear (Paling Sederhana)</h3>
-        <p>
-            Misalkan kita punya data:
-        </p>
+        <h3>Contoh Interpolasi Linear</h3>
+        <p>Data:</p>
         <table class="table">
             <thead>
                 <tr><th>x</th><th>f(x)</th></tr>
             </thead>
             <tbody>
-                <tr><td>2</span></td><td>4</span></td></tr>
-                <tr><td>3</span></td><td>6</span></td></tr>
+                <tr><td>2</td><td>4</td></tr>
+                <tr><td>3</td><td>6</td></tr>
             </tbody>
         </table>
-        <p>
-            Ditanya: <span class="text-code-inline">f(2.5) = ?</span>
-        </p>
-        <p>
-            <strong>Penyelesaian dengan interpolasi linear:</strong>
-        </p>
+        <p>Ditanya: <span class="text-code-inline">f(2.5) = ?</span></p>
         <div class="text-math">
-            \text{Rumus: } f(x) = f(x₀) + \frac{f(x₁) - f(x₀)}{x₁ - x₀} (x - x₀)
+            \text{Rumus: } f(x) = f(x₀) + \frac{f(x₁)-f(x₀)}{x₁-x₀} (x-x₀)
         </div>
         <div class="text-math">
-            f(2.5) = 4 + \frac{6 - 4}{3 - 2} (2.5 - 2) = 4 + \frac{2}{1} \times 0.5 = 4 + 1 = 5
+            f(2.5) = 4 + \frac{6-4}{3-2} (2.5-2) = 4 + 2 \cdot 0.5 = 5
         </div>
-        <p>
-            <strong>Hasil:</strong> <span class="text-code-inline">f(2.5) = 5</span>
-        </p>
+        <p>Hasil: <span class="text-code-inline">f(2.5) = 5</span></p>
         <div class="text-code">
-# Kode Python sederhana
 def interpolasi_linear(x0, y0, x1, y1, x):
     return y0 + (y1 - y0) * (x - x0) / (x1 - x0)
 
 print(interpolasi_linear(2, 4, 3, 6, 2.5))  # Output: 5.0
         </div>
-        <p>
-            <strong>Logikanya:</strong> Karena 2.5 tepat di tengah antara 2 dan 3, 
-            maka nilainya juga di tengah antara 4 dan 6, yaitu 5.
-        </p>
     </div>
 
     <!-- ============================================ -->
-    <!-- CARD 7: INTERPOLASI vs EKSTRAPOLASI -->
+    <!-- CARD 7: INTERPOLASI VS EKSTRAPOLASI -->
     <!-- ============================================ -->
     <div class="card card--soft">
-        <h3>Perbedaan Interpolasi dan Ekstrapolasi</h3>
-        <p>
-            Ini adalah konsep penting yang sering membingungkan:
-        </p>
+        <h3>Interpolasi vs Ekstrapolasi</h3>
         <table class="table">
             <thead>
                 <tr><th></th><th>Interpolasi</th><th>Ekstrapolasi</th></tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Artinya</span></td>
-                    <td>Menebak nilai <strong>di dalam</strong> rentang data</span></td>
-                    <td>Menebak nilai <strong>di luar</strong> rentang data</span></td>
+                    <td>Artinya</td>
+                    <td>Menebak nilai <strong>di dalam</strong> rentang data</td>
+                    <td>Menebak nilai <strong>di luar</strong> rentang data</td>
                 </tr>
                 <tr>
-                    <td>Contoh</span></td>
-                    <td>Data 2000-2010 → tebak 2005</span></td>
-                    <td>Data 2000-2010 → tebak 2020</span></td>
+                    <td>Contoh</td>
+                    <td>Tahun 2000–2010 → tebak 2005</td>
+                    <td>Tahun 2000–2010 → tebak 2020</td>
                 </tr>
                 <tr>
-                    <td>Tingkat kepercayaan</span></td>
-                    <td><strong>Cukup akurat</strong> (masih dalam jangkauan)</span></td>
-                    <td><strong>Berisiko tinggi</strong> (bisa meleset jauh)</span></td>
+                    <td>Tingkat kepercayaan</td>
+                    <td>Cukup akurat</td>
+                    <td>Berisiko tinggi</td>
                 </tr>
                 <tr>
-                    <td>Analogi</span></td>
-                    <td>Tebak posisi di antara dua kota yang diketahui</span></td>
-                    <td>Tebak posisi di luar peta yang tidak diketahui</span></td>
+                    <td>Analogi</td>
+                    <td>Tebak posisi di antara dua kota</td>
+                    <td>Tebak posisi di luar peta</td>
                 </tr>
             </tbody>
         </table>
         <div class="text-math">
-            "Interpolasi di dalam zona nyaman, ekstrapolasi di luar kemampuan prediksi."
+            "Interpolasi di zona nyaman, ekstrapolasi di luar kemampuan prediksi."
         </div>
     </div>
 
     <!-- ============================================ -->
-    <!-- CARD 8: KAPAN INTERPOLASI DIGUNAKAN? -->
+    <!-- CARD 8: KAPAN MEMAKAI INTERPOLASI -->
     <!-- ============================================ -->
     <div class="card card--soft">
-        <h3>Kapan Kita Memakai Interpolasi?</h3>
-        <p>
-            Dalam dunia nyata, interpolasi digunakan saat:
-        </p>
-        <p>
-            <span class="text-code-inline">✓ Data tidak lengkap</span><br>
-            Misalnya sensor hanya merekam setiap 10 menit, tapi kita butuh data tiap 1 menit.
-        </p>
-        <p>
-            <span class="text-code-inline">✓ Ingin menghaluskan grafik</span><br>
-            Data hanya berupa titik-titik, interpolasi membantu menggambar kurva yang mulus.
-        </p>
-        <p>
-            <span class="text-code-inline">✓ Butuh nilai di posisi tertentu</span><br>
-            Tabel trigonometri (sin, cos, tan) panjang disimpan, interpolasi digunakan untuk nilai di antaranya.
-        </p>
-        <p>
-            <span class="text-code-inline">✓ Machine Learning dan Visi Komputer</span><br>
-            Memperbesar gambar (resampling) menggunakan interpolasi warna.
-        </p>
-        <p>
-            <span class="text-code-inline">✓ Simulasi dan Grafika Komputer</span><br>
-            Membuat gerakan halus antar frame (keyframe interpolation).
-        </p>
+        <h3>Kapan Menggunakan Interpolasi?</h3>
+        <p>Interpolasi berguna ketika:</p>
+        <ul>
+            <li>Data tidak lengkap (sensor merekam setiap 10 menit, tapi butuh tiap 1 menit)</li>
+            <li>Ingin menghaluskan grafik dari titik-titik data</li>
+            <li>Butuh nilai di posisi tertentu (misal tabel trigonometri)</li>
+            <li>Machine Learning & Visi Komputer (resampling, memperbesar gambar)</li>
+            <li>Simulasi & Grafika Komputer (gerakan halus antar frame)</li>
+        </ul>
     </div>
 
     <!-- ============================================ -->
-    <!-- CARD 9: APLIKASI INTERPOLASI DI BERBAGAI BIDANG -->
+    <!-- CARD 9: APLIKASI INTERPOLASI -->
     <!-- ============================================ -->
     <div class="card card--soft">
         <h3>Aplikasi Interpolasi</h3>
-        <p>
-            Interpolasi digunakan di berbagai bidang, antara lain:
-        </p>
         <table class="table">
             <thead>
                 <tr><th>Bidang</th><th>Aplikasi</th></tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Teknik Sipil</span></td>
-                    <td>Memperkirakan bentuk permukaan tanah dari titik-titik survei</span></td>
-                </tr>
-                <tr>
-                    <td>Kedokteran</span></td>
-                    <td>Rekonstruksi gambar CT Scan atau MRI dari irisan tipis</span></td>
-                </tr>
-                <tr>
-                    <td>Meteorologi</span></td>
-                    <td>Memperkirakan suhu di suatu daerah dari stasiun cuaca terdekat</span></td>
-                </tr>
-                <tr>
-                    <td>Geofisika</span></td>
-                    <td>Memetakan struktur bawah tanah dari data seismik</span></td>
-                </tr>
-                <tr>
-                    <td>Animasi</span></td>
-                    <td>Membuat gerakan halus antar pose karakter (keyframe interpolation)</span></td>
-                </tr>
+                <tr><td>Teknik Sipil</td><td>Memperkirakan bentuk permukaan tanah dari titik survei</td></tr>
+                <tr><td>Kedokteran</td><td>Rekonstruksi gambar CT/MRI dari irisan tipis</td></tr>
+                <tr><td>Meteorologi</td><td>Perkiraan suhu dari stasiun cuaca terdekat</td></tr>
+                <tr><td>Geofisika</td><td>Memetakan struktur bawah tanah dari data seismik</td></tr>
+                <tr><td>Animasi</td><td>Membuat gerakan halus antar pose karakter (keyframe interpolation)</td></tr>
             </tbody>
         </table>
     </div>
@@ -321,25 +255,18 @@ print(interpolasi_linear(2, 4, 3, 6, 2.5))  # Output: 5.0
     <!-- CARD 10: KESIMPULAN -->
     <!-- ============================================ -->
     <div class="card card--soft">
-        <h3>Kesimpulan (Ringkasan untuk Pemula)</h3>
-        <p>
-            <strong>Interpolasi itu sederhana:</strong>
-        </p>
-        <p>
-            📌 <strong>Definisi:</strong> Teknik menebak nilai di antara titik-titik data yang diketahui.<br>
-            📌 <strong>Basis data:</strong> Kita tahu titik A dan B, kita ingin tahu titik di antaranya.<br>
-            📌 <strong>Interpolasi Linear:</strong> Cara paling sederhana — hubungkan dengan garis lurus.<br>
-            📌 <strong>Interpolasi vs Ekstrapolasi:</strong> Interpolasi = di dalam data (aman), ekstrapolasi = di luar data (berisiko).<br>
-            📌 <strong>Penggunaan sehari-hari:</strong> Memperkirakan suhu, populasi, warna gambar, gerakan animasi.<br>
-            📌 <strong>Metode yang akan dipelajari:</strong> Linear, Polinomial (Lagrange, Newton), Spline.
-        </p>
-        <p>
-            <strong>Intinya:</strong> Interpolasi adalah <span class="text-code-inline">"seni menebak secara matematis"</span> 
-            yang sangat berguna dalam sains, teknik, dan kehidupan sehari-hari.
-        </p>
+        <h3>Kesimpulan</h3>
+        <p><strong>Interpolasi itu sederhana:</strong></p>
+        <ul>
+            <li>Definisi: Menebak nilai di antara titik-titik data yang diketahui</li>
+            <li>Basis data: Diketahui titik A dan B, ingin tahu titik di antaranya</li>
+            <li>Interpolasi Linear: Hubungkan titik dengan garis lurus</li>
+            <li>Interpolasi vs Ekstrapolasi: Di dalam data (aman), di luar data (berisiko)</li>
+            <li>Penggunaan sehari-hari: Suhu, populasi, warna gambar, animasi</li>
+            <li>Metode: Linear, Polinomial (Lagrange, Newton), Spline</li>
+        </ul>
         <div class="text-math">
-            "Selanjutnya, kita akan mempelajari metode-metode interpolasi secara lebih mendalam:<br>
-            Linear → Lagrange → Newton → Spline. Semakin canggih, semakin akurat!"
+            "Selanjutnya: Linear → Lagrange → Newton → Spline. Semakin canggih, semakin akurat!"
         </div>
     </div>
 

@@ -3,17 +3,14 @@
     <!-- PENGANTAR -->
     <div class="card card--soft">
 
-        <h3>Metode Secant</h3>
+        <h3>Akar Persamaan Non Linear: Metode Secant</h3>
 
         <p>
-            Metode Secant adalah metode numerik
-            untuk mencari akar persamaan non-linear
-            tanpa menggunakan turunan fungsi.
+            Metode Secant adalah metode numerik untuk mencari akar persamaan non-linear dengan pendekatan garis potong (secant line).
         </p>
 
         <p>
-            Metode ini termasuk metode terbuka
-            dan merupakan pengembangan dari Newton-Raphson.
+            Metode ini termasuk metode terbuka karena tidak memerlukan interval yang menjamin keberadaan akar.
         </p>
 
     </div>
@@ -24,13 +21,15 @@
         <h3>Konsep Dasar</h3>
 
         <p>
-            Metode Secant menggunakan dua titik awal
-            untuk membentuk garis lurus (secant line).
+            Metode Secant merupakan pengembangan dari metode Newton-Raphson.
         </p>
 
         <p>
-            Titik potong garis tersebut dengan sumbu x
-            digunakan sebagai pendekatan akar.
+            Perbedaannya, metode ini tidak menggunakan turunan eksplisit, tetapi mengaproksimasi turunan menggunakan dua titik sebelumnya.
+        </p>
+
+        <p>
+            Garis secant digunakan untuk mendekati kurva fungsi.
         </p>
 
     </div>
@@ -41,14 +40,11 @@
         <h3>Ide Utama</h3>
 
         <p>
-            Jika Newton menggunakan turunan,
-            Secant menggantinya dengan
-            pendekatan selisih (finite difference).
+            Dua tebakan awal digunakan, yaitu \( x^{i} \) dan \( x^{i-1} \).
         </p>
 
         <p>
-            Dengan kata lain,
-            kemiringan dihitung dari dua titik sebelumnya.
+            Garis lurus yang menghubungkan dua titik pada grafik digunakan untuk memperkirakan titik potong dengan sumbu \(x\).
         </p>
 
     </div>
@@ -58,15 +54,32 @@
 
         <h3>Rumus Metode Secant</h3>
 
+        <div class="katex">
+            $$
+            x^{i+1} =
+            x^{i} -
+            f(x^{i}) \cdot
+            \frac{x^{i} - x^{i-1}}{f(x^{i}) - f(x^{i-1})}
+            $$
+        </div>
+
         <p>
-            x<sup>i+1</sup> = x<sup>i</sup> − 
-            f(x<sup>i</sup>) (x<sup>i</sup> − x<sup>i−1</sup>) /
-            (f(x<sup>i</sup>) − f(x<sup>i−1</sup>))
+            Rumus ini menggantikan turunan dengan pendekatan beda hingga.
+        </p>
+
+    </div>
+
+    <!-- PENJELASAN -->
+    <div class="card card--soft">
+
+        <h3>Makna Rumus</h3>
+
+        <p>
+            Metode Secant memperkirakan gradien fungsi menggunakan dua titik terakhir.
         </p>
 
         <p>
-            Rumus ini merupakan pendekatan
-            dari metode Newton-Raphson.
+            Dengan demikian, tidak diperlukan perhitungan turunan secara langsung.
         </p>
 
     </div>
@@ -77,10 +90,11 @@
         <h3>Langkah-langkah Metode</h3>
 
         <p>
-            1. Tentukan dua tebakan awal x⁰ dan x¹<br>
-            2. Hitung nilai x² menggunakan rumus<br>
-            3. Gunakan x¹ dan x² untuk iterasi berikutnya<br>
-            4. Ulangi hingga konvergen
+            1. Tentukan dua tebakan awal \( x^{0} \) dan \( x^{1} \)<br>
+            2. Hitung \( f(x^{0}) \) dan \( f(x^{1}) \)<br>
+            3. Gunakan rumus Secant untuk mendapatkan \( x^{2} \)<br>
+            4. Geser nilai: \( x^{0} \leftarrow x^{1} \), \( x^{1} \leftarrow x^{2} \)<br>
+            5. Ulangi hingga konvergen
         </p>
 
     </div>
@@ -91,17 +105,21 @@
         <h3>Contoh Kasus</h3>
 
         <p>
-            f(x) = x² − 4
+            Fungsi:
         </p>
+
+        <div class="katex">
+            $$
+            f(x) = x^2 - 4
+            $$
+        </div>
 
         <p>
             Tebakan awal:
-            x⁰ = 1, x¹ = 3
         </p>
 
         <p>
-            f(1) = -3<br>
-            f(3) = 5
+            \( x^{0} = 1 \), \( x^{1} = 3 \)
         </p>
 
     </div>
@@ -111,17 +129,20 @@
 
         <h3>Iterasi 1</h3>
 
-        <p>
-            x² = 3 − [5(3 − 1) / (5 − (-3))]
-        </p>
+        <div class="katex">
+            $$
+            x^{2} =
+            3 -
+            \frac{f(3)(3 - 1)}{f(3) - f(1)}
+            $$
+        </div>
 
-        <p>
-            x² = 3 − (10 / 8) = 1.75
-        </p>
-
-        <p>
-            Sama seperti Regula Falsi pada langkah awal.
-        </p>
+        <div class="katex">
+            $$
+            x^{2} =
+            3 - \frac{5 \cdot 2}{5 - (-3)} = 1.75
+            $$
+        </div>
 
     </div>
 
@@ -131,34 +152,11 @@
         <h3>Iterasi Selanjutnya</h3>
 
         <p>
-            Gunakan pasangan titik terbaru:
+            Nilai baru digunakan kembali untuk membentuk pasangan titik baru.
         </p>
 
         <p>
-            x¹ = 3, x² = 1.75 → cari x³<br>
-            x² = 1.75, x³ → cari x⁴
-        </p>
-
-        <p>
-            Iterasi terus bergerak menuju akar.
-        </p>
-
-    </div>
-
-    <!-- KONVERGENSI -->
-    <div class="card card--soft">
-
-        <h3>Konvergensi</h3>
-
-        <p>
-            Metode Secant memiliki konvergensi
-            lebih cepat dari Regula Falsi,
-            tetapi lebih lambat dari Newton-Raphson.
-        </p>
-
-        <p>
-            Tidak selalu stabil,
-            tergantung pada tebakan awal.
+            Proses ini diulang hingga nilai mendekati akar sebenarnya.
         </p>
 
     </div>
@@ -166,17 +164,15 @@
     <!-- PERBANDINGAN -->
     <div class="card card--soft">
 
-        <h3>Perbandingan dengan Metode Lain</h3>
+        <h3>Perbandingan dengan Newton-Raphson</h3>
 
         <p>
-            • Newton-Raphson → butuh turunan<br>
-            • Secant → tidak butuh turunan<br>
-            • Regula Falsi → pakai interval tetap
+            • Newton-Raphson → menggunakan turunan eksplisit<br>
+            • Secant → menggunakan pendekatan turunan numerik
         </p>
 
         <p>
-            Secant adalah kompromi antara kecepatan
-            dan kemudahan implementasi.
+            Secant lebih mudah karena tidak memerlukan derivatif fungsi.
         </p>
 
     </div>
@@ -188,8 +184,8 @@
 
         <p>
             • Tidak memerlukan turunan<br>
-            • Lebih cepat dari metode tertutup<br>
-            • Implementasi relatif sederhana
+            • Lebih sederhana dari Newton-Raphson<br>
+            • Konvergensi cukup cepat
         </p>
 
     </div>
@@ -200,22 +196,9 @@
         <h3>Kelemahan</h3>
 
         <p>
-            • Tidak selalu konvergen<br>
-            • Sensitif terhadap tebakan awal<br>
-            • Bisa menghasilkan pembagian nol
-        </p>
-
-    </div>
-
-    <!-- MASALAH UMUM -->
-    <div class="card card--soft">
-
-        <h3>Masalah yang Sering Terjadi</h3>
-
-        <p>
-            • f(x<sup>i</sup>) − f(x<sup>i−1</sup>) = 0<br>
-            • Iterasi meloncat jauh<br>
-            • Tidak mendekati akar
+            • Tidak selalu stabil<br>
+            • Membutuhkan dua tebakan awal<br>
+            • Bisa gagal konvergen pada fungsi tertentu
         </p>
 
     </div>
@@ -226,14 +209,11 @@
         <h3>Intuisi</h3>
 
         <p>
-            Metode Secant seperti
-            “menggambar garis dari dua titik”
-            lalu melihat di mana garis itu memotong sumbu x.
+            Metode Secant seperti “menghubungkan dua titik terakhir” untuk menebak arah akar.
         </p>
 
         <p>
-            Setiap iterasi memperbaiki arah
-            menuju akar sebenarnya.
+            Semakin baik tebakan awal, semakin cepat metode ini menemukan solusi.
         </p>
 
     </div>
@@ -244,17 +224,11 @@
         <h3>Kesimpulan</h3>
 
         <p>
-            Metode Secant adalah metode terbuka
-            yang efisien tanpa memerlukan turunan.
+            Metode Secant adalah alternatif dari Newton-Raphson yang lebih sederhana karena tidak membutuhkan turunan.
         </p>
 
         <p>
-            Metode ini menjadi alternatif praktis
-            antara Regula Falsi dan Newton-Raphson.
-        </p>
-
-        <p>
-            Cocok digunakan ketika turunan sulit dihitung.
+            Metode ini efisien dan cepat, tetapi memiliki risiko ketidakstabilan pada kondisi tertentu.
         </p>
 
     </div>

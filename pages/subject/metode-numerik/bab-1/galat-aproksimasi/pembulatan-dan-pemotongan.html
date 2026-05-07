@@ -1,0 +1,238 @@
+<div class="card-group">
+
+    <!-- PENGANTAR -->
+    <div class="card card--soft">
+
+        <h3>Pembulatan dan Pemotongan dalam Metode Numerik</h3>
+
+        <p>
+            Dalam komputasi numerik, bilangan riil tidak dapat direpresentasikan secara sempurna oleh komputer.
+            Oleh karena itu, diperlukan pendekatan berupa pembulatan (rounding) dan pemotongan (truncation).
+        </p>
+
+        <p>
+            Kedua teknik ini digunakan untuk mengurangi jumlah digit tanpa mengubah struktur perhitungan secara signifikan.
+        </p>
+
+    </div>
+
+    <!-- KONSEP DASAR -->
+    <div class="card card--soft">
+
+        <h3>Konsep Dasar</h3>
+
+        <p>
+            Komputer menyimpan bilangan dengan jumlah digit terbatas.
+            Akibatnya, bilangan desimal panjang harus disederhanakan.
+        </p>
+
+        <p>
+            Penyederhanaan ini menyebabkan galat numerik yang dikenal sebagai galat pembulatan dan galat pemotongan.
+        </p>
+
+    </div>
+
+    <!-- PEMBULATAN -->
+    <div class="card card--soft">
+
+        <h3>Pembulatan (Rounding)</h3>
+
+        <p>
+            Pembulatan adalah proses mengubah bilangan menjadi nilai terdekat dengan aturan tertentu.
+        </p>
+
+        <p>
+            Aturan umum:
+        </p>
+
+        <p>
+            • Jika digit berikutnya ≥ 5 → dibulatkan naik<br>
+            • Jika digit berikutnya < 5 → dibulatkan turun
+        </p>
+
+        <div class="katex">
+            $$
+            x \approx \text{round}(x)
+            $$
+        </div>
+
+    </div>
+
+    <!-- PEMOTONGAN -->
+    <div class="card card--soft">
+
+        <h3>Pemotongan (Truncation)</h3>
+
+        <p>
+            Pemotongan adalah proses menghapus digit di luar batas tanpa mempertimbangkan nilai digit berikutnya.
+        </p>
+
+        <p>
+            Tidak ada pembulatan ke atas atau ke bawah, hanya memotong langsung.
+        </p>
+
+        <div class="katex">
+            $$
+            x \approx \text{trunc}(x)
+            $$
+        </div>
+
+    </div>
+
+    <!-- PERBEDAAN -->
+    <div class="card card--soft">
+
+        <h3>Perbedaan Pembulatan dan Pemotongan</h3>
+
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th>Aspek</th>
+                    <th>Pembulatan</th>
+                    <th>Pemotongan</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Aturan</td>
+                    <td>Memperhatikan digit berikutnya</td>
+                    <td>Langsung menghapus digit</td>
+                </tr>
+
+                <tr>
+                    <td>Akurasi</td>
+                    <td>Lebih akurat</td>
+                    <td>Lebih kasar</td>
+                </tr>
+
+                <tr>
+                    <td>Kompleksitas</td>
+                    <td>Sedikit lebih kompleks</td>
+                    <td>Sangat sederhana</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- CONTOH -->
+    <div class="card card--soft">
+
+        <h3>Contoh</h3>
+
+        <p>
+            Misalkan bilangan: 3.1467
+        </p>
+
+        <p>
+            Pembulatan 3 desimal → 3.147<br>
+            Pemotongan 3 desimal → 3.146
+        </p>
+
+        <p>
+            Terlihat bahwa hasil dapat berbeda tergantung metode yang digunakan.
+        </p>
+
+    </div>
+
+    <!-- GALAT -->
+    <div class="card card--soft">
+
+        <h3>Galat Akibat Pembulatan dan Pemotongan</h3>
+
+        <p>
+            Kedua metode ini menghasilkan galat numerik.
+        </p>
+
+        <p>
+            Galat pembulatan:
+        </p>
+
+        <div class="katex">
+            $$
+            E = x_{\text{true}} - x_{\text{round}}
+            $$
+        </div>
+
+        <p>
+            Galat pemotongan:
+        </p>
+
+        <div class="katex">
+            $$
+            E = x_{\text{true}} - x_{\text{trunc}}
+            $$
+        </div>
+
+    </div>
+
+    <!-- DAMPAK -->
+    <div class="card card--soft">
+
+        <h3>Dampak dalam Perhitungan</h3>
+
+        <p>
+            Dalam algoritma iteratif, galat kecil dapat terakumulasi.
+        </p>
+
+        <p>
+            Akumulasi ini dapat menyebabkan hasil akhir menyimpang dari nilai sebenarnya.
+        </p>
+
+    </div>
+
+    <!-- PENGGUNAAN -->
+    <div class="card card--soft">
+
+        <h3>Penggunaan dalam Komputasi</h3>
+
+        <p>
+            Pembulatan lebih sering digunakan dalam sistem numerik modern.
+        </p>
+
+        <p>
+            Pemotongan digunakan pada kasus sederhana atau analisis teoritis.
+        </p>
+
+    </div>
+
+    <!-- INTUISI -->
+    <div class="card card--soft">
+
+        <h3>Intuisi</h3>
+
+        <p>
+            Pembulatan mencoba “mendekati nilai sebenarnya”, sedangkan pemotongan hanya “memotong informasi”.
+        </p>
+
+        <p>
+            Karena itu, pembulatan biasanya lebih stabil dalam komputasi numerik.
+        </p>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Pembulatan dan pemotongan adalah dua teknik dasar dalam representasi bilangan di komputer.
+        </p>
+
+        <p>
+            Keduanya menghasilkan galat numerik, tetapi pembulatan umumnya lebih akurat dibanding pemotongan.
+        </p>
+
+        <p>
+            Pemahaman keduanya penting untuk analisis stabilitas dalam metode numerik.
+        </p>
+
+    </div>
+
+</div>

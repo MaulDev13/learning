@@ -1,98 +1,145 @@
-<div class="card card--flat">
+<h3>Penyelesaian Soal 8 (Metode LU)</h3>
 
-    <h3>Penyelesaian Soal 8 (Metode LU)</h3>
+<p>
+    Sistem persamaan linear ini diselesaikan menggunakan metode dekomposisi LU,
+    yang memfaktorkan matriks A menjadi matriks lower triangular L dan upper triangular U.
+</p>
+
+<p class="text-meta">
+    Metode: Dekomposisi LU
+</p>
+
+<!-- ===================================================== -->
+<!-- SISTEM PERSAMAAN -->
+<!-- ===================================================== -->
+<div class="card card--soft">
+
+    <p><strong>Sistem Persamaan</strong></p>
+
+    <div class="katex">
+        $$
+        \begin{aligned}
+        6x_1 + x_2 - x_3 &= 10 \\
+        x_1 + 7x_2 + x_3 &= 14 \\
+        x_1 - x_2 + 6x_3 &= 12
+        \end{aligned}
+        $$
+    </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- MATRIKS A -->
+<!-- ===================================================== -->
+<div class="card card--soft">
+
+    <p><strong>Matriks A</strong></p>
+
+    <div class="katex">
+        $$
+        A =
+        \begin{bmatrix}
+        6 & 1 & -1 \\
+        1 & 7 & 1 \\
+        1 & -1 & 6
+        \end{bmatrix}
+        $$
+    </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- DEKOMPOSISI LU -->
+<!-- ===================================================== -->
+<div class="card card--soft">
+
+    <p><strong>Dekomposisi LU</strong></p>
+
+    <p>Matriks lower triangular L:</p>
+
+    <div class="katex">
+        $$
+        L =
+        \begin{bmatrix}
+        1 & 0 & 0 \\
+        0.167 & 1 & 0 \\
+        0.167 & -0.167 & 1
+        \end{bmatrix}
+        $$
+    </div>
+
+    <p>Matriks upper triangular U:</p>
+
+    <div class="katex">
+        $$
+        U =
+        \begin{bmatrix}
+        6 & 1 & -1 \\
+        0 & 6.833 & 1.167 \\
+        0 & 0 & 6.028
+        \end{bmatrix}
+        $$
+    </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- LY = B -->
+<!-- ===================================================== -->
+<div class="card card--soft">
+
+    <p><strong>Penyelesaian</strong> <span class="text-code-inline">Ly = b</span></p>
+
+    <div class="katex">
+        $$
+        \begin{aligned}
+        y_1 &= 10 \\
+        y_2 &= 14 - 0.167(10) \approx 12.333 \\
+        y_3 &= 12 - 0.167(10) + 0.167(12.333) \approx 12.389
+        \end{aligned}
+        $$
+    </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- UX = Y -->
+<!-- ===================================================== -->
+<div class="card card--soft">
+
+    <p><strong>Penyelesaian</strong> <span class="text-code-inline">Ux = y</span></p>
+
+    <div class="katex">
+        $$
+        \begin{aligned}
+        6.028x_3 &= 12.389 \Rightarrow x_3 \approx 2.055 \\
+        6.833x_2 + 1.167x_3 &= 12.333 \Rightarrow x_2 \approx 1.467 \\
+        6x_1 + x_2 - x_3 &= 10 \Rightarrow x_1 \approx 1.765
+        \end{aligned}
+        $$
+    </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- HASIL AKHIR -->
+<!-- ===================================================== -->
+<div class="card card--soft">
+
+    <p><strong>Hasil Akhir</strong></p>
+
+    <div class="katex">
+        $$
+        \begin{aligned}
+        x_1 &\approx 1.765 \\
+        x_2 &\approx 1.467 \\
+        x_3 &\approx 2.055
+        \end{aligned}
+        $$
+    </div>
 
     <p>
-        Sistem ini diselesaikan menggunakan metode dekomposisi LU,
-        dengan memfaktorkan matriks A menjadi matriks L dan U.
+        Metode LU memberikan solusi stabil dan akurat.
     </p>
-
-    <p class="text-meta">
-        Metode: Dekomposisi LU
-    </p>
-
-    <div class="card card--soft">
-
-        <p><strong>Sistem Persamaan</strong></p>
-
-        <p>
-            6x₁ + x₂ − x₃ = 10<br>
-            x₁ + 7x₂ + x₃ = 14<br>
-            x₁ − x₂ + 6x₃ = 12
-        </p>
-
-    </div>
-
-    <div class="card card--soft">
-
-        <p><strong>Matriks A</strong></p>
-
-        <p>
-            [ 6   1  -1 ]<br>
-            [ 1   7   1 ]<br>
-            [ 1  -1   6 ]
-        </p>
-
-    </div>
-
-    <div class="card card--soft">
-
-        <p><strong>Dekomposisi LU</strong></p>
-
-        <p>
-            L =
-            [ 1     0     0 ]<br>
-            [ 0.167 1     0 ]<br>
-            [ 0.167 -0.167 1 ]
-        </p>
-
-        <p>
-            U =
-            [ 6   1    -1 ]<br>
-            [ 0  6.833 1.167 ]<br>
-            [ 0   0    6.028 ]
-        </p>
-
-    </div>
-
-    <div class="card card--soft">
-
-        <p><strong>Penyelesaian Ly = b</strong></p>
-
-        <p>
-            y₁ = 10<br>
-            y₂ = 14 - 0.167(10) ≈ 12.333<br>
-            y₃ = 12 - 0.167(10) + 0.167(12.333) ≈ 12.389
-        </p>
-
-    </div>
-
-    <div class="card card--soft">
-
-        <p><strong>Penyelesaian Ux = y</strong></p>
-
-        <p>
-            6.028x₃ = 12.389 → x₃ ≈ 2.055<br>
-            6.833x₂ + 1.167x₃ = 12.333 → x₂ ≈ 1.467<br>
-            6x₁ + x₂ − x₃ = 10 → x₁ ≈ 1.765
-        </p>
-
-    </div>
-
-    <div class="card card--soft">
-
-        <p><strong>Hasil Akhir</strong></p>
-
-        <p>
-            x₁ ≈ 1.765<br>
-            x₂ ≈ 1.467<br>
-            x₃ ≈ 2.055
-        </p>
-
-        <p>
-            Metode LU memberikan solusi stabil dan akurat.
-        </p>
-
-    </div>
 
 </div>

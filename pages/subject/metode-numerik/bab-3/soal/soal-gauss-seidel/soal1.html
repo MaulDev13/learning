@@ -5,6 +5,8 @@
     <p>
         Metode Gauss-Seidel adalah metode iteratif yang mirip dengan Jacobi,
         tetapi menggunakan nilai terbaru yang sudah dihitung dalam iterasi yang sama.
+        Perbedaan utama terletak pada penggunaan \( x_1^{(k+1)} \) saat menghitung \( x_2^{(k+1)} \),
+        dan seterusnya dalam satu iterasi.
     </p>
 
     <p class="text-meta">
@@ -12,48 +14,262 @@
     </p>
 
     <p class="text-meta">
-        Tebakan awal: (0, 0, 0)
+        Tebakan awal: \( x^{(0)} = (0, 0, 0) \)
     </p>
 
     <div class="card card--soft">
 
-        <p><strong>Bentuk Iterasi</strong></p>
+        <p><strong>Sistem Persamaan</strong></p>
+
+        <div class="katex">
+$$
+\begin{cases}
+8x_1 + x_2 - x_3 = 8 \\
+2x_1 + x_2 + 9x_3 = 12 \\
+x_1 - 7x_2 + 2x_3 = -4
+\end{cases}
+$$
+        </div>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Bentuk Iterasi Gauss-Seidel</strong></p>
 
         <p>
-            x₁ = (8 − x₂ + x₃) / 8<br>
-            x₂ = 12 − 2x₁ − 9x₃<br>
-            x₃ = (−4 − x₁ + 7x₂) / 2
+            Dari persamaan pertama: \( 8x_1 = 8 - x_2 + x_3 \) → 
+            \( x_1^{(k+1)} = \frac{8 - x_2^{(k)} + x_3^{(k)}}{8} \)
+        </p>
+
+        <p>
+            Dari persamaan kedua: \( 2x_1 + x_2 + 9x_3 = 12 \) → 
+            \( x_2^{(k+1)} = 12 - 2x_1^{(k+1)} - 9x_3^{(k)} \)
+        </p>
+
+        <p>
+            Dari persamaan ketiga: \( x_1 - 7x_2 + 2x_3 = -4 \) → 
+            \( x_3^{(k+1)} = \frac{-4 - x_1^{(k+1)} + 7x_2^{(k+1)}}{2} \)
+        </p>
+
+        <div class="text-code">
+def gauss_seidel_step(x1, x2, x3):
+    x1_new = (8 - x2 + x3) / 8
+    x2_new = 12 - 2*x1_new - 9*x3
+    x3_new = (-4 - x1_new + 7*x2_new) / 2
+    return (x1_new, x2_new, x3_new)
+        </div>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Iterasi 0</strong></p>
+        <p>
+            \( x^{(0)} = (0, 0, 0) \)
         </p>
 
     </div>
 
     <div class="card card--soft">
 
-        <p><strong>Proses Iterasi</strong></p>
-
+        <p><strong>Iterasi 1</strong></p>
         <p>
-            Iterasi 0: (0, 0, 0)
+            Menghitung \( x_1^{(1)} \):
+        </p>
+        <p>
+            \( x_1^{(1)} = \frac{8 - x_2^{(0)} + x_3^{(0)}}{8} = \frac{8 - 0 + 0}{8} = 1 \)
+        </p>
+        <p>
+            Menghitung \( x_2^{(1)} \) (menggunakan \( x_1^{(1)} \) yang baru):
+        </p>
+        <p>
+            \( x_2^{(1)} = 12 - 2x_1^{(1)} - 9x_3^{(0)} = 12 - 2(1) - 9(0) = 12 - 2 = 10 \)
+        </p>
+        <p>
+            Menghitung \( x_3^{(1)} \) (menggunakan \( x_1^{(1)} \) dan \( x_2^{(1)} \) yang baru):
+        </p>
+        <p>
+            \( x_3^{(1)} = \frac{-4 - x_1^{(1)} + 7x_2^{(1)}}{2} = \frac{-4 - 1 + 7(10)}{2} = \frac{-4 - 1 + 70}{2} = \frac{65}{2} = 32.5 \)
+        </p>
+        <p>
+            \( x^{(1)} = (1, 10, 32.5) \)
         </p>
 
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Iterasi 2</strong></p>
         <p>
-            Iterasi 1:<br>
-            x₁ = 1<br>
-            x₂ = 10<br>
-            x₃ = 32.5<br>
-            → (1, 10, 32.5)
+            Menghitung \( x_1^{(2)} \):
+        </p>
+        <p>
+            \( x_1^{(2)} = \frac{8 - x_2^{(1)} + x_3^{(1)}}{8} = \frac{8 - 10 + 32.5}{8} = \frac{30.5}{8} = 3.8125 \)
+        </p>
+        <p>
+            Menghitung \( x_2^{(2)} \):
+        </p>
+        <p>
+            \( x_2^{(2)} = 12 - 2x_1^{(2)} - 9x_3^{(1)} = 12 - 2(3.8125) - 9(32.5) \)
+        </p>
+        <p>
+            \( x_2^{(2)} = 12 - 7.625 - 292.5 = -288.125 \)
+        </p>
+        <p>
+            Menghitung \( x_3^{(2)} \):
+        </p>
+        <p>
+            \( x_3^{(2)} = \frac{-4 - x_1^{(2)} + 7x_2^{(2)}}{2} = \frac{-4 - 3.8125 + 7(-288.125)}{2} \)
+        </p>
+        <p>
+            \( x_3^{(2)} = \frac{-4 - 3.8125 - 2016.875}{2} = \frac{-2024.6875}{2} = -1012.34375 \)
+        </p>
+        <p>
+            \( x^{(2)} = (3.8125, -288.125, -1012.34375) \)
         </p>
 
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Iterasi 3</strong></p>
         <p>
-            Iterasi 2:<br>
-            x₁ ≈ 3.0625<br>
-            x₂ ≈ -280.625<br>
-            x₃ ≈ -998.72
+            Menghitung \( x_1^{(3)} \):
+        </p>
+        <p>
+            \( x_1^{(3)} = \frac{8 - (-288.125) + (-1012.34375)}{8} = \frac{8 + 288.125 - 1012.34375}{8} \)
+        </p>
+        <p>
+            \( x_1^{(3)} = \frac{-716.21875}{8} = -89.52734375 \)
+        </p>
+        <p>
+            Menghitung \( x_2^{(3)} \):
+        </p>
+        <p>
+            \( x_2^{(3)} = 12 - 2(-89.52734375) - 9(-1012.34375) \)
+        </p>
+        <p>
+            \( x_2^{(3)} = 12 + 179.0546875 + 9111.09375 = 9302.1484375 \)
+        </p>
+        <p>
+            Menghitung \( x_3^{(3)} \):
+        </p>
+        <p>
+            \( x_3^{(3)} = \frac{-4 - (-89.52734375) + 7(9302.1484375)}{2} \)
+        </p>
+        <p>
+            \( x_3^{(3)} = \frac{-4 + 89.52734375 + 65115.0390625}{2} = \frac{65200.56640625}{2} = 32600.283203125 \)
+        </p>
+        <p>
+            \( x^{(3)} = (-89.52734375, 9302.1484375, 32600.283203125) \)
         </p>
 
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Iterasi 4</strong></p>
         <p>
-            Iterasi 3:<br>
-            Nilai semakin membesar (tidak stabil)
+            Menghitung \( x_1^{(4)} \):
         </p>
+        <p>
+            \( x_1^{(4)} = \frac{8 - 9302.1484375 + 32600.283203125}{8} = \frac{23306.134765625}{8} = 2913.266845703125 \)
+        </p>
+        <p>
+            Menghitung \( x_2^{(4)} \):
+        </p>
+        <p>
+            \( x_2^{(4)} = 12 - 2(2913.266845703125) - 9(32600.283203125) \)
+        </p>
+        <p>
+            \( x_2^{(4)} = 12 - 5826.53369140625 - 293402.548828125 = -299217.08251953125 \)
+        </p>
+        <p>
+            Menghitung \( x_3^{(4)} \):
+        </p>
+        <p>
+            \( x_3^{(4)} = \frac{-4 - 2913.266845703125 + 7(-299217.08251953125)}{2} \)
+        </p>
+        <p>
+            \( x_3^{(4)} = \frac{-4 - 2913.266845703125 - 2094519.57763671875}{2} \)
+        </p>
+        <p>
+            \( x_3^{(4)} = \frac{-2097436.844482421875}{2} = -1048718.4222412109375 \)
+        </p>
+        <p>
+            \( x^{(4)} = (2913.266845703125, -299217.08251953125, -1048718.4222412109375) \)
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Iterasi 5</strong></p>
+        <p>
+            Menghitung \( x_1^{(5)} \):
+        </p>
+        <p>
+            \( x_1^{(5)} = \frac{8 - (-299217.08251953125) + (-1048718.4222412109375)}{8} \)
+        </p>
+        <p>
+            \( x_1^{(5)} = \frac{8 + 299217.08251953125 - 1048718.4222412109375}{8} \)
+        </p>
+        <p>
+            \( x_1^{(5)} = \frac{-749493.3397216796875}{8} = -93686.6674652099609375 \)
+        </p>
+        <p>
+            Menghitung \( x_2^{(5)} \):
+        </p>
+        <p>
+            \( x_2^{(5)} = 12 - 2(-93686.6674652099609375) - 9(-1048718.4222412109375) \)
+        </p>
+        <p>
+            \( x_2^{(5)} = 12 + 187373.334930419921875 + 9438465.8001708984375 \)
+        </p>
+        <p>
+            \( x_2^{(5)} = 9625851.135101318359375 \)
+        </p>
+        <p>
+            Menghitung \( x_3^{(5)} \):
+        </p>
+        <p>
+            \( x_3^{(5)} = \frac{-4 - (-93686.6674652099609375) + 7(9625851.135101318359375)}{2} \)
+        </p>
+        <p>
+            \( x_3^{(5)} = \frac{-4 + 93686.6674652099609375 + 67380957.945709228515625}{2} \)
+        </p>
+        <p>
+            \( x_3^{(5)} = \frac{67474640.6131744384765625}{2} = 33737320.30658721923828125 \)
+        </p>
+        <p>
+            \( x^{(5)} = (-93686.6674652099609375, 9625851.135101318359375, 33737320.30658721923828125) \)
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Tabel Ringkasan Iterasi</strong></p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Iterasi (k)</th>
+                    <th>\( x_1^{(k)} \)</th>
+                    <th>\( x_2^{(k)} \)</th>
+                    <th>\( x_3^{(k)} \)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>1</td><td>1</td><td>10</td><td>32.5</td></tr>
+                <tr><td>2</td><td>3.8125</td><td>-288.125</td><td>-1012.34375</td></tr>
+                <tr><td>3</td><td>-89.52734375</td><td>9302.1484375</td><td>32600.283203125</td></tr>
+                <tr><td>4</td><td>2913.266845703125</td><td>-299217.08251953125</td><td>-1048718.4222412109375</td></tr>
+                <tr><td>5</td><td>-93686.6674652099609375</td><td>9625851.135101318359375</td><td>33737320.30658721923828125</td></tr>
+            </tbody>
+        </table>
 
     </div>
 
@@ -62,16 +278,52 @@
         <p><strong>Analisis Konvergensi</strong></p>
 
         <p>
-            Nilai iterasi semakin besar dan tidak mendekati nilai tetap.
+            Dari tabel iterasi di atas, terlihat bahwa:
+        </p>
+        <p>
+            1. Nilai \( |x_1| \) berkembang dari 0 → 1 → 3.8 → 89.5 → 2913 → 93686
+        </p>
+        <p>
+            2. Nilai \( |x_2| \) berkembang dari 0 → 10 → 288 → 9302 → 299217 → 9625851
+        </p>
+        <p>
+            3. Nilai \( |x_3| \) berkembang dari 0 → 32.5 → 1012 → 32600 → 1048718 → 33737320
+        </p>
+        <p>
+            Pola yang terjadi adalah <strong>divergensi</strong> (nilai semakin membesar secara eksponensial),
+            bukan konvergensi menuju solusi tetap.
         </p>
 
-        <p>
-            Hal ini menunjukkan metode Gauss-Seidel juga <strong>tidak konvergen</strong>.
-        </p>
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Penyebab Divergensi</strong></p>
 
         <p>
-            Penyebabnya sama seperti metode Jacobi,
-            yaitu tidak terpenuhinya syarat dominasi diagonal.
+            Metode Gauss-Seidel (dan Jacobi) memerlukan <strong>syarat cukup</strong> berupa
+            <strong>dominasi diagonal ketat</strong>:
+        </p>
+        <div class="katex">
+$$
+|a_{ii}| > \sum_{j \neq i} |a_{ij}|, \quad \forall i
+$$
+        </div>
+        <p>
+            Untuk matriks koefisien Soal 1:
+        </p>
+        <p>
+            Baris 1: \( |8| > |1| + |-1| = 2 \) → terpenuhi
+        </p>
+        <p>
+            Baris 2: \( |1| > |2| + |9| = 11 \) → tidak terpenuhi (1 < 11)
+        </p>
+        <p>
+            Baris 3: \( |2| > |1| + |-7| = 8 \) → tidak terpenuhi (2 < 8)
+        </p>
+        <p>
+            Karena syarat dominasi diagonal tidak terpenuhi (terutama pada baris 2 dan 3),
+            metode iteratif tidak dijamin konvergen. Pada kasus ini, metode justru divergen.
         </p>
 
     </div>
@@ -79,12 +331,20 @@
     <div class="card card--soft">
 
         <p><strong>Kesimpulan</strong></p>
-
         <p>
-            • Metode Gauss-Seidel tidak konvergen<br>
-            • Iterasi tidak stabil<br>
-            • Sistem tidak memenuhi dominasi diagonal<br>
-            • Metode iteratif tidak cocok untuk sistem ini
+            • Metode Gauss-Seidel pada sistem ini <strong>tidak konvergen</strong> (divergen)
+        </p>
+        <p>
+            • Nilai iterasi membesar tanpa batas
+        </p>
+        <p>
+            • Sistem tidak memenuhi syarat dominasi diagonal ketat
+        </p>
+        <p>
+            • Metode iteratif (Jacobi maupun Gauss-Seidel) tidak cocok untuk sistem ini
+        </p>
+        <p>
+            • Solusi eksak sebaiknya dicari dengan metode langsung seperti eliminasi Gauss atau dekomposisi LU
         </p>
 
     </div>

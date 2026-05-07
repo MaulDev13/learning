@@ -11,6 +11,8 @@ import {
     initErrorHandler
 } from "./error-handler.js";
 
+import { renderMath } from "./katex.js";
+
 /* =========================================================
    HTMX ROUTING
    ========================================================= */
@@ -48,6 +50,8 @@ function initApp() {
     initLoading();
 
     initErrorHandler();
+
+    renderMath(document.body);
 }
 
 /* =========================================================
@@ -71,5 +75,7 @@ document.body.addEventListener("htmx:afterSwap", (e) => {
 
     // optional loading rebind
     initLoading();
+
+    renderMath(e.target);
 
 });

@@ -1,230 +1,349 @@
 <div class="card-group">
 
-    <!-- PENGANTAR -->
     <div class="card card--soft">
 
-        <h3>Analisis Konvergensi pada SPL</h3>
+        <h2>Analisis Konvergensi pada Sistem Persamaan Linear</h2>
 
         <p>
-            Dalam penyelesaian Sistem Persamaan Linear
-            menggunakan metode iteratif,
-            penting untuk mengetahui apakah metode
-            akan konvergen atau tidak.
+            Dalam penyelesaian Sistem Persamaan Linear (SPL) menggunakan metode iteratif, analisis konvergensi digunakan untuk menentukan apakah proses iterasi akan mendekati solusi sebenarnya.
         </p>
 
         <p>
-            Analisis konvergensi membantu menentukan
-            apakah iterasi akan mendekati solusi sebenarnya.
+            Tanpa konvergensi, iterasi dapat menghasilkan nilai yang menjauh dari solusi atau berosilasi tanpa mencapai kestabilan.
         </p>
 
     </div>
 
-    <!-- KONSEP -->
     <div class="card card--soft">
 
-        <h3>Konsep Konvergensi</h3>
+        <h3>Konsep Dasar Konvergensi</h3>
 
         <p>
-            Metode iteratif menghasilkan
-            urutan pendekatan solusi:
+            Metode iteratif menghasilkan urutan pendekatan solusi yang diperbarui secara bertahap pada setiap iterasi.
         </p>
 
-        <p>
-            x⁰, x¹, x², ..., xᵏ
-        </p>
+        <div class="katex">
+            $$
+            x^{(0)}, x^{(1)}, x^{(2)}, \dots, x^{(k)}
+            $$
+        </div>
 
         <p>
-            Jika nilai tersebut semakin mendekati solusi,
-            maka metode dikatakan konvergen.
+            Jika urutan tersebut semakin mendekati solusi eksak sistem, maka metode dikatakan konvergen.
         </p>
 
     </div>
 
-    <!-- BENTUK ITERASI -->
     <div class="card card--soft">
 
         <h3>Bentuk Umum Iterasi</h3>
 
         <p>
-            Metode iteratif SPL dapat ditulis sebagai:
+            Sebagian besar metode iteratif untuk SPL dapat dituliskan dalam bentuk umum berikut:
+        </p>
+
+        <div class="katex">
+            $$
+            x^{(k+1)} = Bx^{(k)} + c
+            $$
+        </div>
+
+        <p>
+            Matriks \( B \) disebut matriks iterasi, sedangkan vektor \( c \) merupakan konstanta hasil transformasi sistem.
         </p>
 
         <p>
-            x^(k+1) = Bx^(k) + c
-        </p>
-
-        <p>
-            dimana B adalah matriks iterasi.
+            Sifat konvergensi metode sangat dipengaruhi oleh karakteristik matriks iterasi tersebut.
         </p>
 
     </div>
 
-    <!-- SYARAT UTAMA -->
     <div class="card card--soft">
 
-        <h3>Syarat Konvergensi</h3>
+        <h3>Syarat Matematis Konvergensi</h3>
 
         <p>
-            Metode iteratif akan konvergen jika:
+            Metode iteratif akan konvergen apabila spektral radius dari matriks iterasi lebih kecil dari satu.
         </p>
 
-        <p>
-            ρ(B) < 1
-        </p>
+        <div class="katex">
+            $$
+            \rho(B) < 1
+            $$
+        </div>
 
         <p>
-            dimana ρ(B) adalah spektral radius
-            (nilai eigen terbesar dari matriks B).
+            Spektral radius \( \rho(B) \) didefinisikan sebagai nilai mutlak terbesar dari seluruh nilai eigen matriks \( B \).
         </p>
+
+        <div class="katex">
+            $$
+            \rho(B) = \max \left( |\lambda_1|, |\lambda_2|, \dots, |\lambda_n| \right)
+            $$
+        </div>
 
     </div>
 
-    <!-- PENDEKATAN PRAKTIS -->
     <div class="card card--soft">
 
-        <h3>Pendekatan Praktis</h3>
+        <h3>Interpretasi Spektral Radius</h3>
 
         <p>
-            Karena menghitung nilai eigen tidak selalu mudah,
-            digunakan pendekatan sederhana:
+            Spektral radius menunjukkan seberapa besar efek kesalahan iterasi sebelumnya terhadap iterasi berikutnya.
         </p>
 
-        <p>
-            Matriks harus memiliki dominasi diagonal.
-        </p>
-
-        <p>
-            |aᵢᵢ| > Σ |aᵢⱼ|
-        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Kondisi</th>
+                    <th>Interpretasi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>\( \rho(B) < 1 \)</td>
+                    <td>Kesalahan semakin kecil sehingga metode konvergen</td>
+                </tr>
+                <tr>
+                    <td>\( \rho(B) = 1 \)</td>
+                    <td>Metode berada pada batas kestabilan</td>
+                </tr>
+                <tr>
+                    <td>\( \rho(B) > 1 \)</td>
+                    <td>Kesalahan membesar sehingga metode divergen</td>
+                </tr>
+            </tbody>
+        </table>
 
     </div>
 
-    <!-- DOMINASI DIAGONAL -->
     <div class="card card--soft">
 
-        <h3>Dominasi Diagonal</h3>
+        <h3>Pendekatan Praktis Menggunakan Dominasi Diagonal</h3>
 
         <p>
-            Suatu matriks dikatakan dominan diagonal jika
-            setiap elemen diagonal lebih besar
-            dari jumlah elemen lain dalam baris tersebut.
+            Perhitungan nilai eigen sering kali cukup kompleks sehingga digunakan pendekatan praktis berupa syarat dominasi diagonal.
         </p>
 
         <p>
-            Kondisi ini menjamin konvergensi
-            untuk Jacobi dan Gauss-Seidel.
+            Matriks dikatakan dominan diagonal jika setiap elemen diagonal lebih besar daripada jumlah elemen lain pada baris yang sama.
+        </p>
+
+        <div class="katex">
+            $$
+            |a_{ii}| > \sum_{j \ne i} |a_{ij}|
+            $$
+        </div>
+
+        <p>
+            Kondisi ini sering digunakan untuk menjamin konvergensi metode Jacobi dan Gauss-Seidel.
         </p>
 
     </div>
 
-    <!-- PERBANDINGAN -->
     <div class="card card--soft">
 
-        <h3>Konvergensi Jacobi vs Gauss-Seidel</h3>
+        <h3>Contoh Matriks Dominan Diagonal</h3>
 
         <p>
-            • Jacobi → lebih lambat konvergen<br>
-            • Gauss-Seidel → lebih cepat konvergen
+            Perhatikan matriks berikut:
         </p>
 
+        <div class="katex">
+            $$
+            A =
+            \begin{bmatrix}
+            10 & -1 & 2 \\
+            1 & 8 & -1 \\
+            2 & -1 & 9
+            \end{bmatrix}
+            $$
+        </div>
+
         <p>
-            Gauss-Seidel biasanya membutuhkan
-            iterasi lebih sedikit.
+            Pada setiap baris, elemen diagonal memiliki nilai mutlak lebih besar dibanding jumlah elemen non-diagonal pada baris tersebut.
         </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Baris</th>
+                    <th>Pemeriksaan</th>
+                    <th>Hasil</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>\( |10| > |-1| + |2| \)</td>
+                    <td>Benar</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>\( |8| > |1| + |-1| \)</td>
+                    <td>Benar</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>\( |9| > |2| + |-1| \)</td>
+                    <td>Benar</td>
+                </tr>
+            </tbody>
+        </table>
 
     </div>
 
-    <!-- FAKTOR -->
     <div class="card card--soft">
 
-        <h3>Faktor yang Mempengaruhi</h3>
+        <h3>Perbandingan Konvergensi Metode Iteratif</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Metode</th>
+                    <th>Karakteristik Konvergensi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Jacobi</td>
+                    <td>Menggunakan nilai iterasi sebelumnya secara penuh sehingga konvergensi relatif lebih lambat</td>
+                </tr>
+                <tr>
+                    <td>Gauss-Seidel</td>
+                    <td>Menggunakan nilai terbaru selama iterasi sehingga biasanya lebih cepat konvergen</td>
+                </tr>
+            </tbody>
+        </table>
 
         <p>
-            • Bentuk matriks<br>
-            • Tebakan awal<br>
-            • Urutan variabel<br>
-            • Kondisi numerik sistem
+            Pada sistem yang sama, metode Gauss-Seidel umumnya membutuhkan iterasi lebih sedikit dibanding metode Jacobi.
         </p>
 
     </div>
 
-    <!-- DIVERGENSI -->
     <div class="card card--soft">
 
-        <h3>Divergensi</h3>
+        <h3>Faktor yang Mempengaruhi Konvergensi</h3>
 
         <p>
-            Metode dapat gagal (divergen) jika:
+            Kecepatan dan keberhasilan konvergensi dipengaruhi oleh beberapa faktor numerik.
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Faktor</th>
+                    <th>Pengaruh</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bentuk matriks</td>
+                    <td>Matriks dominan diagonal lebih stabil untuk iterasi</td>
+                </tr>
+                <tr>
+                    <td>Tebakan awal</td>
+                    <td>Tebakan yang baik dapat mempercepat konvergensi</td>
+                </tr>
+                <tr>
+                    <td>Urutan variabel</td>
+                    <td>Reordering dapat memperbaiki dominasi diagonal</td>
+                </tr>
+                <tr>
+                    <td>Kondisi numerik</td>
+                    <td>Sistem ill-conditioned dapat memperlambat atau menggagalkan konvergensi</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Divergensi pada Metode Iteratif</h3>
+
+        <p>
+            Divergensi terjadi ketika iterasi gagal mendekati solusi sebenarnya.
         </p>
 
         <p>
-            • Matriks tidak dominan diagonal<br>
-            • Nilai iterasi semakin besar<br>
-            • Terjadi osilasi tanpa stabil
+            Gejala divergensi dapat diamati dari nilai iterasi yang terus membesar atau berosilasi tanpa pola stabil.
+        </p>
+
+        <div class="katex">
+            $$
+            \|x^{(k+1)} - x^{(k)}\| \rightarrow \infty
+            $$
+        </div>
+
+        <p>
+            Divergensi sering terjadi pada matriks yang tidak memenuhi syarat kestabilan iteratif.
         </p>
 
     </div>
 
-    <!-- STRATEGI -->
     <div class="card card--soft">
 
         <h3>Strategi Mengatasi Divergensi</h3>
 
         <p>
-            • Mengubah urutan persamaan<br>
-            • Melakukan scaling<br>
-            • Memilih metode lain
+            Beberapa strategi dapat digunakan untuk meningkatkan peluang konvergensi metode iteratif.
         </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Strategi</th>
+                    <th>Tujuan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Reordering persamaan</td>
+                    <td>Meningkatkan dominasi diagonal</td>
+                </tr>
+                <tr>
+                    <td>Scaling matriks</td>
+                    <td>Mengurangi ketidakseimbangan numerik</td>
+                </tr>
+                <tr>
+                    <td>Menggunakan metode lain</td>
+                    <td>Memilih algoritma yang lebih stabil</td>
+                </tr>
+            </tbody>
+        </table>
 
     </div>
 
-    <!-- INTERPRETASI -->
     <div class="card card--soft">
 
-        <h3>Interpretasi</h3>
+        <h3>Intuisi Konvergensi</h3>
 
         <p>
-            Konvergensi menunjukkan apakah
-            metode iteratif dapat dipercaya.
+            Konvergensi dapat dipahami sebagai proses bergerak menuju solusi sebenarnya melalui langkah-langkah pendekatan yang semakin akurat.
         </p>
 
         <p>
-            Tanpa konvergensi,
-            hasil iterasi tidak memiliki makna.
-        </p>
-
-    </div>
-
-    <!-- INTUISI -->
-    <div class="card card--soft">
-
-        <h3>Intuisi</h3>
-
-        <p>
-            Konvergensi seperti “jalan menuju solusi”.
-        </p>
-
-        <p>
-            Jika arah benar, kita mendekat.
-            Jika salah, kita tersesat.
+            Jika setiap iterasi mengurangi kesalahan sebelumnya, maka proses akan mendekati solusi. Sebaliknya, jika kesalahan membesar, iterasi akan menjauh dari solusi.
         </p>
 
     </div>
 
-    <!-- KESIMPULAN -->
     <div class="card card--soft">
 
         <h3>Kesimpulan</h3>
 
         <p>
-            Analisis konvergensi sangat penting
-            dalam metode iteratif SPL.
+            Analisis konvergensi merupakan bagian penting dalam metode iteratif untuk Sistem Persamaan Linear karena menentukan apakah solusi numerik dapat dipercaya.
         </p>
 
         <p>
-            Dengan memahami syarat konvergensi,
-            kita dapat memilih metode yang tepat
-            dan menghindari kesalahan.
+            Syarat spektral radius dan dominasi diagonal digunakan untuk mengevaluasi kestabilan metode iteratif seperti Jacobi dan Gauss-Seidel.
+        </p>
+
+        <p>
+            Dengan memahami perilaku konvergensi, pemilihan metode numerik dapat dilakukan secara lebih tepat dan efisien.
         </p>
 
     </div>

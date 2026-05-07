@@ -4,7 +4,9 @@
 
     <p>
         Metode Gauss-Seidel konvergen dengan cepat pada sistem ini
-        karena dominasi diagonal yang kuat.
+        karena dominasi diagonal yang kuat. Perbedaan utama
+        adalah ketika menghitung \( x_2^{(k+1)} \), nilai \( x_1^{(k+1)} \) yang sudah diperbaharui
+        langsung digunakan, demikian pula untuk \( x_3^{(k+1)} \).
     </p>
 
     <p class="text-meta">
@@ -12,57 +14,372 @@
     </p>
 
     <p class="text-meta">
-        Tebakan awal: (0, 0, 0)
+        Tebakan awal: \( x^{(0)} = (0, 0, 0) \)
     </p>
 
     <div class="card card--soft">
 
-        <p><strong>Bentuk Iterasi</strong></p>
+        <p><strong>Sistem Persamaan</strong></p>
+
+        <div class="katex">
+$$
+\begin{cases}
+11x_1 - x_2 + x_3 = 13 \\
+-x_1 + 10x_2 - x_3 = 9 \\
+x_1 - x_2 + 9x_3 = 8
+\end{cases}
+$$
+        </div>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Bentuk Iterasi Gauss-Seidel</strong></p>
 
         <p>
-            x₁ = (13 + x₂ − x₃) / 11<br>
-            x₂ = (9 + x₁ + x₃) / 10<br>
-            x₃ = (8 − x₁ + x₂) / 9
+            Dari persamaan pertama: \( 11x_1 = 13 + x_2 - x_3 \) → 
+            \( x_1^{(k+1)} = \frac{13 + x_2^{(k)} - x_3^{(k)}}{11} \)
+        </p>
+
+        <p>
+            Dari persamaan kedua: \( -x_1 + 10x_2 - x_3 = 9 \) → 
+            \( 10x_2 = 9 + x_1 + x_3 \) →
+            \( x_2^{(k+1)} = \frac{9 + x_1^{(k+1)} + x_3^{(k)}}{10} \)
+        </p>
+
+        <p>
+            Dari persamaan ketiga: \( x_1 - x_2 + 9x_3 = 8 \) → 
+            \( 9x_3 = 8 - x_1 + x_2 \) →
+            \( x_3^{(k+1)} = \frac{8 - x_1^{(k+1)} + x_2^{(k+1)}}{9} \)
+        </p>
+
+        <div class="text-code">
+def gauss_seidel_step(x1, x2, x3):
+    x1_new = (13 + x2 - x3) / 11
+    x2_new = (9 + x1_new + x3) / 10
+    x3_new = (8 - x1_new + x2_new) / 9
+    return (x1_new, x2_new, x3_new)
+        </div>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Iterasi 0</strong></p>
+        <p>
+            \( x^{(0)} = (0, 0, 0) \)
         </p>
 
     </div>
 
     <div class="card card--soft">
 
-        <p><strong>Proses Iterasi</strong></p>
-
+        <p><strong>Iterasi 1</strong></p>
         <p>
-            Iterasi 0: (0, 0, 0)
+            Menghitung \( x_1^{(1)} \):
+        </p>
+        <p>
+            \( x_1^{(1)} = \frac{13 + x_2^{(0)} - x_3^{(0)}}{11} = \frac{13 + 0 - 0}{11} = \frac{13}{11} = 1.1818181818181818 \)
+        </p>
+        <p>
+            Menghitung \( x_2^{(1)} \) (menggunakan \( x_1^{(1)} \) yang baru):
+        </p>
+        <p>
+            \( x_2^{(1)} = \frac{9 + x_1^{(1)} + x_3^{(0)}}{10} = \frac{9 + 1.1818181818181818 + 0}{10} = \frac{10.181818181818182}{10} = 1.0181818181818182 \)
+        </p>
+        <p>
+            Menghitung \( x_3^{(1)} \) (menggunakan \( x_1^{(1)} \) dan \( x_2^{(1)} \) yang baru):
+        </p>
+        <p>
+            \( x_3^{(1)} = \frac{8 - x_1^{(1)} + x_2^{(1)}}{9} = \frac{8 - 1.1818181818181818 + 1.0181818181818182}{9} \)
+        </p>
+        <p>
+            \( x_3^{(1)} = \frac{7.836363636363636}{9} = 0.8707070707070707 \)
+        </p>
+        <p>
+            \( x^{(1)} = (1.1818181818181818, 1.0181818181818182, 0.8707070707070707) \)
         </p>
 
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Iterasi 2</strong></p>
         <p>
-            Iterasi 1:<br>
-            x₁ ≈ 1.182<br>
-            x₂ ≈ 1.018<br>
-            x₃ ≈ 0.870<br>
-            → (1.182, 1.018, 0.870)
+            Menghitung \( x_1^{(2)} \):
+        </p>
+        <p>
+            \( x_1^{(2)} = \frac{13 + x_2^{(1)} - x_3^{(1)}}{11} = \frac{13 + 1.0181818181818182 - 0.8707070707070707}{11} \)
+        </p>
+        <p>
+            \( x_1^{(2)} = \frac{13.147474747474747}{11} = 1.1952249770431588 \)
+        </p>
+        <p>
+            Menghitung \( x_2^{(2)} \):
+        </p>
+        <p>
+            \( x_2^{(2)} = \frac{9 + x_1^{(2)} + x_3^{(1)}}{10} = \frac{9 + 1.1952249770431588 + 0.8707070707070707}{10} \)
+        </p>
+        <p>
+            \( x_2^{(2)} = \frac{11.06593204775023}{10} = 1.106593204775023 \)
+        </p>
+        <p>
+            Menghitung \( x_3^{(2)} \):
+        </p>
+        <p>
+            \( x_3^{(2)} = \frac{8 - x_1^{(2)} + x_2^{(2)}}{9} = \frac{8 - 1.1952249770431588 + 1.106593204775023}{9} \)
+        </p>
+        <p>
+            \( x_3^{(2)} = \frac{7.911368227731864}{9} = 0.8790409141924293 \)
+        </p>
+        <p>
+            \( x^{(2)} = (1.1952249770431588, 1.106593204775023, 0.8790409141924293) \)
         </p>
 
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Iterasi 3</strong></p>
         <p>
-            Iterasi 2:<br>
-            x₁ ≈ 1.195<br>
-            x₂ ≈ 1.107<br>
-            x₃ ≈ 0.879
+            Menghitung \( x_1^{(3)} \):
+        </p>
+        <p>
+            \( x_1^{(3)} = \frac{13 + x_2^{(2)} - x_3^{(2)}}{11} = \frac{13 + 1.106593204775023 - 0.8790409141924293}{11} \)
+        </p>
+        <p>
+            \( x_1^{(3)} = \frac{13.227552290582594}{11} = 1.2025047536893267 \)
+        </p>
+        <p>
+            Menghitung \( x_2^{(3)} \):
+        </p>
+        <p>
+            \( x_2^{(3)} = \frac{9 + x_1^{(3)} + x_3^{(2)}}{10} = \frac{9 + 1.2025047536893267 + 0.8790409141924293}{10} \)
+        </p>
+        <p>
+            \( x_2^{(3)} = \frac{11.081545667881756}{10} = 1.1081545667881756 \)
+        </p>
+        <p>
+            Menghitung \( x_3^{(3)} \):
+        </p>
+        <p>
+            \( x_3^{(3)} = \frac{8 - x_1^{(3)} + x_2^{(3)}}{9} = \frac{8 - 1.2025047536893267 + 1.1081545667881756}{9} \)
+        </p>
+        <p>
+            \( x_3^{(3)} = \frac{7.905649813098849}{9} = 0.878405534788761 \)
+        </p>
+        <p>
+            \( x^{(3)} = (1.2025047536893267, 1.1081545667881756, 0.878405534788761) \)
         </p>
 
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Iterasi 4</strong></p>
         <p>
-            Iterasi 3:<br>
-            x₁ ≈ 1.203<br>
-            x₂ ≈ 1.106<br>
-            x₃ ≈ 0.867
+            Menghitung \( x_1^{(4)} \):
+        </p>
+        <p>
+            \( x_1^{(4)} = \frac{13 + x_2^{(3)} - x_3^{(3)}}{11} = \frac{13 + 1.1081545667881756 - 0.878405534788761}{11} \)
+        </p>
+        <p>
+            \( x_1^{(4)} = \frac{13.229749031999415}{11} = 1.2027044574544923 \)
+        </p>
+        <p>
+            Menghitung \( x_2^{(4)} \):
+        </p>
+        <p>
+            \( x_2^{(4)} = \frac{9 + x_1^{(4)} + x_3^{(3)}}{10} = \frac{9 + 1.2027044574544923 + 0.878405534788761}{10} \)
+        </p>
+        <p>
+            \( x_2^{(4)} = \frac{11.081109992243253}{10} = 1.1081109992243253 \)
+        </p>
+        <p>
+            Menghitung \( x_3^{(4)} \):
+        </p>
+        <p>
+            \( x_3^{(4)} = \frac{8 - x_1^{(4)} + x_2^{(4)}}{9} = \frac{8 - 1.2027044574544923 + 1.1081109992243253}{9} \)
+        </p>
+        <p>
+            \( x_3^{(4)} = \frac{7.905406541769833}{9} = 0.8783785046410926 \)
+        </p>
+        <p>
+            \( x^{(4)} = (1.2027044574544923, 1.1081109992243253, 0.8783785046410926) \)
         </p>
 
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Iterasi 5</strong></p>
         <p>
-            Iterasi 4:<br>
-            x₁ ≈ 1.203<br>
-            x₂ ≈ 1.106<br>
-            x₃ ≈ 0.867
+            Menghitung \( x_1^{(5)} \):
         </p>
+        <p>
+            \( x_1^{(5)} = \frac{13 + x_2^{(4)} - x_3^{(4)}}{11} = \frac{13 + 1.1081109992243253 - 0.8783785046410926}{11} \)
+        </p>
+        <p>
+            \( x_1^{(5)} = \frac{13.229732494583233}{11} = 1.2027029540530212 \)
+        </p>
+        <p>
+            Menghitung \( x_2^{(5)} \):
+        </p>
+        <p>
+            \( x_2^{(5)} = \frac{9 + x_1^{(5)} + x_3^{(4)}}{10} = \frac{9 + 1.2027029540530212 + 0.8783785046410926}{10} \)
+        </p>
+        <p>
+            \( x_2^{(5)} = \frac{11.081081458694114}{10} = 1.1081081458694114 \)
+        </p>
+        <p>
+            Menghitung \( x_3^{(5)} \):
+        </p>
+        <p>
+            \( x_3^{(5)} = \frac{8 - x_1^{(5)} + x_2^{(5)}}{9} = \frac{8 - 1.2027029540530212 + 1.1081081458694114}{9} \)
+        </p>
+        <p>
+            \( x_3^{(5)} = \frac{7.90540519181639}{9} = 0.8783783546462656 \)
+        </p>
+        <p>
+            \( x^{(5)} = (1.2027029540530212, 1.1081081458694114, 0.8783783546462656) \)
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Iterasi 6</strong></p>
+        <p>
+            Menghitung \( x_1^{(6)} \):
+        </p>
+        <p>
+            \( x_1^{(6)} = \frac{13 + x_2^{(5)} - x_3^{(5)}}{11} = \frac{13 + 1.1081081458694114 - 0.8783783546462656}{11} \)
+        </p>
+        <p>
+            \( x_1^{(6)} = \frac{13.229729791223146}{11} = 1.2027027082930133 \)
+        </p>
+        <p>
+            Menghitung \( x_2^{(6)} \):
+        </p>
+        <p>
+            \( x_2^{(6)} = \frac{9 + x_1^{(6)} + x_3^{(5)}}{10} = \frac{9 + 1.2027027082930133 + 0.8783783546462656}{10} \)
+        </p>
+        <p>
+            \( x_2^{(6)} = \frac{11.081081062939279}{10} = 1.1081081062939279 \)
+        </p>
+        <p>
+            Menghitung \( x_3^{(6)} \):
+        </p>
+        <p>
+            \( x_3^{(6)} = \frac{8 - x_1^{(6)} + x_2^{(6)}}{9} = \frac{8 - 1.2027027082930133 + 1.1081081062939279}{9} \)
+        </p>
+        <p>
+            \( x_3^{(6)} = \frac{7.905405398000915}{9} = 0.8783783775556572 \)
+        </p>
+        <p>
+            \( x^{(6)} = (1.2027027082930133, 1.1081081062939279, 0.8783783775556572) \)
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Iterasi 7</strong></p>
+        <p>
+            Menghitung \( x_1^{(7)} \):
+        </p>
+        <p>
+            \( x_1^{(7)} = \frac{13 + x_2^{(6)} - x_3^{(6)}}{11} = \frac{13 + 1.1081081062939279 - 0.8783783775556572}{11} \)
+        </p>
+        <p>
+            \( x_1^{(7)} = \frac{13.22972972873827}{11} = 1.2027027026125701 \)
+        </p>
+        <p>
+            Menghitung \( x_2^{(7)} \):
+        </p>
+        <p>
+            \( x_2^{(7)} = \frac{9 + x_1^{(7)} + x_3^{(6)}}{10} = \frac{9 + 1.2027027026125701 + 0.8783783775556572}{10} \)
+        </p>
+        <p>
+            \( x_2^{(7)} = \frac{11.081081080168227}{10} = 1.1081081080168227 \)
+        </p>
+        <p>
+            Menghitung \( x_3^{(7)} \):
+        </p>
+        <p>
+            \( x_3^{(7)} = \frac{8 - x_1^{(7)} + x_2^{(7)}}{9} = \frac{8 - 1.2027027026125701 + 1.1081081080168227}{9} \)
+        </p>
+        <p>
+            \( x_3^{(7)} = \frac{7.905405405404253}{9} = 0.8783783783782503 \)
+        </p>
+        <p>
+            \( x^{(7)} = (1.2027027026125701, 1.1081081080168227, 0.8783783783782503) \)
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Iterasi 8</strong></p>
+        <p>
+            Menghitung \( x_1^{(8)} \):
+        </p>
+        <p>
+            \( x_1^{(8)} = \frac{13 + x_2^{(7)} - x_3^{(7)}}{11} = \frac{13 + 1.1081081080168227 - 0.8783783783782503}{11} \)
+        </p>
+        <p>
+            \( x_1^{(8)} = \frac{13.229729729638572}{11} = 1.2027027026944156 \)
+        </p>
+        <p>
+            Menghitung \( x_2^{(8)} \):
+        </p>
+        <p>
+            \( x_2^{(8)} = \frac{9 + x_1^{(8)} + x_3^{(7)}}{10} = \frac{9 + 1.2027027026944156 + 0.8783783783782503}{10} \)
+        </p>
+        <p>
+            \( x_2^{(8)} = \frac{11.081081081072666}{10} = 1.1081081081072666 \)
+        </p>
+        <p>
+            Menghitung \( x_3^{(8)} \):
+        </p>
+        <p>
+            \( x_3^{(8)} = \frac{8 - x_1^{(8)} + x_2^{(8)}}{9} = \frac{8 - 1.2027027026944156 + 1.1081081081072666}{9} \)
+        </p>
+        <p>
+            \( x_3^{(8)} = \frac{7.905405405412851}{9} = 0.8783783783792057 \)
+        </p>
+        <p>
+            \( x^{(8)} = (1.2027027026944156, 1.1081081081072666, 0.8783783783792057) \)
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Tabel Ringkasan Iterasi</strong></p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Iterasi (k)</th>
+                    <th>\( x_1^{(k)} \)</th>
+                    <th>\( x_2^{(k)} \)</th>
+                    <th>\( x_3^{(k)} \)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>0</th></td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>1</td><td>1.18181818182</td><td>1.01818181818</td><td>0.87070707071</td></tr>
+                <tr><td>2</td><td>1.19522497704</td><td>1.10659320478</td><td>0.87904091419</td></tr>
+                <tr><td>3</td><td>1.20250475369</td><td>1.10815456679</td><td>0.87840553479</td></tr>
+                <tr><td>4</td><td>1.20270445745</td><td>1.10811099922</td><td>0.87837850464</td></tr>
+                <tr><td>5</td><td>1.20270295405</td><td>1.10810814587</td><td>0.87837835465</td></tr>
+                <tr><td>6</td><td>1.20270270829</td><td>1.10810810629</td><td>0.87837837756</td></tr>
+                <tr><td>7</td><td>1.20270270261</td><td>1.10810810802</td><td>0.87837837838</td></tr>
+                <tr><td>8</td><td>1.20270270269</td><td>1.10810810811</td><td>0.87837837838</td></tr>
+            </tbody>
+        </table>
 
     </div>
 
@@ -71,28 +388,79 @@
         <p><strong>Analisis Konvergensi</strong></p>
 
         <p>
-            Iterasi sangat cepat mencapai nilai tetap.
+            Dari tabel iterasi di atas, terlihat bahwa:
         </p>
-
         <p>
-            Sistem memenuhi dominasi diagonal sehingga
-            <strong>konvergen</strong>.
+            1. Nilai \( x_1 \) konvergen ke sekitar 1.2027027
+        </p>
+        <p>
+            2. Nilai \( x_2 \) konvergen ke sekitar 1.1081081
+        </p>
+        <p>
+            3. Nilai \( x_3 \) konvergen ke sekitar 0.8783784
+        </p>
+        <p>
+            Perubahan antar iterasi semakin kecil:
+        </p>
+        <p>
+            \( \Delta x_1 \) dari iterasi 7 ke 8: 1.20270270261 → 1.20270270269 (perubahan ≈ \( 8.0 \times 10^{-11} \))
+        </p>
+        <p>
+            \( \Delta x_2 \) dari iterasi 7 ke 8: 1.10810810802 → 1.10810810811 (perubahan ≈ \( 9.0 \times 10^{-11} \))
+        </p>
+        <p>
+            \( \Delta x_3 \) dari iterasi 7 ke 8: 0.87837837838 → 0.87837837838 (perubahan ≈ \( 9.6 \times 10^{-10} \))
+        </p>
+        <p>
+            Metode Gauss-Seidel menunjukkan <strong>konvergensi yang sangat cepat</strong> pada sistem ini.
         </p>
 
     </div>
 
     <div class="card card--soft">
 
-        <p><strong>Hasil Akhir</strong></p>
+        <p><strong>Syarat Konvergensi (Dominasi Diagonal)</strong></p>
 
         <p>
-            x₁ ≈ 1.203<br>
-            x₂ ≈ 1.106<br>
-            x₃ ≈ 0.867
+            Periksa syarat dominasi diagonal ketat:
+        </p>
+        <p>
+            Baris 1: \( |11| > |-1| + |1| = 2 \) → ✅ terpenuhi
+        </p>
+        <p>
+            Baris 2: \( |10| > |-1| + |-1| = 2 \) → ✅ terpenuhi
+        </p>
+        <p>
+            Baris 3: \( |9| > |1| + |-1| = 2 \) → ✅ terpenuhi
+        </p>
+        <p>
+            Matriks koefisien memenuhi <strong>dominasi diagonal ketat</strong>,
+            sehingga metode Gauss-Seidel dijamin konvergen menuju solusi tunggal.
         </p>
 
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Hasil Akhir (Setelah Iterasi 8)</strong></p>
+
         <p>
-            Hasil sesuai dengan metode LU.
+            \( x_1 \approx 1.2027027026944156 \)
+        </p>
+        <p>
+            \( x_2 \approx 1.1081081081072666 \)
+        </p>
+        <p>
+            \( x_3 \approx 0.8783783783792057 \)
+        </p>
+        <p>
+            Hasil ini konsisten dengan solusi yang diperoleh dari metode eliminasi Gauss:
+        </p>
+        <p>
+            \( x_1 = 1.202703, \quad x_2 = 1.108108, \quad x_3 = 0.878378 \)
+        </p>
+        <p>
+            Nilai-nilai tersebut telah mencapai konvergensi dengan tingkat akurasi yang sangat tinggi.
         </p>
 
     </div>

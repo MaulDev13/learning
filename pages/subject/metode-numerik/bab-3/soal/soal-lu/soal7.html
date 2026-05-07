@@ -1,98 +1,145 @@
-<div class="card card--flat">
+<h3>Penyelesaian Soal 7 (Metode LU)</h3>
 
-    <h3>Penyelesaian Soal 7 (Metode LU)</h3>
+<p>
+    Sistem persamaan linear ini diselesaikan menggunakan metode dekomposisi LU,
+    yaitu metode langsung dengan memfaktorkan matriks A menjadi L (lower) dan U (upper).
+</p>
+
+<p class="text-meta">
+    Metode: Dekomposisi LU
+</p>
+
+<!-- ===================================================== -->
+<!-- SISTEM PERSAMAAN -->
+<!-- ===================================================== -->
+<div class="card card--soft">
+
+    <p><strong>Sistem Persamaan</strong></p>
+
+    <div class="katex">
+        $$
+        \begin{aligned}
+        9x_1 + x_2 + x_3 &= 20 \\
+        x_1 + 8x_2 - x_3 &= 18 \\
+        2x_1 - x_2 + 7x_3 &= 16
+        \end{aligned}
+        $$
+    </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- MATRIKS A -->
+<!-- ===================================================== -->
+<div class="card card--soft">
+
+    <p><strong>Matriks A</strong></p>
+
+    <div class="katex">
+        $$
+        A =
+        \begin{bmatrix}
+        9 & 1 & 1 \\
+        1 & 8 & -1 \\
+        2 & -1 & 7
+        \end{bmatrix}
+        $$
+    </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- DEKOMPOSISI -->
+<!-- ===================================================== -->
+<div class="card card--soft">
+
+    <p><strong>Dekomposisi LU</strong></p>
+
+    <p>Matriks lower triangular:</p>
+
+    <div class="katex">
+        $$
+        L =
+        \begin{bmatrix}
+        1 & 0 & 0 \\
+        0.111 & 1 & 0 \\
+        0.222 & -0.146 & 1
+        \end{bmatrix}
+        $$
+    </div>
+
+    <p>Matriks upper triangular:</p>
+
+    <div class="katex">
+        $$
+        U =
+        \begin{bmatrix}
+        9 & 1 & 1 \\
+        0 & 7.889 & -1.111 \\
+        0 & 0 & 6.616
+        \end{bmatrix}
+        $$
+    </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- LY = B -->
+<!-- ===================================================== -->
+<div class="card card--soft">
+
+    <p><strong>Penyelesaian</strong> <span class="text-code-inline">Ly = b</span></p>
+
+    <div class="katex">
+        $$
+        \begin{aligned}
+        y_1 &= 20 \\
+        y_2 &= 18 - 0.111(20) \approx 15.778 \\
+        y_3 &= 16 - 0.222(20) + 0.146(15.778) \approx 13.889
+        \end{aligned}
+        $$
+    </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- UX = Y -->
+<!-- ===================================================== -->
+<div class="card card--soft">
+
+    <p><strong>Penyelesaian</strong> <span class="text-code-inline">Ux = y</span></p>
+
+    <div class="katex">
+        $$
+        \begin{aligned}
+        6.616x_3 &= 13.889 \Rightarrow x_3 \approx 2.099 \\
+        7.889x_2 - 1.111x_3 &= 15.778 \Rightarrow x_2 \approx 2.277 \\
+        9x_1 + x_2 + x_3 &= 20 \Rightarrow x_1 \approx 1.736
+        \end{aligned}
+        $$
+    </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- HASIL -->
+<!-- ===================================================== -->
+<div class="card card--soft">
+
+    <p><strong>Hasil Akhir</strong></p>
+
+    <div class="katex">
+        $$
+        \begin{aligned}
+        x_1 &\approx 1.736 \\
+        x_2 &\approx 2.277 \\
+        x_3 &\approx 2.099
+        \end{aligned}
+        $$
+    </div>
 
     <p>
-        Sistem ini diselesaikan menggunakan metode dekomposisi LU,
-        dengan memfaktorkan matriks A menjadi matriks L dan U.
+        Metode LU memberikan solusi stabil dan akurat.
     </p>
-
-    <p class="text-meta">
-        Metode: Dekomposisi LU
-    </p>
-
-    <div class="card card--soft">
-
-        <p><strong>Sistem Persamaan</strong></p>
-
-        <p>
-            9x₁ + x₂ + x₃ = 20<br>
-            x₁ + 8x₂ − x₃ = 18<br>
-            2x₁ − x₂ + 7x₃ = 16
-        </p>
-
-    </div>
-
-    <div class="card card--soft">
-
-        <p><strong>Matriks A</strong></p>
-
-        <p>
-            [ 9  1   1 ]<br>
-            [ 1  8  -1 ]<br>
-            [ 2 -1   7 ]
-        </p>
-
-    </div>
-
-    <div class="card card--soft">
-
-        <p><strong>Dekomposisi LU</strong></p>
-
-        <p>
-            L =
-            [ 1     0     0 ]<br>
-            [ 0.111 1     0 ]<br>
-            [ 0.222 -0.146 1 ]
-        </p>
-
-        <p>
-            U =
-            [ 9   1     1 ]<br>
-            [ 0  7.889 -1.111 ]<br>
-            [ 0   0    6.616 ]
-        </p>
-
-    </div>
-
-    <div class="card card--soft">
-
-        <p><strong>Penyelesaian Ly = b</strong></p>
-
-        <p>
-            y₁ = 20<br>
-            y₂ = 18 - 0.111(20) ≈ 15.778<br>
-            y₃ = 16 - 0.222(20) + 0.146(15.778) ≈ 13.889
-        </p>
-
-    </div>
-
-    <div class="card card--soft">
-
-        <p><strong>Penyelesaian Ux = y</strong></p>
-
-        <p>
-            6.616x₃ = 13.889 → x₃ ≈ 2.099<br>
-            7.889x₂ − 1.111x₃ = 15.778 → x₂ ≈ 2.277<br>
-            9x₁ + x₂ + x₃ = 20 → x₁ ≈ 1.736
-        </p>
-
-    </div>
-
-    <div class="card card--soft">
-
-        <p><strong>Hasil Akhir</strong></p>
-
-        <p>
-            x₁ ≈ 1.736<br>
-            x₂ ≈ 2.277<br>
-            x₃ ≈ 2.099
-        </p>
-
-        <p>
-            Metode LU memberikan solusi stabil dan akurat.
-        </p>
-
-    </div>
 
 </div>

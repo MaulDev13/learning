@@ -31,7 +31,7 @@
 
         <p>
             Semua nilai baru dihitung secara terpisah
-            (tidak langsung diperbarui).
+            (tidak langsung diperbarui dalam iterasi yang sama).
         </p>
 
     </div>
@@ -52,7 +52,7 @@
 
         <p>
             Setiap persamaan diubah
-            untuk mengekspresikan satu variabel.
+            untuk mengekspresikan satu variabel terhadap variabel lainnya.
         </p>
 
     </div>
@@ -62,14 +62,19 @@
 
         <h3>Rumus Iterasi Jacobi</h3>
 
-        <p>
-            xᵢ^(k+1) = (1 / aᵢᵢ)
-            [ bᵢ − Σ (aᵢⱼ xⱼ^(k)) ]
-        </p>
+        <div class="katex">
+            $$
+            x_i^{(k+1)} =
+            \frac{1}{a_{ii}}
+            \left(
+            b_i - \sum_{j \ne i} a_{ij} x_j^{(k)}
+            \right)
+            $$
+        </div>
 
         <p>
-            Nilai baru dihitung dari
-            nilai lama (iterasi sebelumnya).
+            Nilai baru selalu dihitung dari nilai lama (iterasi sebelumnya),
+            tanpa menggunakan nilai yang sudah diperbarui pada iterasi yang sama.
         </p>
 
     </div>
@@ -81,9 +86,9 @@
 
         <p>
             1. Tentukan tebakan awal x⁰<br>
-            2. Hitung semua variabel baru<br>
-            3. Gunakan nilai lama dalam perhitungan<br>
-            4. Ulangi hingga konvergen
+            2. Hitung semua variabel baru secara terpisah<br>
+            3. Gunakan hanya nilai dari iterasi sebelumnya<br>
+            4. Ulangi hingga memenuhi kriteria konvergensi
         </p>
 
     </div>
@@ -113,7 +118,7 @@
 
         <p>
             x₁¹ = (8 − x₂⁰ + x₃⁰) / 8 = 1<br>
-            x₂¹ = (12 − 2x₁⁰ − 9x₃⁰) / 1 = 12<br>
+            x₂¹ = (12 − 2x₁⁰ − 9x₃⁰) = 12<br>
             x₃¹ = (-4 − x₁⁰ + 7x₂⁰) / 2 = -2
         </p>
 
@@ -125,12 +130,13 @@
         <h3>Iterasi Selanjutnya</h3>
 
         <p>
-            Nilai iterasi sebelumnya digunakan kembali
-            untuk menghitung nilai baru.
+            Nilai dari iterasi sebelumnya digunakan kembali
+            untuk menghitung seluruh nilai pada iterasi berikutnya.
         </p>
 
         <p>
-            Proses diulang hingga nilai stabil.
+            Proses diulang hingga nilai menjadi stabil
+            dan memenuhi toleransi galat.
         </p>
 
     </div>
@@ -145,12 +151,14 @@
             matriks memiliki dominasi diagonal.
         </p>
 
-        <p>
-            |aᵢᵢ| > Σ |aᵢⱼ|
-        </p>
+        <div class="katex">
+            $$
+            |a_{ii}| > \sum_{j \ne i} |a_{ij}|
+            $$
+        </div>
 
         <p>
-            untuk setiap baris.
+            untuk setiap baris matriks.
         </p>
 
     </div>
@@ -161,9 +169,9 @@
         <h3>Kelebihan</h3>
 
         <p>
-            • Mudah dipahami<br>
-            • Mudah diimplementasikan<br>
-            • Cocok untuk sistem besar
+            • Mudah dipahami secara konseptual<br>
+            • Mudah diimplementasikan dalam pemrograman<br>
+            • Cocok untuk sistem persamaan berukuran besar
         </p>
 
     </div>
@@ -174,9 +182,9 @@
         <h3>Kelemahan</h3>
 
         <p>
-            • Konvergensi lambat<br>
-            • Tidak selalu konvergen<br>
-            • Sensitif terhadap bentuk matriks
+            • Konvergensi relatif lambat<br>
+            • Tidak selalu konvergen untuk semua sistem<br>
+            • Sangat bergantung pada struktur matriks
         </p>
 
     </div>
@@ -187,13 +195,13 @@
         <h3>Perbandingan dengan Metode Langsung</h3>
 
         <p>
-            • Metode langsung → solusi sekali hitung<br>
-            • Jacobi → solusi bertahap (iteratif)
+            • Metode langsung → solusi diperoleh dalam satu proses eliminasi<br>
+            • Jacobi → solusi diperoleh secara bertahap melalui iterasi
         </p>
 
         <p>
             Jacobi lebih fleksibel untuk sistem besar,
-            tetapi membutuhkan iterasi.
+            tetapi membutuhkan banyak iterasi.
         </p>
 
     </div>
@@ -204,13 +212,12 @@
         <h3>Intuisi</h3>
 
         <p>
-            Jacobi seperti “menebak lalu memperbaiki”
-            semua variabel secara bersamaan.
+            Jacobi dapat dipahami sebagai proses “menebak semua variabel sekaligus,
+            lalu memperbaikinya secara berulang”.
         </p>
 
         <p>
-            Setiap iterasi mendekatkan hasil
-            ke solusi sebenarnya.
+            Setiap iterasi membuat tebakan semakin mendekati solusi sebenarnya.
         </p>
 
     </div>
@@ -222,12 +229,12 @@
 
         <p>
             Metode Jacobi adalah metode iteratif sederhana
-            untuk menyelesaikan SPL.
+            untuk menyelesaikan Sistem Persamaan Linear.
         </p>
 
         <p>
-            Keberhasilannya bergantung pada
-            struktur matriks dan kondisi konvergensi.
+            Keberhasilan metode ini sangat bergantung pada
+            struktur matriks dan syarat konvergensi.
         </p>
 
     </div>

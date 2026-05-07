@@ -6,18 +6,15 @@
         <h3>Galat Relatif Aproksimasi</h3>
 
         <p>
-            Galat relatif aproksimasi digunakan ketika
-            nilai eksak tidak diketahui.
+            Galat relatif aproksimasi digunakan ketika nilai eksak tidak diketahui.
         </p>
 
         <p>
-            Galat ini membandingkan hasil iterasi saat ini
-            dengan hasil iterasi sebelumnya.
+            Galat ini membandingkan hasil iterasi saat ini dengan hasil iterasi sebelumnya.
         </p>
 
         <p>
-            Digunakan sebagai indikator konvergensi
-            dalam metode numerik.
+            Digunakan sebagai indikator konvergensi dalam metode numerik.
         </p>
 
     </div>
@@ -28,18 +25,15 @@
         <h3>Konsep Dasar</h3>
 
         <p>
-            Dalam banyak metode numerik,
-            nilai eksak tidak tersedia.
+            Dalam banyak metode numerik, nilai eksak tidak tersedia.
         </p>
 
         <p>
-            Oleh karena itu, kita tidak bisa
-            menghitung galat terhadap nilai sebenarnya.
+            Oleh karena itu, kita tidak bisa menghitung galat terhadap nilai sebenarnya.
         </p>
 
         <p>
-            Solusinya adalah membandingkan
-            dua hasil iterasi berturut-turut.
+            Solusinya adalah membandingkan dua hasil iterasi berturut-turut.
         </p>
 
     </div>
@@ -49,17 +43,31 @@
 
         <h3>Rumus Galat Relatif Aproksimasi</h3>
 
-        <p>
-            ε<sub>a</sub> = |x<sup>i</sup> − x<sup>i−1</sup>| / |x<sup>i</sup>|
-        </p>
+        <div class="katex">
+            $$
+            \varepsilon_a =
+            \frac{
+                \left| x^{i} - x^{i-1} \right|
+            }{
+                \left| x^{i} \right|
+            }
+            $$
+        </div>
 
         <p>
             Dalam bentuk persen:
         </p>
 
-        <p>
-            ε<sub>a</sub> = ( |x<sup>i</sup> − x<sup>i−1</sup>| / |x<sup>i</sup>| ) × 100%
-        </p>
+        <div class="katex">
+            $$
+            \varepsilon_a =
+            \frac{
+                \left| x^{i} - x^{i-1} \right|
+            }{
+                \left| x^{i} \right|
+            } \times 100\%
+            $$
+        </div>
 
     </div>
 
@@ -69,8 +77,8 @@
         <h3>Keterangan</h3>
 
         <p>
-            x<sup>i</sup> → nilai iterasi saat ini<br>
-            x<sup>i−1</sup> → nilai iterasi sebelumnya
+            \( x^{i} \) → nilai iterasi saat ini<br>
+            \( x^{i-1} \) → nilai iterasi sebelumnya
         </p>
 
         <p>
@@ -85,17 +93,21 @@
         <h3>Contoh Perhitungan</h3>
 
         <p>
-            Iterasi ke-1: x¹ = 2.5<br>
-            Iterasi ke-2: x² = 2.8
+            Iterasi ke-1: \( x^{1} = 2.5 \)<br>
+            Iterasi ke-2: \( x^{2} = 2.8 \)
         </p>
 
-        <p>
-            ε<sub>a</sub> = |2.8 − 2.5| / 2.8
-        </p>
+        <div class="katex">
+            $$
+            \varepsilon_a = \frac{|2.8 - 2.5|}{2.8}
+            $$
+        </div>
 
-        <p>
-            ε<sub>a</sub> ≈ 0.107 = 10.7%
-        </p>
+        <div class="katex">
+            $$
+            \varepsilon_a \approx 0.107 = 10.7\%
+            $$
+        </div>
 
         <p>
             Artinya, perubahan antar iterasi masih cukup besar.
@@ -109,8 +121,7 @@
         <h3>Interpretasi</h3>
 
         <p>
-            Galat aproksimasi menunjukkan
-            seberapa besar perubahan antar iterasi.
+            Galat aproksimasi menunjukkan seberapa besar perubahan antar iterasi.
         </p>
 
         <p>
@@ -129,13 +140,14 @@
             Iterasi dihentikan jika:
         </p>
 
-        <p>
-            ε<sub>a</sub> < ε<sub>s</sub>
-        </p>
+        <div class="katex">
+            $$
+            \varepsilon_a < \varepsilon_s
+            $$
+        </div>
 
         <p>
-            dimana ε<sub>s</sub> adalah toleransi
-            yang ditentukan sebelumnya.
+            di mana \( \varepsilon_s \) adalah toleransi yang ditentukan sebelumnya.
         </p>
 
         <p>
@@ -150,13 +162,11 @@
         <h3>Hubungan dengan Konvergensi</h3>
 
         <p>
-            Jika galat aproksimasi terus mengecil,
-            maka metode dikatakan konvergen.
+            Jika galat aproksimasi terus mengecil, maka metode dikatakan konvergen.
         </p>
 
         <p>
-            Jika tidak stabil atau membesar,
-            maka metode bisa divergen.
+            Jika tidak stabil atau membesar, maka metode bisa divergen.
         </p>
 
     </div>
@@ -167,13 +177,11 @@
         <h3>Peran dalam Metode Numerik</h3>
 
         <p>
-            Galat ini adalah dasar utama
-            untuk menghentikan iterasi.
+            Galat ini adalah dasar utama untuk menghentikan iterasi.
         </p>
 
         <p>
-            Digunakan pada metode seperti:
-            Jacobi, Gauss-Seidel, Newton-Raphson, dan lainnya.
+            Digunakan pada metode seperti: Jacobi, Gauss-Seidel, Newton-Raphson, dan lainnya.
         </p>
 
     </div>
@@ -184,13 +192,11 @@
         <h3>Intuisi</h3>
 
         <p>
-            Galat relatif aproksimasi menjawab:
-            “Apakah hasil kita sudah cukup stabil?”
+            Galat relatif aproksimasi menjawab: “Apakah hasil kita sudah cukup stabil?”
         </p>
 
         <p>
-            Jika perubahan antar iterasi sangat kecil,
-            maka kita sudah mendekati solusi.
+            Jika perubahan antar iterasi sangat kecil, maka kita sudah mendekati solusi.
         </p>
 
     </div>
@@ -201,18 +207,15 @@
         <h3>Kesimpulan</h3>
 
         <p>
-            Galat relatif aproksimasi digunakan ketika
-            nilai eksak tidak tersedia.
+            Galat relatif aproksimasi digunakan ketika nilai eksak tidak tersedia.
         </p>
 
         <p>
-            Dengan membandingkan hasil iterasi,
-            kita dapat menentukan kapan proses dihentikan.
+            Dengan membandingkan hasil iterasi, kita dapat menentukan kapan proses dihentikan.
         </p>
 
         <p>
-            Ini adalah komponen kunci
-            dalam hampir semua metode numerik iteratif.
+            Ini adalah komponen kunci dalam hampir semua metode numerik iteratif.
         </p>
 
     </div>

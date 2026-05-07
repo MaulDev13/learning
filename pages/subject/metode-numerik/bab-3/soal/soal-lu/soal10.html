@@ -1,98 +1,131 @@
-<div class="card card--flat">
+<h3>Penyelesaian Soal 10 (Metode LU)</h3>
 
-    <h3>Penyelesaian Soal 10 (Metode LU)</h3>
+<p>
+    Sistem persamaan linear ini diselesaikan menggunakan metode dekomposisi LU,
+    yaitu memfaktorkan matriks A menjadi lower triangular L dan upper triangular U.
+</p>
+
+<p class="text-meta">
+    Metode: Dekomposisi LU
+</p>
+
+<!-- SISTEM PERSAMAAN -->
+<div class="card card--soft">
+
+    <p><strong>Sistem Persamaan</strong></p>
+
+    <div class="katex">
+        $$
+        \begin{aligned}
+        7x_1 + 2x_2 + x_3 &= 17 \\
+        2x_1 + 8x_2 + x_3 &= 19 \\
+        x_1 + x_2 + 9x_3 &= 21
+        \end{aligned}
+        $$
+    </div>
+
+</div>
+
+<!-- MATRIKS A -->
+<div class="card card--soft">
+
+    <p><strong>Matriks A</strong></p>
+
+    <div class="katex">
+        $$
+        A =
+        \begin{bmatrix}
+        7 & 2 & 1 \\
+        2 & 8 & 1 \\
+        1 & 1 & 9
+        \end{bmatrix}
+        $$
+    </div>
+
+</div>
+
+<!-- DEKOMPOSISI LU -->
+<div class="card card--soft">
+
+    <p><strong>Dekomposisi LU</strong></p>
+
+    <p>Matriks lower triangular L:</p>
+    <div class="katex">
+        $$
+        L =
+        \begin{bmatrix}
+        1 & 0 & 0 \\
+        0.286 & 1 & 0 \\
+        0.143 & 0.086 & 1
+        \end{bmatrix}
+        $$
+    </div>
+
+    <p>Matriks upper triangular U:</p>
+    <div class="katex">
+        $$
+        U =
+        \begin{bmatrix}
+        7 & 2 & 1 \\
+        0 & 7.429 & 0.714 \\
+        0 & 0 & 8.786
+        \end{bmatrix}
+        $$
+    </div>
+
+</div>
+
+<!-- LY = B -->
+<div class="card card--soft">
+
+    <p><strong>Penyelesaian</strong> <span class="text-code-inline">Ly = b</span></p>
+
+    <div class="katex">
+        $$
+        \begin{aligned}
+        y_1 &= 17 \\
+        y_2 &= 19 - 0.286(17) \approx 14.143 \\
+        y_3 &= 21 - 0.143(17) - 0.086(14.143) \approx 17.35
+        \end{aligned}
+        $$
+    </div>
+
+</div>
+
+<!-- UX = Y -->
+<div class="card card--soft">
+
+    <p><strong>Penyelesaian</strong> <span class="text-code-inline">Ux = y</span></p>
+
+    <div class="katex">
+        $$
+        \begin{aligned}
+        8.786x_3 &= 17.35 \Rightarrow x_3 \approx 1.975 \\
+        7.429x_2 + 0.714x_3 &= 14.143 \Rightarrow x_2 \approx 1.716 \\
+        7x_1 + 2x_2 + x_3 &= 17 \Rightarrow x_1 \approx 1.656
+        \end{aligned}
+        $$
+    </div>
+
+</div>
+
+<!-- HASIL AKHIR -->
+<div class="card card--soft">
+
+    <p><strong>Hasil Akhir</strong></p>
+
+    <div class="katex">
+        $$
+        \begin{aligned}
+        x_1 &\approx 1.656 \\
+        x_2 &\approx 1.716 \\
+        x_3 &\approx 1.975
+        \end{aligned}
+        $$
+    </div>
 
     <p>
-        Sistem ini diselesaikan menggunakan metode dekomposisi LU,
-        dengan memfaktorkan matriks A menjadi matriks L dan U.
+        Metode LU memberikan solusi stabil dan akurat.
     </p>
-
-    <p class="text-meta">
-        Metode: Dekomposisi LU
-    </p>
-
-    <div class="card card--soft">
-
-        <p><strong>Sistem Persamaan</strong></p>
-
-        <p>
-            7x₁ + 2x₂ + x₃ = 17<br>
-            2x₁ + 8x₂ + x₃ = 19<br>
-            x₁ + x₂ + 9x₃ = 21
-        </p>
-
-    </div>
-
-    <div class="card card--soft">
-
-        <p><strong>Matriks A</strong></p>
-
-        <p>
-            [ 7  2  1 ]<br>
-            [ 2  8  1 ]<br>
-            [ 1  1  9 ]
-        </p>
-
-    </div>
-
-    <div class="card card--soft">
-
-        <p><strong>Dekomposisi LU</strong></p>
-
-        <p>
-            L =
-            [ 1     0     0 ]<br>
-            [ 0.286 1     0 ]<br>
-            [ 0.143 0.086 1 ]
-        </p>
-
-        <p>
-            U =
-            [ 7   2     1 ]<br>
-            [ 0  7.429 0.714 ]<br>
-            [ 0   0    8.786 ]
-        </p>
-
-    </div>
-
-    <div class="card card--soft">
-
-        <p><strong>Penyelesaian Ly = b</strong></p>
-
-        <p>
-            y₁ = 17<br>
-            y₂ = 19 - 0.286(17) ≈ 14.143<br>
-            y₃ = 21 - 0.143(17) - 0.086(14.143) ≈ 17.35
-        </p>
-
-    </div>
-
-    <div class="card card--soft">
-
-        <p><strong>Penyelesaian Ux = y</strong></p>
-
-        <p>
-            8.786x₃ = 17.35 → x₃ ≈ 1.975<br>
-            7.429x₂ + 0.714x₃ = 14.143 → x₂ ≈ 1.716<br>
-            7x₁ + 2x₂ + x₃ = 17 → x₁ ≈ 1.656
-        </p>
-
-    </div>
-
-    <div class="card card--soft">
-
-        <p><strong>Hasil Akhir</strong></p>
-
-        <p>
-            x₁ ≈ 1.656<br>
-            x₂ ≈ 1.716<br>
-            x₃ ≈ 1.975
-        </p>
-
-        <p>
-            Metode LU memberikan solusi stabil dan akurat.
-        </p>
-
-    </div>
 
 </div>

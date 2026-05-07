@@ -818,3 +818,81 @@ button:focus-visible,
 .hidden {
     display: none;
 }
+
+/* =========================================================
+   KATEX
+========================================================= */
+
+.katex-display {
+
+    display: inline-flex !important;
+
+    width: fit-content !important;
+    max-width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: var(--space-sm);
+
+    margin:
+        var(--space-sm)
+        0;
+
+    background: var(--math-bg);
+
+    border: 1px solid var(--math-border);
+
+    border-radius: var(--radius-sm);
+
+    box-shadow: var(--shadow-sm);
+
+    transition: var(--transition);
+
+    text-align: left;
+}
+
+/* inner katex */
+.katex-display > .katex {
+
+    display: inline-block !important;
+
+    text-align: left !important;
+
+    font-size: var(--text-sm);
+}
+
+/* inline math */
+.katex {
+
+    color: var(--math-color);
+
+    font-size: var(--text-sm);
+}
+
+/* hover */
+.katex-display:hover {
+
+    border-color: var(--math-highlight-border);
+
+    background: var(--math-highlight-bg);
+
+    box-shadow: var(--shadow-md);
+
+    transform: translateY(-1px);
+}
+
+/* inline hover */
+p .katex {
+
+    padding: 0.08rem 0.2rem;
+
+    border-radius: var(--radius-sm);
+
+    transition: var(--transition);
+}
+
+p .katex:hover {
+
+    background: var(--math-inline-bg);
+}

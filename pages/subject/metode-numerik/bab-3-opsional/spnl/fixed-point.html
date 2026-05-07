@@ -1,318 +1,344 @@
 <div class="card-group">
-
-    <!-- ============================================ -->
-    <!-- CARD 1: PENGANTAR & DEFINISI -->
-    <!-- ============================================ -->
     <div class="card card--soft">
-        <h2>Metode Fixed Point (Titik Tetap)</h2>
+        <h2>SPNL - Metode Fixed Point (Iterasi Titik Tetap)</h2>
         <p>
-            <span class="text-code-inline">Metode Fixed Point</span> atau <span class="text-code-inline">Metode Iterasi Titik Tetap</span> 
-            adalah metode numerik yang digunakan untuk menyelesaikan sistem persamaan non linear 
-            dengan mengubah persamaan asli <span class="text-code-inline">F(x) = 0</span> menjadi bentuk 
-            <span class="text-code-inline">x = G(x)</span>.
+            <span class="text-code-inline">Metode Fixed Point</span> adalah metode numerik iteratif yang digunakan untuk mencari solusi persamaan nonlinear dengan mengubah bentuk persamaan awal menjadi bentuk titik tetap.
         </p>
         <p>
-            Ide utamanya adalah mencari <span class="text-code-inline">titik tetap (fixed point)</span> — 
-            yaitu nilai <span class="text-code-inline">x</span> yang tidak berubah ketika dimasukkan 
-            kembali ke dalam fungsi <span class="text-code-inline">G</span>. Dengan kata lain, 
-            jika <span class="text-code-inline">x* = G(x*)</span>, maka <span class="text-code-inline">x*</span> 
-            adalah titik tetap sekaligus solusi dari persamaan asli.
+            Persamaan nonlinear yang semula berbentuk \( F(x) = 0 \) ditransformasikan menjadi:
         </p>
-        <div class="text-math">
-            Bentuk umum: x = G(x)<br>
-            Titik tetap: x* = G(x*)
+        <div class="katex">
+$$
+x = G(x)
+$$
         </div>
+        <p>
+            Solusi dicari melalui proses iterasi berulang hingga diperoleh nilai yang stabil. Jika suatu nilai \( x^* \) memenuhi:
+        </p>
+        <div class="katex">
+$$
+x^* = G(x^*)
+$$
+        </div>
+        <p>
+            maka nilai tersebut disebut titik tetap dan sekaligus merupakan solusi dari sistem nonlinear yang diberikan.
+        </p>
     </div>
 
-    <!-- ============================================ -->
-    <!-- CARD 2: IDE DASAR DAN FORMULASI -->
-    <!-- ============================================ -->
     <div class="card card--soft">
-        <h3>Ide Dasar Metode</h3>
+        <h3>Intuisi Dasar Metode</h3>
         <p>
-            Misalkan kita memiliki persamaan non linear:
+            Ide utama metode Fixed Point adalah melakukan perbaikan solusi secara bertahap menggunakan hasil iterasi sebelumnya.
         </p>
-        <div class="text-math">
-            f(x) = 0
+        <p>
+            Dimulai dari tebakan awal \( x^{(0)} \), fungsi \( G(x) \) digunakan untuk menghasilkan pendekatan baru secara berulang:
+        </p>
+        <div class="katex">
+$$
+x^{(k+1)} = G(x^{(k)})
+$$
         </div>
         <p>
-            Persamaan ini dapat diubah secara aljabar menjadi bentuk:
+            Jika proses iterasi konvergen, maka urutan nilai iterasi akan mendekati titik tetap \( x^* \).
         </p>
-        <div class="text-math">
-            x = g(x)
+    </div>
+
+    <div class="card card--soft">
+        <h3>Transformasi Persamaan</h3>
+        <p>
+            Langkah paling penting dalam metode Fixed Point adalah mengubah persamaan nonlinear menjadi bentuk iteratif yang sesuai.
+        </p>
+        <p>
+            Misalkan diberikan persamaan:
+        </p>
+        <div class="katex">
+$$
+f(x) = 0
+$$
         </div>
         <p>
-            Selanjutnya, kita melakukan <span class="text-code-inline">iterasi</span> dengan rumus:
+            Persamaan tersebut dapat ditulis ulang menjadi:
         </p>
-        <div class="text-math">
-            x^{(k+1)} = g(x^{(k)})
+        <div class="katex">
+$$
+x = g(x)
+$$
         </div>
         <p>
-            Proses ini diulang terus sampai nilai <span class="text-code-inline">x</span> tidak banyak berubah 
-            (konvergen) atau mencapai batas iterasi maksimum.
+            Bentuk fungsi \( g(x) \) tidak selalu tunggal. Pemilihan bentuk transformasi yang tepat sangat menentukan keberhasilan konvergensi iterasi.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Fixed Point untuk Sistem Persamaan Nonlinear</h3>
+        <p>
+            Pada Sistem Persamaan Nonlinear (SPNL), metode Fixed Point diperluas ke bentuk multivariabel.
+        </p>
+        <div class="katex">
+$$
+\begin{cases}
+x_1 = g_1(x_1, x_2, \dots, x_n) \\
+x_2 = g_2(x_1, x_2, \dots, x_n) \\
+\vdots \\
+x_n = g_n(x_1, x_2, \dots, x_n)
+\end{cases}
+$$
+        </div>
+        <p>
+            Dalam bentuk vektor, iterasi dapat dituliskan sebagai:
+        </p>
+        <div class="katex">
+$$
+\mathbf{X}^{(k+1)} = G(\mathbf{X}^{(k)})
+$$
+        </div>
+        <p>
+            dengan:
+        </p>
+        <div class="katex">
+$$
+\mathbf{X} =
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n
+\end{bmatrix}
+$$
+        </div>
+        <p>
+            Pada setiap iterasi, seluruh variabel diperbarui menggunakan nilai dari iterasi sebelumnya.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Algoritma Metode Fixed Point</h3>
+        <p>
+            Proses iterasi dilakukan terus-menerus hingga solusi memenuhi toleransi kesalahan yang ditentukan.
+        </p>
+        <div class="katex">
+$$
+\left\| \mathbf{X}^{(k+1)} - \mathbf{X}^{(k)} \right\| < \varepsilon
+$$
+        </div>
+        <p>
+            Secara umum, langkah algoritma metode Fixed Point adalah:
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Langkah</th>
+                    <th>Deskripsi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Transformasi \( F(\mathbf{X}) = 0 \) menjadi \( \mathbf{X} = G(\mathbf{X}) \)</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Tentukan tebakan awal \( \mathbf{X}^{(0)} \)</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Lakukan iterasi \( \mathbf{X}^{(k+1)} = G(\mathbf{X}^{(k)}) \)</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Periksa error dan hentikan jika sudah memenuhi toleransi</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Implementasi Dasar dalam Python</h3>
+        <p>
+            Berikut ilustrasi implementasi sederhana metode Fixed Point menggunakan Python.
         </p>
         <div class="text-code">
-# Ide dasar dalam bentuk sederhana
-x₀ = tebakan_awal
-Ulangi:
-    x_baru = g(x_lama)
-    jika |x_baru - x_lama| < toleransi:
-        stop
-    x_lama = x_baru
-        </div>
-    </div>
+def g(x):
+    return (x + 2) / 3
 
-    <!-- ============================================ -->
-    <!-- CARD 3: FIXED POINT UNTUK SPNL (MULTIVARIABEL) -->
-    <!-- ============================================ -->
-    <div class="card card--soft">
-        <h3>Fixed Point untuk Sistem Persamaan (SPNL)</h3>
+x = 0.0
+tolerance = 1e-6
+error = 1.0
+
+while error > tolerance:
+    x_new = g(x)
+    error = abs(x_new - x)
+    x = x_new
+
+print(x)
+</div>
         <p>
-            Untuk sistem dengan banyak variabel, bentuk <span class="text-code-inline">x = G(x)</span> 
-            diperluas menjadi sistem persamaan:
-        </p>
-        <div class="text-math">
-            x₁ = g₁(x₁, x₂, ..., xₙ)<br>
-            x₂ = g₂(x₁, x₂, ..., xₙ)<br>
-            ⋮<br>
-            xₙ = gₙ(x₁, x₂, ..., xₙ)
-        </div>
-        <p>
-            Atau dalam bentuk vektor:
-        </p>
-        <div class="text-math">
-            X^{(k+1)} = G(X^{(k)})
-        </div>
-        <p>
-            di mana <span class="text-code-inline">X = [x₁, x₂, ..., xₙ]ᵀ</span> dan 
-            <span class="text-code-inline">G = [g₁, g₂, ..., gₙ]ᵀ</span>.
-        </p>
-        <p>
-            Pada setiap iterasi, semua variabel dihitung ulang berdasarkan nilai variabel 
-            dari iterasi sebelumnya.
+            Program tersebut memperbarui nilai \( x \) secara iteratif hingga perubahan antariterasi menjadi sangat kecil.
         </p>
     </div>
 
-    <!-- ============================================ -->
-    <!-- CARD 4: LANGKAH-LANGKAH ALGORITMA -->
-    <!-- ============================================ -->
-    <div class="card card--soft">
-        <h3>Langkah-langkah Metode Fixed Point</h3>
-        <p>
-            Berikut adalah prosedur sistematis untuk menerapkan metode Fixed Point:
-        </p>
-        <p>
-            <span class="text-code-inline">Langkah 1: Transformasi Persamaan</span><br>
-            Ubah bentuk <span class="text-code-inline">F(x) = 0</span> menjadi <span class="text-code-inline">x = G(x)</span>.
-            Pemilihan bentuk <span class="text-code-inline">G</span> sangat menentukan keberhasilan metode.
-        </p>
-        <p>
-            <span class="text-code-inline">Langkah 2: Tentukan Tebakan Awal</span><br>
-            Pilih nilai awal <span class="text-code-inline">X⁰</span> yang mendekati solusi yang diharapkan.
-        </p>
-        <p>
-            <span class="text-code-inline">Langkah 3: Iterasi</span><br>
-            Hitung <span class="text-code-inline">X^{(k+1)} = G(X^{(k)})</span> berulang kali.
-        </p>
-        <p>
-            <span class="text-code-inline">Langkah 4: Cek Konvergensi</span><br>
-            Berhenti jika <span class="text-code-inline">||X^{(k+1)} - X^{(k)}|| < ε</span> atau 
-            mencapai iterasi maksimum.
-        </p>
-        <div class="text-code">
-# Algoritma Fixed Point untuk SPNL
-# Input : G(x), tebakan awal X0, toleransi tol, max_iter
-# Output: solusi X
-
-X = X0
-for k = 1 to max_iter:
-    X_baru = G(X)
-    error = max(|X_baru - X|)
-    if error < tol:
-        return X_baru
-    X = X_baru
-return X   # tidak konvergen dalam max_iter
-        </div>
-    </div>
-
-    <!-- ============================================ -->
-    <!-- CARD 5: SYARAT KONVERGENSI -->
-    <!-- ============================================ -->
     <div class="card card--soft">
         <h3>Syarat Konvergensi</h3>
         <p>
-            Tidak semua bentuk <span class="text-code-inline">G(x)</span> menghasilkan iterasi yang konvergen. 
-            Metode Fixed Point akan konvergen ke titik tetap jika memenuhi syarat berikut:
+            Tidak semua fungsi iteratif menghasilkan proses yang konvergen. Agar metode Fixed Point berhasil, fungsi iterasi harus memenuhi syarat tertentu di sekitar titik tetap.
         </p>
+        <p>
+            Untuk kasus satu variabel, syarat konvergensi lokal diberikan oleh:
+        </p>
+        <div class="katex">
+$$
+|g'(x^*)| < 1
+$$
+        </div>
+        <p>
+            Jika nilai turunan lebih besar dari satu, iterasi cenderung divergen.
+        </p>
+        <div class="katex">
+$$
+|g'(x^*)| > 1
+$$
+        </div>
+        <p>
+            Untuk sistem multivariabel, syarat konvergensi berkaitan dengan matriks Jacobian fungsi iterasi.
+        </p>
+        <div class="katex">
+$$
+\rho(J_G) < 1
+$$
+        </div>
+        <p>
+            dengan \( \rho(J_G) \) menyatakan spectral radius dari matriks Jacobian.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh Sistem Dua Variabel</h3>
+        <p>
+            Diberikan sistem:
+        </p>
+        <div class="katex">
+$$
+\begin{cases}
+x = \frac{y + 3}{4} \\
+y = \frac{x + 5}{3}
+\end{cases}
+$$
+        </div>
+        <p>
+            Misalkan dipilih tebakan awal:
+        </p>
+        <div class="katex">
+$$
+x^{(0)} = 0,
+\qquad
+y^{(0)} = 0
+$$
+        </div>
+        <p>
+            Iterasi dilakukan menggunakan rumus:
+        </p>
+        <div class="katex">
+$$
+x^{(k+1)} = \frac{y^{(k)} + 3}{4}
+$$
+        </div>
+        <div class="katex">
+$$
+y^{(k+1)} = \frac{x^{(k)} + 5}{3}
+$$
+        </div>
         <table class="table">
             <thead>
-                <tr><th>Kasus</th><th>Syarat Konvergensi</th><th>Keterangan</th></tr>
+                <tr>
+                    <th>Iterasi</th>
+                    <th>\( x \)</th>
+                    <th>\( y \)</th>
+                </tr>
             </thead>
             <tbody>
-                <tr><td>Satu variabel</td>
-                    <td><span class="text-math-inline">|g'(x)| < 1</span></td>
-                    <td>di sekitar titik tetap</td>
+                <tr>
+                    <td>0</td>
+                    <td>0.0000</td>
+                    <td>0.0000</td>
                 </tr>
-                <tr><td>Banyak variabel</td>
-                    <td><span class="text-math-inline">ρ(J_G) < 1</span></td>
-                    <td>spektral radius Jacobian G kurang dari 1</td>
+                <tr>
+                    <td>1</td>
+                    <td>0.7500</td>
+                    <td>1.6667</td>
                 </tr>
-                <tr><td>Kondisi cukup</td>
-                    <td><span class="text-math-inline">||J_G|| < 1</span></td>
-                    <td>norm matriks Jacobian kurang dari 1</td>
+                <tr>
+                    <td>2</td>
+                    <td>1.1667</td>
+                    <td>1.9167</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>1.2292</td>
+                    <td>2.0556</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>1.2639</td>
+                    <td>2.0764</td>
                 </tr>
             </tbody>
         </table>
         <p>
-            <span class="text-code-inline">Interpretasi praktis:</span> Nilai turunan (atau Jacobian) dari fungsi 
-            <span class="text-code-inline">G</span> harus cukup kecil di sekitar solusi. Semakin kecil nilai turunannya, 
-            semakin cepat konvergensi.
+            Iterasi secara bertahap mendekati solusi stabil sistem nonlinear tersebut.
         </p>
-        <div class="text-math">
-            Syarat konvergensi (satu variabel): |g'(x*)| < 1<br>
-            Jika |g'(x*)| > 1 → divergen<br>
-            Jika |g'(x*)| = 1 → tidak dapat ditentukan (mungkin konvergen lambat)
-        </div>
     </div>
 
-    <!-- ============================================ -->
-    <!-- CARD 6: CONTOH KASUS SEDERHANA (2 VARIABEL) -->
-    <!-- ============================================ -->
     <div class="card card--soft">
-        <h3>Contoh: Sistem 2 Variabel</h3>
+        <h3>Kelebihan dan Keterbatasan</h3>
         <p>
-            Diberikan sistem persamaan non linear:
-        </p>
-        <div class="math-system">
-            x = (y + 3) / 4<br>
-            y = (x + 5) / 3
-        </div>
-        <p>
-            Sistem ini sudah dalam bentuk <span class="text-code-inline">X = G(X)</span> sehingga 
-            siap untuk diiterasi. Tebakan awal yang dipilih:
-        </p>
-        <div class="text-math">
-            x⁰ = 0, y⁰ = 0
-        </div>
-        <p>
-            Proses iterasi:
+            Metode Fixed Point memiliki struktur algoritma yang sederhana sehingga mudah dipahami dan diimplementasikan.
         </p>
         <table class="table">
             <thead>
-                <tr><th>Iterasi (k)</th><th>x</th><th>y</th></tr>
+                <tr>
+                    <th>Aspek</th>
+                    <th>Kelebihan</th>
+                    <th>Keterbatasan</th>
+                </tr>
             </thead>
             <tbody>
-                <tr><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>1</td><td>(0+3)/4 = 0.75</td><td>(0+5)/3 ≈ 1.6667</td></tr>
-                <tr><td>2</td><td>(1.6667+3)/4 = 1.1667</td><td>(0.75+5)/3 ≈ 1.9167</td></tr>
-                <tr><td>3</td><td>(1.9167+3)/4 = 1.2292</td><td>(1.1667+5)/3 ≈ 2.0556</td></tr>
-                <tr><td>4</td><td>(2.0556+3)/4 = 1.2639</td><td>(1.2292+5)/3 ≈ 2.0764</td></tr>
-                <tr><td>...</td><td>...</td><td>...</td></tr>
-                <tr><td>∞</td><td>≈ 1.2857</td><td>≈ 2.0952</td></tr>
-            </tbody>
-        </table>
-        <p>
-            Solusi konvergen ke <span class="text-code-inline">(x, y) ≈ (1.2857, 2.0952)</span>.
-        </p>
-    </div>
-
-    <!-- ============================================ -->
-    <!-- CARD 7: PSEUDOCODE LENGKAP -->
-    <!-- ============================================ -->
-    <div class="card card--soft">
-        <h3>Pseudocode Metode Fixed Point untuk SPNL</h3>
-        <p>
-            Berikut adalah pseudocode lengkap yang dapat diimplementasikan ke dalam bahasa pemrograman:
-        </p>
-        <div class="text-code">
-PROCEDURE FixedPoint(G, X0, tol, max_iter)
-    INPUT:
-        G       : fungsi transformasi G(X)
-        X0      : vektor tebakan awal
-        tol     : toleransi error
-        max_iter: iterasi maksimum
-    
-    OUTPUT: X (solusi pendekatan)
-    
-    X ← X0
-    FOR k = 1 TO max_iter DO
-        X_baru ← G(X)
-        error ← max(|X_baru - X|)
-        
-        IF error < tol THEN
-            RETURN X_baru
-        END IF
-        
-        X ← X_baru
-    END FOR
-    
-    RETURN X   {tidak konvergen dalam max_iter}
-END PROCEDURE
-        </div>
-        <p>
-            Pada praktiknya, fungsi <span class="text-code-inline">G(X)</span> harus didefinisikan 
-            sesuai dengan sistem persamaan yang akan diselesaikan.
-        </p>
-    </div>
-
-    <!-- ============================================ -->
-    <!-- CARD 8: KELEBIHAN DAN KEKURANGAN -->
-    <!-- ============================================ -->
-    <div class="card card--soft">
-        <h3>Kelemahan</h3>
-        <table class="table">
-            <thead>
-                <tr><th>Aspek</th><th>Kelebihan</th><th>Kekurangan</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Konsep</td>
-                    <td>Sederhana dan mudah dipahami</td>
+                <tr>
+                    <td>Konsep</td>
+                    <td>Sederhana dan intuitif</td>
                     <td>Konvergensi tidak selalu terjamin</td>
                 </tr>
-                <tr><td>Implementasi</td>
-                    <td>Mudah diimplementasikan</td>
-                    <td>Sensitif terhadap bentuk G(x) yang dipilih</td>
+                <tr>
+                    <td>Implementasi</td>
+                    <td>Tidak memerlukan Jacobian</td>
+                    <td>Sensitif terhadap bentuk \( G(x) \)</td>
                 </tr>
-                <tr><td>Komputasi</td>
-                    <td>Tidak memerlukan turunan (Jacobian)</td>
-                    <td>Konvergensi bisa sangat lambat</td>
+                <tr>
+                    <td>Komputasi</td>
+                    <td>Biaya komputasi ringan</td>
+                    <td>Konvergensi relatif lambat</td>
                 </tr>
-                <tr><td>Fleksibilitas</td>
-                    <td>Dapat diterapkan pada berbagai bentuk SPNL</td>
-                    <td>Pemilihan tebakan awal sangat krusial</td>
+                <tr>
+                    <td>Fleksibilitas</td>
+                    <td>Dapat diterapkan pada berbagai sistem</td>
+                    <td>Sangat bergantung pada tebakan awal</td>
                 </tr>
             </tbody>
         </table>
-        <div class="text-math">
-            "Kunci keberhasilan metode Fixed Point terletak pada:<br>
-            ① Pemilihan bentuk G(x) yang tepat<br>
-            ② Tebakan awal yang baik<br>
-            ③ Pemenuhan syarat |g'(x*)| < 1"
-        </div>
     </div>
 
-    <!-- ============================================ -->
-    <!-- CARD 9: KESIMPULAN -->
-    <!-- ============================================ -->
     <div class="card card--soft">
-        <h3>Poin Penting Metode Fixed Point</h3>
+        <h3>Kesimpulan</h3>
         <p>
-            Metode Fixed Point adalah fondasi penting dalam penyelesaian SPNL secara numerik.
+            Metode Fixed Point merupakan metode iteratif dasar dalam penyelesaian Sistem Persamaan Nonlinear.
         </p>
         <p>
-            <strong>Ringkasan konsep kunci:</strong>
+            Metode ini bekerja dengan mengubah sistem nonlinear menjadi bentuk titik tetap dan melakukan iterasi hingga solusi konvergen.
         </p>
         <p>
-            1. Mengubah <span class="text-code-inline">F(x) = 0</span> menjadi <span class="text-code-inline">x = G(x)</span><br>
-            2. Iterasi: <span class="text-code-inline">X^{(k+1)} = G(X^{(k)})</span><br>
-            3. Konvergen jika <span class="text-code-inline">|g'(x*)| < 1</span> (untuk 1 variabel)<br>
-            4. Kelebihan: sederhana, tidak perlu turunan<br>
-            5. Kekurangan: konvergensi lambat, tidak selalu konvergen
+            Keberhasilan metode sangat dipengaruhi oleh pemilihan fungsi iterasi \( G(x) \), tebakan awal, dan syarat konvergensi di sekitar solusi.
         </p>
         <p>
-            Metode ini menjadi dasar pemahaman sebelum mempelajari metode yang lebih canggih 
-            seperti Newton-Raphson yang memiliki konvergensi lebih cepat.
+            Pemahaman terhadap metode Fixed Point menjadi fondasi penting sebelum mempelajari metode numerik yang lebih lanjut seperti Newton-Raphson dan metode quasi-Newton.
         </p>
     </div>
-
 </div>

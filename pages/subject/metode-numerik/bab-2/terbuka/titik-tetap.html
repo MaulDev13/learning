@@ -3,17 +3,14 @@
     <!-- PENGANTAR -->
     <div class="card card--soft">
 
-        <h3>Metode Titik Tetap (Fixed Point Iteration)</h3>
+        <h3>Akar Persamaan Non Linear: Metode Titik Tetap (Fixed Point Iteration)</h3>
 
         <p>
-            Metode titik tetap adalah metode numerik
-            untuk mencari akar persamaan dengan
-            mengubah bentuk persamaan menjadi iterasi.
+            Metode titik tetap adalah metode numerik untuk mencari akar persamaan dengan mengubah bentuk persamaan menjadi bentuk iterasi.
         </p>
 
         <p>
-            Metode ini termasuk metode terbuka
-            karena tidak memerlukan interval awal.
+            Metode ini termasuk metode terbuka karena tidak memerlukan interval awal yang menjamin adanya akar.
         </p>
 
     </div>
@@ -24,16 +21,17 @@
         <h3>Konsep Dasar</h3>
 
         <p>
-            Persamaan f(x) = 0 diubah menjadi bentuk:
+            Persamaan \( f(x) = 0 \) diubah menjadi bentuk:
         </p>
 
-        <p>
+        <div class="katex">
+            $$
             x = g(x)
-        </p>
+            $$
+        </div>
 
         <p>
-            Nilai x dicari sebagai titik tetap,
-            yaitu nilai yang tidak berubah saat dimasukkan kembali.
+            Nilai \( x \) dicari sebagai titik tetap, yaitu nilai yang tidak berubah ketika dimasukkan kembali ke fungsi.
         </p>
 
     </div>
@@ -44,16 +42,17 @@
         <h3>Definisi Titik Tetap</h3>
 
         <p>
-            Jika suatu nilai r memenuhi:
+            Jika suatu nilai \( r \) memenuhi:
         </p>
 
-        <p>
+        <div class="katex">
+            $$
             r = g(r)
-        </p>
+            $$
+        </div>
 
         <p>
-            maka r disebut titik tetap dari fungsi g(x),
-            dan merupakan solusi dari persamaan awal.
+            maka \( r \) disebut titik tetap dari fungsi \( g(x) \), dan merupakan solusi dari persamaan awal.
         </p>
 
     </div>
@@ -64,16 +63,17 @@
         <h3>Ide Utama</h3>
 
         <p>
-            Dimulai dari tebakan awal x⁰,
-            kemudian dihitung secara berulang:
+            Dimulai dari tebakan awal \( x^{0} \), kemudian dihitung secara berulang menggunakan:
         </p>
 
-        <p>
-            x<sup>i+1</sup> = g(x<sup>i</sup>)
-        </p>
+        <div class="katex">
+            $$
+            x^{i+1} = g(x^{i})
+            $$
+        </div>
 
         <p>
-            Proses diulang sampai nilai konvergen.
+            Proses diulang hingga nilai konvergen.
         </p>
 
     </div>
@@ -84,10 +84,10 @@
         <h3>Langkah-langkah Metode</h3>
 
         <p>
-            1. Ubah f(x) = 0 menjadi x = g(x)<br>
-            2. Tentukan tebakan awal x⁰<br>
-            3. Hitung x¹ = g(x⁰)<br>
-            4. Hitung x² = g(x¹)<br>
+            1. Ubah \( f(x)=0 \) menjadi \( x=g(x) \)<br>
+            2. Tentukan tebakan awal \( x^{0} \)<br>
+            3. Hitung \( x^{1} = g(x^{0}) \)<br>
+            4. Hitung \( x^{2} = g(x^{1}) \)<br>
             5. Ulangi hingga memenuhi toleransi
         </p>
 
@@ -99,28 +99,37 @@
         <h3>Contoh Kasus</h3>
 
         <p>
-            f(x) = x² − 4 = 0
+            Persamaan:
         </p>
 
-        <p>
-            Salah satu bentuk:
-        </p>
+        <div class="katex">
+            $$
+            f(x) = x^2 - 4 = 0
+            $$
+        </div>
 
         <p>
-            x = √4 = 2
+            Salah satu bentuk titik tetap:
         </p>
 
-        <p>
-            Atau bisa ditulis:
-        </p>
+        <div class="katex">
+            $$
+            x = \sqrt{4}
+            $$
+        </div>
 
         <p>
-            x = √(4)
+            atau:
         </p>
 
+        <div class="katex">
+            $$
+            x = \sqrt{4}
+            $$
+        </div>
+
         <p>
-            (Contoh ini sederhana, tetapi pada kasus nyata
-            bentuk g(x) lebih kompleks)
+            (Pada kasus nyata, bentuk \( g(x) \) biasanya lebih kompleks dan tidak unik)
         </p>
 
     </div>
@@ -131,19 +140,18 @@
         <h3>Proses Iterasi</h3>
 
         <p>
-            Misalkan:
-            x⁰ = 1
+            Misalkan \( x^{0} = 1 \).
         </p>
 
         <p>
-            x¹ = g(1)<br>
-            x² = g(x¹)<br>
-            x³ = g(x²)
+            Maka:
+            \( x^{1} = g(x^{0}) \),
+            \( x^{2} = g(x^{1}) \),
+            \( x^{3} = g(x^{2}) \)
         </p>
 
         <p>
-            Nilai akan mendekati titik tetap
-            jika metode konvergen.
+            Nilai akan mendekati titik tetap jika metode konvergen.
         </p>
 
     </div>
@@ -157,17 +165,18 @@
             Metode akan konvergen jika:
         </p>
 
-        <p>
+        <div class="katex">
+            $$
             |g'(x)| < 1
-        </p>
+            $$
+        </div>
 
         <p>
             di sekitar akar.
         </p>
 
         <p>
-            Jika tidak terpenuhi,
-            iterasi bisa divergen.
+            Jika syarat ini tidak terpenuhi, iterasi dapat divergen.
         </p>
 
     </div>
@@ -179,7 +188,7 @@
 
         <p>
             • Sederhana dalam konsep<br>
-            • Tidak memerlukan interval<br>
+            • Tidak memerlukan interval awal<br>
             • Mudah diimplementasikan
         </p>
 
@@ -191,8 +200,8 @@
         <h3>Kelemahan</h3>
 
         <p>
-            • Sangat bergantung pada bentuk g(x)<br>
-            • Bisa divergen jika salah transformasi<br>
+            • Sangat bergantung pada bentuk \( g(x) \)<br>
+            • Bisa divergen jika transformasi salah<br>
             • Konvergensi tidak selalu cepat
         </p>
 
@@ -204,13 +213,11 @@
         <h3>Intuisi</h3>
 
         <p>
-            Metode ini seperti “memasukkan hasil ke dalam fungsi
-            secara berulang sampai tidak berubah lagi”.
+            Metode ini seperti “memasukkan hasil ke dalam fungsi secara berulang hingga tidak berubah lagi”.
         </p>
 
         <p>
-            Titik di mana nilai tidak berubah
-            adalah solusi yang dicari.
+            Titik ketika nilai tidak lagi berubah adalah solusi yang dicari.
         </p>
 
     </div>
@@ -221,18 +228,15 @@
         <h3>Kesimpulan</h3>
 
         <p>
-            Metode titik tetap mencari solusi
-            melalui proses iterasi sederhana.
+            Metode titik tetap mencari solusi melalui proses iterasi sederhana.
         </p>
 
         <p>
-            Keberhasilan metode sangat bergantung
-            pada bentuk fungsi yang digunakan.
+            Keberhasilan metode sangat bergantung pada bentuk fungsi transformasi yang digunakan.
         </p>
 
         <p>
-            Metode ini menjadi dasar untuk memahami
-            metode terbuka lainnya seperti Newton-Raphson.
+            Metode ini menjadi dasar penting untuk memahami metode iteratif lain seperti Newton-Raphson.
         </p>
 
     </div>

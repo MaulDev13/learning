@@ -3,20 +3,10 @@
     <h3>Penyelesaian Soal 5 (Metode Jacobi)</h3>
 
     <p>
-        Sistem persamaan linear ini diselesaikan menggunakan metode Jacobi,
-        yaitu metode iteratif yang digunakan untuk mencari solusi pendekatan
-        dari sistem Ax = b melalui perbaikan nilai variabel secara berulang.
-    </p>
-
-    <p>
-        Pada setiap iterasi, nilai variabel baru dihitung menggunakan nilai
-        dari iterasi sebelumnya, sehingga proses ini menghasilkan pendekatan
-        menuju solusi yang sebenarnya.
-    </p>
-
-    <p>
-        Pada soal ini, kita akan mengamati apakah sistem mengalami konvergensi
-        (menuju nilai stabil) atau divergensi (tidak stabil).
+        Metode Jacobi adalah metode iteratif yang digunakan untuk mencari solusi pendekatan
+        dari sistem \( Ax = b \) melalui perbaikan nilai variabel secara berulang.
+        Berbeda dengan Gauss-Seidel, metode Jacobi memperbarui semua nilai variabel secara simultan
+        berdasarkan nilai dari iterasi sebelumnya.
     </p>
 
     <p class="text-meta">
@@ -24,23 +14,22 @@
     </p>
 
     <p class="text-meta">
-        Tebakan awal: (0, 0, 0)
+        Tebakan awal: \( x^{(0)} = (0, 0, 0) \)
     </p>
 
     <div class="card card--soft">
 
         <p><strong>Sistem Persamaan</strong></p>
 
-        <p>
-            5x₁ + 2x₂ + x₃ = 12<br>
-            2x₁ + 6x₂ + x₃ = 15<br>
-            x₁ + x₂ + 7x₃ = 20
-        </p>
-
-        <p>
-            Sistem ini memiliki dominasi diagonal yang cukup baik,
-            sehingga secara teori mendukung konvergensi metode Jacobi.
-        </p>
+        <div class="katex">
+$$
+\begin{cases}
+5x_1 + 2x_2 + x_3 = 12 \\
+2x_1 + 6x_2 + x_3 = 15 \\
+x_1 + x_2 + 7x_3 = 20
+\end{cases}
+$$
+        </div>
 
     </div>
 
@@ -49,35 +38,236 @@
         <p><strong>Bentuk Iterasi Jacobi</strong></p>
 
         <p>
-            x₁ = (12 − 2x₂ − x₃) / 5<br>
-            x₂ = (15 − 2x₁ − x₃) / 6<br>
-            x₃ = (20 − x₁ − x₂) / 7
+            Dari persamaan pertama: \( 5x_1 = 12 - 2x_2 - x_3 \) → 
+            \( x_1^{(k+1)} = \frac{12 - 2x_2^{(k)} - x_3^{(k)}}{5} \)
+        </p>
+
+        <p>
+            Dari persamaan kedua: \( 2x_1 + 6x_2 + x_3 = 15 \) → 
+            \( 6x_2 = 15 - 2x_1 - x_3 \) →
+            \( x_2^{(k+1)} = \frac{15 - 2x_1^{(k)} - x_3^{(k)}}{6} \)
+        </p>
+
+        <p>
+            Dari persamaan ketiga: \( x_1 + x_2 + 7x_3 = 20 \) → 
+            \( 7x_3 = 20 - x_1 - x_2 \) →
+            \( x_3^{(k+1)} = \frac{20 - x_1^{(k)} - x_2^{(k)}}{7} \)
+        </p>
+
+        <div class="text-code">
+def jacobi_step(x1, x2, x3):
+    x1_new = (12 - 2*x2 - x3) / 5
+    x2_new = (15 - 2*x1 - x3) / 6
+    x3_new = (20 - x1 - x2) / 7
+    return (x1_new, x2_new, x3_new)
+        </div>
+
+        <p>
+            Perhatikan bahwa semua nilai baru dihitung menggunakan nilai dari iterasi sebelumnya
+            (indeks k), bukan nilai yang baru dihitung dalam iterasi yang sama.
         </p>
 
     </div>
 
     <div class="card card--soft">
 
-        <p><strong>Proses Iterasi</strong></p>
-
+        <p><strong>Iterasi 0</strong></p>
         <p>
-            Iterasi 0: (0, 0, 0)<br><br>
-
-            Iterasi 1:<br>
-            x₁ = 2.4000<br>
-            x₂ = 2.5000<br>
-            x₃ = 2.8571<br><br>
-
-            Iterasi 2:<br>
-            x₁ = 0.8429<br>
-            x₂ = 1.6571<br>
-            x₃ = 2.3857<br><br>
-
-            Iterasi 3:<br>
-            x₁ = 1.4857<br>
-            x₂ = 1.8000<br>
-            x₃ = 2.2520
+            \( x^{(0)} = (0, 0, 0) \)
         </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Iterasi 1</strong></p>
+        <p>
+            Menghitung \( x_1^{(1)} \):
+        </p>
+        <p>
+            \( x_1^{(1)} = \frac{12 - 2x_2^{(0)} - x_3^{(0)}}{5} = \frac{12 - 2(0) - 0}{5} = \frac{12}{5} = 2.4 \)
+        </p>
+        <p>
+            Menghitung \( x_2^{(1)} \):
+        </p>
+        <p>
+            \( x_2^{(1)} = \frac{15 - 2x_1^{(0)} - x_3^{(0)}}{6} = \frac{15 - 2(0) - 0}{6} = \frac{15}{6} = 2.5 \)
+        </p>
+        <p>
+            Menghitung \( x_3^{(1)} \):
+        </p>
+        <p>
+            \( x_3^{(1)} = \frac{20 - x_1^{(0)} - x_2^{(0)}}{7} = \frac{20 - 0 - 0}{7} = \frac{20}{7} = 2.857142857142857 \)
+        </p>
+        <p>
+            \( x^{(1)} = (2.4, 2.5, 2.857142857142857) \)
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Iterasi 2</strong></p>
+        <p>
+            Menghitung \( x_1^{(2)} \) (menggunakan \( x^{(1)} \)):
+        </p>
+        <p>
+            \( x_1^{(2)} = \frac{12 - 2x_2^{(1)} - x_3^{(1)}}{5} = \frac{12 - 2(2.5) - 2.857142857142857}{5} \)
+        </p>
+        <p>
+            \( x_1^{(2)} = \frac{12 - 5 - 2.857142857142857}{5} = \frac{4.142857142857143}{5} = 0.8285714285714286 \)
+        </p>
+        <p>
+            Menghitung \( x_2^{(2)} \):
+        </p>
+        <p>
+            \( x_2^{(2)} = \frac{15 - 2x_1^{(1)} - x_3^{(1)}}{6} = \frac{15 - 2(2.4) - 2.857142857142857}{6} \)
+        </p>
+        <p>
+            \( x_2^{(2)} = \frac{15 - 4.8 - 2.857142857142857}{6} = \frac{7.342857142857143}{6} = 1.2238095238095238 \)
+        </p>
+        <p>
+            Menghitung \( x_3^{(2)} \):
+        </p>
+        <p>
+            \( x_3^{(2)} = \frac{20 - x_1^{(1)} - x_2^{(1)}}{7} = \frac{20 - 2.4 - 2.5}{7} = \frac{15.1}{7} = 2.157142857142857 \)
+        </p>
+        <p>
+            \( x^{(2)} = (0.8285714285714286, 1.2238095238095238, 2.157142857142857) \)
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Iterasi 3</strong></p>
+        <p>
+            Menghitung \( x_1^{(3)} \) (menggunakan \( x^{(2)} \)):
+        </p>
+        <p>
+            \( x_1^{(3)} = \frac{12 - 2x_2^{(2)} - x_3^{(2)}}{5} = \frac{12 - 2(1.2238095238095238) - 2.157142857142857}{5} \)
+        </p>
+        <p>
+            \( x_1^{(3)} = \frac{12 - 2.4476190476190476 - 2.157142857142857}{5} = \frac{7.395238095238095}{5} = 1.479047619047619 \)
+        </p>
+        <p>
+            Menghitung \( x_2^{(3)} \):
+        </p>
+        <p>
+            \( x_2^{(3)} = \frac{15 - 2x_1^{(2)} - x_3^{(2)}}{6} = \frac{15 - 2(0.8285714285714286) - 2.157142857142857}{6} \)
+        </p>
+        <p>
+            \( x_2^{(3)} = \frac{15 - 1.6571428571428572 - 2.157142857142857}{6} = \frac{11.185714285714286}{6} = 1.8642857142857143 \)
+        </p>
+        <p>
+            Menghitung \( x_3^{(3)} \):
+        </p>
+        <p>
+            \( x_3^{(3)} = \frac{20 - x_1^{(2)} - x_2^{(2)}}{7} = \frac{20 - 0.8285714285714286 - 1.2238095238095238}{7} \)
+        </p>
+        <p>
+            \( x_3^{(3)} = \frac{17.947619047619048}{7} = 2.5639455782312926 \)
+        </p>
+        <p>
+            \( x^{(3)} = (1.479047619047619, 1.8642857142857143, 2.5639455782312926) \)
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Iterasi 4</strong></p>
+        <p>
+            Menghitung \( x_1^{(4)} \) (menggunakan \( x^{(3)} \)):
+        </p>
+        <p>
+            \( x_1^{(4)} = \frac{12 - 2x_2^{(3)} - x_3^{(3)}}{5} = \frac{12 - 2(1.8642857142857143) - 2.5639455782312926}{5} \)
+        </p>
+        <p>
+            \( x_1^{(4)} = \frac{12 - 3.7285714285714286 - 2.5639455782312926}{5} = \frac{5.707482993197279}{5} = 1.1414965986394558 \)
+        </p>
+        <p>
+            Menghitung \( x_2^{(4)} \):
+        </p>
+        <p>
+            \( x_2^{(4)} = \frac{15 - 2x_1^{(3)} - x_3^{(3)}}{6} = \frac{15 - 2(1.479047619047619) - 2.5639455782312926}{6} \)
+        </p>
+        <p>
+            \( x_2^{(4)} = \frac{15 - 2.958095238095238 - 2.5639455782312926}{6} = \frac{9.477959183673469}{6} = 1.5796598639455782 \)
+        </p>
+        <p>
+            Menghitung \( x_3^{(4)} \):
+        </p>
+        <p>
+            \( x_3^{(4)} = \frac{20 - x_1^{(3)} - x_2^{(3)}}{7} = \frac{20 - 1.479047619047619 - 1.8642857142857143}{7} \)
+        </p>
+        <p>
+            \( x_3^{(4)} = \frac{16.656666666666666}{7} = 2.3795238095238097 \)
+        </p>
+        <p>
+            \( x^{(4)} = (1.1414965986394558, 1.5796598639455782, 2.3795238095238097) \)
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Iterasi 5</strong></p>
+        <p>
+            Menghitung \( x_1^{(5)} \) (menggunakan \( x^{(4)} \)):
+        </p>
+        <p>
+            \( x_1^{(5)} = \frac{12 - 2x_2^{(4)} - x_3^{(4)}}{5} = \frac{12 - 2(1.5796598639455782) - 2.3795238095238097}{5} \)
+        </p>
+        <p>
+            \( x_1^{(5)} = \frac{12 - 3.1593197278911564 - 2.3795238095238097}{5} = \frac{6.461156462585034}{5} = 1.2922312925170068 \)
+        </p>
+        <p>
+            Menghitung \( x_2^{(5)} \):
+        </p>
+        <p>
+            \( x_2^{(5)} = \frac{15 - 2x_1^{(4)} - x_3^{(4)}}{6} = \frac{15 - 2(1.1414965986394558) - 2.3795238095238097}{6} \)
+        </p>
+        <p>
+            \( x_2^{(5)} = \frac{15 - 2.2829931972789116 - 2.3795238095238097}{6} = \frac{10.337482993197279}{6} = 1.7229138321995465 \)
+        </p>
+        <p>
+            Menghitung \( x_3^{(5)} \):
+        </p>
+        <p>
+            \( x_3^{(5)} = \frac{20 - x_1^{(4)} - x_2^{(4)}}{7} = \frac{20 - 1.1414965986394558 - 1.5796598639455782}{7} \)
+        </p>
+        <p>
+            \( x_3^{(5)} = \frac{17.278843537414966}{7} = 2.4684062196307094 \)
+        </p>
+        <p>
+            \( x^{(5)} = (1.2922312925170068, 1.7229138321995465, 2.4684062196307094) \)
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Tabel Ringkasan Iterasi</strong></p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Iterasi (k)</th>
+                    <th>\( x_1^{(k)} \)</th>
+                    <th>\( x_2^{(k)} \)</th>
+                    <th>\( x_3^{(k)} \)</th>
+                </table>
+            </thead>
+            <tbody>
+                <tr><td>0</th></td><td>0</th></td><td>0</th></td><td>0</th></tr>
+                <tr><td>1</th></td><td>2.4</th></td><td>2.5</th></td><td>2.85714285714</th></tr>
+                <tr><td>2</th></td><td>0.82857142857</th></td><td>1.22380952381</th></td><td>2.15714285714</th></tr>
+                <tr><td>3</th></td><td>1.47904761905</th></td><td>1.86428571429</th></td><td>2.56394557823</th></tr>
+                <tr><td>4</th></td><td>1.14149659864</th></td><td>1.57965986395</th></td><td>2.37952380952</th></tr>
+                <tr><td>5</th></td><td>1.29223129252</th></td><td>1.72291383220</th></td><td>2.46840621963</th></tr>
+            </tbody>
+        </table>
 
     </div>
 
@@ -86,18 +276,79 @@
         <p><strong>Analisis Konvergensi</strong></p>
 
         <p>
-            Dari hasil iterasi terlihat bahwa nilai mulai bergerak menuju kestabilan,
-            meskipun masih terjadi fluktuasi pada beberapa iterasi awal.
+            Dari tabel iterasi di atas, terlihat bahwa:
+        </p>
+        <p>
+            1. Nilai \( x_1 \) berosilasi dan perlahan menuju sekitar 1.24
+        </p>
+        <p>
+            2. Nilai \( x_2 \) berosilasi dan perlahan menuju sekitar 1.68
+        </p>
+        <p>
+            3. Nilai \( x_3 \) berosilasi dan perlahan menuju sekitar 2.44
+        </p>
+        <p>
+            Perubahan antar iterasi:
+        </p>
+        <p>
+            \( \Delta x_1 \) dari iterasi 4 ke 5: 1.14149659864 → 1.29223129252 (perubahan ≈ \( 1.51 \times 10^{-1} \))
+        </p>
+        <p>
+            \( \Delta x_2 \) dari iterasi 4 ke 5: 1.57965986395 → 1.72291383220 (perubahan ≈ \( 1.43 \times 10^{-1} \))
+        </p>
+        <p>
+            \( \Delta x_3 \) dari iterasi 4 ke 5: 2.37952380952 → 2.46840621963 (perubahan ≈ \( 8.88 \times 10^{-2} \))
+        </p>
+        <p>
+            Metode Jacobi menunjukkan <strong>konvergensi</strong> meskipun dengan osilasi yang cukup signifikan.
         </p>
 
-        <p>
-            Hal ini menunjukkan bahwa metode Jacobi pada sistem ini
-            <strong>cenderung konvergen</strong>.
-        </p>
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Syarat Konvergensi (Dominasi Diagonal)</strong></p>
 
         <p>
-            Sistem ini memiliki dominasi diagonal yang cukup mendukung,
-            sehingga iterasi masih dapat menuju solusi yang stabil.
+            Periksa syarat dominasi diagonal ketat:
+        </p>
+        <p>
+            Baris 1: \( |5| > |2| + |1| = 3 \) → ✅ terpenuhi
+        </p>
+        <p>
+            Baris 2: \( |6| > |2| + |1| = 3 \) → ✅ terpenuhi
+        </p>
+        <p>
+            Baris 3: \( |7| > |1| + |1| = 2 \) → ✅ terpenuhi
+        </p>
+        <p>
+            Matriks koefisien memenuhi <strong>dominasi diagonal ketat</strong>,
+            sehingga metode Jacobi dijamin konvergen menuju solusi tunggal.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <p><strong>Hasil Akhir (Setelah Iterasi 5)</strong></p>
+
+        <p>
+            \( x_1 \approx 1.2922312925170068 \)
+        </p>
+        <p>
+            \( x_2 \approx 1.7229138321995465 \)
+        </p>
+        <p>
+            \( x_3 \approx 2.4684062196307094 \)
+        </p>
+        <p>
+            Hasil ini konsisten dengan solusi yang diperoleh dari metode eliminasi Gauss:
+        </p>
+        <p>
+            \( x_1 = 1.24, \quad x_2 = 1.68, \quad x_3 = 2.44 \)
+        </p>
+        <p>
+            Nilai-nilai tersebut akan semakin mendekati solusi eksak seiring bertambahnya iterasi.
         </p>
 
     </div>
@@ -107,10 +358,16 @@
         <p><strong>Kesimpulan</strong></p>
 
         <p>
-            • Metode Jacobi cenderung konvergen pada sistem ini<br>
-            • Nilai iterasi mulai stabil setelah beberapa langkah<br>
-            • Sistem cukup memenuhi syarat dominasi diagonal<br>
-            • Metode masih valid digunakan
+            • Metode Jacobi <strong>konvergen</strong> pada sistem ini
+        </p>
+        <p>
+            • Nilai iterasi cenderung stabil dan mendekati solusi akhir meskipun terdapat osilasi
+        </p>
+        <p>
+            • Sistem memenuhi syarat dominasi diagonal ketat
+        </p>
+        <p>
+            • Metode Jacobi masih valid digunakan untuk menyelesaikan sistem ini
         </p>
 
     </div>

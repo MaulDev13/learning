@@ -1,161 +1,230 @@
 <div class="card-group">
 
-    <!-- HEADER -->
     <div class="card card--soft">
-
-        <h3>Ujian Tengah Semester (UTS) — Metode Numerik</h3>
+        <h2>Ujian Tengah Semester (UTS) — Metode Numerik</h2>
 
         <p>
-            Materi Ujian:
-            Analisis Galat, Akar Persamaan Non-Linear,
+            Materi ujian meliputi Analisis Galat, Akar Persamaan Non-Linear,
             Sistem Persamaan Linear, dan Interpolasi Numerik.
         </p>
 
         <p>
-            <strong>Petunjuk:</strong><br>
-            1. Kerjakan seluruh soal dengan jelas dan sistematis.<br>
-            2. Tunjukkan setiap langkah perhitungan.<br>
-            3. Gunakan pembulatan hingga 4 angka di belakang koma.<br>
-            4. Diperbolehkan menggunakan kalkulator non-programmable.
+            <strong>Petunjuk:</strong>
         </p>
 
+        <ol>
+            <li>Kerjakan seluruh soal secara sistematis.</li>
+            <li>Tunjukkan setiap langkah perhitungan.</li>
+            <li>Gunakan pembulatan hingga 4 angka di belakang koma.</li>
+            <li>Diperbolehkan menggunakan kalkulator non-programmable.</li>
+        </ol>
     </div>
 
-    <!-- ========================= -->
-    <!-- BAGIAN A -->
-    <!-- ========================= -->
-
     <div class="card card--soft">
-
         <h3>Soal 1 — Analisis Galat</h3>
 
         <div class="question">
-            Jelaskan secara sistematis pengertian dari:
+            <p>
+                Jelaskan secara sistematis pengertian dari:
+            </p>
+
             <ul>
                 <li>Galat absolut</li>
                 <li>Galat relatif</li>
                 <li>Galat pembulatan</li>
                 <li>Galat pemotongan</li>
             </ul>
-            Sertakan contoh sederhana untuk masing-masing jenis galat.
-        </div>
 
+            <p>
+                Sertakan contoh sederhana untuk masing-masing jenis galat.
+            </p>
+        </div>
     </div>
 
     <div class="card card--soft">
-
         <h3>Soal 2 — Metode Akar Persamaan Non-Linear</h3>
 
         <div class="question">
-            Diberikan beberapa metode pencarian akar, yaitu Metode Biseksi,
-            Newton-Raphson, dan Secant.
-            <br><br>
-            Jelaskan:
+            <p>
+                Diberikan metode pencarian akar berupa Metode Biseksi,
+                Newton-Raphson, dan Secant.
+            </p>
+
             <ol>
-                <li>Klasifikasi metode tersebut ke dalam metode terbuka dan tertutup.</li>
-                <li>Metode yang memiliki tingkat konvergensi paling cepat beserta alasannya.</li>
-                <li>Kondisi-kondisi yang menyebabkan metode Newton-Raphson gagal.</li>
+                <li>
+                    Jelaskan klasifikasi masing-masing metode ke dalam metode terbuka atau metode tertutup.
+                </li>
+                <li>
+                    Tentukan metode dengan tingkat konvergensi paling cepat beserta alasannya.
+                </li>
+                <li>
+                    Jelaskan kondisi yang menyebabkan metode Newton-Raphson gagal konvergen.
+                </li>
             </ol>
         </div>
-
     </div>
 
-    <!-- ========================= -->
-    <!-- BAGIAN B -->
-    <!-- ========================= -->
-
     <div class="card card--soft">
-
         <h3>Soal 3 — Perhitungan Galat</h3>
 
         <div class="question">
-            Diketahui nilai eksak:
-            <br>
-            π = 3.14159265
-            <br><br>
-            Pendekatan:
-            <br>
-            π ≈ 3.14
-            <br><br>
-            Tentukan:
+            <p>
+                Diketahui nilai eksak:
+            </p>
+
+            <div class="katex">
+$$
+\pi = 3.14159265
+$$
+            </div>
+
+            <p>
+                Nilai pendekatan:
+            </p>
+
+            <div class="katex">
+$$
+\pi \approx 3.14
+$$
+            </div>
+
+            <p>
+                Tentukan:
+            </p>
+
             <ol>
                 <li>Galat absolut</li>
                 <li>Galat relatif</li>
                 <li>Galat relatif dalam persen</li>
             </ol>
         </div>
-
     </div>
 
     <div class="card card--soft">
-
         <h3>Soal 4 — Metode Biseksi</h3>
 
         <div class="question">
-            Tentukan pendekatan akar dari persamaan berikut:
-            <br><br>
-            f(x) = x³ − x − 2
-            <br><br>
-            Gunakan metode biseksi pada interval [1, 2].
-            Lakukan sebanyak <strong>3 iterasi</strong> dimulai dari interval awal tersebut.
-            <br><br>
-            Sajikan hasil dalam bentuk tabel iterasi yang memuat nilai a, b, c, dan f(c).
-        </div>
+            <p>
+                Tentukan pendekatan akar dari persamaan berikut:
+            </p>
 
+            <div class="katex">
+$$
+f(x) = x^3 - x - 2
+$$
+            </div>
+
+            <p>
+                Gunakan metode biseksi pada interval
+                \( [1,2] \).
+                Lakukan sebanyak
+                \( 3 \)
+                iterasi dimulai dari interval awal tersebut.
+            </p>
+
+            <p>
+                Sajikan hasil dalam bentuk tabel iterasi yang memuat nilai
+                \( a \),
+                \( b \),
+                \( c \),
+                dan
+                \( f(c) \).
+            </p>
+        </div>
     </div>
 
     <div class="card card--soft">
-
         <h3>Soal 5 — Metode Newton-Raphson</h3>
 
         <div class="question">
-            Gunakan metode Newton-Raphson untuk menentukan akar dari:
-            <br><br>
-            f(x) = x² − 3
-            <br><br>
-            Dengan tebakan awal <strong>x₀ = 1.5</strong>, lakukan sebanyak
-            <strong>2 iterasi</strong>.
-            <br><br>
-            Tampilkan hasil setiap iterasi secara berurutan.
-        </div>
+            <p>
+                Gunakan metode Newton-Raphson untuk menentukan akar dari:
+            </p>
 
+            <div class="katex">
+$$
+f(x) = x^2 - 3
+$$
+            </div>
+
+            <p>
+                Dengan tebakan awal
+                \( x_0 = 1.5 \),
+                lakukan sebanyak
+                \( 2 \)
+                iterasi.
+            </p>
+
+            <p>
+                Tampilkan hasil setiap iterasi secara berurutan.
+            </p>
+        </div>
     </div>
 
     <div class="card card--soft">
-
         <h3>Soal 6 — Sistem Persamaan Linear</h3>
 
         <div class="question">
-            Selesaikan sistem persamaan linear berikut menggunakan metode Eliminasi Gauss:
-            <br><br>
-            2x + y − z = 8<br>
-            −3x − y + 2z = −11<br>
-            −2x + y + 2z = −3
-            <br><br>
-            Tunjukkan proses eliminasi hingga diperoleh solusi akhir.
-        </div>
+            <p>
+                Selesaikan sistem persamaan linear berikut menggunakan metode Eliminasi Gauss:
+            </p>
 
+            <div class="katex">
+$$
+\begin{aligned}
+2x + y - z &= 8 \\
+-3x - y + 2z &= -11 \\
+-2x + y + 2z &= -3
+\end{aligned}
+$$
+            </div>
+
+            <p>
+                Tunjukkan proses eliminasi hingga diperoleh solusi akhir.
+            </p>
+        </div>
     </div>
 
-    <!-- ========================= -->
-    <!-- BAGIAN C -->
-    <!-- ========================= -->
-
     <div class="card card--soft">
-
         <h3>Soal 7 — Interpolasi Numerik</h3>
 
         <div class="question">
-            Diketahui data berikut:
-            <br><br>
-            x : 1, 2, 4<br>
-            f(x) : 1, 4, 16
-            <br><br>
-            Gunakan metode Interpolasi Lagrange untuk menentukan nilai f(3).
-            <br><br>
-            Tunjukkan pembentukan polinom interpolasi secara lengkap.
-        </div>
+            <p>
+                Diketahui data berikut:
+            </p>
 
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>\( x \)</th>
+                        <th>\( f(x) \)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>16</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                Gunakan metode Interpolasi Lagrange untuk menentukan nilai
+                \( f(3) \).
+            </p>
+
+            <p>
+                Tunjukkan pembentukan polinom interpolasi secara lengkap.
+            </p>
+        </div>
     </div>
 
 </div>

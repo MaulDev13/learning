@@ -1,251 +1,324 @@
 <div class="card-group">
 
-    <!-- PENGANTAR -->
     <div class="card card--soft">
 
-        <h3>Metode Eliminasi Gauss</h3>
+        <h2>Metode Eliminasi Gauss</h2>
 
         <p>
-            Metode Eliminasi Gauss adalah metode langsung
-            untuk menyelesaikan Sistem Persamaan Linear
-            dengan mengubah matriks menjadi bentuk segitiga atas.
+            Metode Eliminasi Gauss adalah metode langsung untuk menyelesaikan Sistem Persamaan Linear (SPL) dengan mengubah matriks augmented menjadi bentuk segitiga atas menggunakan operasi baris elementer.
         </p>
 
         <p>
-            Metode ini menggunakan operasi baris elementer
-            untuk menyederhanakan sistem.
+            Setelah bentuk segitiga atas diperoleh, solusi sistem dihitung menggunakan substitusi balik.
         </p>
 
     </div>
 
-    <!-- KONSEP DASAR -->
     <div class="card card--soft">
 
-        <h3>Konsep Dasar</h3>
+        <h3>Tujuan Transformasi Matriks</h3>
 
         <p>
-            Tujuan utama adalah mengubah matriks menjadi
-            bentuk segitiga atas (upper triangular).
+            Tujuan utama eliminasi adalah membuat seluruh elemen di bawah diagonal utama bernilai nol sehingga sistem menjadi lebih sederhana untuk diselesaikan.
         </p>
 
+        <div class="katex">
+            $$
+            \begin{bmatrix}
+            a_{11} & a_{12} & a_{13} & b_1 \\
+            0 & a_{22} & a_{23} & b_2 \\
+            0 & 0 & a_{33} & b_3
+            \end{bmatrix}
+            $$
+        </div>
+
         <p>
-            Setelah itu, solusi diperoleh dengan
-            substitusi balik (back substitution).
+            Bentuk tersebut disebut bentuk segitiga atas karena seluruh elemen di bawah diagonal utama bernilai nol.
         </p>
 
     </div>
 
-    <!-- BENTUK -->
     <div class="card card--soft">
 
-        <h3>Bentuk Segitiga Atas</h3>
+        <h3>Operasi Baris Elementer</h3>
 
         <p>
-            Matriks diubah menjadi:
+            Eliminasi Gauss menggunakan operasi baris elementer untuk memodifikasi sistem tanpa mengubah solusi.
         </p>
 
-        <p>
-            [ a₁₁ a₁₂ a₁₃ | b₁ ]<br>
-            [  0  a₂₂ a₂₃ | b₂ ]<br>
-            [  0   0  a₃₃ | b₃ ]
-        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Operasi</th>
+                    <th>Bentuk</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pertukaran baris</td>
+                    <td>\( R_i \leftrightarrow R_j \)</td>
+                </tr>
+                <tr>
+                    <td>Perkalian skalar</td>
+                    <td>\( R_i \rightarrow kR_i \)</td>
+                </tr>
+                <tr>
+                    <td>Penjumlahan baris</td>
+                    <td>\( R_i \rightarrow R_i + kR_j \)</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Langkah Metode Eliminasi Gauss</h3>
+
+        <h4>Pembentukan Sistem</h4>
 
         <p>
-            Semua elemen di bawah diagonal utama
-            dibuat menjadi nol.
+            Sistem persamaan linear terlebih dahulu diubah menjadi matriks augmented.
+        </p>
+
+        <h4>Eliminasi</h4>
+
+        <p>
+            Operasi baris dilakukan untuk menghilangkan elemen di bawah pivot utama secara bertahap.
+        </p>
+
+        <h4>Substitusi Balik</h4>
+
+        <p>
+            Setelah matriks berbentuk segitiga atas, variabel dihitung mulai dari persamaan terakhir menuju persamaan pertama.
         </p>
 
     </div>
 
-    <!-- LANGKAH -->
     <div class="card card--soft">
 
-        <h3>Langkah-langkah Metode</h3>
+        <h3>Contoh Sistem Persamaan Linear</h3>
+
+        <div class="katex">
+            $$
+            \begin{aligned}
+            2x + y - z &= 8 \\
+            -3x - y + 2z &= -11 \\
+            -2x + y + 2z &= -3
+            \end{aligned}
+            $$
+        </div>
 
         <p>
-            1. Bentuk matriks augmented<br>
-            2. Gunakan operasi baris untuk membuat nol di bawah pivot<br>
-            3. Ulangi hingga terbentuk segitiga atas<br>
-            4. Lakukan substitusi balik
+            Matriks augmented dari sistem tersebut adalah:
         </p>
+
+        <div class="katex">
+            $$
+            \begin{bmatrix}
+            2 & 1 & -1 & 8 \\
+            -3 & -1 & 2 & -11 \\
+            -2 & 1 & 2 & -3
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
-    <!-- CONTOH -->
     <div class="card card--soft">
 
-        <h3>Contoh Kasus</h3>
+        <h3>Eliminasi Pivot Pertama</h3>
 
         <p>
-            2x + y − z = 8<br>
-            -3x − y + 2z = -11<br>
-            -2x + y + 2z = -3
+            Pivot pertama berada pada elemen \( a_{11} = 2 \). Elemen di bawah pivot dihilangkan menggunakan operasi baris berikut:
         </p>
 
-        <p>
-            Matriks augmented:
-        </p>
+        <div class="katex">
+            $$
+            \begin{aligned}
+            R_2 &\rightarrow R_2 + \frac{3}{2}R_1 \\
+            R_3 &\rightarrow R_3 + R_1
+            \end{aligned}
+            $$
+        </div>
 
         <p>
-            [  2   1  -1 |  8 ]<br>
-            [ -3  -1   2 | -11 ]<br>
-            [ -2   1   2 | -3 ]
+            Hasil transformasi matriks:
         </p>
+
+        <div class="katex">
+            $$
+            \begin{bmatrix}
+            2 & 1 & -1 & 8 \\
+            0 & 0.5 & 0.5 & 1 \\
+            0 & 2 & 1 & 5
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
-    <!-- ELIMINASI 1 -->
     <div class="card card--soft">
 
-        <h3>Eliminasi Langkah 1</h3>
+        <h3>Eliminasi Pivot Kedua</h3>
 
         <p>
-            Hilangkan elemen di bawah pivot pertama (a₁₁ = 2)
+            Elemen di bawah pivot kedua dihilangkan menggunakan operasi:
         </p>
 
-        <p>
-            R₂ = R₂ + (3/2)R₁<br>
-            R₃ = R₃ + R₁
-        </p>
+        <div class="katex">
+            $$
+            R_3 \rightarrow R_3 - 4R_2
+            $$
+        </div>
 
         <p>
-            Hasil:
+            Matriks hasil eliminasi:
         </p>
 
-        <p>
-            [ 2  1  -1 |  8 ]<br>
-            [ 0  0.5 0.5 | 1 ]<br>
-            [ 0  2   1 | 5 ]
-        </p>
+        <div class="katex">
+            $$
+            \begin{bmatrix}
+            2 & 1 & -1 & 8 \\
+            0 & 0.5 & 0.5 & 1 \\
+            0 & 0 & -1 & 1
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
-    <!-- ELIMINASI 2 -->
-    <div class="card card--soft">
-
-        <h3>Eliminasi Langkah 2</h3>
-
-        <p>
-            Hilangkan elemen di bawah pivot kedua
-        </p>
-
-        <p>
-            R₃ = R₃ − 4R₂
-        </p>
-
-        <p>
-            Hasil:
-        </p>
-
-        <p>
-            [ 2  1  -1 | 8 ]<br>
-            [ 0 0.5 0.5 | 1 ]<br>
-            [ 0  0  -1 | 1 ]
-        </p>
-
-    </div>
-
-    <!-- SUBSTITUSI -->
     <div class="card card--soft">
 
         <h3>Substitusi Balik</h3>
 
         <p>
-            Dari baris terakhir:
+            Variabel dihitung mulai dari persamaan terakhir.
         </p>
 
-        <p>
-            -z = 1 → z = -1
-        </p>
+        <div class="katex">
+            $$
+            -z = 1
+            $$
+        </div>
 
         <p>
-            Baris kedua:
+            Diperoleh:
         </p>
 
-        <p>
-            0.5y + 0.5z = 1 → y = 3
-        </p>
+        <div class="katex">
+            $$
+            z = -1
+            $$
+        </div>
+
+        <div class="katex">
+            $$
+            0.5y + 0.5z = 1
+            $$
+        </div>
 
         <p>
-            Baris pertama:
+            Substitusi nilai \( z = -1 \):
         </p>
 
+        <div class="katex">
+            $$
+            y = 3
+            $$
+        </div>
+
+        <div class="katex">
+            $$
+            2x + y - z = 8
+            $$
+        </div>
+
         <p>
-            2x + y − z = 8 → x = 2
+            Substitusi nilai \( y = 3 \) dan \( z = -1 \):
         </p>
+
+        <div class="katex">
+            $$
+            x = 2
+            $$
+        </div>
 
     </div>
 
-    <!-- HASIL -->
     <div class="card card--soft">
 
         <h3>Hasil Akhir</h3>
 
+        <div class="katex">
+            $$
+            \begin{aligned}
+            x &= 2 \\
+            y &= 3 \\
+            z &= -1
+            \end{aligned}
+            $$
+        </div>
+
         <p>
-            x = 2<br>
-            y = 3<br>
-            z = -1
+            Solusi sistem persamaan linear diperoleh secara sistematis melalui proses eliminasi dan substitusi balik.
         </p>
 
     </div>
 
-    <!-- KELEBIHAN -->
     <div class="card card--soft">
 
-        <h3>Kelebihan</h3>
+        <h3>Kelebihan dan Kelemahan</h3>
 
-        <p>
-            • Sistematis dan pasti selesai<br>
-            • Cocok untuk berbagai ukuran sistem<br>
-            • Dasar metode lain (LU, Gauss-Jordan)
-        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Kelebihan</th>
+                    <th>Kelemahan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sistematis dan mudah diimplementasikan</td>
+                    <td>Dapat menghasilkan error pembulatan</td>
+                </tr>
+                <tr>
+                    <td>Cocok untuk SPL berbagai ukuran</td>
+                    <td>Jumlah operasi besar untuk matriks besar</td>
+                </tr>
+                <tr>
+                    <td>Menjadi dasar metode numerik lain</td>
+                    <td>Memerlukan pivoting jika pivot sangat kecil</td>
+                </tr>
+            </tbody>
+        </table>
 
     </div>
 
-    <!-- KELEMAHAN -->
     <div class="card card--soft">
 
-        <h3>Kelemahan</h3>
+        <h3>Intuisi Metode</h3>
 
         <p>
-            • Bisa terjadi pembulatan error<br>
-            • Perlu banyak operasi untuk sistem besar<br>
-            • Sensitif jika pivot kecil (perlu pivoting)
+            Eliminasi Gauss dapat dipahami sebagai proses menghilangkan variabel secara bertahap hingga hanya tersisa satu variabel pada persamaan terakhir.
+        </p>
+
+        <p>
+            Setelah variabel terakhir diperoleh, nilai variabel lain dihitung kembali menggunakan substitusi balik.
         </p>
 
     </div>
 
-    <!-- INTUISI -->
-    <div class="card card--soft">
-
-        <h3>Intuisi</h3>
-
-        <p>
-            Metode Gauss adalah proses
-            “menghilangkan variabel satu per satu”.
-        </p>
-
-        <p>
-            Sampai tersisa satu variabel,
-            lalu diselesaikan kembali ke atas.
-        </p>
-
-    </div>
-
-    <!-- KESIMPULAN -->
     <div class="card card--soft">
 
         <h3>Kesimpulan</h3>
 
         <p>
-            Metode Eliminasi Gauss adalah metode dasar
-            untuk menyelesaikan SPL secara langsung.
+            Metode Eliminasi Gauss merupakan teknik fundamental dalam aljabar linear untuk menyelesaikan sistem persamaan linear secara langsung.
         </p>
 
         <p>
-            Dengan operasi baris,
-            sistem dapat disederhanakan
-            hingga mudah diselesaikan.
+            Dengan menggunakan operasi baris elementer, sistem dapat diubah menjadi bentuk yang lebih sederhana sehingga solusi dapat dihitung secara efisien dan sistematis.
         </p>
 
     </div>

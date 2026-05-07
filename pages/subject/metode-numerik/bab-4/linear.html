@@ -18,7 +18,7 @@
             dan <span class="text-code-inline">x₁</span>.
         </p>
         <div class="text-math">
-            Diketahui: (x₀, y₀) dan (x₁, y₁)<br>
+            Diketahui: (x₀, y₀) dan (x₁, y₁) <br>
             Dicari: y untuk suatu x di antara x₀ dan x₁
         </div>
     </div>
@@ -36,27 +36,24 @@
             y = y₀ + \frac{y₁ - y₀}{x₁ - x₀} (x - x₀)
         </div>
         <p>
-            Alternatif lain, dengan parameter <span class="text-code-inline">t</span> yang menunjukkan 
-            posisi relatif:
+            Alternatif dengan parameter <span class="text-code-inline">t</span> yang menunjukkan posisi relatif:
         </p>
         <div class="text-math">
             y = (1 - t) y₀ + t y₁, \quad \text{dengan } t = \frac{x - x₀}{x₁ - x₀}
         </div>
         <p>
-            Parameter <span class="text-code-inline">t</span> berada dalam rentang <span class="text-code-inline">[0, 1]</span>:
+            Parameter <span class="text-code-inline">t</span> berada dalam rentang [0,1]:
         </p>
         <p>
-            • <span class="text-code-inline">t = 0</span> → <span class="text-code-inline">x = x₀</span> → <span class="text-code-inline">y = y₀</span><br>
-            • <span class="text-code-inline">t = 1</span> → <span class="text-code-inline">x = x₁</span> → <span class="text-code-inline">y = y₁</span><br>
-            • <span class="text-code-inline">t = 0.5</span> → <span class="text-code-inline">x</span> di tengah → <span class="text-code-inline">y = (y₀ + y₁)/2</span>
+            • t = 0 → x = x₀ → y = y₀<br>
+            • t = 1 → x = x₁ → y = y₁<br>
+            • t = 0.5 → x di tengah → y = (y₀ + y₁)/2
         </p>
         <div class="text-code">
-# Rumus interpolasi linear (dua bentuk)
-
-# Bentuk 1: langsung
+# Bentuk langsung
 y = y0 + (y1 - y0) * (x - x0) / (x1 - x0)
 
-# Bentuk 2: dengan parameter t
+# Bentuk parameter t
 t = (x - x0) / (x1 - x0)
 y = (1 - t) * y0 + t * y1
         </div>
@@ -67,9 +64,7 @@ y = (1 - t) * y0 + t * y1
     <!-- ============================================ -->
     <div class="card card--soft">
         <h3>Contoh 1: Interpolasi Suhu</h3>
-        <p>
-            Seorang peneliti mencatat suhu pada waktu tertentu:
-        </p>
+        <p>Data suhu:</p>
         <table class="table">
             <thead>
                 <tr><th>Waktu (jam)</th><th>Suhu (°C)</th></tr>
@@ -79,18 +74,11 @@ y = (1 - t) * y0 + t * y1
                 <tr><td>10:00 (x₁ = 10)</td><td>32.0 (y₁)</td></tr>
             </tbody>
         </table>
-        <p>
-            Perkirakan suhu pada pukul <span class="text-code-inline">8:00 (x = 8)</span>.
-        </p>
+        <p>Perkirakan suhu pada pukul 8:00 (x=8)</p>
         <div class="text-math">
-            y = y₀ + \frac{y₁ - y₀}{x₁ - x₀} (x - x₀)<br>
-            y = 20 + \frac{32 - 20}{10 - 6} (8 - 6)<br>
-            y = 20 + \frac{12}{4} × 2<br>
-            y = 20 + 6 = 26
+            y = 20 + \frac{32 - 20}{10 - 6} (8 - 6) = 20 + 6 = 26
         </div>
-        <p>
-            Jadi, perkiraan suhu pada pukul 8:00 adalah <span class="text-code-inline">26°C</span>.
-        </p>
+        <p>Jadi, suhu ≈ <span class="text-code-inline">26°C</span></p>
     </div>
 
     <!-- ============================================ -->
@@ -98,42 +86,30 @@ y = (1 - t) * y0 + t * y1
     <!-- ============================================ -->
     <div class="card card--soft">
         <h3>Contoh 2: Interpolasi Tekanan Udara</h3>
-        <p>
-            Data tekanan udara pada ketinggian tertentu:
-        </p>
+        <p>Data tekanan udara:</p>
         <table class="table">
             <thead>
                 <tr><th>Ketinggian (km)</th><th>Tekanan (kPa)</th></tr>
             </thead>
             <tbody>
-                <tr><td>0 (x₀ = 0)</td><td>101.3 (y₀)</td></tr>
-                <tr><td>2 (x₁ = 2)</td><td>80.0 (y₁)</td></tr>
+                <tr><td>0 (x₀=0)</td><td>101.3 (y₀)</td></tr>
+                <tr><td>2 (x₁=2)</td><td>80.0 (y₁)</td></tr>
             </tbody>
         </table>
-        <p>
-            Perkirakan tekanan udara pada ketinggian <span class="text-code-inline">1.5 km (x = 1.5)</span>.
-        </p>
+        <p>Perkirakan tekanan pada 1.5 km (x=1.5)</p>
         <div class="text-math">
-            y = 101.3 + \frac{80.0 - 101.3}{2 - 0} (1.5 - 0)<br>
-            y = 101.3 + \frac{-21.3}{2} × 1.5<br>
-            y = 101.3 + (-10.65) × 1.5<br>
-            y = 101.3 - 15.975 = 85.325
+            y = 101.3 + \frac{80 - 101.3}{2 - 0} (1.5 - 0) = 101.3 - 15.975 = 85.325
         </div>
-        <p>
-            Tekanan udara pada ketinggian 1.5 km diperkirakan <span class="text-code-inline">85.33 kPa</span>.
-        </p>
+        <p>Tekanan ≈ <span class="text-code-inline">85.33 kPa</span></p>
         <div class="text-code">
-# Kode Python untuk interpolasi linear
 def interpolasi_linear(x0, y0, x1, y1, x):
     return y0 + (y1 - y0) * (x - x0) / (x1 - x0)
 
-# Contoh 1
+# Contoh
 suhu = interpolasi_linear(6, 20, 10, 32, 8)
-print(f"Suhu pada jam 8: {suhu}°C")  # Output: 26.0°C
-
-# Contoh 2
+print(suhu)  # 26.0
 tekanan = interpolasi_linear(0, 101.3, 2, 80.0, 1.5)
-print(f"Tekanan pada 1.5 km: {tekanan:.2f} kPa")  # Output: 85.33 kPa
+print(tekanan)  # 85.33
         </div>
     </div>
 
@@ -142,38 +118,14 @@ print(f"Tekanan pada 1.5 km: {tekanan:.2f} kPa")  # Output: 85.33 kPa
     <!-- ============================================ -->
     <div class="card card--soft">
         <h3>Algoritma Interpolasi Linear</h3>
-        <p>
-            Berikut prosedur sistematis untuk melakukan interpolasi linear pada data titik:
-        </p>
-        <p>
-            <span class="text-code-inline">Langkah 1:</span> Tentukan dua titik yang mengapit nilai 
-            <span class="text-code-inline">x</span> yang dicari, yaitu <span class="text-code-inline">(x₀, y₀)</span> 
-            dan <span class="text-code-inline">(x₁, y₁)</span> dengan <span class="text-code-inline">x₀ ≤ x ≤ x₁</span>.
-        </p>
-        <p>
-            <span class="text-code-inline">Langkah 2:</span> Hitung kemiringan (slope) garis:
-            <span class="text-code-inline">m = (y₁ - y₀) / (x₁ - x₀)</span>
-        </p>
-        <p>
-            <span class="text-code-inline">Langkah 3:</span> Hitung nilai interpolasi:
-            <span class="text-code-inline">y = y₀ + m × (x - x₀)</span>
-        </p>
+        <p>Prosedur sistematis:</p>
         <div class="text-code">
 PROCEDURE InterpolasiLinear(x0, y0, x1, y1, x)
-    INPUT:
-        x0, y0 : titik pertama
-        x1, y1 : titik kedua
-        x      : nilai yang akan diinterpolasi
-    OUTPUT:
-        y      : nilai interpolasi
-    
     IF x < x0 OR x > x1 THEN
-        RETURN "Peringatan: x di luar interval [x0, x1]"
+        RETURN "x di luar interval"
     END IF
-    
     m ← (y1 - y0) / (x1 - x0)
     y ← y0 + m * (x - x0)
-    
     RETURN y
 END PROCEDURE
         </div>
@@ -183,34 +135,18 @@ END PROCEDURE
     <!-- CARD 6: INTERPOLASI LINEAR PADA BANYAK TITIK -->
     <!-- ============================================ -->
     <div class="card card--soft">
-        <h3>Interpolasi Linear pada Kumpulan Data</h3>
-        <p>
-            Jika kita memiliki lebih dari dua titik data, kita melakukan interpolasi 
-            per segmen (piecewise linear interpolation):
-        </p>
+        <h3>Piecewise Linear Interpolation</h3>
+        <p>Jika ada banyak titik, lakukan per segmen:</p>
         <div class="text-code">
-PROCEDURE InterpolasiPiecewiseLinear(Titik, x)
-    INPUT:
-        Titik : array of (x_i, y_i), i = 0..n
-        x     : nilai yang akan diinterpolasi
-    OUTPUT:
-        y     : nilai interpolasi
-    
-    {Cari segmen yang mengandung x}
+PROCEDURE PiecewiseLinear(Titik[], x)
     FOR i = 0 TO n-1 DO
-        IF x >= Titik[i].x AND x <= Titik[i+1].x THEN
-            x0 ← Titik[i].x
-            y0 ← Titik[i].y
-            x1 ← Titik[i+1].x
-            y1 ← Titik[i+1].y
-            
-            m ← (y1 - y0) / (x1 - x0)
-            y ← y0 + m * (x - x0)
-            
-            RETURN y
+        IF x ≥ Titik[i].x AND x ≤ Titik[i+1].x THEN
+            x0, y0 ← Titik[i].x, Titik[i].y
+            x1, y1 ← Titik[i+1].x, Titik[i+1].y
+            m ← (y1 - y0)/(x1 - x0)
+            RETURN y0 + m*(x - x0)
         END IF
     END FOR
-    
     RETURN "x di luar domain data"
 END PROCEDURE
         </div>
@@ -221,12 +157,10 @@ END PROCEDURE
     <!-- ============================================ -->
     <div class="card card--soft">
         <h3>Contoh Piecewise Linear</h3>
-        <p>
-            Diberikan data populasi suatu kota setiap 5 tahun:
-        </p>
+        <p>Data populasi tiap 5 tahun:</p>
         <table class="table">
             <thead>
-                <tr><th>Tahun (x)</th><th>Populasi (ribu) (y)</th></tr>
+                <tr><th>Tahun</th><th>Populasi (ribu)</th></tr>
             </thead>
             <tbody>
                 <tr><td>2000</td><td>100</td></tr>
@@ -236,67 +170,28 @@ END PROCEDURE
                 <tr><td>2020</td><td>210</td></tr>
             </tbody>
         </table>
-        <p>
-            Perkirakan populasi pada tahun <span class="text-code-inline">2008</span> dan 
-            <span class="text-code-inline">2018</span>.
-        </p>
-        <p>
-            <strong>Untuk tahun 2008:</strong> berada di antara 2005 (x₀=2005, y₀=125) dan 
-            2010 (x₁=2010, y₁=160)
-        </p>
+        <p>Estimasi:</p>
         <div class="text-math">
-            y = 125 + \frac{160 - 125}{2010 - 2005} (2008 - 2005)<br>
-            y = 125 + \frac{35}{5} × 3 = 125 + 21 = 146
+2008: y = 125 + (160-125)/(2010-2005)*(2008-2005) = 146 <br>
+2018: y = 190 + (210-190)/(2020-2015)*(2018-2015) = 202
         </div>
-        <p>
-            <strong>Untuk tahun 2018:</strong> berada di antara 2015 (x₀=2015, y₀=190) dan 
-            2020 (x₁=2020, y₁=210)
-        </p>
-        <div class="text-math">
-            y = 190 + \frac{210 - 190}{2020 - 2015} (2018 - 2015)<br>
-            y = 190 + \frac{20}{5} × 3 = 190 + 12 = 202
-        </div>
-        <p>
-            Hasil: populasi tahun 2008 ≈ <span class="text-code-inline">146.000 jiwa</span>, 
-            tahun 2018 ≈ <span class="text-code-inline">202.000 jiwa</span>.
-        </p>
     </div>
 
     <!-- ============================================ -->
     <!-- CARD 8: KELEBIHAN DAN KEKURANGAN -->
     <!-- ============================================ -->
     <div class="card card--soft">
-        <h3>Kelebihan dan Kekurangan Interpolasi Linear</h3>
+        <h3>Kelebihan & Kekurangan</h3>
         <table class="table">
             <thead>
                 <tr><th>Aspek</th><th>Kelebihan</th><th>Kekurangan</th></tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Kesederhanaan</td>
-                    <td>Rumus sangat sederhana, mudah diimplementasikan</td>
-                    <td>Hasil berupa garis patah-patah (tidak mulus)</td>
-                </tr>
-                <tr>
-                    <td>Kecepatan</td>
-                    <td>Komputasi sangat cepat, O(1) setelah ditemukan interval</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>Akurasi</td>
-                    <td>Akurat jika fungsi hampir linear pada interval kecil</td>
-                    <td>Error besar jika fungsi sangat melengkung</td>
-                </tr>
-                <tr>
-                    <td>Kontinuitas</td>
-                    <td>Fungsi hasil P(x) kontinu</td>
-                    <td>Turunan P'(x) tidak kontinu (patah di titik data)</td>
-                </tr>
-                <tr>
-                    <td>Ekstrapolasi</td>
-                    <td>-</td>
-                    <td>Sangat tidak akurat untuk ekstrapolasi</td>
-                </tr>
+                <tr><td>Kesederhanaan</td><td>Mudah diimplementasikan</td><td>Hasil patah-patah</td></tr>
+                <tr><td>Kecepatan</td><td>O(1) setelah interval diketahui</td><td>-</td></tr>
+                <tr><td>Akurasi</td><td>Akurat jika hampir linear</td><td>Gagal untuk fungsi melengkung</td></tr>
+                <tr><td>Kontinuitas</td><td>P(x) kontinu</td><td>P'(x) tidak kontinu</td></tr>
+                <tr><td>Ekstrapolasi</td><td>-</td><td>Sangat tidak akurat</td></tr>
             </tbody>
         </table>
     </div>
@@ -305,34 +200,17 @@ END PROCEDURE
     <!-- CARD 9: ESTIMASI ERROR -->
     <!-- ============================================ -->
     <div class="card card--soft">
-        <h3>Estimasi Error Interpolasi Linear</h3>
-        <p>
-            Misalkan <span class="text-code-inline">f(x)</span> adalah fungsi asli (tidak diketahui) 
-            dan <span class="text-code-inline">P₁(x)</span> adalah hasil interpolasi linear. 
-            Error pada suatu titik <span class="text-code-inline">x</span> di antara 
-            <span class="text-code-inline">x₀</span> dan <span class="text-code-inline">x₁</span> adalah:
-        </p>
+        <h3>Estimasi Error</h3>
         <div class="text-math">
-            E(x) = f(x) - P₁(x) = \frac{f''(\xi)}{2} (x - x₀)(x - x₁)
+E(x) = f(x) - P₁(x) = \frac{f''(\xi)}{2}(x-x₀)(x-x₁), \quad ξ \in [x₀,x₁] <br>
+|E(x)| ≤ \frac{M}{8} (x₁ - x₀)^2, \quad M = \max_{x₀ ≤ x ≤ x₁}|f''(x)|
         </div>
-        <p>
-            dengan <span class="text-code-inline">ξ</span> adalah suatu titik di antara 
-            <span class="text-code-inline">x₀</span> dan <span class="text-code-inline">x₁</span>.
-        </p>
-        <p>
-            <span class="text-code-inline">Batas maksimum error</span> pada interval [x₀, x₁]:
-        </p>
-        <div class="text-math">
-            |E(x)| \leq \frac{M}{8} (x₁ - x₀)², \quad \text{dengan } M = \max_{x₀ ≤ x ≤ x₁} |f''(x)|
-        </div>
-        <p>
-            <strong>Interpretasi:</strong>
-        </p>
-        <p>
-            • Error sebanding dengan <span class="text-code-inline">(Δx)²</span> — semakin rapat titik data, semakin kecil error<br>
-            • Error sebanding dengan <span class="text-code-inline">|f''(x)|</span> — semakin melengkung fungsi, semakin besar error<br>
-            • Error maksimum terjadi di tengah interval <span class="text-code-inline">x = (x₀ + x₁)/2</span>
-        </p>
+        <p>Interpretasi:</p>
+        <ul>
+            <li>Error ∝ (Δx)² — titik lebih rapat → error lebih kecil</li>
+            <li>Error ∝ |f''(x)| — fungsi lebih melengkung → error lebih besar</li>
+            <li>Error maksimum di tengah interval</li>
+        </ul>
     </div>
 
     <!-- ============================================ -->
@@ -340,27 +218,16 @@ END PROCEDURE
     <!-- ============================================ -->
     <div class="card card--soft">
         <h3>Kesimpulan Interpolasi Linear</h3>
-        <p>
-            Interpolasi linear adalah metode paling fundamental dalam interpolasi numerik.
-        </p>
-        <p>
-            <strong>Ringkasan poin penting:</strong>
-        </p>
-        <p>
-            1. Rumus: <span class="text-code-inline">y = y₀ + (y₁ - y₀)(x - x₀)/(x₁ - x₀)</span><br>
-            2. Atau: <span class="text-code-inline">y = (1 - t)y₀ + t y₁</span> dengan 
-            <span class="text-code-inline">t = (x - x₀)/(x₁ - x₀)</span><br>
-            3. Interpolasi linear mengasumsikan perubahan linear antara dua titik<br>
-            4. Untuk banyak titik → interpolasi piecewise linear per segmen<br>
-            5. Kelebihan: <span class="text-code-inline">sederhana, cepat, mudah diimplementasikan</span><br>
-            6. Kekurangan: <span class="text-code-inline">hasil tidak mulus, error besar untuk fungsi melengkung</span><br>
-            7. Estimasi error: <span class="text-code-inline">|E(x)| ≤ M·(Δx)²/8</span>
-        </p>
-        <p>
-            Interpolasi linear menjadi fondasi untuk mempelajari metode interpolasi yang lebih canggih 
-            seperti interpolasi kuadrat, Lagrange, Newton, dan spline — yang akan memberikan hasil 
-            lebih mulus dan akurat untuk fungsi yang kompleks.
-        </p>
+        <ul>
+            <li>Rumus utama: y = y₀ + (y₁ - y₀)(x - x₀)/(x₁ - x₀)</li>
+            <li>Bentuk parameter: y = (1 - t)y₀ + t y₁, t=(x-x₀)/(x₁-x₀)</li>
+            <li>Asumsi linear antar titik</li>
+            <li>Banyak titik → Piecewise Linear per segmen</li>
+            <li>Kelebihan: sederhana, cepat, mudah</li>
+            <li>Kekurangan: tidak mulus, error besar untuk fungsi melengkung</li>
+            <li>Estimasi error: |E(x)| ≤ M·(Δx)²/8</li>
+        </ul>
+        <p>Fondasi untuk interpolasi Lagrange, Newton, dan Spline.</p>
     </div>
 
 </div>

@@ -3,17 +3,14 @@
     <!-- PENGANTAR -->
     <div class="card card--soft">
 
-        <h3>Metode Newton-Raphson</h3>
+        <h3>Akar Persamaan Non Linear: Metode Newton-Raphson</h3>
 
         <p>
-            Metode Newton-Raphson adalah metode numerik
-            untuk mencari akar persamaan non-linear
-            dengan menggunakan pendekatan turunan (gradien).
+            Metode Newton-Raphson adalah metode numerik untuk mencari akar persamaan non-linear dengan menggunakan pendekatan turunan (gradien).
         </p>
 
         <p>
-            Metode ini termasuk metode terbuka
-            dan dikenal memiliki konvergensi yang sangat cepat.
+            Metode ini termasuk metode terbuka dan dikenal memiliki konvergensi yang sangat cepat.
         </p>
 
     </div>
@@ -24,15 +21,11 @@
         <h3>Konsep Dasar</h3>
 
         <p>
-            Metode ini menggunakan garis singgung
-            (tangent line) pada suatu titik
-            untuk mendekati akar persamaan.
+            Metode ini menggunakan garis singgung (tangent line) pada suatu titik untuk mendekati akar persamaan.
         </p>
 
         <p>
-            Dari tebakan awal,
-            dibuat garis singgung terhadap kurva f(x),
-            lalu dicari titik potongnya dengan sumbu x.
+            Dari tebakan awal, dibuat garis singgung terhadap kurva \( f(x) \), lalu dicari titik potongnya dengan sumbu \(x\).
         </p>
 
     </div>
@@ -43,14 +36,11 @@
         <h3>Ide Utama</h3>
 
         <p>
-            Dimulai dari nilai awal x⁰,
-            kemudian diperbaiki secara iteratif
-            menggunakan informasi turunan.
+            Dimulai dari nilai awal \( x^{0} \), kemudian diperbaiki secara iteratif menggunakan informasi turunan.
         </p>
 
         <p>
-            Setiap iterasi menghasilkan nilai
-            yang lebih dekat ke akar.
+            Setiap iterasi menghasilkan nilai yang lebih dekat ke akar.
         </p>
 
     </div>
@@ -60,16 +50,14 @@
 
         <h3>Rumus Newton-Raphson</h3>
 
-        <p>
-            x<sup>i+1</sup> = x<sup>i</sup> − f(x<sup>i</sup>) / f'(x<sup>i</sup>)
-        </p>
+        <div class="katex">
+            $$
+            x^{i+1} = x^{i} - \frac{f(x^{i})}{f'(x^{i})}
+            $$
+        </div>
 
         <p>
-            dimana:
-        </p>
-
-        <p>
-            f'(x) adalah turunan dari fungsi f(x)
+            di mana \( f'(x) \) adalah turunan dari fungsi \( f(x) \).
         </p>
 
     </div>
@@ -80,14 +68,12 @@
         <h3>Makna Rumus</h3>
 
         <p>
-            Nilai baru diperoleh dengan
-            mengoreksi nilai sebelumnya
-            menggunakan kemiringan (gradien).
+            Nilai baru diperoleh dengan mengoreksi nilai sebelumnya menggunakan kemiringan (gradien).
         </p>
 
         <p>
-            Jika gradien besar → langkah kecil<br>
-            Jika gradien kecil → langkah besar
+            • Gradien besar → langkah kecil<br>
+            • Gradien kecil → langkah besar
         </p>
 
     </div>
@@ -98,9 +84,9 @@
         <h3>Langkah-langkah Metode</h3>
 
         <p>
-            1. Tentukan tebakan awal x⁰<br>
-            2. Hitung f(x⁰) dan f'(x⁰)<br>
-            3. Hitung x¹ menggunakan rumus<br>
+            1. Tentukan tebakan awal \( x^{0} \)<br>
+            2. Hitung \( f(x^{0}) \) dan \( f'(x^{0}) \)<br>
+            3. Hitung \( x^{1} \) menggunakan rumus Newton-Raphson<br>
             4. Ulangi proses hingga konvergen
         </p>
 
@@ -112,17 +98,27 @@
         <h3>Contoh Kasus</h3>
 
         <p>
-            f(x) = x² − 4
+            Fungsi:
         </p>
+
+        <div class="katex">
+            $$
+            f(x) = x^2 - 4
+            $$
+        </div>
 
         <p>
             Turunan:
-            f'(x) = 2x
         </p>
 
+        <div class="katex">
+            $$
+            f'(x) = 2x
+            $$
+        </div>
+
         <p>
-            Tebakan awal:
-            x⁰ = 3
+            Tebakan awal: \( x^{0} = 3 \)
         </p>
 
     </div>
@@ -132,13 +128,17 @@
 
         <h3>Iterasi 1</h3>
 
-        <p>
-            x¹ = 3 − (3² − 4) / (2 × 3)
-        </p>
+        <div class="katex">
+            $$
+            x^{1} = 3 - \frac{3^2 - 4}{2 \cdot 3}
+            $$
+        </div>
 
-        <p>
-            x¹ = 3 − (9 − 4) / 6 = 3 − 5/6 = 2.1667
-        </p>
+        <div class="katex">
+            $$
+            x^{1} = 3 - \frac{9 - 4}{6} = 2.1667
+            $$
+        </div>
 
     </div>
 
@@ -147,13 +147,17 @@
 
         <h3>Iterasi 2</h3>
 
-        <p>
-            x² = 2.1667 − (2.1667² − 4) / (2 × 2.1667)
-        </p>
+        <div class="katex">
+            $$
+            x^{2} = 2.1667 - \frac{2.1667^2 - 4}{2 \cdot 2.1667}
+            $$
+        </div>
 
-        <p>
-            x² ≈ 2.0064
-        </p>
+        <div class="katex">
+            $$
+            x^{2} \approx 2.0064
+            $$
+        </div>
 
         <p>
             Sudah sangat dekat dengan akar sebenarnya (2).
@@ -167,13 +171,11 @@
         <h3>Konvergensi</h3>
 
         <p>
-            Metode ini memiliki konvergensi kuadratik,
-            artinya kesalahan berkurang sangat cepat.
+            Metode ini memiliki konvergensi kuadratik, artinya kesalahan berkurang sangat cepat.
         </p>
 
         <p>
-            Dalam beberapa iterasi saja,
-            hasil sudah sangat akurat.
+            Dalam beberapa iterasi saja, hasil sudah sangat akurat.
         </p>
 
     </div>
@@ -210,7 +212,7 @@
         <h3>Masalah yang Sering Terjadi</h3>
 
         <p>
-            • f'(x) = 0 → tidak bisa dihitung<br>
+            • \( f'(x) = 0 \) → tidak bisa dihitung<br>
             • Tebakan awal terlalu jauh → divergen<br>
             • Fungsi tidak halus → hasil tidak stabil
         </p>
@@ -223,13 +225,11 @@
         <h3>Intuisi</h3>
 
         <p>
-            Metode ini seperti “menjatuhkan garis singgung”
-            ke sumbu x untuk menebak posisi akar.
+            Metode ini seperti “menjatuhkan garis singgung” ke sumbu \(x\) untuk menebak posisi akar.
         </p>
 
         <p>
-            Setiap langkah membuat tebakan
-            semakin tepat secara cepat.
+            Setiap langkah membuat tebakan semakin tepat secara cepat.
         </p>
 
     </div>
@@ -240,14 +240,11 @@
         <h3>Kesimpulan</h3>
 
         <p>
-            Metode Newton-Raphson adalah metode
-            yang sangat cepat dan efisien
-            untuk mencari akar persamaan.
+            Metode Newton-Raphson adalah metode yang sangat cepat dan efisien untuk mencari akar persamaan non-linear.
         </p>
 
         <p>
-            Namun, keberhasilannya bergantung
-            pada pemilihan titik awal dan sifat fungsi.
+            Namun, keberhasilannya bergantung pada pemilihan titik awal dan sifat fungsi.
         </p>
 
     </div>

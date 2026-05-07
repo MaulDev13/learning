@@ -3,17 +3,14 @@
     <!-- PENGANTAR -->
     <div class="card card--soft">
 
-        <h3>Galat Persen</h3>
+        <h2>Galat Persen</h2>
 
         <p>
-            Galat persen adalah galat relatif
-            yang dinyatakan dalam bentuk persentase (%).
+            Galat persen adalah bentuk galat relatif yang dinyatakan dalam satuan persen.
         </p>
 
         <p>
-            Bentuk ini lebih mudah dipahami
-            karena langsung menunjukkan tingkat kesalahan
-            dalam skala 0 hingga 100%.
+            Representasi ini memudahkan interpretasi karena menunjukkan besar kesalahan terhadap nilai sebenarnya dalam skala \( 0% \) hingga \( 100\% \).
         </p>
 
     </div>
@@ -21,17 +18,14 @@
     <!-- KONSEP DASAR -->
     <div class="card card--soft">
 
-        <h3>Konsep Dasar</h3>
+        <h2>Konsep Dasar</h2>
 
         <p>
-            Galat persen digunakan untuk menyatakan
-            seberapa besar kesalahan dibandingkan
-            nilai sebenarnya dalam bentuk persen.
+            Galat persen digunakan untuk mengukur tingkat penyimpangan hasil aproksimasi terhadap nilai eksak dalam bentuk persentase.
         </p>
 
         <p>
-            Ini adalah bentuk paling umum
-            dalam pelaporan hasil numerik.
+            Dalam analisis numerik, bentuk ini sering digunakan karena lebih intuitif dibandingkan bentuk desimal.
         </p>
 
     </div>
@@ -39,43 +33,61 @@
     <!-- RUMUS -->
     <div class="card card--soft">
 
-        <h3>Rumus Galat Persen</h3>
+        <h2>Rumus Galat Persen</h2>
 
         <p>
-            ε = ( |x<sub>true</sub> − x<sub>approx</sub>| / x<sub>true</sub> ) × 100%
+            Galat persen dirumuskan sebagai berikut.
         </p>
 
-        <p>
-            Atau:
-        </p>
+        <div class="katex">
+$$
+\varepsilon = \frac{|x_{\text{true}} - x_{\text{approx}}|}{x_{\text{true}}} \times 100\%
+$$
+        </div>
 
         <p>
-            ε = Galat Relatif × 100%
+            Alternatif bentuknya adalah:
         </p>
+
+        <div class="katex">
+$$
+\varepsilon = \varepsilon_{\text{relatif}} \times 100\%
+$$
+        </div>
 
     </div>
 
     <!-- CONTOH -->
     <div class="card card--soft">
 
-        <h3>Contoh Perhitungan</h3>
+        <h2>Contoh Perhitungan</h2>
 
         <p>
-            Nilai eksak = 50<br>
-            Nilai aproksimasi = 47
+            Diketahui nilai eksak \( x_{\text{true}} = 50 \) dan nilai aproksimasi \( x_{\text{approx}} = 47 \).
         </p>
 
         <p>
-            Galat absolut = |50 − 47| = 3
+            Galat absolut dihitung sebagai:
         </p>
+
+        <div class="katex">
+$$
+|50 - 47| = 3
+$$
+        </div>
 
         <p>
             Galat persen:
-            ε = (3 / 50) × 100% = 6%
         </p>
 
+        <div class="katex">
+$$
+\varepsilon = \frac{3}{50} \times 100\% = 6\%
+$$
+        </div>
+
         <p>
-            Artinya, hasil memiliki kesalahan sebesar 6%.
+            Artinya, hasil aproksimasi memiliki kesalahan sebesar \( 6\% \) terhadap nilai sebenarnya.
         </p>
 
     </div>
@@ -83,52 +95,55 @@
     <!-- INTERPRETASI -->
     <div class="card card--soft">
 
-        <h3>Interpretasi Galat Persen</h3>
+        <h2>Interpretasi Galat Persen</h2>
+
+        <table class="table">
+            <tr>
+                <th>Nilai Galat</th>
+                <th>Makna</th>
+            </tr>
+            <tr>
+                <td>\( 0\% \)</td>
+                <td>Tidak ada kesalahan (sangat akurat)</td>
+            </tr>
+            <tr>
+                <td>Kecil</td>
+                <td>Hasil mendekati nilai sebenarnya</td>
+            </tr>
+            <tr>
+                <td>Besar</td>
+                <td>Tingkat kesalahan tinggi</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <!-- HUBUNGAN -->
+    <div class="card card--soft">
+
+        <h2>Hubungan dengan Galat Lain</h2>
 
         <p>
-            Nilai galat persen menunjukkan
-            tingkat akurasi hasil secara langsung.
+            Galat persen merupakan transformasi dari galat relatif dengan mengalikan \( 100\% \).
         </p>
 
         <p>
-            • 0% → sangat akurat (tidak ada error)<br>
-            • Kecil → hasil mendekati nilai sebenarnya<br>
-            • Besar → hasil kurang akurat
+            Dengan demikian, informasi error tetap sama, hanya bentuk representasinya yang berubah.
         </p>
 
     </div>
 
-    <!-- HUBUNGAN DENGAN GALAT LAIN -->
+    <!-- PERAN -->
     <div class="card card--soft">
 
-        <h3>Hubungan dengan Galat Lain</h3>
+        <h2>Peran dalam Metode Numerik</h2>
 
         <p>
-            Galat persen merupakan bentuk turunan
-            dari galat relatif.
+            Galat persen sering digunakan sebagai kriteria penghentian iterasi dalam metode numerik.
         </p>
 
         <p>
-            Sementara galat relatif berbentuk desimal,
-            galat persen mengubahnya menjadi persen
-            agar lebih intuitif.
-        </p>
-
-    </div>
-
-    <!-- PERAN DALAM METODE NUMERIK -->
-    <div class="card card--soft">
-
-        <h3>Peran dalam Metode Numerik</h3>
-
-        <p>
-            Galat persen sering digunakan sebagai
-            kriteria berhenti dalam iterasi.
-        </p>
-
-        <p>
-            Iterasi dihentikan jika galat persen
-            lebih kecil dari toleransi yang ditentukan.
+            Iterasi dihentikan ketika nilai galat persen lebih kecil dari toleransi yang ditentukan.
         </p>
 
     </div>
@@ -136,12 +151,12 @@
     <!-- KELEBIHAN -->
     <div class="card card--soft">
 
-        <h3>Kelebihan Galat Persen</h3>
+        <h2>Kelebihan</h2>
 
         <p>
             • Mudah dipahami<br>
-            • Langsung menunjukkan tingkat kesalahan<br>
-            • Umum digunakan dalam laporan hasil
+            • Intuitif karena berbentuk persen<br>
+            • Umum digunakan dalam laporan ilmiah dan eksperimen
         </p>
 
     </div>
@@ -149,16 +164,14 @@
     <!-- INTUISI -->
     <div class="card card--soft">
 
-        <h3>Intuisi</h3>
+        <h2>Intuisi</h2>
 
         <p>
-            Galat persen menjawab:
-            “Seberapa besar kesalahan dalam persen?”
+            Galat persen menjawab pertanyaan: seberapa besar kesalahan relatif terhadap nilai sebenarnya dalam bentuk persen.
         </p>
 
         <p>
-            Ini membuat evaluasi hasil menjadi lebih cepat
-            dan mudah dibandingkan angka mentah.
+            Representasi ini membuat evaluasi hasil lebih cepat dan komunikatif.
         </p>
 
     </div>
@@ -166,17 +179,14 @@
     <!-- KESIMPULAN -->
     <div class="card card--soft">
 
-        <h3>Kesimpulan</h3>
+        <h2>Kesimpulan</h2>
 
         <p>
-            Galat persen adalah bentuk paling praktis
-            untuk menyatakan kesalahan dalam metode numerik.
+            Galat persen adalah bentuk standar untuk menyatakan kesalahan relatif dalam metode numerik.
         </p>
 
         <p>
-            Dengan menggunakan persentase,
-            tingkat akurasi hasil dapat dipahami
-            secara lebih intuitif.
+            Dengan bentuk persen, tingkat akurasi hasil menjadi lebih mudah dipahami dan dibandingkan.
         </p>
 
     </div>

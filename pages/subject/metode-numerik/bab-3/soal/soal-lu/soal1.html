@@ -12,90 +12,166 @@
         Metode: Dekomposisi LU
     </p>
 
+    <!-- ===================================================== -->
+    <!-- SISTEM PERSAMAAN -->
+    <!-- ===================================================== -->
     <div class="card card--soft">
 
-        <p><strong>Sistem Persamaan</strong></p>
-
         <p>
-            8x₁ + x₂ − x₃ = 8<br>
-            2x₁ + x₂ + 9x₃ = 12<br>
-            x₁ − 7x₂ + 2x₃ = -4
+            <strong>Sistem Persamaan</strong>
         </p>
+
+        <div class="katex">
+            $$
+            \begin{aligned}
+            8x_1 + x_2 - x_3 &= 8 \\
+            2x_1 + x_2 + 9x_3 &= 12 \\
+            x_1 - 7x_2 + 2x_3 &= -4
+            \end{aligned}
+            $$
+        </div>
 
     </div>
 
+    <!-- ===================================================== -->
+    <!-- MATRIKS A -->
+    <!-- ===================================================== -->
     <div class="card card--soft">
 
-        <p><strong>Matriks A</strong></p>
-
         <p>
-            [ 8   1  -1 ]<br>
-            [ 2   1   9 ]<br>
-            [ 1  -7   2 ]
+            <strong>Matriks A</strong>
         </p>
+
+        <div class="katex">
+            $$
+            A =
+            \begin{bmatrix}
+            8 & 1 & -1 \\
+            2 & 1 & 9 \\
+            1 & -7 & 2
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
+    <!-- ===================================================== -->
+    <!-- DEKOMPOSISI -->
+    <!-- ===================================================== -->
     <div class="card card--soft">
 
-        <p><strong>Dekomposisi LU</strong></p>
-
         <p>
-            A = L · U
+            <strong>Dekomposisi LU</strong>
         </p>
 
+        <div class="katex">
+            $$
+            A = L \cdot U
+            $$
+        </div>
+
         <p>
+            Matriks lower triangular:
+        </p>
+
+        <div class="katex">
+            $$
             L =
-            [ 1   0   0 ]<br>
-            [ 0.25 1   0 ]<br>
-            [ 0.125 -6  1 ]
-        </p>
+            \begin{bmatrix}
+            1 & 0 & 0 \\
+            0.25 & 1 & 0 \\
+            0.125 & -6 & 1
+            \end{bmatrix}
+            $$
+        </div>
 
         <p>
+            Matriks upper triangular:
+        </p>
+
+        <div class="katex">
+            $$
             U =
-            [ 8   1   -1 ]<br>
-            [ 0   0.75 9.25 ]<br>
-            [ 0   0   57.5 ]
-        </p>
+            \begin{bmatrix}
+            8 & 1 & -1 \\
+            0 & 0.75 & 9.25 \\
+            0 & 0 & 57.5
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
+    <!-- ===================================================== -->
+    <!-- LY = B -->
+    <!-- ===================================================== -->
     <div class="card card--soft">
 
-        <p><strong>Penyelesaian Ly = b</strong></p>
-
         <p>
-            y₁ = 8<br>
-            y₂ = 12 - 0.25(8) = 10<br>
-            y₃ = -4 - 0.125(8) + 6(10) = 55
+            <strong>Penyelesaian</strong>
+            <span class="text-code-inline">
+                Ly = b
+            </span>
         </p>
+
+        <div class="katex">
+            $$
+            \begin{aligned}
+            y_1 &= 8 \\
+            y_2 &= 12 - 0.25(8) = 10 \\
+            y_3 &= -4 - 0.125(8) + 6(10) = 55
+            \end{aligned}
+            $$
+        </div>
 
     </div>
 
+    <!-- ===================================================== -->
+    <!-- UX = Y -->
+    <!-- ===================================================== -->
     <div class="card card--soft">
 
-        <p><strong>Penyelesaian Ux = y</strong></p>
-
         <p>
-            57.5x₃ = 55 → x₃ ≈ 0.957<br>
-            0.75x₂ + 9.25x₃ = 10 → x₂ ≈ 1.523<br>
-            8x₁ + x₂ - x₃ = 8 → x₁ ≈ 0.929
+            <strong>Penyelesaian</strong>
+            <span class="text-code-inline">
+                Ux = y
+            </span>
         </p>
+
+        <div class="katex">
+            $$
+            \begin{aligned}
+            57.5x_3 &= 55 \Rightarrow x_3 \approx 0.957 \\
+            0.75x_2 + 9.25x_3 &= 10 \Rightarrow x_2 \approx 1.523 \\
+            8x_1 + x_2 - x_3 &= 8 \Rightarrow x_1 \approx 0.929
+            \end{aligned}
+            $$
+        </div>
 
     </div>
 
+    <!-- ===================================================== -->
+    <!-- HASIL -->
+    <!-- ===================================================== -->
     <div class="card card--soft">
 
-        <p><strong>Hasil Akhir</strong></p>
-
         <p>
-            x₁ ≈ 0.929<br>
-            x₂ ≈ 1.523<br>
-            x₃ ≈ 0.957
+            <strong>Hasil Akhir</strong>
         </p>
 
+        <div class="katex">
+            $$
+            \begin{aligned}
+            x_1 &\approx 0.929 \\
+            x_2 &\approx 1.523 \\
+            x_3 &\approx 0.957
+            \end{aligned}
+            $$
+        </div>
+
         <p>
-            Metode LU memberikan solusi eksak (hingga pembulatan).
+            Metode LU memberikan solusi eksak
+            hingga kesalahan pembulatan numerik.
         </p>
 
     </div>

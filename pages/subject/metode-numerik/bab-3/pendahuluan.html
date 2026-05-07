@@ -3,17 +3,14 @@
     <!-- PENGANTAR -->
     <div class="card card--soft">
 
-        <h3>Pengenalan Sistem Persamaan Linear</h3>
+        <h3>Pengenalan Sistem Persamaan Linear (SPL)</h3>
 
         <p>
-            Sistem Persamaan Linear (SPL) adalah
-            kumpulan dua atau lebih persamaan linear
-            yang melibatkan variabel yang sama.
+            Sistem Persamaan Linear (SPL) adalah kumpulan dua atau lebih persamaan linear yang melibatkan variabel yang sama.
         </p>
 
         <p>
-            Tujuan utama adalah mencari nilai variabel
-            yang memenuhi semua persamaan secara bersamaan.
+            Tujuan utama SPL adalah mencari nilai variabel yang memenuhi semua persamaan secara bersamaan.
         </p>
 
     </div>
@@ -31,7 +28,7 @@
         </p>
 
         <p>
-            dimana:
+            di mana:
         </p>
 
         <p>
@@ -48,15 +45,17 @@
         <h3>Bentuk Matriks</h3>
 
         <p>
-            SPL dapat ditulis lebih ringkas sebagai:
+            SPL dapat ditulis lebih ringkas dalam bentuk matriks:
         </p>
 
-        <p>
+        <div class="katex">
+            $$
             Ax = b
-        </p>
+            $$
+        </div>
 
         <p>
-            dimana:
+            di mana:
         </p>
 
         <p>
@@ -81,10 +80,23 @@
             Dalam bentuk matriks:
         </p>
 
-        <p>
-            [ 2  1 ] [ x ] = [ 5 ]<br>
-            [ 1 -1 ] [ y ]   [ 1 ]
-        </p>
+        <div class="katex">
+            $$
+            \begin{bmatrix}
+            2 & 1 \\
+            1 & -1
+            \end{bmatrix}
+            \begin{bmatrix}
+            x \\
+            y
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+            5 \\
+            1
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
@@ -107,17 +119,16 @@
         <h3>Interpretasi Geometri</h3>
 
         <p>
-            SPL dapat diinterpretasikan sebagai
-            perpotongan beberapa garis atau bidang.
+            SPL dapat dipahami sebagai perpotongan objek geometri.
         </p>
 
         <p>
-            • 2 variabel → garis di bidang<br>
-            • 3 variabel → bidang di ruang
+            • Dua variabel → perpotongan garis<br>
+            • Tiga variabel → perpotongan bidang
         </p>
 
         <p>
-            Solusi adalah titik perpotongan tersebut.
+            Solusi SPL adalah titik perpotongan tersebut.
         </p>
 
     </div>
@@ -132,13 +143,13 @@
         </p>
 
         <p>
-            Namun, untuk sistem besar:
+            Namun untuk sistem besar:
         </p>
 
         <p>
             • Perhitungan menjadi kompleks<br>
-            • Sulit dilakukan secara manual<br>
-            • Membutuhkan metode numerik
+            • Sulit diselesaikan secara manual<br>
+            • Membutuhkan pendekatan numerik
         </p>
 
     </div>
@@ -149,12 +160,11 @@
         <h3>Peran Metode Numerik</h3>
 
         <p>
-            Metode numerik digunakan untuk
-            menyelesaikan SPL secara efisien.
+            Metode numerik digunakan untuk menyelesaikan SPL secara efisien, terutama untuk sistem berukuran besar.
         </p>
 
         <p>
-            Terdapat dua pendekatan utama:
+            Pendekatan utama:
         </p>
 
         <p>
@@ -170,13 +180,11 @@
         <h3>Hubungan dengan Bab Sebelumnya</h3>
 
         <p>
-            Sama seperti pencarian akar,
-            penyelesaian SPL juga melibatkan aproksimasi.
+            Sama seperti pencarian akar persamaan, penyelesaian SPL juga melibatkan konsep aproksimasi.
         </p>
 
         <p>
-            Konsep galat dan toleransi
-            tetap digunakan dalam metode iteratif.
+            Konsep galat dan toleransi tetap digunakan dalam metode iteratif.
         </p>
 
     </div>
@@ -187,13 +195,11 @@
         <h3>Intuisi</h3>
 
         <p>
-            SPL adalah cara untuk menemukan
-            titik yang memenuhi banyak kondisi sekaligus.
+            SPL adalah cara menemukan nilai yang memenuhi banyak kondisi sekaligus.
         </p>
 
         <p>
-            Semakin banyak persamaan,
-            semakin ketat syarat yang harus dipenuhi.
+            Semakin banyak persamaan, semakin ketat batasan solusi yang mungkin.
         </p>
 
     </div>
@@ -204,14 +210,11 @@
         <h3>Kesimpulan</h3>
 
         <p>
-            Sistem Persamaan Linear adalah dasar
-            dalam banyak permasalahan matematika dan teknik.
+            Sistem Persamaan Linear merupakan dasar penting dalam matematika dan berbagai aplikasi teknik.
         </p>
 
         <p>
-            Untuk sistem besar,
-            metode numerik menjadi alat utama
-            dalam mencari solusi secara efisien.
+            Untuk sistem besar, metode numerik menjadi alat utama dalam memperoleh solusi secara efisien dan stabil.
         </p>
 
     </div>

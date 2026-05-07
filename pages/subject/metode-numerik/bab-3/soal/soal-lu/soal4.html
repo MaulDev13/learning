@@ -3,94 +3,147 @@
     <h3>Penyelesaian Soal 4 (Metode LU)</h3>
 
     <p>
-        Sistem ini diselesaikan menggunakan metode dekomposisi LU,
-        dengan memfaktorkan matriks A menjadi matriks L dan U.
+        Sistem persamaan linear ini diselesaikan menggunakan dekomposisi LU,
+        yaitu metode langsung dengan memfaktorkan matriks A menjadi L (lower)
+        dan U (upper).
     </p>
 
     <p class="text-meta">
         Metode: Dekomposisi LU
     </p>
 
+    <!-- ===================================================== -->
+    <!-- SISTEM PERSAMAAN -->
+    <!-- ===================================================== -->
     <div class="card card--soft">
 
         <p><strong>Sistem Persamaan</strong></p>
 
-        <p>
-            12x₁ − x₂ + x₃ = 5<br>
-            −x₁ + 9x₂ − x₃ = 10<br>
-            x₁ − x₂ + 8x₃ = 7
-        </p>
+        <div class="katex">
+            $$
+            \begin{aligned}
+            12x_1 - x_2 + x_3 &= 5 \\
+            -x_1 + 9x_2 - x_3 &= 10 \\
+            x_1 - x_2 + 8x_3 &= 7
+            \end{aligned}
+            $$
+        </div>
 
     </div>
 
+    <!-- ===================================================== -->
+    <!-- MATRIKS A -->
+    <!-- ===================================================== -->
     <div class="card card--soft">
 
         <p><strong>Matriks A</strong></p>
 
-        <p>
-            [ 12  -1   1 ]<br>
-            [ -1   9  -1 ]<br>
-            [ 1   -1   8 ]
-        </p>
+        <div class="katex">
+            $$
+            A =
+            \begin{bmatrix}
+            12 & -1 & 1 \\
+            -1 & 9 & -1 \\
+            1 & -1 & 8
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
+    <!-- ===================================================== -->
+    <!-- DEKOMPOSISI -->
+    <!-- ===================================================== -->
     <div class="card card--soft">
 
         <p><strong>Dekomposisi LU</strong></p>
 
-        <p>
+        <p>Matriks lower triangular:</p>
+
+        <div class="katex">
+            $$
             L =
-            [ 1      0      0 ]<br>
-            [ -0.083 1      0 ]<br>
-            [ 0.083 -0.102  1 ]
-        </p>
+            \begin{bmatrix}
+            1 & 0 & 0 \\
+            -0.083 & 1 & 0 \\
+            0.083 & -0.102 & 1
+            \end{bmatrix}
+            $$
+        </div>
 
-        <p>
+        <p>Matriks upper triangular:</p>
+
+        <div class="katex">
+            $$
             U =
-            [ 12  -1     1 ]<br>
-            [ 0   8.917 -0.917 ]<br>
-            [ 0    0     7.823 ]
-        </p>
+            \begin{bmatrix}
+            12 & -1 & 1 \\
+            0 & 8.917 & -0.917 \\
+            0 & 0 & 7.823
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
+    <!-- ===================================================== -->
+    <!-- LY = B -->
+    <!-- ===================================================== -->
     <div class="card card--soft">
 
-        <p><strong>Penyelesaian Ly = b</strong></p>
+        <p><strong>Penyelesaian</strong> <span class="text-code-inline">Ly = b</span></p>
 
-        <p>
-            y₁ = 5<br>
-            y₂ = 10 + 0.083(5) ≈ 10.417<br>
-            y₃ = 7 - 0.083(5) + 0.102(10.417) ≈ 7.65
-        </p>
+        <div class="katex">
+            $$
+            \begin{aligned}
+            y_1 &= 5 \\
+            y_2 &= 10 + 0.083(5) \approx 10.417 \\
+            y_3 &= 7 - 0.083(5) + 0.102(10.417) \approx 7.65
+            \end{aligned}
+            $$
+        </div>
 
     </div>
 
+    <!-- ===================================================== -->
+    <!-- UX = Y -->
+    <!-- ===================================================== -->
     <div class="card card--soft">
 
-        <p><strong>Penyelesaian Ux = y</strong></p>
+        <p><strong>Penyelesaian</strong> <span class="text-code-inline">Ux = y</span></p>
 
-        <p>
-            7.823x₃ = 7.65 → x₃ ≈ 0.978<br>
-            8.917x₂ − 0.917x₃ = 10.417 → x₂ ≈ 1.270<br>
-            12x₁ − x₂ + x₃ = 5 → x₁ ≈ 0.441
-        </p>
+        <div class="katex">
+            $$
+            \begin{aligned}
+            7.823x_3 &= 7.65 \Rightarrow x_3 \approx 0.978 \\
+            8.917x_2 - 0.917x_3 &= 10.417 \Rightarrow x_2 \approx 1.270 \\
+            12x_1 - x_2 + x_3 &= 5 \Rightarrow x_1 \approx 0.441
+            \end{aligned}
+            $$
+        </div>
 
     </div>
 
+    <!-- ===================================================== -->
+    <!-- HASIL -->
+    <!-- ===================================================== -->
     <div class="card card--soft">
 
         <p><strong>Hasil Akhir</strong></p>
 
-        <p>
-            x₁ ≈ 0.441<br>
-            x₂ ≈ 1.270<br>
-            x₃ ≈ 0.978
-        </p>
+        <div class="katex">
+            $$
+            \begin{aligned}
+            x_1 &\approx 0.441 \\
+            x_2 &\approx 1.270 \\
+            x_3 &\approx 0.978
+            \end{aligned}
+            $$
+        </div>
 
         <p>
-            Metode LU memberikan solusi stabil dan akurat.
+            Metode LU memberikan solusi stabil dan akurat,
+            dengan kesalahan pembulatan numerik minimal.
         </p>
 
     </div>

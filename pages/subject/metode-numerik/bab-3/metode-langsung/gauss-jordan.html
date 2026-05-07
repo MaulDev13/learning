@@ -1,300 +1,377 @@
 <div class="card-group">
 
-    <!-- PENGANTAR -->
     <div class="card card--soft">
 
-        <h3>Metode Gauss-Jordan</h3>
+        <h2>Metode Gauss-Jordan</h2>
 
         <p>
-            Metode Gauss-Jordan adalah pengembangan
-            dari metode Eliminasi Gauss
-            untuk menyelesaikan Sistem Persamaan Linear.
+            Metode Gauss-Jordan merupakan pengembangan dari metode Eliminasi Gauss untuk menyelesaikan Sistem Persamaan Linear (SPL) menggunakan operasi baris elementer.
         </p>
 
         <p>
-            Metode ini mengubah matriks menjadi
-            bentuk eselon baris tereduksi (Reduced Row Echelon Form).
+            Metode ini mengubah matriks augmented menjadi bentuk eselon baris tereduksi sehingga solusi sistem dapat dibaca secara langsung tanpa substitusi balik.
         </p>
 
     </div>
 
-    <!-- KONSEP DASAR -->
     <div class="card card--soft">
 
         <h3>Konsep Dasar</h3>
 
         <p>
-            Berbeda dengan Gauss,
-            metode ini tidak hanya membuat nol di bawah pivot,
-            tetapi juga di atas pivot.
+            Pada metode Eliminasi Gauss, eliminasi hanya dilakukan pada elemen di bawah pivot utama. Pada metode Gauss-Jordan, eliminasi dilakukan pada seluruh elemen di atas dan di bawah pivot.
         </p>
 
         <p>
-            Hasil akhirnya adalah matriks identitas.
+            Hasil akhir proses eliminasi adalah matriks identitas pada sisi kiri matriks augmented.
+        </p>
+
+        <div class="katex">
+            $$
+            \begin{bmatrix}
+            1 & 0 & 0 &  x \\
+            0 & 1 & 0 &  y \\
+            0 & 0 & 1 &  z
+            \end{bmatrix}
+            $$
+        </div>
+
+        <p>
+            Nilai variabel dapat langsung dibaca dari kolom terakhir matriks.
         </p>
 
     </div>
 
-    <!-- BENTUK AKHIR -->
     <div class="card card--soft">
 
-        <h3>Bentuk Akhir</h3>
+        <h3>Karakteristik Bentuk Eselon Baris Tereduksi</h3>
 
-        <p>
-            Matriks akan menjadi:
-        </p>
-
-        <p>
-            [ 1  0  0 | x ]<br>
-            [ 0  1  0 | y ]<br>
-            [ 0  0  1 | z ]
-        </p>
-
-        <p>
-            Solusi dapat langsung dibaca.
-        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Karakteristik</th>
+                    <th>Penjelasan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pivot bernilai satu</td>
+                    <td>Setiap pivot utama harus dinormalisasi menjadi \( 1 \)</td>
+                </tr>
+                <tr>
+                    <td>Elemen selain pivot bernilai nol</td>
+                    <td>Seluruh elemen dalam kolom pivot harus dihilangkan</td>
+                </tr>
+                <tr>
+                    <td>Bentuk identitas</td>
+                    <td>Sisi kiri matriks berubah menjadi matriks identitas</td>
+                </tr>
+            </tbody>
+        </table>
 
     </div>
 
-    <!-- LANGKAH -->
     <div class="card card--soft">
 
-        <h3>Langkah-langkah Metode</h3>
+        <h3>Langkah Umum Metode Gauss-Jordan</h3>
+
+        <h4>Pembentukan Matriks Augmented</h4>
 
         <p>
-            1. Bentuk matriks augmented<br>
-            2. Lakukan eliminasi seperti Gauss<br>
-            3. Buat pivot menjadi 1<br>
-            4. Hilangkan elemen di atas dan bawah pivot<br>
-            5. Ulangi hingga menjadi matriks identitas
+            Sistem persamaan linear diubah menjadi bentuk matriks augmented.
+        </p>
+
+        <h4>Eliminasi ke Bentuk Segitiga Atas</h4>
+
+        <p>
+            Operasi baris dilakukan untuk menghilangkan elemen di bawah pivot utama.
+        </p>
+
+        <h4>Normalisasi Pivot</h4>
+
+        <p>
+            Setiap pivot dibagi dengan nilainya sehingga menjadi \( 1 \).
+        </p>
+
+        <h4>Eliminasi ke Atas</h4>
+
+        <p>
+            Seluruh elemen di atas pivot dihilangkan hingga terbentuk matriks identitas.
         </p>
 
     </div>
 
-    <!-- CONTOH -->
     <div class="card card--soft">
 
-        <h3>Contoh Kasus</h3>
+        <h3>Contoh Sistem Persamaan Linear</h3>
 
-        <p>
-            2x + y − z = 8<br>
-            -3x − y + 2z = -11<br>
-            -2x + y + 2z = -3
-        </p>
-
-        <p>
-            Matriks augmented:
-        </p>
-
-        <p>
-            [  2   1  -1 |  8 ]<br>
-            [ -3  -1   2 | -11 ]<br>
-            [ -2   1   2 | -3 ]
-        </p>
+        <div class="katex">
+            $$
+            \begin{bmatrix}
+            2 & 1 & -1 &  8 \\
+            -3 & -1 & 2 &  -11 \\
+            -2 & 1 & 2 &  -3
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
-    <!-- STEP 1 -->
     <div class="card card--soft">
 
-        <h3>Langkah 1: Eliminasi ke Segitiga Atas</h3>
+        <h3>Eliminasi ke Bentuk Segitiga Atas</h3>
 
         <p>
-            Gunakan langkah seperti Gauss:
+            Langkah awal dilakukan seperti pada metode Eliminasi Gauss untuk menghilangkan elemen di bawah pivot pertama dan kedua.
         </p>
 
-        <p>
-            [ 2  1  -1 | 8 ]<br>
-            [ 0 0.5 0.5 | 1 ]<br>
-            [ 0  0  -1 | 1 ]
-        </p>
+        <div class="katex">
+            $$
+            \begin{bmatrix}
+            2 & 1 & -1 & 8 \\
+            0 & 0.5 & 0.5 & 1 \\
+            0 & 0 & -1 & 1
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
-    <!-- STEP 2 -->
     <div class="card card--soft">
 
-        <h3>Langkah 2: Normalisasi Pivot</h3>
+        <h3>Normalisasi Pivot Ketiga</h3>
 
         <p>
-            Ubah pivot menjadi 1:
+            Pivot ketiga dinormalisasi agar bernilai \( 1 \).
         </p>
 
-        <p>
-            R₃ = -1 × R₃
-        </p>
+        <div class="katex">
+            $$
+            R_3 \rightarrow -R_3
+            $$
+        </div>
 
-        <p>
-            [ 2  1  -1 | 8 ]<br>
-            [ 0 0.5 0.5 | 1 ]<br>
-            [ 0  0   1 | -1 ]
-        </p>
+        <div class="katex">
+            $$
+            \begin{bmatrix}
+            2 & 1 & -1 & 8 \\
+            0 & 0.5 & 0.5 & 1 \\
+            0 & 0 & 1 & -1
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
-    <!-- STEP 3 -->
     <div class="card card--soft">
 
-        <h3>Langkah 3: Eliminasi ke Atas</h3>
+        <h3>Eliminasi Elemen di Atas Pivot Ketiga</h3>
 
         <p>
-            Hilangkan elemen di atas pivot:
+            Elemen di atas pivot ketiga dihilangkan menggunakan operasi baris elementer.
         </p>
 
-        <p>
-            R₂ = R₂ − 0.5R₃<br>
-            R₁ = R₁ + R₃
-        </p>
+        <div class="katex">
+            $$
+            \begin{aligned}
+            R_2 &\rightarrow R_2 - 0.5R_3 \\
+            R_1 &\rightarrow R_1 + R_3
+            \end{aligned}
+            $$
+        </div>
 
-        <p>
-            Hasil:
-        </p>
-
-        <p>
-            [ 2  1   0 | 7 ]<br>
-            [ 0 0.5  0 | 1.5 ]<br>
-            [ 0  0   1 | -1 ]
-        </p>
+        <div class="katex">
+            $$
+            \begin{bmatrix}
+            2 & 1 & 0 & 7 \\
+            0 & 0.5 & 0 & 1.5 \\
+            0 & 0 & 1 & -1
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
-    <!-- STEP 4 -->
     <div class="card card--soft">
 
-        <h3>Langkah 4: Normalisasi Baris Kedua</h3>
+        <h3>Normalisasi Pivot Kedua</h3>
 
         <p>
-            R₂ = 2R₂
+            Pivot kedua dinormalisasi menjadi \( 1 \).
         </p>
 
-        <p>
-            [ 2  1  0 | 7 ]<br>
-            [ 0  1  0 | 3 ]<br>
-            [ 0  0  1 | -1 ]
-        </p>
+        <div class="katex">
+            $$
+            R_2 \rightarrow 2R_2
+            $$
+        </div>
+
+        <div class="katex">
+            $$
+            \begin{bmatrix}
+            2 & 1 & 0 & 7 \\
+            0 & 1 & 0 & 3 \\
+            0 & 0 & 1 & -1
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
-    <!-- STEP 5 -->
     <div class="card card--soft">
 
-        <h3>Langkah 5: Eliminasi ke Atas Lagi</h3>
+        <h3>Eliminasi Elemen di Atas Pivot Kedua</h3>
 
         <p>
-            R₁ = R₁ − R₂
+            Elemen di atas pivot kedua dihilangkan sehingga kolom kedua membentuk vektor basis.
         </p>
 
-        <p>
-            [ 2  0  0 | 4 ]<br>
-            [ 0  1  0 | 3 ]<br>
-            [ 0  0  1 | -1 ]
-        </p>
+        <div class="katex">
+            $$
+            R_1 \rightarrow R_1 - R_2
+            $$
+        </div>
+
+        <div class="katex">
+            $$
+            \begin{bmatrix}
+            2 & 0 & 0 & 4 \\
+            0 & 1 & 0 & 3 \\
+            0 & 0 & 1 & -1
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
-    <!-- STEP 6 -->
     <div class="card card--soft">
 
-        <h3>Langkah 6: Normalisasi Akhir</h3>
+        <h3>Normalisasi Pivot Pertama</h3>
 
         <p>
-            R₁ = (1/2)R₁
+            Pivot pertama dinormalisasi untuk menghasilkan matriks identitas sempurna.
         </p>
 
-        <p>
-            [ 1  0  0 | 2 ]<br>
-            [ 0  1  0 | 3 ]<br>
-            [ 0  0  1 | -1 ]
-        </p>
+        <div class="katex">
+            $$
+            R_1 \rightarrow \frac{1}{2}R_1
+            $$
+        </div>
+
+        <div class="katex">
+            $$
+            \begin{bmatrix}
+            1 & 0 & 0 & 2 \\
+            0 & 1 & 0 & 3 \\
+            0 & 0 & 1 & -1
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
-    <!-- HASIL -->
     <div class="card card--soft">
 
         <h3>Hasil Akhir</h3>
 
         <p>
-            x = 2<br>
-            y = 3<br>
+            Karena sisi kiri matriks telah menjadi matriks identitas, solusi dapat langsung dibaca dari kolom terakhir.
+        </p>
+
+        <div class="katex">
+            $$
+            \begin{bmatrix}
+            x = 2 \\
+            y = 3 \\
             z = -1
-        </p>
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
-    <!-- PERBANDINGAN -->
     <div class="card card--soft">
 
-        <h3>Perbandingan dengan Gauss</h3>
+        <h3>Perbandingan dengan Eliminasi Gauss</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Metode</th>
+                    <th>Karakteristik</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Eliminasi Gauss</td>
+                    <td>Membutuhkan substitusi balik untuk memperoleh solusi</td>
+                </tr>
+                <tr>
+                    <td>Gauss-Jordan</td>
+                    <td>Solusi langsung diperoleh dari matriks identitas</td>
+                </tr>
+            </tbody>
+        </table>
 
         <p>
-            • Gauss → butuh substitusi balik<br>
-            • Gauss-Jordan → langsung dapat solusi
-        </p>
-
-        <p>
-            Gauss-Jordan lebih lengkap,
-            tetapi membutuhkan lebih banyak operasi.
+            Metode Gauss-Jordan lebih lengkap dibandingkan Eliminasi Gauss, tetapi membutuhkan lebih banyak operasi aritmetika.
         </p>
 
     </div>
 
-    <!-- KELEBIHAN -->
     <div class="card card--soft">
 
-        <h3>Kelebihan</h3>
+        <h3>Kelebihan dan Kelemahan</h3>
 
-        <p>
-            • Solusi langsung terlihat<br>
-            • Sistematis<br>
-            • Cocok untuk komputer
-        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Kelebihan</th>
+                    <th>Kelemahan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Solusi langsung terlihat</td>
+                    <td>Jumlah operasi lebih banyak</td>
+                </tr>
+                <tr>
+                    <td>Sistematis dan mudah diprogram</td>
+                    <td>Kurang efisien untuk sistem besar</td>
+                </tr>
+                <tr>
+                    <td>Cocok untuk implementasi komputer</td>
+                    <td>Rentan terhadap error pembulatan</td>
+                </tr>
+            </tbody>
+        </table>
 
     </div>
 
-    <!-- KELEMAHAN -->
     <div class="card card--soft">
 
-        <h3>Kelemahan</h3>
+        <h3>Intuisi Metode</h3>
 
         <p>
-            • Lebih banyak operasi<br>
-            • Kurang efisien untuk sistem besar<br>
-            • Lebih rentan terhadap error pembulatan
+            Metode Gauss-Jordan dapat dipahami sebagai proses eliminasi penuh hingga setiap variabel terisolasi secara langsung pada satu persamaan.
+        </p>
+
+        <p>
+            Jika metode Eliminasi Gauss menghasilkan bentuk segitiga atas, maka metode Gauss-Jordan melanjutkan proses hingga terbentuk matriks identitas sempurna.
         </p>
 
     </div>
 
-    <!-- INTUISI -->
-    <div class="card card--soft">
-
-        <h3>Intuisi</h3>
-
-        <p>
-            Jika Gauss adalah “setengah bersih”,
-            maka Gauss-Jordan adalah “bersih total”.
-        </p>
-
-        <p>
-            Semua variabel dipisahkan secara langsung
-            dalam bentuk matriks identitas.
-        </p>
-
-    </div>
-
-    <!-- KESIMPULAN -->
     <div class="card card--soft">
 
         <h3>Kesimpulan</h3>
 
         <p>
-            Metode Gauss-Jordan menyelesaikan SPL
-            dengan mengubah matriks menjadi identitas.
+            Metode Gauss-Jordan menyelesaikan sistem persamaan linear dengan mengubah matriks augmented menjadi bentuk eselon baris tereduksi.
         </p>
 
         <p>
-            Metode ini memberikan solusi secara langsung,
-            namun dengan biaya komputasi lebih besar.
+            Dengan matriks identitas pada sisi kiri, solusi variabel dapat diperoleh secara langsung tanpa substitusi balik, meskipun membutuhkan jumlah operasi yang lebih besar dibandingkan metode Eliminasi Gauss.
         </p>
 
     </div>

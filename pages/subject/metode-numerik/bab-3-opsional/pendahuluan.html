@@ -1,213 +1,282 @@
 <div class="card-group">
-
-    <!-- ============================================ -->
-    <!-- CARD 1: DEFINISI DAN BENTUK UMUM -->
-    <!-- ============================================ -->
     <div class="card card--soft">
-        <h2>Sistem Persamaan Non Linear (SPNL)</h2>
+        <h2>Sistem Persamaan Nonlinear (SPNL)</h2>
         <p>
-            <span class="text-code-inline">Sistem Persamaan Non Linear (SPNL)</span> adalah kumpulan dua atau lebih 
-            persamaan yang mengandung variabel dengan bentuk tidak linear. Suatu persamaan disebut 
-            non linear jika variabelnya:
+            <span class="text-code-inline">Sistem Persamaan Nonlinear (SPNL)</span> adalah sistem yang terdiri atas dua atau lebih persamaan dengan minimal satu persamaan memiliki bentuk nonlinear terhadap variabelnya.
         </p>
         <p>
-            • Berpangkat selain satu (<span class="text-code-inline">x², x³, √x</span>)<br>
-            • Dikalikan dengan variabel lain (<span class="text-code-inline">x·y, xy</span>)<br>
-            • Berada dalam fungsi transendental (<span class="text-code-inline">sin x, eˣ, ln x</span>)
+            Suatu persamaan dikatakan nonlinear apabila variabel muncul dalam bentuk pangkat selain satu, hasil perkalian antarvariabel, akar, maupun fungsi transendental seperti eksponensial, logaritma, dan trigonometri.
         </p>
-        <div class="text-math">
-            f₁(x₁, x₂, ..., xₙ) = 0<br>
-            f₂(x₁, x₂, ..., xₙ) = 0<br>
-            ⋮<br>
-            fₙ(x₁, x₂, ..., xₙ) = 0
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Bentuk Nonlinear</th>
+                    <th>Contoh</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pangkat variabel</td>
+                    <td>\( x^2, x^3, \sqrt{x} \)</td>
+                </tr>
+                <tr>
+                    <td>Perkalian variabel</td>
+                    <td>\( xy, xz \)</td>
+                </tr>
+                <tr>
+                    <td>Fungsi transendental</td>
+                    <td>\( \sin x, e^x, \ln x \)</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="katex">
+$$
+\begin{cases}
+f_1(x_1, x_2, \dots, x_n) = 0 \\
+f_2(x_1, x_2, \dots, x_n) = 0 \\
+\vdots \\
+f_n(x_1, x_2, \dots, x_n) = 0
+\end{cases}
+$$
         </div>
         <p>
-            Setiap fungsi <span class="text-code-inline">f</span> dapat berbentuk linear maupun non linear. 
-            Jika semua fungsi linear → SPL. Jika minimal satu fungsi non linear → SPNL.
+            Jika seluruh fungsi berbentuk linear, maka sistem disebut Sistem Persamaan Linear (SPL). Namun, apabila minimal satu fungsi berbentuk nonlinear, maka sistem termasuk SPNL.
         </p>
     </div>
 
-    <!-- ============================================ -->
-    <!-- CARD 2: PERBANDINGAN SPL vs SPNL (TABEL) -->
-    <!-- ============================================ -->
     <div class="card card--soft">
         <h3>Perbandingan SPL dan SPNL</h3>
         <p>
-            Tabel berikut merangkum perbedaan mendasar antara Sistem Persamaan Linear (SPL) 
-            dan Sistem Persamaan Non Linear (SPNL):
+            Sistem linear dan nonlinear memiliki karakteristik matematis yang berbeda secara fundamental. Perbedaan ini memengaruhi metode penyelesaian, sifat solusi, dan perilaku numeriknya.
         </p>
         <table class="table">
             <thead>
-                <tr><th>Aspek</th><th>SPL</th><th>SPNL</th></tr>
+                <tr>
+                    <th>Aspek</th>
+                    <th>SPL</th>
+                    <th>SPNL</th>
+                </tr>
             </thead>
             <tbody>
-                <tr><td>Bentuk umum</td><td>Ax = b</td><td>F(x) = 0, F non linear</td></tr>
-                <tr><td>Bentuk variabel</td><td>Pangkat satu</td><td>Pangkat ≠ 1, perkalian, atau fungsi transendental</td></tr>
-                <tr><td>Prinsip superposisi</td><td>Berlaku</td><td>Tidak berlaku</td></tr>
-                <tr><td>Jumlah solusi</td><td>0, 1, atau tak hingga</td><td>Bisa banyak (0, 1, 2, ..., tak hingga)</td></tr>
-                <tr><td>Sensitivitas tebakan awal</td><td>Tidak ada</td><td>Sangat tinggi</td></tr>
-                <tr><td>Metode penyelesaian</td><td>Eliminasi Gauss, Dekomposisi LU</td><td>Iterasi Newton, Fixed Point, Secant, Broyden</td></tr>
-                <tr><td>Jaminan konvergensi</td><td>Terjamin (jika solusi ada)</td><td>Tidak terjamin</td></tr>
+                <tr>
+                    <td>Bentuk umum</td>
+                    <td>\( A\mathbf{x} = \mathbf{b} \)</td>
+                    <td>\( F(\mathbf{x}) = \mathbf{0} \)</td>
+                </tr>
+                <tr>
+                    <td>Bentuk variabel</td>
+                    <td>Pangkat satu</td>
+                    <td>Pangkat lebih dari satu atau fungsi nonlinear</td>
+                </tr>
+                <tr>
+                    <td>Prinsip superposisi</td>
+                    <td>Berlaku</td>
+                    <td>Tidak berlaku</td>
+                </tr>
+                <tr>
+                    <td>Jumlah solusi</td>
+                    <td>Terbatas dan terstruktur</td>
+                    <td>Dapat banyak atau tidak ada</td>
+                </tr>
+                <tr>
+                    <td>Sensitivitas tebakan awal</td>
+                    <td>Tidak signifikan</td>
+                    <td>Sangat tinggi</td>
+                </tr>
+                <tr>
+                    <td>Metode penyelesaian</td>
+                    <td>Eliminasi Gauss, invers matriks</td>
+                    <td>Metode iteratif numerik</td>
+                </tr>
             </tbody>
         </table>
-        <div class="text-code">
-# Contoh SPL (linear)
-2x + 3y = 8
-4x - y = 2
-
-# Contoh SPNL (non linear)
-x² + y² = 25
-x·y = 12
-        </div>
     </div>
 
-    <!-- ============================================ -->
-    <!-- CARD 3: KARAKTERISTIK SPNL -->
-    <!-- ============================================ -->
     <div class="card card--soft">
-        <h3>Karakteristik SPNL</h3>
+        <h3>Karakteristik Sistem Nonlinear</h3>
         <p>
-            Dari perbandingan di atas, SPNL memiliki karakteristik khas yang membedakannya dari SPL:
+            Sistem nonlinear memiliki perilaku yang lebih kompleks dibandingkan sistem linear. Kompleksitas ini menyebabkan penyelesaian analitik sering kali sulit atau bahkan tidak mungkin dilakukan.
         </p>
         <p>
-            <span class="text-code-inline">1. Sensitivitas terhadap tebakan awal</span><br>
-            Solusi yang ditemukan sangat bergantung pada nilai awal yang dipilih. 
-            Tebakan berbeda bisa menghasilkan solusi berbeda.
+            Salah satu karakteristik utama SPNL adalah sensitivitas terhadap tebakan awal. Pada metode iteratif, solusi yang diperoleh dapat berubah bergantung pada nilai awal yang digunakan.
         </p>
         <p>
-            <span class="text-code-inline">2. Kemungkinan solusi ganda</span><br>
-            SPNL dapat memiliki banyak solusi dalam domain yang sama. 
-            Sebaliknya, SPL maksimal hanya memiliki satu solusi (jika determinan ≠ 0).
+            Selain itu, SPNL dapat memiliki lebih dari satu solusi dalam domain yang sama. Dalam beberapa kasus, sistem juga dapat tidak memiliki solusi real.
         </p>
         <p>
-            <span class="text-code-inline">3. Konvergensi tidak terjamin</span><br>
-            Metode numerik untuk SPNL bisa gagal konvergen (divergen, berosilasi, 
-            atau stuck) jika tebakan awal buruk atau fungsi memiliki perilaku kompleks.
+            Metode numerik pada SPNL tidak selalu menjamin konvergensi. Iterasi dapat mengalami divergensi, osilasi, atau berhenti pada titik yang bukan solusi sebenarnya apabila parameter metode tidak dipilih dengan tepat.
         </p>
     </div>
 
-    <!-- ============================================ -->
-    <!-- CARD 4: CONTOH KASUS DUNIA NYATA -->
-    <!-- ============================================ -->
+    <div class="card card--soft">
+        <h3>Representasi Vektor pada SPNL</h3>
+        <p>
+            Dalam analisis numerik, SPNL umumnya dinyatakan dalam bentuk vektor untuk mempermudah formulasi matematis dan implementasi komputasi.
+        </p>
+        <div class="katex">
+$$
+F(\mathbf{x}) =
+\begin{bmatrix}
+f_1(x_1, x_2, \dots, x_n) \\
+f_2(x_1, x_2, \dots, x_n) \\
+\vdots \\
+f_n(x_1, x_2, \dots, x_n)
+\end{bmatrix}
+=
+\mathbf{0}
+$$
+        </div>
+        <p>
+            Bentuk vektor tersebut memungkinkan penggunaan konsep diferensial multivariabel dan matriks Jacobian dalam proses pencarian solusi numerik.
+        </p>
+    </div>
+
     <div class="card card--soft">
         <h3>Contoh SPNL dalam Sains dan Rekayasa</h3>
         <p>
-            SPNL muncul secara alami dalam berbagai disiplin ilmu. Berikut beberapa contoh klasik:
+            Sistem nonlinear muncul secara alami dalam berbagai bidang ilmu pengetahuan dan teknik karena banyak fenomena dunia nyata tidak mengikuti hubungan linear sederhana.
         </p>
         <table class="table">
             <thead>
-                <tr><th>Bidang</th><th>Fenomena</th><th>Bentuk SPNL</th></tr>
+                <tr>
+                    <th>Bidang</th>
+                    <th>Fenomena</th>
+                    <th>Model Nonlinear</th>
+                </tr>
             </thead>
             <tbody>
-                <tr><td>Fisika</td><td>Gerak pendulum dengan simpangan besar</td><td>θ'' + (g/L) sin θ = 0</td></tr>
-                <tr><td>Biologi</td><td>Model pertumbuhan logistik (Verhulst)</td><td>dN/dt = rN(1 - N/K)</td></tr>
-                <tr><td>Kimia</td><td>Kesetimbangan reaksi kimia</td><td>K = [C]ᶜ / ([A]ᵃ[B]ᵇ)</td></tr>
-                <tr><td>Ekonomi</td><td>Keseimbangan pasar non linear</td><td>Supply(P) = Demand(P)</td></tr>
-                <tr><td>Robotika</td><td>Inverse kinematics lengan robot</td><td>Posisi = fungsi(θ₁, θ₂, ...)</td></tr>
-                <tr><td>Astronomi</td><td>Pergerakan benda langit (3-body problem)</td><td>Hukum gravitasi Newton (dengan r²)</td></tr>
+                <tr>
+                    <td>Fisika</td>
+                    <td>Gerak pendulum</td>
+                    <td>\( \theta'' + \frac{g}{L}\sin\theta = 0 \)</td>
+                </tr>
+                <tr>
+                    <td>Biologi</td>
+                    <td>Pertumbuhan populasi</td>
+                    <td>\( \frac{dN}{dt} = rN\left(1 - \frac{N}{K}\right) \)</td>
+                </tr>
+                <tr>
+                    <td>Kimia</td>
+                    <td>Kesetimbangan reaksi</td>
+                    <td>Persamaan laju nonlinear</td>
+                </tr>
+                <tr>
+                    <td>Ekonomi</td>
+                    <td>Keseimbangan pasar</td>
+                    <td>\( S(P) = D(P) \)</td>
+                </tr>
+                <tr>
+                    <td>Robotika</td>
+                    <td>Inverse kinematics</td>
+                    <td>Posisi sebagai fungsi sudut sendi</td>
+                </tr>
             </tbody>
         </table>
         <p>
-            Pada semua contoh di atas, tidak ada solusi eksak yang sederhana. 
-            Di sinilah metode numerik berperan penting.
+            Pada sebagian besar kasus tersebut, solusi eksak sulit diperoleh sehingga pendekatan numerik menjadi metode utama penyelesaian.
         </p>
     </div>
 
-    <!-- ============================================ -->
-    <!-- CARD 5: METODE NUMERIK UNTUK SPNL (PREVIEW) -->
-    <!-- ============================================ -->
     <div class="card card--soft">
         <h3>Metode Numerik untuk SPNL</h3>
         <p>
-            Karena SPNL jarang memiliki solusi analitik (rumus eksak), 
-            kita memerlukan <span class="text-code-inline">metode numerik</span> untuk mencari solusi pendekatan. 
-            Berikut adalah metode-metode utama yang akan dipelajari:
+            Karena solusi analitik SPNL umumnya sulit diperoleh, metode numerik digunakan untuk mencari solusi aproksimasi melalui proses iteratif.
         </p>
         <table class="table">
             <thead>
-                <tr><th>Metode</th><th>Konsep Dasar</th><th>Kelebihan</th><th>Kekurangan</th></tr>
+                <tr>
+                    <th>Metode</th>
+                    <th>Ide Dasar</th>
+                    <th>Karakteristik</th>
+                </tr>
             </thead>
             <tbody>
-                <tr><td>Iterasi Fixed Point</td><td>Mengubah F(x)=0 menjadi x = G(x)</td><td>Sederhana, mudah dipahami</td><td>Konvergensi lambat, perlu kontraksi</td></tr>
-                <tr><td>Newton-Raphson</td><td>Ekspansi deret Taylor + turunan</td><td>Konvergensi cepat (kuadratik)</td><td>Perlu turunan (Jacobian), mahal</td></tr>
-                <tr><td>Metode Secant</td><td>Approksimasi turunan dengan beda hingga</td><td>Tanpa turunan analitik</td><td>Konvergensi lebih lambat dari Newton</td></tr>
-                <tr><td>Broyden</td><td>Quasi-Newton, update Jacobian secara iteratif</td><td>Efisien untuk sistem besar</td><td>Implementasi lebih kompleks</td></tr>
+                <tr>
+                    <td>Fixed Point Iteration</td>
+                    <td>Mengubah sistem menjadi bentuk iteratif</td>
+                    <td>Sederhana tetapi konvergensi lambat</td>
+                </tr>
+                <tr>
+                    <td>Newton-Raphson</td>
+                    <td>Linearisasi menggunakan turunan</td>
+                    <td>Konvergensi cepat</td>
+                </tr>
+                <tr>
+                    <td>Secant</td>
+                    <td>Aproksimasi turunan numerik</td>
+                    <td>Tidak memerlukan turunan analitik</td>
+                </tr>
+                <tr>
+                    <td>Broyden</td>
+                    <td>Pembaruan Jacobian secara iteratif</td>
+                    <td>Efisien untuk sistem besar</td>
+                </tr>
             </tbody>
         </table>
+        <p>
+            Setiap metode memiliki kelebihan dan keterbatasan yang bergantung pada bentuk fungsi, ukuran sistem, dan kebutuhan akurasi.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Ilustrasi Iterasi Numerik</h3>
+        <p>
+            Penyelesaian SPNL dengan metode numerik dilakukan secara iteratif hingga memenuhi toleransi kesalahan tertentu.
+        </p>
+        <div class="katex">
+$$
+\|F(\mathbf{x})\| < \varepsilon
+$$
+        </div>
+        <p>
+            Kondisi tersebut menunjukkan bahwa residual sistem sudah cukup kecil sehingga solusi dianggap memenuhi tingkat akurasi yang diinginkan.
+        </p>
         <div class="text-code">
-# Pseudo-code Newton-Raphson (untuk 2 variabel)
+x = initial_guess
+tolerance = 1e-6
+error = 1.0
 
-Tebakan awal: x₀, y₀
-Ulangi untuk k = 0, 1, 2, ... :
-    Hitung f₁(x_k, y_k), f₂(x_k, y_k)
-    Hitung matriks Jacobian J
-    Selesaikan sistem linear J · Δ = -F
-    x_{k+1} = x_k + Δx
-    y_{k+1} = y_k + Δy
-    error = max(|Δx|, |Δy|)
-    jika error < toleransi → stop
-        </div>
+while error > tolerance:
+    x_new = improve_solution(x)
+    error = abs(x_new - x)
+    x = x_new
+
+print(x)
+</div>
+        <p>
+            Struktur iterasi di atas menggambarkan proses perbaikan solusi secara bertahap hingga error berada di bawah batas toleransi.
+        </p>
     </div>
 
-    <!-- ============================================ -->
-    <!-- CARD 6: TANTANGAN DALAM PENYELESAIAN SPNL -->
-    <!-- ============================================ -->
     <div class="card card--soft">
-        <h3>Tantangan dalam Implementasi Numerik SPNL</h3>
+        <h3>Tantangan dalam Penyelesaian SPNL</h3>
         <p>
-            Meskipun metode numerik tersedia, implementasinya tidak selalu berjalan mulus. 
-            Berikut tantangan umum yang sering dihadapi:
+            Implementasi metode numerik pada SPNL memiliki sejumlah tantangan yang tidak ditemukan pada sistem linear sederhana.
         </p>
         <p>
-            <span class="text-code-inline">• Pemilihan tebakan awal</span><br>
-            Tebakan awal yang buruk dapat menyebabkan divergensi atau konvergensi ke solusi 
-            yang tidak diinginkan (misalnya solusi negatif ketika solusi positif diharapkan).
+            Pemilihan tebakan awal yang kurang tepat dapat menyebabkan metode gagal konvergen atau menuju solusi yang tidak diharapkan.
         </p>
         <p>
-            <span class="text-code-inline">• Perhitungan Jacobian</span><br>
-            Turunan parsial bisa rumit untuk fungsi yang kompleks, terutama jika 
-            melibatkan fungsi transendental atau sistem berskala besar.
+            Pada metode berbasis Newton, perhitungan matriks Jacobian dapat menjadi kompleks, terutama untuk sistem berskala besar dan fungsi dengan bentuk rumit.
         </p>
         <p>
-            <span class="text-code-inline">• Singularitas Jacobian</span><br>
-            Jika matriks Jacobian singular (determinan = 0) di suatu titik, 
-            metode Newton-Raphson akan gagal karena tidak dapat menghitung Δ.
+            Singularitas Jacobian juga dapat menyebabkan kegagalan iterasi karena sistem linear internal tidak dapat diselesaikan.
         </p>
         <p>
-            <span class="text-code-inline">• Kriteria penghentian</span><br>
-            Pemilihan toleransi yang terlalu ketat menyebabkan iterasi terlalu lama; 
-            terlalu longgar menghasilkan solusi yang tidak akurat.
+            Selain itu, pemilihan toleransi yang terlalu kecil dapat meningkatkan biaya komputasi, sedangkan toleransi terlalu besar dapat menghasilkan solusi yang kurang akurat.
         </p>
-        <div class="text-math">
-            "Dalam SPNL, tidak ada jaminan bahwa metode numerik akan selalu berhasil.<br>
-            Keberhasilan bergantung pada tebakan awal, sifat fungsi, dan parameter metode."
-        </div>
     </div>
 
-    <!-- ============================================ -->
-    <!-- CARD 7: KESIMPULAN DAN TRANSISI -->
-    <!-- ============================================ -->
     <div class="card card--soft">
-        <h3>Kesimpulan</h3>
+        <h3>Tujuan Pembelajaran</h3>
         <p>
-            Sistem Persamaan Non Linear (SPNL) adalah perluasan dari sistem linear 
-            yang mampu memodelkan fenomena dunia nyata dengan lebih akurat.
+            Setelah mempelajari materi pendahuluan SPNL, mahasiswa diharapkan mampu memahami definisi dan karakteristik sistem nonlinear serta membedakannya dari sistem linear.
         </p>
         <p>
-            <strong>Poin-poin penting dari pendahuluan ini:</strong>
+            Mahasiswa juga diharapkan memahami pentingnya metode numerik dalam penyelesaian SPNL dan mengenali tantangan utama dalam implementasinya.
         </p>
         <p>
-            1. SPNL berbeda fundamental dari SPL: tidak ada superposisi, solusi bisa banyak, sensitif terhadap tebakan awal.<br>
-            2. SPNL muncul di berbagai bidang: fisika, biologi, ekonomi, robotika, astronomi.<br>
-            3. Karena jarang memiliki solusi eksak, SPNL diselesaikan dengan metode numerik.<br>
-            4. Metode utama: Iterasi Fixed Point, Newton-Raphson, Secant, Broyden.<br>
-            5. Tantangan utama: tebakan awal, Jacobian, singularitas, kriteria berhenti.
-        </p>
-        <p>
-            Pada subbab berikutnya, kita akan mempelajari setiap metode numerik 
-            secara mendalam, lengkap dengan algoritma, contoh perhitungan manual, 
-            dan implementasinya.
+            Materi selanjutnya akan membahas metode numerik SPNL secara lebih mendalam, termasuk formulasi Jacobian, proses linearisasi, dan algoritma Newton-Raphson multivariabel.
         </p>
     </div>
-
 </div>

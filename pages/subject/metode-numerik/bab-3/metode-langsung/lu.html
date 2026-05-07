@@ -6,8 +6,8 @@
         <h3>Metode Dekomposisi LU</h3>
 
         <p>
-            Dekomposisi LU adalah metode untuk
-            menyelesaikan Sistem Persamaan Linear
+            Dekomposisi LU adalah metode langsung
+            untuk menyelesaikan Sistem Persamaan Linear
             dengan memfaktorkan matriks menjadi dua bagian.
         </p>
 
@@ -15,9 +15,11 @@
             Matriks A diuraikan menjadi:
         </p>
 
-        <p>
-            A = L U
-        </p>
+        <div class="katex">
+            $$
+            A = LU
+            $$
+        </div>
 
     </div>
 
@@ -27,7 +29,7 @@
         <h3>Konsep Dasar</h3>
 
         <p>
-            Matriks koefisien dipecah menjadi:
+            Matriks koefisien dipecah menjadi dua komponen utama.
         </p>
 
         <p>
@@ -36,8 +38,8 @@
         </p>
 
         <p>
-            Dengan cara ini, penyelesaian SPL
-            menjadi lebih terstruktur.
+            Dengan dekomposisi ini, sistem persamaan
+            dapat diselesaikan secara bertahap dan terstruktur.
         </p>
 
     </div>
@@ -48,24 +50,34 @@
         <h3>Bentuk Matriks L dan U</h3>
 
         <p>
-            L (Lower Triangular):
+            Matriks L (Lower Triangular):
         </p>
 
-        <p>
-            [ 1   0   0 ]<br>
-            [ l₂₁ 1   0 ]<br>
-            [ l₃₁ l₃₂ 1 ]
-        </p>
+        <div class="katex">
+            $$
+            L =
+            \begin{bmatrix}
+            1 & 0 & 0 \\
+            l_{21} & 1 & 0 \\
+            l_{31} & l_{32} & 1
+            \end{bmatrix}
+            $$
+        </div>
 
         <p>
-            U (Upper Triangular):
+            Matriks U (Upper Triangular):
         </p>
 
-        <p>
-            [ u₁₁ u₁₂ u₁₃ ]<br>
-            [  0  u₂₂ u₂₃ ]<br>
-            [  0   0  u₃₃ ]
-        </p>
+        <div class="katex">
+            $$
+            U =
+            \begin{bmatrix}
+            u_{11} & u_{12} & u_{13} \\
+            0 & u_{22} & u_{23} \\
+            0 & 0 & u_{33}
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
@@ -76,20 +88,22 @@
 
         <p>
             Daripada langsung menyelesaikan Ax = b,
-            kita ubah menjadi:
+            sistem diubah menjadi bentuk faktorisasi:
         </p>
 
-        <p>
+        <div class="katex">
+            $$
             LUx = b
+            $$
+        </div>
+
+        <p>
+            Kemudian diselesaikan dalam dua tahap:
         </p>
 
         <p>
-            Kemudian:
-        </p>
-
-        <p>
-            Ly = b → (forward substitution)<br>
-            Ux = y → (back substitution)
+            Ly = b → forward substitution<br>
+            Ux = y → backward substitution
         </p>
 
     </div>
@@ -101,9 +115,9 @@
 
         <p>
             1. Faktorkan A menjadi L dan U<br>
-            2. Selesaikan Ly = b<br>
-            3. Selesaikan Ux = y<br>
-            4. Dapatkan solusi x
+            2. Selesaikan Ly = b (forward substitution)<br>
+            3. Selesaikan Ux = y (backward substitution)<br>
+            4. Dapatkan solusi akhir x
         </p>
 
     </div>
@@ -113,14 +127,15 @@
 
         <h3>Contoh Matriks</h3>
 
-        <p>
+        <div class="katex">
+            $$
             A =
-        </p>
-
-        <p>
-            [ 2  3 ]<br>
-            [ 4  7 ]
-        </p>
+            \begin{bmatrix}
+            2 & 3 \\
+            4 & 7
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
@@ -133,22 +148,35 @@
             Misalkan:
         </p>
 
-        <p>
+        <div class="katex">
+            $$
             L =
-            [ 1   0 ]<br>
-            [ 2   1 ]
-        </p>
+            \begin{bmatrix}
+            1 & 0 \\
+            2 & 1
+            \end{bmatrix}
+            $$
+        </div>
 
-        <p>
+        <div class="katex">
+            $$
             U =
-            [ 2  3 ]<br>
-            [ 0  1 ]
-        </p>
+            \begin{bmatrix}
+            2 & 3 \\
+            0 & 1
+            \end{bmatrix}
+            $$
+        </div>
 
         <p>
             Sehingga:
-            A = LU
         </p>
+
+        <div class="katex">
+            $$
+            A = LU
+            $$
+        </div>
 
     </div>
 
@@ -158,12 +186,8 @@
         <h3>Forward Substitution</h3>
 
         <p>
-            Ly = b
-        </p>
-
-        <p>
-            Digunakan untuk mencari vektor y
-            dari matriks L.
+            Ly = b digunakan untuk mencari vektor y
+            dengan menyelesaikan sistem segitiga bawah.
         </p>
 
     </div>
@@ -174,11 +198,8 @@
         <h3>Backward Substitution</h3>
 
         <p>
-            Ux = y
-        </p>
-
-        <p>
-            Digunakan untuk mencari solusi akhir x.
+            Ux = y digunakan untuk mencari solusi akhir x
+            dengan menyelesaikan sistem segitiga atas.
         </p>
 
     </div>
@@ -189,9 +210,9 @@
         <h3>Kelebihan</h3>
 
         <p>
-            • Efisien untuk banyak sistem dengan A yang sama<br>
+            • Efisien untuk banyak sistem dengan matriks A yang sama<br>
             • Mengurangi perhitungan berulang<br>
-            • Dasar metode komputasi modern
+            • Menjadi dasar banyak algoritma komputasi modern
         </p>
 
     </div>
@@ -202,9 +223,9 @@
         <h3>Kelemahan</h3>
 
         <p>
-            • Tidak semua matriks bisa langsung difaktorkan<br>
-            • Memerlukan pivoting jika elemen nol muncul<br>
-            • Lebih kompleks dari Gauss
+            • Tidak semua matriks dapat difaktorkan tanpa modifikasi<br>
+            • Memerlukan pivoting pada kasus tertentu<br>
+            • Lebih kompleks dibanding eliminasi Gauss langsung
         </p>
 
     </div>
@@ -215,14 +236,12 @@
         <h3>Hubungan dengan Eliminasi Gauss</h3>
 
         <p>
-            Dekomposisi LU sebenarnya berasal dari
-            proses eliminasi Gauss.
+            Dekomposisi LU berasal dari proses eliminasi Gauss.
         </p>
 
         <p>
-            Nilai pada matriks L berasal dari
-            faktor eliminasi,
-            sedangkan U adalah hasil akhirnya.
+            Matriks L menyimpan faktor eliminasi,
+            sedangkan matriks U adalah hasil transformasi akhir.
         </p>
 
     </div>
@@ -233,13 +252,13 @@
         <h3>Intuisi</h3>
 
         <p>
-            LU adalah cara “menyimpan langkah eliminasi”
+            LU dapat dipahami sebagai cara “merekam langkah eliminasi”
             dalam bentuk matriks.
         </p>
 
         <p>
-            Jadi, kita tidak perlu mengulang proses
-            setiap kali menyelesaikan sistem baru.
+            Dengan demikian, proses penyelesaian sistem
+            tidak perlu diulang dari awal setiap kali.
         </p>
 
     </div>
@@ -250,13 +269,13 @@
         <h3>Kesimpulan</h3>
 
         <p>
-            Dekomposisi LU memecah masalah besar
-            menjadi dua langkah sederhana.
+            Dekomposisi LU memecah sistem besar
+            menjadi dua sistem segitiga yang lebih sederhana.
         </p>
 
         <p>
-            Metode ini sangat efisien
-            terutama untuk sistem yang berulang.
+            Metode ini sangat efisien terutama
+            untuk perhitungan berulang dengan matriks yang sama.
         </p>
 
     </div>

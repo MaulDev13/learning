@@ -6,18 +6,21 @@
         <h3>Representasi Matriks dan Operasinya</h3>
 
         <p>
-            Sistem Persamaan Linear (SPL) dapat ditulis
-            dalam bentuk matriks untuk mempermudah manipulasi.
+            Sistem Persamaan Linear (SPL) dapat ditulis dalam bentuk matriks untuk mempermudah manipulasi.
         </p>
 
         <p>
             Bentuk umum:
-            Ax = b
         </p>
 
+        <div class="katex">
+            $$
+            Ax = b
+            $$
+        </div>
+
         <p>
-            Dengan bentuk ini, kita dapat menggunakan
-            berbagai operasi matriks untuk menyelesaikan sistem.
+            Dengan bentuk ini, kita dapat menggunakan berbagai operasi matriks untuk menyelesaikan sistem.
         </p>
 
     </div>
@@ -36,10 +39,23 @@
             Matriks:
         </p>
 
-        <p>
-            [ 2  1 ] [ x₁ ] = [ 5 ]<br>
-            [ 1 -1 ] [ x₂ ]   [ 1 ]
-        </p>
+        <div class="katex">
+            $$
+            \begin{bmatrix}
+            2 & 1 \\
+            1 & -1
+            \end{bmatrix}
+            \begin{bmatrix}
+            x_1 \\
+            x_2
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+            5 \\
+            1
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
@@ -49,14 +65,17 @@
         <h3>Matriks Augmented</h3>
 
         <p>
-            Untuk mempermudah eliminasi,
-            digunakan matriks gabungan:
+            Untuk mempermudah eliminasi, digunakan matriks gabungan:
         </p>
 
-        <p>
-            [ 2  1 | 5 ]<br>
-            [ 1 -1 | 1 ]
-        </p>
+        <div class="katex">
+            $$
+            \begin{bmatrix}
+            2 & 1 & | & 5 \\
+            1 & -1 & | & 1
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
@@ -66,18 +85,31 @@
         <h3>Penjumlahan Matriks</h3>
 
         <p>
-            Dua matriks dapat dijumlahkan
-            jika memiliki ukuran yang sama.
+            Dua matriks dapat dijumlahkan jika memiliki ukuran yang sama.
         </p>
 
         <p>
             Operasi dilakukan elemen per elemen:
         </p>
 
-        <p>
-            [ a  b ] + [ e  f ] = [ a+e  b+f ]<br>
-            [ c  d ]   [ g  h ]   [ c+g  d+h ]
-        </p>
+        <div class="katex">
+            $$
+            \begin{bmatrix}
+            a & b \\
+            c & d
+            \end{bmatrix}
+            +
+            \begin{bmatrix}
+            e & f \\
+            g & h
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+            a+e & b+f \\
+            c+g & d+h
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
@@ -90,14 +122,20 @@
             Matriks dapat dikalikan dengan konstanta (skalar).
         </p>
 
-        <p>
-            Contoh:
-        </p>
-
-        <p>
-            k [ a  b ] = [ ka  kb ]<br>
-              [ c  d ]   [ kc  kd ]
-        </p>
+        <div class="katex">
+            $$
+            k
+            \begin{bmatrix}
+            a & b \\
+            c & d
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+            ka & kb \\
+            kc & kd
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
@@ -107,18 +145,18 @@
         <h3>Perkalian Matriks</h3>
 
         <p>
-            Matriks A dapat dikalikan dengan B
-            jika jumlah kolom A = jumlah baris B.
+            Matriks A dapat dikalikan dengan B jika jumlah kolom A = jumlah baris B.
         </p>
 
         <p>
-            Elemen hasil diperoleh dari
-            perkalian baris dan kolom.
+            Elemen hasil diperoleh dari perkalian baris dan kolom.
         </p>
 
-        <p>
-            (AB)<sub>ij</sub> = Σ a<sub>ik</sub>b<sub>kj</sub>
-        </p>
+        <div class="katex">
+            $$
+            (AB)_{ij} = \sum_{k} a_{ik} b_{kj}
+            $$
+        </div>
 
     </div>
 
@@ -128,18 +166,17 @@
         <h3>Operasi Baris Elementer (OBE)</h3>
 
         <p>
-            Operasi baris digunakan untuk
-            mengubah matriks menjadi bentuk yang lebih sederhana.
+            Operasi baris digunakan untuk mengubah matriks menjadi bentuk yang lebih sederhana tanpa mengubah solusi sistem.
         </p>
 
         <p>
-            Terdapat tiga operasi dasar:
+            Tiga operasi dasar:
         </p>
 
         <p>
-            1. Tukar baris: Rᵢ ↔ Rⱼ<br>
-            2. Kali baris: Rᵢ = kRᵢ<br>
-            3. Kombinasi baris: Rᵢ = Rᵢ + kRⱼ
+            1. Tukar baris: \( R_i \leftrightarrow R_j \)<br>
+            2. Kali baris: \( R_i = kR_i \)<br>
+            3. Kombinasi baris: \( R_i = R_i + kR_j \)
         </p>
 
     </div>
@@ -150,13 +187,14 @@
         <h3>Operasi Eliminasi</h3>
 
         <p>
-            Operasi yang paling sering digunakan
-            dalam metode Gauss adalah:
+            Operasi yang paling sering digunakan dalam metode Gauss adalah:
         </p>
 
-        <p>
-            Rᵢ = Rᵢ − kRⱼ
-        </p>
+        <div class="katex">
+            $$
+            R_i = R_i - kR_j
+            $$
+        </div>
 
         <p>
             Tujuannya adalah membuat elemen tertentu menjadi nol.
@@ -170,26 +208,40 @@
         <h3>Contoh Operasi Baris</h3>
 
         <p>
-            [ 2  1 | 5 ]<br>
-            [ 1 -1 | 1 ]
+            Sistem:
         </p>
 
-        <p>
-            Eliminasi x₁ pada baris kedua:
-        </p>
+        <div class="katex">
+            $$
+            \begin{bmatrix}
+            2 & 1 & | & 5 \\
+            1 & -1 & | & 1
+            \end{bmatrix}
+            $$
+        </div>
 
         <p>
-            R₂ = R₂ − (1/2)R₁
+            Eliminasi \( x_1 \) pada baris kedua:
         </p>
+
+        <div class="katex">
+            $$
+            R_2 = R_2 - \frac{1}{2}R_1
+            $$
+        </div>
 
         <p>
             Hasil:
         </p>
 
-        <p>
-            [ 2  1   | 5 ]<br>
-            [ 0 -1.5 | -1.5 ]
-        </p>
+        <div class="katex">
+            $$
+            \begin{bmatrix}
+            2 & 1 & | & 5 \\
+            0 & -1.5 & | & -1.5
+            \end{bmatrix}
+            $$
+        </div>
 
     </div>
 
@@ -216,14 +268,11 @@
         <h3>Hubungan dengan Metode Gauss</h3>
 
         <p>
-            Semua langkah dalam eliminasi Gauss
-            berasal dari operasi baris elementer.
+            Semua langkah dalam eliminasi Gauss berasal dari operasi baris elementer.
         </p>
 
         <p>
-            Tanpa memahami OBE,
-            metode Gauss hanya akan terlihat
-            sebagai langkah mekanis.
+            Tanpa memahami OBE, metode Gauss hanya akan terlihat sebagai prosedur mekanis.
         </p>
 
     </div>
@@ -234,13 +283,11 @@
         <h3>Intuisi</h3>
 
         <p>
-            Operasi baris seperti “mengatur ulang”
-            persamaan tanpa mengubah solusi.
+            Operasi baris seperti “mengatur ulang” persamaan tanpa mengubah solusi.
         </p>
 
         <p>
-            Tujuannya adalah membuat sistem
-            menjadi lebih mudah diselesaikan.
+            Tujuannya adalah membuat sistem menjadi lebih sederhana untuk diselesaikan.
         </p>
 
     </div>
@@ -251,18 +298,15 @@
         <h3>Kesimpulan</h3>
 
         <p>
-            Representasi matriks memungkinkan SPL
-            diolah secara sistematis.
+            Representasi matriks memungkinkan SPL diolah secara sistematis dan efisien.
         </p>
 
         <p>
-            Operasi matriks, terutama operasi baris,
-            adalah kunci dalam metode eliminasi.
+            Operasi matriks, terutama operasi baris, merupakan dasar utama dalam metode eliminasi.
         </p>
 
         <p>
-            Pemahaman ini menjadi dasar
-            untuk metode Gauss dan metode lanjutan lainnya.
+            Pemahaman ini menjadi fondasi penting untuk metode Gauss dan metode numerik lanjutan lainnya.
         </p>
 
     </div>

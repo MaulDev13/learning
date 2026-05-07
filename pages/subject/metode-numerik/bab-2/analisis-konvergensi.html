@@ -3,17 +3,14 @@
     <!-- PENGANTAR -->
     <div class="card card--soft">
 
-        <h3>Analisis Konvergensi</h3>
+        <h3>Analisis Konvergensi Akar Persamaan Non-Linear</h3>
 
         <p>
-            Analisis konvergensi digunakan untuk
-            mengetahui apakah suatu metode numerik
-            akan mendekati solusi yang benar.
+            Analisis konvergensi adalah kajian untuk menentukan apakah suatu metode iteratif dalam mencari akar persamaan non-linear akan mendekati solusi yang benar atau tidak.
         </p>
 
         <p>
-            Selain itu, analisis ini juga menjelaskan
-            seberapa cepat metode mencapai solusi.
+            Dalam metode numerik, konvergensi menjadi aspek penting karena menentukan apakah proses iterasi benar-benar menghasilkan akar atau justru menyimpang (divergen).
         </p>
 
     </div>
@@ -21,174 +18,184 @@
     <!-- KONSEP DASAR -->
     <div class="card card--soft">
 
-        <h3>Konsep Dasar</h3>
+        <h3>Konsep Dasar Konvergensi</h3>
 
         <p>
-            Dalam metode iteratif, solusi diperoleh
-            melalui pendekatan bertahap.
+            Sebuah metode iteratif dikatakan konvergen jika barisan hasil iterasi:
         </p>
 
-        <p>
-            Jika hasil iterasi semakin mendekati nilai akar,
-            maka metode dikatakan konvergen.
-        </p>
+        <div class="katex">
+            $$
+            \{x^{0}, x^{1}, x^{2}, \dots \}
+            $$
+        </div>
 
         <p>
-            Jika menjauh atau tidak stabil,
-            maka metode divergen.
+            mendekati suatu nilai tetap \( r \), yaitu akar dari persamaan \( f(x)=0 \).
         </p>
+
+        <div class="katex">
+            $$
+            \lim_{i \to \infty} x^{i} = r
+            $$
+        </div>
 
     </div>
 
-    <!-- DEFINISI -->
+    <!-- DEFINISI KONVERGENSI -->
     <div class="card card--soft">
 
         <h3>Definisi Konvergensi</h3>
 
         <p>
-            Suatu metode dikatakan konvergen jika:
+            Misalkan \( x^{i} \) adalah hasil iterasi, maka metode dikatakan konvergen jika:
         </p>
 
-        <p>
-            lim x<sup>i</sup> = r
-        </p>
+        <div class="katex">
+            $$
+            \lim_{i \to \infty} |x^{i} - r| = 0
+            $$
+        </div>
 
         <p>
-            dimana r adalah akar sebenarnya.
+            Artinya galat semakin kecil hingga mendekati nol.
         </p>
 
     </div>
 
-    <!-- JENIS -->
+    <!-- JENIS KONVERGENSI -->
     <div class="card card--soft">
 
-        <h3>Jenis Perilaku Iterasi</h3>
+        <h3>Jenis-Jenis Konvergensi</h3>
 
-        <p>
-            • Konvergen → mendekati solusi<br>
-            • Divergen → menjauh dari solusi<br>
-            • Osilasi → bolak-balik tanpa stabil
-        </p>
+        <table class="table">
 
-    </div>
+            <thead>
+                <tr>
+                    <th>Jenis</th>
+                    <th>Karakteristik</th>
+                </tr>
+            </thead>
 
-    <!-- GALAT -->
-    <div class="card card--soft">
+            <tbody>
 
-        <h3>Konvergensi dan Galat</h3>
+                <tr>
+                    <td><strong>Linear</strong></td>
+                    <td>Galat berkurang secara proporsional</td>
+                </tr>
 
-        <p>
-            Konvergensi dapat dilihat dari
-            perubahan galat pada setiap iterasi.
-        </p>
+                <tr>
+                    <td><strong>Kuadratik</strong></td>
+                    <td>Galat mengecil sangat cepat (Newton-Raphson)</td>
+                </tr>
 
-        <p>
-            Jika galat semakin kecil,
-            maka metode menuju konvergensi.
-        </p>
+                <tr>
+                    <td><strong>Sub-linear</strong></td>
+                    <td>Konvergensi lambat</td>
+                </tr>
 
-    </div>
+            </tbody>
 
-    <!-- ORDE -->
-    <div class="card card--soft">
-
-        <h3>Orde Konvergensi</h3>
-
-        <p>
-            Orde konvergensi menunjukkan
-            kecepatan metode dalam mendekati solusi.
-        </p>
-
-        <p>
-            Secara umum:
-        </p>
-
-        <p>
-            • Linear → lambat<br>
-            • Superlinear → lebih cepat<br>
-            • Kuadratik → sangat cepat
-        </p>
-
-    </div>
-
-    <!-- CONTOH ORDE -->
-    <div class="card card--soft">
-
-        <h3>Contoh Orde Konvergensi</h3>
-
-        <p>
-            • Metode Biseksi → linear<br>
-            • Regula Falsi → linear (lebih cepat)<br>
-            • Secant → superlinear<br>
-            • Newton-Raphson → kuadratik
-        </p>
-
-    </div>
-
-    <!-- FAKTOR -->
-    <div class="card card--soft">
-
-        <h3>Faktor yang Mempengaruhi</h3>
-
-        <p>
-            • Tebakan awal<br>
-            • Bentuk fungsi<br>
-            • Turunan fungsi<br>
-            • Metode yang digunakan
-        </p>
+        </table>
 
     </div>
 
     <!-- KONVERGENSI TITIK TETAP -->
     <div class="card card--soft">
 
-        <h3>Konvergensi Titik Tetap</h3>
+        <h3>Konvergensi Metode Titik Tetap</h3>
 
         <p>
-            Untuk metode titik tetap,
-            syarat konvergensi adalah:
+            Metode titik tetap \( x = g(x) \) konvergen jika memenuhi syarat:
         </p>
 
-        <p>
+        <div class="katex">
+            $$
             |g'(x)| < 1
-        </p>
+            $$
+        </div>
 
         <p>
             di sekitar akar.
         </p>
 
-    </div>
-
-    <!-- INTERPRETASI -->
-    <div class="card card--soft">
-
-        <h3>Interpretasi</h3>
-
         <p>
-            Metode dengan konvergensi cepat
-            membutuhkan iterasi lebih sedikit.
-        </p>
-
-        <p>
-            Namun, metode cepat biasanya
-            lebih sensitif terhadap kondisi awal.
+            Jika nilai turunan lebih besar dari 1, iterasi cenderung divergen.
         </p>
 
     </div>
 
-    <!-- TRADE OFF -->
+    <!-- KONVERGENSI NEWTON RAPHSON -->
     <div class="card card--soft">
 
-        <h3>Trade-Off</h3>
+        <h3>Konvergensi Newton-Raphson</h3>
 
         <p>
-            • Metode stabil → lambat (Biseksi)<br>
-            • Metode cepat → sensitif (Newton)
+            Metode Newton-Raphson memiliki konvergensi kuadratik jika syarat terpenuhi.
+        </p>
+
+        <div class="katex">
+            $$
+            x^{i+1} = x^{i} - \frac{f(x^{i})}{f'(x^{i})}
+            $$
+        </div>
+
+        <p>
+            Artinya, jumlah digit benar meningkat sangat cepat pada setiap iterasi.
+        </p>
+
+    </div>
+
+    <!-- KONVERGENSI SECANT -->
+    <div class="card card--soft">
+
+        <h3>Konvergensi Metode Secant</h3>
+
+        <p>
+            Metode Secant memiliki laju konvergensi super-linear.
         </p>
 
         <p>
-            Pemilihan metode harus disesuaikan
-            dengan kebutuhan dan kondisi masalah.
+            Lebih cepat dari metode titik tetap, tetapi lebih lambat dari Newton-Raphson.
+        </p>
+
+    </div>
+
+    <!-- FAKTOR YANG MEMPENGARUHI -->
+    <div class="card card--soft">
+
+        <h3>Faktor yang Mempengaruhi Konvergensi</h3>
+
+        <p>
+            Beberapa faktor utama yang menentukan konvergensi:
+        </p>
+
+        <p>
+            • Tebakan awal \( x^{0} \)<br>
+            • Bentuk fungsi \( f(x) \)<br>
+            • Transformasi ke bentuk iterasi<br>
+            • Nilai turunan fungsi
+        </p>
+
+    </div>
+
+    <!-- DIVERGENSI -->
+    <div class="card card--soft">
+
+        <h3>Divergensi</h3>
+
+        <p>
+            Divergensi terjadi ketika iterasi menjauh dari solusi.
+        </p>
+
+        <p>
+            Hal ini biasanya disebabkan oleh:
+        </p>
+
+        <p>
+            • Tebakan awal terlalu jauh<br>
+            • Syarat konvergensi tidak terpenuhi<br>
+            • Fungsi tidak stabil di sekitar akar
         </p>
 
     </div>
@@ -196,17 +203,14 @@
     <!-- INTUISI -->
     <div class="card card--soft">
 
-        <h3>Intuisi</h3>
+        <h3>Intuisi Konvergensi</h3>
 
         <p>
-            Konvergensi adalah “perjalanan”
-            menuju solusi.
+            Konvergensi dapat dibayangkan sebagai proses “mendekati target” secara bertahap.
         </p>
 
         <p>
-            Pertanyaannya bukan hanya
-            apakah sampai,
-            tetapi seberapa cepat sampai.
+            Semakin baik metode, semakin cepat titik iterasi mendekati akar sebenarnya.
         </p>
 
     </div>
@@ -217,14 +221,15 @@
         <h3>Kesimpulan</h3>
 
         <p>
-            Analisis konvergensi membantu memahami
-            perilaku dan efisiensi metode numerik.
+            Analisis konvergensi menentukan apakah metode iteratif akan berhasil menemukan akar atau tidak.
         </p>
 
         <p>
-            Dengan memahami konvergensi,
-            kita dapat memilih metode yang tepat
-            untuk suatu permasalahan.
+            Syarat seperti \( |g'(x)| < 1 \) sangat penting untuk menjamin keberhasilan metode.
+        </p>
+
+        <p>
+            Pemahaman konvergensi menjadi dasar dalam memilih metode numerik yang tepat.
         </p>
 
     </div>
