@@ -22,7 +22,7 @@
             </tr>
             <tr>
                 <td>Sifat Ujian</td>
-                <td>Mandiri</td>
+                <td>Tutup buku</td>
             </tr>
         </table>
     </div>
@@ -50,7 +50,18 @@ $$
 $$
             </div>
         </div>
-        <div id="soal1-solusi">
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal1-solusi.html"
+                hx-target="#soal1-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal1-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal1-solusi" class="project-content hidden">
             <h4>Solusi Soal 1</h4>
             <p>
                 (a) Orde dua, karena turunan tertinggi adalah \( \frac{\partial^2 u}{\partial x^2} \).
@@ -82,7 +93,18 @@ u(x, y) = e^{-y}\sin(x), \qquad \frac{\partial^2 u}{\partial x^2} + \frac{\parti
 $$
             </div>
         </div>
-        <div id="soal2-solusi">
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal2-solusi.html"
+                hx-target="#soal2-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal2-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal2-solusi" class="project-content hidden">
             <h4>Solusi Soal 2</h4>
             <p>
                 Hitung turunan parsial kedua terhadap \( x \):
@@ -126,7 +148,18 @@ $$
 $$
             </div>
         </div>
-        <div id="soal3-solusi">
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal3-solusi.html"
+                hx-target="#soal3-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal3-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal3-solusi" class="project-content hidden">
             <h4>Solusi Soal 3</h4>
             <p>
                 Persamaan karakteristik dari PDP \( u_x - 3u_y = 0 \) adalah:
@@ -182,7 +215,18 @@ $$
 $$
             </div>
         </div>
-        <div id="soal4-solusi">
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal4-solusi.html"
+                hx-target="#soal4-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal4-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal4-solusi" class="project-content hidden">
             <h4>Solusi Soal 4</h4>
             <p>
                 (a) \( A = 3,\ B = 4,\ C = 3 \):
@@ -224,7 +268,18 @@ u_{xx} + 2x\, u_{xy} + (1 - y^2)\, u_{yy} = 0
 $$
             </div>
         </div>
-        <div id="soal5-solusi">
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal5-solusi.html"
+                hx-target="#soal5-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal5-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal5-solusi" class="project-content hidden">
             <h4>Solusi Soal 5</h4>
             <p>
                 Identifikasi koefisien: \( A = 1,\ B = 2x,\ C = 1 - y^2 \). Diskriminannya adalah:
@@ -268,7 +323,18 @@ $$
 $$
             </div>
         </div>
-        <div id="soal6-solusi">
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal6-solusi.html"
+                hx-target="#soal6-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal6-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal6-solusi" class="project-content hidden">
             <h4>Solusi Soal 6</h4>
             <p>
                 Identifikasi koefisien: \( A = 4,\ B = -4,\ C = 1 \). Diskriminannya adalah:
@@ -309,7 +375,18 @@ u_{xx} - 5u_{xy} + 4u_{yy} = 0
 $$
             </div>
         </div>
-        <div id="soal7-solusi">
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal7-solusi.html"
+                hx-target="#soal7-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal7-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal7-solusi" class="project-content hidden">
             <h4>Solusi Soal 7</h4>
             <p>
                 Identifikasi koefisien: \( A = 1,\ B = -5,\ C = 4 \). Diskriminannya adalah:
@@ -361,7 +438,18 @@ y\, u_{xx} + 2u_{xy} + x\, u_{yy} = 0
 $$
             </div>
         </div>
-        <div id="soal8-solusi">
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal8-solusi.html"
+                hx-target="#soal8-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal8-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal8-solusi" class="project-content hidden">
             <h4>Solusi Soal 8</h4>
             <p>
                 Identifikasi koefisien: \( A = y,\ B = 2,\ C = x \). Diskriminannya adalah:
@@ -411,7 +499,18 @@ u_{xx} + k\, u_{xy} + 4u_{yy} = 0, \qquad k \in \mathbb{R}
 $$
             </div>
         </div>
-        <div id="soal9-solusi">
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal9-solusi.html"
+                hx-target="#soal9-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal9-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal9-solusi" class="project-content hidden">
             <h4>Solusi Soal 9</h4>
             <p>
                 Identifikasi koefisien: \( A = 1,\ B = k,\ C = 4 \). Diskriminannya adalah:
@@ -466,7 +565,18 @@ $$
 $$
             </div>
         </div>
-        <div id="soal10-solusi">
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal10-solusi.html"
+                hx-target="#soal10-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal10-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal10-solusi" class="project-content hidden">
             <h4>Solusi Soal 10</h4>
             <p>
                 (a) \( A = 1,\ B = 0,\ C = 1 \) (terhadap dua variabel mana pun):
