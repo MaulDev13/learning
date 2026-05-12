@@ -1,0 +1,19 @@
+/* =========================================================
+   LAYOUT HELPERS
+========================================================= */
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space-lg);
+}
+
+.page-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+}
+
+.content-center {
+    max-width: 48rem;
+    margin: 0 auto;
+}

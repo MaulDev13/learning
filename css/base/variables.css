@@ -1,0 +1,104 @@
+:root{
+	/* =========================
+	   🎨 BACKGROUND & SURFACE
+	   ========================= */
+    --bg: #f4f7fb;
+    --surface: #ffffff;
+    --surface-soft: #f0f5fa;
+    --border: #dde5ef;
+
+	/* =========================
+	   📝 TEXT
+	   ========================= */
+    --text-title: #0d1b2e;
+    --text-body: #1a2e44;
+    --text-meta: #5c7290;
+
+	/* =========================
+	   🌊 PRIMARY (TEAL - IDENTITAS UTAMA)
+	   ========================= */
+    --primary: #0fa898;
+    --primary-hover: #0c8f80;
+    --primary-active: #097568;
+    --primary-soft: rgba(15, 168, 152, 0.09);
+    --primary-soft-hover: rgba(15, 168, 152, 0.16);
+
+	/* =========================
+	   🌑 SHADOW
+	   ========================= */
+    --shadow-sm: 0 1px 3px rgba(13, 27, 46, 0.06);
+    --shadow-md: 0 6px 20px rgba(13, 27, 46, 0.10);
+    --shadow-focus: 0 0 0 3px rgba(15, 168, 152, 0.18);
+
+	/* =========================
+	   📏 SPACING
+	   ========================= */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+
+	/* =========================
+	   🔤 TYPOGRAPHY
+	   ========================= */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-md: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+
+    --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+
+    --font-small: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+
+	/* =========================
+	   📐 LINE HEIGHT
+	   ========================= */
+    --leading-tight: 1.25;
+    --leading-normal: 1.6;
+    --leading-relaxed: 1.75;
+
+    /* =========================
+       🔲 RADIUS
+       ========================= */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.625rem;
+    --radius-code: 0.375rem;
+
+	/* =========================
+	   💻 CODE (INDIGO TONE)
+	   ========================= */
+    --code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --code-color: var(--text-title);
+    --code-bg: #f6f8ff;
+    --code-border: #dbe3ff;
+    --code-inline-bg: rgba(79, 70, 229, 0.08);
+    --code-inline-border: rgba(79, 70, 229, 0.25);
+    --code-highlight-bg: #eef2ff;
+    --code-highlight-border: #4f46e5;
+    --code-surface-hover: #e0e7ff;
+
+	/* =========================
+	   🧮 MATH (EMERALD TONE)
+	   ========================= */
+    --math-font: "Times New Roman", "STIXGeneral", "Cambria Math", "Latin Modern Math", serif;
+    --math-color: var(--text-title);
+    --math-bg: #f0fdf4;
+    --math-border: #bbf7d0;
+    --math-inline-bg: rgba(16, 185, 129, 0.08);
+    --math-inline-border: rgba(16, 185, 129, 0.25);
+    --math-highlight-bg: #ecfdf5;
+    --math-highlight-border: #10b981;
+
+	/* =========================
+	   🎬 TRANSITION
+	   ========================= */
+    --transition: all 0.18s ease;
+}

@@ -1,0 +1,103 @@
+/* =========================================================
+   NAVBAR
+========================================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(244, 247, 251, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+.nav-group {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: var(--text-meta);
+    font-size: var(--text-sm);
+    cursor: pointer;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    line-height: 1;
+}
+
+.nav-btn:hover {
+    color: var(--text-title);
+    background: var(--primary-soft);
+}
+
+.nav-btn.is-active {
+    color: var(--primary);
+    font-weight: var(--font-semibold);
+}
+
+/* =========================================================
+   DROPDOWN
+========================================================= */
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + var(--space-xs));
+    left: 0;
+    min-width: 180px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    padding: var(--space-xs);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: var(--transition);
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.nav-dropdown.open .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.nav-dropdown-item {
+    background: none;
+    border: none;
+    text-align: left;
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--text-sm);
+    color: var(--text-meta);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    width: 100%;
+    transition: var(--transition);
+}
+
+.nav-dropdown-item:hover {
+    background: var(--primary-soft);
+    color: var(--text-title);
+}

@@ -1,0 +1,39 @@
+/* =========================================================
+   TAGS
+========================================================= */
+.tag-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.tag-label {
+    width: 6rem;
+    font-size: var(--text-sm);
+    color: var(--text-meta);
+    flex-shrink: 0;
+}
+
+.tag {
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+    color: var(--text-body);
+    transition: var(--transition);
+    line-height: 1.4;
+}
+
+.tag:hover {
+    border-color: var(--primary);
+    background: var(--primary-soft);
+    color: var(--primary-active);
+}

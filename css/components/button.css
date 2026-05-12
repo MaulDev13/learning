@@ -1,0 +1,101 @@
+/* =========================================================
+   BUTTON SYSTEM
+========================================================= */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: var(--space-sm) var(--space-lg);
+    margin: var(--space-xs) 0;
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    transition: var(--transition);
+    line-height: 1;
+    gap: var(--space-sm);
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+}
+
+.button-group {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    margin: var(--space-md) 0;
+    align-items: center;
+}
+
+.button + p,
+p + .button {
+    margin-top: var(--space-sm);
+}
+
+.button--primary {
+    background: var(--primary);
+    color: #fff;
+    box-shadow: var(--shadow-sm);
+}
+
+.button--primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.button--primary:active {
+    background: var(--primary-active);
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+.button--secondary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-body);
+}
+
+.button--secondary:hover {
+    background: var(--surface-soft);
+    border-color: var(--primary);
+    color: var(--text-title);
+}
+
+.button--ghost {
+    background: transparent;
+    color: var(--text-meta);
+}
+
+.button--ghost:hover {
+    background: var(--primary-soft);
+    color: var(--text-title);
+}
+
+.button--sm {
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--text-xs);
+}
+
+.button--lg {
+    padding: var(--space-md) var(--space-xl);
+    font-size: var(--text-md);
+}
+
+.button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.arrow {
+    margin-left: auto;
+}
+
+button:focus-visible,
+.nav-btn:focus-visible,
+.sidebar-item:focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-focus);
+}

@@ -1,0 +1,52 @@
+/* =========================================================
+   💻 CODE SYSTEM (INDIGO)
+   ========================================================= */
+
+/* Code block */
+.text-code {
+    font-family: var(--code-font);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    color: var(--code-color);
+    background: var(--code-bg);
+    border: 1px solid var(--code-border);
+    border-radius: var(--radius-code);
+    padding: var(--space-sm) var(--space-md);
+    display: inline-block;
+    white-space: pre;
+    overflow-x: auto;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.text-code:hover {
+    border-color: var(--code-highlight-border);
+    background: var(--code-surface-hover);
+}
+
+/* Code inline */
+.text-code-inline {
+    font-family: var(--code-font);
+    font-size: var(--text-sm);
+    color: var(--code-color);
+    background: var(--code-inline-bg);
+    border: 1px solid var(--code-inline-border);
+    padding: 0.1rem 0.4rem;
+    border-radius: var(--radius-sm);
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+/* Code highlight */
+.text-code-highlight {
+    font-family: var(--code-font);
+    font-size: var(--text-sm);
+    color: var(--code-color);
+    background: var(--code-highlight-bg);
+    border-left: 3px solid var(--code-highlight-border);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+    max-width: fit-content;
+    margin: var(--space-md) auto;
+}

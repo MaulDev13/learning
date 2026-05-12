@@ -1,0 +1,66 @@
+/* =========================================================
+   🧮 MATH SYSTEM (EMERALD)
+   ========================================================= */
+
+/* Math block */
+.text-math {
+    font-family: var(--math-font);
+    font-size: var(--text-md);
+    line-height: 1.4;
+    color: var(--math-color);
+    background: var(--math-bg);
+    border: 1px solid var(--math-border);
+    border-radius: var(--radius-sm);
+    padding: var(--space-xs) var(--space-sm);
+    display: inline-block;
+    max-width: fit-content;
+    overflow-x: auto;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    margin: var(--space-md) auto;
+    text-align: center;
+}
+
+.text-math:hover {
+    border-color: var(--math-highlight-border);
+    box-shadow: var(--shadow-md);
+}
+
+/* Math inline */
+.text-math-inline {
+    font-family: var(--math-font);
+    font-size: var(--text-sm);
+    color: var(--math-color);
+    background: var(--math-inline-bg);
+    border: 1px solid var(--math-inline-border);
+    padding: 0.1rem 0.4rem;
+    border-radius: var(--radius-sm);
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+/* Math highlight */
+.text-math-highlight {
+    font-family: var(--math-font);
+    font-size: var(--text-md);
+    color: var(--math-color);
+    background: var(--math-highlight-bg);
+    border-left: 3px solid var(--math-highlight-border);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+    max-width: fit-content;
+    margin: var(--space-md) auto;
+    text-align: center;
+}
+
+/* Shared transitions */
+.text-code,
+.text-math {
+    transition: var(--transition);
+}
+
+.text-code:hover,
+.text-math:hover {
+    transform: translateY(-1px);
+}

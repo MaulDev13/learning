@@ -1,0 +1,66 @@
+/* =========================================================
+   CARD SYSTEM
+========================================================= */
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    transition: var(--transition);
+}
+
+.card-group {
+    display: grid;
+    gap: var(--space-lg);
+}
+
+.card--sm {
+    padding: var(--space-md);
+}
+
+.card--soft {
+    background: var(--surface-soft);
+}
+
+.card--flat {
+    border: none;
+    box-shadow: none;
+}
+
+.card--interactive:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.card.is-active {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+}
+
+/* Project list */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+.project-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.project-item:hover {
+    border-color: var(--primary);
+    transform: translateX(4px);
+}
+
+.project-item.is-open {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+}
