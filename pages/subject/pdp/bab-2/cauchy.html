@@ -1,0 +1,306 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Masalah Cauchy pada PDP Orde Dua</h2>
+        <p>
+            Masalah Cauchy merupakan salah satu formulasi masalah nilai awal yang paling fundamental
+            dalam teori Persamaan Diferensial Parsial orde dua. Formulasi ini menjadi dasar dalam
+            menganalisis eksistensi, ketunggalan, dan kestabilan solusi PDP.
+        </p>
+        <p>
+            Pada masalah Cauchy, data awal diberikan pada suatu kurva atau permukaan tertentu,
+            dan solusi dicari di sekitar kurva tersebut. Pemahaman terhadap masalah ini
+            menjadi prasyarat penting sebelum mempelajari metode penyelesaian PDP orde dua lebih lanjut.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Bentuk Umum PDP Orde Dua</h3>
+        <p>
+            PDP orde dua dengan dua variabel bebas secara umum ditulis dalam bentuk berikut.
+        </p>
+        <div class="katex">
+$$
+A\frac{\partial^2 u}{\partial x^2} + B\frac{\partial^2 u}{\partial x \partial y} + C\frac{\partial^2 u}{\partial y^2} + D\frac{\partial u}{\partial x} + E\frac{\partial u}{\partial y} + Fu = G(x, y)
+$$
+        </div>
+        <p>
+            Koefisien \( A, B, C, D, E, F \) dapat berupa konstanta maupun fungsi dari \( x \) dan \( y \),
+            sedangkan \( G(x, y) \) adalah fungsi sumber yang diberikan.
+        </p>
+        <p>
+            Bentuk ini mencakup tiga kelas utama PDP orde dua, yaitu eliptik, parabolik, dan hiperbolik,
+            yang dibedakan berdasarkan nilai diskriminan \( B^2 - 4AC \).
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Formulasi Masalah Cauchy</h3>
+        <p>
+            Masalah Cauchy untuk PDP orde dua dirumuskan sebagai berikut. Diberikan kurva \( \Gamma \)
+            pada bidang \( xy \), disebut kurva Cauchy. Pada kurva ini diberikan dua kondisi awal,
+            yaitu nilai fungsi dan nilai turunan normal terhadap kurva.
+        </p>
+        <div class="katex">
+$$
+u\big|_{\Gamma} = \phi(x, y), \qquad \frac{\partial u}{\partial n}\bigg|_{\Gamma} = \psi(x, y)
+$$
+        </div>
+        <p>
+            Fungsi \( \phi \) dan \( \psi \) disebut data Cauchy. Fungsi \( \phi \) menetapkan nilai
+            solusi pada kurva \( \Gamma \), sedangkan \( \psi \) menetapkan laju perubahan solusi
+            dalam arah normal terhadap kurva tersebut.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kurva Karakteristik dan Perannya</h3>
+        <p>
+            Dalam analisis masalah Cauchy, kurva karakteristik memiliki peran sentral. Kurva karakteristik
+            adalah kurva pada bidang \( xy \) yang ditentukan oleh persamaan diferensial berikut.
+        </p>
+        <div class="katex">
+$$
+A\left(\frac{dy}{dx}\right)^2 - B\left(\frac{dy}{dx}\right) + C = 0
+$$
+        </div>
+        <p>
+            Persamaan ini diperoleh dari syarat agar sistem persamaan untuk menentukan turunan orde dua
+            menjadi tak tentu, sehingga kurva tersebut menjadi singular bagi masalah Cauchy.
+        </p>
+        <p>
+            Diskriminan persamaan karakteristik adalah \( \Delta = B^2 - 4AC \). Nilai \( \Delta \)
+            menentukan jenis dan jumlah keluarga kurva karakteristik yang ada.
+        </p>
+        <table class="table">
+            <tr>
+                <th>Kondisi</th>
+                <th>Jenis PDP</th>
+                <th>Karakteristik</th>
+            </tr>
+            <tr>
+                <td>\( B^2 - 4AC > 0 \)</td>
+                <td>Hiperbolik</td>
+                <td>Dua keluarga kurva karakteristik real</td>
+            </tr>
+            <tr>
+                <td>\( B^2 - 4AC = 0 \)</td>
+                <td>Parabolik</td>
+                <td>Satu keluarga kurva karakteristik real</td>
+            </tr>
+            <tr>
+                <td>\( B^2 - 4AC < 0 \)</td>
+                <td>Eliptik</td>
+                <td>Tidak ada kurva karakteristik real</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Syarat Ketunggalan Solusi Lokal</h3>
+        <p>
+            Masalah Cauchy memiliki solusi lokal yang tunggal apabila kurva Cauchy \( \Gamma \)
+            bukan merupakan kurva karakteristik dari PDP yang bersangkutan.
+        </p>
+        <p>
+            Kondisi ini dapat dipahami melalui matriks koefisien sistem turunan orde dua. Sistem akan
+            memiliki penyelesaian tunggal apabila determinan matriks koefisien tidak bernilai nol,
+            yang ekuivalen dengan syarat bahwa \( \Gamma \) bukan karakteristik.
+        </p>
+        <div class="katex">
+$$
+A(y')^2 - By' + C \neq 0 \quad \text{di sepanjang } \Gamma
+$$
+        </div>
+        <p>
+            Apabila kurva \( \Gamma \) merupakan kurva karakteristik, maka data Cauchy pada kurva
+            tersebut bersifat tidak cukup untuk menentukan solusi secara tunggal, atau bahkan
+            dapat menghasilkan inkonsistensi.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Teorema Cauchy-Kovalevskaya</h3>
+        <p>
+            Teorema Cauchy-Kovalevskaya menjamin eksistensi dan ketunggalan solusi analitik
+            untuk masalah Cauchy secara lokal, di sekitar kurva Cauchy yang bukan karakteristik.
+        </p>
+        <p>
+            Secara informal, teorema ini menyatakan bahwa apabila koefisien PDP dan data Cauchy
+            bersifat analitik (dapat diekspansikan dalam deret pangkat), serta kurva Cauchy bukan
+            karakteristik, maka terdapat tepat satu solusi analitik secara lokal.
+        </p>
+        <p>
+            Teorema ini berlaku untuk PDP dengan koefisien analitik pada lingkungan titik yang
+            diperhatikan dan tidak bergantung pada jenis PDP (eliptik, parabolik, atau hiperbolik).
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh — Masalah Cauchy untuk Persamaan Gelombang</h3>
+        <p>
+            Persamaan gelombang satu dimensi diberikan sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}, \quad x \in \mathbb{R},\ t > 0
+$$
+        </div>
+        <p>
+            Data Cauchy diberikan pada garis \( t = 0 \), yaitu:
+        </p>
+        <div class="katex">
+$$
+u(x, 0) = \phi(x), \qquad \frac{\partial u}{\partial t}(x, 0) = \psi(x)
+$$
+        </div>
+        <p>
+            Karena \( A = c^2 \), \( B = 0 \), \( C = -1 \), maka diskriminan adalah
+            \( B^2 - 4AC = 4c^2 > 0 \). Persamaan ini bersifat hiperbolik dan memiliki
+            dua keluarga karakteristik.
+        </p>
+        <p>
+            Kurva Cauchy \( t = 0 \) bukan merupakan karakteristik, sehingga masalah Cauchy ini
+            memiliki solusi lokal yang tunggal.
+        </p>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="gelombang-solusi.html"
+                hx-target="#gelombang-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'gelombang-solusi')">
+                <span>Lihat Solusi d'Alembert</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="gelombang-solusi" class="project-content hidden">
+            <p>
+                Solusi masalah Cauchy untuk persamaan gelombang diperoleh melalui rumus d'Alembert:
+            </p>
+            <div class="katex">
+$$
+u(x, t) = \frac{\phi(x - ct) + \phi(x + ct)}{2} + \frac{1}{2c}\int_{x - ct}^{x + ct} \psi(s)\, ds
+$$
+            </div>
+            <p>
+                Solusi ini menunjukkan bahwa nilai \( u \) pada titik \( (x, t) \) hanya bergantung
+                pada data awal dalam interval \( [x - ct,\, x + ct] \), yang disebut domain of dependence.
+            </p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh — Masalah Cauchy untuk Persamaan Panas</h3>
+        <p>
+            Persamaan panas satu dimensi diberikan sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+\frac{\partial u}{\partial t} = k\frac{\partial^2 u}{\partial x^2}, \quad x \in \mathbb{R},\ t > 0
+$$
+        </div>
+        <p>
+            Data Cauchy diberikan pada garis \( t = 0 \):
+        </p>
+        <div class="katex">
+$$
+u(x, 0) = \phi(x)
+$$
+        </div>
+        <p>
+            Karena \( A = k \), \( B = 0 \), \( C = 0 \), maka diskriminan adalah
+            \( B^2 - 4AC = 0 \). Persamaan ini bersifat parabolik.
+        </p>
+        <p>
+            Pada persamaan panas, hanya satu kondisi awal yang diperlukan, karena orde tertinggi
+            terhadap \( t \) adalah satu. Kurva \( t = 0 \) bukan karakteristik, sehingga
+            masalah Cauchy ini well-posed untuk \( t > 0 \).
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Well-Posedness Masalah Cauchy</h3>
+        <p>
+            Masalah Cauchy dikatakan well-posed dalam pengertian Hadamard apabila memenuhi
+            tiga syarat berikut secara sekaligus.
+        </p>
+        <table class="table">
+            <tr>
+                <th>Syarat</th>
+                <th>Pengertian</th>
+            </tr>
+            <tr>
+                <td>Eksistensi</td>
+                <td>Solusi ada untuk data Cauchy yang diberikan.</td>
+            </tr>
+            <tr>
+                <td>Ketunggalan</td>
+                <td>Solusi yang ada bersifat tunggal.</td>
+            </tr>
+            <tr>
+                <td>Kestabilan</td>
+                <td>Solusi bergantung secara kontinu pada data Cauchy.</td>
+            </tr>
+        </table>
+        <p>
+            Apabila salah satu syarat tidak terpenuhi, masalah dikatakan ill-posed.
+            Contoh klasik masalah ill-posed adalah masalah Cauchy untuk persamaan Laplace,
+            sebagaimana ditunjukkan oleh contoh Hadamard.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh Hadamard — Masalah Ill-Posed</h3>
+        <p>
+            Hadamard menunjukkan bahwa masalah Cauchy untuk persamaan Laplace bersifat ill-posed.
+            Persamaan Laplace diberikan sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0
+$$
+        </div>
+        <p>
+            Data Cauchy diberikan pada garis \( y = 0 \):
+        </p>
+        <div class="katex">
+$$
+u(x, 0) = 0, \qquad \frac{\partial u}{\partial y}(x, 0) = \frac{\sin(nx)}{n}
+$$
+        </div>
+        <p>
+            Untuk setiap \( n \), data Cauchy tersebut mendekati nol seiring \( n \to \infty \).
+            Namun solusinya adalah:
+        </p>
+        <div class="katex">
+$$
+u(x, y) = \frac{\sinh(ny)}{n^2}\sin(nx)
+$$
+        </div>
+        <p>
+            Untuk \( y \neq 0 \), nilai \( u \) tumbuh secara eksponensial seiring \( n \to \infty \),
+            sehingga solusi tidak bergantung secara kontinu pada data Cauchy. Syarat kestabilan
+            tidak terpenuhi, dan masalah ini bersifat ill-posed.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kesimpulan</h3>
+        <p>
+            Masalah Cauchy merupakan formulasi masalah nilai awal untuk PDP orde dua, di mana
+            nilai fungsi dan turunan normalnya diberikan pada suatu kurva Cauchy \( \Gamma \).
+        </p>
+        <p>
+            Eksistensi dan ketunggalan solusi lokal dijamin apabila kurva Cauchy bukan merupakan
+            kurva karakteristik, sesuai dengan Teorema Cauchy-Kovalevskaya.
+        </p>
+        <p>
+            Well-posedness dalam pengertian Hadamard mensyaratkan eksistensi, ketunggalan, dan
+            kestabilan solusi terhadap data Cauchy. Persamaan hiperbolik umumnya menghasilkan
+            masalah Cauchy yang well-posed, sedangkan persamaan eliptik cenderung menghasilkan
+            masalah yang ill-posed apabila data diberikan pada kurva terbuka.
+        </p>
+    </div>
+
+</div>

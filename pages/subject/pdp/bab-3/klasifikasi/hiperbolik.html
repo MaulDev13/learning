@@ -1,0 +1,214 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Klasifikasi PDP Orde Dua — Hiperbolik</h2>
+        <p>
+            Kelas hiperbolik merupakan salah satu dari tiga kelas utama PDP orde dua,
+            bersama dengan kelas eliptik dan parabolik. PDP hiperbolik umumnya muncul
+            dalam pemodelan fenomena yang melibatkan perambatan gelombang dan gangguan
+            yang merambat dengan kecepatan terhingga.
+        </p>
+        <p>
+            Pemahaman terhadap kelas hiperbolik mencakup identifikasi melalui diskriminan,
+            sifat kurva karakteristik, serta perilaku solusinya yang khas.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kondisi Diskriminan</h3>
+        <p>
+            Diberikan PDP orde dua dalam bentuk umum berikut.
+        </p>
+        <div class="katex">
+$$
+Au_{xx} + Bu_{xy} + Cu_{yy} + Du_x + Eu_y + Fu = G(x, y)
+$$
+        </div>
+        <p>
+            PDP orde dua dikatakan hiperbolik pada suatu titik apabila diskriminan
+            \( \Delta \) bernilai positif pada titik tersebut.
+        </p>
+        <div class="katex">
+$$
+\Delta = B^2 - 4AC > 0
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kurva Karakteristik pada Kelas Hiperbolik</h3>
+        <p>
+            Kurva karakteristik PDP orde dua ditentukan oleh persamaan berikut.
+        </p>
+        <div class="katex">
+$$
+A\left(\frac{dy}{dx}\right)^2 - B\left(\frac{dy}{dx}\right) + C = 0
+$$
+        </div>
+        <p>
+            Persamaan ini merupakan persamaan kuadrat dalam \( \frac{dy}{dx} \) dengan
+            diskriminan \( B^2 - 4AC \). Apabila \( B^2 - 4AC > 0 \), persamaan kuadrat
+            tersebut memiliki dua akar real yang berbeda.
+        </p>
+        <div class="katex">
+$$
+\frac{dy}{dx} = \frac{B \pm \sqrt{B^2 - 4AC}}{2A}
+$$
+        </div>
+        <p>
+            Dua akar real yang berbeda ini menghasilkan dua keluarga kurva karakteristik
+            real yang berbeda. Keberadaan dua keluarga karakteristik inilah yang menjadi
+            ciri pembeda utama kelas hiperbolik.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh Kanonik — Persamaan Gelombang</h3>
+        <p>
+            Contoh paling representatif dari PDP hiperbolik adalah persamaan gelombang
+            satu dimensi berikut.
+        </p>
+        <div class="katex">
+$$
+\frac{\partial^2 u}{\partial t^2} - c^2\frac{\partial^2 u}{\partial x^2} = 0
+$$
+        </div>
+        <p>
+            Dengan mengidentifikasi variabel bebas sebagai \( x \) dan \( t \),
+            koefisien utamanya adalah \( A = -c^2 \), \( B = 0 \), \( C = 1 \).
+            Diskriminannya adalah:
+        </p>
+        <div class="katex">
+$$
+\Delta = B^2 - 4AC = 0 - 4(-c^2)(1) = 4c^2 > 0
+$$
+        </div>
+        <p>
+            Karena \( c \neq 0 \), maka \( \Delta > 0 \) dan persamaan gelombang
+            termasuk dalam kelas hiperbolik.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Karakteristik Persamaan Gelombang</h3>
+        <p>
+            Untuk persamaan gelombang \( u_{tt} - c^2 u_{xx} = 0 \), persamaan
+            kurva karakteristiknya adalah sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+-c^2\left(\frac{dt}{dx}\right)^2 + 1 = 0 \implies \frac{dt}{dx} = \pm\frac{1}{c}
+$$
+        </div>
+        <p>
+            Integrasi menghasilkan dua keluarga kurva karakteristik berikut.
+        </p>
+        <div class="katex">
+$$
+\xi = x - ct = \text{konstan}, \qquad \eta = x + ct = \text{konstan}
+$$
+        </div>
+        <p>
+            Kedua keluarga karakteristik ini berperan sebagai garis perambatan informasi
+            dalam bidang \( xt \). Solusi merambat sepanjang kurva-kurva ini dengan
+            kecepatan \( c \).
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh dengan Koefisien Variabel</h3>
+        <p>
+            Klasifikasi PDP dengan koefisien variabel dilakukan secara titik per titik.
+            Perhatikan persamaan berikut.
+        </p>
+        <div class="katex">
+$$
+y\, u_{xx} - x\, u_{yy} = 0
+$$
+        </div>
+        <p>
+            Identifikasi koefisien menghasilkan \( A = y \), \( B = 0 \), \( C = -x \).
+            Diskriminannya adalah:
+        </p>
+        <div class="katex">
+$$
+\Delta = B^2 - 4AC = 0 - 4(y)(-x) = 4xy
+$$
+        </div>
+        <p>
+            Persamaan ini bersifat hiperbolik apabila \( xy > 0 \), yaitu pada kuadran
+            pertama \( (x > 0,\ y > 0) \) dan kuadran ketiga \( (x < 0,\ y < 0) \).
+            Di luar kuadran tersebut, klasifikasinya berbeda.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Sifat Solusi PDP Hiperbolik</h3>
+        <p>
+            PDP hiperbolik memiliki sejumlah sifat khas yang membedakannya dari kelas eliptik
+            dan parabolik.
+        </p>
+        <table class="table">
+            <tr>
+                <th>Sifat</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>Perambatan terhingga</td>
+                <td>Gangguan merambat dengan kecepatan terhingga, ditentukan oleh kemiringan kurva karakteristik.</td>
+            </tr>
+            <tr>
+                <td>Domain of dependence</td>
+                <td>Nilai solusi pada suatu titik hanya bergantung pada data awal dalam selang terbatas yang dibatasi oleh karakteristik.</td>
+            </tr>
+            <tr>
+                <td>Domain of influence</td>
+                <td>Data awal pada suatu titik hanya mempengaruhi solusi dalam daerah kerucut yang dibatasi oleh karakteristik.</td>
+            </tr>
+            <tr>
+                <td>Diskontinuitas</td>
+                <td>Diskontinuitas pada data awal dapat merambat sepanjang kurva karakteristik ke dalam domain solusi.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Masalah Nilai Awal yang Sesuai</h3>
+        <p>
+            PDP hiperbolik secara alami berpasangan dengan masalah nilai awal atau masalah Cauchy.
+            Untuk persamaan gelombang, data diberikan pada garis \( t = 0 \) sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+u(x, 0) = \phi(x), \qquad \frac{\partial u}{\partial t}(x, 0) = \psi(x)
+$$
+        </div>
+        <p>
+            Dua kondisi awal diperlukan karena orde tertinggi terhadap variabel waktu \( t \)
+            adalah dua. Kondisi pertama menetapkan profil awal solusi, sedangkan kondisi kedua
+            menetapkan laju perubahan awal solusi.
+        </p>
+        <p>
+            Dengan data awal yang cukup halus dan kurva Cauchy yang bukan karakteristik,
+            masalah nilai awal untuk PDP hiperbolik bersifat well-posed.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kesimpulan</h3>
+        <p>
+            PDP orde dua diklasifikasikan sebagai hiperbolik apabila diskriminan
+            \( B^2 - 4AC > 0 \) pada titik atau domain yang diperhatikan.
+        </p>
+        <p>
+            Kelas hiperbolik memiliki dua keluarga kurva karakteristik real yang berbeda,
+            yang berperan sebagai jalur perambatan informasi dan gangguan dalam domain solusi.
+        </p>
+        <p>
+            Persamaan gelombang merupakan contoh kanonik kelas hiperbolik. Sifat perambatan
+            terhingga dan keberadaan domain of dependence menjadi ciri khas yang membedakan
+            kelas ini dari kelas eliptik dan parabolik.
+        </p>
+    </div>
+
+</div>

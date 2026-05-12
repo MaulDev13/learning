@@ -1,0 +1,511 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Ujian Tengah Semester — Persamaan Diferensial Parsial</h2>
+        <p>
+            Ujian ini mencakup materi pengantar PDP, PDP orde satu, dan PDP orde dua
+            beserta klasifikasinya. Kerjakan setiap soal secara sistematis dengan
+            menuliskan langkah-langkah penyelesaian secara lengkap.
+        </p>
+        <table class="table">
+            <tr>
+                <th>Keterangan</th>
+                <th>Detail</th>
+            </tr>
+            <tr>
+                <td>Jumlah Soal</td>
+                <td>10 soal uraian</td>
+            </tr>
+            <tr>
+                <td>Cakupan Materi</td>
+                <td>Pengantar PDP, PDP Orde Satu, PDP Orde Dua dan Klasifikasi</td>
+            </tr>
+            <tr>
+                <td>Sifat Ujian</td>
+                <td>Mandiri</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 1</h3>
+        <p>
+            Tentukan orde, linearitas, dan homogenitas dari setiap persamaan berikut.
+            Berikan alasan singkat untuk setiap jawaban.
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+\text{(a)}\quad \frac{\partial^2 u}{\partial x^2} + \frac{\partial u}{\partial y} = 0
+$$
+            </div>
+            <div class="katex">
+$$
+\text{(b)}\quad \frac{\partial u}{\partial x}\cdot\frac{\partial u}{\partial y} = u
+$$
+            </div>
+            <div class="katex">
+$$
+\text{(c)}\quad \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = e^x
+$$
+            </div>
+        </div>
+        <div id="soal1-solusi">
+            <h4>Solusi Soal 1</h4>
+            <p>
+                (a) Orde dua, karena turunan tertinggi adalah \( \frac{\partial^2 u}{\partial x^2} \).
+                Linear, karena semua suku memuat \( u \) atau turunannya dalam pangkat satu.
+                Homogen, karena ruas kanan bernilai nol.
+            </p>
+            <p>
+                (b) Orde satu, karena turunan tertinggi adalah turunan orde satu.
+                Tidak linear, karena terdapat perkalian antara dua turunan parsial
+                \( \frac{\partial u}{\partial x} \cdot \frac{\partial u}{\partial y} \).
+            </p>
+            <p>
+                (c) Orde dua, karena turunan tertinggi adalah turunan orde dua.
+                Linear, karena semua suku yang memuat \( u \) berderajat satu.
+                Tak homogen, karena ruas kanan adalah \( e^x \) yang tidak identik nol.
+            </p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 2</h3>
+        <p>
+            Verifikasi bahwa fungsi berikut merupakan solusi dari PDP yang diberikan.
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+u(x, y) = e^{-y}\sin(x), \qquad \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0
+$$
+            </div>
+        </div>
+        <div id="soal2-solusi">
+            <h4>Solusi Soal 2</h4>
+            <p>
+                Hitung turunan parsial kedua terhadap \( x \):
+            </p>
+            <div class="katex">
+$$
+\frac{\partial u}{\partial x} = e^{-y}\cos(x), \qquad \frac{\partial^2 u}{\partial x^2} = -e^{-y}\sin(x)
+$$
+            </div>
+            <p>
+                Hitung turunan parsial kedua terhadap \( y \):
+            </p>
+            <div class="katex">
+$$
+\frac{\partial u}{\partial y} = -e^{-y}\sin(x), \qquad \frac{\partial^2 u}{\partial y^2} = e^{-y}\sin(x)
+$$
+            </div>
+            <p>
+                Substitusikan ke persamaan Laplace:
+            </p>
+            <div class="katex">
+$$
+\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = -e^{-y}\sin(x) + e^{-y}\sin(x) = 0 \quad \checkmark
+$$
+            </div>
+            <p>
+                Fungsi \( u(x,y) = e^{-y}\sin(x) \) terbukti merupakan solusi persamaan Laplace.
+            </p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 3</h3>
+        <p>
+            Tentukan solusi umum dari PDP orde satu berikut menggunakan metode yang sesuai.
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+\frac{\partial u}{\partial x} - 3\frac{\partial u}{\partial y} = 0
+$$
+            </div>
+        </div>
+        <div id="soal3-solusi">
+            <h4>Solusi Soal 3</h4>
+            <p>
+                Persamaan karakteristik dari PDP \( u_x - 3u_y = 0 \) adalah:
+            </p>
+            <div class="katex">
+$$
+\frac{dx}{1} = \frac{dy}{-3} = \frac{du}{0}
+$$
+            </div>
+            <p>
+                Dari \( \frac{dx}{1} = \frac{dy}{-3} \), diperoleh:
+            </p>
+            <div class="katex">
+$$
+-3\,dx = dy \implies y + 3x = c_1
+$$
+            </div>
+            <p>
+                Dari \( \frac{du}{0} = 0 \), diperoleh \( u = c_2 \). Oleh karena itu
+                solusi umum adalah:
+            </p>
+            <div class="katex">
+$$
+u(x, y) = f(y + 3x)
+$$
+            </div>
+            <p>
+                dengan \( f \) adalah fungsi sembarang yang terdiferensialkan.
+            </p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 4</h3>
+        <p>
+            Klasifikasikan PDP berikut sebagai eliptik, parabolik, atau hiperbolik.
+            Tentukan nilai diskriminan dan berikan kesimpulan yang jelas.
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+\text{(a)}\quad 3u_{xx} + 4u_{xy} + 3u_{yy} = 0
+$$
+            </div>
+            <div class="katex">
+$$
+\text{(b)}\quad u_{xx} - 6u_{xy} + 9u_{yy} + u_x = 0
+$$
+            </div>
+            <div class="katex">
+$$
+\text{(c)}\quad u_{xx} - 4u_{yy} = 0
+$$
+            </div>
+        </div>
+        <div id="soal4-solusi">
+            <h4>Solusi Soal 4</h4>
+            <p>
+                (a) \( A = 3,\ B = 4,\ C = 3 \):
+            </p>
+            <div class="katex">
+$$
+\Delta = B^2 - 4AC = 16 - 36 = -20 < 0 \implies \textbf{Eliptik}
+$$
+            </div>
+            <p>
+                (b) \( A = 1,\ B = -6,\ C = 9 \):
+            </p>
+            <div class="katex">
+$$
+\Delta = B^2 - 4AC = 36 - 36 = 0 \implies \textbf{Parabolik}
+$$
+            </div>
+            <p>
+                (c) \( A = 1,\ B = 0,\ C = -4 \):
+            </p>
+            <div class="katex">
+$$
+\Delta = B^2 - 4AC = 0 + 16 = 16 > 0 \implies \textbf{Hiperbolik}
+$$
+            </div>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 5</h3>
+        <p>
+            Tentukan klasifikasi PDP berikut pada setiap titik \( (x, y) \) dan identifikasi
+            daerah di mana persamaan bersifat eliptik, parabolik, dan hiperbolik.
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+u_{xx} + 2x\, u_{xy} + (1 - y^2)\, u_{yy} = 0
+$$
+            </div>
+        </div>
+        <div id="soal5-solusi">
+            <h4>Solusi Soal 5</h4>
+            <p>
+                Identifikasi koefisien: \( A = 1,\ B = 2x,\ C = 1 - y^2 \). Diskriminannya adalah:
+            </p>
+            <div class="katex">
+$$
+\Delta = B^2 - 4AC = 4x^2 - 4(1)(1 - y^2) = 4x^2 - 4 + 4y^2 = 4(x^2 + y^2 - 1)
+$$
+            </div>
+            <p>
+                Analisis berdasarkan nilai \( \Delta \):
+            </p>
+            <div class="katex">
+$$
+\Delta < 0 \iff x^2 + y^2 < 1 \implies \textbf{Eliptik (interior lingkaran satuan)}
+$$
+            </div>
+            <div class="katex">
+$$
+\Delta = 0 \iff x^2 + y^2 = 1 \implies \textbf{Parabolik (lingkaran satuan)}
+$$
+            </div>
+            <div class="katex">
+$$
+\Delta > 0 \iff x^2 + y^2 > 1 \implies \textbf{Hiperbolik (eksterior lingkaran satuan)}
+$$
+            </div>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 6</h3>
+        <p>
+            Tentukan klasifikasi dari PDP berikut, kemudian tentukan persamaan
+            kurva karakteristiknya secara eksplisit.
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+4u_{xx} - 4u_{xy} + u_{yy} + 2u_x - u = 0
+$$
+            </div>
+        </div>
+        <div id="soal6-solusi">
+            <h4>Solusi Soal 6</h4>
+            <p>
+                Identifikasi koefisien: \( A = 4,\ B = -4,\ C = 1 \). Diskriminannya adalah:
+            </p>
+            <div class="katex">
+$$
+\Delta = B^2 - 4AC = 16 - 16 = 0 \implies \textbf{Parabolik}
+$$
+            </div>
+            <p>
+                Persamaan kurva karakteristik untuk kelas parabolik:
+            </p>
+            <div class="katex">
+$$
+\frac{dy}{dx} = \frac{B}{2A} = \frac{-4}{8} = -\frac{1}{2}
+$$
+            </div>
+            <p>
+                Integrasi menghasilkan satu keluarga kurva karakteristik:
+            </p>
+            <div class="katex">
+$$
+y = -\frac{1}{2}x + c \implies 2y + x = \text{konstan}
+$$
+            </div>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 7</h3>
+        <p>
+            Tentukan klasifikasi dan kedua keluarga kurva karakteristik dari PDP berikut.
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+u_{xx} - 5u_{xy} + 4u_{yy} = 0
+$$
+            </div>
+        </div>
+        <div id="soal7-solusi">
+            <h4>Solusi Soal 7</h4>
+            <p>
+                Identifikasi koefisien: \( A = 1,\ B = -5,\ C = 4 \). Diskriminannya adalah:
+            </p>
+            <div class="katex">
+$$
+\Delta = B^2 - 4AC = 25 - 16 = 9 > 0 \implies \textbf{Hiperbolik}
+$$
+            </div>
+            <p>
+                Persamaan kurva karakteristik:
+            </p>
+            <div class="katex">
+$$
+\frac{dy}{dx} = \frac{B \pm \sqrt{\Delta}}{2A} = \frac{-5 \pm 3}{2}
+$$
+            </div>
+            <p>
+                Dua akar yang diperoleh:
+            </p>
+            <div class="katex">
+$$
+\frac{dy}{dx} = \frac{-5 + 3}{2} = -1 \implies y + x = c_1
+$$
+            </div>
+            <div class="katex">
+$$
+\frac{dy}{dx} = \frac{-5 - 3}{2} = -4 \implies y + 4x = c_2
+$$
+            </div>
+            <p>
+                Dua keluarga kurva karakteristik adalah \( y + x = \text{konstan} \)
+                dan \( y + 4x = \text{konstan} \).
+            </p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 8</h3>
+        <p>
+            Diberikan PDP dengan koefisien variabel berikut. Tentukan klasifikasinya
+            pada setiap titik dan identifikasi daerah eliptik, parabolik, serta hiperbolik
+            secara geometris.
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+y\, u_{xx} + 2u_{xy} + x\, u_{yy} = 0
+$$
+            </div>
+        </div>
+        <div id="soal8-solusi">
+            <h4>Solusi Soal 8</h4>
+            <p>
+                Identifikasi koefisien: \( A = y,\ B = 2,\ C = x \). Diskriminannya adalah:
+            </p>
+            <div class="katex">
+$$
+\Delta = B^2 - 4AC = 4 - 4xy
+$$
+            </div>
+            <p>
+                Analisis berdasarkan nilai \( \Delta \):
+            </p>
+            <div class="katex">
+$$
+\Delta < 0 \iff xy > 1 \implies \textbf{Eliptik}
+$$
+            </div>
+            <div class="katex">
+$$
+\Delta = 0 \iff xy = 1 \implies \textbf{Parabolik (hiperbola } xy = 1\text{)}
+$$
+            </div>
+            <div class="katex">
+$$
+\Delta > 0 \iff xy < 1 \implies \textbf{Hiperbolik}
+$$
+            </div>
+            <p>
+                Daerah eliptik adalah daerah di atas hiperbola \( xy = 1 \) pada kuadran pertama
+                dan di bawahnya pada kuadran ketiga. Daerah hiperbolik adalah seluruh daerah
+                di mana \( xy < 1 \), termasuk kuadran kedua dan keempat secara keseluruhan.
+            </p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 9</h3>
+        <p>
+            Perhatikan PDP berikut yang bergantung pada parameter \( k \).
+            Tentukan nilai \( k \) agar persamaan bersifat eliptik, parabolik,
+            dan hiperbolik.
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+u_{xx} + k\, u_{xy} + 4u_{yy} = 0, \qquad k \in \mathbb{R}
+$$
+            </div>
+        </div>
+        <div id="soal9-solusi">
+            <h4>Solusi Soal 9</h4>
+            <p>
+                Identifikasi koefisien: \( A = 1,\ B = k,\ C = 4 \). Diskriminannya adalah:
+            </p>
+            <div class="katex">
+$$
+\Delta = B^2 - 4AC = k^2 - 16
+$$
+            </div>
+            <p>
+                Analisis berdasarkan nilai \( \Delta \):
+            </p>
+            <div class="katex">
+$$
+\Delta < 0 \iff k^2 < 16 \iff -4 < k < 4 \implies \textbf{Eliptik}
+$$
+            </div>
+            <div class="katex">
+$$
+\Delta = 0 \iff k^2 = 16 \iff k = \pm 4 \implies \textbf{Parabolik}
+$$
+            </div>
+            <div class="katex">
+$$
+\Delta > 0 \iff k^2 > 16 \iff k < -4 \text{ atau } k > 4 \implies \textbf{Hiperbolik}
+$$
+            </div>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 10</h3>
+        <p>
+            Diberikan PDP orde dua berikut. Tentukan klasifikasinya, kemudian identifikasi
+            nama persamaan yang dikenal dan sebutkan satu contoh fenomena fisika
+            yang dimodelkan oleh persamaan tersebut.
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+\text{(a)}\quad \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} = 0
+$$
+            </div>
+            <div class="katex">
+$$
+\text{(b)}\quad \frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial x^2}, \quad \alpha > 0
+$$
+            </div>
+            <div class="katex">
+$$
+\text{(c)}\quad \frac{\partial^2 u}{\partial t^2} = c^2\frac{\partial^2 u}{\partial x^2}, \quad c > 0
+$$
+            </div>
+        </div>
+        <div id="soal10-solusi">
+            <h4>Solusi Soal 10</h4>
+            <p>
+                (a) \( A = 1,\ B = 0,\ C = 1 \) (terhadap dua variabel mana pun):
+            </p>
+            <div class="katex">
+$$
+\Delta = 0 - 4(1)(1) = -4 < 0 \implies \textbf{Eliptik}
+$$
+            </div>
+            <p>
+                Persamaan ini dikenal sebagai persamaan Laplace tiga dimensi.
+                Fenomena yang dimodelkan: distribusi potensial gravitasi atau potensial
+                listrik dalam ruang tanpa sumber muatan.
+            </p>
+            <p>
+                (b) \( A = \alpha,\ B = 0,\ C = 0 \) (terhadap variabel \( x \) dan \( t \)):
+            </p>
+            <div class="katex">
+$$
+\Delta = 0 - 4(\alpha)(0) = 0 \implies \textbf{Parabolik}
+$$
+            </div>
+            <p>
+                Persamaan ini dikenal sebagai persamaan difusi atau persamaan panas.
+                Fenomena yang dimodelkan: konduksi panas pada batang satu dimensi.
+            </p>
+            <p>
+                (c) \( A = -c^2,\ B = 0,\ C = 1 \) (terhadap variabel \( x \) dan \( t \)):
+            </p>
+            <div class="katex">
+$$
+\Delta = 0 - 4(-c^2)(1) = 4c^2 > 0 \implies \textbf{Hiperbolik}
+$$
+            </div>
+            <p>
+                Persamaan ini dikenal sebagai persamaan gelombang satu dimensi.
+                Fenomena yang dimodelkan: perambatan gelombang pada dawai yang bergetar.
+            </p>
+        </div>
+    </div>
+
+</div>

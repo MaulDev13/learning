@@ -1,0 +1,169 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Bentuk Umum PDP Orde Dua</h2>
+        <p>
+            Persamaan Diferensial Parsial orde dua merupakan PDP yang memuat turunan parsial
+            orde dua sebagai turunan tertinggi yang muncul dalam persamaan.
+        </p>
+        <p>
+            Pemahaman terhadap bentuk umum PDP orde dua menjadi titik awal yang diperlukan
+            sebelum mempelajari klasifikasi, metode karakteristik, maupun metode penyelesaiannya.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Bentuk Umum</h3>
+        <p>
+            PDP orde dua dengan dua variabel bebas \( x \) dan \( y \) secara umum ditulis
+            dalam bentuk berikut.
+        </p>
+        <div class="katex">
+$$
+A\frac{\partial^2 u}{\partial x^2} + B\frac{\partial^2 u}{\partial x \partial y} + C\frac{\partial^2 u}{\partial y^2} + D\frac{\partial u}{\partial x} + E\frac{\partial u}{\partial y} + Fu = G(x, y)
+$$
+        </div>
+        <p>
+            Fungsi \( u = u(x, y) \) adalah fungsi yang tidak diketahui dan dicari sebagai solusi.
+            Koefisien \( A, B, C, D, E, F \) serta fungsi \( G \) dapat berupa konstanta
+            maupun fungsi dari \( x \) dan \( y \).
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Notasi Ringkas</h3>
+        <p>
+            Untuk keperluan penulisan yang lebih ringkas, digunakan notasi turunan parsial
+            sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+u_x = \frac{\partial u}{\partial x}, \quad
+u_y = \frac{\partial u}{\partial y}, \quad
+u_{xx} = \frac{\partial^2 u}{\partial x^2}, \quad
+u_{xy} = \frac{\partial^2 u}{\partial x \partial y}, \quad
+u_{yy} = \frac{\partial^2 u}{\partial y^2}
+$$
+        </div>
+        <p>
+            Dengan notasi ini, bentuk umum PDP orde dua dapat ditulis lebih ringkas sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+Au_{xx} + Bu_{xy} + Cu_{yy} + Du_x + Eu_y + Fu = G(x, y)
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Peran Setiap Koefisien</h3>
+        <p>
+            Setiap koefisien dalam bentuk umum memiliki peran yang berbeda dalam menentukan
+            sifat dan perilaku persamaan.
+        </p>
+        <table class="table">
+            <tr>
+                <th>Koefisien</th>
+                <th>Suku yang Dikaitkan</th>
+                <th>Peran</th>
+            </tr>
+            <tr>
+                <td>\( A \)</td>
+                <td>\( u_{xx} \)</td>
+                <td>Turunan orde dua terhadap \( x \)</td>
+            </tr>
+            <tr>
+                <td>\( B \)</td>
+                <td>\( u_{xy} \)</td>
+                <td>Turunan campuran terhadap \( x \) dan \( y \)</td>
+            </tr>
+            <tr>
+                <td>\( C \)</td>
+                <td>\( u_{yy} \)</td>
+                <td>Turunan orde dua terhadap \( y \)</td>
+            </tr>
+            <tr>
+                <td>\( D \)</td>
+                <td>\( u_x \)</td>
+                <td>Turunan orde satu terhadap \( x \)</td>
+            </tr>
+            <tr>
+                <td>\( E \)</td>
+                <td>\( u_y \)</td>
+                <td>Turunan orde satu terhadap \( y \)</td>
+            </tr>
+            <tr>
+                <td>\( F \)</td>
+                <td>\( u \)</td>
+                <td>Suku fungsi tanpa turunan</td>
+            </tr>
+            <tr>
+                <td>\( G(x,y) \)</td>
+                <td>—</td>
+                <td>Suku sumber, tidak memuat \( u \)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Koefisien Utama</h3>
+        <p>
+            Dalam bentuk umum PDP orde dua, koefisien \( A \), \( B \), dan \( C \) disebut
+            koefisien utama karena mengkaitkan suku-suku turunan orde dua.
+        </p>
+        <p>
+            Ketiga koefisien ini memegang peranan paling menentukan dalam menganalisis sifat
+            PDP orde dua, termasuk dalam proses klasifikasi yang akan dibahas pada sub bab berikutnya.
+        </p>
+        <p>
+            Syarat agar persamaan benar-benar berorde dua adalah setidaknya satu dari
+            \( A \), \( B \), atau \( C \) tidak identik nol pada domain yang diperhatikan.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh Persamaan dalam Bentuk Umum</h3>
+        <p>
+            Berikut adalah beberapa contoh PDP orde dua yang dikenal luas beserta identifikasi
+            koefisien-koefisiennya dalam bentuk umum.
+        </p>
+        <table class="table">
+            <tr>
+                <th>Persamaan</th>
+                <th>\( A \)</th>
+                <th>\( B \)</th>
+                <th>\( C \)</th>
+                <th>\( G \)</th>
+            </tr>
+            <tr>
+                <td>Laplace: \( u_{xx} + u_{yy} = 0 \)</td>
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Gelombang: \( u_{tt} - c^2 u_{xx} = 0 \)</td>
+                <td>\( -c^2 \)</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Panas: \( u_t - k u_{xx} = 0 \)</td>
+                <td>\( -k \)</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Poisson: \( u_{xx} + u_{yy} = f(x,y) \)</td>
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>\( f(x,y) \)</td>
+            </tr>
+        </table>
+    </div>
+
+</div>

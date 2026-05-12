@@ -1,0 +1,215 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Klasifikasi PDP Orde Dua — Parabolik</h2>
+        <p>
+            Kelas parabolik merupakan kelas ketiga dari tiga kelas utama PDP orde dua,
+            bersama dengan kelas eliptik dan hiperbolik. PDP parabolik umumnya muncul
+            dalam pemodelan fenomena difusi dan konduksi panas, di mana terdapat
+            ketergantungan terhadap waktu namun tanpa perambatan gelombang.
+        </p>
+        <p>
+            Kelas parabolik berada di antara kelas eliptik dan hiperbolik, baik secara
+            matematis melalui nilai diskriminannya maupun secara fisik melalui perilaku
+            solusinya.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kondisi Diskriminan</h3>
+        <p>
+            Diberikan PDP orde dua dalam bentuk umum berikut.
+        </p>
+        <div class="katex">
+$$
+Au_{xx} + Bu_{xy} + Cu_{yy} + Du_x + Eu_y + Fu = G(x, y)
+$$
+        </div>
+        <p>
+            PDP orde dua dikatakan parabolik pada suatu titik apabila diskriminan
+            \( \Delta \) bernilai nol pada titik tersebut.
+        </p>
+        <div class="katex">
+$$
+\Delta = B^2 - 4AC = 0
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kurva Karakteristik pada Kelas Parabolik</h3>
+        <p>
+            Kurva karakteristik PDP orde dua ditentukan oleh persamaan berikut.
+        </p>
+        <div class="katex">
+$$
+A\left(\frac{dy}{dx}\right)^2 - B\left(\frac{dy}{dx}\right) + C = 0
+$$
+        </div>
+        <p>
+            Apabila \( B^2 - 4AC = 0 \), persamaan kuadrat tersebut memiliki tepat
+            satu akar real yang berulang, yaitu:
+        </p>
+        <div class="katex">
+$$
+\frac{dy}{dx} = \frac{B}{2A}
+$$
+        </div>
+        <p>
+            Satu akar real yang berulang ini menghasilkan tepat satu keluarga kurva
+            karakteristik real. Berbeda dengan kelas hiperbolik yang memiliki dua
+            keluarga karakteristik, kelas parabolik hanya memiliki satu.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh Kanonik — Persamaan Panas</h3>
+        <p>
+            Contoh paling representatif dari PDP parabolik adalah persamaan panas
+            satu dimensi berikut.
+        </p>
+        <div class="katex">
+$$
+\frac{\partial u}{\partial t} - k\frac{\partial^2 u}{\partial x^2} = 0
+$$
+        </div>
+        <p>
+            Dengan mengidentifikasi variabel bebas sebagai \( x \) dan \( t \),
+            koefisien utamanya adalah \( A = -k \), \( B = 0 \), \( C = 0 \).
+            Diskriminannya adalah:
+        </p>
+        <div class="katex">
+$$
+\Delta = B^2 - 4AC = 0 - 4(-k)(0) = 0
+$$
+        </div>
+        <p>
+            Karena \( \Delta = 0 \), persamaan panas termasuk dalam kelas parabolik.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Karakteristik Persamaan Panas</h3>
+        <p>
+            Untuk persamaan panas \( u_t - ku_{xx} = 0 \), persamaan kurva
+            karakteristiknya adalah sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+-k\left(\frac{dt}{dx}\right)^2 = 0 \implies \frac{dt}{dx} = 0
+$$
+        </div>
+        <p>
+            Integrasi menghasilkan satu keluarga kurva karakteristik berikut.
+        </p>
+        <div class="katex">
+$$
+t = \text{konstan}
+$$
+        </div>
+        <p>
+            Kurva karakteristik pada persamaan panas adalah garis-garis horizontal
+            \( t = \text{konstan} \) dalam bidang \( xt \). Hal ini menunjukkan bahwa
+            informasi merambat seketika ke seluruh domain spasial pada setiap nilai \( t \)
+            yang tetap.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh dengan Koefisien Variabel</h3>
+        <p>
+            Perhatikan persamaan berikut dengan koefisien variabel.
+        </p>
+        <div class="katex">
+$$
+x^2 u_{xx} - 2xy\, u_{xy} + y^2 u_{yy} + u_x = 0
+$$
+        </div>
+        <p>
+            Identifikasi koefisien menghasilkan \( A = x^2 \), \( B = -2xy \), \( C = y^2 \).
+            Diskriminannya adalah:
+        </p>
+        <div class="katex">
+$$
+\Delta = B^2 - 4AC = (-2xy)^2 - 4(x^2)(y^2) = 4x^2y^2 - 4x^2y^2 = 0
+$$
+        </div>
+        <p>
+            Karena \( \Delta = 0 \) untuk semua \( x, y \in \mathbb{R} \), persamaan ini
+            bersifat parabolik di seluruh bidang.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Sifat Solusi PDP Parabolik</h3>
+        <p>
+            PDP parabolik memiliki sejumlah sifat khas yang membedakannya dari kelas
+            eliptik dan hiperbolik.
+        </p>
+        <table class="table">
+            <tr>
+                <th>Sifat</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>Perambatan seketika</td>
+                <td>Gangguan pada satu titik domain spasial dirasakan seketika di seluruh domain, berbeda dengan kelas hiperbolik.</td>
+            </tr>
+            <tr>
+                <td>Pemulusan solusi</td>
+                <td>Solusi menjadi lebih halus seiring bertambahnya waktu, meskipun data awal tidak halus.</td>
+            </tr>
+            <tr>
+                <td>Prinsip nilai maksimum</td>
+                <td>Solusi tidak dapat mencapai nilai maksimum di interior domain ruang-waktu, kecuali apabila solusi konstan.</td>
+            </tr>
+            <tr>
+                <td>Ketunggalan solusi</td>
+                <td>Dengan kondisi awal dan kondisi batas yang tepat, solusi PDP parabolik bersifat tunggal.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Masalah Nilai Awal yang Sesuai</h3>
+        <p>
+            PDP parabolik secara alami berpasangan dengan masalah nilai awal pada satu
+            sisi domain waktu. Untuk persamaan panas, data diberikan pada garis \( t = 0 \)
+            sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+u(x, 0) = \phi(x), \qquad x \in \mathbb{R}
+$$
+        </div>
+        <p>
+            Hanya satu kondisi awal yang diperlukan karena orde tertinggi terhadap variabel
+            waktu \( t \) adalah satu. Hal ini berbeda dari persamaan gelombang yang memerlukan
+            dua kondisi awal.
+        </p>
+        <p>
+            Solusi dicari untuk \( t > 0 \), dan masalah ini bersifat well-posed dalam arah
+            maju waktu. Sebaliknya, masalah mundur waktu \( t < 0 \) bersifat ill-posed.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kesimpulan</h3>
+        <p>
+            PDP orde dua diklasifikasikan sebagai parabolik apabila diskriminan
+            \( B^2 - 4AC = 0 \) pada titik atau domain yang diperhatikan.
+        </p>
+        <p>
+            Kelas parabolik memiliki tepat satu keluarga kurva karakteristik real,
+            yang pada persamaan panas berupa garis-garis \( t = \text{konstan} \).
+            Sifat ini mengakibatkan perambatan pengaruh yang bersifat seketika
+            ke seluruh domain spasial.
+        </p>
+        <p>
+            Persamaan panas merupakan contoh kanonik kelas parabolik. Sifat pemulusan
+            solusi dan berlakunya prinsip nilai maksimum menjadi ciri khas yang membedakan
+            kelas ini dari kelas eliptik dan hiperbolik.
+        </p>
+    </div>
+
+</div>

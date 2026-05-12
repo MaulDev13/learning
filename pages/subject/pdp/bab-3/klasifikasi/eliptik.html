@@ -1,0 +1,223 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Klasifikasi PDP Orde Dua — Eliptik</h2>
+        <p>
+            Klasifikasi PDP orde dua didasarkan pada nilai diskriminan yang dibentuk dari
+            koefisien utama persamaan. Salah satu kelas yang dihasilkan adalah kelas eliptik,
+            yang memiliki sifat dan karakteristik matematis tersendiri.
+        </p>
+        <p>
+            PDP eliptik umumnya muncul dalam pemodelan fenomena yang berada dalam keadaan
+            setimbang atau stasioner, di mana tidak ada ketergantungan eksplisit terhadap waktu.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Diskriminan Klasifikasi</h3>
+        <p>
+            Diberikan PDP orde dua dalam bentuk umum berikut.
+        </p>
+        <div class="katex">
+$$
+Au_{xx} + Bu_{xy} + Cu_{yy} + Du_x + Eu_y + Fu = G(x, y)
+$$
+        </div>
+        <p>
+            Klasifikasi ditentukan oleh nilai diskriminan \( \Delta \) yang didefinisikan sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+\Delta = B^2 - 4AC
+$$
+        </div>
+        <p>
+            PDP orde dua dikatakan eliptik pada suatu titik apabila diskriminan bernilai negatif
+            pada titik tersebut.
+        </p>
+        <div class="katex">
+$$
+B^2 - 4AC < 0
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Sifat Kurva Karakteristik pada Kelas Eliptik</h3>
+        <p>
+            Kurva karakteristik PDP orde dua ditentukan oleh persamaan diferensial berikut.
+        </p>
+        <div class="katex">
+$$
+A\left(\frac{dy}{dx}\right)^2 - B\left(\frac{dy}{dx}\right) + C = 0
+$$
+        </div>
+        <p>
+            Persamaan ini merupakan persamaan kuadrat dalam \( \frac{dy}{dx} \).
+            Diskriminannya adalah \( B^2 - 4AC \).
+        </p>
+        <p>
+            Apabila \( B^2 - 4AC < 0 \), persamaan kuadrat tersebut tidak memiliki akar real.
+            Artinya, PDP eliptik tidak memiliki kurva karakteristik real.
+        </p>
+        <p>
+            Ketiadaan karakteristik real ini menjadi pembeda utama PDP eliptik dari kelas
+            parabolik maupun hiperbolik.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh Kanonik — Persamaan Laplace</h3>
+        <p>
+            Contoh paling representatif dari PDP eliptik adalah persamaan Laplace berikut.
+        </p>
+        <div class="katex">
+$$
+\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0
+$$
+        </div>
+        <p>
+            Identifikasi koefisien dari bentuk umum menghasilkan \( A = 1 \), \( B = 0 \),
+            dan \( C = 1 \). Diskriminannya adalah:
+        </p>
+        <div class="katex">
+$$
+\Delta = B^2 - 4AC = 0 - 4(1)(1) = -4 < 0
+$$
+        </div>
+        <p>
+            Karena \( \Delta < 0 \), persamaan Laplace termasuk dalam kelas eliptik.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh Kanonik — Persamaan Poisson</h3>
+        <p>
+            Persamaan Poisson merupakan bentuk tak homogen dari persamaan Laplace.
+        </p>
+        <div class="katex">
+$$
+\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = f(x, y)
+$$
+        </div>
+        <p>
+            Koefisien utamanya identik dengan persamaan Laplace, yaitu \( A = 1 \), \( B = 0 \),
+            \( C = 1 \), sehingga diskriminannya adalah:
+        </p>
+        <div class="katex">
+$$
+\Delta = B^2 - 4AC = -4 < 0
+$$
+        </div>
+        <p>
+            Persamaan Poisson juga termasuk dalam kelas eliptik, meskipun memiliki suku sumber
+            \( f(x, y) \) yang tidak identik nol.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh dengan Koefisien Variabel</h3>
+        <p>
+            Klasifikasi PDP dengan koefisien variabel dilakukan secara titik per titik.
+            Perhatikan persamaan berikut.
+        </p>
+        <div class="katex">
+$$
+(1 + x^2)u_{xx} + (1 + y^2)u_{yy} = 0
+$$
+        </div>
+        <p>
+            Identifikasi koefisien menghasilkan \( A = 1 + x^2 \), \( B = 0 \), \( C = 1 + y^2 \).
+            Diskriminannya adalah:
+        </p>
+        <div class="katex">
+$$
+\Delta = B^2 - 4AC = 0 - 4(1 + x^2)(1 + y^2)
+$$
+        </div>
+        <p>
+            Karena \( (1 + x^2) > 0 \) dan \( (1 + y^2) > 0 \) untuk semua \( x, y \in \mathbb{R} \),
+            maka \( \Delta < 0 \) di seluruh bidang. Persamaan ini bersifat eliptik di mana-mana.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Sifat Solusi PDP Eliptik</h3>
+        <p>
+            PDP eliptik memiliki sejumlah sifat matematis yang membedakannya dari kelas lain.
+        </p>
+        <table class="table">
+            <tr>
+                <th>Sifat</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>Kehalusan solusi</td>
+                <td>Solusi PDP eliptik bersifat sangat halus (smooth) di interior domain, bahkan apabila data batas tidak halus.</td>
+            </tr>
+            <tr>
+                <td>Prinsip nilai maksimum</td>
+                <td>Solusi tidak dapat mencapai nilai maksimum atau minimum di interior domain, kecuali apabila solusi konstan.</td>
+            </tr>
+            <tr>
+                <td>Ketunggalan solusi</td>
+                <td>Dengan kondisi batas yang tepat, solusi PDP eliptik bersifat tunggal.</td>
+            </tr>
+            <tr>
+                <td>Pengaruh global</td>
+                <td>Perubahan data pada satu bagian batas mempengaruhi solusi di seluruh domain.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Masalah Nilai Batas yang Sesuai</h3>
+        <p>
+            PDP eliptik secara alami berpasangan dengan masalah nilai batas, bukan masalah nilai awal.
+            Terdapat tiga jenis kondisi batas yang umum digunakan.
+        </p>
+        <table class="table">
+            <tr>
+                <th>Jenis</th>
+                <th>Nama</th>
+                <th>Kondisi pada Batas \( \partial\Omega \)</th>
+            </tr>
+            <tr>
+                <td>Tipe I</td>
+                <td>Dirichlet</td>
+                <td>\( u = g \) pada \( \partial\Omega \)</td>
+            </tr>
+            <tr>
+                <td>Tipe II</td>
+                <td>Neumann</td>
+                <td>\( \dfrac{\partial u}{\partial n} = g \) pada \( \partial\Omega \)</td>
+            </tr>
+            <tr>
+                <td>Tipe III</td>
+                <td>Robin</td>
+                <td>\( \alpha u + \beta \dfrac{\partial u}{\partial n} = g \) pada \( \partial\Omega \)</td>
+            </tr>
+        </table>
+        <p>
+            Pemilihan jenis kondisi batas bergantung pada konteks fisik masalah yang dimodelkan.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kesimpulan</h3>
+        <p>
+            PDP orde dua diklasifikasikan sebagai eliptik apabila diskriminan \( B^2 - 4AC < 0 \)
+            pada titik atau domain yang diperhatikan.
+        </p>
+        <p>
+            Kelas eliptik tidak memiliki kurva karakteristik real, sehingga pengaruh kondisi
+            batas bersifat global di seluruh domain. Contoh kanonik dari kelas ini adalah
+            persamaan Laplace dan persamaan Poisson.
+        </p>
+        <p>
+            Sifat solusi yang halus dan berlakunya prinsip nilai maksimum menjadi ciri khas
+            PDP eliptik yang membedakannya dari kelas parabolik dan hiperbolik.
+        </p>
+    </div>
+
+</div>
