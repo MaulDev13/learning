@@ -1,0 +1,278 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Diskriminan dan Interpretasinya pada PDP Orde Dua</h2>
+        <p>
+            Dalam menganalisis PDP orde dua, terdapat suatu besaran skalar yang dapat dihitung
+            langsung dari koefisien utama persamaan. Besaran ini disebut diskriminan dan
+            menjadi penentu tunggal dalam mengklasifikasikan PDP orde dua ke dalam tiga
+            kelas yang berbeda.
+        </p>
+        <p>
+            Pemahaman terhadap diskriminan dan interpretasinya merupakan langkah awal yang
+            wajib dikuasai sebelum mempelajari sifat solusi dan metode penyelesaian
+            masing-masing kelas PDP orde dua.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Definisi Diskriminan</h3>
+        <p>
+            Diberikan PDP orde dua dalam bentuk umum berikut.
+        </p>
+        <div class="katex">
+$$
+Au_{xx} + Bu_{xy} + Cu_{yy} + Du_x + Eu_y + Fu = G(x,y)
+$$
+        </div>
+        <p>
+            Diskriminan \( \Delta \) dari PDP orde dua didefinisikan sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+\Delta = B^2 - 4AC
+$$
+        </div>
+        <p>
+            Diskriminan hanya melibatkan koefisien utama \( A \), \( B \), dan \( C \),
+            yaitu koefisien dari suku-suku turunan orde dua. Koefisien suku orde satu
+            \( D \), \( E \), \( F \), dan fungsi sumber \( G \) tidak mempengaruhi
+            nilai diskriminan.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Asal-usul Diskriminan</h3>
+        <p>
+            Diskriminan muncul secara alami dari persamaan kurva karakteristik PDP orde dua.
+            Kurva karakteristik ditentukan oleh persamaan diferensial berikut.
+        </p>
+        <div class="katex">
+$$
+A\left(\frac{dy}{dx}\right)^2 - B\left(\frac{dy}{dx}\right) + C = 0
+$$
+        </div>
+        <p>
+            Persamaan ini merupakan persamaan kuadrat dalam \( \frac{dy}{dx} \).
+            Dengan rumus diskriminan persamaan kuadrat \( ap^2 + bp + c = 0 \),
+            yaitu \( b^2 - 4ac \), diperoleh diskriminan persamaan karakteristik sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+\Delta_{\text{karakteristik}} = (-B)^2 - 4(A)(C) = B^2 - 4AC
+$$
+        </div>
+        <p>
+            Nilai diskriminan ini menentukan jumlah dan jenis akar persamaan karakteristik,
+            yang selanjutnya menentukan jenis kurva karakteristik yang dimiliki PDP.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Tabel Klasifikasi Berdasarkan Diskriminan</h3>
+        <p>
+            Berdasarkan nilai diskriminan, PDP orde dua diklasifikasikan sebagai berikut.
+        </p>
+        <table class="table">
+            <tr>
+                <th>Kondisi Diskriminan</th>
+                <th>Kelas PDP</th>
+                <th>Akar Karakteristik</th>
+                <th>Jumlah Karakteristik Real</th>
+            </tr>
+            <tr>
+                <td>\( B^2 - 4AC < 0 \)</td>
+                <td>Eliptik</td>
+                <td>Dua akar kompleks konjugat</td>
+                <td>Tidak ada</td>
+            </tr>
+            <tr>
+                <td>\( B^2 - 4AC = 0 \)</td>
+                <td>Parabolik</td>
+                <td>Satu akar real berulang</td>
+                <td>Satu keluarga</td>
+            </tr>
+            <tr>
+                <td>\( B^2 - 4AC > 0 \)</td>
+                <td>Hiperbolik</td>
+                <td>Dua akar real berbeda</td>
+                <td>Dua keluarga</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Interpretasi Geometris Diskriminan</h3>
+        <p>
+            Secara geometris, diskriminan menentukan jumlah dan jenis kurva karakteristik
+            yang dimiliki PDP orde dua. Kurva karakteristik adalah kurva-kurva khusus
+            pada bidang variabel bebas yang berperan sebagai jalur perambatan informasi
+            dalam persamaan.
+        </p>
+        <p>
+            Apabila \( \Delta < 0 \), tidak terdapat kurva karakteristik real. Informasi
+            menyebar secara merata ke seluruh domain tanpa ada arah istimewa.
+        </p>
+        <p>
+            Apabila \( \Delta = 0 \), terdapat tepat satu keluarga kurva karakteristik.
+            Terdapat satu arah istimewa dalam domain di mana sifat persamaan berubah secara
+            degenerasi.
+        </p>
+        <p>
+            Apabila \( \Delta > 0 \), terdapat dua keluarga kurva karakteristik yang saling
+            berpotongan. Terdapat dua arah istimewa yang memisahkan domain menjadi daerah-daerah
+            dengan sifat berbeda.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Interpretasi Fisika Diskriminan</h3>
+        <p>
+            Setiap kelas yang dihasilkan oleh diskriminan berkorespondensi dengan jenis
+            fenomena fisika yang berbeda.
+        </p>
+        <table class="table">
+            <tr>
+                <th>Kelas</th>
+                <th>Fenomena Fisika</th>
+                <th>Sifat Perambatan Pengaruh</th>
+            </tr>
+            <tr>
+                <td>Eliptik</td>
+                <td>Kesetimbangan, elektrostatik, aliran potensial</td>
+                <td>Pengaruh bersifat global, menyebar ke seluruh domain</td>
+            </tr>
+            <tr>
+                <td>Parabolik</td>
+                <td>Difusi panas, perambatan konsentrasi</td>
+                <td>Pengaruh menyebar seketika secara spasial, terarah dalam waktu</td>
+            </tr>
+            <tr>
+                <td>Hiperbolik</td>
+                <td>Perambatan gelombang, getaran, akustik</td>
+                <td>Pengaruh merambat dengan kecepatan terhingga sepanjang karakteristik</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Diskriminan pada Koefisien Konstan</h3>
+        <p>
+            Apabila koefisien \( A \), \( B \), dan \( C \) adalah konstanta, maka nilai
+            diskriminan \( \Delta = B^2 - 4AC \) bernilai tetap di seluruh domain.
+            Klasifikasi PDP berlaku secara seragam di setiap titik dalam domain tersebut.
+        </p>
+        <p>
+            Sebagai contoh, persamaan Laplace \( u_{xx} + u_{yy} = 0 \) memiliki
+            \( A = 1,\ B = 0,\ C = 1 \), sehingga:
+        </p>
+        <div class="katex">
+$$
+\Delta = 0^2 - 4(1)(1) = -4 < 0
+$$
+        </div>
+        <p>
+            Persamaan Laplace bersifat eliptik di seluruh bidang \( \mathbb{R}^2 \)
+            tanpa pengecualian.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Diskriminan pada Koefisien Variabel</h3>
+        <p>
+            Apabila koefisien \( A \), \( B \), atau \( C \) merupakan fungsi dari \( x \)
+            dan \( y \), maka nilai diskriminan bergantung pada titik \( (x, y) \) yang
+            ditinjau. Klasifikasi dilakukan secara titik per titik.
+        </p>
+        <p>
+            Dalam kasus ini, suatu PDP dapat bersifat eliptik di satu daerah, parabolik
+            pada suatu kurva, dan hiperbolik di daerah lainnya dalam domain yang sama.
+            Kurva di mana \( \Delta = 0 \) disebut kurva parabola transisi, yaitu
+            batas antara daerah eliptik dan hiperbolik.
+        </p>
+        <p>
+            Sebagai contoh, persamaan Tricomi berikut merupakan contoh klasik PDP dengan
+            koefisien variabel yang mengalami perubahan kelas.
+        </p>
+        <div class="katex">
+$$
+y\, u_{xx} + u_{yy} = 0
+$$
+        </div>
+        <p>
+            Dengan \( A = y,\ B = 0,\ C = 1 \), diskriminannya adalah:
+        </p>
+        <div class="katex">
+$$
+\Delta = 0 - 4(y)(1) = -4y
+$$
+        </div>
+        <table class="table">
+            <tr>
+                <th>Kondisi</th>
+                <th>Nilai \( \Delta \)</th>
+                <th>Kelas</th>
+            </tr>
+            <tr>
+                <td>\( y > 0 \)</td>
+                <td>\( \Delta = -4y < 0 \)</td>
+                <td>Eliptik</td>
+            </tr>
+            <tr>
+                <td>\( y = 0 \)</td>
+                <td>\( \Delta = 0 \)</td>
+                <td>Parabolik</td>
+            </tr>
+            <tr>
+                <td>\( y < 0 \)</td>
+                <td>\( \Delta = -4y > 0 \)</td>
+                <td>Hiperbolik</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Invariansi Diskriminan terhadap Transformasi Koordinat</h3>
+        <p>
+            Salah satu sifat penting dari diskriminan adalah bersifat invarian terhadap
+            transformasi koordinat yang tidak singular. Artinya, apabila dilakukan
+            pergantian variabel bebas dari \( (x, y) \) ke \( (\xi, \eta) \) melalui
+            transformasi yang dapat dibalik, maka tanda diskriminan tidak berubah.
+        </p>
+        <p>
+            Secara lebih presisi, apabila \( \tilde{A},\ \tilde{B},\ \tilde{C} \) adalah
+            koefisien utama PDP setelah transformasi, maka berlaku:
+        </p>
+        <div class="katex">
+$$
+\tilde{B}^2 - 4\tilde{A}\tilde{C} = (B^2 - 4AC)\left(\frac{\partial(\xi,\eta)}{\partial(x,y)}\right)^2
+$$
+        </div>
+        <p>
+            Karena Jacobian transformasi dikuadratkan, tanda ekspresi \( \tilde{B}^2 - 4\tilde{A}\tilde{C} \)
+            selalu sama dengan tanda \( B^2 - 4AC \). Oleh karena itu, klasifikasi PDP
+            tidak bergantung pada pilihan sistem koordinat.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kesimpulan</h3>
+        <p>
+            Diskriminan \( \Delta = B^2 - 4AC \) adalah besaran yang dihitung dari koefisien
+            utama PDP orde dua dan menjadi satu-satunya penentu klasifikasi persamaan
+            ke dalam kelas eliptik, parabolik, atau hiperbolik.
+        </p>
+        <p>
+            Secara geometris, diskriminan menentukan jumlah keluarga kurva karakteristik real
+            yang dimiliki persamaan. Secara fisika, klasifikasi yang dihasilkan berkorespondensi
+            dengan sifat perambatan pengaruh dalam fenomena yang dimodelkan.
+        </p>
+        <p>
+            Untuk koefisien konstan, klasifikasi berlaku seragam di seluruh domain. Untuk
+            koefisien variabel, klasifikasi dilakukan titik per titik, sehingga satu persamaan
+            dapat memiliki kelas yang berbeda di daerah yang berbeda. Sifat invariansi diskriminan
+            menjamin bahwa klasifikasi tidak bergantung pada pilihan sistem koordinat yang digunakan.
+        </p>
+    </div>
+
+</div>

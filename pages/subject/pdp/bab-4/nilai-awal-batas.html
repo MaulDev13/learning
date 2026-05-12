@@ -1,0 +1,285 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Masalah Nilai Awal dan Nilai Batas</h2>
+        <p>
+            Dalam penyelesaian PDP menggunakan metode pemisahan variabel, persamaan
+            diferensial saja tidak cukup untuk menentukan solusi secara tunggal.
+            Diperlukan informasi tambahan berupa kondisi yang dikenakan pada batas
+            domain maupun pada keadaan awal sistem.
+        </p>
+        <p>
+            Informasi tambahan ini dirumuskan sebagai masalah nilai batas dan masalah
+            nilai awal. Pemahaman terhadap kedua jenis kondisi ini merupakan prasyarat
+            penting dalam penerapan metode pemisahan variabel secara sistematis.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Masalah Nilai Batas</h3>
+        <p>
+            Masalah nilai batas adalah kondisi yang dikenakan pada solusi di titik-titik
+            atau kurva-kurva yang membentuk batas domain permasalahan. Kondisi ini
+            mendeskripsikan perilaku solusi pada tepi domain spasial untuk seluruh waktu
+            \( t \geq 0 \).
+        </p>
+        <p>
+            Untuk permasalahan satu dimensi pada interval \( 0 \leq x \leq L \),
+            kondisi batas dikenakan pada kedua ujung interval, yaitu di \( x = 0 \)
+            dan di \( x = L \).
+        </p>
+        <p>
+            Terdapat tiga jenis kondisi batas yang paling umum digunakan dalam
+            metode pemisahan variabel.
+        </p>
+        <table class="table">
+            <tr>
+                <th>Jenis</th>
+                <th>Nama</th>
+                <th>Bentuk Umum</th>
+                <th>Interpretasi Fisika</th>
+            </tr>
+            <tr>
+                <td>Tipe I</td>
+                <td>Dirichlet</td>
+                <td>\( u(0,t) = g_1(t),\quad u(L,t) = g_2(t) \)</td>
+                <td>Nilai fungsi ditetapkan pada batas</td>
+            </tr>
+            <tr>
+                <td>Tipe II</td>
+                <td>Neumann</td>
+                <td>\( u_x(0,t) = g_1(t),\quad u_x(L,t) = g_2(t) \)</td>
+                <td>Fluks atau gradien ditetapkan pada batas</td>
+            </tr>
+            <tr>
+                <td>Tipe III</td>
+                <td>Robin</td>
+                <td>\( \alpha u + \beta u_x = g(t) \) pada batas</td>
+                <td>Kombinasi nilai fungsi dan fluks pada batas</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kondisi Batas Homogen dan Tak Homogen</h3>
+        <p>
+            Kondisi batas dikatakan homogen apabila nilai yang dikenakan pada batas
+            identik nol. Kondisi batas dikatakan tak homogen apabila nilai yang
+            dikenakan tidak identik nol.
+        </p>
+        <div class="katex">
+$$
+\text{Homogen:} \quad u(0,t) = 0,\quad u(L,t) = 0
+$$
+        </div>
+        <div class="katex">
+$$
+\text{Tak homogen:} \quad u(0,t) = T_1,\quad u(L,t) = T_2, \quad T_1, T_2 \neq 0
+$$
+        </div>
+        <p>
+            Dalam metode pemisahan variabel, kondisi batas homogen memiliki peran
+            yang sangat penting karena secara langsung membentuk masalah nilai eigen
+            untuk fungsi \( X(x) \). Kondisi batas tak homogen memerlukan perlakuan
+            tambahan sebelum pemisahan variabel dapat diterapkan, umumnya melalui
+            transformasi solusi untuk mengubah kondisi batas menjadi homogen.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Masalah Nilai Awal</h3>
+        <p>
+            Masalah nilai awal adalah kondisi yang dikenakan pada solusi pada saat
+            \( t = 0 \), yaitu keadaan awal sistem sebelum evolusi berlangsung.
+            Kondisi ini mendeskripsikan distribusi awal besaran yang dimodelkan
+            di seluruh domain spasial.
+        </p>
+        <p>
+            Jumlah kondisi awal yang diperlukan bergantung pada orde tertinggi
+            persamaan terhadap variabel waktu \( t \).
+        </p>
+        <table class="table">
+            <tr>
+                <th>Orde terhadap \( t \)</th>
+                <th>Jumlah Kondisi Awal</th>
+                <th>Contoh Persamaan</th>
+            </tr>
+            <tr>
+                <td>Orde satu</td>
+                <td>Satu kondisi</td>
+                <td>Persamaan panas: \( u(x,0) = f(x) \)</td>
+            </tr>
+            <tr>
+                <td>Orde dua</td>
+                <td>Dua kondisi</td>
+                <td>Persamaan gelombang: \( u(x,0) = f(x),\quad u_t(x,0) = g(x) \)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Formulasi Masalah Lengkap</h3>
+        <p>
+            Masalah PDP yang lengkap terdiri dari tiga komponen yang harus dinyatakan
+            secara eksplisit sebelum metode pemisahan variabel diterapkan.
+        </p>
+        <p>
+            Komponen pertama adalah persamaan diferensial parsial yang berlaku
+            di interior domain.
+        </p>
+        <p>
+            Komponen kedua adalah kondisi batas yang dikenakan pada tepi domain
+            spasial untuk seluruh \( t \geq 0 \).
+        </p>
+        <p>
+            Komponen ketiga adalah kondisi awal yang dikenakan pada seluruh domain
+            spasial pada saat \( t = 0 \).
+        </p>
+        <p>
+            Sebagai contoh, formulasi lengkap masalah konduksi panas pada batang
+            dengan ujung-ujung yang dijaga pada suhu nol adalah sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+\frac{\partial u}{\partial t} = k\frac{\partial^2 u}{\partial x^2}, \qquad 0 < x < L,\quad t > 0
+$$
+        </div>
+        <div class="katex">
+$$
+u(0,t) = 0, \qquad u(L,t) = 0, \qquad t \geq 0
+$$
+        </div>
+        <div class="katex">
+$$
+u(x,0) = f(x), \qquad 0 \leq x \leq L
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Peran Kondisi Batas dalam Pemisahan Variabel</h3>
+        <p>
+            Setelah ansatz \( u(x,t) = X(x)T(t) \) disubstitusikan dan konstanta
+            pemisahan \( \lambda \) ditetapkan, kondisi batas homogen diwariskan
+            sepenuhnya kepada fungsi \( X(x) \).
+        </p>
+        <p>
+            Sebagai contoh, kondisi batas Dirichlet homogen \( u(0,t) = 0 \) dan
+            \( u(L,t) = 0 \) memberikan:
+        </p>
+        <div class="katex">
+$$
+u(0,t) = X(0)T(t) = 0 \implies X(0) = 0
+$$
+        </div>
+        <div class="katex">
+$$
+u(L,t) = X(L)T(t) = 0 \implies X(L) = 0
+$$
+        </div>
+        <p>
+            Kondisi \( T(t) \neq 0 \) diasumsikan agar solusi tidak trivial.
+            Kondisi batas pada \( X \) bersama dengan persamaan diferensial biasa
+            yang diperoleh membentuk masalah nilai eigen:
+        </p>
+        <div class="katex">
+$$
+X''(x) + \lambda X(x) = 0, \qquad X(0) = 0,\quad X(L) = 0
+$$
+        </div>
+        <p>
+            Masalah nilai eigen inilah yang menentukan nilai eigen \( \lambda_n \)
+            dan fungsi eigen \( X_n(x) \) yang akan digunakan dalam konstruksi
+            solusi umum.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Peran Kondisi Awal dalam Pemisahan Variabel</h3>
+        <p>
+            Setelah solusi umum diperoleh melalui superposisi, kondisi awal digunakan
+            untuk menentukan koefisien \( c_n \) dalam ekspansi solusi.
+        </p>
+        <p>
+            Untuk persamaan panas, solusi umum setelah pemisahan variabel berbentuk:
+        </p>
+        <div class="katex">
+$$
+u(x,t) = \sum_{n=1}^{\infty} c_n\, X_n(x)\, T_n(t)
+$$
+        </div>
+        <p>
+            Penerapan kondisi awal \( u(x,0) = f(x) \) menghasilkan:
+        </p>
+        <div class="katex">
+$$
+f(x) = \sum_{n=1}^{\infty} c_n\, X_n(x)
+$$
+        </div>
+        <p>
+            Persamaan ini merupakan ekspansi deret Fourier dari \( f(x) \) terhadap
+            sistem fungsi eigen \( \{X_n\} \). Koefisien \( c_n \) diperoleh
+            melalui rumus ortogonalitas:
+        </p>
+        <div class="katex">
+$$
+c_n = \frac{\displaystyle\int_0^L f(x)\, X_n(x)\, dx}{\displaystyle\int_0^L [X_n(x)]^2\, dx}
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh Formulasi — Persamaan Gelombang</h3>
+        <p>
+            Persamaan gelombang memerlukan dua kondisi awal karena berorde dua
+            terhadap \( t \). Formulasi lengkapnya adalah sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+\frac{\partial^2 u}{\partial t^2} = c^2\frac{\partial^2 u}{\partial x^2}, \qquad 0 < x < L,\quad t > 0
+$$
+        </div>
+        <div class="katex">
+$$
+u(0,t) = 0, \qquad u(L,t) = 0, \qquad t \geq 0
+$$
+        </div>
+        <div class="katex">
+$$
+u(x,0) = f(x), \qquad \frac{\partial u}{\partial t}(x,0) = g(x), \qquad 0 \leq x \leq L
+$$
+        </div>
+        <p>
+            Kondisi awal pertama \( u(x,0) = f(x) \) menetapkan profil perpindahan
+            awal dawai. Kondisi awal kedua \( u_t(x,0) = g(x) \) menetapkan
+            distribusi kecepatan awal di seluruh dawai.
+        </p>
+        <p>
+            Kedua kondisi awal ini akan digunakan untuk menentukan dua set koefisien
+            yang muncul dalam solusi umum persamaan gelombang setelah pemisahan
+            variabel diterapkan.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kesimpulan</h3>
+        <p>
+            Masalah nilai batas mendeskripsikan perilaku solusi pada tepi domain spasial
+            dan dikenakan untuk seluruh \( t \geq 0 \). Terdapat tiga jenis kondisi batas
+            yang umum, yaitu Dirichlet, Neumann, dan Robin. Kondisi batas homogen
+            secara langsung membentuk masalah nilai eigen yang menentukan fungsi eigen
+            dan nilai eigen dalam metode pemisahan variabel.
+        </p>
+        <p>
+            Masalah nilai awal mendeskripsikan keadaan awal sistem pada \( t = 0 \)
+            di seluruh domain spasial. Jumlah kondisi awal yang diperlukan ditentukan
+            oleh orde persamaan terhadap variabel waktu.
+        </p>
+        <p>
+            Dalam metode pemisahan variabel, kondisi batas menentukan fungsi eigen
+            yang digunakan dalam konstruksi solusi, sedangkan kondisi awal menentukan
+            koefisien ekspansi melalui rumus ortogonalitas deret Fourier.
+        </p>
+    </div>
+
+</div>

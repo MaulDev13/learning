@@ -1,0 +1,493 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Transformasi ke Bentuk Kanonik PDP Orde Dua</h2>
+        <p>
+            Setiap PDP orde dua dapat disederhanakan menjadi bentuk yang lebih standar
+            melalui suatu transformasi koordinat yang sesuai. Bentuk yang dihasilkan
+            disebut bentuk kanonik, dan merupakan representasi paling sederhana dari
+            masing-masing kelas PDP orde dua.
+        </p>
+        <p>
+            Transformasi ke bentuk kanonik bertujuan untuk menghilangkan suku turunan
+            campuran \( u_{\xi\eta} \) atau menyederhanakannya, sehingga struktur
+            matematis persamaan menjadi lebih mudah dianalisis dan diselesaikan.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Ide Dasar Transformasi</h3>
+        <p>
+            Diberikan PDP orde dua dalam bentuk umum berikut.
+        </p>
+        <div class="katex">
+$$
+Au_{xx} + Bu_{xy} + Cu_{yy} + Du_x + Eu_y + Fu = G(x,y)
+$$
+        </div>
+        <p>
+            Dilakukan pergantian variabel bebas dari \( (x, y) \) ke \( (\xi, \eta) \)
+            melalui transformasi berikut.
+        </p>
+        <div class="katex">
+$$
+\xi = \xi(x, y), \qquad \eta = \eta(x, y)
+$$
+        </div>
+        <p>
+            Syarat agar transformasi dapat digunakan adalah Jacobian transformasi
+            tidak bernilai nol pada domain yang diperhatikan.
+        </p>
+        <div class="katex">
+$$
+J = \frac{\partial(\xi, \eta)}{\partial(x, y)} =
+\begin{vmatrix}
+\xi_x & \xi_y \\
+\eta_x & \eta_y
+\end{vmatrix} \neq 0
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Koefisien Setelah Transformasi</h3>
+        <p>
+            Setelah transformasi diterapkan, PDP dalam variabel \( (\xi, \eta) \) memiliki
+            bentuk berikut.
+        </p>
+        <div class="katex">
+$$
+\tilde{A}\, u_{\xi\xi} + \tilde{B}\, u_{\xi\eta} + \tilde{C}\, u_{\eta\eta} + \tilde{D}\, u_\xi + \tilde{E}\, u_\eta + \tilde{F}\, u = \tilde{G}(\xi,\eta)
+$$
+        </div>
+        <p>
+            Koefisien utama baru dinyatakan sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+\tilde{A} = A\xi_x^2 + B\xi_x\xi_y + C\xi_y^2
+$$
+        </div>
+        <div class="katex">
+$$
+\tilde{B} = 2A\xi_x\eta_x + B(\xi_x\eta_y + \xi_y\eta_x) + 2C\xi_y\eta_y
+$$
+        </div>
+        <div class="katex">
+$$
+\tilde{C} = A\eta_x^2 + B\eta_x\eta_y + C\eta_y^2
+$$
+        </div>
+        <p>
+            Tujuan transformasi adalah memilih \( \xi \) dan \( \eta \) sedemikian sehingga
+            koefisien-koefisien baru memenuhi bentuk kanonik masing-masing kelas.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Persamaan Karakteristik sebagai Panduan Transformasi</h3>
+        <p>
+            Pilihan \( \xi \) dan \( \eta \) yang menghasilkan bentuk kanonik diperoleh
+            dari solusi persamaan karakteristik berikut.
+        </p>
+        <div class="katex">
+$$
+A\left(\frac{dy}{dx}\right)^2 - B\left(\frac{dy}{dx}\right) + C = 0
+$$
+        </div>
+        <p>
+            Penyelesaian persamaan ini menghasilkan kurva karakteristik \( \phi(x,y) = \text{konstan} \).
+            Fungsi \( \phi \) inilah yang digunakan sebagai kandidat variabel transformasi
+            \( \xi \) atau \( \eta \).
+        </p>
+        <p>
+            Apabila \( \xi = \phi_1(x,y) \) dipilih sepanjang karakteristik pertama,
+            maka dapat ditunjukkan bahwa \( \tilde{A} = 0 \). Demikian pula, apabila
+            \( \eta = \phi_2(x,y) \) dipilih sepanjang karakteristik kedua,
+            maka \( \tilde{C} = 0 \).
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Bentuk Kanonik Kelas Hiperbolik</h3>
+        <p>
+            Pada kelas hiperbolik, \( \Delta = B^2 - 4AC > 0 \), sehingga terdapat
+            dua keluarga kurva karakteristik real yang berbeda. Misalkan kurva
+            karakteristik pertama dan kedua berturut-turut adalah:
+        </p>
+        <div class="katex">
+$$
+\phi_1(x,y) = c_1, \qquad \phi_2(x,y) = c_2
+$$
+        </div>
+        <p>
+            Dipilih transformasi \( \xi = \phi_1(x,y) \) dan \( \eta = \phi_2(x,y) \).
+            Dengan pilihan ini, \( \tilde{A} = 0 \) dan \( \tilde{C} = 0 \),
+            sehingga bentuk kanonik hiperbolik adalah:
+        </p>
+        <div class="katex">
+$$
+u_{\xi\eta} = H(\xi, \eta, u, u_\xi, u_\eta)
+$$
+        </div>
+        <p>
+            Bentuk ini disebut bentuk kanonik hiperbolik pertama. Terdapat juga
+            bentuk kanonik hiperbolik kedua yang diperoleh melalui substitusi
+            \( \alpha = \xi + \eta \) dan \( \beta = \xi - \eta \), yaitu:
+        </p>
+        <div class="katex">
+$$
+u_{\alpha\alpha} - u_{\beta\beta} = H^*(\alpha, \beta, u, u_\alpha, u_\beta)
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Bentuk Kanonik Kelas Parabolik</h3>
+        <p>
+            Pada kelas parabolik, \( \Delta = B^2 - 4AC = 0 \), sehingga hanya terdapat
+            satu keluarga kurva karakteristik real. Misalkan kurva karakteristiknya adalah:
+        </p>
+        <div class="katex">
+$$
+\phi(x,y) = c
+$$
+        </div>
+        <p>
+            Dipilih \( \xi = \phi(x,y) \). Variabel \( \eta \) dapat dipilih sembarang,
+            asalkan Jacobian transformasi tidak nol dan \( \eta \) bebas dari \( \xi \).
+            Dengan pilihan ini, \( \tilde{A} = 0 \) dan karena \( \Delta = 0 \)
+            maka \( \tilde{B} = 0 \) pula. Bentuk kanonik parabolik adalah:
+        </p>
+        <div class="katex">
+$$
+u_{\eta\eta} = H(\xi, \eta, u, u_\xi, u_\eta)
+$$
+        </div>
+        <p>
+            Hanya satu suku turunan orde dua yang tersisa, yaitu \( u_{\eta\eta} \),
+            yang mencerminkan degenerasi kelas parabolik.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Bentuk Kanonik Kelas Eliptik</h3>
+        <p>
+            Pada kelas eliptik, \( \Delta = B^2 - 4AC < 0 \), sehingga tidak terdapat
+            kurva karakteristik real. Akar persamaan karakteristik bersifat kompleks konjugat.
+            Misalkan akar kompleks tersebut menghasilkan fungsi:
+        </p>
+        <div class="katex">
+$$
+\phi(x,y) = \alpha(x,y) + i\,\beta(x,y)
+$$
+        </div>
+        <p>
+            Dipilih transformasi berdasarkan bagian real dan imajiner, yaitu
+            \( \xi = \alpha(x,y) \) dan \( \eta = \beta(x,y) \).
+            Dengan pilihan ini, \( \tilde{A} = \tilde{C} \) dan \( \tilde{B} = 0 \),
+            sehingga bentuk kanonik eliptik adalah:
+        </p>
+        <div class="katex">
+$$
+u_{\xi\xi} + u_{\eta\eta} = H(\xi, \eta, u, u_\xi, u_\eta)
+$$
+        </div>
+        <p>
+            Bentuk ini dikenal sebagai persamaan Laplace yang dimodifikasi, dan merupakan
+            bentuk paling simetris di antara ketiga bentuk kanonik.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Rangkuman Bentuk Kanonik</h3>
+        <table class="table">
+            <tr>
+                <th>Kelas</th>
+                <th>Kondisi</th>
+                <th>Transformasi</th>
+                <th>Bentuk Kanonik</th>
+            </tr>
+            <tr>
+                <td>Hiperbolik</td>
+                <td>\( B^2 - 4AC > 0 \)</td>
+                <td>\( \xi = \phi_1,\ \eta = \phi_2 \)</td>
+                <td>\( u_{\xi\eta} = H \)</td>
+            </tr>
+            <tr>
+                <td>Parabolik</td>
+                <td>\( B^2 - 4AC = 0 \)</td>
+                <td>\( \xi = \phi,\ \eta \) bebas</td>
+                <td>\( u_{\eta\eta} = H \)</td>
+            </tr>
+            <tr>
+                <td>Eliptik</td>
+                <td>\( B^2 - 4AC < 0 \)</td>
+                <td>\( \xi = \alpha,\ \eta = \beta \)</td>
+                <td>\( u_{\xi\xi} + u_{\eta\eta} = H \)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh — Transformasi Kelas Hiperbolik</h3>
+        <p>
+            Tentukan bentuk kanonik dari persamaan berikut.
+        </p>
+        <div class="katex">
+$$
+u_{xx} - 4u_{yy} = 0
+$$
+        </div>
+        <p>
+            Identifikasi koefisien: \( A = 1,\ B = 0,\ C = -4 \). Diskriminan:
+        </p>
+        <div class="katex">
+$$
+\Delta = 0 - 4(1)(-4) = 16 > 0 \implies \text{Hiperbolik}
+$$
+        </div>
+        <p>
+            Persamaan kurva karakteristik:
+        </p>
+        <div class="katex">
+$$
+\left(\frac{dy}{dx}\right)^2 - 4 \cdot \frac{-4}{1} \cdot \frac{1}{4}= 0
+\implies \frac{dy}{dx} = \pm 2
+$$
+        </div>
+        <p>
+            Integrasi menghasilkan dua keluarga karakteristik:
+        </p>
+        <div class="katex">
+$$
+y - 2x = c_1, \qquad y + 2x = c_2
+$$
+        </div>
+        <p>
+            Dipilih transformasi:
+        </p>
+        <div class="katex">
+$$
+\xi = y - 2x, \qquad \eta = y + 2x
+$$
+        </div>
+        <p>
+            Hitung turunan parsial yang diperlukan:
+        </p>
+        <div class="katex">
+$$
+\xi_x = -2,\quad \xi_y = 1,\quad \eta_x = 2,\quad \eta_y = 1
+$$
+        </div>
+        <p>
+            Hitung koefisien baru:
+        </p>
+        <div class="katex">
+$$
+\tilde{A} = A\xi_x^2 + B\xi_x\xi_y + C\xi_y^2 = (1)(4) + 0 + (-4)(1) = 0
+$$
+        </div>
+        <div class="katex">
+$$
+\tilde{C} = A\eta_x^2 + B\eta_x\eta_y + C\eta_y^2 = (1)(4) + 0 + (-4)(1) = 0
+$$
+        </div>
+        <div class="katex">
+$$
+\tilde{B} = 2(1)(-2)(2) + 0 + 2(-4)(1)(1) = -8 - 8 = -16
+$$
+        </div>
+        <p>
+            Persamaan dalam variabel baru menjadi:
+        </p>
+        <div class="katex">
+$$
+-16\, u_{\xi\eta} = 0 \implies u_{\xi\eta} = 0
+$$
+        </div>
+        <p>
+            Bentuk kanonik hiperbolik telah diperoleh.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh — Transformasi Kelas Parabolik</h3>
+        <p>
+            Tentukan bentuk kanonik dari persamaan berikut.
+        </p>
+        <div class="katex">
+$$
+u_{xx} - 2u_{xy} + u_{yy} + u_x = 0
+$$
+        </div>
+        <p>
+            Identifikasi koefisien: \( A = 1,\ B = -2,\ C = 1 \). Diskriminan:
+        </p>
+        <div class="katex">
+$$
+\Delta = (-2)^2 - 4(1)(1) = 0 \implies \text{Parabolik}
+$$
+        </div>
+        <p>
+            Persamaan kurva karakteristik:
+        </p>
+        <div class="katex">
+$$
+\frac{dy}{dx} = \frac{B}{2A} = \frac{-2}{2} = -1 \implies y + x = c
+$$
+        </div>
+        <p>
+            Dipilih transformasi \( \xi = y + x \). Variabel \( \eta \) dipilih bebas,
+            misalkan \( \eta = x \). Jacobian:
+        </p>
+        <div class="katex">
+$$
+J = \begin{vmatrix} 1 & 1 \\ 1 & 0 \end{vmatrix} = -1 \neq 0
+$$
+        </div>
+        <p>
+            Hitung turunan parsial:
+        </p>
+        <div class="katex">
+$$
+\xi_x = 1,\quad \xi_y = 1,\quad \eta_x = 1,\quad \eta_y = 0
+$$
+        </div>
+        <p>
+            Hitung \( \tilde{A} \) dan \( \tilde{B} \):
+        </p>
+        <div class="katex">
+$$
+\tilde{A} = (1)(1) + (-2)(1)(1) + (1)(1) = 1 - 2 + 1 = 0
+$$
+        </div>
+        <div class="katex">
+$$
+\tilde{B} = 2(1)(1)(1) + (-2)[(1)(0) + (1)(1)] + 2(1)(1)(0) = 2 - 2 = 0
+$$
+        </div>
+        <div class="katex">
+$$
+\tilde{C} = (1)(1)^2 + (-2)(1)(0) + (1)(0)^2 = 1
+$$
+        </div>
+        <p>
+            Persamaan dalam variabel baru, setelah menghitung suku orde satu, menjadi:
+        </p>
+        <div class="katex">
+$$
+u_{\eta\eta} + u_\eta = 0
+$$
+        </div>
+        <p>
+            Bentuk kanonik parabolik telah diperoleh.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh — Transformasi Kelas Eliptik</h3>
+        <p>
+            Tentukan bentuk kanonik dari persamaan berikut.
+        </p>
+        <div class="katex">
+$$
+u_{xx} + 2u_{xy} + 5u_{yy} = 0
+$$
+        </div>
+        <p>
+            Identifikasi koefisien: \( A = 1,\ B = 2,\ C = 5 \). Diskriminan:
+        </p>
+        <div class="katex">
+$$
+\Delta = 4 - 20 = -16 < 0 \implies \text{Eliptik}
+$$
+        </div>
+        <p>
+            Persamaan kurva karakteristik menghasilkan akar kompleks:
+        </p>
+        <div class="katex">
+$$
+\frac{dy}{dx} = \frac{2 \pm \sqrt{-16}}{2} = 1 \pm 2i
+$$
+        </div>
+        <p>
+            Integrasi menghasilkan:
+        </p>
+        <div class="katex">
+$$
+y - (1 + 2i)x = c \implies (y - x) - 2ix = c
+$$
+        </div>
+        <p>
+            Bagian real dan imajiner dari fungsi karakteristik kompleks digunakan sebagai
+            variabel transformasi:
+        </p>
+        <div class="katex">
+$$
+\xi = y - x, \qquad \eta = 2x
+$$
+        </div>
+        <p>
+            Hitung turunan parsial:
+        </p>
+        <div class="katex">
+$$
+\xi_x = -1,\quad \xi_y = 1,\quad \eta_x = 2,\quad \eta_y = 0
+$$
+        </div>
+        <p>
+            Hitung koefisien baru:
+        </p>
+        <div class="katex">
+$$
+\tilde{A} = (1)(1) + (2)(-1)(1) + (5)(1) = 1 - 2 + 5 = 4
+$$
+        </div>
+        <div class="katex">
+$$
+\tilde{B} = 2(1)(-1)(2) + (2)[(-1)(0)+(1)(2)] + 2(5)(1)(0) = -4 + 4 = 0
+$$
+        </div>
+        <div class="katex">
+$$
+\tilde{C} = (1)(4) + (2)(2)(0) + (5)(0) = 4
+$$
+        </div>
+        <p>
+            Persamaan dalam variabel baru menjadi:
+        </p>
+        <div class="katex">
+$$
+4u_{\xi\xi} + 4u_{\eta\eta} = 0 \implies u_{\xi\xi} + u_{\eta\eta} = 0
+$$
+        </div>
+        <p>
+            Bentuk kanonik eliptik, yaitu persamaan Laplace, telah diperoleh.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kesimpulan</h3>
+        <p>
+            Transformasi ke bentuk kanonik dilakukan dengan memilih variabel baru \( \xi \)
+            dan \( \eta \) berdasarkan kurva karakteristik PDP. Pilihan yang tepat menghasilkan
+            penghilangan satu atau lebih suku turunan orde dua sehingga struktur persamaan
+            menjadi lebih sederhana.
+        </p>
+        <p>
+            Kelas hiperbolik menghasilkan bentuk \( u_{\xi\eta} = H \) dengan memilih
+            \( \xi \) dan \( \eta \) sepanjang dua keluarga karakteristik yang berbeda.
+            Kelas parabolik menghasilkan bentuk \( u_{\eta\eta} = H \) karena hanya
+            tersedia satu keluarga karakteristik. Kelas eliptik menghasilkan bentuk
+            \( u_{\xi\xi} + u_{\eta\eta} = H \) dengan memisahkan bagian real dan
+            imajiner dari karakteristik kompleks.
+        </p>
+        <p>
+            Sifat invariansi tanda diskriminan menjamin bahwa kelas PDP tidak berubah
+            akibat transformasi, sehingga bentuk kanonik yang diperoleh selalu konsisten
+            dengan klasifikasi awal persamaan.
+        </p>
+    </div>
+
+</div>

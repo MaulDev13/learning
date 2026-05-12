@@ -1,0 +1,260 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Metode Pemisahan Variabel</h2>
+        <p>
+            Metode pemisahan variabel merupakan salah satu metode analitik paling mendasar
+            dalam penyelesaian Persamaan Diferensial Parsial. Metode ini mengubah masalah
+            PDP menjadi sekumpulan masalah persamaan diferensial biasa yang lebih mudah
+            diselesaikan secara terpisah.
+        </p>
+        <p>
+            Keberhasilan metode ini bergantung pada struktur persamaan dan kondisi batas
+            yang diberikan. Apabila struktur tersebut memungkinkan, solusi PDP dapat
+            dibangun dari hasil kali fungsi-fungsi yang masing-masing hanya bergantung
+            pada satu variabel bebas.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Konsep Dasar Pemisahan Variabel</h3>
+        <p>
+            Ide utama pemisahan variabel adalah mengasumsikan bahwa solusi PDP dapat
+            ditulis sebagai hasil kali fungsi-fungsi yang masing-masing hanya bergantung
+            pada satu variabel bebas.
+        </p>
+        <p>
+            Untuk PDP dengan dua variabel bebas \( x \) dan \( t \), asumsi ini
+            dinyatakan sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+u(x, t) = X(x) \cdot T(t)
+$$
+        </div>
+        <p>
+            Fungsi \( X \) hanya bergantung pada \( x \) dan fungsi \( T \) hanya
+            bergantung pada \( t \). Asumsi ini disebut ansatz pemisahan variabel.
+        </p>
+        <p>
+            Apabila asumsi ini disubstitusikan ke dalam PDP, persamaan yang semula
+            melibatkan turunan parsial campuran dapat dipisahkan menjadi dua persamaan
+            diferensial biasa yang masing-masing hanya memuat satu variabel.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Syarat Pemisahan</h3>
+        <p>
+            Tidak semua PDP dapat diselesaikan dengan metode pemisahan variabel.
+            Terdapat sejumlah syarat yang harus dipenuhi agar pemisahan variabel
+            dapat diterapkan.
+        </p>
+        <table class="table">
+            <tr>
+                <th>Syarat</th>
+                <th>Penjelasan</th>
+            </tr>
+            <tr>
+                <td>PDP linear</td>
+                <td>Persamaan harus linear terhadap \( u \) dan turunan-turunannya.</td>
+            </tr>
+            <tr>
+                <td>Koefisien terpisah</td>
+                <td>Koefisien persamaan harus dapat dipisahkan menjadi bagian yang hanya bergantung pada satu variabel.</td>
+            </tr>
+            <tr>
+                <td>Kondisi batas homogen</td>
+                <td>Kondisi batas umumnya harus bersifat homogen agar pemisahan menghasilkan masalah eigen yang terdefinisi.</td>
+            </tr>
+            <tr>
+                <td>Domain sederhana</td>
+                <td>Domain permasalahan harus berupa daerah yang sesuai dengan sistem koordinat yang digunakan.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Konstanta Pemisahan</h3>
+        <p>
+            Setelah ansatz \( u(x,t) = X(x)T(t) \) disubstitusikan ke dalam PDP dan
+            persamaan dipisahkan, kedua ruas persamaan bergantung pada variabel yang
+            berbeda. Karena kedua ruas harus sama untuk semua nilai variabel bebasnya,
+            keduanya harus sama dengan suatu konstanta.
+        </p>
+        <p>
+            Konstanta tersebut disebut konstanta pemisahan dan dilambangkan dengan
+            \( \lambda \). Nilai \( \lambda \) tidak ditentukan secara bebas, melainkan
+            ditentukan oleh kondisi batas yang dikenakan pada permasalahan.
+        </p>
+        <div class="katex">
+$$
+\frac{f(X, X', X'')}{X} = \frac{g(T, T', T'')}{T} = \lambda
+$$
+        </div>
+        <p>
+            Nilai-nilai \( \lambda \) yang menghasilkan solusi non-trivial disebut
+            nilai eigen, dan fungsi \( X(x) \) yang bersesuaian disebut fungsi eigen.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Prosedur Umum Pemisahan Variabel</h3>
+        <p>
+            Prosedur penerapan metode pemisahan variabel dilakukan melalui tahapan berikut.
+        </p>
+        <p>
+            Tahap pertama adalah mengasumsikan solusi berbentuk hasil kali fungsi terpisah,
+            yaitu \( u(x,t) = X(x)T(t) \).
+        </p>
+        <p>
+            Tahap kedua adalah mensubstitusikan asumsi tersebut ke dalam PDP, kemudian
+            memisahkan persamaan sehingga ruas kiri hanya bergantung pada \( x \)
+            dan ruas kanan hanya bergantung pada \( t \).
+        </p>
+        <p>
+            Tahap ketiga adalah menyamakan kedua ruas dengan konstanta pemisahan \( \lambda \),
+            sehingga diperoleh dua persamaan diferensial biasa yang terpisah.
+        </p>
+        <p>
+            Tahap keempat adalah menyelesaikan masing-masing persamaan diferensial biasa
+            tersebut dengan memperhatikan kondisi batas dan kondisi awal yang diberikan.
+        </p>
+        <p>
+            Tahap kelima adalah mengkombinasikan seluruh solusi yang diperoleh untuk
+            membentuk solusi umum PDP melalui prinsip superposisi.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Ilustrasi Prosedur — Persamaan Panas</h3>
+        <p>
+            Sebagai ilustrasi prosedur, perhatikan persamaan panas homogen berikut.
+        </p>
+        <div class="katex">
+$$
+\frac{\partial u}{\partial t} = k\frac{\partial^2 u}{\partial x^2}, \qquad 0 < x < L,\quad t > 0
+$$
+        </div>
+        <p>
+            Diasumsikan solusi berbentuk \( u(x,t) = X(x)T(t) \). Substitusi ke
+            persamaan panas menghasilkan:
+        </p>
+        <div class="katex">
+$$
+X(x)T'(t) = k\, X''(x)T(t)
+$$
+        </div>
+        <p>
+            Bagi kedua ruas dengan \( k\, X(x)T(t) \), dengan asumsi keduanya tidak nol:
+        </p>
+        <div class="katex">
+$$
+\frac{T'(t)}{kT(t)} = \frac{X''(x)}{X(x)}
+$$
+        </div>
+        <p>
+            Ruas kiri hanya bergantung pada \( t \) dan ruas kanan hanya bergantung
+            pada \( x \). Keduanya harus sama dengan konstanta pemisahan \( \lambda \),
+            sehingga diperoleh dua persamaan diferensial biasa berikut.
+        </p>
+        <div class="katex">
+$$
+X''(x) - \lambda X(x) = 0
+$$
+        </div>
+        <div class="katex">
+$$
+T'(t) - k\lambda T(t) = 0
+$$
+        </div>
+        <p>
+            Setiap persamaan di atas diselesaikan secara terpisah dengan memperhatikan
+            kondisi batas yang diberikan pada permasalahan.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Peran Kondisi Batas dalam Menentukan \( \lambda \)</h3>
+        <p>
+            Kondisi batas homogen yang dikenakan pada \( X(x) \) membentuk suatu
+            masalah nilai eigen. Hanya nilai-nilai \( \lambda \) tertentu yang
+            menghasilkan solusi \( X(x) \) yang tidak identik nol.
+        </p>
+        <p>
+            Sebagai contoh, kondisi batas Dirichlet homogen pada interval \( [0, L] \)
+            dinyatakan sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+X(0) = 0, \qquad X(L) = 0
+$$
+        </div>
+        <p>
+            Dengan kondisi ini, persamaan \( X'' - \lambda X = 0 \) hanya memiliki solusi
+            non-trivial apabila \( \lambda = -\lambda_n \) dengan:
+        </p>
+        <div class="katex">
+$$
+\lambda_n = \frac{n^2\pi^2}{L^2}, \qquad n = 1, 2, 3, \ldots
+$$
+        </div>
+        <p>
+            Fungsi eigen yang bersesuaian adalah:
+        </p>
+        <div class="katex">
+$$
+X_n(x) = \sin\!\left(\frac{n\pi x}{L}\right), \qquad n = 1, 2, 3, \ldots
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Pembentukan Solusi Umum melalui Superposisi</h3>
+        <p>
+            Setiap pasangan \( (X_n, T_n) \) menghasilkan satu solusi parsial yang
+            memenuhi PDP dan kondisi batas. Solusi parsial ke-\( n \) adalah:
+        </p>
+        <div class="katex">
+$$
+u_n(x, t) = X_n(x)\, T_n(t)
+$$
+        </div>
+        <p>
+            Karena PDP bersifat linear dan homogen, prinsip superposisi berlaku.
+            Solusi umum diperoleh dengan menjumlahkan seluruh solusi parsial tersebut.
+        </p>
+        <div class="katex">
+$$
+u(x, t) = \sum_{n=1}^{\infty} c_n\, X_n(x)\, T_n(t)
+$$
+        </div>
+        <p>
+            Koefisien \( c_n \) ditentukan dari kondisi awal yang diberikan, umumnya
+            melalui ekspansi deret Fourier dari data awal terhadap sistem fungsi eigen
+            \( \{X_n\} \).
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kesimpulan</h3>
+        <p>
+            Konsep dasar pemisahan variabel adalah mengasumsikan solusi PDP berbentuk
+            hasil kali fungsi-fungsi yang masing-masing hanya bergantung pada satu
+            variabel bebas. Asumsi ini mengubah PDP menjadi sekumpulan persamaan
+            diferensial biasa yang dapat diselesaikan secara terpisah.
+        </p>
+        <p>
+            Konstanta pemisahan \( \lambda \) muncul secara alami dari proses pemisahan
+            dan nilainya ditentukan oleh kondisi batas. Nilai-nilai \( \lambda \) yang
+            menghasilkan solusi non-trivial disebut nilai eigen, dan fungsi-fungsi yang
+            bersesuaian disebut fungsi eigen.
+        </p>
+        <p>
+            Solusi umum PDP diperoleh melalui prinsip superposisi, yaitu kombinasi linear
+            dari seluruh solusi parsial yang terbentuk dari setiap pasangan fungsi eigen.
+            Koefisien kombinasi ditentukan dari kondisi awal menggunakan ekspansi deret Fourier.
+        </p>
+    </div>
+
+</div>
