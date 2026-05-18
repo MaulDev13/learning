@@ -1,0 +1,448 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Pendahuluan Python Library dan Visualisasi</h2>
+
+        <p>
+            Dalam komputasi ilmiah dan metode numerik, pemrograman tidak hanya digunakan untuk melakukan perhitungan,
+            tetapi juga untuk mempermudah analisis data, simulasi, serta visualisasi hasil komputasi.
+        </p>
+
+        <p>
+            Bahasa pemrograman <span class="text-code-inline">Python</span>
+            menjadi salah satu bahasa paling populer dalam bidang sains dan rekayasa
+            karena memiliki sintaks yang sederhana,
+            komunitas yang besar,
+            serta dukungan library ilmiah yang sangat lengkap.
+        </p>
+
+        <p>
+            Python menyediakan berbagai library untuk operasi numerik,
+            manipulasi data,
+            komputasi matriks,
+            visualisasi grafik,
+            hingga machine learning dan simulasi ilmiah.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Konsep Library pada Python</h3>
+
+        <p>
+            <span class="text-code-inline">Library</span> adalah kumpulan fungsi,
+            class,
+            dan modul yang dibuat untuk membantu menyelesaikan tugas tertentu tanpa harus menulis seluruh kode dari awal.
+        </p>
+
+        <p>
+            Dengan library,
+            programmer dapat menggunakan fungsi yang sudah tersedia untuk mempercepat proses pengembangan program.
+        </p>
+
+        <div class="text-code">
+import math
+
+hasil = math.sqrt(25)
+
+print(hasil)
+        </div>
+
+        <p>
+            Pada contoh tersebut,
+            library <span class="text-code-inline">math</span>
+            digunakan untuk menghitung akar kuadrat tanpa membuat algoritma sendiri.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Peran Library dalam Metode Numerik</h3>
+
+        <p>
+            Implementasi metode numerik sering melibatkan operasi matematis yang kompleks,
+            seperti manipulasi matriks,
+            interpolasi,
+            integrasi numerik,
+            maupun penyelesaian sistem persamaan.
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Kebutuhan</th>
+                    <th>Peran Library</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Operasi Matriks</td>
+                    <td>Mempermudah komputasi linear algebra</td>
+                </tr>
+                <tr>
+                    <td>Visualisasi Grafik</td>
+                    <td>Menampilkan hasil numerik secara visual</td>
+                </tr>
+                <tr>
+                    <td>Komputasi Cepat</td>
+                    <td>Mengoptimalkan performa perhitungan</td>
+                </tr>
+                <tr>
+                    <td>Analisis Data</td>
+                    <td>Mengelola data eksperimen dan simulasi</td>
+                </tr>
+                <tr>
+                    <td>Iterasi Numerik</td>
+                    <td>Menyediakan fungsi matematika ilmiah</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            Oleh karena itu,
+            penggunaan library merupakan bagian penting dalam pengembangan aplikasi numerik modern.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Library Populer untuk Komputasi Numerik</h3>
+
+        <p>
+            Python memiliki berbagai library yang umum digunakan dalam komputasi ilmiah dan metode numerik.
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Library</th>
+                    <th>Fungsi Utama</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>NumPy</td>
+                    <td>Operasi array dan matriks numerik</td>
+                </tr>
+                <tr>
+                    <td>Matplotlib</td>
+                    <td>Visualisasi grafik dan plotting</td>
+                </tr>
+                <tr>
+                    <td>SciPy</td>
+                    <td>Komputasi ilmiah lanjutan</td>
+                </tr>
+                <tr>
+                    <td>Pandas</td>
+                    <td>Manipulasi dan analisis data</td>
+                </tr>
+                <tr>
+                    <td>SymPy</td>
+                    <td>Perhitungan simbolik matematika</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            Library-library tersebut menjadi fondasi utama dalam ekosistem komputasi ilmiah Python.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>NumPy untuk Komputasi Numerik</h3>
+
+        <p>
+            <span class="text-code-inline">NumPy</span>
+            merupakan library dasar untuk komputasi numerik pada Python.
+        </p>
+
+        <p>
+            NumPy menyediakan struktur data array multidimensi dan operasi matematika yang jauh lebih cepat dibandingkan list biasa pada Python.
+        </p>
+
+        <div class="text-code">
+import numpy as np
+
+A = np.array([1, 2, 3, 4])
+
+print(A)
+        </div>
+
+        <p>
+            Array NumPy banyak digunakan pada implementasi metode numerik karena mendukung operasi vektor dan matriks secara efisien.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Representasi Matriks dengan NumPy</h3>
+
+        <p>
+            Pada metode numerik,
+            banyak persoalan direpresentasikan dalam bentuk matriks.
+        </p>
+
+        <div class="text-math">
+$$
+A\mathbf{x} = \mathbf{b}
+$$
+        </div>
+
+        <p>
+            NumPy menyediakan fasilitas manipulasi matriks secara sederhana dan efisien.
+        </p>
+
+        <div class="text-code">
+import numpy as np
+
+A = np.array([
+    [1, 2],
+    [3, 4]
+])
+
+b = np.array([5, 6])
+
+print(A)
+print(b)
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Konsep Visualisasi Data</h3>
+
+        <p>
+            Visualisasi adalah proses menyajikan data atau hasil komputasi dalam bentuk grafik,
+            diagram,
+            maupun representasi visual lainnya.
+        </p>
+
+        <p>
+            Dalam metode numerik,
+            visualisasi digunakan untuk:
+        </p>
+
+        <ul>
+            <li>Menganalisis perilaku fungsi</li>
+            <li>Melihat konvergensi iterasi</li>
+            <li>Membandingkan solusi numerik dan analitik</li>
+            <li>Mendeteksi pola dan anomali data</li>
+            <li>Menyajikan hasil simulasi</li>
+        </ul>
+
+        <p>
+            Visualisasi membantu interpretasi hasil komputasi menjadi lebih intuitif dan mudah dipahami.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Matplotlib untuk Visualisasi</h3>
+
+        <p>
+            <span class="text-code-inline">Matplotlib</span>
+            merupakan library visualisasi paling populer pada Python.
+        </p>
+
+        <p>
+            Library ini digunakan untuk membuat grafik 2D maupun 3D,
+            seperti grafik garis,
+            scatter plot,
+            histogram,
+            dan diagram lainnya.
+        </p>
+
+        <div class="text-code">
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4]
+y = [1, 4, 9, 16]
+
+plt.plot(x, y)
+
+plt.show()
+        </div>
+
+        <p>
+            Program tersebut menghasilkan grafik hubungan antara variabel
+            <span class="text-code-inline">x</span>
+            dan
+            <span class="text-code-inline">y</span>.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Visualisasi Fungsi Matematika</h3>
+
+        <p>
+            Visualisasi fungsi sangat penting dalam metode numerik,
+            terutama pada pencarian akar persamaan dan analisis perilaku fungsi.
+        </p>
+
+        <div class="text-math-highlight">
+$$
+f(x) = x^2 - 4
+$$
+        </div>
+
+        <p>
+            Grafik fungsi dapat membantu menentukan perkiraan lokasi akar maupun interval solusi.
+        </p>
+
+        <div class="text-code">
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-5, 5, 100)
+
+y = x**2 - 4
+
+plt.plot(x, y)
+
+plt.axhline(0, color='black')
+
+plt.show()
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Visualisasi Iterasi Numerik</h3>
+
+        <p>
+            Proses iterasi pada metode numerik juga dapat divisualisasikan untuk melihat konvergensi solusi.
+        </p>
+
+        <div class="text-math">
+$$
+e_n = |x_n - x_{n-1}|
+$$
+        </div>
+
+        <p>
+            Nilai error pada setiap iterasi dapat diplot menjadi grafik konvergensi.
+        </p>
+
+        <div class="text-code">
+import matplotlib.pyplot as plt
+
+error = [1, 0.5, 0.2, 0.08, 0.01]
+
+plt.plot(error)
+
+plt.xlabel("Iterasi")
+plt.ylabel("Error")
+
+plt.show()
+        </div>
+
+        <p>
+            Grafik tersebut membantu memeriksa apakah metode iteratif menuju konvergensi atau divergensi.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Instalasi Library Python</h3>
+
+        <p>
+            Sebagian library perlu dipasang terlebih dahulu menggunakan
+            <span class="text-code-inline">pip</span>.
+        </p>
+
+        <div class="text-code">
+pip install numpy
+pip install matplotlib
+pip install scipy
+        </div>
+
+        <p>
+            Setelah instalasi selesai,
+            library dapat digunakan melalui perintah
+            <span class="text-code-inline">import</span>.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Perbandingan Library Numerik</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Library</th>
+                    <th>Kelebihan</th>
+                    <th>Kegunaan Utama</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>NumPy</td>
+                    <td>Cepat dan efisien</td>
+                    <td>Array dan matriks</td>
+                </tr>
+                <tr>
+                    <td>Matplotlib</td>
+                    <td>Visualisasi lengkap</td>
+                    <td>Pembuatan grafik</td>
+                </tr>
+                <tr>
+                    <td>SciPy</td>
+                    <td>Fungsi ilmiah kompleks</td>
+                    <td>Optimisasi dan integrasi</td>
+                </tr>
+                <tr>
+                    <td>Pandas</td>
+                    <td>Pengolahan data mudah</td>
+                    <td>Analisis dataset</td>
+                </tr>
+                <tr>
+                    <td>SymPy</td>
+                    <td>Simbolik matematika</td>
+                    <td>Turunan dan integral simbolik</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Pentingnya Visualisasi dalam Metode Numerik</h3>
+
+        <p>
+            Visualisasi membantu mengubah data numerik menjadi representasi visual yang lebih mudah dipahami.
+        </p>
+
+        <p>
+            Pada metode numerik,
+            grafik sering digunakan untuk:
+        </p>
+
+        <ul>
+            <li>Menentukan akar fungsi</li>
+            <li>Menganalisis kestabilan algoritma</li>
+            <li>Memeriksa konvergensi iterasi</li>
+            <li>Membandingkan solusi numerik</li>
+            <li>Menyajikan hasil simulasi ilmiah</li>
+        </ul>
+
+        <p>
+            Oleh karena itu,
+            visualisasi menjadi bagian penting dalam analisis komputasi modern.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Tujuan Pembelajaran</h3>
+
+        <p>
+            Setelah mempelajari materi ini,
+            mahasiswa diharapkan mampu memahami konsep library dan visualisasi pada Python.
+        </p>
+
+        <p>
+            Mahasiswa juga diharapkan mampu menggunakan library dasar seperti
+            <span class="text-code-inline">NumPy</span>
+            dan
+            <span class="text-code-inline">Matplotlib</span>
+            untuk komputasi numerik dan visualisasi data.
+        </p>
+
+        <p>
+            Materi selanjutnya akan membahas implementasi visualisasi fungsi,
+            plotting hasil metode numerik,
+            serta penggunaan library ilmiah Python secara lebih mendalam.
+        </p>
+    </div>
+
+</div>

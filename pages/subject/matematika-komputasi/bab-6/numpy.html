@@ -1,0 +1,552 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>NumPy untuk Komputasi Numerik</h2>
+
+        <p>
+            <span class="text-code-inline">NumPy</span>
+            (Numerical Python) merupakan library fundamental pada Python yang digunakan untuk komputasi numerik dan operasi matematika ilmiah.
+        </p>
+
+        <p>
+            NumPy menyediakan struktur data array multidimensi,
+            operasi vektor dan matriks,
+            fungsi matematika,
+            serta optimisasi performa komputasi numerik.
+        </p>
+
+        <p>
+            Dalam metode numerik,
+            NumPy menjadi library utama karena sebagian besar algoritma melibatkan manipulasi array,
+            matriks,
+            iterasi numerik,
+            dan operasi linear algebra.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Mengapa Menggunakan NumPy?</h3>
+
+        <p>
+            Python bawaan sebenarnya sudah memiliki struktur data seperti list,
+            namun list tidak dirancang untuk komputasi numerik berskala besar.
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Aspek</th>
+                    <th>Python List</th>
+                    <th>NumPy Array</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Kecepatan</td>
+                    <td>Lebih lambat</td>
+                    <td>Lebih cepat</td>
+                </tr>
+                <tr>
+                    <td>Operasi Matematis</td>
+                    <td>Terbatas</td>
+                    <td>Lengkap</td>
+                </tr>
+                <tr>
+                    <td>Operasi Matriks</td>
+                    <td>Tidak efisien</td>
+                    <td>Sangat efisien</td>
+                </tr>
+                <tr>
+                    <td>Memori</td>
+                    <td>Lebih besar</td>
+                    <td>Lebih hemat</td>
+                </tr>
+                <tr>
+                    <td>Komputasi Vektor</td>
+                    <td>Tidak optimal</td>
+                    <td>Optimal</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            Oleh karena itu,
+            hampir seluruh komputasi numerik modern pada Python menggunakan NumPy.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Instalasi NumPy</h3>
+
+        <p>
+            NumPy dapat dipasang menggunakan
+            <span class="text-code-inline">pip</span>.
+        </p>
+
+        <div class="text-code">
+pip install numpy
+        </div>
+
+        <p>
+            Setelah instalasi selesai,
+            library dapat digunakan menggunakan perintah
+            <span class="text-code-inline">import</span>.
+        </p>
+
+        <div class="text-code">
+import numpy as np
+        </div>
+
+        <p>
+            Penulisan
+            <span class="text-code-inline">np</span>
+            merupakan alias standar yang umum digunakan dalam Python scientific computing.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Konsep Array pada NumPy</h3>
+
+        <p>
+            Struktur data utama pada NumPy adalah
+            <span class="text-code-inline">ndarray</span>
+            atau multidimensional array.
+        </p>
+
+        <p>
+            Array NumPy digunakan untuk menyimpan data numerik secara efisien dalam bentuk vektor maupun matriks.
+        </p>
+
+        <div class="text-code">
+import numpy as np
+
+A = np.array([1, 2, 3, 4])
+
+print(A)
+        </div>
+
+        <p>
+            Berbeda dengan list biasa,
+            array NumPy mendukung operasi matematis langsung terhadap seluruh elemen.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Array Satu Dimensi</h3>
+
+        <p>
+            Array satu dimensi digunakan untuk merepresentasikan vektor.
+        </p>
+
+        <div class="text-math">
+$$
+\mathbf{x} =
+\begin{bmatrix}
+x_1 & x_2 & x_3
+\end{bmatrix}
+$$
+        </div>
+
+        <div class="text-code">
+import numpy as np
+
+x = np.array([10, 20, 30])
+
+print(x)
+        </div>
+
+        <p>
+            Setiap elemen array dapat diakses menggunakan indeks.
+        </p>
+
+        <div class="text-code">
+print(x[0])
+print(x[1])
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Array Dua Dimensi</h3>
+
+        <p>
+            Array dua dimensi digunakan untuk merepresentasikan matriks.
+        </p>
+
+        <div class="text-math-highlight">
+$$
+A =
+\begin{bmatrix}
+1 & 2 \\
+3 & 4
+\end{bmatrix}
+$$
+        </div>
+
+        <div class="text-code">
+import numpy as np
+
+A = np.array([
+    [1, 2],
+    [3, 4]
+])
+
+print(A)
+        </div>
+
+        <p>
+            Matriks sangat penting dalam metode numerik,
+            terutama pada penyelesaian sistem persamaan linear.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Informasi Dimensi Array</h3>
+
+        <p>
+            NumPy menyediakan atribut untuk mengetahui ukuran dan dimensi array.
+        </p>
+
+        <div class="text-code">
+import numpy as np
+
+A = np.array([
+    [1, 2],
+    [3, 4]
+])
+
+print(A.shape)
+print(A.ndim)
+print(A.size)
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Atribut</th>
+                    <th>Fungsi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>shape</td>
+                    <td>Ukuran array</td>
+                </tr>
+                <tr>
+                    <td>ndim</td>
+                    <td>Jumlah dimensi</td>
+                </tr>
+                <tr>
+                    <td>size</td>
+                    <td>Total elemen</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Operasi Dasar Array</h3>
+
+        <p>
+            NumPy mendukung operasi matematis langsung pada array.
+        </p>
+
+        <div class="text-code">
+import numpy as np
+
+A = np.array([1, 2, 3])
+
+B = np.array([4, 5, 6])
+
+print(A + B)
+print(A - B)
+print(A * B)
+        </div>
+
+        <p>
+            Operasi dilakukan secara elemen per elemen.
+        </p>
+
+        <div class="text-math">
+$$
+A + B =
+\begin{bmatrix}
+a_1+b_1 & a_2+b_2 & a_3+b_3
+\end{bmatrix}
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Operasi Matriks</h3>
+
+        <p>
+            NumPy menyediakan operasi matriks untuk kebutuhan linear algebra.
+        </p>
+
+        <div class="text-code">
+import numpy as np
+
+A = np.array([
+    [1, 2],
+    [3, 4]
+])
+
+B = np.array([
+    [5, 6],
+    [7, 8]
+])
+
+C = np.dot(A, B)
+
+print(C)
+        </div>
+
+        <p>
+            Fungsi
+            <span class="text-code-inline">np.dot()</span>
+            digunakan untuk perkalian matriks.
+        </p>
+
+        <div class="text-math-highlight">
+$$
+C = AB
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Membuat Array Otomatis</h3>
+
+        <p>
+            NumPy menyediakan berbagai fungsi untuk membuat array secara otomatis.
+        </p>
+
+        <div class="text-code">
+import numpy as np
+
+print(np.zeros((2, 2)))
+
+print(np.ones((3, 3)))
+
+print(np.arange(0, 10, 2))
+
+print(np.linspace(0, 1, 5))
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Fungsi</th>
+                    <th>Kegunaan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>zeros()</td>
+                    <td>Membuat array nol</td>
+                </tr>
+                <tr>
+                    <td>ones()</td>
+                    <td>Membuat array satu</td>
+                </tr>
+                <tr>
+                    <td>arange()</td>
+                    <td>Deret dengan interval tertentu</td>
+                </tr>
+                <tr>
+                    <td>linspace()</td>
+                    <td>Deret dengan jumlah titik tertentu</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>NumPy pada Visualisasi Fungsi</h3>
+
+        <p>
+            NumPy sering digunakan bersama
+            <span class="text-code-inline">Matplotlib</span>
+            untuk membuat grafik fungsi matematika.
+        </p>
+
+        <div class="text-code">
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-5, 5, 100)
+
+y = x**2 - 4
+
+plt.plot(x, y)
+
+plt.grid()
+
+plt.show()
+        </div>
+
+        <p>
+            Fungsi
+            <span class="text-code-inline">linspace()</span>
+            sangat berguna untuk menghasilkan titik domain grafik secara otomatis.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Operasi Statistik Dasar</h3>
+
+        <p>
+            NumPy juga menyediakan fungsi statistik sederhana.
+        </p>
+
+        <div class="text-code">
+import numpy as np
+
+data = np.array([1, 2, 3, 4, 5])
+
+print(np.mean(data))
+print(np.max(data))
+print(np.min(data))
+print(np.sum(data))
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Fungsi</th>
+                    <th>Kegunaan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>mean()</td>
+                    <td>Rata-rata</td>
+                </tr>
+                <tr>
+                    <td>max()</td>
+                    <td>Nilai maksimum</td>
+                </tr>
+                <tr>
+                    <td>min()</td>
+                    <td>Nilai minimum</td>
+                </tr>
+                <tr>
+                    <td>sum()</td>
+                    <td>Jumlah seluruh elemen</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Linear Algebra pada NumPy</h3>
+
+        <p>
+            Modul
+            <span class="text-code-inline">numpy.linalg</span>
+            menyediakan berbagai operasi linear algebra.
+        </p>
+
+        <div class="text-code">
+import numpy as np
+
+A = np.array([
+    [1, 2],
+    [3, 4]
+])
+
+det = np.linalg.det(A)
+
+inv = np.linalg.inv(A)
+
+print(det)
+print(inv)
+        </div>
+
+        <p>
+            Fungsi tersebut sangat penting dalam implementasi metode numerik berbasis matriks.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Keunggulan NumPy dalam Metode Numerik</h3>
+
+        <p>
+            NumPy memiliki berbagai keunggulan untuk komputasi ilmiah dan numerik.
+        </p>
+
+        <ul>
+            <li>Operasi numerik sangat cepat</li>
+            <li>Efisien dalam penggunaan memori</li>
+            <li>Mendukung operasi matriks kompleks</li>
+            <li>Terintegrasi dengan library ilmiah lainnya</li>
+            <li>Mudah digunakan pada visualisasi dan machine learning</li>
+        </ul>
+
+        <p>
+            Oleh karena itu,
+            NumPy menjadi fondasi utama dalam scientific computing menggunakan Python.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Penerapan NumPy dalam Metode Numerik</h3>
+
+        <p>
+            NumPy digunakan hampir pada seluruh implementasi metode numerik,
+            seperti:
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Metode</th>
+                    <th>Penggunaan NumPy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Eliminasi Gauss</td>
+                    <td>Manipulasi matriks</td>
+                </tr>
+                <tr>
+                    <td>Interpolasi</td>
+                    <td>Pengolahan array titik data</td>
+                </tr>
+                <tr>
+                    <td>Integrasi Numerik</td>
+                    <td>Perhitungan vektor numerik</td>
+                </tr>
+                <tr>
+                    <td>Metode Euler</td>
+                    <td>Perhitungan iteratif</td>
+                </tr>
+                <tr>
+                    <td>Visualisasi Fungsi</td>
+                    <td>Pembuatan domain data</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Tujuan Pembelajaran</h3>
+
+        <p>
+            Setelah mempelajari materi ini,
+            mahasiswa diharapkan mampu memahami konsep dasar NumPy dan penggunaannya dalam komputasi numerik.
+        </p>
+
+        <p>
+            Mahasiswa juga diharapkan mampu membuat array,
+            melakukan operasi matematis,
+            memanipulasi matriks,
+            serta menggunakan fungsi numerik dasar pada Python.
+        </p>
+
+        <!-- <p>
+            Materi selanjutnya akan membahas visualisasi numerik menggunakan Matplotlib serta implementasi NumPy pada algoritma metode numerik secara lebih mendalam.
+        </p> -->
+    </div>
+
+</div>

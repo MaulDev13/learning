@@ -1,0 +1,519 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Matplotlib untuk Visualisasi Data</h2>
+
+        <p>
+            <span class="text-code-inline">Matplotlib</span>
+            merupakan library visualisasi data paling populer pada Python yang digunakan untuk membuat grafik,
+            diagram,
+            serta representasi visual dari data numerik.
+        </p>
+
+        <p>
+            Dalam metode numerik,
+            visualisasi sangat penting untuk membantu analisis fungsi,
+            konvergensi iterasi,
+            distribusi data,
+            maupun interpretasi hasil komputasi.
+        </p>
+
+        <p>
+            Dengan Matplotlib,
+            hasil perhitungan numerik dapat ditampilkan dalam bentuk grafik yang lebih mudah dipahami dibandingkan hanya menggunakan angka.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Mengapa Visualisasi Penting?</h3>
+
+        <p>
+            Pada komputasi numerik,
+            data sering kali memiliki ukuran besar dan pola yang sulit dipahami hanya melalui tabel angka.
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Kebutuhan</th>
+                    <th>Peran Visualisasi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Analisis Fungsi</td>
+                    <td>Melihat bentuk dan perilaku fungsi</td>
+                </tr>
+                <tr>
+                    <td>Konvergensi Iterasi</td>
+                    <td>Memantau penurunan error</td>
+                </tr>
+                <tr>
+                    <td>Perbandingan Data</td>
+                    <td>Membandingkan beberapa hasil numerik</td>
+                </tr>
+                <tr>
+                    <td>Distribusi Data</td>
+                    <td>Mengetahui pola penyebaran data</td>
+                </tr>
+                <tr>
+                    <td>Presentasi Hasil</td>
+                    <td>Menyajikan data secara lebih informatif</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            Oleh karena itu,
+            visualisasi menjadi bagian penting dalam scientific computing modern.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Instalasi Matplotlib</h3>
+
+        <p>
+            Matplotlib dapat dipasang menggunakan
+            <span class="text-code-inline">pip</span>.
+        </p>
+
+        <div class="text-code">
+pip install matplotlib
+        </div>
+
+        <p>
+            Setelah instalasi selesai,
+            library dapat digunakan menggunakan perintah:
+        </p>
+
+        <div class="text-code">
+import matplotlib.pyplot as plt
+        </div>
+
+        <p>
+            Modul
+            <span class="text-code-inline">pyplot</span>
+            menyediakan fungsi utama untuk membuat grafik.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Konsep Dasar Plot</h3>
+
+        <p>
+            Grafik dasar pada Matplotlib dibuat menggunakan pasangan data
+            <span class="text-code-inline">x</span>
+            dan
+            <span class="text-code-inline">y</span>.
+        </p>
+
+        <div class="text-code">
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4]
+y = [1, 4, 9, 16]
+
+plt.plot(x, y)
+
+plt.show()
+        </div>
+
+        <p>
+            Fungsi
+            <span class="text-code-inline">plot()</span>
+            digunakan untuk membuat grafik garis.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Visualisasi Fungsi Matematika</h3>
+
+        <p>
+            Dalam metode numerik,
+            grafik fungsi matematika digunakan untuk melihat perilaku fungsi dan menentukan akar persamaan.
+        </p>
+
+        <div class="text-math-highlight">
+$$
+f(x) = x^2 - 4
+$$
+        </div>
+
+        <div class="text-code">
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-5, 5, 100)
+
+y = x**2 - 4
+
+plt.plot(x, y)
+
+plt.show()
+        </div>
+
+        <p>
+            Grafik tersebut memperlihatkan hubungan antara nilai
+            <span class="text-code-inline">x</span>
+            dan
+            <span class="text-code-inline">f(x)</span>.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Menambahkan Judul dan Label</h3>
+
+        <p>
+            Grafik yang baik harus memiliki judul dan label sumbu agar mudah dipahami.
+        </p>
+
+        <div class="text-code">
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 10, 100)
+
+y = x**2
+
+plt.plot(x, y)
+
+plt.title("Grafik Fungsi Kuadrat")
+
+plt.xlabel("Sumbu X")
+
+plt.ylabel("Sumbu Y")
+
+plt.show()
+        </div>
+
+        <p>
+            Label membantu pengguna memahami arti data yang ditampilkan pada grafik.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Menambahkan Grid</h3>
+
+        <p>
+            Grid digunakan untuk mempermudah pembacaan posisi titik pada grafik.
+        </p>
+
+        <div class="text-code">
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 10, 100)
+
+y = np.sin(x)
+
+plt.plot(x, y)
+
+plt.grid()
+
+plt.show()
+        </div>
+
+        <p>
+            Grid sangat membantu pada analisis numerik dan interpretasi data.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Mengubah Warna dan Gaya Garis</h3>
+
+        <p>
+            Matplotlib memungkinkan perubahan warna dan bentuk garis untuk meningkatkan keterbacaan grafik.
+        </p>
+
+        <div class="text-code">
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 10, 100)
+
+y = np.cos(x)
+
+plt.plot(
+    x,
+    y,
+    color='red',
+    linestyle='--',
+    linewidth=2
+)
+
+plt.show()
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Fungsi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>color</td>
+                    <td>Warna garis</td>
+                </tr>
+                <tr>
+                    <td>linestyle</td>
+                    <td>Bentuk garis</td>
+                </tr>
+                <tr>
+                    <td>linewidth</td>
+                    <td>Ketebalan garis</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Scatter Plot</h3>
+
+        <p>
+            <span class="text-code-inline">Scatter plot</span>
+            digunakan untuk menampilkan kumpulan titik data.
+        </p>
+
+        <div class="text-code">
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5]
+
+y = [2, 5, 3, 7, 6]
+
+plt.scatter(x, y)
+
+plt.show()
+        </div>
+
+        <p>
+            Scatter plot sering digunakan untuk visualisasi data eksperimen dan interpolasi numerik.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Histogram</h3>
+
+        <p>
+            Histogram digunakan untuk melihat distribusi data.
+        </p>
+
+        <div class="text-code">
+import numpy as np
+import matplotlib.pyplot as plt
+
+data = np.random.randn(1000)
+
+plt.hist(data)
+
+plt.show()
+        </div>
+
+        <p>
+            Histogram membantu analisis statistik dan distribusi probabilitas.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Menampilkan Banyak Grafik</h3>
+
+        <p>
+            Matplotlib memungkinkan beberapa grafik ditampilkan dalam satu figure menggunakan
+            <span class="text-code-inline">subplot()</span>.
+        </p>
+
+        <div class="text-code">
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 10, 100)
+
+plt.subplot(1, 2, 1)
+
+plt.plot(x, np.sin(x))
+
+plt.subplot(1, 2, 2)
+
+plt.plot(x, np.cos(x))
+
+plt.show()
+        </div>
+
+        <p>
+            Teknik ini sangat berguna untuk membandingkan beberapa fungsi atau metode numerik.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Visualisasi Konvergensi Iterasi</h3>
+
+        <p>
+            Dalam metode numerik,
+            grafik error iterasi digunakan untuk menganalisis konvergensi algoritma.
+        </p>
+
+        <div class="text-math">
+$$
+e_n = |x_n - x_{n-1}|
+$$
+        </div>
+
+        <div class="text-code">
+import matplotlib.pyplot as plt
+
+error = [1, 0.5, 0.2, 0.08, 0.01]
+
+plt.plot(error)
+
+plt.xlabel("Iterasi")
+
+plt.ylabel("Error")
+
+plt.title("Konvergensi Iterasi")
+
+plt.grid()
+
+plt.show()
+        </div>
+
+        <p>
+            Grafik tersebut memperlihatkan penurunan error pada setiap iterasi.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Legenda Grafik</h3>
+
+        <p>
+            Legenda digunakan untuk membedakan beberapa data atau fungsi pada satu grafik.
+        </p>
+
+        <div class="text-code">
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 10, 100)
+
+plt.plot(x, np.sin(x), label='sin(x)')
+
+plt.plot(x, np.cos(x), label='cos(x)')
+
+plt.legend()
+
+plt.show()
+        </div>
+
+        <p>
+            Legenda membantu identifikasi setiap grafik yang ditampilkan.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Menyimpan Grafik</h3>
+
+        <p>
+            Grafik dapat disimpan ke dalam file gambar menggunakan
+            <span class="text-code-inline">savefig()</span>.
+        </p>
+
+        <div class="text-code">
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 10, 100)
+
+y = x**2
+
+plt.plot(x, y)
+
+plt.savefig("grafik.png")
+        </div>
+
+        <p>
+            Fitur ini penting untuk dokumentasi laporan dan presentasi hasil numerik.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Penerapan Matplotlib dalam Metode Numerik</h3>
+
+        <p>
+            Matplotlib digunakan pada berbagai implementasi metode numerik.
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Metode</th>
+                    <th>Visualisasi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Metode Akar</td>
+                    <td>Grafik fungsi dan titik akar</td>
+                </tr>
+                <tr>
+                    <td>Interpolasi</td>
+                    <td>Kurva hasil interpolasi</td>
+                </tr>
+                <tr>
+                    <td>Integrasi Numerik</td>
+                    <td>Area pendekatan integral</td>
+                </tr>
+                <tr>
+                    <td>Diferensiasi</td>
+                    <td>Kemiringan kurva</td>
+                </tr>
+                <tr>
+                    <td>PDB</td>
+                    <td>Grafik solusi numerik</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Keunggulan Matplotlib</h3>
+
+        <p>
+            Matplotlib memiliki berbagai keunggulan dalam visualisasi numerik dan ilmiah.
+        </p>
+
+        <ul>
+            <li>Mudah digunakan</li>
+            <li>Mendukung banyak jenis grafik</li>
+            <li>Terintegrasi dengan NumPy</li>
+            <li>Cocok untuk scientific computing</li>
+            <li>Dapat digunakan pada analisis data dan machine learning</li>
+        </ul>
+
+        <p>
+            Oleh karena itu,
+            Matplotlib menjadi library standar visualisasi pada Python.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Tujuan Pembelajaran</h3>
+
+        <p>
+            Setelah mempelajari materi ini,
+            mahasiswa diharapkan mampu memahami konsep dasar visualisasi menggunakan Matplotlib.
+        </p>
+
+        <p>
+            Mahasiswa juga diharapkan mampu membuat grafik fungsi,
+            menampilkan data numerik,
+            memvisualisasikan proses iterasi,
+            serta menyajikan hasil metode numerik dalam bentuk visual.
+        </p>
+
+        <!-- <p>
+            Materi selanjutnya akan membahas visualisasi numerik yang lebih kompleks serta integrasi Matplotlib dengan algoritma metode numerik lainnya.
+        </p> -->
+    </div>
+
+</div>
