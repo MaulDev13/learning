@@ -54,7 +54,6 @@
 .sidebar-item:hover {
     background: var(--primary-soft);
     color: var(--text-title);
-    transform: translateX(2px);
 }
 
 .sidebar-group-title {
