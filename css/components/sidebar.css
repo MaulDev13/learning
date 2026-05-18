@@ -3,7 +3,7 @@
 ========================================================= */
 .layout {
     display: flex;
-    gap: var(--space-lg);
+    gap: var(--space-sm);
 }
 
 .sidebar {
@@ -12,7 +12,6 @@
     position: sticky;
     top: 0;
     overflow-y: auto;
-    padding: var(--space-md);
     border-right: 1px solid var(--border);
     flex-shrink: 0;
     background: var(--surface);
@@ -29,7 +28,7 @@
 }
 .sidebar::-webkit-scrollbar-thumb {
     background: var(--border);
-    border-radius: 10px;
+    border-radius: 0;
 }
 
 .sidebar-title {
@@ -47,7 +46,7 @@
     font-size: var(--text-sm);
     color: var(--text-meta);
     cursor: pointer;
-    border-radius: var(--radius-sm);
+    border-radius: 0;
     transition: var(--transition);
     line-height: var(--leading-normal);
 }
@@ -63,7 +62,7 @@
     font-size: var(--text-sm);
     font-weight: var(--font-medium);
     cursor: pointer;
-    border-radius: var(--radius-sm);
+    border-radius: 0;
     transition: var(--transition);
     color: var(--text-body);
 }

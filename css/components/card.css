@@ -38,6 +38,43 @@
     box-shadow: var(--shadow-md);
 }
 
+/* =========================================================
+   BOX CARD
+========================================================= */
+.card--box {
+    border-radius: 0;
+    border: 2px solid var(--border);
+    background: var(--surface);
+    box-shadow: none;
+}
+
+/* Optional hover effect */
+.card--box.card--interactive:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0 var(--primary);
+}
+
+/* Active state */
+.card--box.is-active {
+    border-color: var(--primary);
+    box-shadow: 4px 4px 0 var(--primary);
+}
+
+.card--ghost {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.card--ghost:hover {
+    transform: translateY(-2px);
+}
+
+.card--ghost.is-active {
+    box-shadow: 4px 4px 0 var(--primary);
+}
+
 /* Project list */
 .project-list {
     display: flex;

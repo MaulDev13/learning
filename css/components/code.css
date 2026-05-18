@@ -10,9 +10,12 @@
     color: var(--code-color);
     background: var(--code-bg);
     border: 1px solid var(--code-border);
+    border-left: 3px solid var(--code-border);
     border-radius: var(--radius-code);
     padding: var(--space-sm) var(--space-md);
-    display: inline-block;
+    display: block;
+    width: 100%;
+    max-width: fit-content;
     white-space: pre;
     overflow-x: auto;
     box-shadow: var(--shadow-sm);
@@ -21,6 +24,7 @@
 
 .text-code:hover {
     border-color: var(--code-highlight-border);
+    border-left-color: var(--code-highlight-border);
     background: var(--code-surface-hover);
 }
 
@@ -47,6 +51,8 @@
     padding: var(--space-sm) var(--space-md);
     border-radius: var(--radius-sm);
     box-shadow: var(--shadow-md);
+    display: block;
+    width: 100%;
     max-width: fit-content;
-    margin: var(--space-md) auto;
+    margin: var(--space-md) 0;
 }

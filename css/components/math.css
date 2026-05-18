@@ -11,8 +11,10 @@
     background: var(--math-bg);
     border: 1px solid var(--math-border);
     border-radius: var(--radius-sm);
+    border-left: 3px solid var(--math-border);
     padding: var(--space-xs) var(--space-sm);
-    display: inline-block;
+    display: block;
+    width: 100%;
     max-width: fit-content;
     overflow-x: auto;
     box-shadow: var(--shadow-sm);
@@ -23,6 +25,7 @@
 
 .text-math:hover {
     border-color: var(--math-highlight-border);
+    border-left-color: var(--math-highlight-border);
     box-shadow: var(--shadow-md);
 }
 
@@ -45,22 +48,27 @@
     font-size: var(--text-md);
     color: var(--math-color);
     background: var(--math-highlight-bg);
-    border-left: 3px solid var(--math-highlight-border);
-    padding: var(--space-sm) var(--space-md);
-    border-radius: var(--radius-sm);
+    border: 1px solid var(--math-border);
+    border-left: 4px solid var(--math-highlight-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-md) var(--space-lg);
+    margin: var(--space-lg) 0;
+    display: block;
+    width: 100%;
+    text-align: center;
     box-shadow: var(--shadow-md);
     max-width: fit-content;
-    margin: var(--space-md) auto;
     text-align: center;
 }
 
 /* Shared transitions */
-.text-code,
+/* .text-code,
 .text-math {
     transition: var(--transition);
-}
+} */
 
+/* 
 .text-code:hover,
 .text-math:hover {
     transform: translateY(-1px);
-}
+} */

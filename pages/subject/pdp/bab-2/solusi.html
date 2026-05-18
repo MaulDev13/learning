@@ -1,0 +1,261 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Solusi Umum dan Solusi Khusus PDP Orde Satu</h2>
+        <p>
+            Dalam menyelesaikan Persamaan Diferensial Parsial orde satu, terdapat dua jenis
+            solusi yang perlu dibedakan, yaitu solusi umum dan solusi khusus. Pemahaman
+            terhadap perbedaan keduanya merupakan dasar dalam menganalisis dan menginterpretasikan
+            penyelesaian PDP orde satu secara lengkap.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Solusi Umum</h3>
+        <p>
+            Solusi umum PDP orde satu adalah keluarga solusi yang memuat fungsi arbitrer.
+            Berbeda dengan persamaan diferensial biasa yang solusi umumnya memuat konstanta
+            arbitrer, solusi umum PDP memuat fungsi arbitrer karena derajat kebebasannya
+            lebih tinggi.
+        </p>
+        <p>
+            Untuk PDP orde satu dengan dua variabel bebas \( x \) dan \( y \), solusi umum
+            berbentuk sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+u(x, y) = f(\phi(x, y))
+$$
+        </div>
+        <p>
+            Fungsi \( f \) adalah fungsi arbitrer yang terdiferensialkan, sedangkan
+            \( \phi(x, y) \) adalah fungsi yang ditentukan dari integral kurva karakteristik
+            persamaan. Pilihan \( f \) yang berbeda menghasilkan solusi yang berbeda,
+            sehingga solusi umum mewakili seluruh keluarga solusi PDP tersebut.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Solusi Khusus</h3>
+        <p>
+            Solusi khusus diperoleh dari solusi umum dengan menetapkan fungsi arbitrer \( f \)
+            secara spesifik berdasarkan kondisi tambahan yang diberikan, seperti kondisi awal
+            atau kondisi batas.
+        </p>
+        <p>
+            Apabila diberikan kondisi awal \( u = u_0 \) pada suatu kurva tertentu, fungsi
+            arbitrer \( f \) ditentukan sedemikian sehingga solusi memenuhi kondisi tersebut.
+            Solusi yang dihasilkan disebut solusi khusus dan bersifat tunggal untuk kondisi
+            awal yang diberikan.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Perbandingan Solusi Umum dan Solusi Khusus</h3>
+        <table class="table">
+            <tr>
+                <th>Aspek</th>
+                <th>Solusi Umum</th>
+                <th>Solusi Khusus</th>
+            </tr>
+            <tr>
+                <td>Definisi</td>
+                <td>Memuat fungsi arbitrer \( f \)</td>
+                <td>Fungsi \( f \) ditentukan dari kondisi tambahan</td>
+            </tr>
+            <tr>
+                <td>Keluarga solusi</td>
+                <td>Mewakili seluruh keluarga solusi</td>
+                <td>Satu solusi tunggal yang spesifik</td>
+            </tr>
+            <tr>
+                <td>Kondisi tambahan</td>
+                <td>Tidak diperlukan</td>
+                <td>Diperlukan kondisi awal atau batas</td>
+            </tr>
+            <tr>
+                <td>Ketunggalan</td>
+                <td>Tidak tunggal</td>
+                <td>Tunggal untuk kondisi yang diberikan</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Metode Karakteristik sebagai Alat Penyelesaian</h3>
+        <p>
+            Solusi umum PDP orde satu linear diperoleh melalui metode karakteristik.
+            Untuk PDP orde satu berbentuk berikut:
+        </p>
+        <div class="katex">
+$$
+a(x, y)\frac{\partial u}{\partial x} + b(x, y)\frac{\partial u}{\partial y} = c(x, y, u)
+$$
+        </div>
+        <p>
+            Sistem persamaan karakteristik yang bersesuaian adalah:
+        </p>
+        <div class="katex">
+$$
+\frac{dx}{a(x,y)} = \frac{dy}{b(x,y)} = \frac{du}{c(x,y,u)}
+$$
+        </div>
+        <p>
+            Penyelesaian sistem ini menghasilkan dua integral pertama \( \phi_1(x,y,u) = c_1 \)
+            dan \( \phi_2(x,y,u) = c_2 \). Solusi umum PDP kemudian dinyatakan sebagai
+            hubungan arbitrer antara kedua integral pertama tersebut.
+        </p>
+        <div class="katex">
+$$
+f(\phi_1,\, \phi_2) = 0 \qquad \text{atau ekuivalen} \qquad \phi_1 = f(\phi_2)
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh — Menentukan Solusi Umum</h3>
+        <p>
+            Tentukan solusi umum dari PDP berikut.
+        </p>
+        <div class="katex">
+$$
+\frac{\partial u}{\partial x} + 2\frac{\partial u}{\partial y} = 0
+$$
+        </div>
+        <p>
+            Sistem persamaan karakteristik dari PDP ini adalah:
+        </p>
+        <div class="katex">
+$$
+\frac{dx}{1} = \frac{dy}{2} = \frac{du}{0}
+$$
+        </div>
+        <p>
+            Dari \( \dfrac{dx}{1} = \dfrac{dy}{2} \), diperoleh integral pertama:
+        </p>
+        <div class="katex">
+$$
+2x - y = c_1
+$$
+        </div>
+        <p>
+            Dari \( \dfrac{du}{0} \), diperoleh integral pertama kedua:
+        </p>
+        <div class="katex">
+$$
+u = c_2
+$$
+        </div>
+        <p>
+            Solusi umum dinyatakan sebagai hubungan arbitrer antara kedua integral pertama:
+        </p>
+        <div class="katex">
+$$
+u(x, y) = f(2x - y)
+$$
+        </div>
+        <p>
+            dengan \( f \) adalah fungsi arbitrer yang terdiferensialkan.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh — Menentukan Solusi Khusus</h3>
+        <p>
+            Dari solusi umum yang diperoleh pada contoh sebelumnya, tentukan solusi khusus
+            yang memenuhi kondisi awal berikut.
+        </p>
+        <div class="katex">
+$$
+u(x, 0) = \sin(x)
+$$
+        </div>
+        <p>
+            Substitusikan kondisi awal \( y = 0 \) ke dalam solusi umum
+            \( u(x,y) = f(2x - y) \):
+        </p>
+        <div class="katex">
+$$
+u(x, 0) = f(2x - 0) = f(2x) = \sin(x)
+$$
+        </div>
+        <p>
+            Misalkan \( \xi = 2x \), sehingga \( x = \dfrac{\xi}{2} \).
+            Substitusi menghasilkan:
+        </p>
+        <div class="katex">
+$$
+f(\xi) = \sin\!\left(\frac{\xi}{2}\right)
+$$
+        </div>
+        <p>
+            Fungsi arbitrer \( f \) telah ditentukan. Solusi khusus diperoleh dengan
+            mensubstitusikan kembali \( \xi = 2x - y \):
+        </p>
+        <div class="katex">
+$$
+u(x, y) = \sin\!\left(\frac{2x - y}{2}\right) = \sin\!\left(x - \frac{y}{2}\right)
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Verifikasi Solusi Khusus</h3>
+        <p>
+            Solusi yang diperoleh dapat diverifikasi dengan mensubstitusikan kembali
+            ke persamaan asal dan memeriksa kondisi awal.
+        </p>
+        <p>
+            Hitung turunan parsial dari \( u(x,y) = \sin\!\left(x - \dfrac{y}{2}\right) \):
+        </p>
+        <div class="katex">
+$$
+\frac{\partial u}{\partial x} = \cos\!\left(x - \frac{y}{2}\right)
+$$
+        </div>
+        <div class="katex">
+$$
+\frac{\partial u}{\partial y} = -\frac{1}{2}\cos\!\left(x - \frac{y}{2}\right)
+$$
+        </div>
+        <p>
+            Substitusi ke persamaan asal \( u_x + 2u_y = 0 \):
+        </p>
+        <div class="katex">
+$$
+\cos\!\left(x - \frac{y}{2}\right) + 2\left(-\frac{1}{2}\right)\cos\!\left(x - \frac{y}{2}\right) = \cos\!\left(x - \frac{y}{2}\right) - \cos\!\left(x - \frac{y}{2}\right) = 0 \quad \checkmark
+$$
+        </div>
+        <p>
+            Periksa kondisi awal \( u(x, 0) = \sin(x) \):
+        </p>
+        <div class="katex">
+$$
+u(x, 0) = \sin\!\left(x - 0\right) = \sin(x) \quad \checkmark
+$$
+        </div>
+        <p>
+            Solusi khusus terbukti memenuhi persamaan dan kondisi awal yang diberikan.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kesimpulan</h3>
+        <p>
+            Solusi umum PDP orde satu memuat fungsi arbitrer \( f \) yang mewakili
+            seluruh keluarga solusi persamaan. Fungsi arbitrer ini diperoleh dari
+            hubungan antara integral-integral pertama sistem karakteristik.
+        </p>
+        <p>
+            Solusi khusus diperoleh dengan menetapkan fungsi arbitrer \( f \) secara
+            spesifik berdasarkan kondisi awal yang diberikan. Proses penentuan ini
+            dilakukan dengan mensubstitusikan kondisi awal ke dalam solusi umum,
+            kemudian menyelesaikan untuk \( f \).
+        </p>
+        <p>
+            Verifikasi solusi dilakukan dengan mensubstitusikan kembali ke persamaan
+            asal dan memeriksa bahwa kondisi awal terpenuhi secara eksak.
+        </p>
+    </div>
+
+</div>

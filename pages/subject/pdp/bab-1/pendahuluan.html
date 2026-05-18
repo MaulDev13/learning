@@ -1,316 +1,255 @@
 <div class="card-group">
 
-    <!-- PENGANTAR -->
     <div class="card card--soft">
-        <h3>Persamaan Diferensial Parsial</h3>
+        <h2>Pendahuluan Persamaan Diferensial Parsial</h2>
         <p>
-            <span class="text-code-inline">Persamaan Diferensial Parsial (PDP)</span>
-            merupakan salah satu cabang penting dalam matematika analisis.
+            Persamaan Diferensial Parsial (PDP) merupakan salah satu cabang penting dalam
+            matematika analisis yang digunakan untuk memodelkan berbagai fenomena alam dan
+            rekayasa yang melibatkan lebih dari satu variabel bebas.
         </p>
         <p>
-            PDP digunakan untuk memodelkan berbagai fenomena alam dan rekayasa yang melibatkan
-            lebih dari satu variabel bebas, seperti aliran panas, gelombang, dan difusi.
+            Fenomena seperti aliran panas, perambatan gelombang, dan difusi partikel
+            semuanya dapat dideskripsikan secara matematis menggunakan PDP. Pemahaman
+            terhadap struktur dan sifat PDP menjadi fondasi utama dalam analisis
+            sistem fisis dan rekayasa modern.
         </p>
-        <div class="text-math-highlight">
-            "PDP adalah jembatan antara matematika abstrak dan realitas fisika."
-        </div>
     </div>
 
-    <!-- DEFINISI -->
     <div class="card card--soft">
-        <h3>Definisi</h3>
+        <h3>Definisi Persamaan Diferensial Parsial</h3>
         <p>
-            <span class="text-code-inline">Persamaan Diferensial Parsial</span> adalah persamaan
-            yang memuat suatu fungsi tak diketahui dari dua atau lebih variabel bebas,
-            beserta turunan parsial dari fungsi tersebut.
+            Persamaan Diferensial Parsial adalah persamaan yang memuat suatu fungsi
+            tak diketahui dari dua atau lebih variabel bebas beserta turunan parsial
+            dari fungsi tersebut.
         </p>
         <p>
-            Secara simbolis, jika <span class="text-code-inline">u = u(x1, x2, ..., xn)</span>, maka PDP
-            berbentuk:
+            Secara umum, apabila \( u = u(x_1, x_2, \ldots, x_n) \) adalah fungsi
+            yang tidak diketahui, maka PDP dapat dinyatakan dalam bentuk berikut.
         </p>
-        <div class="text-math">
-            F(x1, ..., xn, u, ∂u/∂x1, ..., ∂u/∂xn, ∂²u/∂x1², ...) = 0
+        <div class="katex">
+$$
+F\!\left(x_1, \ldots, x_n,\, u,\, \frac{\partial u}{\partial x_1}, \ldots, \frac{\partial u}{\partial x_n},\, \frac{\partial^2 u}{\partial x_1^2}, \ldots\right) = 0
+$$
         </div>
+        <p>
+            Fungsi \( F \) adalah fungsi yang diketahui, sedangkan \( u \) adalah fungsi
+            yang akan ditentukan sebagai solusi.
+        </p>
     </div>
 
-    <!-- FUNGSI MULTIVARIABEL -->
-    <div class="card card--soft">
-        <h3>Fungsi Multivariabel</h3>
-        <p>
-            Misalkan <span class="text-code-inline">u</span> adalah fungsi dari
-            <span class="text-code-inline">n</span> variabel bebas <span class="text-code-inline">x1, x2, ..., xn</span>,
-            yang ditulis sebagai:
-        </p>
-        <div class="text-math">
-            u = u(x1, x2, ..., xn)
-        </div>
-        <p>
-            Turunan parsial <span class="text-code-inline">u</span> terhadap variabel <span class="text-code-inline">xi</span>
-            dinotasikan sebagai <span class="text-code-inline">∂u/∂xi</span>.
-        </p>
-        <p>
-            Turunan parsial orde lebih tinggi diperoleh dengan melakukan diferensiasi
-            secara berulang terhadap variabel-variabel yang bersesuaian.
-        </p>
-        <table class="table">
-            <thead>
-                <tr><th>Orde</th><th>Notasi</th><th>Contoh</th></tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Pertama</td>
-                    <td>∂u/∂x</td>
-                    <td>∂/∂x (x^2 y) = 2xy</td>
-                </tr>
-                <tr>
-                    <td>Kedua (murni)</td>
-                    <td>∂²u/∂x²</td>
-                    <td>∂²/∂x² (x^2 y) = 2y</td>
-                </tr>
-                <tr>
-                    <td>Kedua (campuran)</td>
-                    <td>∂²u/∂x∂y</td>
-                    <td>∂²/∂x∂y (x^2 y) = 2x</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- BENTUK UMUM -->
-    <div class="card card--soft">
-        <h3>Bentuk Umum PDP</h3>
-        <p>
-            Secara umum, PDP dapat dinyatakan sebagai:
-        </p>
-        <div class="text-math">
-            F(x1, ..., xn, u, ∂u/∂x1, ..., ∂u/∂xn, ∂²u/∂x1², ...) = 0
-        </div>
-        <p>
-            dengan <span class="text-code-inline">F</span> adalah fungsi yang diketahui,
-            dan <span class="text-code-inline">u</span> adalah fungsi yang akan ditentukan.
-        </p>
-        <p>
-            Contoh khusus untuk dua variabel bebas <span class="text-code-inline">(x,y)</span>:
-        </p>
-        <div class="text-math">
-            A u_xx + B u_xy + C u_yy + D u_x + E u_y + F u = G
-        </div>
-    </div>
-
-    <!-- NOTASI -->
     <div class="card card--soft">
         <h3>Notasi Turunan Parsial</h3>
         <p>
-            Turunan parsial <span class="text-code-inline">u</span> terhadap <span class="text-code-inline">x</span>
-            dapat ditulis dalam beberapa notasi, yaitu:
+            Turunan parsial \( u \) terhadap variabel \( x \) dapat ditulis dalam
+            beberapa notasi yang ekuivalen sebagai berikut.
         </p>
-        <div class="text-math">
-            ∂u/∂x = u_x = ∂_x u
+        <div class="katex">
+$$
+\frac{\partial u}{\partial x} = u_x = \partial_x u
+$$
         </div>
         <p>
-            Turunan parsial orde dua terhadap <span class="text-code-inline">x</span> ditulis sebagai:
+            Turunan parsial orde dua murni dan turunan campuran ditulis sebagai berikut.
         </p>
-        <div class="text-math">
-            ∂²u/∂x² = u_xx
-        </div>
-        <p>
-            Turunan parsial campuran terhadap <span class="text-code-inline">x</span> dan <span class="text-code-inline">y</span>
-            ditulis sebagai:
-        </p>
-        <div class="text-math">
-            ∂²u/∂x∂y = u_xy
+        <div class="katex">
+$$
+\frac{\partial^2 u}{\partial x^2} = u_{xx}, \qquad \frac{\partial^2 u}{\partial x\,\partial y} = u_{xy}
+$$
         </div>
         <table class="table">
-            <thead>
-                <tr><th>Notasi Leibniz</th><th>Notasi Subskrip</th><th>Notasi Operator</th></tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>∂u/∂x</td>
-                    <td>u_x</td>
-                    <td>∂_x u</td>
-                </tr>
-                <tr>
-                    <td>∂²u/∂x²</td>
-                    <td>u_xx</td>
-                    <td>∂_xx u</td>
-                </tr>
-                <tr>
-                    <td>∂²u/∂x∂y</td>
-                    <td>u_xy</td>
-                    <td>∂_y ∂_x u</td>
-                </tr>
-            </tbody>
+            <tr>
+                <th>Notasi Leibniz</th>
+                <th>Notasi Subskrip</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>\( \dfrac{\partial u}{\partial x} \)</td>
+                <td>\( u_x \)</td>
+                <td>Turunan parsial orde satu terhadap \( x \)</td>
+            </tr>
+            <tr>
+                <td>\( \dfrac{\partial^2 u}{\partial x^2} \)</td>
+                <td>\( u_{xx} \)</td>
+                <td>Turunan parsial orde dua murni terhadap \( x \)</td>
+            </tr>
+            <tr>
+                <td>\( \dfrac{\partial^2 u}{\partial x\,\partial y} \)</td>
+                <td>\( u_{xy} \)</td>
+                <td>Turunan parsial campuran terhadap \( x \) dan \( y \)</td>
+            </tr>
         </table>
     </div>
 
-    <!-- PERBEDAAN DENGAN ODE -->
     <div class="card card--soft">
         <h3>Perbedaan dengan Persamaan Diferensial Biasa</h3>
         <p>
-            <span class="text-code-inline">Persamaan Diferensial Biasa (PDB)</span> hanya melibatkan
-            satu variabel bebas dan turunan biasa,
-            sedangkan <span class="text-code-inline">PDP</span> melibatkan dua atau lebih
-            variabel bebas dan turunan parsial.
+            Persamaan Diferensial Biasa (PDB) hanya melibatkan satu variabel bebas dan
+            turunan biasa, sedangkan PDP melibatkan dua atau lebih variabel bebas dan
+            turunan parsial. Perbedaan ini membawa konsekuensi mendasar terhadap
+            struktur solusi yang dihasilkan.
         </p>
         <table class="table">
-            <thead>
-                <tr><th>Aspek</th><th>PDB</th><th>PDP</th></tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Variabel bebas</td>
-                    <td>Satu (misal x)</td>
-                    <td>Dua atau lebih (x, y, t, ...)</td>
-                </tr>
-                <tr>
-                    <td>Turunan</td>
-                    <td>Turunan biasa (d/dx)</td>
-                    <td>Turunan parsial (∂/∂x)</td>
-                </tr>
-                <tr>
-                    <td>Contoh sederhana</td>
-                    <td>du/dx + u = 0</td>
-                    <td>∂u/∂x + ∂u/∂y = 0</td>
-                </tr>
-                <tr>
-                    <td>Solusi umum</td>
-                    <td>Mengandung konstanta</td>
-                    <td>Mengandung fungsi arbitrer</td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="text-math-highlight">
-            Contoh PDB: du/dx + u = 0 &nbsp;&nbsp;&nbsp; Contoh PDP: ∂u/∂x + ∂u/∂y = 0
-        </div>
-    </div>
-
-    <!-- CONTOH SEDERHANA -->
-    <div class="card card--soft">
-        <h3>Contoh Sederhana PDP</h3>
-        <p>
-            Berikut adalah beberapa contoh PDP yang sering dijumpai, beserta nama dan penerapannya.
-        </p>
-        <table class="table">
-            <thead>
-                <tr><th>Persamaan</th><th>Nama</th><th>Jenis (berdasarkan orde dua)</th></tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>∂u/∂x + ∂u/∂y = 0</td>
-                    <td>Persamaan transport (orde satu)</td>
-                    <td>Linier orde satu</td>
-                </tr>
-                <tr>
-                    <td>∂²u/∂x² + ∂²u/∂y² = 0</td>
-                    <td>Laplace</td>
-                    <td>Elliptik</td>
-                </tr>
-                <tr>
-                    <td>∂u/∂t = k ∂²u/∂x²</td>
-                    <td>Panas / Difusi</td>
-                    <td>Parabolik</td>
-                </tr>
-                <tr>
-                    <td>∂²u/∂t² = c² ∂²u/∂x²</td>
-                    <td>Gelombang</td>
-                    <td>Hiperbolik</td>
-                </tr>
-            </tbody>
+            <tr>
+                <th>Aspek</th>
+                <th>PDB</th>
+                <th>PDP</th>
+            </tr>
+            <tr>
+                <td>Variabel bebas</td>
+                <td>Satu</td>
+                <td>Dua atau lebih</td>
+            </tr>
+            <tr>
+                <td>Jenis turunan</td>
+                <td>Turunan biasa \( \dfrac{d}{dx} \)</td>
+                <td>Turunan parsial \( \dfrac{\partial}{\partial x} \)</td>
+            </tr>
+            <tr>
+                <td>Solusi umum</td>
+                <td>Mengandung konstanta arbitrer</td>
+                <td>Mengandung fungsi arbitrer</td>
+            </tr>
+            <tr>
+                <td>Contoh</td>
+                <td>\( \dfrac{du}{dx} + u = 0 \)</td>
+                <td>\( \dfrac{\partial u}{\partial x} + \dfrac{\partial u}{\partial y} = 0 \)</td>
+            </tr>
         </table>
     </div>
 
-    <!-- SOLUSI PDP -->
     <div class="card card--soft">
-        <h3>Solusi PDP</h3>
+        <h3>Contoh PDP yang Sering Dijumpai</h3>
         <p>
-            Solusi suatu PDP adalah fungsi <span class="text-code-inline">u</span>
-            yang memenuhi persamaan tersebut pada suatu daerah tertentu.
+            Berikut adalah beberapa PDP yang paling sering muncul dalam pemodelan
+            fenomena fisika dan rekayasa beserta klasifikasinya.
+        </p>
+        <table class="table">
+            <tr>
+                <th>Persamaan</th>
+                <th>Nama</th>
+                <th>Kelas</th>
+            </tr>
+            <tr>
+                <td>\( u_x + u_y = 0 \)</td>
+                <td>Transport</td>
+                <td>Linear orde satu</td>
+            </tr>
+            <tr>
+                <td>\( u_{xx} + u_{yy} = 0 \)</td>
+                <td>Laplace</td>
+                <td>Eliptik</td>
+            </tr>
+            <tr>
+                <td>\( u_t = k\, u_{xx} \)</td>
+                <td>Panas</td>
+                <td>Parabolik</td>
+            </tr>
+            <tr>
+                <td>\( u_{tt} = c^2 u_{xx} \)</td>
+                <td>Gelombang</td>
+                <td>Hiperbolik</td>
+            </tr>
+            <tr>
+                <td>\( u_{xx} + u_{yy} = f(x,y) \)</td>
+                <td>Poisson</td>
+                <td>Eliptik</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Solusi PDP dan Kondisi Tambahan</h3>
+        <p>
+            Solusi suatu PDP adalah fungsi \( u \) yang memenuhi persamaan tersebut
+            pada suatu domain tertentu. Berbeda dengan PDB, solusi umum PDP mengandung
+            fungsi arbitrer, sehingga keluarga solusinya sangat luas.
         </p>
         <p>
-            Berbeda dengan PDB, solusi PDP umumnya merupakan keluarga fungsi yang sangat luas.
-            Sebagai contoh, persamaan gelombang <span class="text-code-inline">u_tt = c^2 u_xx</span> memiliki solusi
-            <span class="text-code-inline">u(x,t) = f(x-ct) + g(x+ct)</span> dengan <span class="text-code-inline">f</span> dan <span class="text-code-inline">g</span>
+            Sebagai contoh, persamaan gelombang \( u_{tt} = c^2 u_{xx} \) memiliki
+            solusi umum berbentuk berikut, dengan \( f \) dan \( g \) adalah
             fungsi arbitrer.
         </p>
-        <p>
-            Untuk memperoleh solusi yang unik, diperlukan kondisi tambahan berupa:
-        </p>
-        <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
-            <li><strong>Kondisi awal</strong> — nilai u dan/atau turunannya pada t = 0</li>
-            <li><strong>Kondisi batas</strong> — nilai u pada batas domain spasial</li>
-        </ul>
-        <div class="text-math">
-            Syarat batas umum: <br>
-            Dirichlet: u = f pada batas <br>
-            Neumann: ∂u/∂n = g pada batas <br>
-            Robin: a u + b ∂u/∂n = h pada batas
+        <div class="katex">
+$$
+u(x,t) = f(x - ct) + g(x + ct)
+$$
         </div>
+        <p>
+            Untuk memperoleh solusi yang tunggal, diperlukan kondisi tambahan yang
+            dikenakan pada domain atau batasnya. Kondisi tambahan ini terdiri dari
+            dua jenis sebagai berikut.
+        </p>
+        <table class="table">
+            <tr>
+                <th>Jenis Kondisi</th>
+                <th>Definisi</th>
+                <th>Contoh</th>
+            </tr>
+            <tr>
+                <td>Kondisi awal</td>
+                <td>Nilai \( u \) dan/atau turunannya diberikan pada \( t = 0 \)</td>
+                <td>\( u(x,0) = f(x) \)</td>
+            </tr>
+            <tr>
+                <td>Kondisi batas</td>
+                <td>Nilai \( u \) diberikan pada batas domain spasial</td>
+                <td>\( u(0,t) = 0,\quad u(L,t) = 0 \)</td>
+            </tr>
+        </table>
     </div>
 
-    <!-- PERAN PDP -->
     <div class="card card--soft">
         <h3>Peran PDP dalam Ilmu Pengetahuan</h3>
         <p>
-            PDP memainkan peran fundamental dalam pemodelan fenomena kontinu
-            di berbagai bidang ilmu.
+            PDP memainkan peran fundamental dalam pemodelan fenomena kontinu di berbagai
+            bidang ilmu pengetahuan dan rekayasa.
         </p>
         <table class="table">
-            <thead>
-                <tr><th>Bidang</th><th>Fenomena</th><th>PDP Terkait</th></tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Fisika</td>
-                    <td>Perambatan panas, getaran tali, medan elektromagnetik</td>
-                    <td>Panas, gelombang, Maxwell</td>
-                </tr>
-                <tr>
-                    <td>Rekayasa</td>
-                    <td>Analisis struktur, dinamika fluida, pemrosesan sinyal</td>
-                    <td>Elastisitas, Navier-Stokes, Laplace</td>
-                </tr>
-                <tr>
-                    <td>Biologi</td>
-                    <td>Penyebaran populasi, difusi obat</td>
-                    <td>Reaksi-difusi, Fisher-KPP</td>
-                </tr>
-                <tr>
-                    <td>Keuangan</td>
-                    <td>Harga opsi saham</td>
-                    <td>Black-Scholes</td>
-                </tr>
-            </tbody>
+            <tr>
+                <th>Bidang</th>
+                <th>Fenomena</th>
+                <th>PDP Terkait</th>
+            </tr>
+            <tr>
+                <td>Fisika</td>
+                <td>Konduksi panas, getaran dawai, medan elektromagnetik</td>
+                <td>Panas, gelombang, Maxwell</td>
+            </tr>
+            <tr>
+                <td>Rekayasa</td>
+                <td>Analisis struktur, dinamika fluida, pemrosesan sinyal</td>
+                <td>Elastisitas, Navier-Stokes, Laplace</td>
+            </tr>
+            <tr>
+                <td>Biologi</td>
+                <td>Penyebaran populasi, difusi obat dalam jaringan</td>
+                <td>Reaksi-difusi, Fisher-KPP</td>
+            </tr>
+            <tr>
+                <td>Keuangan</td>
+                <td>Penetapan harga opsi saham</td>
+                <td>Black-Scholes</td>
+            </tr>
         </table>
-        <div class="text-math-highlight">
-            "Hampir semua hukum alam ditulis dalam bahasa PDP."
-        </div>
     </div>
 
-    <!-- KESIMPULAN -->
     <div class="card card--soft">
         <h3>Kesimpulan</h3>
         <p>
-            <span class="text-code-inline">Persamaan Diferensial Parsial</span> adalah
-            persamaan yang melibatkan fungsi dari beberapa variabel bebas
-            beserta turunan parsialnya.
+            Persamaan Diferensial Parsial adalah persamaan yang melibatkan fungsi dari
+            beberapa variabel bebas beserta turunan parsialnya. PDP merupakan kerangka
+            matematis utama dalam menganalisis fenomena yang bergantung pada lebih dari
+            satu variabel bebas.
         </p>
         <p>
-            PDP merupakan kerangka matematis utama dalam menganalisis fenomena yang bergantung
-            pada lebih dari satu variabel bebas, dan penyelesaiannya memerlukan kondisi
-            tambahan (awal/batas) agar solusi yang diperoleh unik.
+            Solusi PDP umumnya mengandung fungsi arbitrer, sehingga diperlukan kondisi
+            tambahan berupa kondisi awal dan kondisi batas untuk memperoleh solusi yang tunggal.
         </p>
         <p>
-            Dalam perkuliahan ini, Anda akan mempelajari berbagai metode penyelesaian PDP:
-            <span class="text-code-inline">metode karakteristik</span>,
-            <span class="text-code-inline">pemisahan variabel</span>,
-            <span class="text-code-inline">deret Fourier</span>,
-            <span class="text-code-inline">transformasi Fourier dan Laplace</span>,
-            serta <span class="text-code-inline">metode numerik dasar</span>.
+            Dalam mata kuliah ini, akan dipelajari berbagai metode penyelesaian PDP secara
+            sistematis, meliputi metode karakteristik, pemisahan variabel, deret Fourier,
+            transformasi Fourier dan Laplace, serta metode numerik dasar.
         </p>
-        <div class="text-math">
-            "Selamat menjelajahi dunia Persamaan Diferensial Parsial — bahasa alam semesta."
-        </div>
     </div>
 
 </div>
