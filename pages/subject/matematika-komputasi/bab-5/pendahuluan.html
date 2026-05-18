@@ -1,0 +1,382 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Pendahuluan Debugging dan Error Handling</h2>
+
+        <p>
+            Dalam pengembangan perangkat lunak dan implementasi metode numerik, kesalahan program merupakan hal yang hampir tidak dapat dihindari.
+            Kesalahan dapat muncul akibat logika program yang salah, kesalahan sintaks, input tidak valid, maupun keterbatasan komputasi numerik.
+        </p>
+
+        <p>
+            <span class="text-code-inline">Debugging</span> adalah proses menemukan, menganalisis, dan memperbaiki kesalahan (bug) dalam program.
+            Sedangkan <span class="text-code-inline">Error Handling</span> merupakan mekanisme untuk menangani kesalahan secara terstruktur agar program tetap stabil dan tidak berhenti secara tiba-tiba.
+        </p>
+
+        <p>
+            Pada implementasi metode numerik, debugging dan error handling sangat penting karena proses iteratif, operasi matriks,
+            dan perhitungan floating point sangat rentan terhadap error komputasi maupun kesalahan logika algoritma.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Tujuan Debugging</h3>
+
+        <p>
+            Debugging dilakukan untuk memastikan program berjalan sesuai dengan algoritma yang dirancang serta menghasilkan output yang benar.
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Tujuan</th>
+                    <th>Penjelasan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Menemukan Bug</td>
+                    <td>Mengidentifikasi sumber kesalahan dalam program</td>
+                </tr>
+                <tr>
+                    <td>Memperbaiki Logika</td>
+                    <td>Memastikan algoritma berjalan sesuai teori</td>
+                </tr>
+                <tr>
+                    <td>Meningkatkan Stabilitas</td>
+                    <td>Mengurangi kemungkinan program crash</td>
+                </tr>
+                <tr>
+                    <td>Validasi Hasil</td>
+                    <td>Memastikan output numerik akurat</td>
+                </tr>
+                <tr>
+                    <td>Meningkatkan Efisiensi</td>
+                    <td>Mengoptimalkan performa komputasi</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            Dalam metode numerik, debugging tidak hanya memeriksa apakah program berjalan,
+            tetapi juga memastikan hasil iterasi konvergen menuju solusi yang benar.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Jenis-Jenis Error dalam Pemrograman</h3>
+
+        <p>
+            Kesalahan dalam program umumnya dibagi menjadi beberapa kategori berdasarkan penyebab dan waktu kemunculannya.
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Jenis Error</th>
+                    <th>Karakteristik</th>
+                    <th>Contoh</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Syntax Error</td>
+                    <td>Kesalahan penulisan sintaks program</td>
+                    <td>Kurang tanda kurung atau titik dua</td>
+                </tr>
+                <tr>
+                    <td>Runtime Error</td>
+                    <td>Error saat program dijalankan</td>
+                    <td>Pembagian dengan nol</td>
+                </tr>
+                <tr>
+                    <td>Logical Error</td>
+                    <td>Program berjalan tetapi hasil salah</td>
+                    <td>Rumus iterasi tidak tepat</td>
+                </tr>
+                <tr>
+                    <td>Numerical Error</td>
+                    <td>Kesalahan akibat aproksimasi numerik</td>
+                    <td>Galat pembulatan floating point</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Syntax Error</h3>
+
+        <p>
+            Syntax error terjadi ketika aturan penulisan bahasa pemrograman tidak dipenuhi.
+            Error ini biasanya terdeteksi sebelum program dijalankan.
+        </p>
+
+        <div class="text-code">
+# Contoh syntax error
+
+for i in range(5)
+    print(i)
+        </div>
+
+        <p>
+            Pada contoh tersebut, tanda titik dua setelah perulangan <span class="text-code-inline">for</span> tidak dituliskan,
+            sehingga interpreter Python menghasilkan pesan error.
+        </p>
+
+        <p>
+            Syntax error merupakan jenis error yang paling mudah ditemukan karena biasanya disertai lokasi baris kesalahan.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Runtime Error</h3>
+
+        <p>
+            Runtime error muncul ketika program sedang dieksekusi.
+            Error ini sering disebabkan oleh operasi yang tidak valid atau input yang tidak sesuai.
+        </p>
+
+        <div class="text-code">
+# Runtime error: division by zero
+
+x = 10
+y = 0
+
+hasil = x / y
+print(hasil)
+        </div>
+
+        <p>
+            Program di atas menghasilkan error karena operasi pembagian dengan nol tidak terdefinisi secara matematis.
+        </p>
+
+        <p>
+            Dalam metode numerik, runtime error dapat muncul pada proses invers matriks singular,
+            iterasi divergen, maupun indeks array yang melebihi batas.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Logical Error</h3>
+
+        <p>
+            Logical error terjadi ketika algoritma atau rumus program salah,
+            tetapi program tetap dapat dijalankan tanpa menghasilkan pesan error.
+        </p>
+
+        <div class="text-code">
+# Logical error
+
+r = 7
+luas = 2 * 3.14 * r * r
+
+print(luas)
+        </div>
+
+        <p>
+            Program berjalan normal, tetapi rumus yang digunakan bukan rumus luas lingkaran.
+            Seharusnya:
+        </p>
+
+        <div class="katex">
+$$
+L = \pi r^2
+$$
+        </div>
+
+        <p>
+            Logical error merupakan jenis error yang paling sulit ditemukan karena tidak selalu menghasilkan peringatan dari interpreter.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Numerical Error dalam Metode Numerik</h3>
+
+        <p>
+            Dalam komputasi numerik, kesalahan juga dapat muncul akibat keterbatasan representasi bilangan pada komputer.
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Jenis Numerical Error</th>
+                    <th>Penjelasan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Round-off Error</td>
+                    <td>Kesalahan akibat pembulatan digit floating point</td>
+                </tr>
+                <tr>
+                    <td>Truncation Error</td>
+                    <td>Kesalahan akibat pemotongan proses aproksimasi</td>
+                </tr>
+                <tr>
+                    <td>Propagation Error</td>
+                    <td>Error kecil yang membesar selama iterasi</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            Error numerik dapat menyebabkan solusi iteratif menjadi tidak stabil atau gagal konvergen.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Konsep Error Handling</h3>
+
+        <p>
+            Error handling digunakan untuk menangani error secara sistematis agar program tetap dapat berjalan dengan aman.
+        </p>
+
+        <p>
+            Pada Python, error handling umumnya menggunakan struktur:
+        </p>
+
+        <div class="text-code">
+try:
+    # kode yang berpotensi error
+except:
+    # penanganan error
+        </div>
+
+        <p>
+            Dengan mekanisme tersebut, program dapat memberikan pesan kesalahan yang lebih informatif
+            tanpa langsung menghentikan seluruh proses komputasi.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh Error Handling</h3>
+
+        <p>
+            Berikut contoh sederhana penggunaan error handling untuk menghindari pembagian dengan nol.
+        </p>
+
+        <div class="text-code">
+try:
+    x = 10
+    y = 0
+
+    hasil = x / y
+    print(hasil)
+
+except ZeroDivisionError:
+    print("Error: pembagian dengan nol tidak diperbolehkan")
+        </div>
+
+        <p>
+            Program tidak berhenti secara tiba-tiba karena error telah ditangani menggunakan blok
+            <span class="text-code-inline">except</span>.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Debugging pada Metode Numerik</h3>
+
+        <p>
+            Dalam metode numerik, debugging sering dilakukan untuk memeriksa:
+        </p>
+
+        <ul>
+            <li>Kebenaran rumus iterasi</li>
+            <li>Nilai error pada setiap iterasi</li>
+            <li>Konvergensi solusi</li>
+            <li>Stabilitas algoritma</li>
+            <li>Konsistensi matriks dan vektor</li>
+        </ul>
+
+        <p>
+            Salah satu teknik debugging yang umum digunakan adalah menampilkan nilai variabel selama iterasi.
+        </p>
+
+        <div class="text-code">
+x = 1.0
+
+for i in range(5):
+    x = (x + 2/x) / 2
+    print("Iterasi", i, "=", x)
+        </div>
+
+        <p>
+            Teknik tersebut membantu memantau perubahan solusi pada setiap langkah iterasi.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Strategi Debugging</h3>
+
+        <p>
+            Debugging yang efektif memerlukan pendekatan sistematis agar sumber error dapat ditemukan dengan cepat.
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Strategi</th>
+                    <th>Penjelasan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Trace Variable</td>
+                    <td>Memeriksa perubahan nilai variabel</td>
+                </tr>
+                <tr>
+                    <td>Print Debugging</td>
+                    <td>Menampilkan informasi proses program</td>
+                </tr>
+                <tr>
+                    <td>Testing Bertahap</td>
+                    <td>Menguji program bagian per bagian</td>
+                </tr>
+                <tr>
+                    <td>Validasi Manual</td>
+                    <td>Membandingkan hasil dengan perhitungan teoritis</td>
+                </tr>
+                <tr>
+                    <td>Exception Handling</td>
+                    <td>Menangani kondisi error tertentu</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Pentingnya Debugging dalam Komputasi Numerik</h3>
+
+        <p>
+            Kesalahan kecil dalam implementasi metode numerik dapat menghasilkan solusi yang sangat berbeda dari nilai sebenarnya.
+        </p>
+
+        <p>
+            Pada algoritma iteratif, error yang tidak terdeteksi dapat menyebabkan divergensi,
+            overflow numerik, atau hasil yang tampak benar tetapi sebenarnya tidak valid secara matematis.
+        </p>
+
+        <p>
+            Oleh karena itu, debugging dan error handling merupakan bagian penting dalam pengembangan program ilmiah dan rekayasa.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Tujuan Pembelajaran</h3>
+
+        <p>
+            Setelah mempelajari materi ini, mahasiswa diharapkan mampu memahami konsep debugging dan error handling dalam pemrograman numerik.
+        </p>
+
+        <p>
+            Mahasiswa juga diharapkan mampu mengidentifikasi berbagai jenis error,
+            menerapkan mekanisme penanganan error,
+            serta melakukan debugging sederhana pada implementasi metode numerik menggunakan Python.
+        </p>
+
+        <p>
+            Materi berikutnya akan membahas teknik debugging yang lebih lanjut serta implementasi exception handling pada program numerik yang lebih kompleks.
+        </p>
+    </div>
+
+</div>

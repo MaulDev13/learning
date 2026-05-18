@@ -1,0 +1,536 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Error Handling Mendalam pada Python</h2>
+
+        <p>
+            Dalam pengembangan perangkat lunak dan implementasi metode numerik,
+            program harus mampu menangani berbagai kondisi yang tidak diharapkan.
+        </p>
+
+        <p>
+            <span class="text-code-inline">Error Handling</span> adalah mekanisme untuk mendeteksi,
+            mengendalikan, dan menangani error agar program tetap berjalan secara aman dan stabil.
+        </p>
+
+        <p>
+            Pada komputasi numerik, error handling sangat penting karena proses iteratif,
+            operasi matriks, serta perhitungan floating point sangat rentan terhadap kegagalan komputasi.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Tujuan Error Handling</h3>
+
+        <p>
+            Error handling digunakan untuk menjaga stabilitas program ketika terjadi kondisi abnormal.
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Tujuan</th>
+                    <th>Penjelasan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mencegah Crash</td>
+                    <td>Program tetap berjalan meskipun terjadi error</td>
+                </tr>
+                <tr>
+                    <td>Memberikan Informasi</td>
+                    <td>Menampilkan pesan error yang jelas</td>
+                </tr>
+                <tr>
+                    <td>Validasi Data</td>
+                    <td>Memastikan input sesuai kebutuhan</td>
+                </tr>
+                <tr>
+                    <td>Menjaga Stabilitas</td>
+                    <td>Mengurangi kegagalan komputasi</td>
+                </tr>
+                <tr>
+                    <td>Mempermudah Debugging</td>
+                    <td>Membantu menemukan sumber error</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Konsep Dasar Exception</h3>
+
+        <p>
+            Dalam Python, error direpresentasikan sebagai objek yang disebut
+            <span class="text-code-inline">Exception</span>.
+        </p>
+
+        <p>
+            Ketika error terjadi, Python akan menghasilkan exception dan menghentikan program
+            apabila exception tersebut tidak ditangani.
+        </p>
+
+        <div class="text-code">
+try:
+    # kode yang berpotensi error
+
+except:
+    # penanganan error
+        </div>
+
+        <p>
+            Struktur tersebut merupakan dasar dari mekanisme error handling pada Python.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Alur Error Handling</h3>
+
+        <p>
+            Error handling bekerja melalui proses deteksi dan penanganan exception secara terstruktur.
+        </p>
+
+        <div class="text-code">
+START
+
+TRY menjalankan program
+
+    IF tidak ada error
+        lanjutkan program
+
+    ELSE
+        tangani error
+
+END TRY
+
+CONTINUE program
+        </div>
+
+        <p>
+            Pendekatan ini memungkinkan program tetap berjalan walaupun terjadi kegagalan pada bagian tertentu.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Jenis Exception pada Python</h3>
+
+        <p>
+            Python memiliki banyak jenis exception bawaan yang digunakan untuk berbagai kondisi error.
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Exception</th>
+                    <th>Penyebab</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ZeroDivisionError</td>
+                    <td>Pembagian dengan nol</td>
+                </tr>
+                <tr>
+                    <td>ValueError</td>
+                    <td>Input dengan tipe/nilai tidak sesuai</td>
+                </tr>
+                <tr>
+                    <td>TypeError</td>
+                    <td>Operasi pada tipe data tidak kompatibel</td>
+                </tr>
+                <tr>
+                    <td>IndexError</td>
+                    <td>Indeks di luar batas array/list</td>
+                </tr>
+                <tr>
+                    <td>FileNotFoundError</td>
+                    <td>File tidak ditemukan</td>
+                </tr>
+                <tr>
+                    <td>OverflowError</td>
+                    <td>Bilangan terlalu besar</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Pseudocode Penanganan Pembagian Nol</h3>
+
+        <p>
+            Salah satu runtime error paling umum adalah pembagian dengan nol.
+        </p>
+
+        <div class="text-code">
+INPUT x
+INPUT y
+
+TRY
+
+    result = x / y
+
+    DISPLAY result
+
+IF division by zero occurs
+
+    DISPLAY error message
+
+END TRY
+        </div>
+
+        <p>
+            Struktur tersebut memperlihatkan bagaimana kondisi error ditangani tanpa menghentikan program.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Implementasi Python: ZeroDivisionError</h3>
+
+        <div class="text-code">
+try:
+
+    x = 10
+    y = 0
+
+    result = x / y
+
+    print(result)
+
+except ZeroDivisionError:
+
+    print("Error: pembagian dengan nol tidak diperbolehkan")
+        </div>
+
+        <p>
+            Python akan menangkap exception
+            <span class="text-code-inline">ZeroDivisionError</span>
+            dan menjalankan blok <span class="text-code-inline">except</span>.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Menangani Banyak Exception</h3>
+
+        <p>
+            Sebuah program dapat memiliki lebih dari satu kemungkinan error.
+        </p>
+
+        <div class="text-code">
+try:
+
+    x = int(input("Masukkan angka: "))
+    result = 10 / x
+
+    print(result)
+
+except ZeroDivisionError:
+
+    print("Error: pembagian dengan nol")
+
+except ValueError:
+
+    print("Error: input harus berupa bilangan")
+        </div>
+
+        <p>
+            Setiap jenis exception dapat ditangani secara terpisah agar pesan error lebih spesifik.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Blok else pada Error Handling</h3>
+
+        <p>
+            Blok <span class="text-code-inline">else</span>
+            dijalankan apabila tidak terjadi exception.
+        </p>
+
+        <div class="text-code">
+try:
+
+    x = 5
+    y = 2
+
+    result = x / y
+
+except ZeroDivisionError:
+
+    print("Terjadi error")
+
+else:
+
+    print("Hasil =", result)
+        </div>
+
+        <p>
+            Penggunaan <span class="text-code-inline">else</span>
+            membantu memisahkan kode normal dan kode penanganan error.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Blok finally</h3>
+
+        <p>
+            Blok <span class="text-code-inline">finally</span>
+            selalu dijalankan baik terjadi error maupun tidak.
+        </p>
+
+        <div class="text-code">
+try:
+
+    file = open("data.txt")
+
+except FileNotFoundError:
+
+    print("File tidak ditemukan")
+
+finally:
+
+    print("Program selesai")
+        </div>
+
+        <p>
+            Blok ini biasanya digunakan untuk menutup file,
+            membersihkan resource,
+            atau menyimpan log program.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Pseudocode Validasi Input</h3>
+
+        <p>
+            Validasi input penting untuk memastikan data sesuai dengan kebutuhan algoritma numerik.
+        </p>
+
+        <div class="text-code">
+REPEAT
+
+    INPUT value
+
+    IF input valid
+        STOP LOOP
+
+    ELSE
+        DISPLAY error message
+
+UNTIL input valid
+        </div>
+
+        <p>
+            Teknik ini membantu mencegah program menerima data yang tidak sesuai.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Implementasi Python: Validasi Input</h3>
+
+        <div class="text-code">
+while True:
+
+    try:
+
+        x = float(input("Masukkan bilangan: "))
+
+        break
+
+    except ValueError:
+
+        print("Input tidak valid")
+        
+print("Nilai =", x)
+        </div>
+
+        <p>
+            Program akan terus meminta input hingga pengguna memasukkan nilai numerik yang valid.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Error Handling pada Metode Numerik</h3>
+
+        <p>
+            Pada metode numerik, error handling digunakan untuk menangani kondisi matematis yang tidak valid.
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Kondisi</th>
+                    <th>Penanganan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pembagian nol</td>
+                    <td>Gunakan pengecekan denominator</td>
+                </tr>
+                <tr>
+                    <td>Matriks singular</td>
+                    <td>Periksa determinan matriks</td>
+                </tr>
+                <tr>
+                    <td>Divergensi iterasi</td>
+                    <td>Gunakan batas iterasi maksimum</td>
+                </tr>
+                <tr>
+                    <td>Overflow numerik</td>
+                    <td>Batasi domain perhitungan</td>
+                </tr>
+                <tr>
+                    <td>Input tidak valid</td>
+                    <td>Gunakan validasi data</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Implementasi Python: Penanganan Divergensi</h3>
+
+        <div class="text-code">
+tolerance = 1e-6
+max_iteration = 50
+
+x = 10
+
+for i in range(max_iteration):
+
+    x_new = x**2 + 1
+
+    error = abs(x_new - x)
+
+    if error < tolerance:
+
+        print("Konvergen")
+        break
+
+    x = x_new
+
+else:
+
+    print("Error: metode gagal konvergen")
+        </div>
+
+        <p>
+            Teknik ini mencegah iterasi berjalan tanpa batas ketika solusi tidak ditemukan.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Raise Exception</h3>
+
+        <p>
+            Python memungkinkan programmer membuat exception secara manual menggunakan
+            <span class="text-code-inline">raise</span>.
+        </p>
+
+        <div class="text-code">
+x = -5
+
+if x < 0:
+    raise ValueError("x tidak boleh negatif")
+        </div>
+
+        <p>
+            Teknik ini digunakan untuk menerapkan aturan dan batasan tertentu dalam algoritma.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Custom Exception</h3>
+
+        <p>
+            Selain exception bawaan,
+            Python juga memungkinkan pembuatan exception khusus.
+        </p>
+
+        <div class="text-code">
+class ConvergenceError(Exception):
+    pass
+
+raise ConvergenceError("Metode gagal konvergen")
+        </div>
+
+        <p>
+            Custom exception membantu membuat program lebih modular dan mudah dipelihara.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Strategi Error Handling pada Python</h3>
+
+        <p>
+            Error handling yang baik memerlukan pendekatan sistematis dan defensif.
+        </p>
+
+        <ul>
+            <li>Gunakan validasi input</li>
+            <li>Tangani exception spesifik</li>
+            <li>Gunakan batas iterasi maksimum</li>
+            <li>Periksa kondisi matematis sebelum operasi</li>
+            <li>Gunakan logging untuk pencatatan error</li>
+            <li>Hindari penggunaan <span class="text-code-inline">except:</span> tanpa jenis exception</li>
+        </ul>
+
+        <p>
+            Pendekatan tersebut membantu meningkatkan stabilitas dan reliabilitas program numerik.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Perbandingan Error dan Exception</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Aspek</th>
+                    <th>Error</th>
+                    <th>Exception</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Makna</td>
+                    <td>Kondisi kesalahan umum</td>
+                    <td>Objek error pada Python</td>
+                </tr>
+                <tr>
+                    <td>Penanganan</td>
+                    <td>Tidak selalu dapat ditangani</td>
+                    <td>Dapat ditangani dengan try-except</td>
+                </tr>
+                <tr>
+                    <td>Dampak</td>
+                    <td>Dapat menghentikan program</td>
+                    <td>Dapat dikontrol</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Tujuan Pembelajaran</h3>
+
+        <p>
+            Setelah mempelajari materi ini,
+            mahasiswa diharapkan mampu memahami mekanisme error handling pada Python secara mendalam.
+        </p>
+
+        <p>
+            Mahasiswa juga diharapkan mampu menangani berbagai jenis exception,
+            melakukan validasi input,
+            mengelola error numerik,
+            serta membangun program metode numerik yang lebih stabil dan aman.
+        </p>
+
+        <p>
+            Materi selanjutnya akan membahas penerapan debugging dan error handling pada implementasi algoritma numerik seperti Newton-Raphson,
+            eliminasi Gauss,
+            dan metode iteratif matriks.
+        </p>
+    </div>
+
+</div>

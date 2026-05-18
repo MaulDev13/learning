@@ -1,0 +1,434 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Debugging Mendalam pada Python</h2>
+
+        <p>
+            Pada implementasi metode numerik, debugging bukan hanya digunakan untuk memperbaiki program yang error,
+            tetapi juga untuk memastikan algoritma bekerja sesuai teori matematis.
+        </p>
+
+        <p>
+            Kesalahan kecil dalam iterasi, operasi matriks, maupun perhitungan floating point dapat menghasilkan solusi yang menyimpang jauh dari nilai sebenarnya.
+        </p>
+
+        <p>
+            Oleh karena itu, debugging dalam komputasi numerik harus dilakukan secara sistematis,
+            mulai dari analisis logika algoritma, pelacakan variabel, validasi hasil iterasi,
+            hingga penanganan exception pada Python.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Alur Umum Debugging</h3>
+
+        <p>
+            Proses debugging umumnya dilakukan melalui beberapa tahapan yang terstruktur.
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Tahapan</th>
+                    <th>Penjelasan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Identifikasi Error</td>
+                    <td>Mencari gejala dan lokasi kesalahan</td>
+                </tr>
+                <tr>
+                    <td>Analisis Penyebab</td>
+                    <td>Menentukan sumber utama bug</td>
+                </tr>
+                <tr>
+                    <td>Pelacakan Variabel</td>
+                    <td>Memeriksa perubahan data selama proses</td>
+                </tr>
+                <tr>
+                    <td>Perbaikan Algoritma</td>
+                    <td>Memodifikasi logika program</td>
+                </tr>
+                <tr>
+                    <td>Validasi</td>
+                    <td>Menguji kembali hasil program</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Konsep Trace Variable</h3>
+
+        <p>
+            <span class="text-code-inline">Trace Variable</span> adalah teknik debugging dengan memantau perubahan nilai variabel selama program berjalan.
+        </p>
+
+        <p>
+            Teknik ini sangat penting pada metode iteratif karena solusi berubah secara bertahap pada setiap iterasi.
+        </p>
+
+        <div class="text-math">
+$$
+x_{i+1} = g(x_i)
+$$
+        </div>
+
+        <p>
+            Dengan memantau nilai <span class="text-math-inline">x_i</span>,
+            programmer dapat mengetahui apakah iterasi menuju konvergensi atau divergensi.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Pseudocode Debugging Iteratif</h3>
+
+        <p>
+            Berikut contoh pseudocode debugging pada proses iterasi numerik.
+        </p>
+
+        <div class="text-code">
+SET x = initial_guess
+SET tolerance = 0.000001
+SET error = 1
+
+WHILE error > tolerance
+
+    COMPUTE x_new
+
+    DISPLAY current iteration
+    DISPLAY x_new
+    DISPLAY error
+
+    COMPUTE error = ABS(x_new - x)
+
+    UPDATE x = x_new
+
+END WHILE
+
+DISPLAY final solution
+        </div>
+
+        <p>
+            Struktur tersebut memperlihatkan bagaimana nilai iterasi dan error ditampilkan secara bertahap untuk membantu proses analisis.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Implementasi Python: Trace Variable</h3>
+
+        <p>
+            Berikut implementasi debugging sederhana menggunakan Python.
+        </p>
+
+        <div class="text-code">
+x = 1.0
+tolerance = 1e-6
+error = 1.0
+iteration = 0
+
+while error > tolerance:
+
+    x_new = (x + 2/x) / 2
+
+    error = abs(x_new - x)
+
+    print("Iterasi :", iteration)
+    print("x lama   :", x)
+    print("x baru   :", x_new)
+    print("error    :", error)
+    print("-------------------")
+
+    x = x_new
+    iteration += 1
+
+print("Solusi akhir =", x)
+        </div>
+
+        <p>
+            Teknik ini membantu memeriksa apakah nilai iterasi berubah secara normal atau justru divergen.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Debugging Konvergensi</h3>
+
+        <p>
+            Salah satu fokus utama debugging metode numerik adalah memastikan proses iterasi konvergen menuju solusi.
+        </p>
+
+        <div class="text-math-highlight">
+$$
+\lim_{n \to \infty} x_n = x^\ast
+$$
+        </div>
+
+        <p>
+            Apabila nilai iterasi semakin menjauh atau berosilasi tanpa stabil,
+            maka algoritma kemungkinan mengalami divergensi.
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Kondisi</th>
+                    <th>Karakteristik</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Konvergen</td>
+                    <td>Error semakin kecil</td>
+                </tr>
+                <tr>
+                    <td>Divergen</td>
+                    <td>Error semakin besar</td>
+                </tr>
+                <tr>
+                    <td>Osilasi</td>
+                    <td>Nilai berubah bolak-balik</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Pseudocode Deteksi Divergensi</h3>
+
+        <p>
+            Pada metode numerik, program sering diberi batas iterasi untuk mencegah loop tak hingga.
+        </p>
+
+        <div class="text-code">
+SET max_iteration = 100
+
+WHILE error > tolerance
+
+    IF iteration > max_iteration
+        DISPLAY "Metode gagal konvergen"
+        STOP
+    END IF
+
+    COMPUTE next iteration
+
+END WHILE
+        </div>
+
+        <p>
+            Teknik ini penting agar program tetap stabil ketika solusi tidak ditemukan.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Implementasi Python: Deteksi Divergensi</h3>
+
+        <div class="text-code">
+x = 10
+tolerance = 1e-6
+max_iteration = 20
+
+for i in range(max_iteration):
+
+    x_new = x**2 + 1
+
+    error = abs(x_new - x)
+
+    print("Iterasi", i, "=", x_new)
+
+    if error < tolerance:
+        print("Konvergen")
+        break
+
+    x = x_new
+
+else:
+    print("Gagal konvergen")
+        </div>
+
+        <p>
+            Struktur <span class="text-code-inline">for-else</span> pada Python sering digunakan untuk mendeteksi kegagalan konvergensi.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Debugging dengan Assertion</h3>
+
+        <p>
+            Python menyediakan mekanisme <span class="text-code-inline">assert</span>
+            untuk memastikan kondisi tertentu bernilai benar selama program berjalan.
+        </p>
+
+        <div class="text-code">
+x = 5
+
+assert x > 0, "x harus positif"
+
+print("Nilai valid")
+        </div>
+
+        <p>
+            Jika kondisi salah, Python akan menghasilkan <span class="text-code-inline">AssertionError</span>.
+        </p>
+
+        <p>
+            Assertion sangat berguna untuk validasi input dan pengecekan syarat algoritma numerik.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Debugging dengan Exception Handling</h3>
+
+        <p>
+            Exception handling memungkinkan program menangani kondisi error tertentu tanpa menghentikan seluruh proses.
+        </p>
+
+        <div class="text-code">
+try:
+
+    x = float(input("Masukkan x: "))
+
+    y = 10 / x
+
+    print(y)
+
+except ZeroDivisionError:
+
+    print("Error: pembagian dengan nol")
+
+except ValueError:
+
+    print("Input harus berupa angka")
+        </div>
+
+        <p>
+            Teknik ini penting dalam aplikasi numerik yang menerima input dari pengguna maupun data eksternal.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Debugging Matriks pada Metode Numerik</h3>
+
+        <p>
+            Pada metode numerik berbasis matriks, debugging dilakukan untuk memastikan ukuran matriks dan operasi linear valid.
+        </p>
+
+        <div class="text-math">
+$$
+A\mathbf{x} = \mathbf{b}
+$$
+        </div>
+
+        <p>
+            Kesalahan dimensi matriks merupakan salah satu bug yang paling sering terjadi pada implementasi metode numerik.
+        </p>
+
+        <div class="text-code">
+import numpy as np
+
+A = np.array([[1, 2],
+              [3, 4]])
+
+b = np.array([5, 6])
+
+print("Ukuran A =", A.shape)
+print("Ukuran b =", b.shape)
+        </div>
+
+        <p>
+            Pemeriksaan ukuran matriks membantu menghindari error operasi linear.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Logging untuk Debugging</h3>
+
+        <p>
+            Selain menggunakan <span class="text-code-inline">print()</span>,
+            Python menyediakan modul <span class="text-code-inline">logging</span>
+            untuk pencatatan proses program secara lebih profesional.
+        </p>
+
+        <div class="text-code">
+import logging
+
+logging.basicConfig(level=logging.INFO)
+
+logging.info("Program dimulai")
+logging.warning("Iterasi mendekati batas maksimum")
+logging.error("Terjadi pembagian dengan nol")
+        </div>
+
+        <p>
+            Logging sangat berguna pada program numerik berskala besar karena mempermudah pelacakan proses komputasi.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Perbandingan Print Debugging dan Logging</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Metode</th>
+                    <th>Kelebihan</th>
+                    <th>Kekurangan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Print Debugging</td>
+                    <td>Sederhana dan cepat</td>
+                    <td>Sulit dikelola pada program besar</td>
+                </tr>
+                <tr>
+                    <td>Logging</td>
+                    <td>Terstruktur dan profesional</td>
+                    <td>Lebih kompleks</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Strategi Debugging Metode Numerik</h3>
+
+        <p>
+            Berikut beberapa strategi penting dalam debugging program numerik:
+        </p>
+
+        <ul>
+            <li>Gunakan data sederhana untuk pengujian awal</li>
+            <li>Validasi hasil dengan perhitungan manual</li>
+            <li>Tampilkan nilai error setiap iterasi</li>
+            <li>Gunakan batas iterasi maksimum</li>
+            <li>Periksa kondisi singularitas matriks</li>
+            <li>Gunakan exception handling untuk input dan operasi matematis</li>
+        </ul>
+
+        <p>
+            Pendekatan sistematis membantu mempercepat identifikasi bug dan meningkatkan stabilitas program.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Tujuan Pembelajaran</h3>
+
+        <p>
+            Setelah mempelajari materi ini, mahasiswa diharapkan mampu melakukan debugging mendalam pada implementasi metode numerik menggunakan Python.
+        </p>
+
+        <p>
+            Mahasiswa juga diharapkan mampu melakukan pelacakan variabel,
+            mendeteksi divergensi,
+            menggunakan assertion,
+            menerapkan exception handling,
+            serta memanfaatkan logging untuk analisis program numerik.
+        </p>
+
+        <!-- <p>
+            Materi selanjutnya akan membahas teknik debugging pada algoritma numerik yang lebih kompleks seperti eliminasi Gauss, Newton-Raphson, dan metode iteratif matriks.
+        </p> -->
+    </div>
+
+</div>
