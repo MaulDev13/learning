@@ -1,202 +1,261 @@
 <div class="card-group">
 
-    <!-- PENGANTAR -->
     <div class="card card--soft">
-
-        <h3>Konsep Dasar Integrasi & Diferensiasi Numerik</h3>
+        <h2>Pendahuluan: Integrasi dan Diferensiasi Numerik</h2>
 
         <p>
-            Integrasi dan diferensiasi numerik adalah metode untuk menghitung
-            turunan dan integral suatu fungsi secara pendekatan.
+            Integrasi dan diferensiasi numerik merupakan cabang penting dalam metode numerik yang membahas cara
+            mendekati nilai integral dan turunan ketika solusi eksak tidak mudah diperoleh atau tidak tersedia.
         </p>
 
         <p>
-            Metode ini digunakan ketika fungsi sulit diselesaikan secara analitik
-            atau hanya tersedia dalam bentuk data diskrit.
+            Dalam banyak permasalahan matematika terapan, fungsi yang dianalisis tidak selalu memiliki bentuk
+            analitik yang sederhana. Bahkan, pada beberapa kasus, fungsi hanya diketahui melalui data diskrit
+            hasil pengukuran atau simulasi.
         </p>
 
         <p>
-            Keduanya merupakan konsep dasar dalam analisis numerik.
+            Oleh karena itu, diperlukan pendekatan numerik untuk melakukan aproksimasi terhadap besaran integral
+            maupun laju perubahan suatu fungsi.
         </p>
-
     </div>
 
-    <!-- DIFERENSIASI -->
     <div class="card card--soft">
-
-        <h3>Diferensiasi Numerik</h3>
+        <h3>Makna Integrasi Numerik</h3>
 
         <p>
-            Diferensiasi numerik digunakan untuk memperkirakan turunan
-            suatu fungsi berdasarkan data yang tersedia.
+            Integrasi numerik adalah teknik untuk menghampiri nilai integral tentu dari suatu fungsi dengan
+            menggunakan penjumlahan nilai fungsi pada titik-titik tertentu dalam suatu interval.
         </p>
 
         <p>
-            Turunan menunjukkan laju perubahan suatu fungsi
-            terhadap variabelnya.
+            Secara matematis, integral tentu didefinisikan sebagai:
         </p>
+
+        <div class="text-math">
+$$
+\int_a^b f(x)\,dx
+$$
+        </div>
 
         <p>
-            Contoh:
-            f'(x) ≈ (f(x+h) - f(x)) / h
+            Dalam pendekatan numerik, interval \([a, b]\) dibagi menjadi beberapa subinterval kecil, kemudian
+            luas di bawah kurva dihampiri menggunakan bentuk geometri sederhana seperti persegi panjang,
+            trapesium, atau polinomial pendekatan.
         </p>
-
     </div>
 
-    <!-- INTEGRASI -->
     <div class="card card--soft">
-
-        <h3>Integrasi Numerik</h3>
+        <h3>Makna Diferensiasi Numerik</h3>
 
         <p>
-            Integrasi numerik digunakan untuk menghitung luas daerah
-            di bawah kurva secara pendekatan.
+            Diferensiasi numerik adalah metode untuk menghampiri nilai turunan suatu fungsi berdasarkan perubahan
+            nilai fungsi pada titik-titik yang berdekatan.
         </p>
 
         <p>
-            Integral sering sulit dihitung secara eksak,
-            sehingga digunakan metode numerik.
+            Secara teoritis, turunan didefinisikan sebagai:
         </p>
+
+        <div class="text-math">
+$$
+f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
+$$
+        </div>
 
         <p>
-            Contoh:
-            ∫ f(x) dx
+            Namun dalam komputasi numerik, nilai \(h\) tidak benar-benar dibuat mendekati nol, melainkan dipilih
+            cukup kecil sehingga memberikan keseimbangan antara akurasi dan kestabilan perhitungan.
         </p>
-
     </div>
 
-    <!-- PERBEDAAN -->
     <div class="card card--soft">
-
-        <h3>Perbedaan Keduanya</h3>
+        <h3>Alasan Pendekatan Numerik Diperlukan</h3>
 
         <p>
-            Diferensiasi berfokus pada perubahan nilai fungsi,
-            sedangkan integrasi berfokus pada akumulasi nilai.
+            Tidak semua fungsi dapat diintegralkan atau diturunkan secara eksak menggunakan metode analitik.
+            Dalam banyak kasus, solusi tertutup tidak tersedia atau sangat sulit diperoleh.
         </p>
 
         <p>
-            Secara sederhana:
+            Selain itu, dalam aplikasi nyata, data sering kali berbentuk hasil pengukuran diskrit, bukan fungsi
+            kontinu yang eksplisit.
         </p>
 
         <p>
-            • Turunan → kemiringan grafik<br>
-            • Integral → luas di bawah kurva
+            Hal ini menyebabkan pendekatan numerik menjadi alat utama dalam analisis komputasi modern.
         </p>
 
+        <table class="table">
+            <tr>
+                <th>Kondisi Masalah</th>
+                <th>Pendekatan Analitik</th>
+                <th>Pendekatan Numerik</th>
+            </tr>
+            <tr>
+                <td>Fungsi sederhana</td>
+                <td>Solusi eksak tersedia</td>
+                <td>Biasanya tidak diperlukan</td>
+            </tr>
+            <tr>
+                <td>Fungsi kompleks</td>
+                <td>Sering tidak tersedia</td>
+                <td>Aproksimasi digunakan</td>
+            </tr>
+            <tr>
+                <td>Data eksperimen</td>
+                <td>Tidak dapat digunakan</td>
+                <td>Metode utama</td>
+            </tr>
+        </table>
     </div>
 
-    <!-- KASUS PENGGUNAAN -->
     <div class="card card--soft">
-
-        <h3>Kapan Digunakan?</h3>
+        <h3>Konsep Diskretisasi</h3>
 
         <p>
-            Metode numerik digunakan jika:
+            Dasar utama metode numerik dalam integrasi dan diferensiasi adalah diskretisasi, yaitu proses mengubah
+            fungsi kontinu menjadi sekumpulan titik diskrit.
         </p>
 
         <p>
-            • Fungsi tidak diketahui secara eksplisit<br>
-            • Data hanya berupa tabel<br>
-            • Perhitungan analitik sulit dilakukan
+            Dengan pendekatan ini, operasi kalkulus yang bersifat kontinu dapat dihampiri melalui operasi aritmetika
+            pada sejumlah titik terbatas.
         </p>
 
+        <div class="text-math">
+$$
+x_0, x_1, x_2, \dots, x_n
+$$
+        </div>
+
+        <p>
+            Titik-titik tersebut digunakan sebagai sampel untuk membangun pendekatan terhadap integral maupun turunan.
+        </p>
     </div>
 
-    <!-- METODE DIFERENSIASI -->
     <div class="card card--soft">
-
-        <h3>Metode Diferensiasi</h3>
+        <h3>Hubungan Integrasi dan Diferensiasi</h3>
 
         <p>
-            Beberapa metode yang umum digunakan:
+            Integrasi dan diferensiasi memiliki hubungan fundamental dalam kalkulus, yaitu sifat saling invers
+            dalam kondisi ideal.
         </p>
 
         <p>
-            • Selisih maju (forward difference)<br>
-            • Selisih mundur (backward difference)<br>
-            • Selisih tengah (central difference)
+            Namun dalam pendekatan numerik, hubungan ini tidak selalu sempurna karena adanya kesalahan aproksimasi
+            dan keterbatasan data diskrit.
         </p>
 
+        <p>
+            Oleh karena itu, analisis galat menjadi bagian penting dalam memahami kualitas hasil perhitungan.
+        </p>
     </div>
 
-    <!-- METODE INTEGRASI -->
     <div class="card card--soft">
-
-        <h3>Metode Integrasi</h3>
-
-        <p>
-            Beberapa metode integrasi numerik:
-        </p>
+        <h3>Metode yang Akan Dipelajari</h3>
 
         <p>
-            • Metode Trapesium<br>
-            • Metode Simpson<br>
-            • Metode Riemann
+            Dalam bab ini akan dipelajari beberapa pendekatan dasar dalam integrasi dan diferensiasi numerik.
         </p>
 
+        <table class="table">
+            <tr>
+                <th>Kategori</th>
+                <th>Metode</th>
+            </tr>
+            <tr>
+                <td>Integrasi Numerik</td>
+                <td>Trapesium, Simpson 1/3, Simpson 3/8</td>
+            </tr>
+            <tr>
+                <td>Diferensiasi Numerik</td>
+                <td>Beda maju, beda mundur, beda pusat</td>
+            </tr>
+        </table>
+
+        <p>
+            Setiap metode memiliki karakteristik akurasi dan kompleksitas yang berbeda, sehingga pemilihannya
+            bergantung pada jenis masalah yang dihadapi.
+        </p>
     </div>
 
-    <!-- CONTOH -->
     <div class="card card--soft">
-
-        <h3>Contoh Sederhana</h3>
-
-        <p>
-            Misalkan diketahui nilai fungsi pada beberapa titik,
-            kita dapat menghitung turunan atau luas
-            menggunakan pendekatan numerik.
-        </p>
+        <h3>Aplikasi dalam Bidang Ilmu</h3>
 
         <p>
-            Contoh:
-            data tabel f(x) digunakan untuk mencari f'(x)
-            atau ∫ f(x) dx.
+            Integrasi dan diferensiasi numerik banyak digunakan dalam berbagai bidang ilmu dan rekayasa.
         </p>
 
+        <table class="table">
+            <tr>
+                <th>Bidang</th>
+                <th>Aplikasi</th>
+            </tr>
+            <tr>
+                <td>Fisika</td>
+                <td>Perhitungan energi, kecepatan, dan percepatan</td>
+            </tr>
+            <tr>
+                <td>Teknik</td>
+                <td>Analisis struktur dan sistem dinamis</td>
+            </tr>
+            <tr>
+                <td>Ekonomi</td>
+                <td>Perubahan marginal dan optimasi</td>
+            </tr>
+            <tr>
+                <td>Sains Data</td>
+                <td>Analisis tren dan perubahan data</td>
+            </tr>
+        </table>
+
+        <p>
+            Keberadaan metode numerik memungkinkan analisis terhadap sistem yang sulit diselesaikan secara eksak.
+        </p>
     </div>
 
-    <!-- KELEBIHAN -->
     <div class="card card--soft">
-
-        <h3>Kelebihan</h3>
+        <h3>Tujuan Pembelajaran</h3>
 
         <p>
-            • Dapat digunakan untuk data diskrit<br>
-            • Fleksibel untuk berbagai kasus<br>
-            • Tidak perlu bentuk fungsi eksplisit
+            Setelah mempelajari pendahuluan ini, mahasiswa diharapkan mampu:
         </p>
-
-    </div>
-
-    <!-- KEKURANGAN -->
-    <div class="card card--soft">
-
-        <h3>Kekurangan</h3>
 
         <p>
-            • Hasil berupa pendekatan (aproksimasi)<br>
-            • Terdapat error numerik<br>
-            • Bergantung pada langkah (h)
+            1. Memahami konsep dasar integrasi dan diferensiasi numerik.
         </p>
 
+        <p>
+            2. Menjelaskan perbedaan antara pendekatan eksak dan numerik.
+        </p>
+
+        <p>
+            3. Memahami konsep diskretisasi dalam komputasi numerik.
+        </p>
+
+        <p>
+            4. Mengenali peran metode numerik dalam berbagai bidang aplikasi.
+        </p>
     </div>
 
-    <!-- KESIMPULAN -->
     <div class="card card--soft">
-
         <h3>Kesimpulan</h3>
 
         <p>
-            Integrasi dan diferensiasi numerik adalah alat penting
-            untuk menghitung turunan dan integral secara pendekatan.
+            Integrasi dan diferensiasi numerik merupakan alat penting dalam menyelesaikan masalah kalkulus yang
+            tidak dapat diselesaikan secara analitik.
         </p>
 
         <p>
-            Metode ini sangat berguna dalam kasus nyata
-            dimana solusi analitik sulit diperoleh.
+            Pendekatan ini memungkinkan kita untuk memperoleh solusi aproksimasi yang cukup akurat dengan
+            memanfaatkan konsep diskretisasi.
         </p>
 
+        <p>
+            Pembahasan selanjutnya akan fokus pada metode-metode spesifik beserta analisis kelebihan, kekurangan,
+            dan tingkat akurasinya.
+        </p>
     </div>
 
 </div>

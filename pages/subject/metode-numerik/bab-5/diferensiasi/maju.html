@@ -1,181 +1,188 @@
 <div class="card-group">
 
-    <!-- PENGANTAR -->
     <div class="card card--soft">
-
-        <h3>Diferensiasi Maju (Forward Difference)</h3>
+        <h2>Diferensiasi Numerik: Beda Maju (Forward Difference)</h2>
 
         <p>
-            Diferensiasi maju adalah metode numerik untuk memperkirakan turunan
-            suatu fungsi menggunakan dua titik berurutan.
+            Beda maju merupakan salah satu metode diferensiasi numerik yang digunakan untuk mendekati nilai turunan
+            suatu fungsi dengan memanfaatkan dua titik berurutan pada arah maju (ke kanan).
         </p>
 
         <p>
-            Metode ini termasuk pendekatan paling sederhana dalam diferensiasi numerik.
+            Metode ini termasuk pendekatan paling sederhana dalam diferensiasi numerik, namun memiliki tingkat akurasi
+            yang bergantung pada ukuran langkah (step size).
         </p>
-
-        <p>
-            Cocok digunakan ketika data tersedia dari titik awal ke arah kanan.
-        </p>
-
     </div>
 
-    <!-- IDE DASAR -->
     <div class="card card--soft">
-
-        <h3>Ide Dasar Metode</h3>
-
-        <p>
-            Turunan suatu fungsi didekati menggunakan perubahan nilai fungsi
-            pada selang kecil h ke depan.
-        </p>
+        <h3>Konsep Dasar</h3>
 
         <p>
-            Semakin kecil nilai h, semakin akurat hasil pendekatan turunan.
+            Turunan suatu fungsi didefinisikan secara limit sebagai:
         </p>
+
+        <div class="text-math">
+$$
+f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
+$$
+        </div>
 
         <p>
-            Metode ini mengasumsikan perubahan fungsi bersifat linear pada interval kecil.
+            Dalam pendekatan numerik, nilai \(h\) tidak dibuat mendekati nol secara ekstrem, melainkan menggunakan
+            nilai kecil yang tetap. Dari sini diperoleh pendekatan beda maju.
         </p>
-
     </div>
 
-    <!-- RUMUS DASAR -->
     <div class="card card--soft">
-
-        <h3>Rumus Diferensiasi Maju</h3>
+        <h3>Rumus Beda Maju</h3>
 
         <p>
-            Turunan pertama:
+            Rumus pendekatan turunan dengan metode beda maju adalah:
+        </p>
+
+        <div class="text-math">
+$$
+f'(x) \approx \frac{f(x+h) - f(x)}{h}
+$$
+        </div>
+
+        <p>
+            Di mana:
         </p>
 
         <p>
-            f'(x) ≈ ( f(x + h) - f(x) ) / h
+            - \(h\) adalah jarak antar titik (step size)<br>
+            - \(f(x+h)\) adalah nilai fungsi di titik depan<br>
+            - \(f(x)\) adalah nilai fungsi di titik saat ini
         </p>
-
-        <p>
-            Dimana:
-        </p>
-
-        <p>
-            • h = jarak antar titik (step size)<br>
-            • x + h = titik berikutnya
-        </p>
-
     </div>
 
-    <!-- PENJELASAN -->
     <div class="card card--soft">
-
-        <h3>Makna Geometris</h3>
+        <h3>Interpretasi Geometris</h3>
 
         <p>
-            Secara geometris, diferensiasi maju menghitung kemiringan garis
-            yang menghubungkan titik x dengan titik di depannya (x + h).
+            Secara geometris, beda maju mengaproksimasi kemiringan garis singgung pada suatu titik dengan
+            menggunakan garis lurus yang menghubungkan titik \((x, f(x))\) dan \((x+h, f(x+h))\).
         </p>
 
         <p>
-            Garis ini disebut garis sekant.
+            Semakin kecil nilai \(h\), maka garis sekant akan semakin mendekati garis singgung sebenarnya.
         </p>
-
     </div>
 
-    <!-- LANGKAH -->
     <div class="card card--soft">
-
-        <h3>Langkah-langkah</h3>
+        <h3>Algoritma Beda Maju</h3>
 
         <p>
-            1. Tentukan fungsi f(x)<br>
-            2. Pilih titik x yang ingin dicari turunannya<br>
-            3. Tentukan nilai h kecil<br>
-            4. Hitung f(x + h) dan f(x)<br>
-            5. Substitusikan ke rumus
+            Langkah-langkah metode beda maju:
         </p>
 
+        <p>
+            1. Tentukan fungsi \(f(x)\).<br>
+            2. Tentukan titik \(x\) yang ingin dihitung turunannya.<br>
+            3. Pilih nilai step size \(h\).<br>
+            4. Hitung nilai \(f(x)\) dan \(f(x+h)\).<br>
+            5. Gunakan rumus beda maju.
+        </p>
     </div>
 
-    <!-- CONTOH -->
     <div class="card card--soft">
+        <h3>Pseudocode Beda Maju</h3>
 
-        <h3>Contoh Sederhana</h3>
+        <div class="text-code">
+INPUT x, h
 
-        <p>
-            Diketahui:
-        </p>
+fx = f(x)
+fx_h = f(x + h)
 
-        <p>
-            f(x) = x², x = 2, h = 0.1
-        </p>
+derivative = (fx_h - fx) / h
 
-        <p>
-            Maka:
-            f(2) dan f(2.1)
-        </p>
-
+OUTPUT derivative
+        </div>
     </div>
 
-    <!-- PERHITUNGAN -->
     <div class="card card--soft">
-
-        <h3>Perhitungan</h3>
+        <h3>Contoh Konseptual</h3>
 
         <p>
-            f(2) = 4<br>
-            f(2.1) = 4.41
+            Diberikan fungsi:
+        </p>
+
+        <div class="text-math">
+$$
+f(x) = x^2
+$$
+        </div>
+
+        <p>
+            Hitung pendekatan turunan di titik \(x = 2\) dengan \(h = 0.1\).
         </p>
 
         <p>
-            f'(2) ≈ (4.41 - 4) / 0.1
+            Langkah:
         </p>
 
         <p>
-            f'(2) ≈ 0.41 / 0.1 = 4.1
+            \(f(2) = 4\)<br>
+            \(f(2.1) = 4.41\)
         </p>
 
+        <div class="text-math">
+$$
+f'(2) \approx \frac{4.41 - 4}{0.1} = 4.1
+$$
+        </div>
+
+        <p>
+            Nilai eksak turunan adalah \(f'(x)=2x\), sehingga \(f'(2)=4\). Hasil pendekatan cukup dekat.
+        </p>
     </div>
 
-    <!-- KELEBIHAN -->
     <div class="card card--soft">
-
-        <h3>Kelebihan</h3>
+        <h3>Galat pada Beda Maju</h3>
 
         <p>
-            • Rumus sederhana<br>
-            • Mudah diimplementasikan<br>
-            • Cocok untuk data berurutan
+            Metode beda maju memiliki galat truncation (pemotongan) yang sebanding dengan \(O(h)\).
         </p>
-
-    </div>
-
-    <!-- KEKURANGAN -->
-    <div class="card card--soft">
-
-        <h3>Kekurangan</h3>
 
         <p>
-            • Kurang akurat untuk h besar<br>
-            • Error truncation relatif tinggi<br>
-            • Tidak cocok untuk data noise
+            Artinya, semakin kecil nilai \(h\), semakin kecil galat yang dihasilkan, namun terlalu kecil juga dapat
+            menyebabkan galat pembulatan (rounding error).
         </p>
-
     </div>
 
-    <!-- KESIMPULAN -->
     <div class="card card--soft">
+        <h3>Kelebihan Beda Maju</h3>
 
+        <p>
+            - Sederhana dan mudah diimplementasikan<br>
+            - Hanya membutuhkan dua titik data<br>
+            - Cocok untuk data yang tersedia secara sekuensial
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Keterbatasan Beda Maju</h3>
+
+        <p>
+            - Akurasi lebih rendah dibanding beda pusat<br>
+            - Sensitif terhadap pemilihan step size<br>
+            - Error orde pertama \(O(h)\)
+        </p>
+    </div>
+
+    <div class="card card--soft">
         <h3>Kesimpulan</h3>
 
         <p>
-            Diferensiasi maju adalah metode sederhana untuk memperkirakan turunan
-            dengan menggunakan nilai fungsi di titik saat ini dan titik berikutnya.
+            Beda maju merupakan metode dasar dalam diferensiasi numerik yang digunakan untuk mengaproksimasi
+            turunan menggunakan dua titik berurutan.
         </p>
 
         <p>
-            Metode ini efektif untuk pendekatan cepat, namun akurasinya bergantung
-            pada ukuran langkah h.
+            Meskipun sederhana, metode ini menjadi fondasi penting sebelum mempelajari metode yang lebih akurat
+            seperti beda mundur dan beda pusat.
         </p>
-
     </div>
 
 </div>

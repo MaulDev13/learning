@@ -1,190 +1,205 @@
 <div class="card-group">
 
-    <!-- PENGANTAR -->
     <div class="card card--soft">
-
-        <h3>Metode Integrasi Trapesium</h3>
+        <h2>Metode Trapesium (Trapezoidal Rule)</h2>
 
         <p>
-            Metode trapesium adalah salah satu metode integrasi numerik
-            untuk menghitung pendekatan luas di bawah kurva.
+            Metode trapesium adalah salah satu metode dasar dalam integrasi numerik yang digunakan untuk
+            menghampiri nilai integral tentu dengan cara mendekati luas di bawah kurva menggunakan bentuk
+            trapesium.
         </p>
 
         <p>
-            Metode ini mendekati daerah di bawah grafik fungsi
-            dengan bentuk trapesium, bukan kurva.
+            Ide utama metode ini adalah menggantikan kurva fungsi dengan garis lurus pada setiap subinterval,
+            sehingga area di bawah kurva dapat dihitung sebagai jumlah luas trapesium.
         </p>
-
-        <p>
-            Semakin kecil interval pembagian, semakin akurat hasilnya.
-        </p>
-
     </div>
 
-    <!-- IDE DASAR -->
     <div class="card card--soft">
-
-        <h3>Ide Dasar Metode</h3>
-
-        <p>
-            Luas di bawah kurva f(x) pada interval [a, b]
-            didekati dengan luas trapesium.
-        </p>
+        <h3>Konsep Dasar</h3>
 
         <p>
-            Titik ujung interval digunakan sebagai dasar perhitungan
-            tinggi trapesium.
+            Diberikan integral tentu:
         </p>
+
+        <div class="text-math">
+$$
+\int_a^b f(x)\,dx
+$$
+        </div>
 
         <p>
-            Kurva dianggap garis lurus di antara dua titik.
+            Interval \([a, b]\) dibagi menjadi \(n\) subinterval dengan lebar yang sama:
         </p>
 
+        <div class="text-math">
+$$
+h = \frac{b - a}{n}
+$$
+        </div>
+
+        <p>
+            Titik pembagi dinyatakan sebagai:
+        </p>
+
+        <div class="text-math">
+$$
+x_0 = a,\quad x_1 = a+h,\quad \dots,\quad x_n = b
+$$
+        </div>
     </div>
 
-    <!-- RUMUS DASAR -->
     <div class="card card--soft">
-
-        <h3>Rumus Trapesium Sederhana</h3>
-
-        <p>
-            Untuk satu interval [a, b]:
-        </p>
+        <h3>Rumus Metode Trapesium Komposit</h3>
 
         <p>
-            ∫ f(x) dx ≈ (b - a) / 2 [ f(a) + f(b) ]
+            Metode trapesium komposit menghitung integral dengan menjumlahkan semua trapesium pada setiap
+            subinterval.
         </p>
+
+        <div class="text-math">
+$$
+\int_a^b f(x)\,dx \approx \frac{h}{2}
+\left[
+f(x_0) + 2\sum_{i=1}^{n-1} f(x_i) + f(x_n)
+\right]
+$$
+        </div>
 
         <p>
-            Rumus ini disebut single trapezoidal rule.
+            Dari rumus tersebut terlihat bahwa titik ujung hanya dihitung satu kali, sedangkan titik tengah
+            dihitung dua kali karena menjadi bagian dari dua trapesium yang bersebelahan.
         </p>
-
     </div>
 
-    <!-- RUMUS KOMPOSIT -->
     <div class="card card--soft">
-
-        <h3>Metode Trapesium Komposit</h3>
+        <h3>Interpretasi Geometris</h3>
 
         <p>
-            Untuk meningkatkan akurasi, interval dibagi menjadi n bagian.
+            Secara geometris, metode trapesium mengaproksimasi kurva dengan garis lurus antar titik-titik
+            diskrit pada fungsi.
         </p>
 
         <p>
-            h = (b - a) / n
+            Setiap pasangan titik \((x_i, f(x_i))\) dan \((x_{i+1}, f(x_{i+1}))\) membentuk sebuah trapesium
+            dengan tinggi \(h\).
         </p>
+
+        <div class="text-math">
+$$
+\text{Luas trapesium} = \frac{h}{2}\left(f(x_i) + f(x_{i+1})\right)
+$$
+        </div>
 
         <p>
-            Rumus:
+            Total luas merupakan penjumlahan seluruh trapesium pada interval tersebut.
         </p>
-
-        <p>
-            ∫ f(x) dx ≈ h/2 [ f(x₀) + 2Σ f(xᵢ) + f(xₙ) ]
-        </p>
-
-        <p>
-            i = 1 sampai n-1
-        </p>
-
     </div>
 
-    <!-- LANGKAH -->
     <div class="card card--soft">
-
-        <h3>Langkah-langkah</h3>
+        <h3>Algoritma Metode Trapesium</h3>
 
         <p>
-            1. Tentukan batas integral a dan b<br>
-            2. Tentukan jumlah interval n<br>
-            3. Hitung lebar interval h<br>
-            4. Hitung nilai f(x) pada setiap titik<br>
-            5. Substitusi ke rumus trapesium
+            Secara umum, langkah-langkah metode trapesium adalah sebagai berikut:
         </p>
 
+        <p>
+            1. Tentukan batas integral \(a\) dan \(b\).<br>
+            2. Pilih jumlah subinterval \(n\).<br>
+            3. Hitung lebar interval \(h = (b-a)/n\).<br>
+            4. Hitung nilai fungsi pada setiap titik \(x_i\).<br>
+            5. Terapkan rumus trapesium komposit.<br>
+        </p>
     </div>
 
-    <!-- CONTOH -->
     <div class="card card--soft">
+        <h3>Pseudocode Metode Trapesium</h3>
 
-        <h3>Contoh Sederhana</h3>
+        <div class="text-code">
+INPUT a, b, n
+h = (b - a) / n
 
-        <p>
-            Diketahui:
-        </p>
+sum = f(a) + f(b)
 
-        <p>
-            f(x) = x², interval [0, 2], n = 2
-        </p>
+FOR i = 1 TO n-1 DO
+    x = a + i*h
+    sum = sum + 2*f(x)
+END FOR
 
-        <p>
-            Titik: x₀ = 0, x₁ = 1, x₂ = 2
-        </p>
-
+result = (h/2) * sum
+OUTPUT result
+        </div>
     </div>
 
-    <!-- PERHITUNGAN -->
     <div class="card card--soft">
-
-        <h3>Perhitungan</h3>
-
-        <p>
-            h = (2 - 0) / 2 = 1
-        </p>
+        <h3>Contoh Konseptual</h3>
 
         <p>
-            f(0) = 0, f(1) = 1, f(2) = 4
+            Misalkan ingin menghitung pendekatan:
         </p>
+
+        <div class="text-math">
+$$
+\int_0^2 (x^2)\,dx
+$$
+        </div>
 
         <p>
-            ∫ f(x) dx ≈ 1/2 [0 + 2(1) + 4]
+            Dengan metode eksak, hasilnya adalah:
         </p>
+
+        <div class="text-math">
+$$
+\frac{8}{3}
+$$
+        </div>
 
         <p>
-            = 1/2 (6) = 3
+            Namun dengan metode trapesium, nilai tersebut dihampiri menggunakan pembagian interval dan
+            penjumlahan luas trapesium.
         </p>
-
     </div>
 
-    <!-- KELEBIHAN -->
     <div class="card card--soft">
-
-        <h3>Kelebihan</h3>
+        <h3>Kelebihan Metode Trapesium</h3>
 
         <p>
-            • Mudah dipahami dan diterapkan<br>
-            • Cocok untuk data diskrit<br>
-            • Lebih akurat dengan pembagian kecil
+            Metode trapesium memiliki beberapa keunggulan utama:
         </p>
-
-    </div>
-
-    <!-- KEKURANGAN -->
-    <div class="card card--soft">
-
-        <h3>Kekurangan</h3>
 
         <p>
-            • Kurang akurat untuk fungsi non-linear tajam<br>
-            • Error masih cukup besar dibanding Simpson<br>
-            • Bergantung pada jumlah interval
+            - Sederhana dan mudah diimplementasikan<br>
+            - Lebih akurat dibanding metode persegi panjang<br>
+            - Cocok untuk fungsi yang halus (smooth)<br>
         </p>
-
     </div>
 
-    <!-- KESIMPULAN -->
     <div class="card card--soft">
+        <h3>Keterbatasan Metode Trapesium</h3>
 
+        <p>
+            Meskipun sederhana, metode ini memiliki beberapa keterbatasan:
+        </p>
+
+        <p>
+            - Kurang akurat untuk fungsi yang memiliki kelengkungan tinggi<br>
+            - Error berkurang lambat dibanding metode orde lebih tinggi<br>
+            - Sensitif terhadap jumlah subinterval
+        </p>
+    </div>
+
+    <div class="card card--soft">
         <h3>Kesimpulan</h3>
 
         <p>
-            Metode trapesium adalah teknik integrasi numerik sederhana
-            yang mendekati area di bawah kurva dengan bentuk trapesium.
+            Metode trapesium merupakan dasar penting dalam integrasi numerik yang memberikan pendekatan
+            sederhana namun efektif untuk menghitung integral tentu.
         </p>
 
         <p>
-            Akurasi metode ini meningkat jika jumlah interval diperbanyak.
+            Pemahaman metode ini menjadi fondasi sebelum mempelajari metode yang lebih akurat seperti
+            Simpson 1/3 dan Simpson 3/8.
         </p>
-
     </div>
 
 </div>

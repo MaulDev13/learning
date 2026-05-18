@@ -1,165 +1,211 @@
 <div class="card-group">
 
-    <!-- PENGANTAR -->
     <div class="card card--soft">
-
-        <h3>Konsep Dasar PDB (Persamaan Diferensial Biasa)</h3>
+        <h2>Persamaan Diferensial Biasa (PDB)</h2>
 
         <p>
-            Persamaan Diferensial Biasa (PDB) adalah persamaan yang melibatkan
-            turunan suatu fungsi terhadap satu variabel bebas.
+            Persamaan diferensial biasa (PDB) adalah persamaan yang melibatkan suatu fungsi tak diketahui
+            beserta turunannya terhadap satu variabel bebas.
         </p>
 
         <p>
-            Dalam metode numerik, PDB dipelajari untuk mencari solusi pendekatan
-            ketika solusi eksak sulit atau tidak dapat ditemukan.
+            PDB menjadi dasar penting dalam pemodelan fenomena dinamis pada berbagai bidang seperti fisika,
+            teknik, biologi, ekonomi, dan ilmu komputer.
         </p>
-
-        <p>
-            Hasil penyelesaian berupa nilai aproksimasi pada titik-titik tertentu.
-        </p>
-
     </div>
 
-    <!-- DEFINISI -->
     <div class="card card--soft">
-
         <h3>Definisi PDB</h3>
 
         <p>
-            PDB adalah persamaan yang menghubungkan fungsi yang tidak diketahui
-            dengan turunannya terhadap satu variabel bebas.
+            Secara umum, PDB dapat ditulis dalam bentuk:
         </p>
+
+        <div class="text-math">
+$$
+F\left(x, y, \frac{dy}{dx}, \frac{d^2y}{dx^2}, \dots \right) = 0
+$$
+        </div>
 
         <p>
-            Bentuk umum:
+            di mana \(y = y(x)\) adalah fungsi tak diketahui terhadap variabel bebas \(x\).
         </p>
-
-        <p>
-            dy/dx = f(x, y)
-        </p>
-
-        <p>
-            Fungsi y bergantung pada variabel x.
-        </p>
-
     </div>
 
-    <!-- KONSEP UTAMA -->
     <div class="card card--soft">
-
-        <h3>Konsep Utama</h3>
+        <h3>Orde Persamaan Diferensial</h3>
 
         <p>
-            Konsep utama PDB adalah perubahan (laju perubahan) suatu besaran
-            terhadap variabel lain.
+            Orde PDB ditentukan oleh turunan tertinggi yang muncul dalam persamaan.
+        </p>
+
+        <div class="text-math">
+$$
+\text{Orde} = \text{derajat turunan tertinggi}
+$$
+        </div>
+
+        <p>
+            Contoh:
         </p>
 
         <p>
-            Turunan menyatakan seberapa cepat suatu nilai berubah pada titik tertentu.
+            - Orde 1: \( \frac{dy}{dx} + y = x \)<br>
+            - Orde 2: \( \frac{d^2y}{dx^2} + \frac{dy}{dx} + y = 0 \)
         </p>
-
-        <p>
-            Solusi PDB adalah fungsi yang memenuhi hubungan tersebut.
-        </p>
-
     </div>
 
-    <!-- SOLUSI -->
     <div class="card card--soft">
-
-        <h3>Jenis Solusi PDB</h3>
+        <h3>Klasifikasi PDB</h3>
 
         <p>
-            Terdapat dua jenis solusi:
+            PDB dapat diklasifikasikan berdasarkan sifatnya:
         </p>
 
         <p>
-            • Solusi analitik → bentuk fungsi eksak<br>
-            • Solusi numerik → pendekatan nilai pada titik tertentu
+            1. Linear vs Nonlinear<br>
+            2. Orde satu, dua, atau lebih tinggi<br>
+            3. Homogen vs Non-homogen
         </p>
 
         <p>
-            Metode numerik digunakan ketika solusi analitik sulit diperoleh.
+            PDB linear orde satu umumnya berbentuk:
         </p>
 
+        <div class="text-math">
+$$
+\frac{dy}{dx} + P(x)y = Q(x)
+$$
+        </div>
     </div>
 
-    <!-- MASALAH NILAI AWAL -->
     <div class="card card--soft">
+        <h3>Contoh PDB dalam Kehidupan Nyata</h3>
 
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Bidang</th>
+                    <th>Model</th>
+                    <th>Makna</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fisika</td>
+                    <td>Hukum Newton</td>
+                    <td>Gerak benda</td>
+                </tr>
+                <tr>
+                    <td>Biologi</td>
+                    <td>Pertumbuhan populasi</td>
+                    <td>Laju pertumbuhan</td>
+                </tr>
+                <tr>
+                    <td>Ekonomi</td>
+                    <td>Model investasi</td>
+                    <td>Perubahan modal terhadap waktu</td>
+                </tr>
+                <tr>
+                    <td>Teknik</td>
+                    <td>Sistem kontrol</td>
+                    <td>Respons sistem dinamis</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card card--soft">
         <h3>Masalah Nilai Awal (Initial Value Problem)</h3>
 
         <p>
-            PDB sering disertai kondisi awal:
+            Banyak PDB tidak hanya membutuhkan persamaan, tetapi juga kondisi awal untuk menentukan solusi unik.
         </p>
+
+        <div class="text-math">
+$$
+\frac{dy}{dx} = f(x, y), \quad y(x_0) = y_0
+$$
+        </div>
 
         <p>
-            y(x₀) = y₀
+            Kondisi \(y(x_0)=y_0\) disebut sebagai initial condition.
         </p>
-
-        <p>
-            Kondisi ini diperlukan untuk menentukan solusi spesifik
-            dari banyak kemungkinan solusi.
-        </p>
-
     </div>
 
-    <!-- IDE NUMERIK -->
     <div class="card card--soft">
-
-        <h3>Ide Pendekatan Numerik</h3>
+        <h3>Solusi Analitik vs Numerik</h3>
 
         <p>
-            Ide dasar metode numerik adalah mendekati solusi
-            menggunakan langkah kecil (step size h).
+            Beberapa PDB dapat diselesaikan secara analitik, namun banyak kasus nyata yang tidak memiliki solusi eksak.
         </p>
 
         <p>
-            Nilai turunan digunakan untuk memperkirakan nilai berikutnya secara bertahap.
+            Oleh karena itu digunakan pendekatan numerik untuk memperoleh solusi aproksimasi.
         </p>
 
         <p>
-            Proses ini dilakukan secara iteratif.
+            Metode numerik bekerja dengan menghitung nilai solusi secara bertahap pada titik-titik diskrit.
         </p>
-
     </div>
 
-    <!-- INTERPRETASI -->
     <div class="card card--soft">
-
-        <h3>Interpretasi Geometris</h3>
-
-        <p>
-            Secara geometris, PDB menggambarkan kemiringan kurva solusi
-            pada setiap titik.
-        </p>
+        <h3>Ide Dasar Metode Numerik untuk PDB</h3>
 
         <p>
-            Turunan dy/dx menunjukkan arah perubahan kurva tersebut.
+            Ide utama adalah mengubah persamaan kontinu menjadi bentuk diskrit:
         </p>
+
+        <div class="text-math">
+$$
+y_{n+1} \approx y_n + \text{perubahan kecil}
+$$
+        </div>
 
         <p>
-            Solusi PDB adalah kurva yang mengikuti kemiringan tersebut.
+            Perubahan ini dihitung menggunakan kemiringan (turunan) pada titik tertentu.
         </p>
-
     </div>
 
-    <!-- KESIMPULAN -->
     <div class="card card--soft">
+        <h3>Contoh Bentuk Diskritisasi</h3>
 
+        <div class="text-math">
+$$
+\frac{dy}{dx} \approx \frac{y_{n+1} - y_n}{h}
+$$
+        </div>
+
+        <p>
+            Sehingga:
+        </p>
+
+        <div class="text-math">
+$$
+y_{n+1} = y_n + h f(x_n, y_n)
+$$
+        </div>
+
+        <p>
+            Bentuk ini menjadi dasar metode Euler yang akan dipelajari pada bab berikutnya.
+        </p>
+    </div>
+
+    <div class="card card--soft">
         <h3>Kesimpulan</h3>
 
         <p>
-            Persamaan Diferensial Biasa (PDB) adalah dasar penting dalam metode numerik
-            yang menggambarkan hubungan antara fungsi dan turunannya.
+            Persamaan diferensial biasa merupakan alat penting dalam pemodelan sistem dinamis.
         </p>
 
         <p>
-            Karena banyak PDB tidak dapat diselesaikan secara analitik,
-            maka digunakan metode numerik untuk mendapatkan solusi pendekatan.
+            Karena banyak PDB tidak dapat diselesaikan secara analitik, metode numerik menjadi pendekatan utama
+            untuk memperoleh solusi aproksimasi.
         </p>
 
+        <p>
+            Bab selanjutnya akan membahas metode Euler sebagai pendekatan paling dasar dalam penyelesaian PDB.
+        </p>
     </div>
 
 </div>

@@ -1,186 +1,192 @@
 <div class="card-group">
 
-    <!-- PENGANTAR -->
     <div class="card card--soft">
-
-        <h3>Diferensiasi Pusat (Central Difference)</h3>
+        <h2>Diferensiasi Numerik: Beda Pusat (Central Difference)</h2>
 
         <p>
-            Diferensiasi pusat adalah metode numerik untuk memperkirakan turunan
-            suatu fungsi menggunakan titik di depan dan di belakang secara bersamaan.
+            Beda pusat merupakan metode diferensiasi numerik yang menggunakan dua titik di sisi kiri dan kanan
+            dari titik yang ingin dihitung turunannya.
         </p>
 
         <p>
-            Metode ini memberikan pendekatan yang lebih akurat dibanding
-            diferensiasi maju dan mundur.
+            Metode ini memberikan akurasi yang lebih tinggi dibandingkan beda maju dan beda mundur karena
+            memanfaatkan informasi simetris di sekitar titik \(x\).
         </p>
-
-        <p>
-            Karena menggunakan dua arah, error biasanya lebih kecil.
-        </p>
-
     </div>
 
-    <!-- IDE DASAR -->
     <div class="card card--soft">
-
-        <h3>Ide Dasar Metode</h3>
-
-        <p>
-            Turunan dihitung berdasarkan perubahan nilai fungsi
-            di sekitar titik x, yaitu pada x + h dan x - h.
-        </p>
+        <h3>Konsep Dasar</h3>
 
         <p>
-            Dengan mengambil rata-rata perubahan dari dua arah,
-            hasil pendekatan menjadi lebih stabil.
+            Turunan fungsi secara definisi limit adalah:
         </p>
+
+        <div class="text-math">
+$$
+f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x-h)}{2h}
+$$
+        </div>
 
         <p>
-            Metode ini mengasumsikan fungsi halus di sekitar titik tersebut.
+            Pendekatan ini menggunakan nilai fungsi di dua sisi titik \(x\), sehingga menghasilkan estimasi
+            yang lebih stabil.
         </p>
-
     </div>
 
-    <!-- RUMUS DASAR -->
     <div class="card card--soft">
-
-        <h3>Rumus Diferensiasi Pusat</h3>
+        <h3>Rumus Beda Pusat</h3>
 
         <p>
-            Turunan pertama:
+            Rumus pendekatan turunan dengan metode beda pusat adalah:
+        </p>
+
+        <div class="text-math">
+$$
+f'(x) \approx \frac{f(x+h) - f(x-h)}{2h}
+$$
+        </div>
+
+        <p>
+            Di mana:
         </p>
 
         <p>
-            f'(x) ≈ ( f(x + h) - f(x - h) ) / (2h)
+            - \(f(x+h)\) adalah nilai fungsi di titik depan<br>
+            - \(f(x-h)\) adalah nilai fungsi di titik belakang<br>
+            - \(h\) adalah jarak antar titik
         </p>
-
-        <p>
-            Dimana:
-        </p>
-
-        <p>
-            • h = jarak antar titik (step size)<br>
-            • x + h = titik depan<br>
-            • x - h = titik belakang
-        </p>
-
     </div>
 
-    <!-- PENJELASAN -->
     <div class="card card--soft">
-
-        <h3>Makna Geometris</h3>
+        <h3>Interpretasi Geometris</h3>
 
         <p>
-            Secara geometris, diferensiasi pusat menghitung kemiringan garis sekant
-            yang melewati dua titik di sekitar x.
+            Secara geometris, beda pusat mengaproksimasi kemiringan garis singgung di titik \(x\) menggunakan
+            garis sekant yang dibentuk oleh dua titik simetris di kiri dan kanan.
         </p>
 
         <p>
-            Karena simetris, hasilnya lebih mendekati turunan sebenarnya
-            dibanding metode maju atau mundur.
+            Karena menggunakan dua sisi, error yang dihasilkan cenderung saling menyeimbangkan.
         </p>
-
     </div>
 
-    <!-- LANGKAH -->
     <div class="card card--soft">
-
-        <h3>Langkah-langkah</h3>
+        <h3>Algoritma Beda Pusat</h3>
 
         <p>
-            1. Tentukan fungsi f(x)<br>
-            2. Pilih titik x yang ingin dicari turunannya<br>
-            3. Tentukan nilai h kecil<br>
-            4. Hitung f(x + h) dan f(x - h)<br>
-            5. Substitusikan ke rumus
+            Langkah-langkah metode beda pusat:
         </p>
 
+        <p>
+            1. Tentukan fungsi \(f(x)\).<br>
+            2. Tentukan titik \(x\).<br>
+            3. Pilih step size \(h\).<br>
+            4. Hitung \(f(x+h)\) dan \(f(x-h)\).<br>
+            5. Gunakan rumus beda pusat.
+        </p>
     </div>
 
-    <!-- CONTOH -->
     <div class="card card--soft">
+        <h3>Pseudocode Beda Pusat</h3>
 
-        <h3>Contoh Sederhana</h3>
+        <div class="text-code">
+INPUT x, h
 
-        <p>
-            Diketahui:
-        </p>
+fx_plus = f(x + h)
+fx_minus = f(x - h)
 
-        <p>
-            f(x) = x², x = 2, h = 0.1
-        </p>
+derivative = (fx_plus - fx_minus) / (2 * h)
 
-        <p>
-            Maka:
-            f(2.1) dan f(1.9)
-        </p>
-
+OUTPUT derivative
+        </div>
     </div>
 
-    <!-- PERHITUNGAN -->
     <div class="card card--soft">
-
-        <h3>Perhitungan</h3>
+        <h3>Contoh Konseptual</h3>
 
         <p>
-            f(2.1) = 4.41<br>
-            f(1.9) = 3.61
+            Diberikan fungsi:
+        </p>
+
+        <div class="text-math">
+$$
+f(x) = x^2
+$$
+        </div>
+
+        <p>
+            Hitung turunan di titik \(x = 2\) dengan \(h = 0.1\).
         </p>
 
         <p>
-            f'(2) ≈ (4.41 - 3.61) / (2 × 0.1)
+            Langkah:
         </p>
 
         <p>
-            f'(2) ≈ 0.8 / 0.2 = 4
+            \(f(2.1) = 4.41\)<br>
+            \(f(1.9) = 3.61\)
         </p>
 
+        <div class="text-math">
+$$
+f'(2) \approx \frac{4.41 - 3.61}{0.2} = 4.0
+$$
+        </div>
+
+        <p>
+            Hasil ini sangat dekat dengan nilai eksak \(f'(x)=2x\), yaitu \(f'(2)=4\).
+        </p>
     </div>
 
-    <!-- KELEBIHAN -->
     <div class="card card--soft">
-
-        <h3>Kelebihan</h3>
+        <h3>Galat pada Beda Pusat</h3>
 
         <p>
-            • Lebih akurat dibanding maju dan mundur<br>
-            • Error lebih kecil (orde kedua)<br>
-            • Simetris dan stabil
+            Metode beda pusat memiliki galat truncation berorde lebih kecil dibanding metode maju dan mundur,
+            yaitu \(O(h^2)\).
         </p>
-
-    </div>
-
-    <!-- KEKURANGAN -->
-    <div class="card card--soft">
-
-        <h3>Kekurangan</h3>
 
         <p>
-            • Membutuhkan dua titik data sekaligus<br>
-            • Tidak cocok di ujung data (boundary)<br>
-            • Tetap memiliki error jika h besar
+            Hal ini membuat beda pusat jauh lebih akurat untuk nilai \(h\) yang sama.
         </p>
 
+        <p>
+            Namun, metode ini membutuhkan dua evaluasi fungsi di kedua sisi titik.
+        </p>
     </div>
 
-    <!-- KESIMPULAN -->
     <div class="card card--soft">
+        <h3>Kelebihan Beda Pusat</h3>
 
+        <p>
+            - Akurasi lebih tinggi (orde \(O(h^2)\))<br>
+            - Lebih stabil secara numerik<br>
+            - Error lebih kecil dibanding beda maju dan mundur
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Keterbatasan Beda Pusat</h3>
+
+        <p>
+            - Tidak cocok untuk data di ujung (boundary)<br>
+            - Membutuhkan nilai fungsi di dua sisi titik<br>
+            - Tidak selalu tersedia pada data real-time
+        </p>
+    </div>
+
+    <div class="card card--soft">
         <h3>Kesimpulan</h3>
 
         <p>
-            Diferensiasi pusat adalah metode numerik yang lebih akurat
-            untuk menghitung turunan karena menggunakan pendekatan simetris
-            dari dua sisi titik.
+            Beda pusat merupakan metode diferensiasi numerik yang paling akurat di antara metode dasar
+            (maju, mundur, pusat) karena menggunakan informasi simetris di sekitar titik.
         </p>
 
         <p>
-            Metode ini sering menjadi pilihan utama dalam diferensiasi numerik
-            karena keseimbangan antara akurasi dan kesederhanaan.
+            Metode ini menjadi dasar penting dalam analisis numerik sebelum mempelajari turunan orde tinggi
+            dan metode diferensiasi yang lebih kompleks.
         </p>
-
     </div>
 
 </div>

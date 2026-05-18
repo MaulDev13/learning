@@ -1,50 +1,93 @@
 <div class="card-group">
 
-    <!-- PENGANTAR -->
     <div class="card card--soft">
-
-        <h3>Metode Integrasi Simpson 1/3</h3>
+        <h2>Metode Simpson 1/3</h2>
 
         <p>
-            Metode Simpson 1/3 adalah metode integrasi numerik
-            yang digunakan untuk menghitung pendekatan luas di bawah kurva.
+            Metode Simpson 1/3 merupakan metode integrasi numerik yang menggunakan pendekatan polinomial
+            kuadratik untuk menghampiri nilai integral tentu. Metode ini memberikan akurasi yang lebih tinggi
+            dibandingkan metode trapesium karena pendekatan kurva tidak lagi linier, melainkan parabola.
         </p>
 
         <p>
-            Metode ini menggunakan pendekatan parabola (polinomial derajat 2)
-            untuk menggantikan kurva pada setiap dua interval.
+            Ide dasar metode ini adalah mendekati fungsi dengan parabola pada setiap dua subinterval.
+            Oleh karena itu, jumlah partisi \(n\) harus genap.
         </p>
-
-        <p>
-            Hasilnya biasanya lebih akurat dibanding metode trapesium.
-        </p>
-
     </div>
 
-    <!-- IDE DASAR -->
     <div class="card card--soft">
-
-        <h3>Ide Dasar Metode</h3>
-
-        <p>
-            Simpson 1/3 mengaproksimasi kurva menggunakan parabola
-            yang melewati tiga titik data.
-        </p>
+        <h3>Konsep Dasar</h3>
 
         <p>
-            Dengan pendekatan ini, bentuk kurva lebih realistis
-            dibanding garis lurus pada metode trapesium.
+            Diberikan integral tentu:
         </p>
+
+        <div class="text-math">
+$$
+\int_a^b f(x)\,dx
+$$
+        </div>
 
         <p>
-            Metode ini membutuhkan jumlah interval yang genap.
+            Interval \([a,b]\) dibagi menjadi \(n\) subinterval dengan \(n\) harus genap.
         </p>
 
+        <div class="text-math">
+$$
+h = \frac{b-a}{n}
+$$
+        </div>
+
+        <p>
+            Titik-titik partisi:
+        </p>
+
+        <div class="text-math">
+$$
+x_0, x_1, x_2, \dots, x_n
+$$
+        </div>
     </div>
 
-    <!-- SYARAT -->
     <div class="card card--soft">
+        <h3>Rumus Simpson 1/3 Komposit</h3>
 
+        <p>
+            Metode Simpson 1/3 menggunakan bobot berbeda untuk titik ganjil dan genap.
+        </p>
+
+        <div class="text-math">
+$$
+\int_a^b f(x)\,dx \approx \frac{h}{3}
+\left[
+f(x_0)
++ 4\sum_{i=1,3,5}^{n-1} f(x_i)
++ 2\sum_{i=2,4,6}^{n-2} f(x_i)
++ f(x_n)
+\right]
+$$
+        </div>
+
+        <p>
+            Pola koefisien 1-4-2-4-2-...-4-1 merupakan ciri khas metode Simpson 1/3.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Interpretasi Geometris</h3>
+
+        <p>
+            Berbeda dengan metode trapesium yang menggunakan garis lurus, Simpson 1/3 menggunakan
+            parabola untuk mendekati bentuk kurva pada setiap dua interval.
+        </p>
+
+        <p>
+            Dengan pendekatan ini, perubahan kelengkungan fungsi dapat ditangkap dengan lebih baik,
+            sehingga hasil aproksimasi menjadi lebih akurat.
+        </p>
+    </div>
+
+    <div class="card card--soft">
         <h3>Syarat Penggunaan</h3>
 
         <p>
@@ -52,156 +95,117 @@
         </p>
 
         <p>
-            • Jumlah interval (n) harus genap<br>
-            • Jarak antar titik harus sama (uniform spacing)
+            - Jumlah subinterval \(n\) harus genap<br>
+            - Fungsi harus cukup halus pada interval yang digunakan<br>
+            - Lebar interval seragam
         </p>
-
     </div>
 
-    <!-- RUMUS DASAR -->
     <div class="card card--soft">
-
-        <h3>Rumus Simpson 1/3</h3>
+        <h3>Algoritma Metode Simpson 1/3</h3>
 
         <p>
-            Untuk interval [a, b] dengan n genap:
+            Langkah-langkah umum metode Simpson 1/3:
         </p>
 
         <p>
-            h = (b - a) / n
+            1. Tentukan batas integral \(a\) dan \(b\).<br>
+            2. Pilih \(n\) (harus genap).<br>
+            3. Hitung \(h = (b-a)/n\).<br>
+            4. Hitung nilai fungsi pada setiap titik \(x_i\).<br>
+            5. Terapkan rumus Simpson 1/3.<br>
         </p>
-
-        <p>
-            ∫ f(x) dx ≈ h/3 [ f(x₀) + f(xₙ)
-            + 4Σ f(x ganjil)
-            + 2Σ f(x genap) ]
-        </p>
-
-        <p>
-            (tanpa menghitung titik awal dan akhir di penjumlahan)
-        </p>
-
     </div>
 
-    <!-- POLA KOEFISIEN -->
     <div class="card card--soft">
+        <h3>Pseudocode Simpson 1/3</h3>
 
-        <h3>Pola Koefisien</h3>
+        <div class="text-code">
+INPUT a, b, n
+IF n % 2 != 0 THEN
+    ERROR "n harus genap"
+END IF
 
-        <p>
-            Dalam Simpson 1/3, koefisien memiliki pola:
-        </p>
+h = (b - a) / n
+sum = f(a) + f(b)
 
-        <p>
-            1, 4, 2, 4, 2, ..., 4, 1
-        </p>
+FOR i = 1 TO n-1 DO
+    x = a + i*h
 
-        <p>
-            Titik awal dan akhir bernilai 1,
-            sedangkan titik di tengah bergantian 4 dan 2.
-        </p>
+    IF i % 2 == 0 THEN
+        sum = sum + 2*f(x)
+    ELSE
+        sum = sum + 4*f(x)
+    END IF
 
+END FOR
+
+result = (h/3) * sum
+OUTPUT result
+        </div>
     </div>
 
-    <!-- LANGKAH -->
     <div class="card card--soft">
-
-        <h3>Langkah-langkah</h3>
+        <h3>Contoh Konseptual</h3>
 
         <p>
-            1. Tentukan interval [a, b]<br>
-            2. Pilih jumlah interval n (harus genap)<br>
-            3. Hitung jarak h<br>
-            4. Hitung nilai f(x) pada setiap titik<br>
-            5. Terapkan rumus Simpson 1/3
+            Misalkan ingin menghitung:
         </p>
 
+        <div class="text-math">
+$$
+\int_0^2 x^2\,dx
+$$
+        </div>
+
+        <p>
+            Nilai eksak:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{8}{3}
+$$
+        </div>
+
+        <p>
+            Dengan Simpson 1/3, pendekatan biasanya lebih dekat ke nilai eksak dibanding metode trapesium,
+            terutama ketika jumlah subinterval cukup besar.
+        </p>
     </div>
 
-    <!-- CONTOH -->
     <div class="card card--soft">
-
-        <h3>Contoh Sederhana</h3>
-
-        <p>
-            Diketahui:
-        </p>
+        <h3>Kelebihan Simpson 1/3</h3>
 
         <p>
-            f(x) = x², interval [0, 2], n = 2
+            - Akurasi lebih tinggi dibanding metode trapesium<br>
+            - Menggunakan pendekatan parabola sehingga lebih sesuai untuk fungsi melengkung<br>
+            - Error orde lebih kecil untuk fungsi halus
         </p>
-
-        <p>
-            Titik: x₀ = 0, x₁ = 1, x₂ = 2
-        </p>
-
     </div>
 
-    <!-- PERHITUNGAN -->
     <div class="card card--soft">
-
-        <h3>Perhitungan</h3>
-
-        <p>
-            h = (2 - 0) / 2 = 1
-        </p>
+        <h3>Keterbatasan Simpson 1/3</h3>
 
         <p>
-            f(0) = 0, f(1) = 1, f(2) = 4
+            - Harus menggunakan jumlah subinterval genap<br>
+            - Tidak optimal untuk fungsi yang sangat tidak halus atau diskontinu<br>
+            - Lebih kompleks dibanding metode trapesium
         </p>
-
-        <p>
-            ∫ f(x) dx ≈ 1/3 [ 0 + 4(1) + 4 ]
-        </p>
-
-        <p>
-            = 1/3 (8) = 2.666...
-        </p>
-
     </div>
 
-    <!-- KELEBIHAN -->
     <div class="card card--soft">
-
-        <h3>Kelebihan</h3>
-
-        <p>
-            • Lebih akurat dari metode trapesium<br>
-            • Menggunakan pendekatan parabola<br>
-            • Efisien untuk fungsi halus
-        </p>
-
-    </div>
-
-    <!-- KEKURANGAN -->
-    <div class="card card--soft">
-
-        <h3>Kekurangan</h3>
-
-        <p>
-            • Harus menggunakan jumlah interval genap<br>
-            • Kurang fleksibel untuk data tidak beraturan<br>
-            • Lebih kompleks dari trapesium
-        </p>
-
-    </div>
-
-    <!-- KESIMPULAN -->
-    <div class="card card--soft">
-
         <h3>Kesimpulan</h3>
 
         <p>
-            Metode Simpson 1/3 adalah metode integrasi numerik
-            yang lebih akurat dibanding trapesium karena menggunakan
-            pendekatan parabola.
+            Metode Simpson 1/3 merupakan metode integrasi numerik yang lebih akurat dibandingkan metode trapesium
+            karena menggunakan pendekatan polinomial kuadratik.
         </p>
 
         <p>
-            Metode ini sangat efektif untuk fungsi yang halus
-            dengan interval yang seragam.
+            Metode ini menjadi dasar penting sebelum mempelajari Simpson 3/8 yang menggunakan pendekatan
+            polinomial derajat lebih tinggi.
         </p>
-
     </div>
 
 </div>

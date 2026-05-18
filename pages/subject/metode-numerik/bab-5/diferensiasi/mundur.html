@@ -1,182 +1,194 @@
 <div class="card-group">
 
-    <!-- PENGANTAR -->
     <div class="card card--soft">
-
-        <h3>Diferensiasi Mundur (Backward Difference)</h3>
+        <h2>Diferensiasi Numerik: Beda Mundur (Backward Difference)</h2>
 
         <p>
-            Diferensiasi mundur adalah metode numerik untuk memperkirakan turunan
-            suatu fungsi menggunakan dua titik berurutan, dengan pendekatan dari arah belakang.
+            Beda mundur adalah metode diferensiasi numerik yang digunakan untuk mengaproksimasi turunan suatu fungsi
+            dengan memanfaatkan dua titik, yaitu titik saat ini dan titik sebelumnya.
         </p>
 
         <p>
-            Metode ini digunakan ketika data tersedia dari titik tertentu
-            dan nilai sebelumnya sudah diketahui.
+            Berbeda dengan beda maju yang bergerak ke arah \(x+h\), beda mundur bergerak ke arah \(x-h\).
+            Metode ini sangat berguna ketika data hanya tersedia dari arah belakang atau historis.
         </p>
-
-        <p>
-            Cocok untuk data yang bergerak dari kanan ke kiri pada tabel diskrit.
-        </p>
-
     </div>
 
-    <!-- IDE DASAR -->
     <div class="card card--soft">
-
-        <h3>Ide Dasar Metode</h3>
-
-        <p>
-            Turunan didekati menggunakan selisih nilai fungsi
-            pada titik x dan titik sebelumnya (x - h).
-        </p>
+        <h3>Konsep Dasar</h3>
 
         <p>
-            Semakin kecil nilai h, semakin baik pendekatan turunan yang diperoleh.
+            Turunan didefinisikan sebagai:
         </p>
+
+        <div class="text-math">
+$$
+f'(x) = \lim_{h \to 0} \frac{f(x) - f(x-h)}{h}
+$$
+        </div>
 
         <p>
-            Metode ini mengasumsikan perubahan fungsi linier pada interval kecil.
+            Dalam pendekatan numerik, nilai limit digantikan dengan langkah kecil \(h\), sehingga diperoleh
+            pendekatan beda mundur.
         </p>
-
     </div>
 
-    <!-- RUMUS DASAR -->
     <div class="card card--soft">
-
-        <h3>Rumus Diferensiasi Mundur</h3>
+        <h3>Rumus Beda Mundur</h3>
 
         <p>
-            Turunan pertama:
+            Rumus pendekatan turunan dengan metode beda mundur adalah:
+        </p>
+
+        <div class="text-math">
+$$
+f'(x) \approx \frac{f(x) - f(x-h)}{h}
+$$
+        </div>
+
+        <p>
+            Di mana:
         </p>
 
         <p>
-            f'(x) ≈ ( f(x) - f(x - h) ) / h
+            - \(f(x)\) adalah nilai fungsi pada titik saat ini<br>
+            - \(f(x-h)\) adalah nilai fungsi pada titik sebelumnya<br>
+            - \(h\) adalah jarak antar titik
         </p>
-
-        <p>
-            Dimana:
-        </p>
-
-        <p>
-            • h = jarak antar titik (step size)<br>
-            • x - h = titik sebelumnya
-        </p>
-
     </div>
 
-    <!-- PENJELASAN -->
     <div class="card card--soft">
-
-        <h3>Makna Geometris</h3>
+        <h3>Interpretasi Geometris</h3>
 
         <p>
-            Secara geometris, diferensiasi mundur menghitung kemiringan garis
-            yang menghubungkan titik x dengan titik sebelumnya (x - h).
+            Secara geometris, beda mundur mendekati kemiringan garis singgung di titik \(x\) dengan menggunakan
+            garis sekant yang menghubungkan titik \((x-h, f(x-h))\) dan \((x, f(x))\).
         </p>
 
         <p>
-            Garis ini juga disebut garis sekant, tetapi diambil dari arah belakang.
+            Semakin kecil nilai \(h\), maka pendekatan garis sekant akan semakin mendekati garis singgung sebenarnya.
         </p>
-
     </div>
 
-    <!-- LANGKAH -->
     <div class="card card--soft">
-
-        <h3>Langkah-langkah</h3>
+        <h3>Algoritma Beda Mundur</h3>
 
         <p>
-            1. Tentukan fungsi f(x)<br>
-            2. Pilih titik x yang ingin dicari turunannya<br>
-            3. Tentukan nilai h kecil<br>
-            4. Hitung f(x) dan f(x - h)<br>
-            5. Substitusikan ke rumus
+            Langkah-langkah metode beda mundur:
         </p>
 
+        <p>
+            1. Tentukan fungsi \(f(x)\).<br>
+            2. Tentukan titik \(x\) yang ingin dihitung turunannya.<br>
+            3. Pilih step size \(h\).<br>
+            4. Hitung \(f(x)\) dan \(f(x-h)\).<br>
+            5. Gunakan rumus beda mundur.
+        </p>
     </div>
 
-    <!-- CONTOH -->
     <div class="card card--soft">
+        <h3>Pseudocode Beda Mundur</h3>
 
-        <h3>Contoh Sederhana</h3>
+        <div class="text-code">
+INPUT x, h
 
-        <p>
-            Diketahui:
-        </p>
+fx = f(x)
+fx_h = f(x - h)
 
-        <p>
-            f(x) = x², x = 2, h = 0.1
-        </p>
+derivative = (fx - fx_h) / h
 
-        <p>
-            Maka:
-            f(2) dan f(1.9)
-        </p>
-
+OUTPUT derivative
+        </div>
     </div>
 
-    <!-- PERHITUNGAN -->
     <div class="card card--soft">
-
-        <h3>Perhitungan</h3>
+        <h3>Contoh Konseptual</h3>
 
         <p>
-            f(2) = 4<br>
-            f(1.9) = 3.61
+            Diberikan fungsi:
+        </p>
+
+        <div class="text-math">
+$$
+f(x) = x^2
+$$
+        </div>
+
+        <p>
+            Hitung turunan di titik \(x = 2\) dengan \(h = 0.1\).
         </p>
 
         <p>
-            f'(2) ≈ (4 - 3.61) / 0.1
+            Langkah:
         </p>
 
         <p>
-            f'(2) ≈ 0.39 / 0.1 = 3.9
+            \(f(2) = 4\)<br>
+            \(f(1.9) = 3.61\)
         </p>
 
+        <div class="text-math">
+$$
+f'(2) \approx \frac{4 - 3.61}{0.1} = 3.9
+$$
+        </div>
+
+        <p>
+            Nilai eksak turunan adalah \(f'(x)=2x\), sehingga \(f'(2)=4\). Hasil pendekatan cukup dekat dan
+            akan membaik ketika \(h\) diperkecil.
+        </p>
     </div>
 
-    <!-- KELEBIHAN -->
     <div class="card card--soft">
-
-        <h3>Kelebihan</h3>
+        <h3>Galat pada Beda Mundur</h3>
 
         <p>
-            • Mudah digunakan<br>
-            • Cocok untuk data di akhir tabel<br>
-            • Rumus sederhana
+            Metode beda mundur memiliki galat truncation sebesar orde pertama \(O(h)\), sama seperti beda maju.
         </p>
-
-    </div>
-
-    <!-- KEKURANGAN -->
-    <div class="card card--soft">
-
-        <h3>Kekurangan</h3>
 
         <p>
-            • Kurang akurat untuk h besar<br>
-            • Error lebih tinggi dibanding central difference<br>
-            • Bergantung pada ketersediaan data sebelumnya
+            Artinya, akurasi sangat bergantung pada pemilihan step size \(h\). Nilai \(h\) yang terlalu besar
+            menyebabkan error tinggi, sedangkan terlalu kecil dapat menyebabkan error pembulatan.
         </p>
-
     </div>
 
-    <!-- KESIMPULAN -->
     <div class="card card--soft">
+        <h3>Kelebihan Beda Mundur</h3>
 
+        <p>
+            - Cocok untuk data historis atau data yang hanya tersedia dari arah belakang<br>
+            - Sederhana dan mudah diimplementasikan<br>
+            - Hanya membutuhkan dua titik data
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Keterbatasan Beda Mundur</h3>
+
+        <p>
+            - Akurasi masih terbatas (orde \(O(h)\))<br>
+            - Kurang akurat dibanding beda pusat<br>
+            - Sensitif terhadap pemilihan \(h\)
+        </p>
+    </div>
+
+    <div class="card card--soft">
         <h3>Kesimpulan</h3>
 
         <p>
-            Diferensiasi mundur adalah metode sederhana untuk memperkirakan turunan
-            menggunakan nilai fungsi saat ini dan nilai sebelumnya.
+            Beda mundur merupakan metode diferensiasi numerik dasar yang menggunakan titik sebelumnya untuk
+            mengaproksimasi turunan.
         </p>
 
         <p>
-            Metode ini efektif untuk data diskrit, namun akurasinya bergantung
-            pada ukuran langkah h.
+            Metode ini sangat berguna dalam kasus data time-series atau data diskrit yang hanya tersedia
+            hingga titik saat ini.
         </p>
 
+        <p>
+            Selanjutnya, metode beda pusat akan memberikan pendekatan yang lebih akurat karena menggunakan
+            informasi dari kedua sisi titik.
+        </p>
     </div>
 
 </div>

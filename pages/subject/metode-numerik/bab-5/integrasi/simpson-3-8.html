@@ -1,206 +1,219 @@
 <div class="card-group">
 
-    <!-- PENGANTAR -->
     <div class="card card--soft">
-
-        <h3>Metode Integrasi Simpson 3/8</h3>
+        <h2>Metode Simpson 3/8</h2>
 
         <p>
-            Metode Simpson 3/8 adalah metode integrasi numerik
-            yang digunakan untuk menghitung pendekatan luas di bawah kurva.
+            Metode Simpson 3/8 merupakan salah satu metode integrasi numerik yang menggunakan pendekatan
+            polinomial kubik (orde tiga) untuk menghampiri nilai integral tentu.
         </p>
 
         <p>
-            Metode ini menggunakan pendekatan polinomial kubik (derajat 3)
-            yang melewati empat titik data.
+            Dibandingkan metode Simpson 1/3 yang menggunakan parabola, Simpson 3/8 menggunakan tiga subinterval
+            sekaligus untuk membentuk pendekatan kurva yang lebih fleksibel.
         </p>
-
-        <p>
-            Hasilnya lebih akurat dibanding Simpson 1/3 pada beberapa kasus,
-            tetapi jarang digunakan secara tunggal.
-        </p>
-
     </div>
 
-    <!-- IDE DASAR -->
     <div class="card card--soft">
-
-        <h3>Ide Dasar Metode</h3>
-
-        <p>
-            Simpson 3/8 mengaproksimasi fungsi dengan polinomial kubik
-            pada setiap tiga sub-interval.
-        </p>
+        <h3>Konsep Dasar</h3>
 
         <p>
-            Dengan demikian, kurva diperkirakan lebih fleksibel
-            dibanding pendekatan parabola pada Simpson 1/3.
+            Diberikan integral tentu:
         </p>
+
+        <div class="text-math">
+$$
+\int_a^b f(x)\,dx
+$$
+        </div>
 
         <p>
-            Metode ini cocok untuk jumlah interval tertentu.
+            Interval \([a, b]\) dibagi menjadi \(n\) subinterval dengan syarat:
         </p>
 
+        <div class="text-math">
+$$
+n \equiv 0 \pmod{3}
+$$
+        </div>
+
+        <p>
+            Lebar subinterval:
+        </p>
+
+        <div class="text-math">
+$$
+h = \frac{b-a}{n}
+$$
+        </div>
     </div>
 
-    <!-- SYARAT -->
     <div class="card card--soft">
+        <h3>Rumus Simpson 3/8 Komposit</h3>
 
+        <p>
+            Metode Simpson 3/8 menggunakan pola bobot yang khas dengan siklus 3 titik.
+        </p>
+
+        <div class="text-math">
+$$
+\int_a^b f(x)\,dx \approx \frac{3h}{8}
+\left[
+f(x_0)
++ 3\sum_{i=1,2,4,5,\dots}^{n-1} f(x_i)
++ 2\sum_{i=3,6,9,\dots}^{n-3} f(x_i)
++ f(x_n)
+\right]
+$$
+        </div>
+
+        <p>
+            Pola bobotnya mengikuti siklus:
+            1 – 3 – 3 – 2 – 3 – 3 – 2 – ... – 3 – 3 – 1
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Interpretasi Geometris</h3>
+
+        <p>
+            Metode Simpson 3/8 mengaproksimasi kurva menggunakan polinomial kubik yang melewati empat titik
+            berturut-turut.
+        </p>
+
+        <p>
+            Dengan pendekatan ini, bentuk kurva yang lebih kompleks dapat direpresentasikan dengan lebih baik
+            dibanding metode Simpson 1/3.
+        </p>
+
+        <p>
+            Hal ini membuat Simpson 3/8 lebih fleksibel, terutama ketika jumlah titik tidak cocok untuk metode
+            Simpson 1/3.
+        </p>
+    </div>
+
+    <div class="card card--soft">
         <h3>Syarat Penggunaan</h3>
 
         <p>
-            Metode Simpson 3/8 memiliki syarat:
+            Metode Simpson 3/8 memiliki beberapa syarat penting:
         </p>
 
         <p>
-            • Jumlah interval (n) harus kelipatan 3<br>
-            • Jarak antar titik harus sama (uniform spacing)
+            - Jumlah subinterval \(n\) harus kelipatan 3<br>
+            - Titik-titik harus berjarak sama<br>
+            - Fungsi sebaiknya cukup halus pada interval yang dianalisis
         </p>
-
     </div>
 
-    <!-- RUMUS DASAR -->
     <div class="card card--soft">
-
-        <h3>Rumus Simpson 3/8</h3>
+        <h3>Algoritma Simpson 3/8</h3>
 
         <p>
-            Untuk interval [a, b] dengan n = 3m:
+            Langkah umum penerapan metode Simpson 3/8:
         </p>
 
         <p>
-            h = (b - a) / n
+            1. Tentukan batas integral \(a\) dan \(b\).<br>
+            2. Pilih jumlah subinterval \(n\) (kelipatan 3).<br>
+            3. Hitung \(h = (b-a)/n\).<br>
+            4. Evaluasi fungsi pada setiap titik \(x_i\).<br>
+            5. Terapkan rumus Simpson 3/8 komposit.
         </p>
-
-        <p>
-            ∫ f(x) dx ≈ 3h/8 [
-            f(x₀) + f(xₙ)
-            + 3Σ f(x tidak kelipatan 3)
-            + 2Σ f(x kelipatan 3, selain awal & akhir)
-            ]
-        </p>
-
     </div>
 
-    <!-- POLA KOEFISIEN -->
     <div class="card card--soft">
+        <h3>Pseudocode Simpson 3/8</h3>
 
-        <h3>Pola Koefisien</h3>
+        <div class="text-code">
+INPUT a, b, n
 
-        <p>
-            Pola koefisien Simpson 3/8 adalah:
-        </p>
+IF n % 3 != 0 THEN
+    ERROR "n harus kelipatan 3"
+END IF
 
-        <p>
-            1, 3, 3, 2, 3, 3, 2, ..., 3, 3, 1
-        </p>
+h = (b - a) / n
 
-        <p>
-            Titik awal dan akhir bernilai 1,
-            sedangkan sisanya mengikuti pola 3 dan 2.
-        </p>
+sum = f(a) + f(b)
 
+FOR i = 1 TO n-1 DO
+    x = a + i*h
+
+    IF i % 3 == 0 THEN
+        sum = sum + 2*f(x)
+    ELSE
+        sum = sum + 3*f(x)
+    END IF
+
+END FOR
+
+result = (3*h/8) * sum
+
+OUTPUT result
+        </div>
     </div>
 
-    <!-- LANGKAH -->
     <div class="card card--soft">
-
-        <h3>Langkah-langkah</h3>
+        <h3>Contoh Konseptual</h3>
 
         <p>
-            1. Tentukan interval [a, b]<br>
-            2. Pastikan jumlah interval kelipatan 3<br>
-            3. Hitung nilai h<br>
-            4. Hitung f(x) di semua titik<br>
-            5. Terapkan rumus Simpson 3/8
+            Misalkan ingin menghitung:
         </p>
 
+        <div class="text-math">
+$$
+\int_0^3 x^2\,dx
+$$
+        </div>
+
+        <p>
+            Nilai eksak integral tersebut adalah:
+        </p>
+
+        <div class="text-math">
+$$
+9
+$$
+        </div>
+
+        <p>
+            Dengan Simpson 3/8, pendekatan dilakukan menggunakan pembagian interval menjadi kelipatan 3
+            sehingga hasil aproksimasi semakin mendekati nilai eksak ketika jumlah subinterval diperbesar.
+        </p>
     </div>
 
-    <!-- CONTOH -->
     <div class="card card--soft">
-
-        <h3>Contoh Sederhana</h3>
-
-        <p>
-            Diketahui:
-        </p>
+        <h3>Kelebihan Simpson 3/8</h3>
 
         <p>
-            f(x) = x², interval [0, 3], n = 3
+            - Lebih fleksibel untuk jumlah subinterval tertentu (kelipatan 3)<br>
+            - Akurasi tinggi karena menggunakan polinomial kubik<br>
+            - Lebih baik untuk fungsi dengan variasi kurva lebih kompleks
         </p>
-
-        <p>
-            Titik: x₀ = 0, x₁ = 1, x₂ = 2, x₃ = 3
-        </p>
-
     </div>
 
-    <!-- PERHITUNGAN -->
     <div class="card card--soft">
-
-        <h3>Perhitungan</h3>
-
-        <p>
-            h = (3 - 0) / 3 = 1
-        </p>
+        <h3>Keterbatasan Simpson 3/8</h3>
 
         <p>
-            f(0)=0, f(1)=1, f(2)=4, f(3)=9
+            - Harus menggunakan jumlah subinterval kelipatan 3<br>
+            - Lebih kompleks dibanding Simpson 1/3<br>
+            - Tidak selalu lebih efisien jika fungsi sangat sederhana
         </p>
-
-        <p>
-            ∫ f(x) dx ≈ 3/8 [ 0 + 9 + 3(1 + 4) ]
-        </p>
-
-        <p>
-            = 3/8 [ 9 + 15 ] = 3/8 (24) = 9
-        </p>
-
     </div>
 
-    <!-- KELEBIHAN -->
     <div class="card card--soft">
-
-        <h3>Kelebihan</h3>
-
-        <p>
-            • Lebih fleksibel untuk fungsi tertentu<br>
-            • Akurat untuk beberapa kasus non-linear<br>
-            • Menggunakan pendekatan polinomial kubik
-        </p>
-
-    </div>
-
-    <!-- KEKURANGAN -->
-    <div class="card card--soft">
-
-        <h3>Kekurangan</h3>
-
-        <p>
-            • Harus kelipatan 3 interval<br>
-            • Lebih kompleks dari Simpson 1/3<br>
-            • Jarang digunakan sendiri dalam praktik
-        </p>
-
-    </div>
-
-    <!-- KESIMPULAN -->
-    <div class="card card--soft">
-
         <h3>Kesimpulan</h3>
 
         <p>
-            Metode Simpson 3/8 adalah teknik integrasi numerik
-            yang menggunakan pendekatan polinomial kubik untuk
-            menghitung luas di bawah kurva.
+            Metode Simpson 3/8 merupakan pengembangan dari metode integrasi numerik yang menggunakan pendekatan
+            polinomial kubik untuk meningkatkan akurasi aproksimasi.
         </p>
 
         <p>
-            Meskipun akurat, penggunaannya biasanya dikombinasikan
-            dengan Simpson 1/3 untuk fleksibilitas lebih tinggi.
+            Metode ini sering digunakan bersama Simpson 1/3 untuk menangani kasus ketika jumlah subinterval
+            tidak memenuhi syarat metode 1/3.
         </p>
-
     </div>
 
 </div>
