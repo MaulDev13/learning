@@ -1,0 +1,354 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Bab 1: Pendahuluan dan Konsep Dasar Persamaan Diferensial Biasa (PDB)</h2>
+
+        <p>
+            Bab ini membahas pengenalan dasar mengenai Persamaan Diferensial Biasa (PDB)
+            sebagai cabang matematika yang digunakan untuk memodelkan berbagai proses perubahan
+            yang bergantung pada satu variabel bebas, umumnya waktu atau posisi.
+        </p>
+
+        <p>
+            Dalam banyak fenomena nyata, kita tidak hanya memperhatikan nilai suatu besaran,
+            tetapi juga bagaimana besaran tersebut berubah terhadap variabel lain. Konsep inilah
+            yang menjadi dasar munculnya Persamaan Diferensial Biasa.
+        </p>
+
+        <p>
+            Secara sederhana, PDB digunakan untuk menggambarkan hubungan antara suatu fungsi tak diketahui
+            dengan turunannya terhadap satu variabel bebas.
+        </p>
+
+        <p>
+            Contoh konsep perubahan yang sering muncul dalam PDB dapat dilihat pada tabel berikut:
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Fenomena</th>
+                <th>Bentuk Perubahan</th>
+                <th>Contoh Besaran</th>
+            </tr>
+
+            <tr>
+                <td>Gerak benda</td>
+                <td>Perubahan terhadap waktu</td>
+                <td>Posisi → Kecepatan → Percepatan</td>
+            </tr>
+
+            <tr>
+                <td>Pertumbuhan populasi</td>
+                <td>Laju pertumbuhan terhadap waktu</td>
+                <td>Jumlah populasi</td>
+            </tr>
+
+            <tr>
+                <td>Pendinginan benda</td>
+                <td>Perubahan suhu terhadap waktu</td>
+                <td>Suhu</td>
+            </tr>
+
+            <tr>
+                <td>Rangkaian listrik</td>
+                <td>Perubahan arus terhadap waktu</td>
+                <td>Arus dan tegangan</td>
+            </tr>
+
+            <tr>
+                <td>Pertumbuhan modal</td>
+                <td>Perubahan nilai terhadap waktu</td>
+                <td>Uang / investasi</td>
+            </tr>
+        </table>
+
+        <p>
+            Dari contoh tersebut terlihat bahwa banyak fenomena dapat dimodelkan menggunakan konsep perubahan,
+            sehingga PDB menjadi alat penting dalam matematika terapan.
+        </p>
+
+        <p>
+            Dalam fisika dasar, konsep PDB dapat diawali dari hubungan sederhana seperti:
+        </p>
+
+        <div class="text-math-highlight">
+        $$
+        v(t) = \frac{ds}{dt}
+        $$
+        </div>
+
+        <p>
+            yang menyatakan bahwa kecepatan adalah laju perubahan posisi terhadap waktu.
+        </p>
+
+        <p>
+            Selanjutnya:
+        </p>
+
+        <div class="text-math-highlight">
+        $$
+        a(t) = \frac{dv}{dt}
+        $$
+        </div>
+
+        <p>
+            yang menyatakan bahwa percepatan adalah laju perubahan kecepatan terhadap waktu.
+        </p>
+
+        <p>
+            Bentuk-bentuk seperti ini menunjukkan bahwa PDB muncul secara alami dalam proses perubahan berurutan.
+        </p>
+
+        <p>
+            Fokus utama bab ini adalah memahami konsep dasar, makna notasi, serta bentuk-bentuk umum PDB
+            yang sering digunakan dalam berbagai model matematika, tanpa membahas metode penyelesaian secara rinci.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>1. Pengertian Persamaan Diferensial Biasa</h3>
+
+        <p>
+            Persamaan Diferensial Biasa (PDB) adalah persamaan yang melibatkan suatu fungsi
+            tak diketahui dari satu variabel bebas beserta turunannya terhadap variabel tersebut.
+        </p>
+
+        <p>
+            Secara umum, PDB dapat ditulis dalam bentuk:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+F(x, y, y', y'', \dots, y^{(n)}) = 0
+$$
+        </div>
+
+        <p>
+            dengan <span class="text-math-inline">y = y(x)</span>.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>2. Unsur-Unsur PDB</h3>
+
+        <table class="table">
+            <tr>
+                <th>Unsur</th>
+                <th>Penjelasan</th>
+            </tr>
+
+            <tr>
+                <td>Variabel bebas</td>
+                <td>Variabel yang tidak bergantung, biasanya \(x\) atau \(t\)</td>
+            </tr>
+
+            <tr>
+                <td>Variabel terikat</td>
+                <td>Fungsi yang dicari, misalnya \(y(x)\)</td>
+            </tr>
+
+            <tr>
+                <td>Turunan</td>
+                <td>Laju perubahan fungsi terhadap variabel bebas</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>3. Contoh Persamaan Diferensial Biasa</h3>
+
+        <p>Contoh sederhana PDB:</p>
+
+        <div class="text-math-highlight">
+$$
+\frac{dy}{dx} = x + y
+$$
+        </div>
+
+        <div class="text-math-highlight">
+$$
+\frac{dy}{dx} = y
+$$
+        </div>
+
+        <div class="text-math-highlight">
+$$
+\frac{d^2y}{dx^2} + y = 0
+$$
+        </div>
+
+        <p>
+            Semua contoh di atas melibatkan fungsi <span class="text-math-inline">y(x)</span>
+            dan turunannya terhadap satu variabel bebas <span class="text-math-inline">x</span>.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>4. Bentuk Umum PDB</h3>
+
+        <p>PDB dapat ditulis dalam bentuk umum:</p>
+
+        <div class="text-math-highlight">
+$$
+F(x, y, y', y'', \dots, y^{(n)}) = 0
+$$
+        </div>
+
+        <p>
+            atau dalam bentuk eksplisit:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+y^{(n)} = f(x, y, y', \dots, y^{(n-1)})
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>5. Orde Persamaan Diferensial</h3>
+
+        <p>
+            Orde PDB ditentukan oleh turunan tertinggi yang muncul dalam persamaan.
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Contoh</th>
+                <th>Orde</th>
+            </tr>
+
+            <tr>
+                <td>\(\frac{dy}{dx} = x + y\)</td>
+                <td>Orde 1</td>
+            </tr>
+
+            <tr>
+                <td>\(\frac{d^2y}{dx^2} + y = 0\)</td>
+                <td>Orde 2</td>
+            </tr>
+
+            <tr>
+                <td>\(\frac{d^3y}{dx^3} = x\)</td>
+                <td>Orde 3</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>6. Derajat Persamaan Diferensial</h3>
+
+        <p>
+            Derajat PDB adalah pangkat tertinggi dari turunan setelah persamaan bebas dari akar dan pecahan.
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Contoh</th>
+                <th>Derajat</th>
+            </tr>
+
+            <tr>
+                <td>\(\frac{dy}{dx} + y = 0\)</td>
+                <td>1</td>
+            </tr>
+
+            <tr>
+                <td>\(\left(\frac{d^2y}{dx^2}\right)^2 + y = 0\)</td>
+                <td>2</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>7. Linear dan Nonlinear</h3>
+
+        <p><b>PDB Linear</b>:</p>
+
+        <p>
+            PDB disebut linear jika fungsi \(y\) dan turunannya muncul dengan pangkat satu
+            dan tidak saling dikalikan.
+        </p>
+
+        <div class="text-math-highlight">
+$$
+y' + p(x)y = q(x)
+$$
+        </div>
+
+        <p><b>PDB Nonlinear</b>:</p>
+
+        <p>
+            Jika terdapat bentuk seperti \(y^2\), \(yy'\), atau fungsi nonlinier lainnya,
+            maka PDB bersifat nonlinear.
+        </p>
+
+        <div class="text-math-highlight">
+$$
+y' = y^2 + x
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>8. Homogen dan Nonhomogen</h3>
+
+        <p><b>Homogen</b>:</p>
+
+        <div class="text-math-highlight">
+$$
+y' + p(x)y = 0
+$$
+        </div>
+
+        <p><b>Nonhomogen</b>:</p>
+
+        <div class="text-math-highlight">
+$$
+y' + p(x)y = q(x)
+$$
+        </div>
+
+        <p>
+            Perbedaan utama terletak pada adanya suku bebas \(q(x)\).
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>9. Interpretasi Geometris Sederhana</h3>
+
+        <p>
+            Persamaan diferensial dapat dipahami sebagai aturan yang menentukan
+            kemiringan (slope) kurva pada setiap titik.
+        </p>
+
+        <p>
+            Contoh:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+\frac{dy}{dx} = x + y
+$$
+        </div>
+
+        <p>
+            artinya setiap titik \((x,y)\) memiliki kemiringan yang ditentukan oleh nilai \(x\) dan \(y\).
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Bab ini memperkenalkan konsep dasar Persamaan Diferensial Biasa, termasuk definisi,
+            notasi, orde, derajat, serta bentuk linear dan nonlinear.
+        </p>
+
+        <p>
+            Pemahaman konsep ini sangat penting sebagai dasar sebelum mempelajari metode
+            penyelesaian PDB pada bab-bab berikutnya.
+        </p>
+    </div>
+
+</div>
