@@ -1,417 +1,268 @@
 <div class="card-group">
 
-    <!-- PENGANTAR -->
     <div class="card card--soft">
-
-        <h3>Homogenitas PDP</h3>
+        <h2>Homogenitas dalam Persamaan Diferensial Parsial</h2>
 
         <p>
-            Dalam Persamaan Diferensial Parsial (PDP),
-            salah satu cara untuk mengelompokkan persamaan
-            adalah berdasarkan sifat homogenitasnya.
+            Dalam Persamaan Diferensial Parsial (PDP), istilah <strong>homogen</strong>
+            digunakan untuk menggambarkan persamaan yang tidak memiliki “sumber luar”
+            atau pengaruh tambahan di ruas kanan.
         </p>
 
         <p>
-            Sifat ini berkaitan dengan ada atau tidaknya
-            suku dalam persamaan yang tidak memuat
-            fungsi u maupun turunan parsialnya.
+            Secara sederhana, PDP homogen berarti perubahan sistem hanya disebabkan
+            oleh kondisi dalam sistem itu sendiri, bukan oleh gaya atau pengaruh dari luar.
         </p>
 
+        <p>
+            Konsep ini sangat penting karena mempengaruhi bentuk solusi dan metode
+            penyelesaian yang digunakan.
+        </p>
     </div>
 
-    <!-- DEFINISI HOMOGEN -->
     <div class="card card--soft">
-
-        <h3>Definisi PDP Homogen</h3>
+        <h3>Bentuk Umum PDP Homogen</h3>
 
         <p>
-            Suatu PDP dikatakan homogen apabila
-            setiap suku dalam persamaan memuat
-            fungsi u atau salah satu turunan parsialnya.
+            Secara umum, PDP homogen dituliskan dalam bentuk:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+L(u) = 0
+$$
+        </div>
+
+        <p>
+            di mana <span class="text-math-inline">L(u)</span> adalah operator diferensial
+            yang melibatkan <span class="text-math-inline">u</span> dan turunannya.
         </p>
 
         <p>
-            Dengan kata lain, tidak terdapat suku
-            yang hanya bergantung pada variabel bebas
-            tanpa melibatkan u sama sekali.
+            Contoh bentuk lebih eksplisit:
         </p>
 
-        <p>
-            Secara umum, PDP homogen dapat ditulis
-            dalam bentuk:
-        </p>
-
-        <p>
-            L(u) = 0
-        </p>
-
-        <p>
-            dengan L adalah operator diferensial
-            dan ruas kanan bernilai nol.
-        </p>
-
+        <div class="text-math-highlight">
+$$
+a u_{xx} + b u_{xy} + c u_{yy} + d u_x + e u_y + f u = 0
+$$
+        </div>
     </div>
 
-    <!-- DEFINISI TAK HOMOGEN -->
     <div class="card card--soft">
-
-        <h3>Definisi PDP Tak Homogen</h3>
+        <h3>PDP Non-Homogen</h3>
 
         <p>
-            Suatu PDP dikatakan tak homogen apabila
-            terdapat suku yang tidak memuat u
-            maupun turunan parsialnya.
+            PDP disebut <strong>non-homogen</strong> jika terdapat suku tambahan
+            di ruas kanan yang tidak nol.
+        </p>
+
+        <div class="text-math-highlight">
+$$
+L(u) = g(x,y)
+$$
+        </div>
+
+        <p>
+            di mana <span class="text-math-inline">g(x,y)</span> adalah fungsi sumber luar.
         </p>
 
         <p>
-            Suku tersebut disebut suku sumber
-            atau fungsi pemaksa,
-            karena mewakili pengaruh dari luar sistem.
+            Fungsi ini bisa merepresentasikan panas tambahan, gaya luar, atau input sistem lainnya.
         </p>
-
-        <p>
-            Secara umum, PDP tak homogen dapat ditulis
-            dalam bentuk:
-        </p>
-
-        <p>
-            L(u) = f(x, y, ...)
-        </p>
-
-        <p>
-            dengan f adalah fungsi yang diberikan
-            dan tidak identik nol.
-        </p>
-
     </div>
 
-    <!-- ANALOGI -->
     <div class="card card--soft">
-
-        <h3>Analogi Sederhana</h3>
-
-        <p>
-            Bayangkan sebuah sistem yang bergerak
-            tanpa pengaruh dari luar.
-        </p>
-
-        <p>
-            Pada PDP homogen, ruas kanan bernilai nol.
-            Sistem hanya dipengaruhi oleh kondisi
-            internalnya sendiri,
-            tanpa ada dorongan dari luar.
-        </p>
-
-        <p>
-            Pada PDP tak homogen, ruas kanan
-            memuat fungsi f yang tidak nol.
-            Ada pengaruh eksternal yang mendorong
-            atau mempengaruhi sistem.
-        </p>
-
-    </div>
-
-    <!-- CONTOH HOMOGEN -->
-    <div class="card card--soft">
-
         <h3>Contoh PDP Homogen</h3>
 
         <p>
-            ∂u/∂x + ∂u/∂y = 0
+            Contoh paling terkenal adalah persamaan panas homogen:
         </p>
+
+        <div class="text-math-highlight">
+$$
+\frac{\partial u}{\partial t}
+=
+k \frac{\partial^2 u}{\partial x^2}
+$$
+        </div>
 
         <p>
-            Ruas kanan bernilai nol dan semua suku
-            memuat turunan u.
-            Persamaan ini homogen.
+            Jika dipindahkan ke satu ruas:
         </p>
+
+        <div class="text-math">
+$$
+\frac{\partial u}{\partial t}
+- k \frac{\partial^2 u}{\partial x^2}
+= 0
+$$
+        </div>
 
         <p>
-            ∂²u/∂x² + ∂²u/∂y² = 0
+            Karena ruas kanan bernilai nol, maka persamaan ini adalah PDP homogen.
         </p>
-
-        <p>
-            Ruas kanan bernilai nol dan semua suku
-            memuat turunan u.
-            Persamaan ini homogen.
-            Persamaan ini dikenal sebagai
-            persamaan Laplace.
-        </p>
-
-        <p>
-            ∂u/∂t − k ∂²u/∂x² = 0
-        </p>
-
-        <p>
-            Ruas kanan bernilai nol dan semua suku
-            memuat u atau turunannya.
-            Persamaan ini homogen.
-        </p>
-
     </div>
 
-    <!-- CONTOH TAK HOMOGEN -->
     <div class="card card--soft">
+        <h3>Contoh PDP Non-Homogen</h3>
 
-        <h3>Contoh PDP Tak Homogen</h3>
+        <div class="text-math-highlight">
+$$
+\frac{\partial u}{\partial t}
+=
+k \frac{\partial^2 u}{\partial x^2}
++ f(x,t)
+$$
+        </div>
 
         <p>
-            ∂u/∂x + ∂u/∂y = x + y
+            Persamaan ini non-homogen karena terdapat fungsi tambahan
+            <span class="text-math-inline">f(x,t)</span>.
         </p>
 
         <p>
-            Ruas kanan adalah x + y,
-            yaitu fungsi dari variabel bebas
-            yang tidak identik nol.
-            Persamaan ini tak homogen.
+            Fungsi ini dapat menggambarkan sumber panas eksternal atau input energi dari luar sistem.
         </p>
-
-        <p>
-            ∂²u/∂x² + ∂²u/∂y² = sin(x)
-        </p>
-
-        <p>
-            Ruas kanan adalah sin(x)
-            yang tidak identik nol.
-            Persamaan ini tak homogen.
-            Persamaan ini dikenal sebagai
-            persamaan Poisson.
-        </p>
-
-        <p>
-            ∂u/∂t − k ∂²u/∂x² = e^x
-        </p>
-
-        <p>
-            Ruas kanan adalah e^x
-            yang tidak identik nol.
-            Persamaan ini tak homogen.
-        </p>
-
     </div>
 
-    <!-- CARA MENENTUKAN -->
     <div class="card card--soft">
-
-        <h3>Cara Menentukan Homogenitas</h3>
-
-        <p>
-            Langkah pertama, pindahkan semua suku
-            yang memuat u dan turunan parsialnya
-            ke ruas kiri persamaan.
-        </p>
+        <h3>Makna Fisik Homogenitas</h3>
 
         <p>
-            Langkah kedua, perhatikan ruas kanan
-            persamaan yang telah disusun ulang.
+            Secara fisik, homogenitas berarti sistem tidak mendapat “gangguan luar”.
         </p>
+
+        <table class="table">
+            <tr>
+                <th>Jenis</th>
+                <th>Makna</th>
+            </tr>
+
+            <tr>
+                <td>Homogen</td>
+                <td>Sistem hanya berevolusi dari kondisi awalnya sendiri.</td>
+            </tr>
+
+            <tr>
+                <td>Non-homogen</td>
+                <td>Ada pengaruh tambahan dari luar sistem.</td>
+            </tr>
+        </table>
 
         <p>
-            Langkah ketiga, apabila ruas kanan
-            bernilai nol, maka PDP tersebut homogen.
-            Apabila ruas kanan memuat fungsi
-            yang tidak identik nol,
-            maka PDP tersebut tak homogen.
+            Contoh sederhana:
         </p>
 
+        <ul>
+            <li>
+                Batang logam yang didinginkan tanpa sumber panas tambahan → homogen
+            </li>
+            <li>
+                Batang logam dipanaskan di satu titik → non-homogen
+            </li>
+        </ul>
     </div>
 
-    <!-- PRINSIP SUPERPOSISI -->
     <div class="card card--soft">
-
-        <h3>Prinsip Superposisi</h3>
+        <h3>Peran Homogenitas dalam Penyelesaian</h3>
 
         <p>
-            Salah satu sifat penting dari
-            PDP linear homogen adalah berlakunya
-            prinsip superposisi.
+            Homogenitas sangat mempengaruhi metode penyelesaian PDP.
         </p>
 
         <p>
-            Apabila u₁ dan u₂ adalah solusi
-            dari suatu PDP linear homogen,
-            maka c₁u₁ + c₂u₂ juga merupakan solusi
-            untuk sembarang konstanta c₁ dan c₂.
+            Untuk PDP homogen, metode seperti:
+        </p>
+
+        <ul>
+            <li>Pemisahan variabel</li>
+            <li>Deret Fourier</li>
+            <li>Superposisi solusi</li>
+        </ul>
+
+        <p>
+            dapat digunakan dengan lebih mudah.
         </p>
 
         <p>
-            Sifat ini tidak berlaku pada
-            PDP tak homogen maupun PDP tak linear.
+            Sedangkan PDP non-homogen biasanya perlu langkah tambahan,
+            seperti mencari solusi khusus terlebih dahulu.
         </p>
-
     </div>
 
-    <!-- PENYELESAIAN CONTOH 1 -->
     <div class="card card--soft">
-
-        <h3>Penyelesaian — Contoh 1</h3>
+        <h3>Prinsip Superposisi pada PDP Homogen</h3>
 
         <p>
-            Tentukan apakah persamaan berikut
-            homogen atau tak homogen.
+            Salah satu sifat penting PDP homogen adalah berlaku prinsip superposisi.
+        </p>
+
+        <div class="text-math-highlight">
+$$
+u_1 + u_2 \;\text{juga solusi}
+$$
+        </div>
+
+        <p>
+            Artinya, jika dua fungsi merupakan solusi PDP homogen,
+            maka jumlahnya juga merupakan solusi.
         </p>
 
         <p>
-            ∂²u/∂x² − ∂u/∂t = 3x
+            Sifat ini tidak berlaku pada PDP non-homogen secara umum.
         </p>
-
-        <p>
-            Langkah 1: Pindahkan semua suku
-            yang memuat u dan turunannya
-            ke ruas kiri.
-        </p>
-
-        <p>
-            ∂²u/∂x² − ∂u/∂t = 3x
-        </p>
-
-        <p>
-            Semua suku yang memuat u
-            sudah berada di ruas kiri.
-        </p>
-
-        <p>
-            Langkah 2: Perhatikan ruas kanan.
-        </p>
-
-        <p>
-            Ruas kanan adalah 3x,
-            yaitu fungsi dari variabel bebas x
-            yang tidak identik nol.
-        </p>
-
-        <p>
-            Langkah 3: Tentukan kesimpulan.
-        </p>
-
-        <p>
-            Kesimpulan: Persamaan ini adalah
-            PDP tak homogen.
-        </p>
-
     </div>
 
-    <!-- PENYELESAIAN CONTOH 2 -->
     <div class="card card--soft">
+        <h3>Kesalahan Umum</h3>
 
-        <h3>Penyelesaian — Contoh 2</h3>
+        <table class="table">
+            <tr>
+                <th>Kesalahan</th>
+                <th>Penjelasan</th>
+            </tr>
 
-        <p>
-            Tentukan apakah persamaan berikut
-            homogen atau tak homogen.
-        </p>
+            <tr>
+                <td>Mengira semua PDP linear adalah homogen</td>
+                <td>
+                    Linear tidak selalu homogen, karena bisa memiliki ruas kanan non nol.
+                </td>
+            </tr>
 
-        <p>
-            ∂²u/∂t² = c² ∂²u/∂x²
-        </p>
+            <tr>
+                <td>Mengabaikan fungsi sumber</td>
+                <td>
+                    Suku tambahan seperti <span class="text-math-inline">f(x,t)</span> membuat persamaan non-homogen.
+                </td>
+            </tr>
 
-        <p>
-            Langkah 1: Pindahkan semua suku
-            yang memuat u dan turunannya
-            ke ruas kiri.
-        </p>
-
-        <p>
-            ∂²u/∂t² − c² ∂²u/∂x² = 0
-        </p>
-
-        <p>
-            Langkah 2: Perhatikan ruas kanan.
-        </p>
-
-        <p>
-            Ruas kanan bernilai nol.
-        </p>
-
-        <p>
-            Langkah 3: Tentukan kesimpulan.
-        </p>
-
-        <p>
-            Kesimpulan: Persamaan ini adalah
-            PDP homogen.
-            Persamaan ini dikenal sebagai
-            persamaan gelombang.
-        </p>
-
+            <tr>
+                <td>Menyamakan homogen dengan nol mutlak</td>
+                <td>
+                    Homogen berarti tidak ada sumber luar, bukan berarti tidak ada solusi.
+                </td>
+            </tr>
+        </table>
     </div>
 
-    <!-- PENYELESAIAN CONTOH 3 -->
     <div class="card card--soft">
-
-        <h3>Penyelesaian — Contoh 3</h3>
-
-        <p>
-            Tentukan apakah persamaan berikut
-            homogen atau tak homogen.
-        </p>
-
-        <p>
-            ∂²u/∂x² + ∂²u/∂y² + ∂²u/∂z² = x² + y² + z²
-        </p>
-
-        <p>
-            Langkah 1: Pindahkan semua suku
-            yang memuat u dan turunannya
-            ke ruas kiri.
-        </p>
-
-        <p>
-            ∂²u/∂x² + ∂²u/∂y² + ∂²u/∂z² = x² + y² + z²
-        </p>
-
-        <p>
-            Semua suku yang memuat u
-            sudah berada di ruas kiri.
-        </p>
-
-        <p>
-            Langkah 2: Perhatikan ruas kanan.
-        </p>
-
-        <p>
-            Ruas kanan adalah x² + y² + z²,
-            yaitu fungsi dari variabel bebas
-            yang tidak identik nol.
-        </p>
-
-        <p>
-            Langkah 3: Tentukan kesimpulan.
-        </p>
-
-        <p>
-            Kesimpulan: Persamaan ini adalah
-            PDP tak homogen.
-        </p>
-
-    </div>
-
-    <!-- KESIMPULAN -->
-    <div class="card card--soft">
-
         <h3>Kesimpulan</h3>
 
         <p>
-            PDP homogen adalah PDP dengan ruas kanan
-            bernilai nol, artinya semua suku
-            dalam persamaan memuat u
-            atau turunan parsialnya.
+            PDP homogen adalah persamaan yang tidak memiliki suku tambahan di ruas kanan,
+            sehingga bentuknya dapat ditulis sebagai <span class="text-math-inline">L(u)=0</span>.
         </p>
 
         <p>
-            PDP tak homogen memiliki ruas kanan
-            berupa fungsi yang tidak identik nol,
-            yang mewakili pengaruh eksternal
-            terhadap sistem.
+            Sebaliknya, PDP non-homogen memiliki sumber atau pengaruh eksternal
+            yang membuat ruas kanan tidak nol.
         </p>
 
         <p>
-            Cara paling mudah untuk menentukan
-            homogenitas adalah dengan memindahkan
-            semua suku yang memuat u ke ruas kiri,
-            lalu memeriksa nilai ruas kanan.
+            Konsep ini penting karena sangat mempengaruhi sifat solusi
+            dan metode penyelesaian yang digunakan dalam Persamaan Diferensial Parsial.
         </p>
-
     </div>
 
 </div>

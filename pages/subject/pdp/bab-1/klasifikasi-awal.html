@@ -1,246 +1,263 @@
 <div class="card-group">
 
-    <!-- PENGANTAR -->
     <div class="card card--soft">
-
-        <h3>Klasifikasi Persamaan Diferensial Parsial</h3>
+        <h2>Klasifikasi Awal Persamaan Diferensial Parsial</h2>
 
         <p>
-            Klasifikasi Persamaan Diferensial Parsial (PDP)
-            bertujuan untuk mengelompokkan persamaan
-            berdasarkan sifat matematisnya.
+            Dalam mempelajari Persamaan Diferensial Parsial (PDP), langkah pertama yang sangat penting
+            adalah melakukan <strong>klasifikasi awal</strong>.
         </p>
 
         <p>
-            Untuk PDP orde dua,
-            klasifikasi ini sangat penting
-            karena berkaitan langsung dengan
-            sifat solusi dan metode penyelesaiannya.
+            Klasifikasi ini membantu kita memahami sifat dasar suatu PDP sebelum mencari metode penyelesaiannya.
+            Dengan kata lain, kita tidak langsung menyelesaikan, tetapi terlebih dahulu “mengenali jenis masalahnya”.
         </p>
 
+        <p>
+            Tiga aspek utama dalam klasifikasi awal PDP adalah:
+        </p>
+
+        <ul>
+            <li>Orde (tingkat turunan tertinggi)</li>
+            <li>Linearitas (linear atau non-linear)</li>
+            <li>Homogenitas (ada atau tidaknya sumber luar)</li>
+        </ul>
     </div>
 
-    <!-- BENTUK UMUM -->
     <div class="card card--soft">
-
-        <h3>Bentuk Umum PDP Orde Dua</h3>
-
-        <p>
-            Pertimbangkan PDP linear orde dua
-            dalam dua variabel x dan y:
-        </p>
+        <h3>1. Berdasarkan Orde</h3>
 
         <p>
-            A(x,y) ∂²u/∂x² + B(x,y) ∂²u/∂x∂y + C(x,y) ∂²u/∂y² 
-            + D(x,y) ∂u/∂x + E(x,y) ∂u/∂y + F(x,y)u = G(x,y)
+            Orde PDP ditentukan oleh turunan tertinggi yang muncul dalam persamaan.
         </p>
+
+        <table class="table">
+            <tr>
+                <th>Orde</th>
+                <th>Contoh</th>
+                <th>Penjelasan</th>
+            </tr>
+
+            <tr>
+                <td>Orde 1</td>
+                <td>
+                    <span class="text-math-inline">
+                        u_x + u_y = 0
+                    </span>
+                </td>
+                <td>
+                    Hanya melibatkan turunan pertama.
+                </td>
+            </tr>
+
+            <tr>
+                <td>Orde 2</td>
+                <td>
+                    <span class="text-math-inline">
+                        u_{xx} + u_{yy} = 0
+                    </span>
+                </td>
+                <td>
+                    Melibatkan turunan kedua.
+                </td>
+            </tr>
+        </table>
 
         <p>
-            Koefisien A, B, dan C menentukan
-            tipe dari persamaan tersebut.
+            Semakin tinggi orde, biasanya semakin kompleks analisisnya.
         </p>
-
     </div>
 
-    <!-- DISKRIMINAN -->
     <div class="card card--soft">
-
-        <h3>Diskriminan</h3>
-
-        <p>
-            Klasifikasi PDP orde dua ditentukan
-            melalui diskriminan:
-        </p>
+        <h3>2. Berdasarkan Linearitas</h3>
 
         <p>
-            Δ = B² − 4AC
+            Setelah orde ditentukan, kita melihat apakah PDP tersebut linear atau non-linear.
         </p>
+
+        <table class="table">
+            <tr>
+                <th>Jenis</th>
+                <th>Ciri</th>
+            </tr>
+
+            <tr>
+                <td>Linear</td>
+                <td>
+                    Tidak ada pangkat atau perkalian antar <span class="text-math-inline">u</span> dan turunannya.
+                </td>
+            </tr>
+
+            <tr>
+                <td>Non-linear</td>
+                <td>
+                    Ada pangkat, perkalian, atau bentuk tidak linear lainnya.
+                </td>
+            </tr>
+        </table>
 
         <p>
-            Nilai diskriminan ini digunakan
-            untuk menentukan tipe persamaan.
+            Contoh:
         </p>
 
+        <div class="text-math-highlight">
+$$
+u_t = u_{xx}
+$$
+        </div>
+
+        <p>
+            adalah linear, sedangkan:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+u_t = u \cdot u_x
+$$
+        </div>
+
+        <p>
+            adalah non-linear.
+        </p>
     </div>
 
-    <!-- ELIPTIK -->
     <div class="card card--soft">
-
-        <h3>Tipe Eliptik</h3>
-
-        <p>
-            PDP dikatakan bertipe eliptik jika:
-        </p>
+        <h3>3. Berdasarkan Homogenitas</h3>
 
         <p>
-            B² − 4AC &lt; 0
+            Homogenitas melihat apakah ada “sumber luar” dalam sistem.
         </p>
+
+        <table class="table">
+            <tr>
+                <th>Jenis</th>
+                <th>Bentuk</th>
+            </tr>
+
+            <tr>
+                <td>Homogen</td>
+                <td>
+                    <span class="text-math-inline">L(u)=0</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Non-homogen</td>
+                <td>
+                    <span class="text-math-inline">L(u)=f(x,y)</span>
+                </td>
+            </tr>
+        </table>
 
         <p>
-            Contoh klasik:
+            Contoh:
         </p>
+
+        <div class="text-math-highlight">
+$$
+u_t - k u_{xx} = 0
+$$
+        </div>
 
         <p>
-            ∂²u/∂x² + ∂²u/∂y² = 0
+            adalah homogen, sedangkan:
         </p>
+
+        <div class="text-math-highlight">
+$$
+u_t - k u_{xx} = f(x,t)
+$$
+        </div>
 
         <p>
-            Persamaan ini dikenal sebagai
-            persamaan Laplace.
+            adalah non-homogen.
         </p>
-
-        <p>
-            Persamaan eliptik umumnya
-            menggambarkan keadaan tunak (steady state).
-        </p>
-
     </div>
 
-    <!-- PARABOLIK -->
     <div class="card card--soft">
-
-        <h3>Tipe Parabolik</h3>
+        <h3>Kombinasi Klasifikasi</h3>
 
         <p>
-            PDP dikatakan bertipe parabolik jika:
+            Dalam praktiknya, sebuah PDP biasanya diklasifikasikan secara lengkap,
+            bukan hanya satu aspek saja.
         </p>
 
         <p>
-            B² − 4AC = 0
+            Contoh:
         </p>
+
+        <div class="text-math-highlight">
+$$
+u_t = k u_{xx}
+$$
+        </div>
 
         <p>
-            Contoh klasik:
+            Klasifikasinya:
         </p>
+
+        <ul>
+            <li>Orde 2 (karena ada \(u_{xx}\))</li>
+            <li>Linear</li>
+            <li>Homogen</li>
+        </ul>
 
         <p>
-            ∂u/∂t = k ∂²u/∂x²
+            Informasi ini sangat penting untuk menentukan metode penyelesaian yang tepat.
         </p>
-
-        <p>
-            Persamaan ini dikenal sebagai
-            persamaan panas (heat equation).
-        </p>
-
-        <p>
-            Persamaan parabolik
-            menggambarkan proses difusi atau evolusi waktu.
-        </p>
-
     </div>
 
-    <!-- HIPERBOLIK -->
     <div class="card card--soft">
-
-        <h3>Tipe Hiperbolik</h3>
+        <h3>Kenapa Klasifikasi Awal Penting?</h3>
 
         <p>
-            PDP dikatakan bertipe hiperbolik jika:
+            Klasifikasi awal membantu kita memilih “jalan penyelesaian” yang benar.
         </p>
 
         <p>
-            B² − 4AC &gt; 0
+            Tanpa klasifikasi, kita bisa salah memilih metode, karena setiap jenis PDP
+            memiliki pendekatan yang berbeda.
         </p>
 
-        <p>
-            Contoh klasik:
-        </p>
+        <table class="table">
+            <tr>
+                <th>Klasifikasi</th>
+                <th>Metode Umum</th>
+            </tr>
 
-        <p>
-            ∂²u/∂t² = c² ∂²u/∂x²
-        </p>
+            <tr>
+                <td>Linear homogen</td>
+                <td>Pemisahan variabel, Fourier</td>
+            </tr>
 
-        <p>
-            Persamaan ini dikenal sebagai
-            persamaan gelombang (wave equation).
-        </p>
+            <tr>
+                <td>Linear non-homogen</td>
+                <td>Superposisi + solusi khusus</td>
+            </tr>
 
-        <p>
-            Persamaan hiperbolik
-            menggambarkan propagasi gelombang.
-        </p>
-
+            <tr>
+                <td>Non-linear</td>
+                <td>Numerik atau metode khusus</td>
+            </tr>
+        </table>
     </div>
 
-    <!-- INTERPRETASI -->
     <div class="card card--soft">
-
-        <h3>Interpretasi Geometris</h3>
-
-        <p>
-            Klasifikasi ini analog dengan
-            klasifikasi kurva kuadrat:
-        </p>
-
-        <p>
-            • Elips → eliptik<br>
-            • Parabola → parabolik<br>
-            • Hiperbola → hiperbolik
-        </p>
-
-        <p>
-            Analogi ini muncul dari bentuk
-            operator diferensial orde dua.
-        </p>
-
-    </div>
-
-    <!-- SIGNIFIKANSI -->
-    <div class="card card--soft">
-
-        <h3>Signifikansi Klasifikasi</h3>
-
-        <p>
-            Tipe PDP menentukan:
-        </p>
-
-        <p>
-            • Sifat solusi<br>
-            • Keberadaan dan keunikan solusi<br>
-            • Metode penyelesaian yang sesuai
-        </p>
-
-        <p>
-            Setiap tipe memiliki karakteristik analitik
-            yang berbeda.
-        </p>
-
-    </div>
-
-    <!-- CATATAN -->
-    <div class="card card--soft">
-
-        <h3>Catatan</h3>
-
-        <p>
-            Pada kasus koefisien tidak konstan,
-            tipe PDP dapat berubah
-            tergantung pada titik (x, y).
-        </p>
-
-        <p>
-            Oleh karena itu,
-            klasifikasi sering dilakukan secara lokal.
-        </p>
-
-    </div>
-
-    <!-- KESIMPULAN -->
-    <div class="card card--soft">
-
         <h3>Kesimpulan</h3>
 
         <p>
-            Klasifikasi PDP orde dua menjadi tiga tipe utama,
-            yaitu eliptik, parabolik, dan hiperbolik,
-            berdasarkan nilai diskriminan B² − 4AC.
+            Klasifikasi awal PDP adalah proses mengenali sifat dasar suatu persamaan
+            berdasarkan orde, linearitas, dan homogenitas.
         </p>
 
         <p>
-            Klasifikasi ini merupakan dasar penting
-            dalam analisis teori dan metode penyelesaian PDP.
+            Langkah ini penting karena menentukan metode penyelesaian yang akan digunakan
+            pada tahap berikutnya.
         </p>
 
+        <p>
+            Dengan memahami klasifikasi, kita dapat melihat struktur masalah sebelum masuk ke perhitungan.
+        </p>
     </div>
 
 </div>

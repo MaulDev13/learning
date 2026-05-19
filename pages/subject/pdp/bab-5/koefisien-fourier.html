@@ -1,0 +1,148 @@
+<div class="card card--flat">
+
+    <h2>BAB 5 — Deret Fourier: Koefisien Fourier</h2>
+
+    <p>
+        Setelah memahami bahwa sebuah fungsi dapat ditulis sebagai penjumlahan sinus dan kosinus,
+        pertanyaan berikutnya adalah: bagaimana kita menentukan “berapa besar kontribusi” setiap
+        gelombang tersebut?
+    </p>
+
+    <p>
+        Jawabannya ada pada <strong>koefisien Fourier</strong>. Koefisien ini berfungsi sebagai
+        “bobot” yang menentukan seberapa kuat setiap komponen sinus dan kosinus dalam membentuk
+        suatu fungsi.
+    </p>
+
+    <div class="card card--soft">
+
+        <h3>Bentuk Umum Deret Fourier</h3>
+
+        <div class="katex">
+$$
+f(x) = \frac{a_0}{2} +
+\sum_{n=1}^{\infty}
+\left[
+a_n \cos\left(\frac{n\pi x}{L}\right)
++
+b_n \sin\left(\frac{n\pi x}{L}\right)
+\right]
+$$
+        </div>
+
+        <p>
+            Di sini:
+        </p>
+
+        <p>
+            • \( a_0 \) = komponen rata-rata fungsi <br>
+            • \( a_n \) = koefisien untuk kosinus (simetri genap) <br>
+            • \( b_n \) = koefisien untuk sinus (simetri ganjil)
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Makna Koefisien Fourier</h3>
+
+        <p>
+            Koefisien Fourier dapat dipahami sebagai “tingkat pengaruh” setiap gelombang.
+        </p>
+
+        <p>
+            • Jika suatu koefisien besar → gelombang tersebut dominan <br>
+            • Jika kecil → kontribusinya lemah <br>
+            • Jika nol → gelombang tersebut tidak berperan
+        </p>
+
+        <p>
+            Dengan demikian, bentuk fungsi ditentukan oleh kombinasi nilai koefisien ini.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Rumus Koefisien Fourier</h3>
+
+        <p>Untuk fungsi pada interval \( -L \le x \le L \):</p>
+
+        <div class="katex">
+$$
+a_0 = \frac{1}{L} \int_{-L}^{L} f(x)\, dx
+$$
+        </div>
+
+        <div class="katex">
+$$
+a_n = \frac{1}{L} \int_{-L}^{L} f(x)\cos\left(\frac{n\pi x}{L}\right)\, dx
+$$
+        </div>
+
+        <div class="katex">
+$$
+b_n = \frac{1}{L} \int_{-L}^{L} f(x)\sin\left(\frac{n\pi x}{L}\right)\, dx
+$$
+        </div>
+
+        <p>
+            Rumus ini menunjukkan bahwa koefisien diperoleh dari “proyeksi” fungsi terhadap
+            gelombang dasar sinus dan kosinus.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Intuisi Sederhana</h3>
+
+        <p>
+            Cara mudah memahami koefisien Fourier adalah seperti mencampur warna:
+        </p>
+
+        <p>
+            • Fungsi asli = warna kompleks <br>
+            • Sinus & kosinus = warna dasar <br>
+            • Koefisien = seberapa banyak setiap warna dicampurkan
+        </p>
+
+        <p>
+            Dengan kombinasi yang tepat, warna kompleks dapat dibentuk kembali.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Peran Simetri</h3>
+
+        <p>
+            Simetri fungsi sangat mempengaruhi koefisien Fourier:
+        </p>
+
+        <p>
+            • Fungsi genap → hanya memiliki \( a_n \), \( b_n = 0 \) <br>
+            • Fungsi ganjil → hanya memiliki \( b_n \), \( a_n = 0 \)
+        </p>
+
+        <p>
+            Hal ini membuat proses perhitungan bisa menjadi lebih sederhana.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Koefisien Fourier adalah komponen penting dalam deret Fourier yang menentukan
+            kontribusi setiap gelombang sinus dan kosinus dalam membentuk suatu fungsi.
+            Nilai koefisien ini diperoleh melalui integral dan sangat dipengaruhi oleh
+            bentuk serta simetri fungsi.
+        </p>
+
+    </div>
+
+</div>

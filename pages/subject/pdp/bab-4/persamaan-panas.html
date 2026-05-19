@@ -1,0 +1,462 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Persamaan Panas</h2>
+        <p>
+            Persamaan panas merupakan salah satu Persamaan Diferensial Parsial paling
+            penting dalam fisika matematika. Persamaan ini digunakan untuk memodelkan
+            proses perpindahan panas pada suatu medium seiring waktu.
+        </p>
+        <p>
+            Secara umum, persamaan panas satu dimensi dituliskan sebagai:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial u}{\partial t}
+=
+k \frac{\partial^2 u}{\partial x^2}
+$$
+        </div>
+
+        <p>
+            Fungsi <span class="text-math-inline">u(x,t)</span> menyatakan distribusi
+            suhu pada posisi <span class="text-math-inline">x</span> dan waktu
+            <span class="text-math-inline">t</span>, sedangkan konstanta
+            <span class="text-math-inline">k &gt; 0</span> disebut koefisien difusi
+            termal.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Model Batang Homogen</h3>
+
+        <p>
+            Misalkan sebuah batang homogen memiliki panjang
+            <span class="text-math-inline">L</span>. Distribusi suhu di sepanjang batang
+            dinyatakan oleh:
+        </p>
+
+        <div class="text-math">
+$$
+u(x,t), \qquad 0 &lt; x &lt; L,\quad t &gt; 0
+$$
+        </div>
+
+        <p>
+            Apabila kedua ujung batang dijaga pada suhu nol, maka kondisi batasnya adalah:
+        </p>
+
+        <div class="text-math">
+$$
+u(0,t)=0,
+\qquad
+u(L,t)=0
+$$
+        </div>
+
+        <p>
+            Selain itu diberikan kondisi awal:
+        </p>
+
+        <div class="text-math">
+$$
+u(x,0)=f(x)
+$$
+        </div>
+
+        <p>
+            Tujuan utama adalah menentukan fungsi
+            <span class="text-math-inline">u(x,t)</span> yang memenuhi PDP,
+            kondisi batas, dan kondisi awal tersebut.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Asumsi Pemisahan Variabel</h3>
+
+        <p>
+            Metode pemisahan variabel dimulai dengan mengasumsikan bahwa solusi dapat
+            dituliskan sebagai hasil kali dua fungsi yang masing-masing hanya bergantung
+            pada satu variabel:
+        </p>
+
+        <div class="text-math">
+$$
+u(x,t)=X(x)T(t)
+$$
+        </div>
+
+        <p>
+            Fungsi <span class="text-math-inline">X(x)</span> hanya bergantung pada
+            variabel ruang, sedangkan
+            <span class="text-math-inline">T(t)</span> hanya bergantung pada waktu.
+        </p>
+
+        <p>
+            Asumsi ini disebut ansatz pemisahan variabel dan merupakan inti dari metode
+            pemisahan variabel.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Substitusi ke Persamaan Panas</h3>
+
+        <p>
+            Turunan parsial dari:
+        </p>
+
+        <div class="text-math">
+$$
+u(x,t)=X(x)T(t)
+$$
+        </div>
+
+        <p>
+            adalah:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial u}{\partial t}
+=
+X(x)T'(t)
+$$
+        </div>
+
+        <div class="text-math">
+$$
+\frac{\partial^2 u}{\partial x^2}
+=
+X''(x)T(t)
+$$
+        </div>
+
+        <p>
+            Substitusi ke dalam persamaan panas menghasilkan:
+        </p>
+
+        <div class="text-math">
+$$
+X(x)T'(t)
+=
+kX''(x)T(t)
+$$
+        </div>
+
+        <p>
+            Selanjutnya kedua ruas dibagi dengan
+            <span class="text-math-inline">kX(x)T(t)</span> sehingga diperoleh:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{T'(t)}{kT(t)}
+=
+\frac{X''(x)}{X(x)}
+$$
+        </div>
+
+        <p>
+            Ruas kiri hanya bergantung pada
+            <span class="text-math-inline">t</span> sedangkan ruas kanan hanya
+            bergantung pada <span class="text-math-inline">x</span>. Karena kedua ruas
+            selalu sama untuk semua nilai variabel, maka keduanya harus sama dengan suatu
+            konstanta.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Konstanta Pemisahan</h3>
+
+        <p>
+            Konstanta tersebut dinotasikan dengan
+            <span class="text-math-inline">-\lambda</span>, sehingga:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{T'(t)}{kT(t)}
+=
+\frac{X''(x)}{X(x)}
+=
+-\lambda
+$$
+        </div>
+
+        <p>
+            Dari proses ini diperoleh dua Persamaan Diferensial Biasa:
+        </p>
+
+        <div class="text-math">
+$$
+X''+\lambda X = 0
+$$
+        </div>
+
+        <div class="text-math">
+$$
+T'+k\lambda T = 0
+$$
+        </div>
+
+        <p>
+            Persamaan pertama disebut masalah ruang, sedangkan persamaan kedua disebut
+            masalah waktu.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Penyelesaian Persamaan Ruang</h3>
+
+        <p>
+            Persamaan ruang adalah:
+        </p>
+
+        <div class="text-math">
+$$
+X''+\lambda X=0
+$$
+        </div>
+
+        <p>
+            Dengan kondisi batas:
+        </p>
+
+        <div class="text-math">
+$$
+X(0)=0,
+\qquad
+X(L)=0
+$$
+        </div>
+
+        <p>
+            Agar diperoleh solusi non-trivial, nilai
+            <span class="text-math-inline">\lambda</span> harus memenuhi:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+\lambda_n
+=
+\frac{n^2\pi^2}{L^2},
+\qquad
+n=1,2,3,\ldots
+$$
+        </div>
+
+        <p>
+            Fungsi eigennya adalah:
+        </p>
+
+        <div class="text-math">
+$$
+X_n(x)
+=
+\sin\left(\frac{n\pi x}{L}\right)
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Penyelesaian Persamaan Waktu</h3>
+
+        <p>
+            Untuk setiap nilai eigen
+            <span class="text-math-inline">\lambda_n</span>, persamaan waktu menjadi:
+        </p>
+
+        <div class="text-math">
+$$
+T'(t)
++
+k\lambda_n T(t)=0
+$$
+        </div>
+
+        <p>
+            Solusinya adalah:
+        </p>
+
+        <div class="text-math">
+$$
+T_n(t)
+=
+e^{-k\lambda_n t}
+$$
+        </div>
+
+        <p>
+            Setelah mengganti nilai
+            <span class="text-math-inline">\lambda_n</span>, diperoleh:
+        </p>
+
+        <div class="text-math">
+$$
+T_n(t)
+=
+e^{-\frac{kn^2\pi^2}{L^2}t}
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Solusi Parsial</h3>
+
+        <p>
+            Setiap pasangan fungsi eigen menghasilkan satu solusi parsial:
+        </p>
+
+        <div class="text-math">
+$$
+u_n(x,t)
+=
+X_n(x)T_n(t)
+$$
+        </div>
+
+        <p>
+            sehingga:
+        </p>
+
+        <div class="text-math">
+$$
+u_n(x,t)
+=
+\sin\left(\frac{n\pi x}{L}\right)
+e^{-\frac{kn^2\pi^2}{L^2}t}
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Prinsip Superposisi</h3>
+
+        <p>
+            Karena persamaan panas bersifat linear dan homogen, maka solusi umum
+            diperoleh melalui penjumlahan seluruh solusi parsial:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+u(x,t)
+=
+\sum_{n=1}^{\infty}
+c_n
+\sin\left(\frac{n\pi x}{L}\right)
+e^{-\frac{kn^2\pi^2}{L^2}t}
+$$
+        </div>
+
+        <p>
+            Konstanta
+            <span class="text-math-inline">c_n</span> ditentukan dari kondisi awal:
+        </p>
+
+        <div class="text-math">
+$$
+u(x,0)=f(x)
+$$
+        </div>
+
+        <p>
+            sehingga:
+        </p>
+
+        <div class="text-math">
+$$
+f(x)
+=
+\sum_{n=1}^{\infty}
+c_n
+\sin\left(\frac{n\pi x}{L}\right)
+$$
+        </div>
+
+        <p>
+            Bentuk tersebut merupakan deret Fourier sinus dari fungsi awal
+            <span class="text-math-inline">f(x)</span>.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Koefisien Fourier</h3>
+
+        <p>
+            Koefisien Fourier diperoleh menggunakan:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+c_n
+=
+\frac{2}{L}
+\int_0^L
+f(x)
+\sin\left(\frac{n\pi x}{L}\right)\,dx
+$$
+        </div>
+
+        <p>
+            Setiap koefisien menyatakan kontribusi mode ke-
+            <span class="text-math-inline">n</span> terhadap distribusi suhu total.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Interpretasi Fisik</h3>
+
+        <p>
+            Faktor eksponensial:
+        </p>
+
+        <div class="text-math">
+$$
+e^{-\frac{kn^2\pi^2}{L^2}t}
+$$
+        </div>
+
+        <p>
+            menunjukkan bahwa setiap mode suhu mengalami peluruhan seiring waktu.
+            Mode dengan frekuensi lebih tinggi meluruh lebih cepat dibanding mode
+            frekuensi rendah.
+        </p>
+
+        <p>
+            Dalam jangka waktu yang sangat lama, seluruh distribusi suhu akan menuju
+            keadaan setimbang:
+        </p>
+
+        <div class="text-math">
+$$
+u(x,t)\to 0
+\qquad
+\text{ketika}
+\qquad
+t\to\infty
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Metode pemisahan variabel mengubah persamaan panas menjadi dua Persamaan
+            Diferensial Biasa yang lebih mudah diselesaikan.
+        </p>
+
+        <p>
+            Kondisi batas menghasilkan masalah nilai eigen yang menentukan nilai eigen
+            dan fungsi eigen. Solusi umum kemudian dibangun melalui prinsip
+            superposisi dalam bentuk deret Fourier.
+        </p>
+
+        <p>
+            Metode ini merupakan dasar penting dalam analisis matematis berbagai
+            fenomena difusi dan perpindahan panas.
+        </p>
+    </div>
+
+</div>

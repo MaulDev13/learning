@@ -1,0 +1,525 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Persamaan Gelombang</h2>
+
+        <p>
+            Persamaan gelombang merupakan salah satu Persamaan Diferensial Parsial
+            fundamental yang digunakan untuk memodelkan fenomena getaran dan perambatan
+            gelombang pada berbagai medium fisik.
+        </p>
+
+        <p>
+            Persamaan ini muncul dalam berbagai bidang, seperti getaran tali,
+            gelombang suara, gelombang elektromagnetik, dan dinamika elastis.
+        </p>
+
+        <p>
+            Bentuk umum persamaan gelombang satu dimensi adalah:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial^2 u}{\partial t^2}
+=
+c^2
+\frac{\partial^2 u}{\partial x^2}
+$$
+        </div>
+
+        <p>
+            Fungsi <span class="text-math-inline">u(x,t)</span> menyatakan simpangan
+            medium pada posisi
+            <span class="text-math-inline">x</span> dan waktu
+            <span class="text-math-inline">t</span>, sedangkan konstanta
+            <span class="text-math-inline">c</span> menyatakan kecepatan rambat
+            gelombang.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Model Getaran Tali</h3>
+
+        <p>
+            Misalkan sebuah tali homogen memiliki panjang
+            <span class="text-math-inline">L</span> dan kedua ujungnya diikat tetap.
+            Simpangan tali dinyatakan oleh:
+        </p>
+
+        <div class="text-math">
+$$
+u(x,t),
+\qquad
+0 &lt; x &lt; L,
+\quad
+t &gt; 0
+$$
+        </div>
+
+        <p>
+            Karena kedua ujung tali tetap, maka kondisi batasnya adalah:
+        </p>
+
+        <div class="text-math">
+$$
+u(0,t)=0,
+\qquad
+u(L,t)=0
+$$
+        </div>
+
+        <p>
+            Selain itu diberikan kondisi awal berupa bentuk awal tali dan kecepatan
+            awal tali:
+        </p>
+
+        <div class="text-math">
+$$
+u(x,0)=f(x)
+$$
+        </div>
+
+        <div class="text-math">
+$$
+\frac{\partial u}{\partial t}(x,0)=g(x)
+$$
+        </div>
+
+        <p>
+            Tujuan utama adalah menentukan fungsi
+            <span class="text-math-inline">u(x,t)</span> yang memenuhi persamaan
+            gelombang beserta seluruh kondisi yang diberikan.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Asumsi Pemisahan Variabel</h3>
+
+        <p>
+            Metode pemisahan variabel dimulai dengan mengasumsikan solusi berbentuk:
+        </p>
+
+        <div class="text-math">
+$$
+u(x,t)=X(x)T(t)
+$$
+        </div>
+
+        <p>
+            Fungsi
+            <span class="text-math-inline">X(x)</span>
+            hanya bergantung pada variabel ruang, sedangkan
+            <span class="text-math-inline">T(t)</span>
+            hanya bergantung pada waktu.
+        </p>
+
+        <p>
+            Asumsi ini memungkinkan PDP diubah menjadi dua Persamaan Diferensial
+            Biasa yang saling terpisah.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Substitusi ke Persamaan Gelombang</h3>
+
+        <p>
+            Dari:
+        </p>
+
+        <div class="text-math">
+$$
+u(x,t)=X(x)T(t)
+$$
+        </div>
+
+        <p>
+            diperoleh:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial^2 u}{\partial t^2}
+=
+X(x)T''(t)
+$$
+        </div>
+
+        <div class="text-math">
+$$
+\frac{\partial^2 u}{\partial x^2}
+=
+X''(x)T(t)
+$$
+        </div>
+
+        <p>
+            Substitusi ke persamaan gelombang menghasilkan:
+        </p>
+
+        <div class="text-math">
+$$
+X(x)T''(t)
+=
+c^2X''(x)T(t)
+$$
+        </div>
+
+        <p>
+            Membagi kedua ruas dengan
+            <span class="text-math-inline">c^2X(x)T(t)</span>
+            diperoleh:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{T''(t)}{c^2T(t)}
+=
+\frac{X''(x)}{X(x)}
+$$
+        </div>
+
+        <p>
+            Karena ruas kiri hanya bergantung pada
+            <span class="text-math-inline">t</span>
+            dan ruas kanan hanya bergantung pada
+            <span class="text-math-inline">x</span>,
+            maka keduanya harus sama dengan suatu konstanta.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Konstanta Pemisahan</h3>
+
+        <p>
+            Konstanta pemisahan dipilih sebagai:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{T''(t)}{c^2T(t)}
+=
+\frac{X''(x)}{X(x)}
+=
+-\lambda
+$$
+        </div>
+
+        <p>
+            Dari proses ini diperoleh dua Persamaan Diferensial Biasa:
+        </p>
+
+        <div class="text-math">
+$$
+X''+\lambda X=0
+$$
+        </div>
+
+        <div class="text-math">
+$$
+T''+c^2\lambda T=0
+$$
+        </div>
+
+        <p>
+            Persamaan pertama merupakan masalah ruang dan persamaan kedua merupakan
+            masalah waktu.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Penyelesaian Persamaan Ruang</h3>
+
+        <p>
+            Persamaan ruang:
+        </p>
+
+        <div class="text-math">
+$$
+X''+\lambda X=0
+$$
+        </div>
+
+        <p>
+            harus memenuhi kondisi batas:
+        </p>
+
+        <div class="text-math">
+$$
+X(0)=0,
+\qquad
+X(L)=0
+$$
+        </div>
+
+        <p>
+            Agar diperoleh solusi non-trivial, maka nilai eigen yang diperbolehkan adalah:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+\lambda_n
+=
+\frac{n^2\pi^2}{L^2},
+\qquad
+n=1,2,3,\ldots
+$$
+        </div>
+
+        <p>
+            Fungsi eigennya adalah:
+        </p>
+
+        <div class="text-math">
+$$
+X_n(x)
+=
+\sin\left(\frac{n\pi x}{L}\right)
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Penyelesaian Persamaan Waktu</h3>
+
+        <p>
+            Untuk setiap nilai eigen
+            <span class="text-math-inline">\lambda_n</span>,
+            persamaan waktu menjadi:
+        </p>
+
+        <div class="text-math">
+$$
+T''+c^2\lambda_nT=0
+$$
+        </div>
+
+        <p>
+            Setelah mensubstitusikan nilai
+            <span class="text-math-inline">\lambda_n</span>,
+            diperoleh:
+        </p>
+
+        <div class="text-math">
+$$
+T''
++
+\frac{c^2n^2\pi^2}{L^2}T
+=
+0
+$$
+        </div>
+
+        <p>
+            Persamaan ini merupakan Persamaan Diferensial Biasa linear homogen orde dua
+            dengan solusi:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+T_n(t)
+=
+A_n\cos\left(\frac{cn\pi}{L}t\right)
++
+B_n\sin\left(\frac{cn\pi}{L}t\right)
+$$
+        </div>
+
+        <p>
+            Konstanta
+            <span class="text-math-inline">A_n</span>
+            dan
+            <span class="text-math-inline">B_n</span>
+            ditentukan dari kondisi awal.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Solusi Parsial</h3>
+
+        <p>
+            Setiap pasangan fungsi eigen menghasilkan satu solusi parsial:
+        </p>
+
+        <div class="text-math">
+$$
+u_n(x,t)
+=
+X_n(x)T_n(t)
+$$
+        </div>
+
+        <p>
+            sehingga:
+        </p>
+
+        <div class="text-math">
+$$
+u_n(x,t)
+=
+\sin\left(\frac{n\pi x}{L}\right)
+\left[
+A_n\cos\left(\frac{cn\pi}{L}t\right)
++
+B_n\sin\left(\frac{cn\pi}{L}t\right)
+\right]
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Prinsip Superposisi</h3>
+
+        <p>
+            Karena persamaan gelombang bersifat linear dan homogen, maka solusi umum
+            diperoleh dengan menjumlahkan seluruh solusi parsial:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+u(x,t)
+=
+\sum_{n=1}^{\infty}
+\sin\left(\frac{n\pi x}{L}\right)
+\left[
+A_n\cos\left(\frac{cn\pi}{L}t\right)
++
+B_n\sin\left(\frac{cn\pi}{L}t\right)
+\right]
+$$
+        </div>
+
+        <p>
+            Bentuk ini menyatakan bahwa getaran total merupakan kombinasi dari mode-mode
+            getaran harmonik.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Penentuan Koefisien Fourier</h3>
+
+        <p>
+            Kondisi awal:
+        </p>
+
+        <div class="text-math">
+$$
+u(x,0)=f(x)
+$$
+        </div>
+
+        <p>
+            menghasilkan:
+        </p>
+
+        <div class="text-math">
+$$
+f(x)
+=
+\sum_{n=1}^{\infty}
+A_n
+\sin\left(\frac{n\pi x}{L}\right)
+$$
+        </div>
+
+        <p>
+            sehingga:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+A_n
+=
+\frac{2}{L}
+\int_0^L
+f(x)
+\sin\left(\frac{n\pi x}{L}\right)\,dx
+$$
+        </div>
+
+        <p>
+            Sementara kondisi:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial u}{\partial t}(x,0)=g(x)
+$$
+        </div>
+
+        <p>
+            menghasilkan:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+B_n
+=
+\frac{2}{cn\pi}
+\int_0^L
+g(x)
+\sin\left(\frac{n\pi x}{L}\right)\,dx
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Interpretasi Fisik</h3>
+
+        <p>
+            Setiap suku dalam solusi umum merepresentasikan suatu mode getaran alami
+            dari sistem.
+        </p>
+
+        <p>
+            Faktor:
+        </p>
+
+        <div class="text-math">
+$$
+\sin\left(\frac{n\pi x}{L}\right)
+$$
+        </div>
+
+        <p>
+            menentukan bentuk spasial gelombang, sedangkan:
+        </p>
+
+        <div class="text-math">
+$$
+\cos\left(\frac{cn\pi}{L}t\right),
+\qquad
+\sin\left(\frac{cn\pi}{L}t\right)
+$$
+        </div>
+
+        <p>
+            menentukan osilasi terhadap waktu.
+        </p>
+
+        <p>
+            Berbeda dengan persamaan panas, amplitudo pada persamaan gelombang tidak
+            mengalami peluruhan karena energi sistem dianggap tetap.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Metode pemisahan variabel pada persamaan gelombang mengubah Persamaan
+            Diferensial Parsial menjadi dua Persamaan Diferensial Biasa yang lebih
+            mudah diselesaikan.
+        </p>
+
+        <p>
+            Kondisi batas menghasilkan masalah nilai eigen yang menentukan fungsi
+            eigen dan frekuensi alami sistem.
+        </p>
+
+        <p>
+            Solusi umum diperoleh melalui prinsip superposisi dalam bentuk deret
+            Fourier yang merepresentasikan kombinasi berbagai mode getaran harmonik.
+        </p>
+    </div>
+
+</div>

@@ -1,0 +1,564 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Persamaan Laplace</h2>
+
+        <p>
+            Persamaan Laplace merupakan salah satu Persamaan Diferensial Parsial
+            paling penting dalam fisika matematika. Persamaan ini digunakan untuk
+            memodelkan keadaan setimbang pada berbagai fenomena fisik, seperti distribusi
+            temperatur tunak, potensial listrik, aliran fluida, dan gravitasi.
+        </p>
+
+        <p>
+            Bentuk umum persamaan Laplace dua dimensi adalah:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial^2 u}{\partial x^2}
++
+\frac{\partial^2 u}{\partial y^2}
+=
+0
+$$
+        </div>
+
+        <p>
+            Fungsi
+            <span class="text-math-inline">u(x,y)</span>
+            disebut fungsi harmonik dan menyatakan keadaan sistem yang tidak berubah
+            terhadap waktu.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Interpretasi Fisik</h3>
+
+        <p>
+            Persamaan Laplace menggambarkan kondisi tunak atau keadaan setimbang,
+            yaitu keadaan ketika distribusi suatu besaran fisik tidak lagi berubah.
+        </p>
+
+        <p>
+            Sebagai contoh, pada perpindahan panas, persamaan Laplace muncul ketika
+            distribusi temperatur telah mencapai keadaan stabil sehingga:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial u}{\partial t}=0
+$$
+        </div>
+
+        <p>
+            Dengan demikian, persamaan panas:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial u}{\partial t}
+=
+k
+\frac{\partial^2 u}{\partial x^2}
+$$
+        </div>
+
+        <p>
+            berubah menjadi:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial^2 u}{\partial x^2}=0
+$$
+        </div>
+
+        <p>
+            Dalam dua dimensi, kondisi setimbang menghasilkan persamaan Laplace.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Domain Persegi Panjang</h3>
+
+        <p>
+            Misalkan fungsi
+            <span class="text-math-inline">u(x,y)</span>
+            didefinisikan pada domain persegi panjang:
+        </p>
+
+        <div class="text-math">
+$$
+0&lt;x&lt;L,
+\qquad
+0&lt;y&lt;H
+$$
+        </div>
+
+        <p>
+            Persamaan Laplace pada domain tersebut adalah:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial^2 u}{\partial x^2}
++
+\frac{\partial^2 u}{\partial y^2}
+=
+0
+$$
+        </div>
+
+        <p>
+            Untuk memperoleh solusi unik, diperlukan kondisi batas pada sisi-sisi
+            domain.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kondisi Batas</h3>
+
+        <p>
+            Sebagai contoh, misalkan diberikan kondisi batas:
+        </p>
+
+        <div class="text-math">
+$$
+u(0,y)=0
+$$
+        </div>
+
+        <div class="text-math">
+$$
+u(L,y)=0
+$$
+        </div>
+
+        <div class="text-math">
+$$
+u(x,0)=0
+$$
+        </div>
+
+        <div class="text-math">
+$$
+u(x,H)=f(x)
+$$
+        </div>
+
+        <p>
+            Kondisi tersebut menyatakan bahwa tiga sisi domain dijaga pada nilai nol,
+            sedangkan sisi atas memiliki distribusi tertentu
+            <span class="text-math-inline">f(x)</span>.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Asumsi Pemisahan Variabel</h3>
+
+        <p>
+            Metode pemisahan variabel dimulai dengan mengasumsikan solusi berbentuk:
+        </p>
+
+        <div class="text-math">
+$$
+u(x,y)=X(x)Y(y)
+$$
+        </div>
+
+        <p>
+            Fungsi
+            <span class="text-math-inline">X(x)</span>
+            hanya bergantung pada variabel
+            <span class="text-math-inline">x</span>,
+            sedangkan
+            <span class="text-math-inline">Y(y)</span>
+            hanya bergantung pada variabel
+            <span class="text-math-inline">y</span>.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Substitusi ke Persamaan Laplace</h3>
+
+        <p>
+            Dari:
+        </p>
+
+        <div class="text-math">
+$$
+u(x,y)=X(x)Y(y)
+$$
+        </div>
+
+        <p>
+            diperoleh:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial^2 u}{\partial x^2}
+=
+X''(x)Y(y)
+$$
+        </div>
+
+        <div class="text-math">
+$$
+\frac{\partial^2 u}{\partial y^2}
+=
+X(x)Y''(y)
+$$
+        </div>
+
+        <p>
+            Substitusi ke persamaan Laplace menghasilkan:
+        </p>
+
+        <div class="text-math">
+$$
+X''(x)Y(y)
++
+X(x)Y''(y)
+=
+0
+$$
+        </div>
+
+        <p>
+            Membagi kedua ruas dengan
+            <span class="text-math-inline">X(x)Y(y)</span>
+            diperoleh:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{X''(x)}{X(x)}
++
+\frac{Y''(y)}{Y(y)}
+=
+0
+$$
+        </div>
+
+        <p>
+            Karena masing-masing ruas bergantung pada variabel yang berbeda,
+            maka keduanya harus sama dengan konstanta.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Konstanta Pemisahan</h3>
+
+        <p>
+            Konstanta pemisahan dipilih sebagai:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{X''(x)}{X(x)}
+=
+-\lambda,
+\qquad
+\frac{Y''(y)}{Y(y)}
+=
+\lambda
+$$
+        </div>
+
+        <p>
+            Dengan demikian diperoleh dua Persamaan Diferensial Biasa:
+        </p>
+
+        <div class="text-math">
+$$
+X''+\lambda X=0
+$$
+        </div>
+
+        <div class="text-math">
+$$
+Y''-\lambda Y=0
+$$
+        </div>
+
+        <p>
+            Persamaan pertama menghasilkan fungsi trigonometri, sedangkan persamaan
+            kedua menghasilkan fungsi hiperbolik atau eksponensial.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Penyelesaian Persamaan Ruang</h3>
+
+        <p>
+            Persamaan:
+        </p>
+
+        <div class="text-math">
+$$
+X''+\lambda X=0
+$$
+        </div>
+
+        <p>
+            dengan kondisi batas:
+        </p>
+
+        <div class="text-math">
+$$
+X(0)=0,
+\qquad
+X(L)=0
+$$
+        </div>
+
+        <p>
+            memiliki solusi non-trivial apabila:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+\lambda_n
+=
+\frac{n^2\pi^2}{L^2},
+\qquad
+n=1,2,3,\ldots
+$$
+        </div>
+
+        <p>
+            Fungsi eigennya adalah:
+        </p>
+
+        <div class="text-math">
+$$
+X_n(x)
+=
+\sin\left(\frac{n\pi x}{L}\right)
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Penyelesaian Persamaan Vertikal</h3>
+
+        <p>
+            Untuk setiap nilai eigen
+            <span class="text-math-inline">\lambda_n</span>,
+            persamaan:
+        </p>
+
+        <div class="text-math">
+$$
+Y''-\lambda_nY=0
+$$
+        </div>
+
+        <p>
+            memiliki solusi umum:
+        </p>
+
+        <div class="text-math">
+$$
+Y_n(y)
+=
+A_ne^{\sqrt{\lambda_n}y}
++
+B_ne^{-\sqrt{\lambda_n}y}
+$$
+        </div>
+
+        <p>
+            Atau dapat ditulis dalam bentuk fungsi hiperbolik:
+        </p>
+
+        <div class="text-math">
+$$
+Y_n(y)
+=
+A_n\sinh(\sqrt{\lambda_n}y)
++
+B_n\cosh(\sqrt{\lambda_n}y)
+$$
+        </div>
+
+        <p>
+            Karena kondisi:
+        </p>
+
+        <div class="text-math">
+$$
+u(x,0)=0
+$$
+        </div>
+
+        <p>
+            maka diperoleh:
+        </p>
+
+        <div class="text-math">
+$$
+Y_n(0)=0
+$$
+        </div>
+
+        <p>
+            sehingga:
+        </p>
+
+        <div class="text-math">
+$$
+Y_n(y)
+=
+A_n\sinh(\sqrt{\lambda_n}y)
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Solusi Parsial</h3>
+
+        <p>
+            Setiap pasangan fungsi eigen menghasilkan solusi parsial:
+        </p>
+
+        <div class="text-math">
+$$
+u_n(x,y)
+=
+X_n(x)Y_n(y)
+$$
+        </div>
+
+        <p>
+            sehingga:
+        </p>
+
+        <div class="text-math">
+$$
+u_n(x,y)
+=
+A_n
+\sin\left(\frac{n\pi x}{L}\right)
+\sinh\left(\frac{n\pi y}{L}\right)
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Prinsip Superposisi</h3>
+
+        <p>
+            Karena persamaan Laplace bersifat linear dan homogen, maka solusi umum
+            diperoleh melalui penjumlahan seluruh solusi parsial:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+u(x,y)
+=
+\sum_{n=1}^{\infty}
+A_n
+\sin\left(\frac{n\pi x}{L}\right)
+\sinh\left(\frac{n\pi y}{L}\right)
+$$
+        </div>
+
+        <p>
+            Koefisien
+            <span class="text-math-inline">A_n</span>
+            ditentukan dari kondisi batas pada sisi atas domain.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Penentuan Koefisien Fourier</h3>
+
+        <p>
+            Dari kondisi:
+        </p>
+
+        <div class="text-math">
+$$
+u(x,H)=f(x)
+$$
+        </div>
+
+        <p>
+            diperoleh:
+        </p>
+
+        <div class="text-math">
+$$
+f(x)
+=
+\sum_{n=1}^{\infty}
+A_n
+\sin\left(\frac{n\pi x}{L}\right)
+\sinh\left(\frac{n\pi H}{L}\right)
+$$
+        </div>
+
+        <p>
+            Maka koefisien Fourier adalah:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+A_n
+=
+\frac{
+2
+}{
+L\sinh\left(\frac{n\pi H}{L}\right)
+}
+\int_0^L
+f(x)
+\sin\left(\frac{n\pi x}{L}\right)\,dx
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Interpretasi Solusi</h3>
+
+        <p>
+            Solusi persamaan Laplace menggambarkan distribusi setimbang dari suatu
+            besaran fisik di dalam domain.
+        </p>
+
+        <p>
+            Fungsi sinus menentukan variasi horizontal solusi, sedangkan fungsi
+            hiperbolik menentukan perubahan vertikal di dalam domain.
+        </p>
+
+        <p>
+            Tidak seperti persamaan panas dan persamaan gelombang, persamaan Laplace
+            tidak melibatkan variabel waktu sehingga solusi tidak menggambarkan evolusi,
+            melainkan keadaan tunak sistem.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Metode pemisahan variabel pada persamaan Laplace mengubah Persamaan
+            Diferensial Parsial menjadi dua Persamaan Diferensial Biasa yang dapat
+            diselesaikan secara terpisah.
+        </p>
+
+        <p>
+            Kondisi batas menghasilkan masalah nilai eigen yang menentukan fungsi
+            eigen dan bentuk solusi pada domain.
+        </p>
+
+        <p>
+            Solusi umum dibangun melalui prinsip superposisi dalam bentuk deret Fourier
+            yang memenuhi seluruh kondisi batas yang diberikan.
+        </p>
+    </div>
+
+</div>

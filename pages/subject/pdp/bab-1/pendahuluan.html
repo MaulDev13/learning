@@ -1,255 +1,677 @@
 <div class="card-group">
 
     <div class="card card--soft">
-        <h2>Pendahuluan Persamaan Diferensial Parsial</h2>
-        <p>
-            Persamaan Diferensial Parsial (PDP) merupakan salah satu cabang penting dalam
-            matematika analisis yang digunakan untuk memodelkan berbagai fenomena alam dan
-            rekayasa yang melibatkan lebih dari satu variabel bebas.
-        </p>
-        <p>
-            Fenomena seperti aliran panas, perambatan gelombang, dan difusi partikel
-            semuanya dapat dideskripsikan secara matematis menggunakan PDP. Pemahaman
-            terhadap struktur dan sifat PDP menjadi fondasi utama dalam analisis
-            sistem fisis dan rekayasa modern.
-        </p>
-    </div>
+        <h2>Definisi Persamaan Diferensial Parsial</h2>
 
-    <div class="card card--soft">
-        <h3>Definisi Persamaan Diferensial Parsial</h3>
         <p>
-            Persamaan Diferensial Parsial adalah persamaan yang memuat suatu fungsi
-            tak diketahui dari dua atau lebih variabel bebas beserta turunan parsial
-            dari fungsi tersebut.
+            Persamaan Diferensial Parsial atau disingkat PDP adalah cabang matematika
+            yang digunakan untuk mempelajari perubahan suatu keadaan terhadap beberapa
+            hal sekaligus, biasanya terhadap ruang dan waktu.
         </p>
-        <p>
-            Secara umum, apabila \( u = u(x_1, x_2, \ldots, x_n) \) adalah fungsi
-            yang tidak diketahui, maka PDP dapat dinyatakan dalam bentuk berikut.
-        </p>
-        <div class="katex">
-$$
-F\!\left(x_1, \ldots, x_n,\, u,\, \frac{\partial u}{\partial x_1}, \ldots, \frac{\partial u}{\partial x_n},\, \frac{\partial^2 u}{\partial x_1^2}, \ldots\right) = 0
-$$
-        </div>
-        <p>
-            Fungsi \( F \) adalah fungsi yang diketahui, sedangkan \( u \) adalah fungsi
-            yang akan ditentukan sebagai solusi.
-        </p>
-    </div>
 
-    <div class="card card--soft">
-        <h3>Notasi Turunan Parsial</h3>
         <p>
-            Turunan parsial \( u \) terhadap variabel \( x \) dapat ditulis dalam
-            beberapa notasi yang ekuivalen sebagai berikut.
+            Dalam kehidupan sehari-hari, banyak hal tidak bersifat tetap. Suhu dapat berubah,
+            suara dapat merambat, air dapat mengalir, dan gelombang dapat bergerak.
+            PDP digunakan untuk menjelaskan bagaimana perubahan-perubahan tersebut terjadi.
         </p>
-        <div class="katex">
-$$
-\frac{\partial u}{\partial x} = u_x = \partial_x u
-$$
-        </div>
+
         <p>
-            Turunan parsial orde dua murni dan turunan campuran ditulis sebagai berikut.
+            Secara sederhana, PDP membantu menjawab pertanyaan seperti:
         </p>
-        <div class="katex">
-$$
-\frac{\partial^2 u}{\partial x^2} = u_{xx}, \qquad \frac{\partial^2 u}{\partial x\,\partial y} = u_{xy}
-$$
-        </div>
+
         <table class="table">
             <tr>
-                <th>Notasi Leibniz</th>
-                <th>Notasi Subskrip</th>
-                <th>Keterangan</th>
+                <th>Pertanyaan</th>
+                <th>Contoh Fenomena</th>
             </tr>
+
             <tr>
-                <td>\( \dfrac{\partial u}{\partial x} \)</td>
-                <td>\( u_x \)</td>
-                <td>Turunan parsial orde satu terhadap \( x \)</td>
+                <td>
+                    Bagaimana panas menyebar dari satu titik ke titik lain?
+                </td>
+                <td>
+                    Batang besi yang dipanaskan di salah satu ujungnya.
+                </td>
             </tr>
+
             <tr>
-                <td>\( \dfrac{\partial^2 u}{\partial x^2} \)</td>
-                <td>\( u_{xx} \)</td>
-                <td>Turunan parsial orde dua murni terhadap \( x \)</td>
+                <td>
+                    Bagaimana suara bergerak di udara?
+                </td>
+                <td>
+                    Gelombang suara dari speaker menuju pendengar.
+                </td>
             </tr>
+
             <tr>
-                <td>\( \dfrac{\partial^2 u}{\partial x\,\partial y} \)</td>
-                <td>\( u_{xy} \)</td>
-                <td>Turunan parsial campuran terhadap \( x \) dan \( y \)</td>
+                <td>
+                    Bagaimana getaran bergerak pada tali?
+                </td>
+                <td>
+                    Senar gitar yang dipetik.
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Bagaimana cairan mengalir?
+                </td>
+                <td>
+                    Aliran air di sungai atau pipa.
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Bagaimana konsentrasi zat berubah?
+                </td>
+                <td>
+                    Tetes tinta yang menyebar di air.
+                </td>
             </tr>
         </table>
-    </div>
 
-    <div class="card card--soft">
-        <h3>Perbedaan dengan Persamaan Diferensial Biasa</h3>
         <p>
-            Persamaan Diferensial Biasa (PDB) hanya melibatkan satu variabel bebas dan
-            turunan biasa, sedangkan PDP melibatkan dua atau lebih variabel bebas dan
-            turunan parsial. Perbedaan ini membawa konsekuensi mendasar terhadap
-            struktur solusi yang dihasilkan.
+            Jadi, PDP bukan hanya tentang “menghitung percepatan dari kecepatan”.
+            PDP jauh lebih luas karena digunakan untuk memodelkan berbagai proses perubahan
+            yang terjadi secara terus-menerus.
         </p>
-        <table class="table">
-            <tr>
-                <th>Aspek</th>
-                <th>PDB</th>
-                <th>PDP</th>
-            </tr>
-            <tr>
-                <td>Variabel bebas</td>
-                <td>Satu</td>
-                <td>Dua atau lebih</td>
-            </tr>
-            <tr>
-                <td>Jenis turunan</td>
-                <td>Turunan biasa \( \dfrac{d}{dx} \)</td>
-                <td>Turunan parsial \( \dfrac{\partial}{\partial x} \)</td>
-            </tr>
-            <tr>
-                <td>Solusi umum</td>
-                <td>Mengandung konstanta arbitrer</td>
-                <td>Mengandung fungsi arbitrer</td>
-            </tr>
-            <tr>
-                <td>Contoh</td>
-                <td>\( \dfrac{du}{dx} + u = 0 \)</td>
-                <td>\( \dfrac{\partial u}{\partial x} + \dfrac{\partial u}{\partial y} = 0 \)</td>
-            </tr>
-        </table>
-    </div>
 
-    <div class="card card--soft">
-        <h3>Contoh PDP yang Sering Dijumpai</h3>
         <p>
-            Berikut adalah beberapa PDP yang paling sering muncul dalam pemodelan
-            fenomena fisika dan rekayasa beserta klasifikasinya.
+            Dalam fisika dasar, kita mungkin pernah melihat hubungan seperti:
         </p>
-        <table class="table">
-            <tr>
-                <th>Persamaan</th>
-                <th>Nama</th>
-                <th>Kelas</th>
-            </tr>
-            <tr>
-                <td>\( u_x + u_y = 0 \)</td>
-                <td>Transport</td>
-                <td>Linear orde satu</td>
-            </tr>
-            <tr>
-                <td>\( u_{xx} + u_{yy} = 0 \)</td>
-                <td>Laplace</td>
-                <td>Eliptik</td>
-            </tr>
-            <tr>
-                <td>\( u_t = k\, u_{xx} \)</td>
-                <td>Panas</td>
-                <td>Parabolik</td>
-            </tr>
-            <tr>
-                <td>\( u_{tt} = c^2 u_{xx} \)</td>
-                <td>Gelombang</td>
-                <td>Hiperbolik</td>
-            </tr>
-            <tr>
-                <td>\( u_{xx} + u_{yy} = f(x,y) \)</td>
-                <td>Poisson</td>
-                <td>Eliptik</td>
-            </tr>
-        </table>
-    </div>
 
-    <div class="card card--soft">
-        <h3>Solusi PDP dan Kondisi Tambahan</h3>
-        <p>
-            Solusi suatu PDP adalah fungsi \( u \) yang memenuhi persamaan tersebut
-            pada suatu domain tertentu. Berbeda dengan PDB, solusi umum PDP mengandung
-            fungsi arbitrer, sehingga keluarga solusinya sangat luas.
-        </p>
-        <p>
-            Sebagai contoh, persamaan gelombang \( u_{tt} = c^2 u_{xx} \) memiliki
-            solusi umum berbentuk berikut, dengan \( f \) dan \( g \) adalah
-            fungsi arbitrer.
-        </p>
-        <div class="katex">
-$$
-u(x,t) = f(x - ct) + g(x + ct)
-$$
+        <div class="text-math-highlight">
+        $$
+        \text{kecepatan}
+        =
+        \frac{d(\text{posisi})}{dt}
+        $$
         </div>
-        <p>
-            Untuk memperoleh solusi yang tunggal, diperlukan kondisi tambahan yang
-            dikenakan pada domain atau batasnya. Kondisi tambahan ini terdiri dari
-            dua jenis sebagai berikut.
-        </p>
-        <table class="table">
-            <tr>
-                <th>Jenis Kondisi</th>
-                <th>Definisi</th>
-                <th>Contoh</th>
-            </tr>
-            <tr>
-                <td>Kondisi awal</td>
-                <td>Nilai \( u \) dan/atau turunannya diberikan pada \( t = 0 \)</td>
-                <td>\( u(x,0) = f(x) \)</td>
-            </tr>
-            <tr>
-                <td>Kondisi batas</td>
-                <td>Nilai \( u \) diberikan pada batas domain spasial</td>
-                <td>\( u(0,t) = 0,\quad u(L,t) = 0 \)</td>
-            </tr>
-        </table>
-    </div>
 
-    <div class="card card--soft">
-        <h3>Peran PDP dalam Ilmu Pengetahuan</h3>
         <p>
-            PDP memainkan peran fundamental dalam pemodelan fenomena kontinu di berbagai
-            bidang ilmu pengetahuan dan rekayasa.
+            Artinya, kecepatan menunjukkan perubahan posisi terhadap waktu.
         </p>
+
+        <p>
+            Kemudian:
+        </p>
+
+        <div class="text-math-highlight">
+        $$
+        \text{percepatan}
+        =
+        \frac{d(\text{kecepatan})}{dt}
+        $$
+        </div>
+
+        <p>
+            Artinya, percepatan menunjukkan perubahan kecepatan terhadap waktu.
+        </p>
+
+        <p>
+            Konsep dasar perubahan inilah yang menjadi inti dari persamaan diferensial.
+        </p>
+
+        <p>
+            Namun pada Persamaan Diferensial Parsial, perubahan tidak hanya terjadi
+            terhadap satu variabel saja.
+        </p>
+
+        <p>
+            Sebagai contoh, suhu pada batang besi dapat berubah:
+        </p>
+
+        <ul>
+            <li>terhadap posisi pada batang,</li>
+            <li>dan juga terhadap waktu.</li>
+        </ul>
+
+        <p>
+            Karena melibatkan lebih dari satu variabel bebas, maka digunakan
+            turunan parsial.
+        </p>
+
+        <p>
+            Misalnya:
+        </p>
+
+        <div class="text-math-highlight">
+        $$
+        u(x,t)
+        $$
+        </div>
+
+        <p>
+            dibaca:
+        </p>
+
+        <div class="text-math">
+        $$
+        \text{“u fungsi x dan t”}
+        $$
+        </div>
+
+        <p>
+            Artinya nilai
+            <span class="text-math-inline">u</span>
+            bergantung pada:
+        </p>
+
+        <ul>
+            <li>
+                <span class="text-math-inline">x</span>
+                → posisi atau tempat,
+            </li>
+
+            <li>
+                <span class="text-math-inline">t</span>
+                → waktu.
+            </li>
+        </ul>
+
+        <p>
+            Jika:
+        </p>
+
+        <div class="text-math-highlight">
+        $$
+        u(x,t)
+        =
+        \text{suhu}
+        $$
+        </div>
+
+        <p>
+            maka suhu dapat berubah:
+        </p>
+
+        <ul>
+            <li>dari satu tempat ke tempat lain,</li>
+            <li>dan juga berubah seiring waktu.</li>
+        </ul>
+
+        <p>
+            Untuk melihat perubahan terhadap waktu digunakan:
+        </p>
+
+        <div class="text-math-highlight">
+        $$
+        \frac{\partial u}{\partial t}
+        $$
+        </div>
+
+        <p>
+            yang berarti:
+        </p>
+
+        <div class="text-math">
+        $$
+        \text{“seberapa cepat suhu berubah terhadap waktu”}
+        $$
+        </div>
+
+        <p>
+            Sedangkan:
+        </p>
+
+        <div class="text-math-highlight">
+        $$
+        \frac{\partial u}{\partial x}
+        $$
+        </div>
+
+        <p>
+            berarti:
+        </p>
+
+        <div class="text-math">
+        $$
+        \text{“seberapa cepat suhu berubah terhadap posisi”}
+        $$
+        </div>
+
+        <p>
+            Jadi PDP sebenarnya adalah alat matematika untuk menggambarkan
+            perubahan yang terjadi pada banyak arah atau banyak variabel sekaligus.
+        </p>
+
+        <p>
+            Salah satu contoh paling terkenal adalah persamaan panas:
+        </p>
+
+        <div class="text-math-highlight">
+        $$
+        \frac{\partial u}{\partial t}
+        =
+        k
+        \frac{\partial^2 u}{\partial x^2}
+        $$
+        </div>
+
+        <p>
+            Persamaan tersebut digunakan untuk menjelaskan bagaimana panas menyebar
+            dari daerah bersuhu tinggi ke daerah bersuhu rendah.
+        </p>
+
+        <p>
+            Contoh lainnya adalah persamaan gelombang:
+        </p>
+
+        <div class="text-math-highlight">
+        $$
+        \frac{\partial^2 u}{\partial t^2}
+        =
+        c^2
+        \frac{\partial^2 u}{\partial x^2}
+        $$
+        </div>
+
+        <p>
+            Persamaan ini digunakan untuk menjelaskan gerakan gelombang,
+            seperti suara, getaran tali, atau gelombang air.
+        </p>
+
+        <p>
+            Karena mampu menggambarkan perubahan yang kompleks,
+            PDP menjadi sangat penting dalam:
+        </p>
+
         <table class="table">
             <tr>
                 <th>Bidang</th>
-                <th>Fenomena</th>
-                <th>PDP Terkait</th>
+                <th>Contoh Penggunaan</th>
             </tr>
+
             <tr>
                 <td>Fisika</td>
-                <td>Konduksi panas, getaran dawai, medan elektromagnetik</td>
-                <td>Panas, gelombang, Maxwell</td>
+                <td>Panas, gelombang, listrik, gravitasi.</td>
             </tr>
+
             <tr>
-                <td>Rekayasa</td>
-                <td>Analisis struktur, dinamika fluida, pemrosesan sinyal</td>
-                <td>Elastisitas, Navier-Stokes, Laplace</td>
+                <td>Teknik</td>
+                <td>Aliran fluida, struktur bangunan, mesin.</td>
             </tr>
+
+            <tr>
+                <td>Kimia</td>
+                <td>Penyebaran zat dan reaksi kimia.</td>
+            </tr>
+
+            <tr>
+                <td>Ekonomi</td>
+                <td>Model perubahan harga dan distribusi.</td>
+            </tr>
+
             <tr>
                 <td>Biologi</td>
-                <td>Penyebaran populasi, difusi obat dalam jaringan</td>
-                <td>Reaksi-difusi, Fisher-KPP</td>
+                <td>Pertumbuhan populasi dan penyebaran penyakit.</td>
             </tr>
+        </table>
+
+        <p>
+            Dengan kata lain, Persamaan Diferensial Parsial adalah bahasa matematika
+            untuk memahami bagaimana sesuatu berubah di dunia nyata.
+        </p>
+
+        <div class="text-math">
+$$
+F\left(
+x,y,u,
+\frac{\partial u}{\partial x},
+\frac{\partial u}{\partial y},
+\frac{\partial^2 u}{\partial x^2},
+\dots
+\right)=0
+$$
+        </div>
+
+        <p>
+            Fungsi
+            <span class="text-math-inline">u</span>
+            merupakan fungsi yang ingin dicari, sedangkan simbol
+            <span class="text-math-inline">\partial</span>
+            menunjukkan turunan parsial.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Apa Itu Turunan Parsial?</h3>
+
+        <p>
+            Sebelum memahami PDP, penting untuk memahami konsep turunan parsial.
+            Turunan parsial digunakan ketika suatu fungsi bergantung pada lebih dari
+            satu variabel.
+        </p>
+
+        <p>
+            Sebagai contoh, misalkan:
+        </p>
+
+        <div class="text-math">
+$$
+u(x,y)=x^2+y^2
+$$
+        </div>
+
+        <p>
+            Fungsi tersebut bergantung pada dua variabel, yaitu
+            <span class="text-math-inline">x</span>
+            dan
+            <span class="text-math-inline">y</span>.
+        </p>
+
+        <p>
+            Turunan parsial terhadap
+            <span class="text-math-inline">x</span>
+            diperoleh dengan menganggap
+            <span class="text-math-inline">y</span>
+            sebagai konstanta:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial u}{\partial x}=2x
+$$
+        </div>
+
+        <p>
+            Sedangkan turunan parsial terhadap
+            <span class="text-math-inline">y</span>
+            adalah:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial u}{\partial y}=2y
+$$
+        </div>
+
+        <p>
+            Konsep inilah yang menjadi dasar dalam Persamaan Diferensial Parsial.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Perbedaan PDB dan PDP</h3>
+
+        <p>
+            Dalam matematika terdapat dua jenis utama persamaan diferensial, yaitu:
+        </p>
+
+        <table class="table">
             <tr>
-                <td>Keuangan</td>
-                <td>Penetapan harga opsi saham</td>
-                <td>Black-Scholes</td>
+                <th>Jenis</th>
+                <th>Karakteristik</th>
+            </tr>
+
+            <tr>
+                <td>Persamaan Diferensial Biasa (PDB)</td>
+                <td>
+                    Melibatkan fungsi dengan satu variabel bebas dan turunan biasa.
+                </td>
+            </tr>
+
+            <tr>
+                <td>Persamaan Diferensial Parsial (PDP)</td>
+                <td>
+                    Melibatkan fungsi dengan beberapa variabel bebas dan turunan parsial.
+                </td>
+            </tr>
+        </table>
+
+        <p>
+            Contoh Persamaan Diferensial Biasa:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{dy}{dx}=2x
+$$
+        </div>
+
+        <p>
+            Fungsi
+            <span class="text-math-inline">y</span>
+            hanya bergantung pada satu variabel, yaitu
+            <span class="text-math-inline">x</span>.
+        </p>
+
+        <p>
+            Contoh Persamaan Diferensial Parsial:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial u}{\partial t}
+=
+\frac{\partial^2 u}{\partial x^2}
+$$
+        </div>
+
+        <p>
+            Fungsi
+            <span class="text-math-inline">u(x,t)</span>
+            bergantung pada dua variabel, yaitu posisi
+            <span class="text-math-inline">x</span>
+            dan waktu
+            <span class="text-math-inline">t</span>.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Mengapa PDP Penting?</h3>
+
+        <p>
+            Banyak proses di alam berubah terhadap ruang dan waktu secara bersamaan.
+            PDP digunakan untuk memodelkan perubahan tersebut secara matematis.
+        </p>
+
+        <p>
+            Beberapa contoh penggunaan PDP dalam kehidupan nyata adalah:
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Fenomena</th>
+                <th>Contoh Penggunaan PDP</th>
+            </tr>
+
+            <tr>
+                <td>Panas</td>
+                <td>Menghitung penyebaran suhu pada logam atau mesin.</td>
+            </tr>
+
+            <tr>
+                <td>Gelombang</td>
+                <td>Memodelkan getaran tali gitar atau gelombang suara.</td>
+            </tr>
+
+            <tr>
+                <td>Fluida</td>
+                <td>Mempelajari aliran air dan udara.</td>
+            </tr>
+
+            <tr>
+                <td>Listrik</td>
+                <td>Menganalisis distribusi potensial listrik.</td>
+            </tr>
+
+            <tr>
+                <td>Teknologi</td>
+                <td>Digunakan dalam simulasi komputer dan kecerdasan buatan.</td>
+            </tr>
+        </table>
+
+        <p>
+            Karena kemampuannya menggambarkan fenomena nyata, PDP menjadi dasar penting
+            dalam ilmu pengetahuan, teknik, dan teknologi modern.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh Sederhana Persamaan Diferensial Parsial</h3>
+
+        <p>
+            Salah satu contoh PDP paling terkenal adalah persamaan panas:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+\frac{\partial u}{\partial t}
+=
+k
+\frac{\partial^2 u}{\partial x^2}
+$$
+        </div>
+
+        <p>
+            Persamaan ini digunakan untuk menggambarkan bagaimana panas menyebar
+            pada suatu benda.
+        </p>
+
+        <p>
+            Pada persamaan tersebut:
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Simbol</th>
+                <th>Makna</th>
+            </tr>
+
+            <tr>
+                <td>\(u(x,t)\)</td>
+                <td>Suhu pada posisi dan waktu tertentu.</td>
+            </tr>
+
+            <tr>
+                <td>\(x\)</td>
+                <td>Posisi atau lokasi.</td>
+            </tr>
+
+            <tr>
+                <td>\(t\)</td>
+                <td>Waktu.</td>
+            </tr>
+
+            <tr>
+                <td>\(k\)</td>
+                <td>Konstanta penyebaran panas.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Bentuk Umum PDP</h3>
+
+        <p>
+            Persamaan Diferensial Parsial dapat memiliki berbagai bentuk dan tingkat
+            kompleksitas.
+        </p>
+
+        <p>
+            Secara sederhana, PDP biasanya melibatkan:
+        </p>
+
+        <ul>
+            <li>Fungsi yang ingin dicari.</li>
+            <li>Turunan parsial orde satu atau lebih tinggi.</li>
+            <li>Beberapa variabel bebas.</li>
+        </ul>
+
+        <p>
+            Sebagai contoh:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial u}{\partial x}
++
+\frac{\partial u}{\partial y}
+=
+0
+$$
+        </div>
+
+        <p>
+            maupun:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial^2 u}{\partial x^2}
++
+\frac{\partial^2 u}{\partial y^2}
+=
+0
+$$
+        </div>
+
+        <p>
+            Keduanya merupakan contoh Persamaan Diferensial Parsial.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Tujuan Mempelajari PDP</h3>
+
+        <p>
+            Dalam mata kuliah Persamaan Diferensial Parsial, tujuan utama bukan hanya
+            memahami bentuk persamaan, tetapi juga mempelajari cara mencari solusi dan
+            memahami makna fisik dari solusi tersebut.
+        </p>
+
+        <p>
+            Mahasiswa akan mempelajari bagaimana:
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Topik</th>
+                <th>Tujuan</th>
+            </tr>
+
+            <tr>
+                <td>Klasifikasi PDP</td>
+                <td>Membedakan jenis-jenis PDP berdasarkan sifatnya.</td>
+            </tr>
+
+            <tr>
+                <td>Metode penyelesaian</td>
+                <td>Mencari solusi analitik maupun numerik.</td>
+            </tr>
+
+            <tr>
+                <td>Kondisi batas</td>
+                <td>Menentukan solusi yang sesuai dengan keadaan fisik.</td>
+            </tr>
+
+            <tr>
+                <td>Aplikasi</td>
+                <td>Menghubungkan matematika dengan fenomena nyata.</td>
             </tr>
         </table>
     </div>
 
     <div class="card card--soft">
         <h3>Kesimpulan</h3>
+
         <p>
-            Persamaan Diferensial Parsial adalah persamaan yang melibatkan fungsi dari
-            beberapa variabel bebas beserta turunan parsialnya. PDP merupakan kerangka
-            matematis utama dalam menganalisis fenomena yang bergantung pada lebih dari
-            satu variabel bebas.
+            Persamaan Diferensial Parsial adalah persamaan yang melibatkan fungsi
+            multivariabel dan turunan parsialnya.
         </p>
+
         <p>
-            Solusi PDP umumnya mengandung fungsi arbitrer, sehingga diperlukan kondisi
-            tambahan berupa kondisi awal dan kondisi batas untuk memperoleh solusi yang tunggal.
+            PDP digunakan untuk memodelkan berbagai fenomena nyata yang berubah
+            terhadap ruang dan waktu, seperti panas, gelombang, dan aliran fluida.
         </p>
+
         <p>
-            Dalam mata kuliah ini, akan dipelajari berbagai metode penyelesaian PDP secara
-            sistematis, meliputi metode karakteristik, pemisahan variabel, deret Fourier,
-            transformasi Fourier dan Laplace, serta metode numerik dasar.
+            Pemahaman dasar mengenai turunan parsial, bentuk umum PDP, dan penerapannya
+            menjadi fondasi penting sebelum mempelajari metode penyelesaian yang lebih
+            lanjut.
         </p>
     </div>
 
-</div>
+</div>  

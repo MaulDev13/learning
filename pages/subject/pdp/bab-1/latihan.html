@@ -1,0 +1,145 @@
+<div class="card-group">
+
+    <!-- HEADER -->
+    <div class="card card--soft">
+        <h3>Latihan Soal Klasifikasi Awal PDP (5 Soal)</h3>
+
+        <p>
+            Pada latihan ini, mahasiswa diminta untuk mengidentifikasi <strong>klasifikasi awal</strong>
+            dari setiap Persamaan Diferensial Parsial (PDP) yang diberikan.
+        </p>
+
+        <p>
+            Tentukan apakah PDP tersebut termasuk:
+            <strong>linear atau non-linear</strong>, serta <strong>homogen atau non-homogen</strong>.
+        </p>
+    </div>
+
+    <!-- SOAL 1 -->
+    <div class="card card--soft">
+        <h3>Soal 1</h3>
+
+        <div class="katex">
+$$
+u_t = k u_{xx}
+$$
+        </div>
+
+        <p>Tentukan klasifikasi awal dari PDP di atas.</p>
+
+        <button class="button button--primary"
+            hx-get="/pages/subject/pdp/bab-1/penyelesaian/soal1.html"
+            hx-target="#soal1"
+            hx-trigger="click once"
+            hx-swap="innerHTML"
+            onclick="toggleProject(this, 'soal1')">
+            <span>Pembahasan</span>
+            <span class="arrow">▼</span>
+        </button>
+
+        <div id="soal1" class="project-content hidden"></div>
+    </div>
+
+    <!-- SOAL 2 -->
+    <div class="card card--soft">
+        <h3>Soal 2</h3>
+
+        <div class="katex">
+$$
+u_t = u_{xx} + u^2
+$$
+        </div>
+
+        <p>Tentukan klasifikasi awal dari PDP di atas.</p>
+
+        <button class="button button--primary"
+            hx-get="/pages/subject/pdp/bab-1/penyelesaian/soal2.html"
+            hx-target="#soal2"
+            hx-trigger="click once"
+            hx-swap="innerHTML"
+            onclick="toggleProject(this, 'soal2')">
+            <span>Pembahasan</span>
+            <span class="arrow">▼</span>
+        </button>
+
+        <div id="soal2" class="project-content hidden"></div>
+    </div>
+
+    <!-- SOAL 3 -->
+    <div class="card card--soft">
+        <h3>Soal 3</h3>
+
+        <div class="katex">
+$$
+u_t + u\,u_x = 0
+$$
+        </div>
+
+        <p>Tentukan klasifikasi awal dari PDP di atas.</p>
+
+        <button class="button button--primary"
+            hx-get="/pages/subject/pdp/bab-1/penyelesaian/soal3.html"
+            hx-target="#soal3"
+            hx-trigger="click once"
+            hx-swap="innerHTML"
+            onclick="toggleProject(this, 'soal3')">
+            <span>Pembahasan</span>
+            <span class="arrow">▼</span>
+        </button>
+
+        <div id="soal3" class="project-content hidden"></div>
+    </div>
+
+    <!-- SOAL 4 -->
+    <div class="card card--soft">
+        <h3>Soal 4</h3>
+
+        <div class="katex">
+$$
+u_t = u_{xx} + \sin(u)
+$$
+        </div>
+
+        <p>Tentukan klasifikasi awal dari PDP di atas.</p>
+
+        <button class="button button--primary"
+            hx-get="/pages/subject/pdp/bab-1/penyelesaian/soal4.html"
+            hx-target="#soal4"
+            hx-trigger="click once"
+            hx-swap="innerHTML"
+            onclick="toggleProject(this, 'soal4')">
+            <span>Pembahasan</span>
+            <span class="arrow">▼</span>
+        </button>
+
+        <div id="soal4" class="project-content hidden"></div>
+    </div>
+
+    <!-- SOAL 5 -->
+    <div class="card card--soft">
+        <h3>Soal 5</h3>
+
+        <div class="katex">
+$$
+u_t = u_{xx} + x
+$$
+        </div>
+
+        <p>Tentukan klasifikasi awal dari PDP di atas.</p>
+
+        <button class="button button--primary"
+            hx-get="/pages/subject/pdp/bab-1/penyelesaian/soal5.html"
+            hx-target="#soal5"
+            hx-trigger="click once"
+            hx-swap="innerHTML"
+            onclick="toggleProject(this, 'soal5')">
+            <span>Pembahasan</span>
+            <span class="arrow">▼</span>
+        </button>
+
+        <div id="soal5" class="project-content hidden"></div>
+    </div>
+
+</div>
+
+<script src="js/ui-toggle.js"></script>

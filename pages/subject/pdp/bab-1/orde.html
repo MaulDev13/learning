@@ -1,0 +1,416 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Orde Persamaan Diferensial Parsial</h2>
+
+        <p>
+            Dalam Persamaan Diferensial Parsial (PDP), istilah <strong>orde</strong>
+            digunakan untuk menunjukkan turunan parsial tertinggi yang muncul
+            di dalam persamaan.
+        </p>
+
+        <p>
+            Konsep orde sangat penting karena membantu menentukan sifat persamaan,
+            metode penyelesaian yang dapat digunakan, serta tingkat kompleksitas
+            suatu masalah.
+        </p>
+
+        <p>
+            Secara sederhana:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+\text{Orde PDP}
+=
+\text{turunan parsial tertinggi yang muncul}
+$$
+        </div>
+
+        <p>
+            Untuk menentukan orde suatu PDP, kita cukup mencari turunan parsial
+            dengan tingkat paling tinggi pada persamaan tersebut.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Turunan Parsial Orde Satu</h3>
+
+        <p>
+            Turunan parsial orde satu adalah turunan pertama terhadap salah satu
+            variabel bebas.
+        </p>
+
+        <p>
+            Contohnya:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial u}{\partial x}
+\qquad
+\text{dan}
+\qquad
+\frac{\partial u}{\partial y}
+$$
+        </div>
+
+        <p>
+            Jika suatu persamaan hanya melibatkan turunan parsial orde satu,
+            maka persamaan tersebut disebut <strong>PDP orde satu</strong>.
+        </p>
+
+        <p>
+            Contoh:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+\frac{\partial u}{\partial x}
++
+\frac{\partial u}{\partial y}
+=
+0
+$$
+        </div>
+
+        <p>
+            Karena turunan tertinggi yang muncul adalah turunan orde satu,
+            maka persamaan tersebut memiliki orde satu.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Turunan Parsial Orde Dua</h3>
+
+        <p>
+            Turunan parsial orde dua diperoleh dengan menurunkan kembali
+            turunan parsial orde satu.
+        </p>
+
+        <p>
+            Contohnya:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial^2 u}{\partial x^2}
+\qquad
+\frac{\partial^2 u}{\partial y^2}
+\qquad
+\frac{\partial^2 u}{\partial x \partial y}
+$$
+        </div>
+
+        <p>
+            Jika suatu persamaan melibatkan turunan parsial orde dua sebagai
+            turunan tertinggi, maka persamaan tersebut disebut
+            <strong>PDP orde dua</strong>.
+        </p>
+
+        <p>
+            Contoh:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+\frac{\partial^2 u}{\partial x^2}
++
+\frac{\partial^2 u}{\partial y^2}
+=
+0
+$$
+        </div>
+
+        <p>
+            Karena turunan tertinggi adalah turunan orde dua,
+            maka persamaan tersebut termasuk PDP orde dua.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Turunan Campuran</h3>
+
+        <p>
+            Dalam PDP sering muncul turunan parsial campuran, yaitu turunan
+            terhadap lebih dari satu variabel secara berurutan.
+        </p>
+
+        <p>
+            Contohnya:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial^2 u}{\partial x \partial y}
+$$
+        </div>
+
+        <p>
+            Turunan tersebut berarti fungsi
+            <span class="text-math-inline">u</span>
+            diturunkan terhadap
+            <span class="text-math-inline">x</span>
+            dan kemudian terhadap
+            <span class="text-math-inline">y</span>.
+        </p>
+
+        <p>
+            Walaupun melibatkan dua variabel, turunan tersebut tetap merupakan
+            turunan orde dua karena proses diferensiasi dilakukan dua kali.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh Menentukan Orde PDP</h3>
+
+        <p>
+            Berikut beberapa contoh menentukan orde Persamaan Diferensial Parsial.
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Persamaan</th>
+                <th>Orde</th>
+                <th>Alasan</th>
+            </tr>
+
+            <tr>
+                <td>
+                    \( \frac{\partial u}{\partial x}
+                    +
+                    \frac{\partial u}{\partial y}=0 \)
+                </td>
+                <td>1</td>
+                <td>Turunan tertinggi adalah orde satu.</td>
+            </tr>
+
+            <tr>
+                <td>
+                    \( \frac{\partial^2 u}{\partial x^2}
+                    +
+                    \frac{\partial^2 u}{\partial y^2}=0 \)
+                </td>
+                <td>2</td>
+                <td>Turunan tertinggi adalah orde dua.</td>
+            </tr>
+
+            <tr>
+                <td>
+                    \( \frac{\partial^3 u}{\partial x^3}
+                    +
+                    \frac{\partial u}{\partial t}=0 \)
+                </td>
+                <td>3</td>
+                <td>Terdapat turunan orde tiga.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Persamaan Panas sebagai Contoh PDP Orde Dua</h3>
+
+        <p>
+            Salah satu contoh terkenal PDP orde dua adalah persamaan panas:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+\frac{\partial u}{\partial t}
+=
+k
+\frac{\partial^2 u}{\partial x^2}
+$$
+        </div>
+
+        <p>
+            Persamaan ini digunakan untuk memodelkan penyebaran panas.
+        </p>
+
+        <p>
+            Walaupun terdapat turunan orde satu terhadap waktu:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial u}{\partial t}
+$$
+        </div>
+
+        <p>
+            namun terdapat pula turunan orde dua terhadap posisi:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial^2 u}{\partial x^2}
+$$
+        </div>
+
+        <p>
+            Karena turunan tertinggi yang muncul adalah orde dua,
+            maka persamaan panas termasuk PDP orde dua.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Persamaan Gelombang</h3>
+
+        <p>
+            Contoh lain PDP orde dua adalah persamaan gelombang:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+\frac{\partial^2 u}{\partial t^2}
+=
+c^2
+\frac{\partial^2 u}{\partial x^2}
+$$
+        </div>
+
+        <p>
+            Pada persamaan tersebut, seluruh turunan tertinggi memiliki orde dua.
+        </p>
+
+        <p>
+            Persamaan ini digunakan untuk memodelkan getaran dan perambatan gelombang,
+            seperti gelombang suara atau getaran tali.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Mengapa Orde Penting?</h3>
+
+        <p>
+            Menentukan orde suatu PDP bukan sekadar formalitas matematika.
+            Orde memberikan informasi penting mengenai sifat solusi dan metode
+            penyelesaian yang dapat digunakan.
+        </p>
+
+        <p>
+            Dalam praktiknya:
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Orde</th>
+                <th>Karakteristik Umum</th>
+            </tr>
+
+            <tr>
+                <td>Orde satu</td>
+                <td>
+                    Umumnya digunakan untuk model transportasi, aliran, dan propagasi sederhana.
+                </td>
+            </tr>
+
+            <tr>
+                <td>Orde dua</td>
+                <td>
+                    Banyak muncul pada fenomena fisika seperti panas, gelombang, dan potensial.
+                </td>
+            </tr>
+
+            <tr>
+                <td>Orde lebih tinggi</td>
+                <td>
+                    Digunakan pada model yang lebih kompleks dalam teknik dan sains.
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Langkah Menentukan Orde PDP</h3>
+
+        <p>
+            Untuk menentukan orde Persamaan Diferensial Parsial, langkah-langkahnya
+            cukup sederhana:
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Langkah</th>
+                <th>Penjelasan</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>Perhatikan seluruh turunan parsial dalam persamaan.</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Cari turunan dengan tingkat diferensiasi tertinggi.</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>Tingkat turunan tertinggi tersebut adalah orde PDP.</td>
+            </tr>
+        </table>
+
+        <p>
+            Fokus utama hanya pada turunan tertinggi, bukan jumlah turunan
+            atau banyaknya variabel.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kesalahan Umum</h3>
+
+        <p>
+            Dalam menentukan orde PDP, terdapat beberapa kesalahan yang sering terjadi.
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Kesalahan</th>
+                <th>Penjelasan</th>
+            </tr>
+
+            <tr>
+                <td>Menghitung jumlah variabel</td>
+                <td>
+                    Orde tidak ditentukan oleh banyaknya variabel bebas.
+                </td>
+            </tr>
+
+            <tr>
+                <td>Menghitung jumlah turunan</td>
+                <td>
+                    Orde ditentukan oleh turunan tertinggi, bukan jumlah turunan.
+                </td>
+            </tr>
+
+            <tr>
+                <td>Mengabaikan turunan campuran</td>
+                <td>
+                    Turunan campuran tetap dihitung sesuai total tingkat diferensiasinya.
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Orde Persamaan Diferensial Parsial ditentukan oleh turunan parsial
+            tertinggi yang muncul dalam persamaan.
+        </p>
+
+        <p>
+            Pemahaman mengenai orde sangat penting karena membantu mengenali
+            karakteristik suatu PDP dan menentukan metode penyelesaian yang sesuai.
+        </p>
+
+        <p>
+            Sebagian besar PDP penting dalam fisika dan teknik merupakan PDP
+            orde dua, seperti persamaan panas, persamaan gelombang,
+            dan persamaan Laplace.
+        </p>
+    </div>
+
+</div>

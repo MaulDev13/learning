@@ -1,0 +1,188 @@
+<div class="card card--flat">
+
+    <h2>BAB 5 — Deret Fourier pada Interval Tertentu</h2>
+
+    <p>
+        Dalam banyak kasus, fungsi tidak didefinisikan pada seluruh garis bilangan,
+        tetapi hanya pada interval tertentu, misalnya \( 0 \le x \le L \) atau
+        \( -L \le x \le L \).
+    </p>
+
+    <p>
+        Deret Fourier pada interval tertentu adalah cara untuk tetap merepresentasikan
+        fungsi tersebut sebagai gabungan sinus dan kosinus, dengan menyesuaikan panjang
+        interval yang digunakan.
+    </p>
+
+    <p>
+        Perbedaan utama dengan bentuk umum adalah adanya skala pada argumen sinus dan kosinus
+        agar sesuai dengan panjang interval.
+    </p>
+
+    <div class="card card--soft">
+
+        <h3>Bentuk Deret Fourier pada Interval \([-L, L]\)</h3>
+
+        <div class="katex">
+$$
+f(x) = \frac{a_0}{2} +
+\sum_{n=1}^{\infty}
+\left[
+a_n \cos\left(\frac{n\pi x}{L}\right)
++
+b_n \sin\left(\frac{n\pi x}{L}\right)
+\right]
+$$
+        </div>
+
+        <p>
+            Bentuk ini digunakan ketika fungsi didefinisikan secara simetris pada interval
+            dari \( -L \) sampai \( L \).
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Bentuk Deret Fourier pada Interval \([0, L]\)</h3>
+
+        <p>
+            Jika fungsi hanya didefinisikan pada interval \( 0 \le x \le L \),
+            maka bentuk Fourier dapat ditulis sebagai:
+        </p>
+
+        <div class="katex">
+$$
+f(x) =
+\frac{a_0}{2} +
+\sum_{n=1}^{\infty}
+\left[
+a_n \cos\left(\frac{n\pi x}{L}\right)
++
+b_n \sin\left(\frac{n\pi x}{L}\right)
+\right]
+$$
+        </div>
+
+        <p>
+            Walaupun bentuknya mirip, perbedaan utama terletak pada cara memperluas fungsi
+            di luar interval (ekstensi genap atau ganjil).
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Makna Interval dalam Deret Fourier</h3>
+
+        <p>
+            Interval menentukan “ruang dasar” dari fungsi yang dianalisis.
+        </p>
+
+        <p>
+            • Interval kecil → pola lokal <br>
+            • Interval besar → pola global <br>
+            • Nilai \( L \) menentukan periode dasar gelombang
+        </p>
+
+        <p>
+            Semakin besar interval, semakin panjang periode gelombang sinus dan kosinus yang digunakan.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Periode dalam Deret Fourier</h3>
+
+        <p>
+            Deret Fourier secara alami merepresentasikan fungsi periodik.
+            Pada interval \( [-L, L] \), periode fungsi adalah:
+        </p>
+
+        <div class="katex">
+$$
+T = 2L
+$$
+        </div>
+
+        <p>
+            Artinya, fungsi yang dianalisis dianggap berulang setiap \( 2L \).
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Ide Penting Ekstensi Fungsi</h3>
+
+        <p>
+            Jika fungsi hanya diberikan pada interval terbatas, maka kita sebenarnya
+            “memperpanjang” fungsi tersebut agar menjadi periodik.
+        </p>
+
+        <p>
+            Ada dua cara umum:
+        </p>
+
+        <p>
+            • Ekstensi genap → menghasilkan deret kosinus saja <br>
+            • Ekstensi ganjil → menghasilkan deret sinus saja
+        </p>
+
+        <p>
+            Pilihan ini tergantung pada sifat masalah yang sedang dianalisis.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Contoh Fungsi pada Interval Tertentu</h3>
+
+        <p>
+            Berikut contoh fungsi yang hanya didefinisikan pada interval tertentu:
+        </p>
+
+        <div class="katex">
+$$
+f(x) = x, \quad 0 \le x \le \pi
+$$
+        </div>
+
+        <div class="katex">
+$$
+f(x) = x^2, \quad -\pi \le x \le \pi
+$$
+        </div>
+
+        <div class="katex">
+$$
+f(x) =
+\begin{cases}
+1, & 0 < x < \pi \\
+0, & \text{lainnya dalam interval}
+\end{cases}
+$$
+        </div>
+
+        <p>
+            Fungsi seperti ini umum muncul dalam masalah fisika dan teknik,
+            terutama pada sistem dengan batas ruang.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Deret Fourier pada interval tertentu digunakan untuk merepresentasikan fungsi
+            yang hanya didefinisikan pada batas tertentu. Dengan memilih interval yang tepat,
+            fungsi dapat diubah menjadi bentuk deret sinus dan kosinus yang lebih mudah dianalisis.
+        </p>
+
+    </div>
+
+</div>

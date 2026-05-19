@@ -1,0 +1,158 @@
+<div class="card card--flat">
+
+    <h2>BAB 5 — Deret Fourier: Konsep Dasar</h2>
+
+    <p>
+        Deret Fourier adalah cara untuk “memecah” sebuah fungsi yang rumit menjadi
+        penjumlahan dari fungsi-fungsi gelombang sederhana, yaitu sinus dan kosinus.
+        Ide utamanya adalah: bentuk apa pun yang berulang atau memiliki pola dapat
+        dituliskan sebagai gabungan gelombang dasar.
+    </p>
+
+    <p>
+        Konsep ini sangat penting dalam matematika terapan karena banyak fenomena alam
+        seperti getaran, suara, panas, dan gelombang dapat dipahami dengan lebih mudah
+        jika diubah menjadi bentuk deret Fourier.
+    </p>
+
+    <div class="card card--soft">
+
+        <h3>Ide Dasar Deret Fourier</h3>
+
+        <p>
+            Sebuah fungsi periodik \( f(x) \) dapat dituliskan sebagai penjumlahan:
+        </p>
+
+        <div class="katex">
+$$
+f(x) = a_0 + \sum_{n=1}^{\infty} \left( a_n \cos(nx) + b_n \sin(nx) \right)
+$$
+        </div>
+
+        <p>
+            Artinya, fungsi kompleks \( f(x) \) dibangun dari kombinasi gelombang
+            sinus dan kosinus dengan berbagai frekuensi.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Makna Sederhana</h3>
+
+        <p>
+            Jika dibayangkan secara intuitif:
+        </p>
+
+        <p>
+            • Sinus dan kosinus = “gelombang dasar” <br>
+            • Deret Fourier = campuran banyak gelombang dasar <br>
+            • Hasil akhirnya = bentuk fungsi yang lebih kompleks
+        </p>
+
+        <p>
+            Jadi, Deret Fourier seperti “bahasa universal” untuk menjelaskan bentuk gelombang.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Bentuk Umum pada Interval</h3>
+
+        <p>
+            Untuk fungsi pada interval tertentu (misalnya \( -L \le x \le L \)),
+            bentuk deret Fourier menjadi:
+        </p>
+
+        <div class="katex">
+$$
+f(x) = \frac{a_0}{2} +
+\sum_{n=1}^{\infty}
+\left[
+a_n \cos\left(\frac{n\pi x}{L}\right)
++
+b_n \sin\left(\frac{n\pi x}{L}\right)
+\right]
+$$
+        </div>
+
+        <p>
+            Bentuk ini sering digunakan dalam masalah fisika dan teknik karena banyak sistem
+            memiliki batas ruang tertentu.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Contoh Fungsi yang Bisa Diubah ke Deret Fourier</h3>
+
+        <p>
+            Berikut beberapa contoh fungsi yang dapat direpresentasikan dengan deret Fourier:
+        </p>
+
+        <div class="katex">
+$$
+f(x) = x
+$$
+        </div>
+
+        <div class="katex">
+$$
+f(x) = x^2
+$$
+        </div>
+
+        <div class="katex">
+$$
+f(x) =
+\begin{cases}
+1, & 0 < x < \pi \\
+-1, & -\pi < x < 0
+\end{cases}
+$$
+        </div>
+
+        <p>
+            Fungsi-fungsi di atas memiliki bentuk yang tidak sederhana, tetapi tetap bisa
+            dipecah menjadi kombinasi sinus dan kosinus.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Makna Fisik Deret Fourier</h3>
+
+        <p>
+            Deret Fourier tidak hanya konsep matematika, tetapi juga memiliki makna fisik:
+        </p>
+
+        <p>
+            • Dalam suara: memecah suara menjadi frekuensi dasar <br>
+            • Dalam panas: menggambarkan distribusi suhu <br>
+            • Dalam gelombang: menjelaskan bentuk getaran <br>
+            • Dalam sinyal: digunakan untuk analisis sinyal digital
+        </p>
+
+        <p>
+            Dengan kata lain, Deret Fourier membantu mengubah sesuatu yang kompleks menjadi
+            bagian-bagian sederhana yang lebih mudah dianalisis.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Deret Fourier adalah metode untuk merepresentasikan fungsi sebagai penjumlahan
+            gelombang sinus dan kosinus. Konsep ini sangat penting dalam sains dan teknik
+            karena banyak fenomena alam dapat dijelaskan dengan pendekatan gelombang.
+        </p>
+
+    </div>
+
+</div>

@@ -1,0 +1,168 @@
+<div class="card card--flat">
+
+    <h2>BAB 5 — Aplikasi Deret Fourier pada PDP</h2>
+
+    <p>
+        Salah satu alasan utama Deret Fourier dipelajari adalah karena banyak digunakan
+        untuk menyelesaikan Persamaan Diferensial Parsial (PDP), terutama pada masalah
+        fisika seperti panas, gelombang, dan difusi.
+    </p>
+
+    <p>
+        Ide dasarnya sederhana: fungsi yang sulit (dalam bentuk ruang dan waktu)
+        diubah menjadi gabungan gelombang sinus dan kosinus, sehingga PDP dapat
+        dipecah menjadi masalah yang lebih sederhana.
+    </p>
+
+    <div class="card card--soft">
+
+        <h3>Ide Umum Penggunaan Fourier pada PDP</h3>
+
+        <p>
+            Dalam banyak PDP, solusi biasanya berbentuk fungsi dua variabel:
+        </p>
+
+        <div class="katex">
+$$
+u(x,t)
+$$
+        </div>
+
+        <p>
+            Dengan Deret Fourier, fungsi ini dapat dipisahkan menjadi bentuk:
+        </p>
+
+        <div class="katex">
+$$
+u(x,t) = \sum_{n=1}^{\infty} X_n(x)\, T_n(t)
+$$
+        </div>
+
+        <p>
+            Artinya, solusi kompleks dipecah menjadi bagian ruang \( X_n(x) \)
+            dan bagian waktu \( T_n(t) \).
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Contoh PDP: Persamaan Panas</h3>
+
+        <p>
+            Salah satu aplikasi paling terkenal adalah persamaan panas:
+        </p>
+
+        <div class="katex">
+$$
+u_t = k u_{xx}
+$$
+        </div>
+
+        <p>
+            Persamaan ini menggambarkan bagaimana suhu menyebar seiring waktu
+            pada sebuah batang.
+        </p>
+
+        <p>
+            Dengan metode Fourier, solusi dapat ditulis sebagai kombinasi fungsi sinus
+            yang memenuhi kondisi batas.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Contoh PDP: Persamaan Gelombang</h3>
+
+        <p>
+            Deret Fourier juga digunakan pada persamaan gelombang:
+        </p>
+
+        <div class="katex">
+$$
+u_{tt} = c^2 u_{xx}
+$$
+        </div>
+
+        <p>
+            Persamaan ini menggambarkan getaran pada tali atau gelombang suara.
+        </p>
+
+        <p>
+            Solusi umumnya berupa kombinasi gelombang sinus yang bergetar di ruang dan waktu.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Langkah Umum Penyelesaian dengan Fourier</h3>
+
+        <p>
+            Secara umum, penggunaan Deret Fourier dalam PDP mengikuti langkah berikut:
+        </p>
+
+        <p>
+            1. Menentukan PDP dan kondisi batas <br>
+            2. Memisahkan variabel (jika memungkinkan) <br>
+            3. Mengubah solusi ruang menjadi bentuk sinus/kosinus <br>
+            4. Menggunakan deret Fourier untuk memenuhi kondisi awal <br>
+            5. Menggabungkan hasil menjadi solusi akhir
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Peran Kondisi Batas</h3>
+
+        <p>
+            Kondisi batas sangat penting karena menentukan bentuk fungsi Fourier yang digunakan.
+        </p>
+
+        <p>
+            • Jika ujung sistem tetap → biasanya muncul fungsi sinus <br>
+            • Jika simetri tertentu → bisa muncul kosinus <br>
+            • Jika kondisi kompleks → kombinasi keduanya
+        </p>
+
+        <p>
+            Tanpa kondisi batas, solusi PDP tidak akan unik.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Makna Fisik</h3>
+
+        <p>
+            Secara fisik, penggunaan Deret Fourier pada PDP berarti:
+        </p>
+
+        <p>
+            • Sistem kompleks dipecah menjadi mode-mode sederhana <br>
+            • Setiap mode bergetar atau berubah secara independen <br>
+            • Solusi total adalah penjumlahan semua mode tersebut
+        </p>
+
+        <p>
+            Ini membuat masalah yang awalnya sangat rumit menjadi lebih mudah dianalisis.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Deret Fourier sangat penting dalam penyelesaian PDP karena memungkinkan
+            fungsi kompleks diubah menjadi kombinasi gelombang sederhana. Metode ini
+            banyak digunakan dalam persamaan panas, gelombang, dan berbagai fenomena fisik lainnya.
+        </p>
+
+    </div>
+
+</div>

@@ -1,506 +1,229 @@
 <div class="card-group">
 
-    <!-- PENGANTAR -->
     <div class="card card--soft">
-
-        <h3>Kondisi Batas dan Kondisi Awal</h3>
+        <h2>Kondisi Awal dan Kondisi Batas pada PDP</h2>
 
         <p>
-            Suatu Persamaan Diferensial Parsial (PDP)
-            pada umumnya memiliki banyak solusi.
-            Untuk memperoleh solusi yang unik
-            dan sesuai dengan permasalahan yang dimodelkan,
-            diperlukan informasi tambahan.
+            Dalam Persamaan Diferensial Parsial (PDP), tidak cukup hanya memiliki persamaan saja.
+            Kita juga perlu informasi tambahan agar solusi yang diperoleh benar-benar sesuai dengan
+            situasi nyata.
         </p>
 
         <p>
-            Informasi tambahan tersebut diberikan
-            dalam bentuk kondisi awal
-            dan kondisi batas.
+            Informasi tambahan ini disebut <strong>kondisi awal</strong> dan <strong>kondisi batas</strong>.
         </p>
 
+        <p>
+            Tanpa keduanya, sebuah PDP biasanya memiliki banyak solusi yang mungkin, sehingga tidak
+            dapat menentukan satu jawaban yang pasti.
+        </p>
     </div>
 
-    <!-- KONDISI AWAL -->
     <div class="card card--soft">
-
-        <h3>Definisi Kondisi Awal</h3>
+        <h3>Apa Itu Kondisi Awal?</h3>
 
         <p>
-            Kondisi awal adalah nilai fungsi u
-            atau turunannya yang diberikan
-            pada suatu waktu awal tertentu,
-            umumnya pada t = 0.
+            Kondisi awal adalah informasi tentang keadaan sistem pada saat awal waktu,
+            biasanya ketika <span class="text-math-inline">t = 0</span>.
         </p>
 
         <p>
-            Kondisi awal menggambarkan keadaan sistem
-            pada saat permulaan,
-            sebelum sistem berkembang seiring waktu.
+            Secara matematis ditulis sebagai:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+u(x,0) = f(x)
+$$
+        </div>
+
+        <p>
+            Artinya kita mengetahui bentuk awal dari suatu besaran, misalnya suhu, posisi, atau gelombang,
+            sebelum sistem berubah terhadap waktu.
         </p>
 
         <p>
-            Kondisi awal biasanya ditulis sebagai:
+            Contoh sederhana:
+            suhu pada sebuah batang besi pada saat pertama kali diukur.
         </p>
-
-        <p>
-            u(x, 0) = f(x)
-        </p>
-
-        <p>
-            yang menyatakan nilai awal fungsi u
-            pada seluruh domain x saat t = 0.
-        </p>
-
     </div>
 
-    <!-- KONDISI BATAS -->
     <div class="card card--soft">
-
-        <h3>Definisi Kondisi Batas</h3>
+        <h3>Apa Itu Kondisi Batas?</h3>
 
         <p>
-            Kondisi batas adalah nilai fungsi u
-            atau turunannya yang diberikan
-            pada batas-batas domain spasial,
-            yaitu pada nilai-nilai tertentu dari x, y, atau z.
+            Kondisi batas adalah informasi tentang nilai sistem pada batas wilayah ruang.
         </p>
 
         <p>
-            Kondisi batas menggambarkan perilaku sistem
-            pada tepi atau ujung dari daerah
-            yang ditinjau.
+            Misalnya pada batang dengan panjang <span class="text-math-inline">L</span>, kita mengetahui nilai di ujung-ujungnya.
         </p>
 
         <p>
-            Kondisi batas biasanya ditulis sebagai:
+            Contoh bentuk matematis:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+u(0,t) = 0, \quad u(L,t) = 0
+$$
+        </div>
+
+        <p>
+            Artinya nilai fungsi pada batas ruang sudah ditentukan.
         </p>
 
         <p>
-            u(0, t) = g₁(t)<br>
-            u(L, t) = g₂(t)
+            Kondisi batas sering muncul pada sistem fisik yang memiliki pembatas nyata,
+            seperti ujung batang logam, dinding ruangan, atau tepi membran.
         </p>
-
-        <p>
-            yang menyatakan nilai fungsi u
-            pada batas kiri x = 0
-            dan batas kanan x = L.
-        </p>
-
     </div>
 
-    <!-- JENIS KONDISI BATAS -->
     <div class="card card--soft">
-
         <h3>Jenis-Jenis Kondisi Batas</h3>
 
-        <p>
-            Terdapat tiga jenis kondisi batas
-            yang umum digunakan dalam PDP.
-        </p>
+        <table class="table">
+            <tr>
+                <th>Jenis</th>
+                <th>Bentuk</th>
+                <th>Makna</th>
+            </tr>
 
-        <p>
-            Pertama, kondisi Dirichlet,
-            yaitu nilai fungsi u diberikan
-            secara langsung pada batas.
-        </p>
+            <tr>
+                <td>Dirichlet</td>
+                <td>
+                    <span class="text-math-inline">u = nilai tertentu</span>
+                </td>
+                <td>
+                    Nilai fungsi di batas ditentukan langsung.
+                </td>
+            </tr>
 
-        <p>
-            u(0, t) = g(t)
-        </p>
+            <tr>
+                <td>Neumann</td>
+                <td>
+                    <span class="text-math-inline">u_x = nilai tertentu</span>
+                </td>
+                <td>
+                    Nilai perubahan (gradien) di batas ditentukan.
+                </td>
+            </tr>
 
-        <p>
-            Kedua, kondisi Neumann,
-            yaitu nilai turunan normal dari u
-            diberikan pada batas.
-        </p>
-
-        <p>
-            ∂u/∂x (0, t) = h(t)
-        </p>
-
-        <p>
-            Ketiga, kondisi Robin,
-            yaitu kombinasi linear dari u
-            dan turunan normalnya diberikan pada batas.
-        </p>
-
-        <p>
-            α u(0, t) + β ∂u/∂x (0, t) = γ(t)
-        </p>
-
+            <tr>
+                <td>Robin</td>
+                <td>
+                    Kombinasi <span class="text-math-inline">u</span> dan turunannya
+                </td>
+                <td>
+                    Campuran nilai fungsi dan laju perubahan.
+                </td>
+            </tr>
+        </table>
     </div>
 
-    <!-- KONDISI DIRICHLET -->
     <div class="card card--soft">
-
-        <h3>Kondisi Dirichlet</h3>
-
-        <p>
-            Kondisi Dirichlet menetapkan nilai
-            fungsi u secara langsung pada batas domain.
-        </p>
+        <h3>Fungsi Kondisi Awal dan Batas</h3>
 
         <p>
-            Kondisi ini sering digunakan untuk
-            memodelkan situasi di mana nilai
-            pada batas diketahui secara pasti.
+            Kondisi awal dan batas memiliki fungsi penting dalam penyelesaian PDP, yaitu:
         </p>
 
-        <p>
-            Contoh dalam persamaan panas:
-        </p>
-
-        <p>
-            u(0, t) = 0 dan u(L, t) = 0
-        </p>
-
-        <p>
-            Kondisi ini menyatakan bahwa
-            suhu pada kedua ujung batang
-            selalu dijaga bernilai nol.
-        </p>
-
+        <ul>
+            <li>Menentukan bentuk solusi yang sesuai dengan situasi nyata</li>
+            <li>Menghilangkan banyak kemungkinan solusi yang tidak relevan</li>
+            <li>Membuat solusi menjadi unik</li>
+            <li>Menentukan nilai konstanta dalam solusi umum</li>
+        </ul>
     </div>
 
-    <!-- KONDISI NEUMANN -->
     <div class="card card--soft">
-
-        <h3>Kondisi Neumann</h3>
+        <h3>Mengapa Kondisi Ini Penting?</h3>
 
         <p>
-            Kondisi Neumann menetapkan nilai
-            turunan normal dari u pada batas domain.
+            Tanpa kondisi awal dan batas, PDP hanya memberikan “keluarga solusi”,
+            bukan satu solusi yang pasti.
         </p>
 
         <p>
-            Kondisi ini sering digunakan untuk
-            memodelkan situasi di mana fluks
-            atau laju perubahan pada batas diketahui.
+            Artinya, banyak fungsi berbeda bisa memenuhi persamaan yang sama.
         </p>
 
         <p>
-            Contoh dalam persamaan panas:
+            Dengan adanya kondisi tambahan ini, kita bisa memilih satu solusi yang benar-benar sesuai
+            dengan keadaan fisik yang ingin dimodelkan.
         </p>
-
-        <p>
-            ∂u/∂x (0, t) = 0 dan ∂u/∂x (L, t) = 0
-        </p>
-
-        <p>
-            Kondisi ini menyatakan bahwa
-            tidak ada aliran panas
-            yang keluar dari kedua ujung batang,
-            atau ujung batang bersifat terisolasi.
-        </p>
-
     </div>
 
-    <!-- KONDISI ROBIN -->
     <div class="card card--soft">
-
-        <h3>Kondisi Robin</h3>
+        <h3>Contoh Sederhana</h3>
 
         <p>
-            Kondisi Robin merupakan kombinasi
-            dari kondisi Dirichlet dan Neumann.
-            Kondisi ini menetapkan hubungan linear
-            antara nilai u dan turunan normalnya
-            pada batas.
+            Misalkan persamaan panas:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+u_t = k u_{xx}
+$$
+        </div>
+
+        <p>
+            Jika hanya persamaan ini, solusi bisa banyak.
         </p>
 
         <p>
-            Kondisi ini sering digunakan untuk
-            memodelkan pertukaran panas
-            antara sistem dan lingkungannya.
+            Namun jika ditambah:
         </p>
+
+        <div class="text-math-highlight">
+$$
+u(x,0) = f(x)
+$$
+        </div>
+
+        <div class="text-math-highlight">
+$$
+u(0,t)=0, \quad u(L,t)=0
+$$
+        </div>
 
         <p>
-            Contoh:
+            Maka solusi menjadi tunggal dan dapat dihitung secara spesifik.
         </p>
-
-        <p>
-            ∂u/∂x (0, t) + α u(0, t) = 0
-        </p>
-
-        <p>
-            dengan α adalah konstanta
-            yang mencerminkan laju pertukaran
-            pada batas tersebut.
-        </p>
-
     </div>
 
-    <!-- MASALAH NILAI AWAL -->
     <div class="card card--soft">
-
-        <h3>Masalah Nilai Awal</h3>
-
-        <p>
-            Masalah Nilai Awal atau
-            Initial Value Problem (IVP)
-            adalah PDP yang dilengkapi dengan
-            kondisi awal saja,
-            tanpa kondisi batas.
-        </p>
+        <h3>Hubungan dengan Penyelesaian PDP</h3>
 
         <p>
-            Masalah ini umumnya muncul pada
-            persamaan yang melibatkan waktu t
-            sebagai variabel bebas,
-            dan domain spasialnya tidak terbatas.
+            Dalam metode seperti pemisahan variabel, kondisi awal dan batas digunakan untuk:
         </p>
+
+        <ul>
+            <li>Menentukan nilai konstanta (misalnya konstanta eigen)</li>
+            <li>Membentuk fungsi solusi tertentu</li>
+            <li>Menentukan koefisien deret Fourier</li>
+        </ul>
 
         <p>
-            Contoh:
+            Tanpa kondisi ini, proses penyelesaian tidak akan menghasilkan jawaban akhir yang spesifik.
         </p>
-
-        <p>
-            ∂u/∂t = k ∂²u/∂x², x ∈ ℝ, t > 0<br>
-            u(x, 0) = f(x), x ∈ ℝ
-        </p>
-
     </div>
 
-    <!-- MASALAH NILAI BATAS -->
     <div class="card card--soft">
-
-        <h3>Masalah Nilai Batas</h3>
-
-        <p>
-            Masalah Nilai Batas atau
-            Boundary Value Problem (BVP)
-            adalah PDP yang dilengkapi dengan
-            kondisi batas saja,
-            tanpa kondisi awal.
-        </p>
-
-        <p>
-            Masalah ini umumnya muncul pada
-            persamaan yang tidak melibatkan waktu,
-            atau pada domain spasial yang terbatas.
-        </p>
-
-        <p>
-            Contoh:
-        </p>
-
-        <p>
-            ∂²u/∂x² + ∂²u/∂y² = 0, (x,y) ∈ D<br>
-            u(x, y) = g(x, y), (x,y) ∈ ∂D
-        </p>
-
-    </div>
-
-    <!-- MASALAH CAMPURAN -->
-    <div class="card card--soft">
-
-        <h3>Masalah Campuran</h3>
-
-        <p>
-            Masalah Campuran adalah PDP yang
-            dilengkapi dengan kondisi awal
-            sekaligus kondisi batas.
-        </p>
-
-        <p>
-            Masalah ini paling sering dijumpai
-            dalam penerapan PDP,
-            karena sistem fisika umumnya memiliki
-            keadaan awal dan batasan domain
-            yang keduanya diketahui.
-        </p>
-
-        <p>
-            Contoh persamaan panas pada batang
-            dengan panjang L:
-        </p>
-
-        <p>
-            ∂u/∂t = k ∂²u/∂x², 0 &lt; x &lt; L, t > 0
-        </p>
-
-        <p>
-            Kondisi awal:<br>
-            u(x, 0) = f(x), 0 &lt; x &lt; L
-        </p>
-
-        <p>
-            Kondisi batas:<br>
-            u(0, t) = 0 dan u(L, t) = 0, t > 0
-        </p>
-
-    </div>
-
-    <!-- PENYELESAIAN CONTOH 1 -->
-    <div class="card card--soft">
-
-        <h3>Penyelesaian — Contoh 1</h3>
-
-        <p>
-            Identifikasi jenis kondisi batas
-            dari permasalahan berikut.
-        </p>
-
-        <p>
-            ∂²u/∂x² + ∂²u/∂y² = 0, 0 &lt; x &lt; 1, 0 &lt; y &lt; 1<br>
-            u(0, y) = 0<br>
-            u(1, y) = y<br>
-            u(x, 0) = 0<br>
-            u(x, 1) = x
-        </p>
-
-        <p>
-            Langkah 1: Identifikasi persamaan
-            yang digunakan.
-        </p>
-
-        <p>
-            Persamaan yang digunakan adalah
-            persamaan Laplace pada domain persegi
-            0 &lt; x &lt; 1 dan 0 &lt; y &lt; 1.
-        </p>
-
-        <p>
-            Langkah 2: Identifikasi kondisi
-            yang diberikan.
-        </p>
-
-        <p>
-            Terdapat empat kondisi yang diberikan,
-            masing-masing pada keempat sisi
-            domain persegi tersebut.
-        </p>
-
-        <p>
-            Langkah 3: Tentukan jenis
-            setiap kondisi.
-        </p>
-
-        <p>
-            Semua kondisi memberikan nilai u
-            secara langsung pada batas,
-            sehingga semuanya adalah
-            kondisi Dirichlet.
-        </p>
-
-        <p>
-            Langkah 4: Tentukan jenis masalah.
-        </p>
-
-        <p>
-            Tidak ada variabel waktu
-            dan tidak ada kondisi awal.
-        </p>
-
-        <p>
-            Kesimpulan: Permasalahan ini adalah
-            Masalah Nilai Batas dengan
-            kondisi Dirichlet pada seluruh batas.
-        </p>
-
-    </div>
-
-    <!-- PENYELESAIAN CONTOH 2 -->
-    <div class="card card--soft">
-
-        <h3>Penyelesaian — Contoh 2</h3>
-
-        <p>
-            Identifikasi jenis kondisi dan
-            jenis masalah dari permasalahan berikut.
-        </p>
-
-        <p>
-            ∂u/∂t = k ∂²u/∂x², 0 &lt; x &lt; L, t > 0<br>
-            u(x, 0) = sin(πx/L)<br>
-            ∂u/∂x (0, t) = 0<br>
-            ∂u/∂x (L, t) = 0
-        </p>
-
-        <p>
-            Langkah 1: Identifikasi persamaan
-            yang digunakan.
-        </p>
-
-        <p>
-            Persamaan yang digunakan adalah
-            persamaan panas pada interval
-            0 &lt; x &lt; L untuk t > 0.
-        </p>
-
-        <p>
-            Langkah 2: Identifikasi kondisi
-            yang diberikan.
-        </p>
-
-        <p>
-            Terdapat satu kondisi pada t = 0
-            dan dua kondisi pada batas spasial.
-        </p>
-
-        <p>
-            Langkah 3: Tentukan jenis
-            setiap kondisi.
-        </p>
-
-        <p>
-            Kondisi u(x, 0) = sin(πx/L)
-            adalah kondisi awal,
-            karena diberikan pada t = 0.
-        </p>
-
-        <p>
-            Kondisi ∂u/∂x (0, t) = 0
-            dan ∂u/∂x (L, t) = 0
-            memberikan nilai turunan u
-            pada batas spasial,
-            sehingga keduanya adalah
-            kondisi Neumann.
-        </p>
-
-        <p>
-            Langkah 4: Tentukan jenis masalah.
-        </p>
-
-        <p>
-            Permasalahan ini memiliki
-            kondisi awal sekaligus kondisi batas.
-        </p>
-
-        <p>
-            Kesimpulan: Permasalahan ini adalah
-            Masalah Campuran dengan kondisi awal
-            dan kondisi batas Neumann.
-            Kondisi Neumann ini menyatakan bahwa
-            kedua ujung batang bersifat terisolasi.
-        </p>
-
-    </div>
-
-    <!-- KESIMPULAN -->
-    <div class="card card--soft">
-
         <h3>Kesimpulan</h3>
 
         <p>
-            Kondisi awal memberikan informasi
-            mengenai keadaan sistem pada awal waktu,
-            sedangkan kondisi batas memberikan informasi
-            mengenai perilaku sistem pada tepi domain.
+            Kondisi awal dan kondisi batas adalah informasi tambahan yang sangat penting dalam PDP.
         </p>
 
         <p>
-            Terdapat tiga jenis kondisi batas,
-            yaitu Dirichlet yang menetapkan nilai u,
-            Neumann yang menetapkan nilai turunan u,
-            dan Robin yang merupakan kombinasi keduanya.
+            Kondisi awal memberikan keadaan sistem pada waktu awal,
+            sedangkan kondisi batas memberikan batasan pada wilayah ruang.
         </p>
 
         <p>
-            Kelengkapan kondisi awal dan kondisi batas
-            sangat menentukan apakah solusi PDP
-            dapat diperoleh secara unik atau tidak.
+            Keduanya berfungsi untuk menentukan solusi yang unik dan sesuai dengan fenomena nyata.
         </p>
 
     </div>

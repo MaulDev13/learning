@@ -1,478 +1,233 @@
 <div class="card-group">
 
-    <!-- PENGANTAR -->
     <div class="card card--soft">
-
-        <h3>Linearitas PDP</h3>
+        <h2>Persamaan Diferensial Parsial Linear</h2>
 
         <p>
-            Dalam Persamaan Diferensial Parsial (PDP),
-            salah satu cara untuk mengelompokkan persamaan
-            adalah berdasarkan sifat linearitasnya.
+            Dalam Persamaan Diferensial Parsial (PDP), salah satu pengelompokan yang paling penting
+            adalah <strong>linear</strong> dan <strong>non-linear</strong>.
         </p>
 
         <p>
-            Sifat ini berkaitan dengan cara
-            fungsi tak diketahui u dan turunan parsialnya
-            muncul dalam persamaan.
+            PDP disebut <strong>linear</strong> jika fungsi yang tidak diketahui
+            (biasanya ditulis sebagai <span class="text-math-inline">u</span>) dan semua turunannya
+            hanya muncul dalam bentuk pangkat satu dan tidak saling dikalikan.
         </p>
 
+        <p>
+            Secara sederhana, “linear” berarti hubungan antar variabel dan turunannya masih
+            mengikuti bentuk yang teratur dan tidak melibatkan perkalian antar solusi itu sendiri.
+        </p>
     </div>
 
-    <!-- DEFINISI LINEAR -->
     <div class="card card--soft">
-
-        <h3>Definisi PDP Linear</h3>
-
-        <p>
-            Suatu PDP dikatakan linear apabila
-            fungsi u dan semua turunan parsialnya
-            memenuhi tiga syarat berikut.
-        </p>
+        <h3>Bentuk Umum PDP Linear</h3>
 
         <p>
-            Pertama, u dan turunan parsialnya
-            hanya berpangkat satu.
+            Secara umum, PDP linear dapat ditulis dalam bentuk:
         </p>
+
+        <div class="text-math-highlight">
+$$
+a(x,y)\frac{\partial u}{\partial x}
++
+b(x,y)\frac{\partial u}{\partial y}
++
+c(x,y)u
+=
+f(x,y)
+$$
+        </div>
 
         <p>
-            Kedua, tidak terdapat perkalian
-            antara u dengan turunannya,
-            maupun antara sesama turunan.
+            atau untuk orde dua:
         </p>
+
+        <div class="text-math-highlight">
+$$
+a\,u_{xx} + b\,u_{xy} + c\,u_{yy} + d\,u_x + e\,u_y + f\,u = g
+$$
+        </div>
 
         <p>
-            Ketiga, koefisien dari u dan turunannya
-            hanya boleh bergantung pada
-            variabel bebas saja.
+            Di mana:
         </p>
 
+        <ul>
+            <li><span class="text-math-inline">u</span> adalah fungsi yang dicari</li>
+            <li>koefisien seperti <span class="text-math-inline">a,b,c</span> boleh bergantung pada variabel bebas</li>
+            <li>ruas kanan boleh nol atau fungsi tertentu</li>
+        </ul>
     </div>
 
-    <!-- DEFINISI TAK LINEAR -->
     <div class="card card--soft">
+        <h3>Ciri-Ciri PDP Linear</h3>
 
-        <h3>Definisi PDP Tak Linear</h3>
+        <table class="table">
+            <tr>
+                <th>Ciri</th>
+                <th>Penjelasan</th>
+            </tr>
 
-        <p>
-            Suatu PDP dikatakan tak linear apabila
-            salah satu dari ketiga syarat linearitas
-            tidak terpenuhi.
-        </p>
+            <tr>
+                <td>Tidak ada pangkat pada u</td>
+                <td>
+                    Fungsi <span class="text-math-inline">u</span> hanya muncul dengan pangkat satu.
+                </td>
+            </tr>
 
-        <p>
-            Artinya, terdapat suku di mana
-            u atau turunannya berpangkat lebih dari satu,
-            atau saling dikalikan,
-            atau koefisiennya bergantung pada u.
-        </p>
+            <tr>
+                <td>Tidak ada perkalian antar u</td>
+                <td>
+                    Tidak boleh ada bentuk seperti <span class="text-math-inline">u \cdot u_x</span>.
+                </td>
+            </tr>
 
+            <tr>
+                <td>Koefisien boleh berubah</td>
+                <td>
+                    Koefisien boleh bergantung pada variabel seperti x dan y.
+                </td>
+            </tr>
+
+            <tr>
+                <td>Superposisi berlaku</td>
+                <td>
+                    Jika dua solusi memenuhi PDP, maka jumlahnya juga solusi.
+                </td>
+            </tr>
+        </table>
     </div>
 
-    <!-- BENTUK UMUM -->
     <div class="card card--soft">
-
-        <h3>Bentuk Umum PDP Linear Orde Dua</h3>
-
-        <p>
-            PDP linear orde dua dengan dua variabel bebas
-            x dan y ditulis dalam bentuk umum:
-        </p>
-
-        <p>
-            A ∂²u/∂x² + B ∂²u/∂x∂y + C ∂²u/∂y²
-            + D ∂u/∂x + E ∂u/∂y + Fu = G
-        </p>
-
-        <p>
-            dengan A, B, C, D, E, F adalah fungsi
-            yang hanya bergantung pada x dan y,
-            serta G adalah fungsi dari x dan y.
-        </p>
-
-        <p>
-            Apabila G = 0, maka persamaan ini
-            juga bersifat homogen.
-            Apabila G ≠ 0, maka persamaan ini
-            bersifat tak homogen.
-        </p>
-
-    </div>
-
-    <!-- CONTOH LINEAR -->
-    <div class="card card--soft">
-
         <h3>Contoh PDP Linear</h3>
 
         <p>
-            ∂u/∂x + ∂u/∂y = 0
+            Berikut contoh PDP linear:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+\frac{\partial u}{\partial t}
+=
+k\frac{\partial^2 u}{\partial x^2}
+$$
+        </div>
+
+        <p>
+            Ini adalah <strong>persamaan panas</strong>.
         </p>
 
         <p>
-            u dan turunannya berpangkat satu,
-            tidak saling dikalikan,
-            dan koefisiennya bernilai konstanta.
-            Persamaan ini linear.
+            Ciri linear terlihat dari:
         </p>
 
-        <p>
-            ∂²u/∂x² + ∂²u/∂y² = sin(x)
-        </p>
-
-        <p>
-            Semua suku yang memuat u linear.
-            Suku sin(x) di ruas kanan
-            hanya bergantung pada variabel bebas.
-            Persamaan ini linear tak homogen.
-        </p>
-
+        <ul>
+            <li>tidak ada pangkat pada <span class="text-math-inline">u</span></li>
+            <li>tidak ada perkalian antara <span class="text-math-inline">u</span> dan turunannya</li>
+        </ul>
     </div>
 
-    <!-- CONTOH TAK LINEAR -->
     <div class="card card--soft">
+        <h3>Contoh PDP Linear Lain</h3>
 
-        <h3>Contoh PDP Tak Linear</h3>
+        <div class="text-math-highlight">
+$$
+\frac{\partial^2 u}{\partial t^2}
+=
+c^2 \frac{\partial^2 u}{\partial x^2}
+$$
+        </div>
 
         <p>
-            u ∂u/∂x + ∂u/∂y = 0
+            Ini adalah <strong>persamaan gelombang</strong>.
         </p>
 
         <p>
-            Tak linear karena u dikalikan
-            dengan turunannya sendiri ∂u/∂x.
+            Persamaan ini juga linear karena semua suku hanya melibatkan
+            <span class="text-math-inline">u</span> atau turunannya secara linear.
         </p>
-
-        <p>
-            (∂u/∂x)² + ∂²u/∂y² = 0
-        </p>
-
-        <p>
-            Tak linear karena ∂u/∂x berpangkat dua.
-        </p>
-
-        <p>
-            ∂²u/∂x² + u ∂u/∂y = 1
-        </p>
-
-        <p>
-            Tak linear karena u dikalikan
-            dengan turunannya ∂u/∂y.
-        </p>
-
     </div>
 
-    <!-- KUASI LINEAR -->
     <div class="card card--soft">
-
-        <h3>PDP Kuasi-Linear</h3>
+        <h3>Contoh PDP yang Bukan Linear</h3>
 
         <p>
-            PDP kuasi-linear adalah PDP yang linear
-            terhadap turunan orde tertingginya,
-            namun koefisien dari turunan tertinggi
-            boleh bergantung pada u dan turunan
-            orde yang lebih rendah.
+            Untuk memahami linear, kita juga perlu melihat contoh non-linear.
+        </p>
+
+        <div class="text-math-highlight">
+$$
+u \frac{\partial u}{\partial x} = 0
+$$
+        </div>
+
+        <p>
+            Persamaan ini <strong>tidak linear</strong> karena terdapat perkalian antara
+            <span class="text-math-inline">u</span> dan turunannya.
         </p>
 
         <p>
-            Contoh:
+            Contoh lain:
         </p>
+
+        <div class="text-math-highlight">
+$$
+\left(\frac{\partial u}{\partial x}\right)^2 + u = 0
+$$
+        </div>
 
         <p>
-            u ∂²u/∂x² + ∂²u/∂y² = 0
+            Tidak linear karena turunan berpangkat dua.
         </p>
-
-        <p>
-            Turunan orde dua muncul secara linear,
-            namun koefisien ∂²u/∂x² memuat u.
-            Persamaan ini kuasi-linear.
-        </p>
-
     </div>
 
-    <!-- SEMI LINEAR -->
     <div class="card card--soft">
-
-        <h3>PDP Semi-Linear</h3>
+        <h3>Kenapa Linear Itu Penting?</h3>
 
         <p>
-            PDP semi-linear adalah PDP yang linear
-            terhadap turunan orde tertingginya
-            dengan koefisien yang hanya bergantung
-            pada variabel bebas saja,
-            namun suku orde lebih rendah
-            boleh bersifat tak linear terhadap u.
+            PDP linear lebih mudah dianalisis dibandingkan non-linear.
         </p>
 
         <p>
-            Contoh:
+            Salah satu alasan utamanya adalah prinsip <strong>superposisi</strong>:
         </p>
+
+        <div class="text-math-highlight">
+$$
+u_1 + u_2 \;\text{juga solusi}
+$$
+        </div>
 
         <p>
-            ∂²u/∂x² + ∂²u/∂y² = u²
+            Jika dua fungsi merupakan solusi, maka penjumlahannya juga solusi.
+            Hal ini sangat penting dalam metode seperti:
         </p>
 
-        <p>
-            Turunan orde dua bersifat linear
-            dengan koefisien konstanta,
-            namun suku ruas kanan memuat u².
-            Persamaan ini semi-linear.
-        </p>
-
+        <ul>
+            <li>Pemisahan variabel</li>
+            <li>Deret Fourier</li>
+            <li>Transformasi Fourier</li>
+        </ul>
     </div>
 
-    <!-- RINGKASAN KLASIFIKASI -->
     <div class="card card--soft">
-
-        <h3>Ringkasan Klasifikasi</h3>
-
-        <p>
-            Linear: u dan semua turunannya
-            berpangkat satu, tidak saling dikalikan,
-            dan koefisiennya hanya bergantung
-            pada variabel bebas.
-        </p>
-
-        <p>
-            Semi-linear: turunan orde tertinggi linear
-            dengan koefisien dari variabel bebas saja,
-            namun suku orde lebih rendah
-            boleh tak linear.
-        </p>
-
-        <p>
-            Kuasi-linear: turunan orde tertinggi linear,
-            namun koefisiennya boleh bergantung
-            pada u dan turunan orde lebih rendah.
-        </p>
-
-        <p>
-            Tak linear: tidak memenuhi
-            salah satu syarat linearitas.
-        </p>
-
-    </div>
-
-    <!-- CARA MENENTUKAN LINEARITAS -->
-    <div class="card card--soft">
-
-        <h3>Cara Menentukan Linearitas</h3>
-
-        <p>
-            Langkah pertama, identifikasi semua suku
-            yang memuat u dan turunan parsialnya.
-        </p>
-
-        <p>
-            Langkah kedua, periksa apakah u
-            atau turunannya berpangkat lebih dari satu.
-            Jika ya, maka PDP tak linear.
-        </p>
-
-        <p>
-            Langkah ketiga, periksa apakah terdapat
-            perkalian antara u dengan turunannya
-            atau antara sesama turunan.
-            Jika ya, maka PDP tak linear.
-        </p>
-
-        <p>
-            Langkah keempat, periksa apakah koefisien
-            dari turunan orde tertinggi
-            bergantung pada u.
-            Jika ya, maka PDP kuasi-linear.
-        </p>
-
-        <p>
-            Jika semua syarat terpenuhi,
-            maka PDP bersifat linear.
-        </p>
-
-    </div>
-
-    <!-- PENYELESAIAN CONTOH 1 -->
-    <div class="card card--soft">
-
-        <h3>Penyelesaian — Contoh 1</h3>
-
-        <p>
-            Tentukan apakah persamaan berikut
-            linear atau tak linear.
-        </p>
-
-        <p>
-            ∂²u/∂x² − 2 ∂u/∂t + u = cos(x)
-        </p>
-
-        <p>
-            Langkah 1: Identifikasi semua suku
-            yang memuat u dan turunannya.
-        </p>
-
-        <p>
-            Suku-suku tersebut adalah
-            ∂²u/∂x², ∂u/∂t, dan u.
-        </p>
-
-        <p>
-            Langkah 2: Periksa pangkat
-            masing-masing suku.
-        </p>
-
-        <p>
-            Semua suku berpangkat satu.
-        </p>
-
-        <p>
-            Langkah 3: Periksa perkalian
-            antar suku yang memuat u.
-        </p>
-
-        <p>
-            Tidak ada perkalian antar suku
-            yang memuat u.
-        </p>
-
-        <p>
-            Langkah 4: Periksa koefisien
-            masing-masing suku.
-        </p>
-
-        <p>
-            Koefisien ∂²u/∂x² adalah 1,
-            koefisien ∂u/∂t adalah −2,
-            koefisien u adalah 1.
-            Semua koefisien tidak bergantung pada u.
-        </p>
-
-        <p>
-            Kesimpulan: Persamaan ini adalah
-            PDP linear tak homogen.
-        </p>
-
-    </div>
-
-    <!-- PENYELESAIAN CONTOH 2 -->
-    <div class="card card--soft">
-
-        <h3>Penyelesaian — Contoh 2</h3>
-
-        <p>
-            Tentukan apakah persamaan berikut
-            linear atau tak linear.
-        </p>
-
-        <p>
-            (∂u/∂x)² + ∂²u/∂y² = 0
-        </p>
-
-        <p>
-            Langkah 1: Identifikasi semua suku
-            yang memuat u dan turunannya.
-        </p>
-
-        <p>
-            Suku-suku tersebut adalah
-            (∂u/∂x)² dan ∂²u/∂y².
-        </p>
-
-        <p>
-            Langkah 2: Periksa pangkat
-            masing-masing suku.
-        </p>
-
-        <p>
-            Suku (∂u/∂x)² berpangkat dua.
-            Ini melanggar syarat linearitas.
-        </p>
-
-        <p>
-            Kesimpulan: Persamaan ini adalah
-            PDP tak linear.
-        </p>
-
-    </div>
-
-    <!-- PENYELESAIAN CONTOH 3 -->
-    <div class="card card--soft">
-
-        <h3>Penyelesaian — Contoh 3</h3>
-
-        <p>
-            Tentukan apakah persamaan berikut
-            linear, semi-linear, kuasi-linear,
-            atau tak linear.
-        </p>
-
-        <p>
-            u ∂²u/∂x² + ∂²u/∂y² = x
-        </p>
-
-        <p>
-            Langkah 1: Identifikasi turunan
-            orde tertinggi dalam persamaan.
-        </p>
-
-        <p>
-            Turunan orde tertinggi adalah orde dua,
-            yaitu ∂²u/∂x² dan ∂²u/∂y².
-        </p>
-
-        <p>
-            Langkah 2: Periksa apakah turunan
-            orde tertinggi muncul secara linear.
-        </p>
-
-        <p>
-            Turunan orde tertinggi muncul
-            secara linear, yaitu berpangkat satu
-            dan tidak saling dikalikan.
-        </p>
-
-        <p>
-            Langkah 3: Periksa koefisien
-            turunan orde tertinggi.
-        </p>
-
-        <p>
-            Koefisien ∂²u/∂x² adalah u,
-            yang bergantung pada fungsi u itu sendiri.
-            Koefisien ∂²u/∂y² adalah 1.
-        </p>
-
-        <p>
-            Kesimpulan: Persamaan ini adalah
-            PDP kuasi-linear, karena linear
-            terhadap turunan orde tertinggi
-            namun koefisiennya memuat u.
-        </p>
-
-    </div>
-
-    <!-- KESIMPULAN -->
-    <div class="card card--soft">
-
         <h3>Kesimpulan</h3>
 
         <p>
-            Linearitas PDP ditentukan oleh cara
-            fungsi u dan turunan parsialnya
-            muncul dalam persamaan.
+            PDP linear adalah persamaan diferensial parsial yang tidak melibatkan
+            pangkat atau perkalian antar fungsi tak diketahui dan turunannya.
         </p>
 
         <p>
-            PDP diklasifikasikan menjadi linear,
-            semi-linear, kuasi-linear, dan tak linear,
-            tergantung pada struktur suku-suku
-            yang memuat u dan turunannya.
+            Ciri utama PDP linear adalah bentuknya yang teratur dan memenuhi
+            prinsip superposisi.
         </p>
 
         <p>
-            Pemahaman tentang linearitas sangat penting
-            karena menentukan metode yang dapat
-            digunakan dalam mencari solusi PDP.
+            Banyak model fisika penting seperti persamaan panas dan persamaan gelombang
+            termasuk dalam kategori ini.
         </p>
-
     </div>
 
 </div>

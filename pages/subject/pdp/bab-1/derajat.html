@@ -1,0 +1,416 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Derajat Persamaan Diferensial Parsial</h2>
+
+        <p>
+            Selain orde, Persamaan Diferensial Parsial (PDP) juga memiliki konsep
+            penting lain yang disebut <strong>derajat</strong>.
+        </p>
+
+        <p>
+            Derajat digunakan untuk menunjukkan pangkat tertinggi dari turunan
+            parsial berorde tertinggi yang muncul dalam suatu persamaan.
+        </p>
+
+        <p>
+            Secara sederhana:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+\text{Derajat PDP}
+=
+\text{pangkat tertinggi dari turunan berorde tertinggi}
+$$
+        </div>
+
+        <p>
+            Konsep ini hanya dapat ditentukan apabila persamaan sudah berbentuk
+            polinomial terhadap turunannya, artinya tidak terdapat akar,
+            pecahan, atau fungsi lain yang melibatkan turunan.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Perbedaan Orde dan Derajat</h3>
+
+        <p>
+            Banyak mahasiswa sering tertukar antara orde dan derajat.
+            Padahal keduanya memiliki arti yang berbeda.
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Konsep</th>
+                <th>Makna</th>
+            </tr>
+
+            <tr>
+                <td>Orde</td>
+                <td>
+                    Menunjukkan tingkat turunan tertinggi yang muncul.
+                </td>
+            </tr>
+
+            <tr>
+                <td>Derajat</td>
+                <td>
+                    Menunjukkan pangkat tertinggi dari turunan berorde tertinggi.
+                </td>
+            </tr>
+        </table>
+
+        <p>
+            Dengan kata lain, orde melihat <em>tingkat turunan</em>,
+            sedangkan derajat melihat <em>pangkat turunan</em>.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh Dasar</h3>
+
+        <p>
+            Perhatikan persamaan berikut:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+\left(
+\frac{\partial^2 u}{\partial x^2}
+\right)^3
++
+\frac{\partial u}{\partial y}
+=
+0
+$$
+        </div>
+
+        <p>
+            Pada persamaan tersebut:
+        </p>
+
+        <ul>
+            <li>
+                Turunan tertinggi adalah:
+                <span class="text-math-inline">
+                    \frac{\partial^2 u}{\partial x^2}
+                </span>
+            </li>
+
+            <li>
+                Karena turunan tertinggi adalah orde dua,
+                maka persamaan memiliki orde dua.
+            </li>
+
+            <li>
+                Turunan orde dua tersebut berpangkat tiga,
+                sehingga derajatnya adalah tiga.
+            </li>
+        </ul>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh PDP dengan Derajat Satu</h3>
+
+        <p>
+            Perhatikan persamaan berikut:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+\frac{\partial^2 u}{\partial x^2}
++
+\frac{\partial u}{\partial y}
+=
+0
+$$
+        </div>
+
+        <p>
+            Turunan tertinggi adalah:
+        </p>
+
+        <div class="text-math">
+$$
+\frac{\partial^2 u}{\partial x^2}
+$$
+        </div>
+
+        <p>
+            Turunan tersebut berpangkat satu, sehingga:
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Konsep</th>
+                <th>Nilai</th>
+            </tr>
+
+            <tr>
+                <td>Orde</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td>Derajat</td>
+                <td>1</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh PDP dengan Derajat Dua</h3>
+
+        <p>
+            Sekarang perhatikan:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+\left(
+\frac{\partial^2 u}{\partial x^2}
+\right)^2
++
+\frac{\partial u}{\partial y}
+=
+0
+$$
+        </div>
+
+        <p>
+            Turunan tertinggi tetap merupakan turunan orde dua.
+        </p>
+
+        <p>
+            Namun turunan tersebut berpangkat dua,
+            sehingga:
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Konsep</th>
+                <th>Nilai</th>
+            </tr>
+
+            <tr>
+                <td>Orde</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td>Derajat</td>
+                <td>2</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kapan Derajat Tidak Dapat Ditentukan?</h3>
+
+        <p>
+            Derajat hanya dapat ditentukan apabila persamaan berbentuk polinomial
+            terhadap turunan-turunannya.
+        </p>
+
+        <p>
+            Jika terdapat akar, fungsi trigonometri, eksponensial,
+            logaritma, atau pecahan yang melibatkan turunan,
+            maka derajat tidak dapat ditentukan secara langsung.
+        </p>
+
+        <p>
+            Contoh:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+\sqrt{
+\frac{\partial^2 u}{\partial x^2}
+}
++
+\frac{\partial u}{\partial y}
+=
+0
+$$
+        </div>
+
+        <p>
+            Pada persamaan tersebut, turunan orde dua berada di dalam akar,
+            sehingga persamaan tidak berbentuk polinomial terhadap turunannya.
+        </p>
+
+        <p>
+            Akibatnya, derajat persamaan tidak dapat ditentukan.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Langkah Menentukan Derajat PDP</h3>
+
+        <p>
+            Untuk menentukan derajat Persamaan Diferensial Parsial,
+            langkah-langkahnya adalah:
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Langkah</th>
+                <th>Penjelasan</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>Tentukan orde PDP terlebih dahulu.</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Perhatikan turunan dengan orde tertinggi.</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>Cari pangkat tertinggi dari turunan tersebut.</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>
+                    Pastikan persamaan berbentuk polinomial terhadap turunannya.
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh Analisis Lengkap</h3>
+
+        <p>
+            Perhatikan persamaan berikut:
+        </p>
+
+        <div class="text-math-highlight">
+$$
+\left(
+\frac{\partial^3 u}{\partial x^3}
+\right)^2
++
+\frac{\partial^2 u}{\partial y^2}
+=
+0
+$$
+        </div>
+
+        <p>
+            Analisis:
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Analisis</th>
+                <th>Hasil</th>
+            </tr>
+
+            <tr>
+                <td>Turunan tertinggi</td>
+                <td>
+                    \( \frac{\partial^3 u}{\partial x^3} \)
+                </td>
+            </tr>
+
+            <tr>
+                <td>Orde</td>
+                <td>3</td>
+            </tr>
+
+            <tr>
+                <td>Pangkat turunan tertinggi</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td>Derajat</td>
+                <td>2</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kesalahan yang Sering Terjadi</h3>
+
+        <p>
+            Dalam menentukan derajat PDP, terdapat beberapa kesalahan umum
+            yang sering dilakukan.
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Kesalahan</th>
+                <th>Penjelasan</th>
+            </tr>
+
+            <tr>
+                <td>Menganggap orde sama dengan derajat</td>
+                <td>
+                    Orde dan derajat adalah dua konsep berbeda.
+                </td>
+            </tr>
+
+            <tr>
+                <td>Melihat pangkat fungsi biasa</td>
+                <td>
+                    Derajat hanya memperhatikan pangkat turunan berorde tertinggi.
+                </td>
+            </tr>
+
+            <tr>
+                <td>Mengabaikan bentuk non-polinomial</td>
+                <td>
+                    Derajat tidak dapat ditentukan jika turunan berada dalam akar,
+                    pecahan, atau fungsi lain.
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Mengapa Derajat Penting?</h3>
+
+        <p>
+            Derajat membantu memahami struktur matematis suatu persamaan
+            diferensial.
+        </p>
+
+        <p>
+            Dalam beberapa metode penyelesaian, bentuk pangkat turunan dapat
+            mempengaruhi tingkat kesulitan serta jenis solusi yang mungkin muncul.
+        </p>
+
+        <p>
+            Walaupun dalam praktik PDP konsep orde lebih sering digunakan,
+            derajat tetap menjadi bagian penting dalam klasifikasi persamaan.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Derajat Persamaan Diferensial Parsial adalah pangkat tertinggi
+            dari turunan berorde tertinggi yang muncul dalam persamaan.
+        </p>
+
+        <p>
+            Derajat hanya dapat ditentukan apabila persamaan berbentuk
+            polinomial terhadap turunannya.
+        </p>
+
+        <p>
+            Pemahaman mengenai orde dan derajat membantu mengenali struktur
+            dasar suatu Persamaan Diferensial Parsial sebelum mempelajari
+            metode penyelesaian yang lebih lanjut.
+        </p>
+    </div>
+
+</div>
