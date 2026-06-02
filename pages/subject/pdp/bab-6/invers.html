@@ -1,0 +1,341 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+
+        <h2>Transformasi Fourier Invers</h2>
+
+        <p>
+            Pada materi sebelumnya telah dibahas bahwa Transformasi Fourier
+            mengubah suatu fungsi dari domain waktu atau ruang ke domain frekuensi.
+        </p>
+
+        <div class="katex">
+$$
+f(x) \;\longrightarrow\; F(\omega)
+$$
+        </div>
+
+        <p>
+            Hasil transformasi ini memberikan informasi tentang komposisi frekuensi
+            dari fungsi asal.
+        </p>
+
+        <p>
+            Namun dalam banyak aplikasi, kita tidak hanya ingin mengetahui
+            kandungan frekuensi, tetapi juga ingin mengembalikan kembali fungsi
+            asalnya.
+        </p>
+
+        <p>
+            Proses kebalikan inilah yang disebut <strong>Transformasi Fourier Invers</strong>.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Mengapa Transformasi Invers Diperlukan?</h3>
+
+        <p>
+            Dalam praktik, Transformasi Fourier sering digunakan untuk mempermudah
+            penyelesaian masalah.
+        </p>
+
+        <p>
+            Misalnya, suatu Persamaan Diferensial Parsial ditransformasikan menjadi
+            bentuk aljabar di domain frekuensi.
+        </p>
+
+        <p>
+            Setelah persamaan tersebut diselesaikan, hasil yang diperoleh berada
+            dalam bentuk \( F(\omega) \).
+        </p>
+
+        <p>
+            Namun solusi fisik yang diinginkan tetap berada pada domain asal,
+            yaitu \( f(x) \).
+        </p>
+
+        <p>
+            Oleh karena itu diperlukan Transformasi Invers Fourier untuk
+            mengembalikan hasil ke bentuk semula.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Definisi Transformasi Fourier Invers</h3>
+
+        <p>
+            Jika Transformasi Fourier didefinisikan sebagai:
+        </p>
+
+        <div class="katex">
+$$
+F(\omega)
+=
+\int_{-\infty}^{\infty}
+f(x)e^{-i\omega x}\,dx
+$$
+        </div>
+
+        <p>
+            maka Transformasi Fourier Invers diberikan oleh:
+        </p>
+
+        <div class="katex">
+$$
+f(x)
+=
+\frac{1}{2\pi}
+\int_{-\infty}^{\infty}
+F(\omega)e^{i\omega x}\,d\omega
+$$
+        </div>
+
+        <p>
+            Kedua rumus ini membentuk pasangan Transformasi Fourier.
+        </p>
+
+        <p>
+            Artinya, informasi pada domain waktu dan domain frekuensi dapat
+            saling dipertukarkan tanpa kehilangan informasi.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Makna Intuitif Invers Fourier</h3>
+
+        <p>
+            Transformasi Fourier dapat dipandang sebagai proses “memecah”
+            fungsi menjadi komponen frekuensi.
+        </p>
+
+        <p>
+            Sebaliknya, Transformasi Invers Fourier adalah proses “menyusun kembali”
+            komponen-komponen tersebut menjadi fungsi asal.
+        </p>
+
+        <p>
+            Jika Transformasi Fourier diibaratkan sebagai prisma yang memisahkan
+            cahaya menjadi warna-warna, maka Transformasi Invers Fourier adalah
+            proses menggabungkan kembali warna-warna tersebut menjadi cahaya putih.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Struktur Simetri Fourier</h3>
+
+        <p>
+            Salah satu keunikan Transformasi Fourier adalah sifat simetrinya.
+        </p>
+
+        <p>
+            Transformasi maju dan invers memiliki bentuk yang hampir sama,
+            hanya berbeda tanda eksponen dan faktor konstanta.
+        </p>
+
+        <div class="katex">
+$$
+e^{-i\omega x}
+\quad \longleftrightarrow \quad
+e^{i\omega x}
+$$
+        </div>
+
+        <p>
+            Simetri ini menunjukkan bahwa domain waktu dan domain frekuensi
+            memiliki peran yang setara dalam representasi fungsi.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Interpretasi Konstanta \( \frac{1}{2\pi} \)</h3>
+
+        <p>
+            Faktor \( \frac{1}{2\pi} \) muncul untuk menjaga keseimbangan
+            antara transformasi maju dan invers.
+        </p>
+
+        <p>
+            Tanpa faktor ini, proses transformasi bolak-balik tidak akan
+            mengembalikan fungsi yang sama secara tepat.
+        </p>
+
+        <p>
+            Secara konseptual, konstanta ini memastikan bahwa “energi”
+            atau informasi dalam fungsi tetap terjaga.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Hubungan dengan Transformasi Fourier Maju</h3>
+
+        <p>
+            Transformasi Fourier dan inversnya membentuk pasangan operasi:
+        </p>
+
+        <div class="katex">
+$$
+f(x)
+\;\xrightarrow{\mathcal{F}}\;
+F(\omega)
+\;\xrightarrow{\mathcal{F}^{-1}}\;
+f(x)
+$$
+        </div>
+
+        <p>
+            Artinya:
+        </p>
+
+        <ul>
+            <li>Transformasi Fourier mengubah domain.</li>
+            <li>Invers Fourier mengembalikan domain.</li>
+        </ul>
+
+        <p>
+            Kedua operasi ini tidak menghilangkan informasi, melainkan hanya
+            mengubah cara representasi.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Contoh Sederhana</h3>
+
+        <p>
+            Diketahui:
+        </p>
+
+        <div class="katex">
+$$
+F(\omega)=\frac{1}{1+\omega^2}
+$$
+        </div>
+
+        <p>
+            Dari tabel Transformasi Fourier diketahui bahwa:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{F}^{-1}\left\{\frac{1}{1+\omega^2}\right\}
+=
+\frac{1}{2}e^{-|x|}
+$$
+        </div>
+
+        <p>
+            Maka:
+        </p>
+
+        <div class="katex">
+$$
+f(x)=\frac{1}{2}e^{-|x|}
+$$
+        </div>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Hubungan dengan Persamaan Diferensial Parsial</h3>
+
+        <p>
+            Dalam penyelesaian PDP, Transformasi Fourier Invers merupakan tahap
+            akhir setelah persamaan diselesaikan di domain frekuensi.
+        </p>
+
+        <p>
+            Proses umumnya adalah:
+        </p>
+
+        <div class="katex">
+$$
+f(x,t)
+\;\xrightarrow{\mathcal{F}}\;
+F(\omega,t)
+\;\xrightarrow{\text{selesaikan}}\;
+F(\omega,t)
+\;\xrightarrow{\mathcal{F}^{-1}}\;
+f(x,t)
+$$
+        </div>
+
+        <p>
+            Transformasi invers mengembalikan solusi dari domain frekuensi
+            ke domain fisik.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Perbandingan dengan Transformasi Laplace Invers</h3>
+
+        <table class="table">
+
+            <tr>
+                <th>Laplace Invers</th>
+                <th>Fourier Invers</th>
+            </tr>
+
+            <tr>
+                <td>Kembali dari domain \( s \) ke waktu \( t \)</td>
+                <td>Kembali dari domain frekuensi ke ruang/waktu</td>
+            </tr>
+
+            <tr>
+                <td>Integral dari \( 0 \) sampai \( \infty \)</td>
+                <td>Integral dari \( -\infty \) sampai \( \infty \)</td>
+            </tr>
+
+            <tr>
+                <td>Cocok untuk masalah nilai awal</td>
+                <td>Cocok untuk domain tak berhingga</td>
+            </tr>
+
+            <tr>
+                <td>Muncul faktor eksponensial real</td>
+                <td>Muncul eksponensial kompleks</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Transformasi Fourier Invers adalah proses untuk mengembalikan fungsi
+            dari domain frekuensi ke domain asalnya.
+        </p>
+
+        <p>
+            Bersama dengan Transformasi Fourier, ia membentuk pasangan operasi
+            yang memungkinkan perpindahan bolak-balik antara domain waktu/ruang
+            dan domain frekuensi tanpa kehilangan informasi.
+        </p>
+
+        <p>
+            Dalam konteks Persamaan Diferensial Parsial, Transformasi Invers
+            merupakan tahap akhir yang sangat penting untuk memperoleh solusi
+            dalam bentuk fisik yang dapat diinterpretasikan.
+        </p>
+
+    </div>
+
+</div>

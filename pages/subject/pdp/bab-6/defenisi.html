@@ -1,0 +1,387 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+
+        <h2>Transformasi Fourier</h2>
+
+        <p>
+            Pada pembahasan sebelumnya telah dipelajari bahwa Deret Fourier
+            memungkinkan suatu fungsi periodik direpresentasikan sebagai
+            penjumlahan tak hingga dari fungsi sinus dan kosinus.
+        </p>
+
+        <p>
+            Gagasan tersebut sangat berhasil untuk fungsi yang berulang secara
+            periodik. Namun dalam banyak permasalahan fisika, teknik, maupun
+            matematika terapan, fungsi yang muncul sering kali tidak memiliki
+            periode.
+        </p>
+
+        <p>
+            Sebagai contoh, sebuah pulsa listrik yang dikirim hanya satu kali,
+            ledakan singkat yang menghasilkan gelombang suara, atau distribusi
+            suhu pada ruang tak berhingga bukanlah fungsi periodik.
+        </p>
+
+        <p>
+            Karena Deret Fourier dibangun berdasarkan asumsi periodisitas,
+            diperlukan pendekatan yang lebih umum untuk menganalisis fungsi
+            semacam ini.
+        </p>
+
+        <p>
+            Kebutuhan inilah yang melahirkan Transformasi Fourier, yaitu
+            perluasan dari Deret Fourier untuk fungsi yang tidak harus
+            periodik.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Keterbatasan Deret Fourier</h3>
+
+        <p>
+            Misalkan diberikan fungsi periodik dengan periode \( 2L \).
+            Deret Fourier dari fungsi tersebut dapat dituliskan sebagai:
+        </p>
+
+        <div class="katex">
+$$
+f(x)
+=
+\frac{a_0}{2}
++
+\sum_{n=1}^{\infty}
+\left[
+a_n
+\cos\left(\frac{n\pi x}{L}\right)
++
+b_n
+\sin\left(\frac{n\pi x}{L}\right)
+\right]
+$$
+        </div>
+
+        <p>
+            Setiap suku dalam deret memiliki frekuensi tertentu.
+        </p>
+
+        <div class="katex">
+$$
+\omega_n
+=
+\frac{n\pi}{L}
+$$
+        </div>
+
+        <p>
+            Karena \( n \) hanya dapat bernilai bilangan bulat,
+            frekuensi yang muncul juga bersifat diskrit.
+        </p>
+
+        <p>
+            Dengan kata lain, fungsi periodik dibangun dari kumpulan frekuensi
+            yang terpisah satu sama lain.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Apa yang Terjadi Jika Periode Sangat Besar?</h3>
+
+        <p>
+            Sekarang bayangkan periode fungsi diperbesar terus-menerus.
+        </p>
+
+        <p>
+            Ketika nilai \( L \) semakin besar, jarak antar frekuensi:
+        </p>
+
+        <div class="katex">
+$$
+\Delta\omega
+=
+\frac{\pi}{L}
+$$
+        </div>
+
+        <p>
+            menjadi semakin kecil.
+        </p>
+
+        <p>
+            Akibatnya, frekuensi-frekuensi yang semula terpisah mulai
+            memenuhi seluruh sumbu frekuensi secara semakin rapat.
+        </p>
+
+        <p>
+            Pada limit:
+        </p>
+
+        <div class="katex">
+$$
+L\rightarrow\infty
+$$
+        </div>
+
+        <p>
+            frekuensi tidak lagi bersifat diskrit, melainkan berubah menjadi
+            kontinu.
+        </p>
+
+        <p>
+            Penjumlahan Fourier kemudian berubah menjadi integral Fourier.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Dari Deret Menjadi Integral</h3>
+
+        <p>
+            Pada Deret Fourier, fungsi direpresentasikan sebagai penjumlahan
+            komponen-komponen frekuensi.
+        </p>
+
+        <div class="katex">
+$$
+f(x)
+=
+\sum
+\text{(komponen frekuensi)}
+$$
+        </div>
+
+        <p>
+            Ketika frekuensi menjadi kontinu, penjumlahan tidak lagi memadai.
+        </p>
+
+        <p>
+            Sebagai gantinya digunakan integral:
+        </p>
+
+        <div class="katex">
+$$
+f(x)
+=
+\int
+\text{(komponen frekuensi)}
+\, d\omega
+$$
+        </div>
+
+        <p>
+            Inilah ide utama yang mendasari Transformasi Fourier.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Interpretasi Fisik</h3>
+
+        <p>
+            Deret Fourier menyatakan bahwa suatu fungsi periodik terdiri dari
+            sejumlah frekuensi tertentu.
+        </p>
+
+        <p>
+            Transformasi Fourier memperluas gagasan tersebut dengan menyatakan
+            bahwa suatu fungsi dapat dipandang sebagai gabungan tak hingga dari
+            seluruh frekuensi yang mungkin.
+        </p>
+
+        <p>
+            Setiap frekuensi memiliki kontribusi tertentu terhadap bentuk
+            fungsi secara keseluruhan.
+        </p>
+
+        <p>
+            Dengan demikian, Transformasi Fourier dapat dipandang sebagai alat
+            untuk menguraikan suatu sinyal ke dalam komponen-komponen
+            frekuensinya.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Ide Analogi Prisma</h3>
+
+        <p>
+            Cahaya putih tampak sebagai satu kesatuan.
+        </p>
+
+        <p>
+            Namun ketika dilewatkan melalui prisma, cahaya tersebut terurai
+            menjadi berbagai warna dengan panjang gelombang yang berbeda.
+        </p>
+
+        <p>
+            Setiap warna merupakan komponen penyusun cahaya putih.
+        </p>
+
+        <p>
+            Transformasi Fourier bekerja dengan cara yang serupa terhadap
+            fungsi atau sinyal.
+        </p>
+
+        <p>
+            Fungsi yang tampak rumit diuraikan menjadi komponen-komponen
+            frekuensi yang lebih sederhana sehingga struktur internalnya dapat
+            dianalisis dengan lebih mudah.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Definisi Transformasi Fourier</h3>
+
+        <p>
+            Untuk fungsi yang memenuhi syarat tertentu, Transformasi Fourier
+            didefinisikan sebagai:
+        </p>
+
+        <div class="katex">
+$$
+F(\omega)
+=
+\int_{-\infty}^{\infty}
+f(x)
+e^{-i\omega x}
+\,dx
+$$
+        </div>
+
+        <p>
+            Fungsi \( F(\omega) \) disebut Transformasi Fourier dari
+            \( f(x) \).
+        </p>
+
+        <p>
+            Hasil transformasi tidak lagi dinyatakan terhadap variabel ruang
+            atau waktu, melainkan terhadap variabel frekuensi
+            \( \omega \).
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Makna Variabel Frekuensi</h3>
+
+        <p>
+            Pada domain asli, fungsi biasanya dinyatakan terhadap posisi
+            \( x \) atau waktu \( t \).
+        </p>
+
+        <p>
+            Setelah transformasi dilakukan, perhatian berpindah ke variabel
+            frekuensi \( \omega \).
+        </p>
+
+        <p>
+            Nilai \( F(\omega) \) menunjukkan seberapa besar kontribusi
+            frekuensi \( \omega \) terhadap pembentukan fungsi asal.
+        </p>
+
+        <p>
+            Oleh karena itu Transformasi Fourier sering dikatakan sebagai
+            perpindahan dari domain waktu atau ruang menuju domain frekuensi.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Transformasi Invers Fourier</h3>
+
+        <p>
+            Sama seperti Transformasi Laplace, Transformasi Fourier juga
+            memiliki operasi invers.
+        </p>
+
+        <p>
+            Jika diketahui:
+        </p>
+
+        <div class="katex">
+$$
+F(\omega)
+$$
+        </div>
+
+        <p>
+            maka fungsi asal dapat diperoleh kembali melalui:
+        </p>
+
+        <div class="katex">
+$$
+f(x)
+=
+\frac{1}{2\pi}
+\int_{-\infty}^{\infty}
+F(\omega)
+e^{i\omega x}
+\,d\omega
+$$
+        </div>
+
+        <p>
+            Dengan demikian tidak ada informasi yang hilang selama proses
+            transformasi dilakukan.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Hubungan dengan Penyelesaian PDP</h3>
+
+        <p>
+            Dalam Persamaan Diferensial Parsial, Transformasi Fourier sangat
+            berguna untuk menangani variabel ruang yang didefinisikan pada
+            domain tak berhingga.
+        </p>
+
+        <p>
+            Berbeda dengan Deret Fourier yang banyak digunakan pada interval
+            terbatas, Transformasi Fourier memungkinkan analisis dilakukan pada
+            seluruh garis real.
+        </p>
+
+        <p>
+            Metode ini sering digunakan dalam penyelesaian persamaan panas,
+            persamaan gelombang, persamaan difusi, dan berbagai model fisika
+            lainnya pada domain tak berhingga.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Transformasi Fourier merupakan generalisasi Deret Fourier untuk
+            fungsi yang tidak harus periodik. Jika Deret Fourier menyatakan
+            fungsi sebagai penjumlahan frekuensi-frekuensi diskrit, maka
+            Transformasi Fourier menyatakan fungsi sebagai integral dari
+            frekuensi-frekuensi kontinu.
+        </p>
+
+        <p>
+            Melalui transformasi ini, suatu fungsi dapat dianalisis dari sudut
+            pandang frekuensi sehingga struktur dan perilakunya menjadi lebih
+            mudah dipahami. Dalam teori Persamaan Diferensial Parsial,
+            Transformasi Fourier merupakan salah satu alat paling penting untuk
+            menyelesaikan masalah pada domain tak berhingga.
+        </p>
+
+    </div>
+
+</div>

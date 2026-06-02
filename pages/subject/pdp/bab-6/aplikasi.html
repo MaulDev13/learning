@@ -1,0 +1,363 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+
+        <h2>Aplikasi Transformasi Fourier pada Persamaan Diferensial Parsial (PDP)</h2>
+
+        <p>
+            Setelah memahami Transformasi Fourier dan inversnya, langkah berikutnya
+            adalah melihat bagaimana metode ini digunakan untuk menyelesaikan
+            Persamaan Diferensial Parsial (PDP).
+        </p>
+
+        <p>
+            Berbeda dengan Deret Fourier yang umumnya digunakan pada interval terbatas,
+            Transformasi Fourier digunakan untuk masalah pada domain tak berhingga
+            seperti:
+        </p>
+
+        <ul>
+            <li>Domain \( (-\infty, \infty) \)</li>
+            <li>Sinyal tak periodik</li>
+            <li>Distribusi panas atau gelombang yang menyebar tanpa batas</li>
+        </ul>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Ide Utama Metode Fourier pada PDP</h3>
+
+        <p>
+            Inti dari penggunaan Transformasi Fourier pada PDP adalah mengubah
+            variabel ruang menjadi domain frekuensi.
+        </p>
+
+        <p>
+            Jika fungsi awal adalah:
+        </p>
+
+        <div class="katex">
+$$
+u(x,t)
+$$
+        </div>
+
+        <p>
+            maka Transformasi Fourier terhadap variabel \( x \) menghasilkan:
+        </p>
+
+        <div class="katex">
+$$
+U(\omega,t)
+=
+\mathcal{F}\{u(x,t)\}
+$$
+        </div>
+
+        <p>
+            Dengan cara ini, turunan terhadap \( x \) berubah menjadi operasi
+            aljabar terhadap \( \omega \).
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Sifat Kunci yang Digunakan</h3>
+
+        <p>
+            Dalam aplikasi PDP, sifat yang paling penting adalah:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{F}\left\{\frac{\partial^2 u}{\partial x^2}\right\}
+=
+-(\omega^2)U(\omega,t)
+$$
+        </div>
+
+        <p>
+            Artinya turunan ruang orde dua berubah menjadi perkalian sederhana
+            dengan \( -\omega^2 \).
+        </p>
+
+        <p>
+            Hal ini mengubah PDP menjadi Persamaan Diferensial Biasa (PDB)
+            terhadap variabel waktu.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Contoh: Persamaan Panas pada Garis Tak Berhingga</h3>
+
+        <p>
+            Pertimbangkan persamaan panas:
+        </p>
+
+        <div class="katex">
+$$
+\frac{\partial u}{\partial t}
+=
+k\frac{\partial^2 u}{\partial x^2},
+\qquad -\infty < x < \infty
+$$
+        </div>
+
+        <p>
+            dengan kondisi awal:
+        </p>
+
+        <div class="katex">
+$$
+u(x,0)=f(x)
+$$
+        </div>
+
+        <p>
+            Langkah pertama adalah menerapkan Transformasi Fourier terhadap variabel
+            \( x \).
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Transformasi ke Domain Frekuensi</h3>
+
+        <p>
+            Terapkan Transformasi Fourier:
+        </p>
+
+        <div class="katex">
+$$
+U(\omega,t)=\mathcal{F}\{u(x,t)\}
+$$
+        </div>
+
+        <p>
+            Maka masing-masing suku berubah menjadi:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{F}\left\{\frac{\partial u}{\partial t}\right\}
+=
+\frac{\partial U}{\partial t}
+$$
+        </div>
+
+        <div class="katex">
+$$
+\mathcal{F}\left\{\frac{\partial^2 u}{\partial x^2}\right\}
+=
+-(\omega^2)U
+$$
+        </div>
+
+        <p>
+            Sehingga persamaan panas berubah menjadi:
+        </p>
+
+        <div class="katex">
+$$
+\frac{\partial U}{\partial t}
+=
+-k\omega^2 U
+$$
+        </div>
+
+        <p>
+            Perhatikan bahwa PDP telah berubah menjadi PDB sederhana.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Menyelesaikan Persamaan di Domain Fourier</h3>
+
+        <p>
+            Persamaan:
+        </p>
+
+        <div class="katex">
+$$
+\frac{\partial U}{\partial t}
+=
+-k\omega^2 U
+$$
+        </div>
+
+        <p>
+            adalah Persamaan Diferensial Biasa dengan solusi:
+        </p>
+
+        <div class="katex">
+$$
+U(\omega,t)
+=
+C(\omega)e^{-k\omega^2 t}
+$$
+        </div>
+
+        <p>
+            Gunakan kondisi awal:
+        </p>
+
+        <div class="katex">
+$$
+U(\omega,0)=F(\omega)
+$$
+        </div>
+
+        <p>
+            sehingga:
+        </p>
+
+        <div class="katex">
+$$
+U(\omega,t)
+=
+F(\omega)e^{-k\omega^2 t}
+$$
+        </div>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Transformasi Invers Fourier</h3>
+
+        <p>
+            Setelah solusi dalam domain frekuensi diperoleh, langkah terakhir adalah
+            mengembalikannya ke domain ruang.
+        </p>
+
+        <div class="katex">
+$$
+u(x,t)
+=
+\frac{1}{2\pi}
+\int_{-\infty}^{\infty}
+F(\omega)e^{-k\omega^2 t}
+e^{i\omega x}
+\,d\omega
+$$
+        </div>
+
+        <p>
+            Inilah solusi umum persamaan panas pada garis tak berhingga.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Interpretasi Fisik</h3>
+
+        <p>
+            Faktor:
+        </p>
+
+        <div class="katex">
+$$
+e^{-k\omega^2 t}
+$$
+        </div>
+
+        <p>
+            menunjukkan bahwa komponen frekuensi tinggi akan meredam lebih cepat
+            dibandingkan komponen frekuensi rendah.
+        </p>
+
+        <p>
+            Artinya:
+        </p>
+
+        <ul>
+            <li>Frekuensi tinggi → cepat hilang (smoothing)</li>
+            <li>Frekuensi rendah → bertahan lebih lama</li>
+        </ul>
+
+        <p>
+            Inilah alasan mengapa solusi persamaan panas menjadi semakin halus
+            seiring waktu.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Langkah Umum Metode Fourier pada PDP</h3>
+
+        <ol>
+            <li>Terapkan Transformasi Fourier pada variabel ruang.</li>
+            <li>Ubah PDP menjadi PDB terhadap waktu.</li>
+            <li>Selesaikan PDB di domain frekuensi.</li>
+            <li>Gunakan kondisi awal untuk menentukan konstanta.</li>
+            <li>Terapkan Transformasi Fourier Invers.</li>
+        </ol>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Perbandingan dengan Deret Fourier</h3>
+
+        <table class="table">
+
+            <tr>
+                <th>Deret Fourier</th>
+                <th>Transformasi Fourier</th>
+            </tr>
+
+            <tr>
+                <td>Domain terbatas</td>
+                <td>Domain tak berhingga</td>
+            </tr>
+
+            <tr>
+                <td>Frekuensi diskrit</td>
+                <td>Frekuensi kontinu</td>
+            </tr>
+
+            <tr>
+                <td>Dipakai pada interval \( [0,L] \)</td>
+                <td>Dipakai pada \( (-\infty,\infty) \)</td>
+            </tr>
+
+            <tr>
+                <td>Representasi deret</td>
+                <td>Representasi integral</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Transformasi Fourier merupakan alat yang sangat kuat untuk menyelesaikan
+            Persamaan Diferensial Parsial pada domain tak berhingga.
+        </p>
+
+        <p>
+            Dengan mengubah variabel ruang menjadi domain frekuensi, PDP yang kompleks
+            dapat direduksi menjadi Persamaan Diferensial Biasa yang lebih sederhana.
+        </p>
+
+        <p>
+            Setelah diselesaikan di domain frekuensi, Transformasi Fourier Invers
+            digunakan untuk memperoleh kembali solusi dalam domain fisik.
+        </p>
+
+    </div>
+
+</div>

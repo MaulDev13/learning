@@ -1,0 +1,410 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+
+        <h2>Sifat-Sifat Transformasi Fourier</h2>
+
+        <p>
+            Setelah memahami definisi Transformasi Fourier, langkah berikutnya adalah
+            mempelajari sifat-sifat dasarnya.
+        </p>
+
+        <p>
+            Sama seperti Transformasi Laplace, dalam praktiknya Transformasi Fourier
+            jarang dihitung langsung dari definisi integral. Sebaliknya, perhitungan
+            hampir selalu dilakukan dengan memanfaatkan sifat-sifat transformasi.
+        </p>
+
+        <p>
+            Sifat-sifat ini sangat penting karena memungkinkan kita mengubah operasi
+            yang kompleks pada domain waktu atau ruang menjadi operasi yang lebih
+            sederhana pada domain frekuensi.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Definisi Singkat Transformasi Fourier</h3>
+
+        <p>
+            Untuk mengingat kembali, Transformasi Fourier dari fungsi \( f(x) \)
+            didefinisikan sebagai:
+        </p>
+
+        <div class="katex">
+$$
+F(\omega)
+=
+\int_{-\infty}^{\infty}
+f(x)e^{-i\omega x}\,dx
+$$
+        </div>
+
+        <p>
+            dan inversnya:
+        </p>
+
+        <div class="katex">
+$$
+f(x)
+=
+\frac{1}{2\pi}
+\int_{-\infty}^{\infty}
+F(\omega)e^{i\omega x}\,d\omega
+$$
+        </div>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Linearitas</h3>
+
+        <p>
+            Transformasi Fourier bersifat linear. Artinya, transformasi dari
+            kombinasi linier fungsi sama dengan kombinasi linier dari transformasinya.
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{F}\{af(x)+bg(x)\}
+=
+aF(\omega)+bG(\omega)
+$$
+        </div>
+
+        <p>
+            dengan \( a \) dan \( b \) adalah konstanta.
+        </p>
+
+        <p>
+            Sifat ini memungkinkan kita memecah fungsi kompleks menjadi bagian-bagian
+            yang lebih sederhana sebelum ditransformasikan.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Perubahan Skala (Scaling)</h3>
+
+        <p>
+            Jika variabel ruang atau waktu diperbesar atau diperkecil, maka efeknya
+            pada domain frekuensi adalah kebalikan skala.
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{F}\{f(ax)\}
+=
+\frac{1}{|a|}F\left(\frac{\omega}{a}\right)
+$$
+        </div>
+
+        <p>
+            Artinya:
+        </p>
+
+        <ul>
+            <li>Jika fungsi dipersempit di domain waktu, spektrumnya melebar.</li>
+            <li>Jika fungsi diperlebar di domain waktu, spektrumnya menyempit.</li>
+        </ul>
+
+        <p>
+            Sifat ini menunjukkan hubungan ketidakpastian antara waktu dan frekuensi.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Pergeseran pada Domain Waktu</h3>
+
+        <p>
+            Jika fungsi digeser pada domain waktu atau ruang, maka amplitudo
+            spektrumnya tidak berubah, hanya fase yang berubah.
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{F}\{f(x-a)\}
+=
+e^{-i\omega a}F(\omega)
+$$
+        </div>
+
+        <p>
+            Pergeseran di domain asli tidak mengubah kandungan frekuensi, hanya
+            mengubah posisi sinyal.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Pergeseran pada Domain Frekuensi (Modulasi)</h3>
+
+        <p>
+            Jika fungsi dikalikan dengan eksponensial kompleks, maka spektrum
+            bergeser pada domain frekuensi.
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{F}\{e^{iax}f(x)\}
+=
+F(\omega-a)
+$$
+        </div>
+
+        <p>
+            Sifat ini dikenal sebagai modulasi dan sangat penting dalam
+            teori sinyal dan komunikasi.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Diferensiasi di Domain Waktu</h3>
+
+        <p>
+            Salah satu sifat penting Transformasi Fourier adalah hubungan antara
+            turunan dan perkalian di domain frekuensi.
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{F}\{f'(x)\}
+=
+i\omega F(\omega)
+$$
+        </div>
+
+        <div class="katex">
+$$
+\mathcal{F}\{f''(x)\}
+=
+-(\omega^2)F(\omega)
+$$
+        </div>
+
+        <p>
+            Artinya:
+        </p>
+
+        <ul>
+            <li>Turunan pertama menjadi perkalian dengan \( i\omega \)</li>
+            <li>Turunan kedua menjadi perkalian dengan \( -\omega^2 \)</li>
+        </ul>
+
+        <p>
+            Inilah alasan mengapa Transformasi Fourier sangat efektif dalam
+            menyelesaikan PDP.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Diferensiasi di Domain Frekuensi</h3>
+
+        <p>
+            Kebalikan dari sifat sebelumnya, perkalian dengan variabel \( x \)
+            di domain waktu berubah menjadi diferensiasi terhadap \( \omega \).
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{F}\{x f(x)\}
+=
+i \frac{d}{d\omega}F(\omega)
+$$
+        </div>
+
+        <p>
+            Secara umum:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{F}\{x^n f(x)\}
+=
+i^n \frac{d^n}{d\omega^n}F(\omega)
+$$
+        </div>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Konvolusi</h3>
+
+        <p>
+            Konvolusi merupakan salah satu sifat paling penting dalam Transformasi Fourier.
+        </p>
+
+        <p>
+            Konvolusi dua fungsi didefinisikan sebagai:
+        </p>
+
+        <div class="katex">
+$$
+(f*g)(x)
+=
+\int_{-\infty}^{\infty}
+f(\tau)g(x-\tau)\,d\tau
+$$
+        </div>
+
+        <p>
+            Transformasi Fourier dari konvolusi adalah:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{F}\{f*g\}
+=
+F(\omega)G(\omega)
+$$
+        </div>
+
+        <p>
+            Artinya:
+        </p>
+
+        <ul>
+            <li>Konvolusi di domain waktu → perkalian di domain frekuensi</li>
+            <li>Perkalian di domain waktu → konvolusi di domain frekuensi</li>
+        </ul>
+
+        <p>
+            Sifat ini sangat penting dalam sistem linear dan analisis sinyal.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Energi Sinyal (Teorema Parseval)</h3>
+
+        <p>
+            Transformasi Fourier juga memiliki sifat penting terkait energi suatu sinyal.
+        </p>
+
+        <p>
+            Energi total di domain waktu sama dengan energi di domain frekuensi.
+        </p>
+
+        <div class="katex">
+$$
+\int_{-\infty}^{\infty}
+|f(x)|^2\,dx
+=
+\frac{1}{2\pi}
+\int_{-\infty}^{\infty}
+|F(\omega)|^2\,d\omega
+$$
+        </div>
+
+        <p>
+            Teorema ini dikenal sebagai <strong>Teorema Parseval</strong>.
+        </p>
+
+        <p>
+            Interpretasinya adalah bahwa Transformasi Fourier tidak mengubah
+            "total informasi energi" dari suatu sinyal, hanya mengubah cara
+            representasinya.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Simetri (Fungsi Genap dan Ganjil)</h3>
+
+        <p>
+            Sifat simetri juga sangat berpengaruh dalam bentuk Transformasi Fourier.
+        </p>
+
+        <ul>
+            <li>Jika \( f(x) \) genap, maka \( F(\omega) \) juga genap dan real.</li>
+            <li>Jika \( f(x) \) ganjil, maka \( F(\omega) \) imajiner dan ganjil.</li>
+        </ul>
+
+        <p>
+            Sifat ini sering digunakan untuk menyederhanakan perhitungan integral.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Ringkasan Sifat-Sifat Penting</h3>
+
+        <table class="table">
+
+            <tr>
+                <th>Sifat</th>
+                <th>Rumus</th>
+            </tr>
+
+            <tr>
+                <td>Linearitas</td>
+                <td>\(\mathcal{F}\{af+bg\}=aF+bG\)</td>
+            </tr>
+
+            <tr>
+                <td>Scaling</td>
+                <td>\(\mathcal{F}\{f(ax)\}=\frac{1}{|a|}F(\omega/a)\)</td>
+            </tr>
+
+            <tr>
+                <td>Pergeseran waktu</td>
+                <td>\(\mathcal{F}\{f(x-a)\}=e^{-i\omega a}F(\omega)\)</td>
+            </tr>
+
+            <tr>
+                <td>Modulasi</td>
+                <td>\(\mathcal{F}\{e^{iax}f(x)\}=F(\omega-a)\)</td>
+            </tr>
+
+            <tr>
+                <td>Turunan</td>
+                <td>\(\mathcal{F}\{f'\}=i\omega F\)</td>
+            </tr>
+
+            <tr>
+                <td>Konvolusi</td>
+                <td>\(\mathcal{F}\{f*g\}=FG\)</td>
+            </tr>
+
+            <tr>
+                <td>Parseval</td>
+                <td>\(\int |f|^2 = \frac{1}{2\pi}\int |F|^2\)</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Sifat-sifat Transformasi Fourier menunjukkan bahwa operasi kompleks
+            pada domain waktu dapat disederhanakan menjadi operasi aljabar atau
+            diferensial sederhana pada domain frekuensi.
+        </p>
+
+        <p>
+            Hal ini menjadikan Transformasi Fourier sebagai alat yang sangat kuat
+            dalam analisis Persamaan Diferensial Parsial, khususnya pada domain
+            tak berhingga dan dalam teori sinyal.
+        </p>
+
+    </div>
+
+</div>
