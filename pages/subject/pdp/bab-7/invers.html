@@ -1,0 +1,536 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+
+        <h2>Transformasi Invers Laplace</h2>
+
+        <p>
+            Pada pembahasan sebelumnya telah dijelaskan bahwa Transformasi Laplace
+            mengubah suatu fungsi dari domain waktu menjadi domain Laplace.
+        </p>
+
+        <div class="katex">
+$$
+f(t)
+\quad \xrightarrow{\mathcal{L}}
+\quad
+F(s)
+$$
+        </div>
+
+        <p>
+            Proses ini sangat berguna karena banyak Persamaan Diferensial Biasa
+            dapat diubah menjadi persamaan aljabar yang lebih mudah diselesaikan.
+        </p>
+
+        <p>
+            Namun solusi yang diperoleh setelah transformasi biasanya masih berada
+            dalam bentuk fungsi terhadap variabel \( s \). Padahal yang ingin dicari
+            pada akhirnya adalah fungsi asli terhadap waktu \( t \).
+        </p>
+
+        <p>
+            Oleh karena itu diperlukan proses kebalikan yang disebut
+            <strong>Transformasi Invers Laplace</strong>.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Mengapa Transformasi Invers Diperlukan?</h3>
+
+        <p>
+            Misalkan setelah menyelesaikan suatu Persamaan Diferensial diperoleh:
+        </p>
+
+        <div class="katex">
+$$
+Y(s)=\frac{1}{s-2}
+$$
+        </div>
+
+        <p>
+            Bentuk ini bukan solusi akhir karena masih berada pada domain Laplace.
+        </p>
+
+        <p>
+            Yang sebenarnya ingin diketahui adalah fungsi waktu
+            \( y(t) \).
+        </p>
+
+        <p>
+            Untuk kembali ke domain waktu, kita harus mencari fungsi yang memiliki
+            transformasi Laplace sama dengan \( Y(s) \).
+        </p>
+
+        <p>
+            Dalam contoh ini:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}^{-1}
+\left\{
+\frac{1}{s-2}
+\right\}
+=
+e^{2t}
+$$
+        </div>
+
+        <p>
+            sehingga solusi akhirnya adalah:
+        </p>
+
+        <div class="katex">
+$$
+y(t)=e^{2t}
+$$
+        </div>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Definisi Transformasi Invers Laplace</h3>
+
+        <p>
+            Jika:
+        </p>
+
+        <div class="katex">
+$$
+F(s)
+=
+\mathcal{L}\{f(t)\}
+$$
+        </div>
+
+        <p>
+            maka:
+        </p>
+
+        <div class="katex">
+$$
+f(t)
+=
+\mathcal{L}^{-1}\{F(s)\}
+$$
+        </div>
+
+        <p>
+            Simbol
+            \( \mathcal{L}^{-1} \)
+            menyatakan operator invers Laplace.
+        </p>
+
+        <p>
+            Operator ini mengembalikan fungsi dari domain Laplace ke domain waktu.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Ide Dasar Invers Laplace</h3>
+
+        <p>
+            Konsepnya sama seperti operasi perkalian dan pembagian.
+        </p>
+
+        <p>
+            Jika:
+        </p>
+
+        <div class="katex">
+$$
+5\times4=20
+$$
+        </div>
+
+        <p>
+            maka:
+        </p>
+
+        <div class="katex">
+$$
+20\div4=5
+$$
+        </div>
+
+        <p>
+            Operasi pembagian mengembalikan hasil ke bentuk semula.
+        </p>
+
+        <p>
+            Demikian pula:
+        </p>
+
+        <div class="katex">
+$$
+f(t)
+\rightarrow
+F(s)
+$$
+        </div>
+
+        <p>
+            melalui Transformasi Laplace, kemudian:
+        </p>
+
+        <div class="katex">
+$$
+F(s)
+\rightarrow
+f(t)
+$$
+        </div>
+
+        <p>
+            melalui Transformasi Invers Laplace.
+        </p>
+
+        <p>
+            Dengan kata lain, invers Laplace merupakan proses untuk
+            "menerjemahkan kembali" fungsi dari domain Laplace ke domain waktu.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Tabel Transformasi Invers Dasar</h3>
+
+        <p>
+            Dalam praktik, invers Laplace jarang dihitung menggunakan definisi
+            integralnya. Sebagian besar perhitungan dilakukan dengan mencocokkan
+            bentuk fungsi terhadap tabel transformasi yang sudah diketahui.
+        </p>
+
+        <table class="table">
+
+            <tr>
+                <th>\(F(s)\)</th>
+                <th>\(f(t)\)</th>
+            </tr>
+
+            <tr>
+                <td>\(\dfrac{1}{s}\)</td>
+                <td>\(1\)</td>
+            </tr>
+
+            <tr>
+                <td>\(\dfrac{1}{s-a}\)</td>
+                <td>\(e^{at}\)</td>
+            </tr>
+
+            <tr>
+                <td>\(\dfrac{n!}{s^{n+1}\)</td>
+                <td>\(t^n\)</td>
+            </tr>
+
+            <tr>
+                <td>\(\dfrac{s}{s^2+a^2}\)</td>
+                <td>\(\cos(at)\)</td>
+            </tr>
+
+            <tr>
+                <td>\(\dfrac{a}{s^2+a^2}\)</td>
+                <td>\(\sin(at)\)</td>
+            </tr>
+
+            <tr>
+                <td>\(\dfrac{s-a}{(s-a)^2+b^2}\)</td>
+                <td>\(e^{at}\cos(bt)\)</td>
+            </tr>
+
+            <tr>
+                <td>\(\dfrac{b}{(s-a)^2+b^2}\)</td>
+                <td>\(e^{at}\sin(bt)\)</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Contoh 1</h3>
+
+        <p>
+            Tentukan:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}^{-1}
+\left\{
+\frac{5}{s}
+\right\}
+$$
+        </div>
+
+        <p>
+            Dari tabel diketahui:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}^{-1}
+\left\{
+\frac{1}{s}
+\right\}
+=
+1
+$$
+        </div>
+
+        <p>
+            Dengan sifat linearitas:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}^{-1}
+\left\{
+\frac{5}{s}
+\right\}
+=
+5
+$$
+        </div>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Contoh 2</h3>
+
+        <p>
+            Tentukan:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}^{-1}
+\left\{
+\frac{2}{s-3}
+\right\}
+$$
+        </div>
+
+        <p>
+            Karena:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}^{-1}
+\left\{
+\frac{1}{s-a}
+\right\}
+=
+e^{at}
+$$
+        </div>
+
+        <p>
+            maka:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}^{-1}
+\left\{
+\frac{2}{s-3}
+\right\}
+=
+2e^{3t}
+$$
+        </div>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Contoh 3</h3>
+
+        <p>
+            Tentukan:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}^{-1}
+\left\{
+\frac{s}{s^2+4}
+\right\}
+$$
+        </div>
+
+        <p>
+            Perhatikan bahwa:
+        </p>
+
+        <div class="katex">
+$$
+s^2+4=s^2+2^2
+$$
+        </div>
+
+        <p>
+            Bentuk ini sesuai dengan rumus:
+        </p>
+
+        <div class="katex">
+$$
+\frac{s}{s^2+a^2}
+\longleftrightarrow
+\cos(at)
+$$
+        </div>
+
+        <p>
+            sehingga:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}^{-1}
+\left\{
+\frac{s}{s^2+4}
+\right\}
+=
+\cos(2t)
+$$
+        </div>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Metode Pecahan Parsial</h3>
+
+        <p>
+            Dalam banyak kasus, bentuk \( F(s) \) tidak langsung cocok dengan
+            tabel transformasi.
+        </p>
+
+        <p>
+            Sebagai contoh:
+        </p>
+
+        <div class="katex">
+$$
+F(s)
+=
+\frac{3s+5}{(s+1)(s+2)}
+$$
+        </div>
+
+        <p>
+            Bentuk seperti ini biasanya diuraikan terlebih dahulu menjadi
+            pecahan parsial:
+        </p>
+
+        <div class="katex">
+$$
+\frac{3s+5}{(s+1)(s+2)}
+=
+\frac{A}{s+1}
++
+\frac{B}{s+2}
+$$
+        </div>
+
+        <p>
+            Setelah nilai \( A \) dan \( B \) diperoleh, masing-masing suku
+            dapat dicocokkan dengan tabel invers Laplace.
+        </p>
+
+        <p>
+            Karena itu teknik pecahan parsial merupakan alat yang sangat penting
+            dalam penggunaan Transformasi Invers Laplace.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Langkah Umum Mencari Invers Laplace</h3>
+
+        <ol>
+            <li>Tuliskan fungsi \( F(s) \).</li>
+            <li>Sederhanakan bentuk aljabarnya jika diperlukan.</li>
+            <li>Lakukan pecahan parsial apabila penyebut memiliki faktor-faktor linear.</li>
+            <li>Cocokkan setiap suku dengan tabel Transformasi Laplace.</li>
+            <li>Gunakan sifat linearitas untuk menggabungkan hasil.</li>
+            <li>Peroleh fungsi akhir \( f(t) \).</li>
+        </ol>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Hubungan dengan Penyelesaian Persamaan Diferensial</h3>
+
+        <p>
+            Dalam metode Laplace, invers transformasi merupakan langkah terakhir
+            setelah persamaan aljabar pada domain \( s \) berhasil diselesaikan.
+        </p>
+
+        <p>
+            Secara umum proses penyelesaiannya adalah:
+        </p>
+
+        <div class="katex">
+$$
+\text{PDB}
+\longrightarrow
+Y(s)
+\longrightarrow
+\text{Persamaan Aljabar}
+\longrightarrow
+Y(s)
+\longrightarrow
+y(t)
+$$
+        </div>
+
+        <p>
+            Tahap terakhir,
+            yaitu
+            \( Y(s)\rightarrow y(t) \),
+            dilakukan menggunakan Transformasi Invers Laplace.
+        </p>
+
+        <p>
+            Tanpa invers transformasi, solusi masih berada pada domain Laplace
+            dan belum dapat diinterpretasikan sebagai fungsi waktu yang dicari.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Transformasi Invers Laplace merupakan proses untuk mengembalikan fungsi
+            dari domain Laplace ke domain waktu. Jika Transformasi Laplace digunakan
+            untuk mengubah persamaan diferensial menjadi persamaan aljabar, maka
+            invers Laplace digunakan untuk menerjemahkan kembali hasil yang diperoleh
+            menjadi solusi akhir yang bermakna secara fisik.
+        </p>
+
+        <p>
+            Dalam praktik, invers Laplace umumnya dilakukan dengan menggunakan tabel
+            transformasi, sifat linearitas, serta teknik pecahan parsial. Ketiga alat
+            tersebut menjadi fondasi utama dalam penyelesaian Persamaan Diferensial
+            menggunakan metode Transformasi Laplace.
+        </p>
+
+    </div>
+
+</div>

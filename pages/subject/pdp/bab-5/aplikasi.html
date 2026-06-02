@@ -1,168 +1,392 @@
-<div class="card card--flat">
-
-    <h2>BAB 5 — Aplikasi Deret Fourier pada PDP</h2>
-
-    <p>
-        Salah satu alasan utama Deret Fourier dipelajari adalah karena banyak digunakan
-        untuk menyelesaikan Persamaan Diferensial Parsial (PDP), terutama pada masalah
-        fisika seperti panas, gelombang, dan difusi.
-    </p>
-
-    <p>
-        Ide dasarnya sederhana: fungsi yang sulit (dalam bentuk ruang dan waktu)
-        diubah menjadi gabungan gelombang sinus dan kosinus, sehingga PDP dapat
-        dipecah menjadi masalah yang lebih sederhana.
-    </p>
+<div class="card-group">
 
     <div class="card card--soft">
-
-        <h3>Ide Umum Penggunaan Fourier pada PDP</h3>
-
+        <h2>Aplikasi Deret Fourier pada PDP</h2>
         <p>
-            Dalam banyak PDP, solusi biasanya berbentuk fungsi dua variabel:
+            Pada tiga sub bab sebelumnya telah dibangun pemahaman tentang Deret Fourier,
+            koefisiennya, dan cara penerapannya pada interval tertentu. Kini seluruh
+            perangkat tersebut digunakan untuk tujuan utamanya: menyelesaikan Persamaan
+            Diferensial Parsial secara analitik.
         </p>
+        <p>
+            Ide dasarnya adalah sebagai berikut. Metode pemisahan variabel menghasilkan
+            solusi dasar berbentuk sinus dan kosinus. Kondisi awal yang diberikan
+            kemudian diekspansi menggunakan Deret Fourier terhadap sistem fungsi dasar
+            tersebut. Koefisien ekspansi yang diperoleh menjadi koefisien dalam solusi
+            akhir PDP.
+        </p>
+        <p>
+            Sub bab ini memperlihatkan proses tersebut secara lengkap melalui tiga
+            persamaan kanonik: persamaan panas, persamaan gelombang, dan persamaan Laplace.
+        </p>
+    </div>
 
+    <div class="card card--soft">
+        <h3>Kerangka Umum Penyelesaian</h3>
+        <p>
+            Penyelesaian PDP menggunakan Deret Fourier mengikuti kerangka yang konsisten
+            untuk setiap jenis persamaan. Kerangka ini terdiri dari empat tahap berikut.
+        </p>
+        <p>
+            Tahap pertama adalah memisahkan variabel. Diasumsikan solusi berbentuk
+            \( u(x,t) = X(x)T(t) \) dan disubstitusikan ke dalam PDP sehingga
+            diperoleh dua persamaan diferensial biasa yang terpisah.
+        </p>
+        <p>
+            Tahap kedua adalah menyelesaikan masalah nilai eigen. Persamaan untuk
+            \( X(x) \) bersama kondisi batas yang dikenakan membentuk masalah nilai
+            eigen yang menghasilkan nilai eigen \( \lambda_n \) dan fungsi eigen
+            \( X_n(x) \).
+        </p>
+        <p>
+            Tahap ketiga adalah menyelesaikan persamaan untuk \( T(t) \)
+            menggunakan nilai eigen yang telah diperoleh, sehingga diperoleh
+            \( T_n(t) \) untuk setiap \( n \).
+        </p>
+        <p>
+            Tahap keempat adalah menerapkan kondisi awal. Solusi umum ditulis
+            sebagai superposisi \( u(x,t) = \sum c_n X_n(x) T_n(t) \), dan
+            koefisien \( c_n \) ditentukan melalui ekspansi Deret Fourier dari
+            kondisi awal yang diberikan.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Aplikasi pada Persamaan Panas</h3>
+        <p>
+            Persamaan panas satu dimensi dengan kondisi batas Dirichlet homogen
+            dirumuskan sebagai berikut.
+        </p>
         <div class="katex">
 $$
-u(x,t)
+\frac{\partial u}{\partial t} = k\frac{\partial^2 u}{\partial x^2}, \qquad 0 < x < L,\quad t > 0
 $$
         </div>
-
-        <p>
-            Dengan Deret Fourier, fungsi ini dapat dipisahkan menjadi bentuk:
-        </p>
-
         <div class="katex">
 $$
-u(x,t) = \sum_{n=1}^{\infty} X_n(x)\, T_n(t)
+u(0,t) = 0, \qquad u(L,t) = 0, \qquad t \geq 0
 $$
         </div>
-
-        <p>
-            Artinya, solusi kompleks dipecah menjadi bagian ruang \( X_n(x) \)
-            dan bagian waktu \( T_n(t) \).
-        </p>
-
-    </div>
-
-    <div class="card card--soft">
-
-        <h3>Contoh PDP: Persamaan Panas</h3>
-
-        <p>
-            Salah satu aplikasi paling terkenal adalah persamaan panas:
-        </p>
-
         <div class="katex">
 $$
-u_t = k u_{xx}
+u(x,0) = f(x), \qquad 0 \leq x \leq L
 $$
         </div>
-
         <p>
-            Persamaan ini menggambarkan bagaimana suhu menyebar seiring waktu
-            pada sebuah batang.
+            Dengan ansatz \( u = X(x)T(t) \), substitusi ke persamaan panas menghasilkan:
         </p>
-
-        <p>
-            Dengan metode Fourier, solusi dapat ditulis sebagai kombinasi fungsi sinus
-            yang memenuhi kondisi batas.
-        </p>
-
-    </div>
-
-    <div class="card card--soft">
-
-        <h3>Contoh PDP: Persamaan Gelombang</h3>
-
-        <p>
-            Deret Fourier juga digunakan pada persamaan gelombang:
-        </p>
-
         <div class="katex">
 $$
-u_{tt} = c^2 u_{xx}
+\frac{T'}{kT} = \frac{X''}{X} = -\lambda
 $$
         </div>
-
         <p>
-            Persamaan ini menggambarkan getaran pada tali atau gelombang suara.
+            Masalah nilai eigen untuk \( X \) dengan kondisi batas Dirichlet adalah:
         </p>
-
+        <div class="katex">
+$$
+X'' + \lambda X = 0, \qquad X(0) = 0,\quad X(L) = 0
+$$
+        </div>
         <p>
-            Solusi umumnya berupa kombinasi gelombang sinus yang bergetar di ruang dan waktu.
+            Solusi non-trivial hanya ada untuk nilai eigen berikut.
         </p>
-
+        <div class="katex">
+$$
+\lambda_n = \frac{n^2\pi^2}{L^2}, \qquad X_n(x) = \sin\!\left(\frac{n\pi x}{L}\right), \qquad n = 1, 2, 3, \ldots
+$$
+        </div>
+        <p>
+            Persamaan untuk \( T \) menjadi \( T' + k\lambda_n T = 0 \) dengan solusi:
+        </p>
+        <div class="katex">
+$$
+T_n(t) = e^{-k n^2\pi^2 t/L^2}
+$$
+        </div>
+        <p>
+            Solusi umum diperoleh melalui superposisi:
+        </p>
+        <div class="katex">
+$$
+u(x,t) = \sum_{n=1}^{\infty} c_n \sin\!\left(\frac{n\pi x}{L}\right) e^{-kn^2\pi^2 t/L^2}
+$$
+        </div>
+        <p>
+            Penerapan kondisi awal \( u(x,0) = f(x) \) menghasilkan ekspansi
+            Deret Fourier Sinus dari \( f \):
+        </p>
+        <div class="katex">
+$$
+f(x) = \sum_{n=1}^{\infty} c_n\sin\!\left(\frac{n\pi x}{L}\right)
+$$
+        </div>
+        <p>
+            Koefisien \( c_n \) ditentukan melalui rumus ortogonalitas:
+        </p>
+        <div class="katex">
+$$
+c_n = \frac{2}{L}\int_0^L f(x)\sin\!\left(\frac{n\pi x}{L}\right)dx
+$$
+        </div>
     </div>
 
     <div class="card card--soft">
-
-        <h3>Langkah Umum Penyelesaian dengan Fourier</h3>
-
+        <h3>Contoh — Persamaan Panas dengan Kondisi Awal Tertentu</h3>
         <p>
-            Secara umum, penggunaan Deret Fourier dalam PDP mengikuti langkah berikut:
+            Selesaikan persamaan panas berikut dengan \( k = 1 \) dan \( L = \pi \).
         </p>
-
+        <div class="katex">
+$$
+u_t = u_{xx}, \qquad u(0,t) = u(\pi,t) = 0, \qquad u(x,0) = \sin(2x)
+$$
+        </div>
         <p>
-            1. Menentukan PDP dan kondisi batas <br>
-            2. Memisahkan variabel (jika memungkinkan) <br>
-            3. Mengubah solusi ruang menjadi bentuk sinus/kosinus <br>
-            4. Menggunakan deret Fourier untuk memenuhi kondisi awal <br>
-            5. Menggabungkan hasil menjadi solusi akhir
+            Solusi umum berbentuk:
         </p>
-
+        <div class="katex">
+$$
+u(x,t) = \sum_{n=1}^{\infty} c_n\sin(nx)\, e^{-n^2 t}
+$$
+        </div>
+        <p>
+            Penerapan kondisi awal menghasilkan:
+        </p>
+        <div class="katex">
+$$
+\sin(2x) = \sum_{n=1}^{\infty} c_n\sin(nx)
+$$
+        </div>
+        <p>
+            Dengan ortogonalitas, koefisien yang tidak nol hanya \( c_2 = 1 \)
+            dan \( c_n = 0 \) untuk \( n \neq 2 \). Solusi khususnya adalah:
+        </p>
+        <div class="katex">
+$$
+u(x,t) = e^{-4t}\sin(2x)
+$$
+        </div>
+        <p>
+            Solusi ini menunjukkan bahwa amplitudo distribusi suhu meluruh secara
+            eksponensial terhadap waktu, yang konsisten dengan sifat fisika konduksi panas.
+        </p>
     </div>
 
     <div class="card card--soft">
-
-        <h3>Peran Kondisi Batas</h3>
-
+        <h3>Aplikasi pada Persamaan Gelombang</h3>
         <p>
-            Kondisi batas sangat penting karena menentukan bentuk fungsi Fourier yang digunakan.
+            Persamaan gelombang satu dimensi dengan kondisi batas Dirichlet homogen
+            dirumuskan sebagai berikut.
         </p>
-
+        <div class="katex">
+$$
+\frac{\partial^2 u}{\partial t^2} = c^2\frac{\partial^2 u}{\partial x^2}, \qquad 0 < x < L,\quad t > 0
+$$
+        </div>
+        <div class="katex">
+$$
+u(0,t) = 0, \qquad u(L,t) = 0, \qquad t \geq 0
+$$
+        </div>
+        <div class="katex">
+$$
+u(x,0) = f(x), \qquad \frac{\partial u}{\partial t}(x,0) = g(x), \qquad 0 \leq x \leq L
+$$
+        </div>
         <p>
-            • Jika ujung sistem tetap → biasanya muncul fungsi sinus <br>
-            • Jika simetri tertentu → bisa muncul kosinus <br>
-            • Jika kondisi kompleks → kombinasi keduanya
+            Masalah nilai eigen untuk \( X \) identik dengan kasus persamaan panas,
+            sehingga diperoleh fungsi eigen yang sama:
         </p>
-
+        <div class="katex">
+$$
+\lambda_n = \frac{n^2\pi^2}{L^2}, \qquad X_n(x) = \sin\!\left(\frac{n\pi x}{L}\right)
+$$
+        </div>
         <p>
-            Tanpa kondisi batas, solusi PDP tidak akan unik.
+            Persamaan untuk \( T \) menjadi \( T'' + c^2\lambda_n T = 0 \),
+            yang merupakan persamaan osilator harmonik dengan solusi:
         </p>
-
+        <div class="katex">
+$$
+T_n(t) = A_n\cos\!\left(\frac{n\pi c t}{L}\right) + B_n\sin\!\left(\frac{n\pi c t}{L}\right)
+$$
+        </div>
+        <p>
+            Solusi umum diperoleh melalui superposisi:
+        </p>
+        <div class="katex">
+$$
+u(x,t) = \sum_{n=1}^{\infty}\sin\!\left(\frac{n\pi x}{L}\right)\left[A_n\cos\!\left(\frac{n\pi c t}{L}\right) + B_n\sin\!\left(\frac{n\pi c t}{L}\right)\right]
+$$
+        </div>
+        <p>
+            Penerapan kondisi awal pertama \( u(x,0) = f(x) \) menghasilkan:
+        </p>
+        <div class="katex">
+$$
+A_n = \frac{2}{L}\int_0^L f(x)\sin\!\left(\frac{n\pi x}{L}\right)dx
+$$
+        </div>
+        <p>
+            Penerapan kondisi awal kedua \( u_t(x,0) = g(x) \) menghasilkan:
+        </p>
+        <div class="katex">
+$$
+B_n = \frac{2}{n\pi c}\int_0^L g(x)\sin\!\left(\frac{n\pi x}{L}\right)dx
+$$
+        </div>
     </div>
 
     <div class="card card--soft">
-
-        <h3>Makna Fisik</h3>
-
+        <h3>Contoh — Persamaan Gelombang dengan Kecepatan Awal Nol</h3>
         <p>
-            Secara fisik, penggunaan Deret Fourier pada PDP berarti:
+            Selesaikan persamaan gelombang berikut dengan \( c = 1 \) dan \( L = \pi \).
         </p>
-
+        <div class="katex">
+$$
+u_{tt} = u_{xx}, \qquad u(0,t) = u(\pi,t) = 0, \qquad u(x,0) = \sin(x), \qquad u_t(x,0) = 0
+$$
+        </div>
         <p>
-            • Sistem kompleks dipecah menjadi mode-mode sederhana <br>
-            • Setiap mode bergetar atau berubah secara independen <br>
-            • Solusi total adalah penjumlahan semua mode tersebut
+            Dari kondisi awal pertama, dengan ortogonalitas diperoleh \( A_1 = 1 \)
+            dan \( A_n = 0 \) untuk \( n \neq 1 \).
         </p>
-
         <p>
-            Ini membuat masalah yang awalnya sangat rumit menjadi lebih mudah dianalisis.
+            Dari kondisi awal kedua \( u_t(x,0) = 0 \), diperoleh \( B_n = 0 \)
+            untuk semua \( n \). Solusi khususnya adalah:
         </p>
-
+        <div class="katex">
+$$
+u(x,t) = \sin(x)\cos(t)
+$$
+        </div>
+        <p>
+            Solusi ini merepresentasikan gelombang berdiri dengan amplitudo yang
+            berosilasi terhadap waktu tanpa merambat, konsisten dengan kondisi
+            batas tetap di kedua ujung.
+        </p>
     </div>
 
     <div class="card card--soft">
+        <h3>Aplikasi pada Persamaan Laplace</h3>
+        <p>
+            Persamaan Laplace pada domain persegi panjang dengan kondisi batas
+            campuran dirumuskan sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0, \qquad 0 < x < L,\quad 0 < y < H
+$$
+        </div>
+        <div class="katex">
+$$
+u(0,y) = 0, \qquad u(L,y) = 0, \qquad u(x,0) = 0, \qquad u(x,H) = f(x)
+$$
+        </div>
+        <p>
+            Dengan ansatz \( u = X(x)Y(y) \), substitusi menghasilkan:
+        </p>
+        <div class="katex">
+$$
+\frac{X''}{X} = -\frac{Y''}{Y} = -\lambda
+$$
+        </div>
+        <p>
+            Masalah nilai eigen untuk \( X \) dengan kondisi batas Dirichlet menghasilkan:
+        </p>
+        <div class="katex">
+$$
+\lambda_n = \frac{n^2\pi^2}{L^2}, \qquad X_n(x) = \sin\!\left(\frac{n\pi x}{L}\right)
+$$
+        </div>
+        <p>
+            Persamaan untuk \( Y \) menjadi \( Y'' - \lambda_n Y = 0 \) dengan
+            kondisi \( Y(0) = 0 \), sehingga solusinya adalah:
+        </p>
+        <div class="katex">
+$$
+Y_n(y) = \sinh\!\left(\frac{n\pi y}{L}\right)
+$$
+        </div>
+        <p>
+            Solusi umum diperoleh melalui superposisi:
+        </p>
+        <div class="katex">
+$$
+u(x,y) = \sum_{n=1}^{\infty} c_n\sin\!\left(\frac{n\pi x}{L}\right)\sinh\!\left(\frac{n\pi y}{L}\right)
+$$
+        </div>
+        <p>
+            Penerapan kondisi batas \( u(x,H) = f(x) \) menghasilkan:
+        </p>
+        <div class="katex">
+$$
+f(x) = \sum_{n=1}^{\infty} c_n\sinh\!\left(\frac{n\pi H}{L}\right)\sin\!\left(\frac{n\pi x}{L}\right)
+$$
+        </div>
+        <p>
+            Koefisien \( c_n \) ditentukan melalui:
+        </p>
+        <div class="katex">
+$$
+c_n = \frac{1}{\sinh\!\left(\frac{n\pi H}{L}\right)}\cdot\frac{2}{L}\int_0^L f(x)\sin\!\left(\frac{n\pi x}{L}\right)dx
+$$
+        </div>
+    </div>
 
+    <div class="card card--soft">
+        <h3>Ringkasan Tiga Persamaan Kanonik</h3>
+        <table class="table">
+            <tr>
+                <th>Persamaan</th>
+                <th>Fungsi Eigen \( X_n \)</th>
+                <th>Solusi Waktu \( T_n \)</th>
+                <th>Koefisien</th>
+            </tr>
+            <tr>
+                <td>Panas \( u_t = ku_{xx} \)</td>
+                <td>\( \sin\!\left(\dfrac{n\pi x}{L}\right) \)</td>
+                <td>\( e^{-kn^2\pi^2 t/L^2} \)</td>
+                <td>\( c_n = \dfrac{2}{L}\displaystyle\int_0^L f\, X_n\, dx \)</td>
+            </tr>
+            <tr>
+                <td>Gelombang \( u_{tt} = c^2 u_{xx} \)</td>
+                <td>\( \sin\!\left(\dfrac{n\pi x}{L}\right) \)</td>
+                <td>\( A_n\cos\!\left(\dfrac{n\pi ct}{L}\right) + B_n\sin\!\left(\dfrac{n\pi ct}{L}\right) \)</td>
+                <td>\( A_n,\, B_n \) dari \( f \) dan \( g \)</td>
+            </tr>
+            <tr>
+                <td>Laplace \( u_{xx} + u_{yy} = 0 \)</td>
+                <td>\( \sin\!\left(\dfrac{n\pi x}{L}\right) \)</td>
+                <td>\( \sinh\!\left(\dfrac{n\pi y}{L}\right) \)</td>
+                <td>\( c_n \) dari kondisi batas atas</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card card--soft">
         <h3>Kesimpulan</h3>
-
         <p>
-            Deret Fourier sangat penting dalam penyelesaian PDP karena memungkinkan
-            fungsi kompleks diubah menjadi kombinasi gelombang sederhana. Metode ini
-            banyak digunakan dalam persamaan panas, gelombang, dan berbagai fenomena fisik lainnya.
+            Deret Fourier berperan sebagai jembatan antara kondisi awal dan kondisi
+            batas yang diberikan secara umum dengan solusi analitik PDP yang tersusun
+            dari fungsi eigen. Kerangka penyelesaian yang digunakan konsisten untuk
+            ketiga persamaan kanonik: pisahkan variabel, selesaikan masalah nilai eigen,
+            bangun solusi umum melalui superposisi, lalu tentukan koefisien melalui
+            ekspansi Deret Fourier dari data awal.
         </p>
-
+        <p>
+            Pada persamaan panas, koefisien Fourier menentukan amplitudo awal setiap
+            moda, yang kemudian meluruh secara eksponensial seiring waktu. Pada
+            persamaan gelombang, dua set koefisien diperlukan karena terdapat dua
+            kondisi awal. Pada persamaan Laplace, koefisien ditentukan dari kondisi
+            batas yang tidak homogen, dengan faktor normalisasi tambahan berupa nilai
+            fungsi hiperbolik.
+        </p>
+        <p>
+            Pemahaman terhadap aplikasi ini menjadi fondasi untuk mempelajari
+            transformasi Fourier pada bab berikutnya, di mana domain permasalahan
+            diperluas dari interval terbatas ke seluruh garis bilangan real.
+        </p>
     </div>
 
 </div>

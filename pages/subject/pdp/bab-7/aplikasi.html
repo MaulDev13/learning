@@ -1,0 +1,429 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+
+        <h2>Aplikasi Transformasi Laplace pada Persamaan Diferensial Parsial (Masalah Nilai Awal)</h2>
+
+        <p>
+            Setelah mempelajari Transformasi Laplace, sifat-sifatnya, dan Transformasi
+            Invers Laplace, langkah berikutnya adalah melihat bagaimana metode ini
+            digunakan untuk menyelesaikan Persamaan Diferensial Parsial (PDP).
+        </p>
+
+        <p>
+            Dalam konteks PDP, Transformasi Laplace terutama digunakan untuk
+            mengatasi ketergantungan terhadap variabel waktu.
+        </p>
+
+        <p>
+            Ide dasarnya sangat mirip dengan penggunaannya pada Persamaan Diferensial
+            Biasa. Variabel waktu ditransformasikan ke domain Laplace sehingga turunan
+            terhadap waktu berubah menjadi bentuk aljabar. Akibatnya, PDP yang semula
+            melibatkan dua variabel atau lebih dapat direduksi menjadi Persamaan
+            Diferensial Biasa terhadap variabel ruang.
+        </p>
+
+        <p>
+            Pendekatan ini sangat berguna pada berbagai masalah nilai awal, terutama
+            ketika kondisi awal diberikan secara eksplisit dan ingin dimasukkan
+            langsung ke dalam proses penyelesaian.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Masalah Nilai Awal pada PDP</h3>
+
+        <p>
+            Sebuah PDP umumnya melibatkan variabel ruang dan waktu secara bersamaan.
+        </p>
+
+        <p>
+            Sebagai contoh, persamaan panas satu dimensi dituliskan sebagai:
+        </p>
+
+        <div class="katex">
+$$
+\frac{\partial u}{\partial t}
+=
+k
+\frac{\partial^2 u}{\partial x^2}
+$$
+        </div>
+
+        <p>
+            Fungsi \( u(x,t) \) menyatakan distribusi suhu yang berubah terhadap
+            posisi \( x \) dan waktu \( t \).
+        </p>
+
+        <p>
+            Agar solusi dapat ditentukan secara unik, biasanya diberikan kondisi awal:
+        </p>
+
+        <div class="katex">
+$$
+u(x,0)=f(x)
+$$
+        </div>
+
+        <p>
+            Kondisi ini menyatakan distribusi suhu pada saat awal pengamatan,
+            yaitu ketika \( t=0 \).
+        </p>
+
+        <p>
+            Permasalahan seperti ini disebut <strong>masalah nilai awal</strong>
+            (initial value problem).
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Mengapa Menggunakan Transformasi Laplace?</h3>
+
+        <p>
+            Jika metode pemisahan variabel berusaha memisahkan fungsi menjadi
+            komponen ruang dan waktu, maka Transformasi Laplace mengambil pendekatan
+            yang berbeda.
+        </p>
+
+        <p>
+            Variabel waktu dihilangkan melalui transformasi sehingga persamaan yang
+            tersisa hanya bergantung pada variabel ruang.
+        </p>
+
+        <p>
+            Dengan kata lain:
+        </p>
+
+        <div class="katex">
+$$
+u(x,t)
+\quad \longrightarrow \quad
+U(x,s)
+$$
+        </div>
+
+        <p>
+            Setelah transformasi dilakukan, persoalan dua variabel berubah menjadi
+            persoalan satu variabel yang biasanya lebih mudah diselesaikan.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Transformasi Laplace terhadap Variabel Waktu</h3>
+
+        <p>
+            Dalam PDP, transformasi dilakukan terhadap variabel waktu \( t \),
+            sedangkan variabel ruang \( x \) diperlakukan sebagai konstanta.
+        </p>
+
+        <p>
+            Didefinisikan:
+        </p>
+
+        <div class="katex">
+$$
+U(x,s)
+=
+\mathcal{L}\{u(x,t)\}
+=
+\int_0^\infty
+e^{-st}
+u(x,t)\,dt
+$$
+        </div>
+
+        <p>
+            Karena transformasi hanya dilakukan terhadap \( t \), maka semua
+            turunan terhadap \( x \) dapat dipindahkan langsung ke luar operator
+            Laplace.
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}
+\left\{
+\frac{\partial^2 u}{\partial x^2}
+\right\}
+=
+\frac{\partial^2 U}{\partial x^2}
+$$
+        </div>
+
+        <p>
+            Sedangkan turunan terhadap waktu berubah menjadi:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}
+\left\{
+\frac{\partial u}{\partial t}
+\right\}
+=
+sU(x,s)-u(x,0)
+$$
+        </div>
+
+        <p>
+            Perhatikan bahwa kondisi awal muncul secara otomatis dalam hasil
+            transformasi.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Penerapan pada Persamaan Panas</h3>
+
+        <p>
+            Pertimbangkan kembali persamaan panas:
+        </p>
+
+        <div class="katex">
+$$
+\frac{\partial u}{\partial t}
+=
+k
+\frac{\partial^2 u}{\partial x^2}
+$$
+        </div>
+
+        <p>
+            dengan kondisi awal:
+        </p>
+
+        <div class="katex">
+$$
+u(x,0)=f(x)
+$$
+        </div>
+
+        <p>
+            Terapkan Transformasi Laplace terhadap kedua ruas:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}
+\left\{
+\frac{\partial u}{\partial t}
+\right\}
+=
+k
+\mathcal{L}
+\left\{
+\frac{\partial^2u}{\partial x^2}
+\right\}
+$$
+        </div>
+
+        <p>
+            Menggunakan sifat transformasi:
+        </p>
+
+        <div class="katex">
+$$
+sU(x,s)-f(x)
+=
+k
+\frac{\partial^2U}{\partial x^2}
+$$
+        </div>
+
+        <p>
+            Susun ulang:
+        </p>
+
+        <div class="katex">
+$$
+k
+\frac{\partial^2U}{\partial x^2}
+-
+sU
+=
+-f(x)
+$$
+        </div>
+
+        <p>
+            Hasil ini bukan lagi PDP, melainkan Persamaan Diferensial Biasa
+            terhadap variabel ruang \( x \).
+        </p>
+
+        <p>
+            Dengan demikian Transformasi Laplace berhasil menghilangkan
+            ketergantungan terhadap waktu.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Apa yang Terjadi Setelah Transformasi?</h3>
+
+        <p>
+            Setelah diperoleh persamaan untuk \( U(x,s) \), langkah berikutnya
+            adalah menyelesaikan persamaan tersebut menggunakan metode yang sesuai,
+            misalnya:
+        </p>
+
+        <ul>
+            <li>Persamaan diferensial linear orde dua.</li>
+            <li>Metode karakteristik akar.</li>
+            <li>Metode Green Function.</li>
+            <li>Transformasi Fourier.</li>
+        </ul>
+
+        <p>
+            Hasil penyelesaian akan berupa fungsi \( U(x,s) \).
+        </p>
+
+        <p>
+            Namun fungsi tersebut masih berada pada domain Laplace sehingga belum
+            menjadi solusi akhir yang diinginkan.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Menggunakan Transformasi Invers Laplace</h3>
+
+        <p>
+            Setelah \( U(x,s) \) ditemukan, langkah terakhir adalah mengembalikannya
+            ke domain waktu menggunakan Transformasi Invers Laplace.
+        </p>
+
+        <div class="katex">
+$$
+u(x,t)
+=
+\mathcal{L}^{-1}
+\{U(x,s)\}
+$$
+        </div>
+
+        <p>
+            Fungsi yang diperoleh merupakan solusi akhir dari masalah nilai awal
+            yang diberikan.
+        </p>
+
+        <p>
+            Dengan demikian, keseluruhan proses dapat diringkas sebagai berikut.
+        </p>
+
+        <div class="katex">
+$$
+u(x,t)
+\longrightarrow
+U(x,s)
+\longrightarrow
+\text{PDB terhadap }x
+\longrightarrow
+U(x,s)
+\longrightarrow
+u(x,t)
+$$
+        </div>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Perbandingan dengan Deret Fourier</h3>
+
+        <p>
+            Dalam penyelesaian PDP terdapat dua pendekatan yang sangat sering
+            digunakan, yaitu Deret Fourier dan Transformasi Laplace.
+        </p>
+
+        <table class="table">
+
+            <tr>
+                <th>Deret Fourier</th>
+                <th>Transformasi Laplace</th>
+            </tr>
+
+            <tr>
+                <td>Menguraikan fungsi menjadi sinus dan kosinus.</td>
+                <td>Mengubah variabel waktu ke domain Laplace.</td>
+            </tr>
+
+            <tr>
+                <td>Berbasis ortogonalitas fungsi eigen.</td>
+                <td>Berbasis transformasi integral.</td>
+            </tr>
+
+            <tr>
+                <td>Sangat cocok untuk kondisi batas.</td>
+                <td>Sangat cocok untuk kondisi awal.</td>
+            </tr>
+
+            <tr>
+                <td>Menghasilkan deret tak hingga.</td>
+                <td>Menghasilkan persamaan aljabar terhadap \(s\).</td>
+            </tr>
+
+        </table>
+
+        <p>
+            Dalam banyak kasus, kedua metode bahkan digunakan secara bersamaan.
+            Fourier menangani variabel ruang, sedangkan Laplace menangani variabel
+            waktu.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Keunggulan Metode Laplace pada PDP</h3>
+
+        <p>
+            Penggunaan Transformasi Laplace pada masalah nilai awal memiliki
+            beberapa keunggulan penting.
+        </p>
+
+        <ul>
+            <li>Kondisi awal muncul secara otomatis dalam proses transformasi.</li>
+            <li>Turunan waktu berubah menjadi operasi aljabar sederhana.</li>
+            <li>PDP dapat direduksi menjadi PDB.</li>
+            <li>Cocok untuk sistem dengan masukan tiba-tiba atau fungsi Heaviside.</li>
+            <li>Banyak solusi dapat diperoleh tanpa ekspansi deret yang panjang.</li>
+        </ul>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Transformasi Laplace merupakan salah satu metode penting dalam
+            penyelesaian Persamaan Diferensial Parsial yang melibatkan kondisi
+            awal. Dengan mentransformasikan variabel waktu, turunan terhadap waktu
+            berubah menjadi bentuk aljabar dan kondisi awal muncul secara otomatis
+            dalam persamaan yang dihasilkan.
+        </p>
+
+        <p>
+            Akibatnya, PDP dapat direduksi menjadi Persamaan Diferensial Biasa
+            terhadap variabel ruang yang relatif lebih mudah diselesaikan. Setelah
+            solusi pada domain Laplace diperoleh, Transformasi Invers Laplace
+            digunakan untuk mengembalikan solusi ke domain waktu.
+        </p>
+
+        <p>
+            Metode ini menjadi salah satu teknik standar dalam analisis persamaan
+            panas, persamaan gelombang, sistem difusi, dan berbagai model matematis
+            yang melibatkan evolusi terhadap waktu.
+        </p>
+
+    </div>
+
+</div>

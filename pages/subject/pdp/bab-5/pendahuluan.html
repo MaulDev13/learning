@@ -1,158 +1,477 @@
-<div class="card card--flat">
-
-    <h2>BAB 5 — Deret Fourier: Konsep Dasar</h2>
-
-    <p>
-        Deret Fourier adalah cara untuk “memecah” sebuah fungsi yang rumit menjadi
-        penjumlahan dari fungsi-fungsi gelombang sederhana, yaitu sinus dan kosinus.
-        Ide utamanya adalah: bentuk apa pun yang berulang atau memiliki pola dapat
-        dituliskan sebagai gabungan gelombang dasar.
-    </p>
-
-    <p>
-        Konsep ini sangat penting dalam matematika terapan karena banyak fenomena alam
-        seperti getaran, suara, panas, dan gelombang dapat dipahami dengan lebih mudah
-        jika diubah menjadi bentuk deret Fourier.
-    </p>
+<div class="card-group">
 
     <div class="card card--soft">
-
-        <h3>Ide Dasar Deret Fourier</h3>
-
+        <h2>Deret Fourier</h2>
         <p>
-            Sebuah fungsi periodik \( f(x) \) dapat dituliskan sebagai penjumlahan:
+            Banyak fungsi yang muncul dalam permasalahan fisika dan rekayasa tidak
+            memiliki bentuk yang sederhana. Distribusi suhu pada sebuah batang,
+            profil getaran senar, atau sinyal listrik yang berubah terhadap waktu
+            semuanya dapat memiliki bentuk yang tidak beraturan dan sulit dianalisis
+            secara langsung.
         </p>
-
-        <div class="katex">
-$$
-f(x) = a_0 + \sum_{n=1}^{\infty} \left( a_n \cos(nx) + b_n \sin(nx) \right)
-$$
-        </div>
-
         <p>
-            Artinya, fungsi kompleks \( f(x) \) dibangun dari kombinasi gelombang
-            sinus dan kosinus dengan berbagai frekuensi.
+            Fourier menawarkan sudut pandang yang berbeda: alih-alih menganalisis
+            fungsi tersebut secara langsung, fungsi yang rumit dipecah menjadi
+            kumpulan gelombang sinus dan kosinus yang jauh lebih sederhana. Setiap
+            gelombang memiliki frekuensi dan amplitudo tersendiri, dan jumlahan dari
+            seluruh gelombang tersebut membentuk kembali fungsi aslinya.
         </p>
-
+        <p>
+            Gagasan inilah yang menjadi fondasi Deret Fourier, dan dalam konteks
+            Persamaan Diferensial Parsial, ia berperan sebagai alat utama untuk
+            menghubungkan kondisi awal yang diberikan secara umum dengan solusi
+            analitik yang dapat dikonstruksi secara sistematis.
+        </p>
     </div>
 
     <div class="card card--soft">
-
-        <h3>Makna Sederhana</h3>
-
+        <h3>Masalah yang Melatarbelakangi</h3>
         <p>
-            Jika dibayangkan secara intuitif:
+            Ketika menyelesaikan PDP menggunakan metode pemisahan variabel, solusi
+            dasar yang diperoleh selalu berbentuk sinus dan kosinus. Solusi untuk
+            persamaan panas, misalnya, menghasilkan komponen seperti berikut.
         </p>
-
+        <div class="katex">
+$$
+u_n(x,t) = e^{-kn^2t}\sin(nx)
+$$
+        </div>
         <p>
-            • Sinus dan kosinus = “gelombang dasar” <br>
-            • Deret Fourier = campuran banyak gelombang dasar <br>
-            • Hasil akhirnya = bentuk fungsi yang lebih kompleks
+            Solusi ini memenuhi persamaan dan kondisi batas, tetapi kondisi awal
+            yang diberikan jarang berbentuk sinus sederhana. Kondisi awal yang
+            realistis, misalnya distribusi suhu awal pada batang, bisa berbentuk
+            fungsi sembarang seperti berikut.
         </p>
-
+        <div class="katex">
+$$
+u(x, 0) = f(x) = x(\pi - x), \qquad 0 \leq x \leq \pi
+$$
+        </div>
         <p>
-            Jadi, Deret Fourier seperti “bahasa universal” untuk menjelaskan bentuk gelombang.
+            Fungsi seperti ini tidak dapat langsung dicocokkan dengan satu suku
+            sinus. Dibutuhkan cara untuk menyatakan \( f(x) \) dalam bentuk yang
+            kompatibel dengan solusi dasar yang sudah dimiliki, yaitu dalam bentuk
+            kombinasi sinus dan kosinus. Inilah permasalahan yang dijawab oleh
+            Deret Fourier.
         </p>
-
     </div>
 
     <div class="card card--soft">
-
-        <h3>Bentuk Umum pada Interval</h3>
-
+        <h3>Ide Dekomposisi</h3>
         <p>
-            Untuk fungsi pada interval tertentu (misalnya \( -L \le x \le L \)),
-            bentuk deret Fourier menjadi:
+            Ide dasarnya dapat dipahami dari analogi berikut. Setiap warna cahaya
+            dapat diuraikan menjadi komponen spektrum melalui prisma. Cahaya putih
+            bukan berarti tidak berwarna, melainkan merupakan gabungan dari seluruh
+            warna. Prisma memisahkan komponen-komponen tersebut satu per satu.
         </p>
-
+        <p>
+            Deret Fourier bekerja dengan prinsip yang sama terhadap fungsi. Sebuah
+            fungsi \( f(x) \) yang tampak tidak beraturan sebenarnya dapat dipandang
+            sebagai gabungan dari banyak gelombang sinus dan kosinus dengan frekuensi
+            yang berbeda-beda.
+        </p>
         <div class="katex">
 $$
-f(x) = \frac{a_0}{2} +
-\sum_{n=1}^{\infty}
-\left[
-a_n \cos\left(\frac{n\pi x}{L}\right)
-+
-b_n \sin\left(\frac{n\pi x}{L}\right)
-\right]
+f(x) = \underbrace{a_1\cos(x) + b_1\sin(x)}_{\text{frekuensi 1}} + \underbrace{a_2\cos(2x) + b_2\sin(2x)}_{\text{frekuensi 2}} + \underbrace{a_3\cos(3x) + b_3\sin(3x)}_{\text{frekuensi 3}} + \cdots
 $$
         </div>
-
         <p>
-            Bentuk ini sering digunakan dalam masalah fisika dan teknik karena banyak sistem
-            memiliki batas ruang tertentu.
+            Setiap pasang sinus dan kosinus mewakili satu frekuensi. Koefisien
+            \( a_n \) dan \( b_n \) menentukan seberapa besar kontribusi frekuensi
+            ke-\( n \) tersebut terhadap bentuk fungsi keseluruhan. Semakin banyak
+            frekuensi yang disertakan, semakin akurat representasi fungsi yang
+            dihasilkan.
         </p>
-
     </div>
 
     <div class="card card--soft">
-
-        <h3>Contoh Fungsi yang Bisa Diubah ke Deret Fourier</h3>
-
+        <h3>Mengapa Sinus dan Kosinus</h3>
         <p>
-            Berikut beberapa contoh fungsi yang dapat direpresentasikan dengan deret Fourier:
+            Sinus dan kosinus bukan satu-satunya fungsi yang dapat digunakan sebagai
+            komponen penyusun. Namun keduanya memiliki dua sifat yang membuatnya
+            sangat ideal untuk tujuan ini.
         </p>
-
+        <p>
+            Sifat pertama adalah periodisitas. Sinus dan kosinus berulang secara
+            teratur, sehingga cocok untuk merepresentasikan fungsi yang juga bersifat
+            periodik atau didefinisikan pada interval terbatas.
+        </p>
+        <p>
+            Sifat kedua adalah ortogonalitas. Dua gelombang dengan frekuensi berbeda
+            tidak saling mempengaruhi satu sama lain dalam pengertian integral. Secara
+            konkret, apabila dua fungsi basis yang berbeda dikalikan kemudian
+            diintegrasikan pada satu periode penuh, hasilnya selalu nol.
+        </p>
         <div class="katex">
 $$
-f(x) = x
+\int_{-\pi}^{\pi}\sin(mx)\sin(nx)\, dx = 0, \qquad m \neq n
 $$
         </div>
+        <p>
+            Sifat ortogonalitas inilah yang membuat perhitungan koefisien menjadi
+            mungkin. Karena setiap komponen independen dari yang lain, kontribusi
+            masing-masing frekuensi dapat diisolasi dan dihitung satu per satu
+            tanpa terganggu oleh frekuensi lainnya.
+        </p>
+    </div>
 
+    <div class="card card--soft">
+        <h3>Bagaimana Koefisien Dihitung</h3>
+        <p>
+            Apabila \( f(x) \) dinyatakan sebagai jumlahan gelombang, maka untuk
+            mengetahui seberapa besar kontribusi gelombang \( \sin(nx) \) terhadap
+            \( f(x) \), kedua ruas persamaan dikalikan dengan \( \sin(nx) \)
+            kemudian diintegrasikan pada satu periode.
+        </p>
         <div class="katex">
 $$
-f(x) = x^2
+\int_{-\pi}^{\pi} f(x)\sin(nx)\, dx = \int_{-\pi}^{\pi}\left[\sum_{m=1}^{\infty} b_m\sin(mx)\right]\sin(nx)\, dx
 $$
         </div>
+        <p>
+            Akibat sifat ortogonalitas, semua suku di ruas kanan lenyap kecuali
+            satu suku, yaitu suku dengan \( m = n \).
+        </p>
+        <div class="katex">
+$$
+\int_{-\pi}^{\pi} f(x)\sin(nx)\, dx = b_n\int_{-\pi}^{\pi}\sin^2(nx)\, dx = b_n \cdot \pi
+$$
+        </div>
+        <p>
+            Sehingga koefisien \( b_n \) dapat diisolasi secara langsung.
+        </p>
+        <div class="katex">
+$$
+b_n = \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\sin(nx)\, dx
+$$
+        </div>
+        <p>
+            Proses yang sama berlaku untuk koefisien \( a_n \) dengan menggunakan
+            \( \cos(nx) \) sebagai pengali. Inilah mekanisme di balik rumus
+            koefisien Fourier yang akan dibahas secara formal pada bagian berikutnya.
+        </p>
+    </div>
 
+    <div class="card card--soft">
+        <h3>Fungsi Periodik</h3>
+        <p>
+            Deret Fourier didefinisikan untuk fungsi yang bersifat periodik.
+            Suatu fungsi \( f(x) \) dikatakan periodik dengan periode \( T \)
+            apabila nilai fungsi berulang secara teratur, yaitu memenuhi kondisi
+            berikut untuk semua \( x \) dalam domainnya.
+        </p>
+        <div class="katex">
+$$
+f(x + T) = f(x), \qquad T > 0
+$$
+        </div>
+        <p>
+            Bilangan \( T \) terkecil yang memenuhi kondisi tersebut disebut
+            periode fundamental. Apabila \( f \) memiliki periode \( T = 2L \),
+            maka frekuensi fundamentalnya adalah \( \dfrac{\pi}{L} \).
+        </p>
+        <p>
+            Fungsi sinus dan kosinus merupakan contoh fungsi periodik paling
+            mendasar. Fungsi \( \sin(nx) \) dan \( \cos(nx) \) keduanya periodik
+            terhadap interval \( [-\pi, \pi] \) untuk setiap bilangan bulat
+            positif \( n \).
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Ortogonalitas Fungsi Sinus dan Kosinus</h3>
+        <p>
+            Alasan mengapa sinus dan kosinus dipilih sebagai komponen penyusun
+            bukan sekadar karena bentuknya yang sederhana, melainkan karena keduanya
+            memiliki sifat ortogonalitas. Sifat ini berarti bahwa dua gelombang
+            dengan frekuensi berbeda tidak saling mempengaruhi satu sama lain,
+            sehingga kontribusi setiap komponen dapat dihitung secara terpisah
+            dan independen.
+        </p>
+        <p>
+            Secara matematis, sifat ortogonalitas dinyatakan melalui relasi
+            integral berikut pada interval \( [-L, L] \).
+        </p>
+        <div class="katex">
+$$
+\int_{-L}^{L}\cos\!\left(\frac{m\pi x}{L}\right)\cos\!\left(\frac{n\pi x}{L}\right)dx =
+\begin{cases}
+0, & m \neq n \\
+L, & m = n \neq 0
+\end{cases}
+$$
+        </div>
+        <div class="katex">
+$$
+\int_{-L}^{L}\sin\!\left(\frac{m\pi x}{L}\right)\sin\!\left(\frac{n\pi x}{L}\right)dx =
+\begin{cases}
+0, & m \neq n \\
+L, & m = n
+\end{cases}
+$$
+        </div>
+        <div class="katex">
+$$
+\int_{-L}^{L}\sin\!\left(\frac{m\pi x}{L}\right)\cos\!\left(\frac{n\pi x}{L}\right)dx = 0, \qquad \text{untuk semua } m, n
+$$
+        </div>
+        <p>
+            Relasi-relasi inilah yang menjadi landasan penurunan rumus koefisien
+            Fourier pada bagian berikutnya.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Bentuk Umum Deret Fourier</h3>
+        <p>
+            Diberikan fungsi \( f(x) \) yang periodik dengan periode \( 2L \)
+            dan didefinisikan pada interval \( -L \leq x \leq L \). Deret Fourier
+            dari \( f \) dinyatakan sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty}\left[a_n\cos\!\left(\frac{n\pi x}{L}\right) + b_n\sin\!\left(\frac{n\pi x}{L}\right)\right]
+$$
+        </div>
+        <p>
+            Suku \( \dfrac{a_0}{2} \) merupakan nilai rata-rata fungsi pada satu
+            periode penuh dan berperan sebagai komponen konstan dalam ekspansi.
+            Suku-suku berikutnya merupakan komponen osilasi dengan frekuensi yang
+            meningkat secara proporsional terhadap \( n \). Bilangan \( a_n \) dan
+            \( b_n \) disebut koefisien Fourier.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Koefisien Fourier</h3>
+        <p>
+            Koefisien Fourier diturunkan dengan memanfaatkan sifat ortogonalitas.
+            Kedua ruas persamaan Deret Fourier dikalikan dengan fungsi basis yang
+            sesuai, kemudian diintegrasikan pada interval \( [-L, L] \). Akibat
+            ortogonalitas, semua suku selain satu suku yang bersesuaian akan lenyap,
+            sehingga diperoleh rumus berikut.
+        </p>
+        <div class="katex">
+$$
+a_0 = \frac{1}{L}\int_{-L}^{L} f(x)\, dx
+$$
+        </div>
+        <div class="katex">
+$$
+a_n = \frac{1}{L}\int_{-L}^{L} f(x)\cos\!\left(\frac{n\pi x}{L}\right)dx, \qquad n = 1, 2, 3, \ldots
+$$
+        </div>
+        <div class="katex">
+$$
+b_n = \frac{1}{L}\int_{-L}^{L} f(x)\sin\!\left(\frac{n\pi x}{L}\right)dx, \qquad n = 1, 2, 3, \ldots
+$$
+        </div>
+        <p>
+            Koefisien \( a_n \) mengukur besar kontribusi komponen kosinus frekuensi
+            ke-\( n \), sedangkan \( b_n \) mengukur besar kontribusi komponen sinus
+            frekuensi ke-\( n \) terhadap representasi keseluruhan fungsi.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Kasus Khusus — Interval \( [-\pi,\, \pi] \)</h3>
+        <p>
+            Apabila \( L = \pi \), fungsi didefinisikan pada interval \( [-\pi, \pi] \)
+            dengan periode \( 2\pi \). Ini merupakan kasus yang paling sering dijumpai
+            dalam literatur. Bentuk Deret Fourier menjadi lebih ringkas sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty}\left[a_n\cos(nx) + b_n\sin(nx)\right]
+$$
+        </div>
+        <p>
+            Dengan koefisien yang dihitung sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+a_0 = \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\, dx
+$$
+        </div>
+        <div class="katex">
+$$
+a_n = \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\cos(nx)\, dx, \qquad b_n = \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\sin(nx)\, dx
+$$
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Deret Sinus dan Deret Kosinus</h3>
+        <p>
+            Apabila fungsi \( f(x) \) hanya didefinisikan pada interval \( [0, L] \),
+            terdapat dua cara untuk memperluas definisinya menjadi fungsi periodik
+            pada \( [-L, L] \). Pilihan perluasan menentukan jenis deret yang dihasilkan.
+        </p>
+        <table class="table">
+            <tr>
+                <th>Jenis</th>
+                <th>Perluasan</th>
+                <th>Bentuk Deret</th>
+                <th>Koefisien</th>
+            </tr>
+            <tr>
+                <td>Deret Sinus</td>
+                <td>Perluasan ganjil: \( f(-x) = -f(x) \)</td>
+                <td>\( \displaystyle\sum_{n=1}^{\infty}b_n\sin\!\left(\frac{n\pi x}{L}\right) \)</td>
+                <td>\( b_n = \dfrac{2}{L}\displaystyle\int_0^L f(x)\sin\!\left(\frac{n\pi x}{L}\right)dx \)</td>
+            </tr>
+            <tr>
+                <td>Deret Kosinus</td>
+                <td>Perluasan genap: \( f(-x) = f(x) \)</td>
+                <td>\( \dfrac{a_0}{2} + \displaystyle\sum_{n=1}^{\infty}a_n\cos\!\left(\frac{n\pi x}{L}\right) \)</td>
+                <td>\( a_n = \dfrac{2}{L}\displaystyle\int_0^L f(x)\cos\!\left(\frac{n\pi x}{L}\right)dx \)</td>
+            </tr>
+        </table>
+        <p>
+            Dalam penyelesaian PDP, deret sinus muncul secara alami apabila kondisi
+            batas Dirichlet homogen dikenakan, yaitu \( u(0,t) = u(L,t) = 0 \).
+            Deret kosinus muncul apabila kondisi batas Neumann homogen dikenakan,
+            yaitu \( u_x(0,t) = u_x(L,t) = 0 \).
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Konvergensi Deret Fourier</h3>
+        <p>
+            Perlu dicermati bahwa tanda sama dengan dalam persamaan Deret Fourier
+            tidak selalu berlaku dalam pengertian biasa di setiap titik. Teorema
+            Dirichlet memberikan kondisi yang cukup agar konvergensi terjamin.
+        </p>
+        <p>
+            Teorema Dirichlet menyatakan bahwa apabila \( f \) periodik, terdefinisi
+            pada \( [-L, L] \), memiliki jumlah maksimum dan minimum lokal yang
+            berhingga, serta jumlah diskontinuitas lompat yang berhingga pada setiap
+            periode, maka Deret Fourier konvergen dengan ketentuan berikut.
+        </p>
+        <table class="table">
+            <tr>
+                <th>Kondisi di Titik \( x \)</th>
+                <th>Nilai Konvergensi</th>
+            </tr>
+            <tr>
+                <td>\( f \) kontinu di \( x \)</td>
+                <td>\( f(x) \)</td>
+            </tr>
+            <tr>
+                <td>\( f \) diskontinu di \( x \)</td>
+                <td>\( \dfrac{f(x^+) + f(x^-)}{2} \)</td>
+            </tr>
+        </table>
+        <p>
+            Pada titik diskontinuitas, Deret Fourier konvergen ke nilai rata-rata
+            dari limit kanan \( f(x^+) \) dan limit kiri \( f(x^-) \). Overshoot
+            yang terjadi di sekitar titik diskontinuitas, di mana pemotongan deret
+            pada suku ke-\( N \) selalu menghasilkan lonjakan sekitar \( 9\% \)
+            dari besar lompatan, disebut fenomena Gibbs.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Contoh — Deret Fourier Fungsi Gelombang Kotak</h3>
+        <p>
+            Tentukan Deret Fourier dari fungsi berikut yang periodik dengan periode \( 2\pi \).
+        </p>
         <div class="katex">
 $$
 f(x) =
 \begin{cases}
-1, & 0 < x < \pi \\
--1, & -\pi < x < 0
+-1, & -\pi \leq x < 0 \\
+\phantom{-}1, & 0 \leq x < \pi
 \end{cases}
 $$
         </div>
-
         <p>
-            Fungsi-fungsi di atas memiliki bentuk yang tidak sederhana, tetapi tetap bisa
-            dipecah menjadi kombinasi sinus dan kosinus.
+            Fungsi ini merupakan fungsi ganjil karena \( f(-x) = -f(x) \), sehingga
+            seluruh koefisien kosinus bernilai nol.
         </p>
-
+        <div class="katex">
+$$
+a_0 = 0, \qquad a_n = 0, \qquad n = 1, 2, 3, \ldots
+$$
+        </div>
+        <p>
+            Koefisien sinus dihitung menggunakan sifat keganjilan fungsi.
+        </p>
+        <div class="katex">
+$$
+b_n = \frac{2}{\pi}\int_0^{\pi}\sin(nx)\, dx = \frac{2}{\pi}\left[-\frac{\cos(nx)}{n}\right]_0^{\pi} = \frac{2}{n\pi}\left(1 - \cos(n\pi)\right)
+$$
+        </div>
+        <p>
+            Karena \( \cos(n\pi) = (-1)^n \), maka:
+        </p>
+        <div class="katex">
+$$
+b_n = \frac{2}{n\pi}\left(1 - (-1)^n\right) =
+\begin{cases}
+\dfrac{4}{n\pi}, & n \text{ ganjil} \\[6pt]
+0, & n \text{ genap}
+\end{cases}
+$$
+        </div>
+        <p>
+            Deret Fourier dari fungsi gelombang kotak adalah sebagai berikut.
+        </p>
+        <div class="katex">
+$$
+f(x) = \frac{4}{\pi}\sum_{k=0}^{\infty}\frac{1}{2k+1}\sin\!\left((2k+1)x\right) = \frac{4}{\pi}\left[\sin(x) + \frac{\sin(3x)}{3} + \frac{\sin(5x)}{5} + \cdots\right]
+$$
+        </div>
     </div>
 
     <div class="card card--soft">
-
-        <h3>Makna Fisik Deret Fourier</h3>
-
+        <h3>Hubungan dengan Penyelesaian PDP</h3>
         <p>
-            Deret Fourier tidak hanya konsep matematika, tetapi juga memiliki makna fisik:
+            Dalam penyelesaian PDP menggunakan metode pemisahan variabel, solusi
+            umum dibangun sebagai kombinasi linier tak hingga dari fungsi eigen
+            permasalahan. Kondisi awal yang diberikan, misalnya \( u(x,0) = f(x) \),
+            digunakan untuk menentukan koefisien dalam kombinasi tersebut.
         </p>
-
         <p>
-            • Dalam suara: memecah suara menjadi frekuensi dasar <br>
-            • Dalam panas: menggambarkan distribusi suhu <br>
-            • Dalam gelombang: menjelaskan bentuk getaran <br>
-            • Dalam sinyal: digunakan untuk analisis sinyal digital
+            Proses penentuan koefisien ini secara eksplisit merupakan ekspansi
+            Deret Fourier dari \( f(x) \) terhadap sistem fungsi eigen. Dengan
+            memanfaatkan ortogonalitas fungsi eigen, setiap koefisien dihitung
+            secara independen melalui integral berikut.
         </p>
-
+        <div class="katex">
+$$
+u(x,t) = \sum_{n=1}^{\infty} c_n\, X_n(x)\, T_n(t), \qquad c_n = \frac{\displaystyle\int_0^L f(x)\, X_n(x)\, dx}{\displaystyle\int_0^L \left[X_n(x)\right]^2 dx}
+$$
+        </div>
         <p>
-            Dengan kata lain, Deret Fourier membantu mengubah sesuatu yang kompleks menjadi
-            bagian-bagian sederhana yang lebih mudah dianalisis.
+            Dengan demikian, penyelesaian PDP dengan kondisi awal sembarang tereduksi
+            menjadi perhitungan koefisien Fourier dari data awal yang diberikan.
         </p>
-
     </div>
 
     <div class="card card--soft">
-
         <h3>Kesimpulan</h3>
-
         <p>
-            Deret Fourier adalah metode untuk merepresentasikan fungsi sebagai penjumlahan
-            gelombang sinus dan kosinus. Konsep ini sangat penting dalam sains dan teknik
-            karena banyak fenomena alam dapat dijelaskan dengan pendekatan gelombang.
+            Deret Fourier merepresentasikan fungsi periodik sebagai penjumlahan
+            tak hingga dari fungsi sinus dan kosinus. Landasan matematis dari
+            representasi ini adalah sifat ortogonalitas sistem trigonometri, yang
+            memungkinkan setiap koefisien dihitung secara independen melalui
+            integral tertentu.
         </p>
-
+        <p>
+            Terdapat dua jenis deret khusus yang sering digunakan dalam PDP, yaitu
+            deret sinus untuk kondisi batas Dirichlet dan deret kosinus untuk kondisi
+            batas Neumann. Konvergensi deret dijamin oleh Teorema Dirichlet, dengan
+            nilai konvergensi di titik diskontinuitas berupa rata-rata limit kanan
+            dan limit kiri fungsi.
+        </p>
+        <p>
+            Dalam penyelesaian PDP, Deret Fourier menjadi jembatan antara kondisi
+            awal yang diberikan secara umum dengan solusi analitik yang tersusun
+            dari fungsi eigen permasalahan. Pemahaman yang baik terhadap struktur
+            dan perhitungan koefisien Fourier menjadi kunci dalam menerapkan
+            metode ini secara efektif pada berbagai jenis PDP.
+        </p>
     </div>
 
 </div>

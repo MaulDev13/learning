@@ -1,0 +1,505 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+
+        <h2>Sifat-Sifat Transformasi Laplace</h2>
+
+        <p>
+            Setelah memahami definisi Transformasi Laplace, langkah berikutnya adalah
+            mempelajari sifat-sifat yang dimilikinya. Dalam praktiknya, penyelesaian
+            masalah jarang dilakukan dengan menghitung integral definisi secara langsung.
+        </p>
+
+        <p>
+            Sebagian besar perhitungan justru memanfaatkan berbagai sifat transformasi
+            yang memungkinkan fungsi baru ditransformasikan dari hasil-hasil yang sudah
+            diketahui sebelumnya.
+        </p>
+
+        <p>
+            Dengan menggunakan sifat-sifat ini, proses transformasi menjadi jauh lebih
+            cepat dan sistematis. Selain itu, banyak sifat yang secara langsung
+            menghubungkan operasi pada domain waktu dengan operasi yang lebih sederhana
+            pada domain Laplace.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Linearitas</h3>
+
+        <p>
+            Transformasi Laplace merupakan operator linear. Artinya, transformasi dari
+            penjumlahan fungsi sama dengan penjumlahan transformasi masing-masing fungsi.
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}\{af(t)+bg(t)\}
+=
+a\,\mathcal{L}\{f(t)\}
++
+b\,\mathcal{L}\{g(t)\}
+$$
+        </div>
+
+        <p>
+            dengan \( a \) dan \( b \) merupakan konstanta.
+        </p>
+
+        <p>
+            Jika diketahui:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}\{\sin t\}
+=
+\frac{1}{s^2+1}
+$$
+        </div>
+
+        <div class="katex">
+$$
+\mathcal{L}\{\cos t\}
+=
+\frac{s}{s^2+1}
+$$
+        </div>
+
+        <p>
+            maka:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}\{3\sin t + 2\cos t\}
+=
+\frac{3}{s^2+1}
++
+\frac{2s}{s^2+1}
+$$
+        </div>
+
+        <p>
+            Sifat linearitas memungkinkan transformasi dilakukan terhadap setiap suku
+            secara terpisah.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Transformasi Turunan Pertama</h3>
+
+        <p>
+            Salah satu sifat terpenting Transformasi Laplace adalah kemampuannya
+            mengubah turunan menjadi bentuk aljabar.
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}\{f'(t)\}
+=
+sF(s)-f(0)
+$$
+        </div>
+
+        <p>
+            dengan:
+        </p>
+
+        <div class="katex">
+$$
+F(s)=\mathcal{L}\{f(t)\}
+$$
+        </div>
+
+        <p>
+            Perhatikan bahwa turunan terhadap waktu telah berubah menjadi perkalian
+            dengan variabel \( s \).
+        </p>
+
+        <p>
+            Kondisi awal \( f(0) \) muncul secara otomatis dalam hasil transformasi.
+            Inilah salah satu alasan mengapa metode Laplace sangat efektif untuk
+            menyelesaikan Persamaan Diferensial Biasa.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Transformasi Turunan Orde Tinggi</h3>
+
+        <p>
+            Sifat sebelumnya dapat diperluas untuk turunan orde yang lebih tinggi.
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}\{f''(t)\}
+=
+s^2F(s)
+-
+sf(0)
+-
+f'(0)
+$$
+        </div>
+
+        <div class="katex">
+$$
+\mathcal{L}\{f'''(t)\}
+=
+s^3F(s)
+-
+s^2f(0)
+-
+sf'(0)
+-
+f''(0)
+$$
+        </div>
+
+        <p>
+            Secara umum:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}\{f^{(n)}(t)\}
+=
+s^nF(s)
+-
+s^{n-1}f(0)
+-
+s^{n-2}f'(0)
+-\cdots-
+f^{(n-1)}(0)
+$$
+        </div>
+
+        <p>
+            Hubungan ini memungkinkan persamaan diferensial orde tinggi diubah menjadi
+            persamaan aljabar biasa.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Pergeseran pada Domain Waktu (First Shifting Theorem)</h3>
+
+        <p>
+            Jika suatu fungsi dikalikan dengan fungsi eksponensial
+            \( e^{at} \), maka transformasinya mengalami pergeseran pada domain
+            Laplace.
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}\{e^{at}f(t)\}
+=
+F(s-a)
+$$
+        </div>
+
+        <p>
+            Artinya, variabel \( s \) cukup diganti menjadi \( s-a \).
+        </p>
+
+        <p>
+            Sebagai contoh:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}\{e^{2t}\sin t\}
+=
+\frac{1}{(s-2)^2+1}
+$$
+        </div>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Pergeseran pada Domain Laplace (Second Shifting Theorem)</h3>
+
+        <p>
+            Dalam banyak aplikasi muncul fungsi yang aktif setelah waktu tertentu.
+            Untuk menggambarkan kondisi ini digunakan fungsi tangga satuan
+            (Heaviside Function).
+        </p>
+
+        <div class="katex">
+$$
+u(t-a)
+=
+\begin{cases}
+0, & t<a\\
+1, & t\ge a
+\end{cases}
+$$
+        </div>
+
+        <p>
+            Jika:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}\{f(t)\}
+=
+F(s)
+$$
+        </div>
+
+        <p>
+            maka:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}\{u(t-a)f(t-a)\}
+=
+e^{-as}F(s)
+$$
+        </div>
+
+        <p>
+            Sifat ini sangat penting dalam analisis sistem yang mengalami perubahan
+            pada waktu tertentu.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Transformasi Integral</h3>
+
+        <p>
+            Transformasi Laplace dari suatu integral dapat dinyatakan sebagai:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}
+\left\{
+\int_0^t f(\tau)\,d\tau
+\right\}
+=
+\frac{F(s)}{s}
+$$
+        </div>
+
+        <p>
+            Dengan demikian, operasi integrasi pada domain waktu berubah menjadi
+            pembagian oleh \( s \) pada domain Laplace.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Diferensiasi pada Domain Laplace</h3>
+
+        <p>
+            Selain mengubah turunan terhadap waktu, terdapat pula hubungan antara
+            perkalian oleh \( t \) dengan diferensiasi terhadap \( s \).
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}\{tf(t)\}
+=
+-\frac{d}{ds}F(s)
+$$
+        </div>
+
+        <p>
+            Secara umum:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}\{t^n f(t)\}
+=
+(-1)^n
+\frac{d^n}{ds^n}
+F(s)
+$$
+        </div>
+
+        <p>
+            Sifat ini sering digunakan untuk memperoleh transformasi fungsi yang
+            melibatkan faktor pangkat waktu.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Teorema Konvolusi</h3>
+
+        <p>
+            Misalkan diberikan dua fungsi \( f(t) \) dan \( g(t) \).
+            Konvolusi kedua fungsi didefinisikan sebagai:
+        </p>
+
+        <div class="katex">
+$$
+(f*g)(t)
+=
+\int_0^t
+f(\tau)\,
+g(t-\tau)\,
+d\tau
+$$
+        </div>
+
+        <p>
+            Salah satu hasil terpenting dalam teori Laplace adalah:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}\{f*g\}
+=
+F(s)G(s)
+$$
+        </div>
+
+        <p>
+            Dengan kata lain, operasi konvolusi yang rumit pada domain waktu berubah
+            menjadi perkalian biasa pada domain Laplace.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Teorema Nilai Awal</h3>
+
+        <p>
+            Jika fungsi memenuhi syarat tertentu, maka nilai awal fungsi dapat
+            diperoleh langsung dari transformasinya.
+        </p>
+
+        <div class="katex">
+$$
+f(0^+)
+=
+\lim_{s\to\infty}
+sF(s)
+$$
+        </div>
+
+        <p>
+            Teorema ini sering digunakan untuk memeriksa kebenaran hasil transformasi.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Teorema Nilai Akhir</h3>
+
+        <p>
+            Apabila limit akhir fungsi ada dan syarat kestabilan terpenuhi,
+            maka:
+        </p>
+
+        <div class="katex">
+$$
+\lim_{t\to\infty}
+f(t)
+=
+\lim_{s\to 0}
+sF(s)
+$$
+        </div>
+
+        <p>
+            Teorema ini memungkinkan perilaku jangka panjang suatu sistem dianalisis
+            tanpa perlu menghitung transformasi invers secara lengkap.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Ringkasan Sifat-Sifat Penting</h3>
+
+        <table class="table">
+            <tr>
+                <th>Sifat</th>
+                <th>Rumus</th>
+            </tr>
+            <tr>
+                <td>Linearitas</td>
+                <td>\( \mathcal{L}\{af+bg\}=aF+bG \)</td>
+            </tr>
+            <tr>
+                <td>Turunan pertama</td>
+                <td>\( \mathcal{L}\{f'\}=sF-f(0) \)</td>
+            </tr>
+            <tr>
+                <td>Turunan ke-n</td>
+                <td>\( \mathcal{L}\{f^{(n)}\}=s^nF-\cdots \)</td>
+            </tr>
+            <tr>
+                <td>Pergeseran waktu</td>
+                <td>\( \mathcal{L}\{e^{at}f\}=F(s-a) \)</td>
+            </tr>
+            <tr>
+                <td>Pergeseran Heaviside</td>
+                <td>\( \mathcal{L}\{u(t-a)f(t-a)\}=e^{-as}F(s) \)</td>
+            </tr>
+            <tr>
+                <td>Integral</td>
+                <td>\( \mathcal{L}\{\int_0^t f(\tau)d\tau\}=F(s)/s \)</td>
+            </tr>
+            <tr>
+                <td>Diferensiasi terhadap s</td>
+                <td>\( \mathcal{L}\{tf(t)\}=-F'(s) \)</td>
+            </tr>
+            <tr>
+                <td>Konvolusi</td>
+                <td>\( \mathcal{L}\{f*g\}=F(s)G(s) \)</td>
+            </tr>
+            <tr>
+                <td>Nilai awal</td>
+                <td>\( f(0^+)=\lim_{s\to\infty}sF(s) \)</td>
+            </tr>
+            <tr>
+                <td>Nilai akhir</td>
+                <td>\( \lim_{t\to\infty}f(t)=\lim_{s\to0}sF(s) \)</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Sifat-sifat Transformasi Laplace memungkinkan berbagai operasi yang
+            rumit pada domain waktu diterjemahkan menjadi operasi yang lebih
+            sederhana pada domain Laplace. Keunggulan inilah yang menjadikan
+            metode Laplace sangat efektif untuk menyelesaikan persamaan diferensial
+            dan menganalisis sistem dinamik.
+        </p>
+
+        <p>
+            Dari seluruh sifat yang ada, sifat transformasi turunan merupakan yang
+            paling penting karena menjadi dasar utama penyelesaian Persamaan
+            Diferensial Biasa menggunakan Transformasi Laplace.
+        </p>
+
+    </div>
+
+</div>

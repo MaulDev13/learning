@@ -1,0 +1,341 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+
+        <h2>Transformasi Laplace</h2>
+
+        <p>
+            Dalam banyak permasalahan matematika terapan, fisika, dan teknik,
+            perilaku suatu sistem dinyatakan dalam bentuk Persamaan Diferensial
+            Biasa (PDB). Gerak benda, rangkaian listrik, pertumbuhan populasi,
+            peluruhan radioaktif, maupun sistem kendali merupakan beberapa contoh
+            fenomena yang secara alami dimodelkan menggunakan persamaan diferensial.
+        </p>
+
+        <p>
+            Kesulitan utama muncul karena persamaan diferensial melibatkan fungsi
+            yang belum diketahui beserta turunannya. Berbeda dengan persamaan
+            aljabar biasa yang hanya melibatkan bilangan atau variabel, keberadaan
+            turunan membuat proses penyelesaian menjadi lebih kompleks.
+        </p>
+
+        <p>
+            Transformasi Laplace memberikan pendekatan yang berbeda. Alih-alih
+            menyelesaikan persamaan diferensial secara langsung pada domain waktu,
+            fungsi terlebih dahulu diubah ke representasi lain yang lebih mudah
+            dianalisis. Dalam representasi baru tersebut, operasi diferensial
+            berubah menjadi operasi aljabar sehingga penyelesaian masalah menjadi
+            jauh lebih sistematis.
+        </p>
+
+        <p>
+            Oleh karena itu, Transformasi Laplace dapat dipandang sebagai alat
+            yang menghubungkan dunia persamaan diferensial dengan dunia aljabar.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Masalah yang Melatarbelakangi</h3>
+
+        <p>
+            Perhatikan persamaan diferensial berikut.
+        </p>
+
+        <div class="katex">
+$$
+y'(t) + 2y(t) = 0
+$$
+        </div>
+
+        <p>
+            Persamaan tersebut menyatakan hubungan antara suatu fungsi
+            \( y(t) \) dan turunannya. Untuk memperoleh solusi, kita harus
+            menemukan fungsi yang memenuhi hubungan tersebut pada setiap nilai
+            \( t \).
+        </p>
+
+        <p>
+            Pada contoh sederhana, penyelesaian masih dapat dilakukan secara
+            langsung. Namun ketika persamaan melibatkan turunan orde tinggi,
+            fungsi masukan yang rumit, atau kondisi awal yang tidak sederhana,
+            metode konvensional sering menjadi sulit diterapkan.
+        </p>
+
+        <p>
+            Muncul pertanyaan mendasar:
+        </p>
+
+        <blockquote>
+            Apakah mungkin mengubah persamaan diferensial menjadi bentuk yang lebih
+            sederhana tanpa menghilangkan informasi dari fungsi aslinya?
+        </blockquote>
+
+        <p>
+            Transformasi Laplace lahir dari upaya menjawab pertanyaan tersebut.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Ide Dasar Transformasi</h3>
+
+        <p>
+            Gagasan utama Transformasi Laplace adalah mengubah cara kita
+            merepresentasikan suatu fungsi.
+        </p>
+
+        <p>
+            Sebuah fungsi yang semula dinyatakan terhadap waktu
+            \( t \) diubah menjadi fungsi baru yang dinyatakan terhadap variabel
+            \( s \).
+        </p>
+
+        <div class="katex">
+$$
+f(t)
+\quad \longrightarrow \quad
+F(s)
+$$
+        </div>
+
+        <p>
+            Fungsi baru \( F(s) \) menyimpan informasi yang sama dengan
+            fungsi semula, tetapi dalam bentuk yang lebih mudah dimanipulasi
+            secara matematis.
+        </p>
+
+        <p>
+            Transformasi ini tidak menghilangkan informasi. Ia hanya mengubah
+            representasi fungsi ke bentuk lain yang lebih sesuai untuk proses
+            analisis.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Analogi Penerjemahan Bahasa</h3>
+
+        <p>
+            Transformasi Laplace dapat dianalogikan sebagai proses menerjemahkan
+            sebuah teks dari satu bahasa ke bahasa lain.
+        </p>
+
+        <p>
+            Kadang-kadang suatu gagasan sulit dijelaskan dalam bahasa tertentu,
+            tetapi menjadi lebih mudah dipahami setelah diterjemahkan.
+        </p>
+
+        <p>
+            Demikian pula dengan persamaan diferensial. Dalam domain waktu,
+            hubungan yang muncul melibatkan turunan dan sering kali sulit
+            dimanipulasi secara langsung.
+        </p>
+
+        <p>
+            Setelah diterjemahkan ke domain Laplace, hubungan yang sama biasanya
+            berubah menjadi persamaan aljabar yang jauh lebih sederhana.
+        </p>
+
+        <p>
+            Setelah solusi ditemukan, hasilnya diterjemahkan kembali ke domain
+            waktu melalui proses yang disebut Transformasi Invers Laplace.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Mengapa Transformasi Laplace Sangat Efektif</h3>
+
+        <p>
+            Keunggulan utama Transformasi Laplace terletak pada kemampuannya
+            mengubah operasi diferensiasi menjadi operasi aljabar.
+        </p>
+
+        <p>
+            Jika \( y(t) \) memiliki transformasi Laplace
+            \( Y(s) \), maka berlaku hubungan berikut.
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}\{y'(t)\}
+=
+sY(s)-y(0)
+$$
+        </div>
+
+        <p>
+            Perhatikan bahwa turunan \( y'(t) \) tidak lagi muncul setelah
+            transformasi dilakukan.
+        </p>
+
+        <p>
+            Sebagai gantinya, muncul bentuk aljabar berupa perkalian dengan
+            variabel \( s \) serta kondisi awal \( y(0) \).
+        </p>
+
+        <p>
+            Inilah alasan mengapa banyak persamaan diferensial dapat diubah
+            menjadi persamaan aljabar yang lebih mudah diselesaikan.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Definisi Transformasi Laplace</h3>
+
+        <p>
+            Secara matematis, Transformasi Laplace dari fungsi
+            \( f(t) \) didefinisikan sebagai integral berikut.
+        </p>
+
+        <div class="katex">
+$$
+F(s)
+=
+\mathcal{L}\{f(t)\}
+=
+\int_0^{\infty}
+e^{-st}f(t)\,dt
+$$
+        </div>
+
+        <p>
+            Simbol \( \mathcal{L} \) menyatakan operator Transformasi Laplace,
+            sedangkan \( F(s) \) merupakan hasil transformasi dari
+            fungsi \( f(t) \).
+        </p>
+
+        <p>
+            Integral tersebut menggabungkan seluruh informasi fungsi terhadap
+            waktu ke dalam suatu representasi baru pada domain \( s \).
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Makna Variabel s</h3>
+
+        <p>
+            Pada fungsi asli, variabel \( t \) biasanya menyatakan waktu.
+        </p>
+
+        <p>
+            Setelah transformasi dilakukan, fungsi dinyatakan terhadap variabel
+            baru \( s \), yang disebut variabel Laplace.
+        </p>
+
+        <p>
+            Variabel ini memungkinkan informasi mengenai perilaku sistem,
+            seperti pertumbuhan, peluruhan, maupun osilasi, direpresentasikan
+            dalam bentuk yang lebih mudah dianalisis.
+        </p>
+
+        <p>
+            Karena itulah Transformasi Laplace sering disebut sebagai perpindahan
+            dari domain waktu ke domain Laplace.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Contoh Transformasi Sederhana</h3>
+
+        <p>
+            Salah satu contoh paling sederhana adalah fungsi konstan.
+        </p>
+
+        <div class="katex">
+$$
+f(t)=1
+$$
+        </div>
+
+        <p>
+            Transformasi Laplace dari fungsi tersebut adalah:
+        </p>
+
+        <div class="katex">
+$$
+\mathcal{L}\{1\}
+=
+\frac{1}{s}
+\qquad (s>0)
+$$
+        </div>
+
+        <p>
+            Dengan demikian, fungsi konstan pada domain waktu direpresentasikan
+            sebagai fungsi rasional sederhana pada domain Laplace.
+        </p>
+
+        <p>
+            Banyak fungsi lain seperti eksponensial, sinus, dan kosinus juga
+            memiliki bentuk transformasi yang sederhana dan akan dipelajari
+            pada bagian berikutnya.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Hubungan dengan Persamaan Diferensial</h3>
+
+        <p>
+            Dalam penyelesaian Persamaan Diferensial Biasa, Transformasi Laplace
+            digunakan untuk mengubah masalah diferensial menjadi masalah aljabar.
+        </p>
+
+        <p>
+            Secara umum langkah penyelesaiannya adalah:
+        </p>
+
+        <ol>
+            <li>Menerapkan Transformasi Laplace pada persamaan diferensial.</li>
+            <li>Menggunakan sifat-sifat transformasi untuk memperoleh persamaan aljabar.</li>
+            <li>Menyelesaikan persamaan aljabar yang diperoleh.</li>
+            <li>Menentukan fungsi \( Y(s) \).</li>
+            <li>Menerapkan Transformasi Invers Laplace untuk memperoleh \( y(t) \).</li>
+        </ol>
+
+        <p>
+            Dengan pendekatan ini, persoalan yang semula melibatkan turunan dapat
+            direduksi menjadi persoalan manipulasi aljabar yang lebih mudah
+            ditangani.
+        </p>
+
+    </div>
+
+    <div class="card card--soft">
+
+        <h3>Kesimpulan</h3>
+
+        <p>
+            Transformasi Laplace adalah metode yang mengubah fungsi dari domain
+            waktu ke domain Laplace melalui suatu operasi integral.
+        </p>
+
+        <p>
+            Tujuan utamanya bukan mencari solusi secara langsung, melainkan
+            mengubah representasi masalah ke bentuk yang lebih sederhana sehingga
+            operasi diferensial dapat digantikan oleh operasi aljabar.
+        </p>
+
+        <p>
+            Kemampuan inilah yang menjadikan Transformasi Laplace sebagai salah
+            satu alat paling penting dalam penyelesaian Persamaan Diferensial
+            Biasa, analisis sistem dinamik, teori kontrol, dan berbagai bidang
+            rekayasa lainnya.
+        </p>
+
+    </div>
+
+</div>

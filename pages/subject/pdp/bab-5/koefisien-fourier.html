@@ -1,148 +1,290 @@
-<div class="card card--flat">
-
-    <h2>BAB 5 — Deret Fourier: Koefisien Fourier</h2>
-
-    <p>
-        Setelah memahami bahwa sebuah fungsi dapat ditulis sebagai penjumlahan sinus dan kosinus,
-        pertanyaan berikutnya adalah: bagaimana kita menentukan “berapa besar kontribusi” setiap
-        gelombang tersebut?
-    </p>
-
-    <p>
-        Jawabannya ada pada <strong>koefisien Fourier</strong>. Koefisien ini berfungsi sebagai
-        “bobot” yang menentukan seberapa kuat setiap komponen sinus dan kosinus dalam membentuk
-        suatu fungsi.
-    </p>
+<div class="card-group">
 
     <div class="card card--soft">
-
-        <h3>Bentuk Umum Deret Fourier</h3>
-
-        <div class="katex">
-$$
-f(x) = \frac{a_0}{2} +
-\sum_{n=1}^{\infty}
-\left[
-a_n \cos\left(\frac{n\pi x}{L}\right)
-+
-b_n \sin\left(\frac{n\pi x}{L}\right)
-\right]
-$$
-        </div>
-
+        <h2>Koefisien Fourier</h2>
         <p>
-            Di sini:
+            Pada materi sebelumnya telah dipahami bahwa sebuah fungsi periodik dapat
+            direpresentasikan sebagai penjumlahan tak hingga dari gelombang sinus dan
+            kosinus. Representasi tersebut disebut Deret Fourier.
         </p>
-
         <p>
-            • \( a_0 \) = komponen rata-rata fungsi <br>
-            • \( a_n \) = koefisien untuk kosinus (simetri genap) <br>
-            • \( b_n \) = koefisien untuk sinus (simetri ganjil)
+            Pertanyaan yang kemudian muncul adalah: bagaimana menentukan seberapa besar
+            kontribusi setiap gelombang terhadap fungsi tersebut? Inilah yang dijawab
+            oleh koefisien Fourier. Apabila Deret Fourier adalah keseluruhan representasi
+            fungsi, maka koefisien Fourier adalah bilangan-bilangan yang menentukan bobot
+            setiap komponen di dalamnya.
         </p>
-
     </div>
 
     <div class="card card--soft">
+        <h3>Perbedaan Deret dan Koefisien Fourier</h3>
+        <p>
+            Deret Fourier dan koefisien Fourier adalah dua hal yang berbeda namun saling
+            berkaitan erat. Memahami perbedaan keduanya penting agar tidak terjadi
+            kerancuan dalam penerapan.
+        </p>
+        <table class="table">
+            <tr>
+                <th>Aspek</th>
+                <th>Deret Fourier</th>
+                <th>Koefisien Fourier</th>
+            </tr>
+            <tr>
+                <td>Definisi</td>
+                <td>Representasi lengkap fungsi sebagai penjumlahan sinus dan kosinus</td>
+                <td>Bilangan yang menentukan bobot setiap komponen dalam deret</td>
+            </tr>
+            <tr>
+                <td>Bentuk</td>
+                <td>Ekspresi tak hingga berupa penjumlahan</td>
+                <td>Bilangan skalar \( a_0,\, a_n,\, b_n \)</td>
+            </tr>
+            <tr>
+                <td>Cara memperoleh</td>
+                <td>Disusun dari koefisien yang telah dihitung</td>
+                <td>Dihitung melalui integral fungsi terhadap basis</td>
+            </tr>
+            <tr>
+                <td>Peran</td>
+                <td>Hasil akhir representasi fungsi</td>
+                <td>Komponen penyusun deret</td>
+            </tr>
+        </table>
+        <p>
+            Secara sederhana: koefisien Fourier adalah bahan, sedangkan Deret Fourier
+            adalah bangunan yang tersusun dari bahan-bahan tersebut.
+        </p>
+    </div>
 
+    <div class="card card--soft">
         <h3>Makna Koefisien Fourier</h3>
-
         <p>
-            Koefisien Fourier dapat dipahami sebagai “tingkat pengaruh” setiap gelombang.
+            Setiap koefisien mengukur seberapa kuat suatu frekuensi tertentu terwakili
+            dalam fungsi. Apabila koefisien suatu frekuensi bernilai besar, berarti
+            gelombang dengan frekuensi tersebut memiliki pengaruh dominan terhadap
+            bentuk fungsi. Apabila kecil, kontribusinya lemah. Apabila nol, gelombang
+            tersebut sama sekali tidak hadir dalam fungsi.
         </p>
-
         <p>
-            • Jika suatu koefisien besar → gelombang tersebut dominan <br>
-            • Jika kecil → kontribusinya lemah <br>
-            • Jika nol → gelombang tersebut tidak berperan
+            Dengan kata lain, kumpulan nilai \( a_0,\, a_1,\, a_2,\, \ldots \) dan
+            \( b_1,\, b_2,\, b_3,\, \ldots \) adalah semacam sidik jari frekuensi
+            dari suatu fungsi. Dua fungsi yang berbeda akan menghasilkan kumpulan
+            koefisien yang berbeda pula.
         </p>
-
-        <p>
-            Dengan demikian, bentuk fungsi ditentukan oleh kombinasi nilai koefisien ini.
-        </p>
-
+        <table class="table">
+            <tr>
+                <th>Koefisien</th>
+                <th>Komponen yang Diukur</th>
+                <th>Makna</th>
+            </tr>
+            <tr>
+                <td>\( a_0 \)</td>
+                <td>Komponen konstan</td>
+                <td>Nilai rata-rata fungsi pada satu periode</td>
+            </tr>
+            <tr>
+                <td>\( a_n \)</td>
+                <td>\( \cos\!\left(\dfrac{n\pi x}{L}\right) \)</td>
+                <td>Bobot komponen kosinus frekuensi ke-\( n \)</td>
+            </tr>
+            <tr>
+                <td>\( b_n \)</td>
+                <td>\( \sin\!\left(\dfrac{n\pi x}{L}\right) \)</td>
+                <td>Bobot komponen sinus frekuensi ke-\( n \)</td>
+            </tr>
+        </table>
     </div>
 
     <div class="card card--soft">
-
-        <h3>Rumus Koefisien Fourier</h3>
-
-        <p>Untuk fungsi pada interval \( -L \le x \le L \):</p>
-
+        <h3>Penurunan Rumus Koefisien</h3>
+        <p>
+            Rumus koefisien Fourier tidak muncul begitu saja, melainkan diturunkan
+            secara sistematis dari sifat ortogonalitas. Ide penurunannya adalah
+            sebagai berikut: apabila ingin mengisolasi kontribusi satu komponen
+            tertentu, kalikan kedua ruas Deret Fourier dengan komponen tersebut,
+            kemudian integrasikan pada satu periode penuh.
+        </p>
+        <p>
+            Sebagai ilustrasi, untuk menentukan \( b_n \), kedua ruas dikalikan
+            dengan \( \sin\!\left(\dfrac{n\pi x}{L}\right) \) kemudian diintegrasikan.
+        </p>
         <div class="katex">
 $$
-a_0 = \frac{1}{L} \int_{-L}^{L} f(x)\, dx
+\int_{-L}^{L} f(x)\sin\!\left(\frac{n\pi x}{L}\right)dx = \int_{-L}^{L}\left\{\frac{a_0}{2} + \sum_{m=1}^{\infty}\left[a_m\cos\!\left(\frac{m\pi x}{L}\right) + b_m\sin\!\left(\frac{m\pi x}{L}\right)\right]\right\}\sin\!\left(\frac{n\pi x}{L}\right)dx
 $$
         </div>
-
+        <p>
+            Akibat sifat ortogonalitas, semua suku di ruas kanan lenyap kecuali
+            satu suku, yaitu suku dengan \( m = n \) pada bagian sinus.
+        </p>
         <div class="katex">
 $$
-a_n = \frac{1}{L} \int_{-L}^{L} f(x)\cos\left(\frac{n\pi x}{L}\right)\, dx
+\int_{-L}^{L} f(x)\sin\!\left(\frac{n\pi x}{L}\right)dx = b_n\int_{-L}^{L}\sin^2\!\left(\frac{n\pi x}{L}\right)dx = b_n \cdot L
 $$
         </div>
-
+        <p>
+            Sehingga \( b_n \) dapat diisolasi langsung.
+        </p>
         <div class="katex">
 $$
-b_n = \frac{1}{L} \int_{-L}^{L} f(x)\sin\left(\frac{n\pi x}{L}\right)\, dx
+b_n = \frac{1}{L}\int_{-L}^{L} f(x)\sin\!\left(\frac{n\pi x}{L}\right)dx
 $$
         </div>
-
         <p>
-            Rumus ini menunjukkan bahwa koefisien diperoleh dari “proyeksi” fungsi terhadap
-            gelombang dasar sinus dan kosinus.
+            Proses yang sepenuhnya analog berlaku untuk menurunkan \( a_n \) dan \( a_0 \).
         </p>
-
     </div>
 
     <div class="card card--soft">
-
-        <h3>Intuisi Sederhana</h3>
-
+        <h3>Rumus Lengkap Koefisien Fourier</h3>
         <p>
-            Cara mudah memahami koefisien Fourier adalah seperti mencampur warna:
+            Berdasarkan penurunan di atas, rumus lengkap koefisien Fourier untuk fungsi
+            \( f(x) \) pada interval \( -L \leq x \leq L \) adalah sebagai berikut.
         </p>
-
-        <p>
-            • Fungsi asli = warna kompleks <br>
-            • Sinus & kosinus = warna dasar <br>
-            • Koefisien = seberapa banyak setiap warna dicampurkan
-        </p>
-
-        <p>
-            Dengan kombinasi yang tepat, warna kompleks dapat dibentuk kembali.
-        </p>
-
+        <div class="katex">
+$$
+a_0 = \frac{1}{L}\int_{-L}^{L} f(x)\, dx
+$$
+        </div>
+        <div class="katex">
+$$
+a_n = \frac{1}{L}\int_{-L}^{L} f(x)\cos\!\left(\frac{n\pi x}{L}\right)dx, \qquad n = 1, 2, 3, \ldots
+$$
+        </div>
+        <div class="katex">
+$$
+b_n = \frac{1}{L}\int_{-L}^{L} f(x)\sin\!\left(\frac{n\pi x}{L}\right)dx, \qquad n = 1, 2, 3, \ldots
+$$
+        </div>
     </div>
 
     <div class="card card--soft">
-
-        <h3>Peran Simetri</h3>
-
+        <h3>Pengaruh Simetri Fungsi terhadap Koefisien</h3>
         <p>
-            Simetri fungsi sangat mempengaruhi koefisien Fourier:
+            Simetri fungsi memberikan informasi langsung tentang koefisien mana yang
+            bernilai nol tanpa perlu menghitung integralnya. Hal ini menyederhanakan
+            perhitungan secara signifikan.
         </p>
-
         <p>
-            • Fungsi genap → hanya memiliki \( a_n \), \( b_n = 0 \) <br>
-            • Fungsi ganjil → hanya memiliki \( b_n \), \( a_n = 0 \)
+            Fungsi genap didefinisikan sebagai fungsi yang memenuhi \( f(-x) = f(x) \).
+            Sinus merupakan fungsi ganjil, sehingga perkalian fungsi genap dengan sinus
+            menghasilkan fungsi ganjil. Integral fungsi ganjil pada interval simetris
+            \( [-L, L] \) selalu bernilai nol, sehingga seluruh koefisien \( b_n = 0 \).
         </p>
-
         <p>
-            Hal ini membuat proses perhitungan bisa menjadi lebih sederhana.
+            Sebaliknya, fungsi ganjil memenuhi \( f(-x) = -f(x) \). Kosinus merupakan
+            fungsi genap, sehingga perkalian fungsi ganjil dengan kosinus menghasilkan
+            fungsi ganjil. Akibatnya seluruh koefisien \( a_n = 0 \) termasuk \( a_0 \).
         </p>
-
+        <table class="table">
+            <tr>
+                <th>Simetri Fungsi</th>
+                <th>Kondisi</th>
+                <th>Koefisien yang Bernilai Nol</th>
+                <th>Jenis Deret</th>
+            </tr>
+            <tr>
+                <td>Genap</td>
+                <td>\( f(-x) = f(x) \)</td>
+                <td>\( b_n = 0 \) untuk semua \( n \)</td>
+                <td>Deret Kosinus saja</td>
+            </tr>
+            <tr>
+                <td>Ganjil</td>
+                <td>\( f(-x) = -f(x) \)</td>
+                <td>\( a_0 = 0 \) dan \( a_n = 0 \) untuk semua \( n \)</td>
+                <td>Deret Sinus saja</td>
+            </tr>
+            <tr>
+                <td>Tidak keduanya</td>
+                <td>—</td>
+                <td>Tidak ada yang otomatis nol</td>
+                <td>Deret lengkap sinus dan kosinus</td>
+            </tr>
+        </table>
     </div>
 
     <div class="card card--soft">
+        <h3>Contoh — Menghitung Koefisien Fourier</h3>
+        <p>
+            Tentukan koefisien Fourier dari fungsi berikut pada interval \( -\pi \leq x \leq \pi \).
+        </p>
+        <div class="katex">
+$$
+f(x) = x
+$$
+        </div>
+        <p>
+            Fungsi \( f(x) = x \) merupakan fungsi ganjil karena \( f(-x) = -x = -f(x) \).
+            Oleh karena itu, tanpa menghitung integral, dapat disimpulkan langsung bahwa:
+        </p>
+        <div class="katex">
+$$
+a_0 = 0, \qquad a_n = 0, \qquad n = 1, 2, 3, \ldots
+$$
+        </div>
+        <p>
+            Koefisien sinus dihitung dengan \( L = \pi \):
+        </p>
+        <div class="katex">
+$$
+b_n = \frac{1}{\pi}\int_{-\pi}^{\pi} x\sin(nx)\, dx
+$$
+        </div>
+        <p>
+            Karena integran \( x\sin(nx) \) merupakan fungsi genap (ganjil dikali ganjil),
+            integral disederhanakan menjadi:
+        </p>
+        <div class="katex">
+$$
+b_n = \frac{2}{\pi}\int_0^{\pi} x\sin(nx)\, dx
+$$
+        </div>
+        <p>
+            Diselesaikan dengan integrasi parsial, misalkan \( u = x \) dan
+            \( dv = \sin(nx)\,dx \):
+        </p>
+        <div class="katex">
+$$
+b_n = \frac{2}{\pi}\left[-\frac{x\cos(nx)}{n}\bigg|_0^{\pi} + \frac{1}{n}\int_0^{\pi}\cos(nx)\, dx\right] = \frac{2}{\pi}\left[-\frac{\pi\cos(n\pi)}{n} + 0\right]
+$$
+        </div>
+        <div class="katex">
+$$
+b_n = -\frac{2\cos(n\pi)}{n} = \frac{2(-1)^{n+1}}{n}
+$$
+        </div>
+        <p>
+            Deret Fourier dari \( f(x) = x \) pada \( [-\pi, \pi] \) adalah:
+        </p>
+        <div class="katex">
+$$
+f(x) = 2\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin(nx) = 2\left[\sin(x) - \frac{\sin(2x)}{2} + \frac{\sin(3x)}{3} - \cdots\right]
+$$
+        </div>
+    </div>
 
+    <div class="card card--soft">
         <h3>Kesimpulan</h3>
-
         <p>
-            Koefisien Fourier adalah komponen penting dalam deret Fourier yang menentukan
-            kontribusi setiap gelombang sinus dan kosinus dalam membentuk suatu fungsi.
-            Nilai koefisien ini diperoleh melalui integral dan sangat dipengaruhi oleh
-            bentuk serta simetri fungsi.
+            Koefisien Fourier adalah bilangan-bilangan yang menentukan bobot setiap
+            komponen sinus dan kosinus dalam Deret Fourier. Apabila Deret Fourier
+            adalah representasi lengkap suatu fungsi, maka koefisien Fourier adalah
+            komponen penyusunnya yang diperoleh melalui integral fungsi terhadap
+            masing-masing basis trigonometri.
         </p>
-
+        <p>
+            Rumus koefisien diturunkan dari sifat ortogonalitas: dengan mengalikan
+            kedua ruas deret dengan satu fungsi basis dan mengintegrasikan, semua
+            suku selain satu suku lenyap, sehingga koefisien yang dicari dapat
+            diisolasi secara langsung.
+        </p>
+        <p>
+            Simetri fungsi memberikan cara cepat untuk menentukan koefisien mana yang
+            bernilai nol. Fungsi genap hanya memiliki koefisien kosinus, sedangkan
+            fungsi ganjil hanya memiliki koefisien sinus. Pemahaman terhadap simetri
+            ini menyederhanakan perhitungan secara signifikan dalam penerapan pada PDP.
+        </p>
     </div>
 
 </div>
