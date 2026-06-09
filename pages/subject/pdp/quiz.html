@@ -1,0 +1,178 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Quiz Pemahaman — Persamaan Diferensial Parsial</h2>
+        <p>
+            Quiz ini bertujuan membantu memahami konsep-konsep dasar Persamaan
+            Diferensial Parsial (PDP). Fokus utama bukan pada perhitungan,
+            melainkan pada pemahaman ide, interpretasi, dan hubungan antar konsep.
+        </p>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Pertanyaan 1</h3>
+
+        <p>
+            Mengapa fenomena seperti penyebaran panas pada sebuah pelat logam
+            lebih tepat dimodelkan menggunakan Persamaan Diferensial Parsial
+            dibandingkan Persamaan Diferensial Biasa?
+        </p>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="quiz1-solusi.html"
+                hx-target="#quiz1-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'quiz1-solusi')">
+                <span>Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+
+        <div id="quiz1-solusi" class="project-content hidden">
+            <h4>Jawaban</h4>
+            <p>
+                Suhu pada pelat logam berubah terhadap posisi dan waktu secara
+                bersamaan. Karena terdapat lebih dari satu variabel bebas,
+                diperlukan Persamaan Diferensial Parsial (PDP). Sebaliknya,
+                Persamaan Diferensial Biasa (PDB) hanya melibatkan satu variabel
+                bebas.
+            </p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Pertanyaan 2</h3>
+
+        <p>
+            Apa yang dimaksud dengan orde suatu Persamaan Diferensial Parsial?
+            Mengapa informasi ini penting?
+        </p>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="quiz2-solusi.html"
+                hx-target="#quiz2-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'quiz2-solusi')">
+                <span>Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+
+        <div id="quiz2-solusi" class="project-content hidden">
+            <h4>Jawaban</h4>
+            <p>
+                Orde adalah tingkat turunan tertinggi yang muncul dalam
+                persamaan. Informasi ini penting karena banyak metode
+                penyelesaian dan klasifikasi PDP bergantung pada ordonya.
+            </p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Pertanyaan 3</h3>
+
+        <p>
+            Metode karakteristik sering digunakan untuk menyelesaikan PDP
+            linier orde satu. Menurutmu, mengapa para matematikawan berusaha
+            mengubah PDP menjadi Persamaan Diferensial Biasa (PDB)?
+        </p>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="quiz3-solusi.html"
+                hx-target="#quiz3-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'quiz3-solusi')">
+                <span>Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+
+        <div id="quiz3-solusi" class="project-content hidden">
+            <h4>Jawaban</h4>
+            <p>
+                PDB umumnya lebih mudah dianalisis dan memiliki teknik
+                penyelesaian yang lebih sederhana. Metode karakteristik
+                mencari lintasan tertentu sehingga PDP dapat diperlakukan
+                seperti PDB sepanjang lintasan tersebut.
+            </p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Pertanyaan 4</h3>
+
+        <p>
+            Persamaan Laplace, Persamaan Panas, dan Persamaan Gelombang
+            merupakan tiga model penting dalam PDP. Apa kesamaan yang dimiliki
+            ketiga persamaan tersebut?
+        </p>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="quiz4-solusi.html"
+                hx-target="#quiz4-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'quiz4-solusi')">
+                <span>Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+
+        <div id="quiz4-solusi" class="project-content hidden">
+            <h4>Jawaban</h4>
+            <p>
+                Ketiganya digunakan untuk memodelkan fenomena fisika nyata dan
+                melibatkan perubahan suatu besaran terhadap ruang maupun waktu.
+                Perbedaannya terletak pada jenis fenomena yang dimodelkan serta
+                klasifikasi persamaannya.
+            </p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Pertanyaan 5</h3>
+
+        <p>
+            Mengapa metode numerik tetap dipelajari meskipun terdapat berbagai
+            metode analitik seperti karakteristik, Fourier, dan Laplace?
+        </p>
+
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="quiz5-solusi.html"
+                hx-target="#quiz5-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'quiz5-solusi')">
+                <span>Lihat Jawaban</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+
+        <div id="quiz5-solusi" class="project-content hidden">
+            <h4>Jawaban</h4>
+            <p>
+                Banyak PDP yang tidak memiliki solusi analitik sederhana.
+                Metode numerik memungkinkan solusi hampiran diperoleh dengan
+                bantuan komputer sehingga masalah nyata yang kompleks tetap
+                dapat dianalisis dan disimulasikan.
+            </p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Pengumpulan</h3>
+        <p>
+            Pengerjaan dibuat pada google docs atau PDF dan dikumpulkan melalui link berikut:
+            <a href="https://forms.gle/SkboxkLADyQMr1kd9" target="_blank">Google Form</a>
+        </p>
+    </div>
+
+</div>
