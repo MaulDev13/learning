@@ -1,0 +1,1108 @@
+<div class="card-group">
+
+    <div class="card card--soft">
+        <h2>Ujian Akhir Semester — Persamaan Diferensial Parsial</h2>
+        <p>
+            Ujian ini mencakup seluruh materi Persamaan Diferensial Parsial mulai dari
+            definisi, orde, linearitas, homogenitas, klasifikasi PDP orde dua, deret Fourier,
+            transformasi Fourier dan Laplace, hingga metode numerik beda hingga.
+            Kerjakan setiap soal secara sistematis dengan menuliskan langkah-langkah
+            penyelesaian secara lengkap.
+        </p>
+        <table class="table">
+            <tr>
+                <th>Keterangan</th>
+                <th>Detail</th>
+            </tr>
+            <tr>
+                <td>Jumlah Soal</td>
+                <td>25 soal uraian</td>
+            </tr>
+            <tr>
+                <td>Cakupan Materi</td>
+                <td>Pengantar PDP, Klasifikasi, Deret Fourier, Transformasi Fourier &amp; Laplace, Metode Numerik Beda Hingga</td>
+            </tr>
+            <tr>
+                <td>Bobot per Soal</td>
+                <td>4% (total 100%)</td>
+            </tr>
+            <tr>
+                <td>Sifat Ujian</td>
+                <td>Mandiri</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- ==================== CPMK-1: Definisi, Orde, Linearitas, Homogenitas, Klasifikasi ==================== -->
+
+    <div class="card card--soft">
+        <h3>Soal 1</h3>
+        <p>
+            Tentukan <strong>orde</strong>, <strong>linearitas</strong>, dan <strong>homogenitas</strong>
+            dari persamaan berikut. Berikan alasan singkat untuk setiap jawaban.
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+\frac{\partial^2 u}{\partial x^2} + \frac{\partial u}{\partial y} + 3u = 0
+$$
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal1-solusi.html"
+                hx-target="#soal1-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal1-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal1-solusi" class="project-content hidden">
+            <h4>Solusi Soal 1</h4>
+            <p><strong>Orde:</strong> Dua, karena turunan tertinggi adalah \( \frac{\partial^2 u}{\partial x^2} \) (turunan orde dua).</p>
+            <p><strong>Linear:</strong> Ya, karena semua suku yang memuat \( u \) atau turunannya berpangkat satu, dan tidak ada perkalian antar turunan.</p>
+            <p><strong>Homogen:</strong> Ya, karena ruas kanan bernilai nol (tidak ada suku konstanta atau fungsi \( x,y \) saja).</p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 2</h3>
+        <p>
+            Tentukan <strong>orde</strong>, <strong>linearitas</strong>, dan <strong>homogenitas</strong>
+            dari persamaan berikut.
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+u_t = 5u_{xx} + x
+$$
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal2-solusi.html"
+                hx-target="#soal2-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal2-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal2-solusi" class="project-content hidden">
+            <h4>Solusi Soal 2</h4>
+            <p><strong>Orde:</strong> Dua, karena turunan tertinggi adalah \( u_{xx} \) (turunan orde dua terhadap \( x \)).</p>
+            <p><strong>Linear:</strong> Ya, karena semua suku yang memuat \( u \) atau turunannya berpangkat satu.</p>
+            <p><strong>Homogen:</strong> Tidak, karena terdapat suku \( x \) di ruas kanan yang tidak mengandung \( u \) (tak homogen).</p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 3</h3>
+        <p>
+            Tentukan <strong>orde</strong>, <strong>linearitas</strong>, dan <strong>homogenitas</strong>
+            dari persamaan berikut.
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+u_{tt} = c^2 u_{xx} + \sin(u)
+$$
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal3-solusi.html"
+                hx-target="#soal3-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal3-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal3-solusi" class="project-content hidden">
+            <h4>Solusi Soal 3</h4>
+            <p><strong>Orde:</strong> Dua, karena turunan tertinggi adalah \( u_{tt} \) dan \( u_{xx} \) (turunan orde dua).</p>
+            <p><strong>Linear:</strong> Tidak, karena terdapat suku \( \sin(u) \) yang merupakan fungsi non-linear dari \( u \).</p>
+            <p><strong>Homogen:</strong> Tidak (tidak relevan karena sudah non-linear).</p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 4</h3>
+        <p>
+            Tentukan <strong>orde</strong>, <strong>linearitas</strong>, dan <strong>homogenitas</strong>
+            dari persamaan berikut.
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+u_x + \sin(x) u_y = e^x
+$$
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal4-solusi.html"
+                hx-target="#soal4-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal4-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal4-solusi" class="project-content hidden">
+            <h4>Solusi Soal 4</h4>
+            <p><strong>Orde:</strong> Satu, karena turunan tertinggi adalah \( u_x \) dan \( u_y \) (turunan orde satu).</p>
+            <p><strong>Linear:</strong> Ya, karena semua suku yang memuat \( u \) atau turunannya berpangkat satu, meskipun koefisien \( \sin(x) \) bergantung pada variabel bebas.</p>
+            <p><strong>Homogen:</strong> Tidak, karena ruas kanan adalah \( e^x \) yang tidak identik nol.</p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 5</h3>
+        <p>
+            Klasifikasikan persamaan diferensial parsial berikut berdasarkan jenisnya
+            (eliptik, parabolik, atau hiperbolik).
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+u_{xx} + u_{yy} = 0
+$$
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal5-solusi.html"
+                hx-target="#soal5-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal5-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal5-solusi" class="project-content hidden">
+            <h4>Solusi Soal 5</h4>
+            <p>Identifikasi koefisien: \( A = 1,\ B = 0,\ C = 1 \).</p>
+            <div class="katex">
+$$
+\Delta = B^2 - 4AC = 0 - 4(1)(1) = -4 < 0
+$$
+            </div>
+            <p>Karena \( \Delta < 0 \), maka persamaan <strong>eliptik</strong>. Ini adalah persamaan Laplace.</p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 6</h3>
+        <p>
+            Klasifikasikan persamaan diferensial parsial berikut.
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+u_t = u_{xx}
+$$
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal6-solusi.html"
+                hx-target="#soal6-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal6-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal6-solusi" class="project-content hidden">
+            <h4>Solusi Soal 6</h4>
+            <p>Identifikasi koefisien terhadap variabel \( x \) dan \( t \):</p>
+            <p>\( A = 1,\ B = 0,\ C = 0 \) (karena tidak ada \( u_{tt} \)).</p>
+            <div class="katex">
+$$
+\Delta = B^2 - 4AC = 0 - 4(1)(0) = 0
+$$
+            </div>
+            <p>Karena \( \Delta = 0 \), maka persamaan <strong>parabolik</strong>. Ini adalah persamaan panas.</p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 7</h3>
+        <p>
+            Klasifikasikan persamaan diferensial parsial berikut.
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+u_{xx} - u_{yy} = 0
+$$
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal7-solusi.html"
+                hx-target="#soal7-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal7-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal7-solusi" class="project-content hidden">
+            <h4>Solusi Soal 7</h4>
+            <p>Identifikasi koefisien: \( A = 1,\ B = 0,\ C = -1 \).</p>
+            <div class="katex">
+$$
+\Delta = B^2 - 4AC = 0 - 4(1)(-1) = 4 > 0
+$$
+            </div>
+            <p>Karena \( \Delta > 0 \), maka persamaan <strong>hiperbolik</strong>. Ini adalah persamaan gelombang (dalam bentuk karakteristik).</p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 8</h3>
+        <p>
+            Klasifikasikan persamaan diferensial parsial berikut.
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+2u_{xx} + 6u_{xy} + u_{yy} = 0
+$$
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal8-solusi.html"
+                hx-target="#soal8-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal8-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal8-solusi" class="project-content hidden">
+            <h4>Solusi Soal 8</h4>
+            <p>Identifikasi koefisien: \( A = 2,\ B = 6,\ C = 1 \).</p>
+            <div class="katex">
+$$
+\Delta = B^2 - 4AC = 36 - 4(2)(1) = 36 - 8 = 28 > 0
+$$
+            </div>
+            <p>Karena \( \Delta > 0 \), maka persamaan <strong>hiperbolik</strong>.</p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 9</h3>
+        <p>
+            Klasifikasikan persamaan diferensial parsial berikut.
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+3u_{xx} + 2u_{xy} + 5u_{yy} = 0
+$$
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal9-solusi.html"
+                hx-target="#soal9-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal9-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal9-solusi" class="project-content hidden">
+            <h4>Solusi Soal 9</h4>
+            <p>Identifikasi koefisien: \( A = 3,\ B = 2,\ C = 5 \).</p>
+            <div class="katex">
+$$
+\Delta = B^2 - 4AC = 4 - 4(3)(5) = 4 - 60 = -56 < 0
+$$
+            </div>
+            <p>Karena \( \Delta < 0 \), maka persamaan <strong>eliptik</strong>.</p>
+        </div>
+    </div>
+
+    <!-- ==================== CPMK-3: Masalah Nilai Awal dan Batas ==================== -->
+
+    <div class="card card--soft">
+        <h3>Soal 10</h3>
+        <p>
+            Persamaan \( u_t = k u_{xx} \) termasuk persamaan apa?
+            Sebutkan nama persamaan dan jenis klasifikasinya.
+        </p>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal10-solusi.html"
+                hx-target="#soal10-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal10-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal10-solusi" class="project-content hidden">
+            <h4>Solusi Soal 10</h4>
+            <p>Persamaan \( u_t = k u_{xx} \) disebut <strong>persamaan panas</strong> (heat equation) atau persamaan difusi.</p>
+            <p>Klasifikasi: <strong>parabolik</strong>.</p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 11</h3>
+        <p>
+            Persamaan \( u_{tt} = c^2 u_{xx} \) termasuk persamaan apa?
+            Sebutkan nama persamaan dan jenis klasifikasinya.
+        </p>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal11-solusi.html"
+                hx-target="#soal11-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal11-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal11-solusi" class="project-content hidden">
+            <h4>Solusi Soal 11</h4>
+            <p>Persamaan \( u_{tt} = c^2 u_{xx} \) disebut <strong>persamaan gelombang</strong> (wave equation).</p>
+            <p>Klasifikasi: <strong>hiperbolik</strong>.</p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 12</h3>
+        <p>
+            Persamaan \( u_{xx} + u_{yy} = 0 \) termasuk persamaan apa?
+            Sebutkan nama persamaan dan jenis klasifikasinya.
+        </p>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal12-solusi.html"
+                hx-target="#soal12-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal12-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal12-solusi" class="project-content hidden">
+            <h4>Solusi Soal 12</h4>
+            <p>Persamaan \( u_{xx} + u_{yy} = 0 \) disebut <strong>persamaan Laplace</strong> (Laplace equation).</p>
+            <p>Klasifikasi: <strong>eliptik</strong>.</p>
+        </div>
+    </div>
+
+    <!-- ==================== CPMK-4: Deret Fourier dan Transformasi Fourier ==================== -->
+
+    <div class="card card--soft">
+        <h3>Soal 13</h3>
+        <p>
+            Tentukan Deret Fourier dari fungsi berikut pada interval \( -\pi < x < \pi \).
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+f(x) = x, \qquad -\pi < x < \pi
+$$
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal13-solusi.html"
+                hx-target="#soal13-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal13-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal13-solusi" class="project-content hidden">
+            <h4>Solusi Soal 13</h4>
+            <p>Fungsi \( f(x) = x \) adalah fungsi ganjil pada interval \( (-\pi, \pi) \).</p>
+            <p>Untuk fungsi ganjil: \( a_0 = 0 \) dan \( a_n = 0 \).</p>
+            <p>Koefisien \( b_n \):</p>
+            <div class="katex">
+$$
+b_n = \frac{2}{\pi} \int_0^\pi x \sin(nx) \, dx = \frac{2}{\pi} \left[ -\frac{x\cos(nx)}{n} + \frac{\sin(nx)}{n^2} \right]_0^\pi
+$$
+            </div>
+            <div class="katex">
+$$
+b_n = \frac{2}{\pi} \left( -\frac{\pi\cos(n\pi)}{n} \right) = -\frac{2\cos(n\pi)}{n} = \frac{2(-1)^{n+1}}{n}
+$$
+            </div>
+            <p>Deret Fourier dari \( f(x) = x \) adalah:</p>
+            <div class="katex">
+$$
+f(x) = \sum_{n=1}^{\infty} \frac{2(-1)^{n+1}}{n} \sin(nx)
+$$
+            </div>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 14</h3>
+        <p>
+            Tentukan Deret Fourier dari fungsi berikut pada interval \( -\pi < x < \pi \).
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+f(x) = x^2, \qquad -\pi < x < \pi
+$$
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal14-solusi.html"
+                hx-target="#soal14-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal14-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal14-solusi" class="project-content hidden">
+            <h4>Solusi Soal 14</h4>
+            <p>Fungsi \( f(x) = x^2 \) adalah fungsi genap pada interval \( (-\pi, \pi) \).</p>
+            <p>Untuk fungsi genap: \( b_n = 0 \).</p>
+            <p>Koefisien \( a_0 \):</p>
+            <div class="katex">
+$$
+a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} x^2 \, dx = \frac{1}{\pi} \left[ \frac{x^3}{3} \right]_{-\pi}^{\pi} = \frac{2\pi^2}{3}
+$$
+            </div>
+            <p>Koefisien \( a_n \):</p>
+            <div class="katex">
+$$
+a_n = \frac{2}{\pi} \int_0^\pi x^2 \cos(nx) \, dx = \frac{4(-1)^n}{n^2}
+$$
+            </div>
+            <p>Deret Fourier dari \( f(x) = x^2 \) adalah:</p>
+            <div class="katex">
+$$
+f(x) = \frac{\pi^2}{3} + \sum_{n=1}^{\infty} \frac{4(-1)^n}{n^2} \cos(nx)
+$$
+            </div>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 15</h3>
+        <p>
+            Hitung koefisien Fourier \( a_0 \) untuk fungsi berikut pada interval
+            \( -\pi < x < \pi \).
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+f(x) = 1 + x
+$$
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal15-solusi.html"
+                hx-target="#soal15-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal15-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal15-solusi" class="project-content hidden">
+            <h4>Solusi Soal 15</h4>
+            <div class="katex">
+$$
+a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} (1 + x) \, dx
+$$
+            </div>
+            <div class="katex">
+$$
+a_0 = \frac{1}{\pi} \left[ \int_{-\pi}^{\pi} 1 \, dx + \int_{-\pi}^{\pi} x \, dx \right]
+$$
+            </div>
+            <div class="katex">
+$$
+a_0 = \frac{1}{\pi} \left[ 2\pi + 0 \right] = 2
+$$
+            </div>
+            <p>Jadi, \( a_0 = 2 \).</p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 16</h3>
+        <p>
+            Hitung koefisien Fourier \( b_n \) untuk fungsi berikut pada interval
+            \( -\pi < x < \pi \).
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+f(x) = x
+$$
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal16-solusi.html"
+                hx-target="#soal16-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal16-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal16-solusi" class="project-content hidden">
+            <h4>Solusi Soal 16</h4>
+            <div class="katex">
+$$
+b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} x \sin(nx) \, dx
+$$
+            </div>
+            <p>Karena \( x\sin(nx) \) adalah fungsi genap, maka:</p>
+            <div class="katex">
+$$
+b_n = \frac{2}{\pi} \int_0^\pi x \sin(nx) \, dx
+$$
+            </div>
+            <div class="katex">
+$$
+b_n = \frac{2}{\pi} \left[ -\frac{x\cos(nx)}{n} + \frac{\sin(nx)}{n^2} \right]_0^\pi
+$$
+            </div>
+            <div class="katex">
+$$
+b_n = \frac{2}{\pi} \left( -\frac{\pi\cos(n\pi)}{n} \right) = \frac{2(-1)^{n+1}}{n}
+$$
+            </div>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 17</h3>
+        <p>
+            Tuliskan bentuk Deret Fourier lengkap dari hasil yang diperoleh pada
+            soal sebelumnya \( f(x) = x \) dan \( f(x) = x^2 \).
+        </p>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal17-solusi.html"
+                hx-target="#soal17-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal17-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal17-solusi" class="project-content hidden">
+            <h4>Solusi Soal 17</h4>
+            <p>Untuk \( f(x) = x \):</p>
+            <div class="katex">
+$$
+f(x) = \sum_{n=1}^{\infty} \frac{2(-1)^{n+1}}{n} \sin(nx)
+$$
+            </div>
+            <p>Untuk \( f(x) = x^2 \):</p>
+            <div class="katex">
+$$
+f(x) = \frac{\pi^2}{3} + \sum_{n=1}^{\infty} \frac{4(-1)^n}{n^2} \cos(nx)
+$$
+            </div>
+            <p>Bentuk deret Fourier lengkap secara umum:</p>
+            <div class="katex">
+$$
+f(x) \sim \frac{a_0}{2} + \sum_{n=1}^{\infty} \left( a_n \cos(nx) + b_n \sin(nx) \right)
+$$
+            </div>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 18</h3>
+        <p>
+            Hitung Transformasi Fourier dari fungsi berikut.
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+f(x) = e^{-a|x|}, \qquad a > 0
+$$
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal18-solusi.html"
+                hx-target="#soal18-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal18-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal18-solusi" class="project-content hidden">
+            <h4>Solusi Soal 18</h4>
+            <p>Transformasi Fourier didefinisikan sebagai:</p>
+            <div class="katex">
+$$
+\mathcal{F}\{f(x)\} = \int_{-\infty}^{\infty} f(x) e^{-i\xi x} \, dx
+$$
+            </div>
+            <div class="katex">
+$$
+\mathcal{F}\{e^{-a|x|}\} = \int_{-\infty}^{\infty} e^{-a|x|} e^{-i\xi x} \, dx
+$$
+            </div>
+            <p>Karena fungsi genap, maka:</p>
+            <div class="katex">
+$$
+= 2 \int_0^\infty e^{-ax} \cos(\xi x) \, dx
+$$
+            </div>
+            <div class="katex">
+$$
+= 2 \left[ \frac{a}{a^2 + \xi^2} \right] = \frac{2a}{a^2 + \xi^2}
+$$
+            </div>
+            <p>Jadi, Transformasi Fourier dari \( e^{-a|x|} \) adalah \( \frac{2a}{a^2 + \xi^2} \).</p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 19</h3>
+        <p>
+            Hitung Transformasi Fourier dari fungsi delta Dirac \( \delta(x) \).
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+f(x) = \delta(x)
+$$
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal19-solusi.html"
+                hx-target="#soal19-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal19-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal19-solusi" class="project-content hidden">
+            <h4>Solusi Soal 19</h4>
+            <p>Transformasi Fourier dari fungsi delta Dirac:</p>
+            <div class="katex">
+$$
+\mathcal{F}\{\delta(x)\} = \int_{-\infty}^{\infty} \delta(x) e^{-i\xi x} \, dx
+$$
+            </div>
+            <p>Dengan sifat \( \int_{-\infty}^{\infty} \delta(x) \phi(x) \, dx = \phi(0) \), maka:</p>
+            <div class="katex">
+$$
+\mathcal{F}\{\delta(x)\} = e^{-i\xi \cdot 0} = 1
+$$
+            </div>
+            <p>Jadi, Transformasi Fourier dari \( \delta(x) \) adalah \( 1 \).</p>
+        </div>
+    </div>
+
+        <!-- ==================== CPMK-5: Transformasi Laplace (Lanjutan) ==================== -->
+
+    <div class="card card--soft">
+        <h3>Soal 20</h3>
+        <p>
+            Hitung Transformasi Laplace dari fungsi berikut.
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+f(t) = 3e^{2t} - 5\sin(4t)
+$$
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal20-solusi.html"
+                hx-target="#soal20-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal20-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal20-solusi" class="project-content hidden">
+            <h4>Solusi Soal 20</h4>
+            <p>Gunakan sifat linearitas Transformasi Laplace:</p>
+            <div class="katex">
+$$
+\mathcal{L}\{3e^{2t} - 5\sin(4t)\} = 3\mathcal{L}\{e^{2t}\} - 5\mathcal{L}\{\sin(4t)\}
+$$
+            </div>
+            <p>Ingat rumus dasar:</p>
+            <div class="katex">
+$$
+\mathcal{L}\{e^{at}\} = \frac{1}{s - a}, \qquad \mathcal{L}\{\sin(bt)\} = \frac{b}{s^2 + b^2}
+$$
+            </div>
+            <div class="katex">
+$$
+\mathcal{L}\{3e^{2t}\} = \frac{3}{s - 2}
+$$
+            </div>
+            <div class="katex">
+$$
+\mathcal{L}\{5\sin(4t)\} = 5 \cdot \frac{4}{s^2 + 16} = \frac{20}{s^2 + 16}
+$$
+            </div>
+            <p>Jadi, Transformasi Laplace dari \( f(t) = 3e^{2t} - 5\sin(4t) \) adalah:</p>
+            <div class="katex">
+$$
+F(s) = \frac{3}{s - 2} - \frac{20}{s^2 + 16}
+$$
+            </div>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 21</h3>
+        <p>
+            Hitung Transformasi Laplace dari fungsi berikut.
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+f(t) = t^2 e^{-t}
+$$
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal21-solusi.html"
+                hx-target="#soal21-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal21-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal21-solusi" class="project-content hidden">
+            <h4>Solusi Soal 21</h4>
+            <p>Gunakan sifat pergeseran (shift property) Transformasi Laplace:</p>
+            <div class="katex">
+$$
+\mathcal{L}\{e^{-t} t^2\} = \mathcal{L}\{t^2\}_{s \to s+1}
+$$
+            </div>
+            <p>Ingat rumus dasar:</p>
+            <div class="katex">
+$$
+\mathcal{L}\{t^n\} = \frac{n!}{s^{n+1}}
+$$
+            </div>
+            <p>Untuk \( n = 2 \):</p>
+            <div class="katex">
+$$
+\mathcal{L}\{t^2\} = \frac{2!}{s^3} = \frac{2}{s^3}
+$$
+            </div>
+            <p>Dengan pergeseran \( s \to s+1 \):</p>
+            <div class="katex">
+$$
+\mathcal{L}\{t^2 e^{-t}\} = \frac{2}{(s+1)^3}
+$$
+            </div>
+            <p>Jadi, Transformasi Laplace dari \( f(t) = t^2 e^{-t} \) adalah:</p>
+            <div class="katex">
+$$
+F(s) = \frac{2}{(s+1)^3}
+$$
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CPMK-6: Metode Numerik Beda Hingga ==================== -->
+
+    <div class="card card--soft">
+        <h3>Soal 22</h3>
+        <p>
+            Turunkan pendekatan beda hingga (finite difference) untuk \( u_x \)
+            menggunakan deret Taylor. Tuliskan tiga pendekatan yang mungkin
+            (forward, backward, dan central difference).
+        </p>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal22-solusi.html"
+                hx-target="#soal22-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal22-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal22-solusi" class="project-content hidden">
+            <h4>Solusi Soal 22</h4>
+            <p>Ekspansi deret Taylor untuk \( u(x + \Delta x) \) dan \( u(x - \Delta x) \):</p>
+            <div class="katex">
+$$
+u(x + \Delta x) = u(x) + \Delta x \, u_x(x) + \frac{(\Delta x)^2}{2!} u_{xx}(x) + \frac{(\Delta x)^3}{3!} u_{xxx}(x) + \cdots
+$$
+            </div>
+            <div class="katex">
+$$
+u(x - \Delta x) = u(x) - \Delta x \, u_x(x) + \frac{(\Delta x)^2}{2!} u_{xx}(x) - \frac{(\Delta x)^3}{3!} u_{xxx}(x) + \cdots
+$$
+            </div>
+
+            <p><strong>1. Forward Difference (beda maju):</strong></p>
+            <div class="katex">
+$$
+u_x \approx \frac{u(x + \Delta x) - u(x)}{\Delta x}
+$$
+            </div>
+            <p>dengan error \( O(\Delta x) \).</p>
+
+            <p><strong>2. Backward Difference (beda mundur):</strong></p>
+            <div class="katex">
+$$
+u_x \approx \frac{u(x) - u(x - \Delta x)}{\Delta x}
+$$
+            </div>
+            <p>dengan error \( O(\Delta x) \).</p>
+
+            <p><strong>3. Central Difference (beda pusat):</strong></p>
+            <div class="katex">
+$$
+u_x \approx \frac{u(x + \Delta x) - u(x - \Delta x)}{2\Delta x}
+$$
+            </div>
+            <p>dengan error \( O(\Delta x)^2 \) (lebih akurat).</p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 23</h3>
+        <p>
+            Turunkan pendekatan beda hingga (finite difference) untuk \( u_{xx} \)
+            menggunakan deret Taylor dengan error \( O(\Delta x)^2 \).
+        </p>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal23-solusi.html"
+                hx-target="#soal23-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal23-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal23-solusi" class="project-content hidden">
+            <h4>Solusi Soal 23</h4>
+            <p>Ekspansi deret Taylor untuk \( u(x + \Delta x) \) dan \( u(x - \Delta x) \):</p>
+            <div class="katex">
+$$
+u(x + \Delta x) = u(x) + \Delta x \, u_x + \frac{(\Delta x)^2}{2} u_{xx} + \frac{(\Delta x)^3}{6} u_{xxx} + \frac{(\Delta x)^4}{24} u_{xxxx} + \cdots
+$$
+            </div>
+            <div class="katex">
+$$
+u(x - \Delta x) = u(x) - \Delta x \, u_x + \frac{(\Delta x)^2}{2} u_{xx} - \frac{(\Delta x)^3}{6} u_{xxx} + \frac{(\Delta x)^4}{24} u_{xxxx} - \cdots
+$$
+            </div>
+
+            <p>Jumlahkan kedua persamaan:</p>
+            <div class="katex">
+$$
+u(x + \Delta x) + u(x - \Delta x) = 2u(x) + (\Delta x)^2 u_{xx} + \frac{(\Delta x)^4}{12} u_{xxxx} + \cdots
+$$
+            </div>
+
+            <p>Sehingga diperoleh pendekatan beda pusat untuk \( u_{xx} \):</p>
+            <div class="katex">
+$$
+u_{xx} \approx \frac{u(x + \Delta x) - 2u(x) + u(x - \Delta x)}{(\Delta x)^2}
+$$
+            </div>
+            <p>dengan error \( O(\Delta x)^2 \).</p>
+
+            <p>Dalam notasi indeks:</p>
+            <div class="katex">
+$$
+u_{xx} \approx \frac{u_{i+1} - 2u_i + u_{i-1}}{(\Delta x)^2}
+$$
+            </div>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 24</h3>
+        <p>
+            Bentukkan skema FTCS (Forward Time Central Space) untuk persamaan panas
+            satu dimensi berikut:
+        </p>
+        <div class="question">
+            <div class="katex">
+$$
+u_t = \alpha u_{xx}, \qquad \alpha > 0
+$$
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal24-solusi.html"
+                hx-target="#soal24-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal24-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal24-solusi" class="project-content hidden">
+            <h4>Solusi Soal 24</h4>
+            <p>Skema FTCS menggunakan:</p>
+            <ul>
+                <li><strong>Forward Time</strong> (beda maju untuk turunan waktu): \( u_t \approx \frac{u_i^{n+1} - u_i^n}{\Delta t} \)</li>
+                <li><strong>Central Space</strong> (beda pusat untuk turunan ruang): \( u_{xx} \approx \frac{u_{i+1}^n - 2u_i^n + u_{i-1}^n}{(\Delta x)^2} \)</li>
+            </ul>
+
+            <p>Substitusikan ke persamaan panas:</p>
+            <div class="katex">
+$$
+\frac{u_i^{n+1} - u_i^n}{\Delta t} = \alpha \frac{u_{i+1}^n - 2u_i^n + u_{i-1}^n}{(\Delta x)^2}
+$$
+            </div>
+
+            <p>Sehingga diperoleh skema FTCS:</p>
+            <div class="katex">
+$$
+u_i^{n+1} = u_i^n + \alpha \frac{\Delta t}{(\Delta x)^2} \left( u_{i+1}^n - 2u_i^n + u_{i-1}^n \right)
+$$
+            </div>
+
+            <p>Atau dengan mendefinisikan \( r = \alpha \frac{\Delta t}{(\Delta x)^2} \):</p>
+            <div class="katex">
+$$
+u_i^{n+1} = u_i^n + r \left( u_{i+1}^n - 2u_i^n + u_{i-1}^n \right)
+$$
+            </div>
+
+            <p>dengan syarat kestabilan: \( r \leq \frac{1}{2} \) untuk skema ini.</p>
+        </div>
+    </div>
+
+    <div class="card card--soft">
+        <h3>Soal 25</h3>
+        <p>
+            Dengan \( \Delta x = 0.25 \), \( \Delta t = 0.03125 \), dan nilai
+            \( u_{i-1} = 40 \), \( u_i = 50 \), \( u_{i+1} = 60 \), hitung
+            \( u_i^{n+1} \) menggunakan skema FTCS untuk persamaan panas
+            dengan \( \alpha = 1 \).
+        </p>
+        <div class="button-group">
+            <button class="button button--primary"
+                hx-get="soal25-solusi.html"
+                hx-target="#soal25-solusi"
+                hx-trigger="click once"
+                hx-swap="innerHTML"
+                onclick="toggleProject(this, 'soal25-solusi')">
+                <span>Lihat Solusi</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div id="soal25-solusi" class="project-content hidden">
+            <h4>Solusi Soal 25</h4>
+            <p>Diketahui:</p>
+            <ul>
+                <li>\( \Delta x = 0.25 \)</li>
+                <li>\( \Delta t = 0.03125 \)</li>
+                <li>\( \alpha = 1 \)</li>
+                <li>\( u_{i-1} = 40 \), \( u_i = 50 \), \( u_{i+1} = 60 \)</li>
+            </ul>
+
+            <p>Hitung parameter \( r \):</p>
+            <div class="katex">
+$$
+r = \alpha \frac{\Delta t}{(\Delta x)^2} = 1 \cdot \frac{0.03125}{(0.25)^2} = \frac{0.03125}{0.0625} = 0.5
+$$
+            </div>
+
+            <p>Skema FTCS:</p>
+            <div class="katex">
+$$
+u_i^{n+1} = u_i^n + r \left( u_{i+1}^n - 2u_i^n + u_{i-1}^n \right)
+$$
+            </div>
+
+            <p>Substitusikan nilai-nilai yang diketahui:</p>
+            <div class="katex">
+$$
+u_i^{n+1} = 50 + 0.5 \left( 60 - 2(50) + 40 \right)
+$$
+            </div>
+
+            <div class="katex">
+$$
+u_i^{n+1} = 50 + 0.5 \left( 60 - 100 + 40 \right)
+$$
+            </div>
+
+            <div class="katex">
+$$
+u_i^{n+1} = 50 + 0.5(0)
+$$
+            </div>
+
+            <div class="katex">
+$$
+u_i^{n+1} = 50
+$$
+            </div>
+
+            <p>Jadi, nilai \( u_i^{n+1} = 50 \).</p>
+
+            <p><strong>Catatan:</strong> Karena \( r = 0.5 \) tepat pada batas kestabilan (\( r \leq 0.5 \)), skema ini masih stabil.</p>
+        </div>
+    </div>
+
+</div>
+
+
+</div>
+</div>
+    

@@ -1,0 +1,23 @@
+@media print {
+
+    .sidebar,
+    footer,
+    nav,
+    .button-group,
+    #status {
+        display: none;
+    }
+
+    body {
+        background: white;
+    }
+
+    .pdf-section {
+        page-break-inside: avoid;
+    }
+
+    .pdf-divider {
+        page-break-after: always;
+        border: none;
+    }
+}
