@@ -1,0 +1,61 @@
+<div class="card-group">
+    <div class="card card--soft">
+
+        <h1>Metode Numerik</h1>
+
+        <p id="status">
+            Memuat materi...
+        </p>
+
+        <div class="button-group">
+            <button
+                id="download-btn"
+                class="button button--primary"
+                disabled>
+                Download PDF
+            </button>
+
+        </div>
+    </div>
+</div>
+
+<div id="pdf-content"></div>
+
+<script type="module">
+import { buildBook }
+from "/js/pdf-builder.js";
+
+const status =
+    document.getElementById("status");
+
+const downloadBtn =
+    document.getElementById("download-btn");
+
+(async () => {
+
+    const count =
+        await buildBook({
+
+            navPath:
+                "/components/nav/nav-metode-numerik.html",
+
+            rootFilter:
+                "/pages/subject/metode-numerik/",
+
+            contentTarget:
+                "#pdf-content"
+
+        });
+
+    status.textContent =
+        `${count} materi berhasil dimuat`;
+
+    downloadBtn.disabled = false;
+
+})();
+
+downloadBtn.addEventListener(
+    "click",
+    () => window.print()
+);
+</script>
