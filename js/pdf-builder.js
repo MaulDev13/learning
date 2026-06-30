@@ -8,8 +8,8 @@ export async function buildBook({
     navPath = withBase(navPath);
     rootFilter = withBase(rootFilter);
 
-    console.log("navPath:", navPath);
-    console.log("rootFilter:", rootFilter);
+    // console.log("navPath:", navPath);
+    // console.log("rootFilter:", rootFilter);
 
     const navHtml = await fetch(navPath).then(r => r.text());
 
@@ -30,10 +30,8 @@ export async function buildBook({
     let loaded = 0;
 
     for (const link of links) {
-
-        // const path = link.getAttribute("hx-get");
         const path = withBase(link.getAttribute("hx-get"));
-        console.log("path:", path);
+        // console.log("path:", path);
 
         if (!path.startsWith(rootFilter))
             continue;
