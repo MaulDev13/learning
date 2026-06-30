@@ -1,10 +1,4 @@
-import { BASE_PATH } from "./config.js";
-
-function withBase(path) {
-    if (!path.startsWith("/")) return path;
-    return `${BASE_PATH}${path}`;
-    // return path;
-}
+import { BASE_PATH, withBase } from "./config.js";
 
 export async function buildBook({
     navPath,

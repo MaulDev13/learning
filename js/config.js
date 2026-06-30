@@ -10,3 +10,7 @@ export const BASE_PATH =
         location.hostname === "127.0.0.1")
         ? ""
         : "/learning/";
+
+export function withBase(path) {
+    return `${BASE_PATH}/${path}`.replace(/\/{2,}/g, "/");
+}
