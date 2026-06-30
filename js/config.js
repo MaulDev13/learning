@@ -12,5 +12,9 @@ export const BASE_PATH =
         : "/learning/";
 
 export function withBase(path) {
+    if (typeof path !== "string") {
+        throw new TypeError(`withBase expected a string, got ${typeof path}`);
+    }
+    
     return `${BASE_PATH}/${path}`.replace(/\/{2,}/g, "/");
 }
