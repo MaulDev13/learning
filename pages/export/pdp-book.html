@@ -39,14 +39,16 @@ const downloadBtn =
         await buildBook({
 
             navPath:
-                "/learning/components/nav/nav-pdp.html",
+                "/components/nav/nav-pdp.html",
 
             rootFilter:
-                "/learning/pages/subject/pdp/",
+                "/pages/subject/pdp/",
 
             contentTarget:
                 "#pdf-content"
         });
+
+        console.log(count);
 
     status.textContent =
         `${count} materi berhasil dimuat`;
