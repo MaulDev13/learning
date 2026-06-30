@@ -1,8 +1,21 @@
+import { BASE_PATH } from "./config.js";
+
+function withBase(path) {
+    if (!path.startsWith("/")) return path;
+    return `${BASE_PATH}${path}`;
+    // return path;
+}
+
 export async function buildBook({
     navPath,
     rootFilter,
     contentTarget
 }) {
+    navPath = withBase(navPath);
+    rootFilter = withBase(rootFilter);
+
+    console.log("navPath:", navPath);
+    console.log("rootFilter:", rootFilter);
 
     const navHtml = await fetch(navPath).then(r => r.text());
 
@@ -26,6 +39,8 @@ export async function buildBook({
 
         const path =
             link.getAttribute("hx-get");
+
+        console.log("path:", withBase(path));
 
         if (!path.startsWith(rootFilter))
             continue;
