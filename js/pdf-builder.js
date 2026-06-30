@@ -33,8 +33,8 @@ export async function buildBook({
 
         const path =
             link.getAttribute("hx-get");
-
-        console.log("path:", withBase(path));
+        path = withBase(path);
+        console.log("path:", path);
 
         if (!path.startsWith(rootFilter))
             continue;
