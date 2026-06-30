@@ -25,8 +25,7 @@
 
 <script type="module">
 
-import { buildBook }
-from "/js/pdf-builder.js";
+import { buildBook } from "/js/pdf-builder.js";
 
 const status =
     document.getElementById("status");
@@ -40,10 +39,10 @@ const downloadBtn =
         await buildBook({
 
             navPath:
-                "/components/nav/nav-pdp.html",
+                "/learning/components/nav/nav-pdp.html",
 
             rootFilter:
-                "/pages/subject/pdp/",
+                "/learning/pages/subject/pdp/",
 
             contentTarget:
                 "#pdf-content"
